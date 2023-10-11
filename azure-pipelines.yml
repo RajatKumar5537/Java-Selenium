@@ -20,7 +20,4 @@ steps:
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
     goals: 'package'
--
-- task: MavenAuthenticate@0
-  inputs:
-    artifactsFeeds: 'JIVIEWSRPA'
+
