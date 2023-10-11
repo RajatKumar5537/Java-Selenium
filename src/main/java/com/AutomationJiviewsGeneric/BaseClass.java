@@ -1,4 +1,4 @@
-package com.AzureGeneric;
+package com.AutomationJiviewsGeneric;
 
 import java.io.IOException;
 import java.time.Duration;
@@ -12,8 +12,8 @@ import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 
-import com.AzurePOM.HomePage;
-import com.AzurePOM.LoginPage;
+import com.AutomationJiviewsPOM.HomePage;
+import com.AutomationJiviewsPOM.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

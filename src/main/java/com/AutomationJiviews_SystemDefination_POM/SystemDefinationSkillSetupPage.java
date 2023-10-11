@@ -1,4 +1,4 @@
-package com.AzurePOM;
+package com.AutomationJiviews_SystemDefination_POM;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -9,8 +9,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-import com.AzureGeneric.BaseClass;
-import com.AzureGeneric.FileLib;
+import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.FileLib;
 
 
 public class SystemDefinationSkillSetupPage extends BaseClass {

@@ -1,4 +1,4 @@
-package com.AzureGeneric;
+package com.AutomationJiviewsGeneric;
 
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
