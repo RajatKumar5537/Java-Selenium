@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
+  <reporter-output>
+    <line>
+      <![CDATA[Open Browser]]>
+    </line>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
+    <line>
+      <![CDATA[Close Browser]]>
+    </line>
+  </reporter-output>
+  <suite started-at="2023-10-11T12:47:02 IST" name="Default suite" finished-at="2023-10-11T12:47:37 IST" duration-ms="34394">
+    <groups>
+    </groups>
+    <test started-at="2023-10-11T12:47:02 IST" name="Default test" finished-at="2023-10-11T12:47:37 IST" duration-ms="34394">
+      <class name="com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript@4c60d6e9]" started-at="2023-10-11T12:47:02 IST" name="launchBrowser" finished-at="2023-10-11T12:47:04 IST" duration-ms="1956" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Open Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript@4c60d6e9]" started-at="2023-10-11T12:47:04 IST" name="login" finished-at="2023-10-11T12:47:06 IST" duration-ms="1719" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="verifyCreateNewRole()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript@4c60d6e9]" started-at="2023-10-11T12:47:06 IST" name="verifyCreateNewRole" finished-at="2023-10-11T12:47:30 IST" duration-ms="24045" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateNewRole -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript@4c60d6e9]" started-at="2023-10-11T12:47:30 IST" name="logout" finished-at="2023-10-11T12:47:36 IST" duration-ms="6464" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript@4c60d6e9]" started-at="2023-10-11T12:47:36 IST" name="closeBrowser" finished-at="2023-10-11T12:47:37 IST" duration-ms="178" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Close Browser]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_TestScript.roleSetUpTestScript -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

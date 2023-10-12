@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Suite]" verbose="0">
+  <test thread-count="5" name="Test(failed)" verbose="0">
+    <classes>
+      <class name="com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript">
+        <methods>
+          <include name="updateSkill"/>
+          <include name="logout"/>
+          <include name="closeBrowser"/>
+          <include name="createNewSkill"/>
+          <include name="setReActiveSkill"/>
+          <include name="searchColumns"/>
+          <include name="login"/>
+          <include name="deActiveSkill"/>
+          <include name="launchBrowser"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript -->
+    </classes>
+  </test> <!-- Test(failed) -->
+</suite> <!-- Failed suite [Suite] -->
