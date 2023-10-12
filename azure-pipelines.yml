@@ -1,5 +1,5 @@
 trigger:
-- master
+- none
 
 pool:
   vmImage: ubuntu-latest
@@ -27,7 +27,7 @@ stages:
             mavenPomFile: 'pom.xml'
             goals: 'test'
             publishJUnitResults: true
-            testResultsFiles: '/surefire-reports'
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
     - job: CodeAnalysis
       steps:
@@ -53,3 +53,4 @@ stages:
           inputs:
             pathtoPublish: '$(System.DefaultWorkingDirectory)/path/to/artifacts'
             artifactName: 'MyJavaArtifacts'
+           
