@@ -23,17 +23,25 @@ import io.opentelemetry.api.logs.Logger;
 public class BaseClass {
 
 	public static WebDriver driver;
-	
+
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
 		Reporter.log("Open Browser", true);
 		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option=new ChromeOptions();
-		
+
 		option.addArguments("--disable-notifications");
-		option.addArguments("--remote-allow-origins=*"); // chrome version 111+
-		option.addArguments("--headless");
+		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
+
+
+		// Check the execution environment (e.g., using an environment variable)
+		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+
+		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+			// Running in Azure, enable headless mode
+			option.addArguments("--headless");
+		}
 		driver= new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

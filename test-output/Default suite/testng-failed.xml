@@ -3,15 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.SystemDefination_TestScript_Skill.skillSearchColumns">
+      <class name="com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript">
         <methods>
-          <include name="searchColumns"/>
-          <include name="login"/>
+          <include name="updateSkill"/>
           <include name="closeBrowser"/>
           <include name="logout"/>
+          <include name="createNewSkill"/>
+          <include name="setReActiveSkill"/>
+          <include name="searchColumns"/>
+          <include name="login"/>
+          <include name="deActiveSkill"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.SystemDefination_TestScript_Skill.skillSearchColumns -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
