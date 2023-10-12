@@ -27,7 +27,7 @@ stages:
             mavenPomFile: 'pom.xml'
             goals: 'test'
             publishJUnitResults: true
-            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+            testResultsFiles: '/surefire-reports'
 
     - job: CodeAnalysis
       steps:
