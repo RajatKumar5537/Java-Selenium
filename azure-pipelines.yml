@@ -15,11 +15,10 @@ stages:
     - job: 'Checkoutgitcode'
       steps:
         - checkout: self
-  
         - task: Maven@4
           inputs:
             mavenPomFile: 'pom.xml'
-            goals: 'clean'
+            goals: 'test'
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
             javaHomeOption: 'JDKVersion'
