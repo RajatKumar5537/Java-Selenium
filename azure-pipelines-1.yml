@@ -11,10 +11,9 @@ stages:
       steps:
         - checkout: self
 
-  - stage: BuildAndTest
+  - stage: InstallChromeAndChromeDriver
     jobs:
-    - job: InstallChromeAndChromeDriver
-      displayName: 'Install Chrome and ChromeDriver'
+    - job: InstallDependencies
       steps:
         - script: |
             # Install Chrome
@@ -30,6 +29,8 @@ stages:
             chromedriver --version
           displayName: 'Install Chrome and ChromeDriver'
 
+  - stage: BuildAndTest
+    jobs:
     - job: Build
       steps:
         - task: Maven@4
@@ -45,3 +46,26 @@ stages:
             goals: 'test'
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
+
+    - job: CodeAnalysis
+      steps:
+        - script: |
+            # Add commands for code analysis (e.g., SonarQube)
+          displayName: 'Code Analysis'
+
+  - stage: Deploy
+    jobs:
+    - job: DeployToStaging
+      steps:
+        - script: |
+            # Add commands to deploy to your staging environment
+          displayName: 'Deploy to Staging'
+
+  - stage: PublishArtifacts
+    jobs:
+    - job: Publish
+      steps:
+        - task: PublishBuildArtifacts@1
+          inputs:
+            pathtoPublish: '$(System.DefaultWorkingDirectory)'
+            artifactName: 'MyJavaArtifacts'
