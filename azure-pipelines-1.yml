@@ -40,12 +40,14 @@ stages:
 
     - job: UnitTests
       steps:
-        - task: Maven@4
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'test'
-            publishJUnitResults: true
-            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        - script: |
+            # Set the execution environment to "azure" as an environment variable
+            echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
+            source $(Agent.BuildDirectory)/.env
+
+            # Run your tests (replace with actual test execution command)
+            mvn test
+          displayName: 'Run Unit Tests'
 
     - job: CodeAnalysis
       steps:
