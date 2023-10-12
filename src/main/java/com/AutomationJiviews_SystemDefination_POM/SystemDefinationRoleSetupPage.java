@@ -79,6 +79,9 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	@FindBy(xpath = "//button[@id='btnSaveRolesDetails']/span")
 	WebElement saveBTN;
+	
+	@FindBy(className = "toast-close-button")
+	WebElement notificationPopup;
 
 	@FindBy(xpath = "(//button[@type='button'])[5]/i")
 	WebElement editBTN;
@@ -209,6 +212,10 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setSaveBTN() {
 		saveBTN.click();
 	}
+	
+	public void setNotificationPopup() {
+		notificationPopup.click();
+	}
 
 	public void setEditBTN() {
 		editBTN.click();
@@ -265,6 +272,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 
@@ -293,6 +301,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 	}
 
 	public void setDeactiveRole() throws InterruptedException {
@@ -301,6 +310,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setCheckBox();
 		sdrs.setDeleteBTN();
 		sdrs.setClickYes();
+		sdrs.setNotificationPopup();
 	}
 
 	public void setReactiveRole() throws InterruptedException {
@@ -309,6 +319,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setEditBTN();
 		sdrs.setIsActive();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 	}
 
 	public void setCreateNewRoleWithoutPriarySkill() throws EncryptedDocumentException, IOException, InterruptedException {
@@ -337,6 +348,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 
@@ -367,6 +379,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 	public void setCreateNewRoleWithoutRoleDescription() throws EncryptedDocumentException, IOException, InterruptedException {
@@ -395,6 +408,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 
@@ -424,6 +438,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForSingleSkill();
 		//		sdrs.setSelectMoveSingleRole();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 
@@ -455,6 +470,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setAvailableSkillForMultipleSkill();
 		sdrs.setSelectedSkillForMoveToAvailabelSkillForSingle();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 
 	}
 
@@ -486,6 +502,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setSelectedSkillForMoveToAvailabelSkillForSingle();
 		sdrs.setRemoveSelectedSkillForSingle();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 	}
 
 	public void setDisselectAllAvailableSkill() throws InterruptedException, EncryptedDocumentException, IOException {
@@ -516,6 +533,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		Thread.sleep(2000);
 		sdrs.setRemoveSelectedSkillForAll();
 		sdrs.setSaveBTN();
+		sdrs.setNotificationPopup();
 	}
 
 	public void setSearchColumnsForRole() throws EncryptedDocumentException, IOException {
