@@ -1,0 +1,47 @@
+trigger:
+- master
+
+pool:
+  vmImage: ubuntu-latest
+
+stages:
+  - stage: CheckoutCode
+    jobs:
+    - job: 'Checkoutgitcode'
+      steps:
+        - checkout: self
+
+  - stage: BuildAndTest
+    jobs:
+    - job: InstallChromeAndChromeDriver
+      displayName: 'Install Chrome and ChromeDriver'
+      steps:
+        - script: |
+            # Install Chrome
+            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+            sudo apt install ./google-chrome-stable_current_amd64.deb
+
+            # Download and install ChromeDriver
+            CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3)
+            CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
+            wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
+            unzip chromedriver_linux64.zip -d /usr/local/bin
+            chmod +x /usr/local/bin/chromedriver
+            chromedriver --version
+          displayName: 'Install Chrome and ChromeDriver'
+
+    - job: Build
+      steps:
+        - task: Maven@4
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'clean install'
+
+    - job: UnitTests
+      steps:
+        - task: Maven@4
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'test'
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
