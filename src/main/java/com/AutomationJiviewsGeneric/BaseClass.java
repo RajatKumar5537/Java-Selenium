@@ -3,6 +3,7 @@ package com.AutomationJiviewsGeneric;
 import java.io.IOException;
 import java.time.Duration;
 
+import org.apache.logging.log4j.LogManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -16,12 +17,13 @@ import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.LoginPage;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.opentelemetry.api.logs.Logger;
 
 
 public class BaseClass {
 
 	public static WebDriver driver;
-
+	
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
 		Reporter.log("Open Browser", true);
@@ -29,6 +31,7 @@ public class BaseClass {
 		ChromeOptions option=new ChromeOptions();
 		
 		option.addArguments("--disable-notifications");
+		option.addArguments("--remote-allow-origins=*"); // chrome version 111+
 		driver= new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
