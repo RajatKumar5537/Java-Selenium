@@ -33,6 +33,7 @@ public class BaseClass {
 		
 		option.addArguments("--disable-notifications");
 		option.addArguments("--remote-allow-origins=*"); // chrome version 111+
+		option.addArguments("--headless");
 		driver= new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
