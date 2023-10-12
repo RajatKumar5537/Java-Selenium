@@ -51,6 +51,6 @@ stages:
       steps:
         - task: PublishBuildArtifacts@1
           inputs:
-            pathtoPublish: '$(System.DefaultWorkingDirectory)/path/to/artifacts'
+            pathtoPublish: '$(System.DefaultWorkingDirectory)'
             artifactName: 'MyJavaArtifacts'
            
