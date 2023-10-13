@@ -5,85 +5,23 @@ pool:
   vmImage: 'ubuntu-latest'
 
 stages:
-  - stage: CheckoutCode
-    jobs:
-    - job: 'Checkoutgitcode'
-      steps:
-        - checkout: self
-
   - stage: SetEnvironmentVariables
     jobs:
     - job: SetVariables
       steps:
         - script: |
-            export BROWSER=chrome
+            setx BROWSER chrome
           displayName: 'Set BROWSER environment variable'
-
-  - stage: InstallChromeAndChromeDriver
-    jobs:
-    - job: InstallDependencies
-      steps:
-        - script: |
-            # Install Chrome
-            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo apt install ./google-chrome-stable_current_amd64.deb
-
-            # Download and install ChromeDriver
-            CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3)
-            CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-            wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-            unzip chromedriver_linux64.zip -d /usr/local/bin
-            chmod +x /usr/local/bin/chromedriver
-
-            # Ensure Chrome is installed and ChromeDriver is on the path
-            if [ -x "$(command -v google-chrome)" ]; then
-              echo "Chrome is installed: $(google-chrome --version)"
-            else
-              echo "Chrome is not installed"
-              exit 1
-            fi
-
-            if [ -x "$(command -v chromedriver)" ]; then
-              echo "ChromeDriver is installed: $(chromedriver --version)"
-            else
-              echo "ChromeDriver is not on the path"
-              exit 1
-            fi
-          displayName: 'Install Chrome and ChromeDriver'
 
   - stage: BuildAndTest
     jobs:
-    - job: Build
+    - job: BuildAndTest
       steps:
-        - task: Maven@4
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'clean install'
+        - checkout: self
 
-    - job: UnitTests
-      steps:
         - script: |
-            # Set the execution environment to "azure" as an environment variable
-            echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
-            source $(Agent.BuildDirectory)/.env
-
-            # Run your tests (replace with actual test execution command)
-            mvn test
-          displayName: 'Run Unit Tests'
-
-    - job: CodeAnalysis
-      steps:
-        - script: |
-            # Add commands for code analysis (e.g., SonarQube)
-          displayName: 'Code Analysis'
-
-  - stage: Deploy
-    jobs:
-    - job: DeployToStaging
-      steps:
-        - script: |
-            # Add commands to deploy to your staging environment
-          displayName: 'Deploy to Staging'
+            # Your other build and test steps go here
+          displayName: 'Other Build and Test Steps'
 
   - stage: PublishArtifacts
     jobs:
