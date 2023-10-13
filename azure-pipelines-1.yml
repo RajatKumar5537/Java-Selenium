@@ -26,7 +26,21 @@ stages:
             wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
             unzip chromedriver_linux64.zip -d /usr/local/bin
             chmod +x /usr/local/bin/chromedriver
-            chromedriver --version
+
+            # Ensure Chrome is installed and ChromeDriver is on the path
+            if [ -x "$(command -v google-chrome)" ]; then
+              echo "Chrome is installed: $(google-chrome --version)"
+            else
+              echo "Chrome is not installed"
+              exit 1
+            fi
+
+            if [ -x "$(command -v chromedriver)" ]; then
+              echo "ChromeDriver is installed: $(chromedriver --version)"
+            else
+              echo "ChromeDriver is not on the path"
+              exit 1
+            fi
           displayName: 'Install Chrome and ChromeDriver'
 
   - stage: BuildAndTest
