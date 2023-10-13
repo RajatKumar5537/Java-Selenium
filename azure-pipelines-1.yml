@@ -13,6 +13,15 @@ stages:
             export BROWSER=chrome
           displayName: 'Set BROWSER environment variable'
 
+  - stage: CheckChromeVersion
+    jobs:
+    - job: CheckChrome
+      steps:
+      - script: |
+          # Check Chrome version
+          google-chrome --version
+        displayName: 'Check Chrome Version'
+
   - stage: BuildAndTest
     jobs:
     - job: BuildAndTest
@@ -28,8 +37,7 @@ stages:
             echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
             source $(Agent.BuildDirectory)/.env
 
-            # Run your tests (replace with the actual test execution command)
-            # For example, running your Maven tests
+            # Run your tests using Maven (replace with the actual test execution command)
             mvn test
           displayName: 'Run Unit Tests'
 
