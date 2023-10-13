@@ -2,66 +2,44 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'ubuntu-latest'
 
 stages:
-  - stage: CheckoutCode
+  - stage: SetEnvironmentVariables
     jobs:
-    - job: 'Checkoutgitcode'
-      steps:
-        - checkout: self
-
-  - stage: InstallChromeAndChromeDriver
-    jobs:
-    - job: InstallDependencies
+    - job: SetVariables
       steps:
         - script: |
-            # Install Chrome
-            wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-            sudo apt install ./google-chrome-stable_current_amd64.deb
+            export BROWSER=chrome
+          displayName: 'Set BROWSER environment variable'
 
-            # Download and install ChromeDriver
-            CHROME_VERSION=$(google-chrome --version | cut -d ' ' -f 3)
-            CHROMEDRIVER_VERSION=$(curl -s "https://chromedriver.storage.googleapis.com/LATEST_RELEASE_$CHROME_VERSION")
-            wget "https://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip"
-            unzip chromedriver_linux64.zip -d /usr/local/bin
-            chmod +x /usr/local/bin/chromedriver
-            chromedriver --version
-          displayName: 'Install Chrome and ChromeDriver'
+  - stage: CheckChromeVersion
+    jobs:
+    - job: CheckChrome
+      steps:
+      - script: |
+          # Check Chrome version
+          google-chrome --version
+        displayName: 'Check Chrome Version'
 
   - stage: BuildAndTest
     jobs:
-    - job: Build
+    - job: BuildAndTest
       steps:
-        - task: Maven@4
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'clean install'
+        - checkout: self
 
-    - job: UnitTests
-      steps:
+        - script: |
+            # Your other build steps go here (e.g., Maven build, compilation, etc.)
+          displayName: 'Other Build Steps'
+
         - script: |
             # Set the execution environment to "azure" as an environment variable
             echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
             source $(Agent.BuildDirectory)/.env
 
-            # Run your tests (replace with actual test execution command)
+            # Run your tests using Maven (replace with the actual test execution command)
             mvn test
           displayName: 'Run Unit Tests'
-
-    - job: CodeAnalysis
-      steps:
-        - script: |
-            # Add commands for code analysis (e.g., SonarQube)
-          displayName: 'Code Analysis'
-
-  - stage: Deploy
-    jobs:
-    - job: DeployToStaging
-      steps:
-        - script: |
-            # Add commands to deploy to your staging environment
-          displayName: 'Deploy to Staging'
 
   - stage: PublishArtifacts
     jobs:
