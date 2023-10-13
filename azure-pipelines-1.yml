@@ -20,8 +20,18 @@ stages:
         - checkout: self
 
         - script: |
-            # Your other build and test steps go here
-          displayName: 'Other Build and Test Steps'
+            # Your other build steps go here (e.g., Maven build, compilation, etc.)
+          displayName: 'Other Build Steps'
+
+        - script: |
+            # Set the execution environment to "azure" as an environment variable
+            echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
+            source $(Agent.BuildDirectory)/.env
+
+            # Run your tests (replace with the actual test execution command)
+            # For example, running your Maven tests
+            mvn test
+          displayName: 'Run Unit Tests'
 
   - stage: PublishArtifacts
     jobs:
