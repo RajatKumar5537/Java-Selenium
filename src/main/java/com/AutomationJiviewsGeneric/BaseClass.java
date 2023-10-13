@@ -27,7 +27,7 @@ public class BaseClass {
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
 		Reporter.log("Open Browser", true);
-//		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option=new ChromeOptions();
 
