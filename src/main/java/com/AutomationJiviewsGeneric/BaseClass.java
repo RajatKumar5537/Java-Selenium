@@ -35,13 +35,13 @@ public class BaseClass {
 		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
 
 
-		// Check the execution environment (e.g., using an environment variable)
-		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-
-		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
-			// Running in Azure, enable headless mode
-			option.addArguments("--headless");
-		}
+//		// Check the execution environment (e.g., using an environment variable)
+//		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+//
+//		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+//			// Running in Azure, enable headless mode
+//			option.addArguments("--headless");
+//		}
 		driver= new ChromeDriver(option);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
