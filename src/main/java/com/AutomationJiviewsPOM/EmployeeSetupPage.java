@@ -29,8 +29,9 @@ public class EmployeeSetupPage extends BaseClass{
 	
 	// it will create a new skill 
 	public void setCreateSkill() throws InterruptedException {
+		Thread.sleep(2000);
 		EmpSetup.click();
-//		Thread.sleep(5000);
+//		Thread.sleep(2000);
 		skill.click();
 	}
 	

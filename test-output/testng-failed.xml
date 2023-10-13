@@ -5,14 +5,10 @@
     <classes>
       <class name="com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript">
         <methods>
-          <include name="updateSkill"/>
           <include name="closeBrowser"/>
           <include name="logout"/>
           <include name="createNewSkill"/>
-          <include name="setReActiveSkill"/>
-          <include name="searchColumns"/>
           <include name="login"/>
-          <include name="deActiveSkill"/>
           <include name="launchBrowser"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript -->

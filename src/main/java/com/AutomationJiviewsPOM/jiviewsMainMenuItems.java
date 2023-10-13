@@ -81,6 +81,7 @@ public class jiviewsMainMenuItems extends BaseClass{
 	public void clickOnSystemDefination() throws InterruptedException {
 		
 		jiviewsMainMenuItems jmmi=new jiviewsMainMenuItems(driver);
+		Thread.sleep(2000);
 		jmmi.setMainMenu();
 		Thread.sleep(2000);
 		jmmi.setSelectSystemDefination();
