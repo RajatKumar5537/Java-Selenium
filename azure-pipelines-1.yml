@@ -10,7 +10,7 @@ stages:
     - job: SetVariables
       steps:
         - script: |
-            setx BROWSER chrome
+            export BROWSER=chrome
           displayName: 'Set BROWSER environment variable'
 
   - stage: BuildAndTest
