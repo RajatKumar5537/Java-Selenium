@@ -14,37 +14,37 @@
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-13T17:02:06 IST" name="Suite" finished-at="2023-10-13T17:02:45 IST" duration-ms="38152">
+  <suite started-at="2023-10-14T10:13:51 IST" name="Suite" finished-at="2023-10-14T10:14:49 IST" duration-ms="57268">
     <groups>
     </groups>
-    <test started-at="2023-10-13T17:02:06 IST" name="Test" finished-at="2023-10-13T17:02:45 IST" duration-ms="38152">
+    <test started-at="2023-10-14T10:13:51 IST" name="Test" finished-at="2023-10-14T10:14:49 IST" duration-ms="57268">
       <class name="com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-13T17:02:06 IST" name="launchBrowser" finished-at="2023-10-13T17:02:09 IST" duration-ms="2081" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-14T10:13:51 IST" name="launchBrowser" finished-at="2023-10-14T10:13:59 IST" duration-ms="7847" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-13T17:02:09 IST" name="login" finished-at="2023-10-13T17:02:11 IST" duration-ms="2630" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-14T10:13:59 IST" name="login" finished-at="2023-10-14T10:14:12 IST" duration-ms="12442" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createNewSkill()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-13T17:02:11 IST" name="createNewSkill" finished-at="2023-10-13T17:02:38 IST" duration-ms="26733" status="PASS">
+        <test-method signature="createNewSkill()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-14T10:14:12 IST" name="createNewSkill" finished-at="2023-10-14T10:14:42 IST" duration-ms="30023" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNewSkill -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-13T17:02:38 IST" name="logout" finished-at="2023-10-13T17:02:44 IST" duration-ms="6485" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-14T10:14:42 IST" name="logout" finished-at="2023-10-14T10:14:48 IST" duration-ms="6523" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-13T17:02:44 IST" name="closeBrowser" finished-at="2023-10-13T17:02:45 IST" duration-ms="195" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript@38cee291]" started-at="2023-10-14T10:14:48 IST" name="closeBrowser" finished-at="2023-10-14T10:14:49 IST" duration-ms="366" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
