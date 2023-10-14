@@ -29,25 +29,25 @@ public class BaseClass {
 
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
-		Reporter.log("Open Browser", true);
-
-		WebDriverManager.chromedriver().setup();
-		ChromeOptions option=new ChromeOptions();
-
-		option.addArguments("--disable-notifications");
-		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
-
-
-		//		// Check the execution environment (e.g., using an environment variable)
-		//		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-		//
-		//		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
-		//			// Running in Azure, enable headless mode
-		//			option.addArguments("--headless");
-		//		}
-		driver= new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//		Reporter.log("Open Browser", true);
+//
+//		WebDriverManager.chromedriver().setup();
+//		ChromeOptions option=new ChromeOptions();
+//
+//		option.addArguments("--disable-notifications");
+//		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
+//
+//
+//		//		// Check the execution environment (e.g., using an environment variable)
+//		//		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+//		//
+//		//		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+//		//			// Running in Azure, enable headless mode
+//		//			option.addArguments("--headless");
+//		//		}
+//		driver= new ChromeDriver();
+//		driver.manage().window().maximize();
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
