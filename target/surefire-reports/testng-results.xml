@@ -11,26 +11,26 @@
       <![CDATA[Modify Customer]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-14T12:27:01 IST" name="Suite" finished-at="2023-10-14T12:27:01 IST" duration-ms="65">
+  <suite started-at="2023-10-14T12:42:30 IST" name="Suite" finished-at="2023-10-14T12:42:30 IST" duration-ms="50">
     <groups>
     </groups>
-    <test started-at="2023-10-14T12:27:01 IST" name="Test" finished-at="2023-10-14T12:27:01 IST" duration-ms="65">
+    <test started-at="2023-10-14T12:42:30 IST" name="Test" finished-at="2023-10-14T12:42:30 IST" duration-ms="50">
       <class name="com.practice.AzurePractice">
-        <test-method signature="createCustomer()[pri:0, instance:com.practice.AzurePractice@51c668e3]" started-at="2023-10-14T12:27:01 IST" name="createCustomer" finished-at="2023-10-14T12:27:01 IST" duration-ms="7" status="PASS">
+        <test-method signature="createCustomer()[pri:0, instance:com.practice.AzurePractice@66f57048]" started-at="2023-10-14T12:42:30 IST" name="createCustomer" finished-at="2023-10-14T12:42:30 IST" duration-ms="7" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Create Customer]]>
             </line>
           </reporter-output>
         </test-method> <!-- createCustomer -->
-        <test-method signature="deleteCustomer()[pri:0, instance:com.practice.AzurePractice@51c668e3]" started-at="2023-10-14T12:27:01 IST" name="deleteCustomer" finished-at="2023-10-14T12:27:01 IST" duration-ms="0" status="PASS">
+        <test-method signature="deleteCustomer()[pri:0, instance:com.practice.AzurePractice@66f57048]" started-at="2023-10-14T12:42:30 IST" name="deleteCustomer" finished-at="2023-10-14T12:42:30 IST" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Delete Customer]]>
             </line>
           </reporter-output>
         </test-method> <!-- deleteCustomer -->
-        <test-method signature="modifyCustomer()[pri:0, instance:com.practice.AzurePractice@51c668e3]" started-at="2023-10-14T12:27:01 IST" name="modifyCustomer" finished-at="2023-10-14T12:27:01 IST" duration-ms="1" status="PASS">
+        <test-method signature="modifyCustomer()[pri:0, instance:com.practice.AzurePractice@66f57048]" started-at="2023-10-14T12:42:30 IST" name="modifyCustomer" finished-at="2023-10-14T12:42:30 IST" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Modify Customer]]>
