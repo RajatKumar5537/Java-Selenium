@@ -2,44 +2,48 @@ trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: ubuntu-latest
 
 stages:
-  - stage: SetEnvironmentVariables
+  - stage: CheckoutCode
     jobs:
-    - job: SetVariables
-      steps:
-        - script: |
-            export BROWSER=chrome
-          displayName: 'Set BROWSER environment variable'
-
-  - stage: CheckChromeVersion
-    jobs:
-    - job: CheckChrome
-      steps:
-      - script: |
-          # Check Chrome version
-          google-chrome --version
-        displayName: 'Check Chrome Version'
-
-  - stage: BuildAndTest
-    jobs:
-    - job: BuildAndTest
+    - job: 'Checkoutgitcode'
       steps:
         - checkout: self
 
-        - script: |
-            # Your other build steps go here (e.g., Maven build, compilation, etc.)
-          displayName: 'Other Build Steps'
+  - stage: BuildAndTest
+    jobs:
+    - job: Build
+      steps:
+        - task: Maven@4
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'clean install'
 
-        - script: |
-            # Set the execution environment to "azure" as an environment variable
-            echo "EXECUTION_ENVIRONMENT=azure" >> $(Agent.BuildDirectory)/.env
-            source $(Agent.BuildDirectory)/.env
+    - job: UnitTests
+      steps:
+        - task: Maven@4
+          inputs:
+            mavenPomFile: 'pom.xml'
+            goals: 'test'
+            publishJUnitResults: true
+            testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
-            # Run your tests using Maven (replace with the actual test execution command)
-            mvn test
-          displayName: 'Run Unit Tests'
+    - job: CodeAnalysis
+      steps:
+        - script: |
+            # Add commands for code analysis (e.g., SonarQube)
+          displayName: 'Code Analysis'
+
+  - stage: Deploy
+    jobs:
+    - job: DeployToStaging
+      steps:
+        - script: |
+            # Add commands to deploy to your staging environment
+          displayName: 'Deploy to Staging'
+
+  # Add more stages for other deployment environments as needed
 
   - stage: PublishArtifacts
     jobs:
