@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: ubuntu-latest
+  vmImage: 'windows-latest' # Change the VM image to a Windows agent
 
 stages:
   - stage: CheckoutCode
@@ -29,6 +29,17 @@ stages:
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
+    - job: InstallGeckoDriver
+      steps:
+        - script: |
+            # Download and install GeckoDriver
+            Invoke-WebRequest -Uri 'https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-win64.zip' -OutFile 'geckodriver.zip'
+            Expand-Archive -Path 'geckodriver.zip' -DestinationPath '$env:USERPROFILE\.m2\repository\webdriver\geckodriver\win64\0.30.0'
+            Remove-Item 'geckodriver.zip'
+          displayName: 'Install GeckoDriver'
+
+  - stage: CodeAnalysis
+    jobs:
     - job: CodeAnalysis
       steps:
         - script: |
