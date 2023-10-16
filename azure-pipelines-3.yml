@@ -1,0 +1,64 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-latest' # Change the VM image to a Windows agent
+
+stages:
+- stage: SetupEnvironment
+  jobs:
+  - job: SetupChromeDriver
+    steps:
+    - script: |
+        # Download and install ChromeDriver
+        Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+        Remove-Item 'chromedriver.zip'
+      displayName: 'Install ChromeDriver'
+
+- stage: CheckoutCode
+  jobs:
+  - job: CheckoutGitCode
+    steps:
+    - checkout: self
+
+- stage: BuildAndTest
+  jobs:
+  - job: Build
+    steps:
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean test'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
+
+- stage: CodeAnalysis
+  jobs:
+  - job: CodeAnalysis
+    steps:
+    - script: |
+        # Add commands for code analysis (e.g., SonarQube)
+      displayName: 'Code Analysis'
+
+- stage: Deploy
+  jobs:
+  - job: DeployToStaging
+    steps:
+    - script: |
+        # Add commands to deploy to your staging environment
+      displayName: 'Deploy to Staging'
+
+- stage: PublishArtifacts
+  jobs:
+  - job: Publish
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)'
+        artifactName: 'MyJavaArtifacts'
