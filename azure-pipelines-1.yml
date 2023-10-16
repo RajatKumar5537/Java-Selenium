@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest' # Change the VM image to a Windows agent
+  vmImage: 'windows-latest'
 
 stages:
   - stage: CheckoutCode
@@ -29,7 +29,7 @@ stages:
             publishJUnitResults: true
             testResultsFiles: '**/surefire-reports/TEST-*.xml'
 
-    - job: InstallGeckoDriver
+    - job: InstallGeckoDriver  # Add this job to install GeckoDriver
       steps:
         - script: |
             # Download and install GeckoDriver
