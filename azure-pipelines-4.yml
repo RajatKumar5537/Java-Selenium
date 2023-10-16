@@ -37,14 +37,6 @@ stages:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
 
-- stage: Deploy
-  jobs:
-  - job: DeployToStaging
-    steps:
-    - script: |
-        # Add commands to deploy to your staging environment
-      displayName: 'Deploy to Staging'
-
 - stage: PublishArtifacts
   jobs:
   - job: Publish
