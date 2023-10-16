@@ -37,14 +37,6 @@ stages:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
 
-- stage: CodeAnalysis
-  jobs:
-  - job: CodeAnalysis
-    steps:
-    - script: |
-        # Add commands for code analysis (e.g., SonarQube)
-      displayName: 'Code Analysis'
-
 - stage: Deploy
   jobs:
   - job: DeployToStaging
