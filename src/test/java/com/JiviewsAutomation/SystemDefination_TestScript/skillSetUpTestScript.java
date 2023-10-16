@@ -19,28 +19,28 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class skillSetUpTestScript extends BaseClass{
 
 	private static final Logger logger = LogManager.getLogger(skillSetUpTestScript.class);
-//	@Test
-//	public void createNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-//
-//		logger.info("Create a new Skill");
-//		HomePage hp=new HomePage(driver);
-//		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
-//		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
-//		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
-//		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		hp.setOrgUnit();
-//		Thread.sleep(1000);
-//		oudd.setOLMop();
-//		Thread.sleep(1000);
-//		jmmi.clickOnSystemDefination();
-//		Thread.sleep(1000);
-//		esp.setCreateSkill();
-//		Thread.sleep(1000);
-//		sds.setNewSkill();
-//		logger.info("A skill is created successfully ");
-//
-//	}
-	/*@Test(priority = 2, dependsOnMethods = "createNewSkill")
+	@Test
+	public void createNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
+
+		logger.info("Create a new Skill");
+		HomePage hp=new HomePage(driver);
+		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
+		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
+		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
+		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+		hp.setOrgUnit();
+		Thread.sleep(1000);
+		oudd.setOLMop();
+		Thread.sleep(1000);
+		jmmi.clickOnSystemDefination();
+		Thread.sleep(1000);
+		esp.setCreateSkill();
+		Thread.sleep(1000);
+		sds.setNewSkill();
+		logger.info("A skill is created successfully ");
+
+	}
+	@Test(priority = 2, dependsOnMethods = "createNewSkill")
 	public void updateSkill() throws InterruptedException, EncryptedDocumentException, IOException {
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
@@ -97,8 +97,8 @@ public class skillSetUpTestScript extends BaseClass{
 		esp.setCreateSkill();
 		Thread.sleep(1000);
 		sds.setActivateDeactiveSkill();
-	}*/
-	@Test(priority = 1)//dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"}
+	}
+	@Test(priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
 	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
 		logger.info("searching a skill");
 		HomePage hp=new HomePage(driver);
