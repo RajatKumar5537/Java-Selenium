@@ -5,62 +5,61 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
-  - stage: CheckoutCode
-    jobs:
-    - job: 'Checkoutgitcode'
-      steps:
-        - checkout: self
+- stage: SetupEnvironment
+  jobs:
+  - job: SetupChromeDriver
+    steps:
+    - script: |
+        # Download and install ChromeDriver
+        Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+        Remove-Item 'chromedriver.zip'
+      displayName: 'Install ChromeDriver'
 
-  - stage: BuildAndTest
-    jobs:
-    - job: Build
-      steps:
-        - task: Maven@4
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'clean install'
+- stage: BuildAndTest
+  jobs:
+  - job: Build
+    steps:
+    - checkout: self
 
-    - job: UnitTests
-      steps:
-        - task: Maven@4
-          inputs:
-            mavenPomFile: 'pom.xml'
-            goals: 'test'
-            publishJUnitResults: true
-            testResultsFiles: '**/surefire-reports/TEST-*.xml'
+    - script: |
+        # Add any other setup steps specific to your project
+      displayName: 'Additional Setup'
 
-    - job: InstallGeckoDriver  # Add this job to install GeckoDriver
-      steps:
-        - script: |
-            # Download and install GeckoDriver
-            Invoke-WebRequest -Uri 'https://github.com/mozilla/geckodriver/releases/download/v0.30.0/geckodriver-v0.30.0-win64.zip' -OutFile 'geckodriver.zip'
-            Expand-Archive -Path 'geckodriver.zip' -DestinationPath '$env:USERPROFILE\.m2\repository\webdriver\geckodriver\win64\0.30.0'
-            Remove-Item 'geckodriver.zip'
-          displayName: 'Install GeckoDriver'
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean install'
 
-  - stage: CodeAnalysis
-    jobs:
-    - job: CodeAnalysis
-      steps:
-        - script: |
-            # Add commands for code analysis (e.g., SonarQube)
-          displayName: 'Code Analysis'
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'test'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      displayName: 'Run Tests'
 
-  - stage: Deploy
-    jobs:
-    - job: DeployToStaging
-      steps:
-        - script: |
-            # Add commands to deploy to your staging environment
-          displayName: 'Deploy to Staging'
+- stage: CodeAnalysis
+  jobs:
+  - job: CodeAnalysis
+    steps:
+    - script: |
+        # Add commands for code analysis (e.g., SonarQube)
+      displayName: 'Code Analysis'
 
-  # Add more stages for other deployment environments as needed
+- stage: Deploy
+  jobs:
+  - job: DeployToStaging
+    steps:
+    - script: |
+        # Add commands to deploy to your staging environment
+      displayName: 'Deploy to Staging'
 
-  - stage: PublishArtifacts
-    jobs:
-    - job: Publish
-      steps:
-        - task: PublishBuildArtifacts@1
-          inputs:
-            pathtoPublish: '$(System.DefaultWorkingDirectory)'
-            artifactName: 'MyJavaArtifacts'
+- stage: PublishArtifacts
+  jobs:
+  - job: Publish
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)'
+        artifactName: 'MyJavaArtifacts'
