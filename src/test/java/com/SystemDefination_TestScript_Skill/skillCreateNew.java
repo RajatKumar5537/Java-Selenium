@@ -1,15 +1,6 @@
 package com.SystemDefination_TestScript_Skill;
 
-import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
-import org.testng.annotations.Test;
-
 import com.AutomationJiviewsGeneric.BaseClass;
-import com.AutomationJiviewsPOM.EmployeeSetupPage;
-import com.AutomationJiviewsPOM.HomePage;
-import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
-import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 
 public class skillCreateNew extends BaseClass{

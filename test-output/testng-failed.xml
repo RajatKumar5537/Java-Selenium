@@ -3,17 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.practice.AzurePractice">
+      <class name="com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript">
         <methods>
-          <include name="deleteCustomer"/>
-          <include name="closeBrowser"/>
+          <include name="updateSkill"/>
           <include name="logout"/>
-          <include name="modifyCustomer"/>
-          <include name="createCustomer"/>
+          <include name="closeBrowser"/>
+          <include name="createNewSkill"/>
+          <include name="setReActiveSkill"/>
+          <include name="searchColumns"/>
           <include name="login"/>
+          <include name="deActiveSkill"/>
           <include name="launchBrowser"/>
         </methods>
-      </class> <!-- com.practice.AzurePractice -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

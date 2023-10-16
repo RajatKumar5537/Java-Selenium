@@ -1,12 +1,8 @@
 com\AutomationJiviewsGeneric\BaseClass.class
 com\AutomationJiviewsPOM\HomePage.class
-com\practice\basePractice.class
-com\practice\AzurePractice.class
-com\AutomationJiviews_SystemDefination_POM\SystemDefinationSkillSetupPage.class
 com\AutomationJiviewsGeneric\ListenerImplimentation.class
 com\AutomationJiviewsGeneric\FileLib.class
 com\AutomationJiviewsPOM\EmployeeSetupPage.class
 com\AutomationJiviewsPOM\LoginPage.class
-com\AutomationJiviews_SystemDefination_POM\SystemDefinationRoleSetupPage.class
 com\AutomationJiviewsPOM\OrganizationUnitDropDown.class
 com\AutomationJiviewsPOM\jiviewsMainMenuItems.class

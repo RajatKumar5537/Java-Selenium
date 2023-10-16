@@ -10,7 +10,6 @@ import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
-import com.AutomationJiviews_SystemDefination_POM.SystemDefinationSkillSetupPage;
 
 public class skillSetUpTestScript extends BaseClass{
 //	@Test(priority = 1)

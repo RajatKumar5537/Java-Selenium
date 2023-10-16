@@ -1,4 +1,4 @@
-package com.AutomationJiviews_SystemDefination_POM;
+package com.AutomationJiviewsPOM;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -27,82 +27,82 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public String roleWaightageData;
 
 	@FindBy(xpath = "//button[@id='btnAddNew']/span")
-	WebElement addBtn;
+	private WebElement addBtn;
 
 	@FindBy(xpath = "//input[@id='txtRoleName']")
-	WebElement roleName;
+	private WebElement roleName;
 
 	@FindBy(xpath = "//input[@id='txtRoleDescription']")
-	WebElement roleDescription;
+	private WebElement roleDescription;
 
 	@FindBy(xpath = "//input[@id='txtPrepareTime']")
-	WebElement preparationTime;
+	private WebElement preparationTime;
 
 	@FindBy(xpath = "//input[@id='txtDePreparetime']")
-	WebElement depreparationTime;
+	private WebElement depreparationTime;
 
 	@FindBy(xpath = "//span[.='Select Primary Skill Id']")
-	WebElement selectPrimarySkillId;
+	private WebElement selectPrimarySkillId;
 
 	@FindBy(xpath = "//input[@class='select2-search__field']")
-	WebElement searchField;
+	private WebElement searchField;
 
 	@FindBy(xpath = "(//li[contains(text(),'Auto_Test')])[1]")
-	WebElement selectSkillCode;
+	private WebElement selectSkillCode;
 
 	@FindBy(xpath = "//input[@id='txtRolePrioritySeq']")
-	WebElement roleWaightage;
+	private WebElement roleWaightage;
 
 	// it is from Available Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
-	WebElement availableSkill;
+	private WebElement availableSkill;
 
 	// select for move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
-	WebElement selectMoveSingle;
+	private WebElement selectMoveSingle;
 
 	//	select for move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
-	WebElement selectMoveAll;
+	private WebElement selectMoveAll;
 
 	// it is from Seleceted Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[2]")
-	WebElement selectedSkill;
+	private WebElement selectedSkill;
 
 	//	select for move single skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn remove btn-default']")
-	WebElement removeSelectedSkillSingle;
+	private WebElement removeSelectedSkillSingle;
 
 	//	select for move multiple skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn removeall btn-default']")
-	WebElement removeSelectedSkillAll;
+	private WebElement removeSelectedSkillAll;
 
 	@FindBy(xpath = "//button[@id='btnSaveRolesDetails']/span")
-	WebElement saveBTN;
+	private WebElement saveBTN;
 	
 	@FindBy(className = "toast-close-button")
-	WebElement notificationPopup;
+	private WebElement notificationPopup;
 
 	@FindBy(xpath = "(//button[@type='button'])[5]/i")
-	WebElement editBTN;
+	private WebElement editBTN;
 
 	@FindBy(xpath = "(//input[@type='checkbox'])[2]")
-	WebElement checkBox;
+	private WebElement checkBox;
 
 	@FindBy(xpath = "//button[@id='btnDeleteRoles']/span")
-	WebElement deleteBTN;
+	private WebElement deleteBTN;
 
 	@FindBy(xpath = "//button[.='Yes']")
-	WebElement clickYes;
+	private WebElement clickYes;
 
 	@FindBy(xpath = "//span[.='Is Active?']")
-	WebElement isActive;
+	private WebElement isActive;
 
 	@FindBy(xpath = "(//button[@class='btn btn-secondary btn-round icon-btn'])[1]")
-	WebElement cancelBTN;
+	private WebElement cancelBTN;
 
 	@FindBy(xpath = "//input[@type='search']")
-	WebElement searchColumns;
+	private WebElement searchColumns;
 
 	public SystemDefinationRoleSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);

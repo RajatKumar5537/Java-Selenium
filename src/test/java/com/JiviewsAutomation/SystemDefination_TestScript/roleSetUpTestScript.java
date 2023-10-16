@@ -9,8 +9,8 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
+import com.AutomationJiviewsPOM.SystemDefinationRoleSetupPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
-import com.AutomationJiviews_SystemDefination_POM.SystemDefinationRoleSetupPage;
 
 public class roleSetUpTestScript extends BaseClass{
 

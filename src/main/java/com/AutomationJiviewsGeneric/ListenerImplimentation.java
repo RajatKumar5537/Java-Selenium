@@ -9,17 +9,19 @@ import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
 
+
+
 public class ListenerImplimentation extends BaseClass implements ITestListener{
+	
 
 	@Override
 	public void onTestStart(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestStart(result);
 	}
 
 	@Override
 	public void onTestSuccess(ITestResult result) {
-		// TODO Auto-generated method stub
+		// TODO Auto-generated method stu
 		ITestListener.super.onTestSuccess(result);
 	}
 
@@ -57,13 +59,19 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onStart(ITestContext context) {
-		// TODO Auto-generated method stub
+	
+//		ExtentSparkReporter htmlreporter=new ExtentSparkReporter("./ExtentReport/report.html");
+//		report=new ExtentReports();
+//		report.attachReporter(htmlreporter);
+//		report.setSystemInfo("OS", "Windows");
+//	    report.setSystemInfo("Reporter Name", "Rajat");
 		ITestListener.super.onStart(context);
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
+//		report.flush();
 		ITestListener.super.onFinish(context);
 	}
 

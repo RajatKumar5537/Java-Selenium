@@ -8,31 +8,31 @@ import org.openqa.selenium.support.PageFactory;
 public class OrganizationUnitDropDown {
 	// Select Demo Option 
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[1]")
-		WebElement demoOp;
+		private WebElement demoOp;
 
 		// Select EFD Option
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
-		WebElement EFDoption;
+		private WebElement EFDoption;
 
 		// Select HSSE Division 
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
-		WebElement HSSEdivision;
+		private WebElement HSSEdivision;
 
 		// Select OLM
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[4]")
-		WebElement OLMop;
+		private WebElement OLMop;
 
 		// Select Operator 
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[5]")
-		WebElement operationOp;
+		private WebElement operationOp;
 
 		// Select Test RV
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
-		WebElement testRV;
+		private WebElement testRV;
 
 		// Select Test OC
 		@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
-		WebElement testOC;
+		private WebElement testOC;
 
 		public OrganizationUnitDropDown(WebDriver driver) {
 			PageFactory.initElements(driver, this);

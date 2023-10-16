@@ -1,4 +1,4 @@
-package com.AutomationJiviews_SystemDefination_POM;
+package com.AutomationJiviewsPOM;
 
 import java.io.IOException;
 import java.time.LocalDateTime;
@@ -15,46 +15,46 @@ import com.AutomationJiviewsGeneric.FileLib;
 
 public class SystemDefinationSkillSetupPage extends BaseClass {
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
-	WebElement addBtn;
+	private WebElement addBtn;
 
 	@FindBy(xpath = "//input[@id='txtSkillCode']")
-	WebElement skillCode;
+	private WebElement skillCode;
 
 	@FindBy(id="txtSkillCodeDescription")
-	WebElement skillDescription;
+	private WebElement skillDescription;
 
 	@FindBy(id = "txtSequence")
-	WebElement sequence;
+	private WebElement sequence;
 
 	@FindBy(id = "txtColourCode")
-	WebElement ColourCode;
+	private WebElement ColourCode;
 
 	@FindBy(id = "txtFixedRanking")
-	WebElement wageLevelCode;
+	private WebElement wageLevelCode;
 
 	@FindBy(xpath = "//span[.='Is Active?']")
-	WebElement isActiveOption;
+	private WebElement isActiveOption;
 
 	@FindBy(id = "btnSaveSkill")
-	WebElement saveBtn;
+	private WebElement saveBtn;
 	
 	@FindBy(className = "toast-close-button")
-	WebElement notificationPopup;
+	private WebElement notificationPopup;
 
 	@FindBy(xpath = "(//button[@type='button'])[5]")
-	WebElement editBtn;
+	private WebElement editBtn;
 
 	@FindBy(id = "btnDeleteSkill")
-	WebElement clickDeleteBtn;
+	private WebElement clickDeleteBtn;
 
 	@FindBy(xpath = "//button[.='Yes']")
-	WebElement clickYes;
+	private WebElement clickYes;
 
 	@FindBy(xpath =  "(//input[@type='checkbox'])[2]")
-	WebElement checkBox;
+	private WebElement checkBox;
 
 	@FindBy(xpath = "//input[@type='search']")
-	WebElement searchColumns;
+	private WebElement searchColumns;
 
 	public SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);

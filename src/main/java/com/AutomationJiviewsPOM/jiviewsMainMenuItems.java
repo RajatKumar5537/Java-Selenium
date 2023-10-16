@@ -12,31 +12,31 @@ public class jiviewsMainMenuItems extends BaseClass{
 	private WebElement mainMenu;
 
 	@FindBy(xpath = "//span[text()='System Setup']/..")
-	WebElement selectSystemSetup;
+	private WebElement selectSystemSetup;
 
 	@FindBy(xpath = "//span[text()='System Definitions']/..")
-	WebElement selectSystemDefination;
+	private WebElement selectSystemDefination;
 
 	@FindBy(xpath = "//span[text()='Employee Administration']/..")
-	WebElement selectEmployeeAdministration;
+	private WebElement selectEmployeeAdministration;
 
 	@FindBy(xpath = "//span[text()='Workforce Scheduling']/..")
-	WebElement selectWorkforceScheduling;
+	private WebElement selectWorkforceScheduling;
 
 	@FindBy(xpath = "//span[text()='Employee Self Service']/..")
-	WebElement selectEmployeeSelfService;
+	private WebElement selectEmployeeSelfService;
 
 	@FindBy(xpath = "//span[text()='Operation Planning & Execution']/..")
-	WebElement selectOperationPlanningExecution;
+	private WebElement selectOperationPlanningExecution;
 
 	@FindBy(xpath = "//span[text()='Time & Attendance']/..")
-	WebElement selectTimeAttendance;
+	private WebElement selectTimeAttendance;
 
 	@FindBy(xpath = "//span[text()='Reports']/..")
-	WebElement selectReports;
+	private WebElement selectReports;
 	
 	@FindBy(xpath = "//span[text()='Dashboard']/..")
-	WebElement selectDashboard;
+	private WebElement selectDashboard;
 
 
 	public jiviewsMainMenuItems(WebDriver driver) {

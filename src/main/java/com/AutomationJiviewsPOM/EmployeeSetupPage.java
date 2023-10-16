@@ -9,19 +9,19 @@ import com.AutomationJiviewsGeneric.BaseClass;
 
 public class EmployeeSetupPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Employee Setup']/..")
-	WebElement EmpSetup;
+	private WebElement EmpSetup;
 	
 	@FindBy(xpath = "//div[text()='Skills']/..")
-	WebElement skill;
+	private WebElement skill;
 	
 	@FindBy(xpath = "//div[text()='Roles']")
-	WebElement role;
+	private WebElement role;
 	
 	@FindBy(xpath = "//div[text()='Role Groups']")
-	WebElement rolesGroup;
+	private WebElement rolesGroup;
 	
 	@FindBy(xpath = "//div[text()='Percentage Configuration']")
-	WebElement percentageConfiguration;
+	private WebElement percentageConfiguration;
 	
 	public EmployeeSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
