@@ -22,7 +22,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// TODO Auto-generated method stu
-		ITestListener.super.onTestSuccess(result);
+		//ITestListener.super.onTestSuccess(result);
 	}
 
 	@Override
@@ -42,20 +42,20 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestSkipped(result);
+		//ITestListener.super.onTestSkipped(result);
 	}
 
 	@Override
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
+		//ITestListener.super.onTestFailedButWithinSuccessPercentage(result);
 	}
 
-	@Override
-	public void onTestFailedWithTimeout(ITestResult result) {
+	//@Override
+	//public void onTestFailedWithTimeout(ITestResult result) {
 		// TODO Auto-generated method stub
-		ITestListener.super.onTestFailedWithTimeout(result);
-	}
+		//ITestListener.super.onTestFailedWithTimeout(result);
+	//}
 
 	@Override
 	public void onStart(ITestContext context) {
@@ -65,14 +65,14 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 //		report.attachReporter(htmlreporter);
 //		report.setSystemInfo("OS", "Windows");
 //	    report.setSystemInfo("Reporter Name", "Rajat");
-		ITestListener.super.onStart(context);
+		//ITestListener.super.onStart(context);
 	}
 
 	@Override
 	public void onFinish(ITestContext context) {
 		// TODO Auto-generated method stub
 //		report.flush();
-		ITestListener.super.onFinish(context);
+		//ITestListener.super.onFinish(context);
 	}
 
 }
