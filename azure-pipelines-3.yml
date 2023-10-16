@@ -2,7 +2,7 @@ trigger:
 - master
 
 pool:
-  vmImage: 'windows-latest' # Change the VM image to a Windows agent
+  vmImage: 'windows-latest'
 
 stages:
 - stage: SetupEnvironment
@@ -16,27 +16,28 @@ stages:
         Remove-Item 'chromedriver.zip'
       displayName: 'Install ChromeDriver'
 
-- stage: CheckoutCode
-  jobs:
-  - job: CheckoutGitCode
-    steps:
-    - checkout: self
-
 - stage: BuildAndTest
   jobs:
   - job: Build
     steps:
+    - checkout: self
+
+    - script: |
+        # Add any other setup steps specific to your project
+      displayName: 'Additional Setup'
+
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean test'
+        goals: 'clean install'
+
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'test'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
-        mavenAuthenticateFeed: false
-        effectivePomSkip: false
-        sonarQubeRunAnalysis: false
+      displayName: 'Run Tests'
 
 - stage: CodeAnalysis
   jobs:
