@@ -8,6 +8,11 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.ie.InternetExplorerOptions;
+import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -23,14 +28,17 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 
 	private static final Logger logger = LogManager.getLogger(BaseClass.class);
+//	static {
+//		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe"); 
+//	}
 	static {
-		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe");
+		System.setProperty("webdriver.chrome.driver","./driver/IEDriverServer.exe"); //IEDriverServer.exe
 	}
 	public static WebDriver driver;
 
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
-		Reporter.log("Open Browser", true);
+	/*	Reporter.log("Open Browser", true);
 		logger.info("Open Browser");
 
 		WebDriverManager.chromedriver().setup();
@@ -57,6 +65,50 @@ public class BaseClass {
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		logger.info("Browser launched successfully");
+		
+		Reporter.log("Open Browser", true);
+	    logger.info("Open Browser");*/
+
+//	    WebDriverManager.iedriver().setup();
+//	    InternetExplorerOptions options = new InternetExplorerOptions();
+//	    options.ignoreZoomSettings();
+//	    options.introduceFlakinessByIgnoringSecurityDomains();
+//
+//	    String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+//
+//	    if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+//	        // Running in Azure, enable headless mode
+//	        options.destructivelyEnsureCleanSession(); // Ensures a clean session in IE.
+//	        options.ignoreZoomSettings();
+//	        options.enablePersistentHovering();
+//	        options.requireWindowFocus();
+//
+//	        driver = new InternetExplorerDriver(options);
+//	    } else {
+//	        driver = new InternetExplorerDriver(options);
+//	    }
+//
+//	    driver.manage().window().maximize();
+//	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//	    logger.info("IE Browser launched successfully");
+//	    
+	    WebDriverManager.firefoxdriver().setup();
+	    FirefoxOptions options = new FirefoxOptions();
+	    driver = new FirefoxDriver(options);
+	    String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+
+	    if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+	        // Running in Azure, enable headless mode
+	        options.addArguments("--headless");
+	        // Add other Azure-specific options here
+	    }
+
+	   
+
+	    driver.manage().window().maximize();
+	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+	    logger.info("Firefox Browser launched successfully");
+
 
 	}
 	@AfterTest
