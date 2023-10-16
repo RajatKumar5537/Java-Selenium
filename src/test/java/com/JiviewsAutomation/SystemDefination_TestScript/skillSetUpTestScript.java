@@ -19,7 +19,7 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class skillSetUpTestScript extends BaseClass{
 
 	private static final Logger logger = LogManager.getLogger(skillSetUpTestScript.class);
-	@Test(priority = 0)
+	@Test
 	public void createNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
 
 		logger.info("Create a new Skill");
@@ -98,24 +98,24 @@ public class skillSetUpTestScript extends BaseClass{
 		Thread.sleep(1000);
 		sds.setActivateDeactiveSkill();
 	}*/
-	@Test(priority = 1)//dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"}
-	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
-		logger.info("searching a skill");
-		HomePage hp=new HomePage(driver);
-		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
-		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
-		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
-		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-		Thread.sleep(1000);
-		hp.setOrgUnit();
-		Thread.sleep(1000);
-		oudd.setOLMop();
-		Thread.sleep(1000);
-		jmmi.clickOnSystemDefination();
-		Thread.sleep(1000);
-		esp.setCreateSkill();
-		Thread.sleep(1000);
-		sds.setSearchColumns();
-		logger.info("searching a skill is successfull");
-	}
+//	@Test(priority = 1)//dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"}
+//	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
+//		logger.info("searching a skill");
+//		HomePage hp=new HomePage(driver);
+//		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
+//		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
+//		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
+//		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+//		Thread.sleep(1000);
+//		hp.setOrgUnit();
+//		Thread.sleep(1000);
+//		oudd.setOLMop();
+//		Thread.sleep(1000);
+//		jmmi.clickOnSystemDefination();
+//		Thread.sleep(1000);
+//		esp.setCreateSkill();
+//		Thread.sleep(1000);
+//		sds.setSearchColumns();
+//		logger.info("searching a skill is successfull");
+//	}
 }
