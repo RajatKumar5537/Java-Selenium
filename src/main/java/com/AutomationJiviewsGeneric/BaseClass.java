@@ -120,10 +120,10 @@ public class BaseClass {
 	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
 		Reporter.log("Login", true);
-		FileLib f= new FileLib();
-		String url = f.getPropertyData("url");
-		String un = f.getPropertyData("username");
-		String pw = f.getPropertyData("password");
+		FileLib fileLib= new FileLib();
+		String url = fileLib.getPropertyData("url");
+		String un = fileLib.getPropertyData("username");
+		String pw = fileLib.getPropertyData("password");
 		driver.get(url);
 		LoginPage lp=new LoginPage(driver);
 		lp.setLogin(un, pw);
