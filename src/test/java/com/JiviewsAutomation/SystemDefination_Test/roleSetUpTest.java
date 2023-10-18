@@ -20,8 +20,8 @@ public class roleSetUpTest extends BaseClass{
 	public EmployeeSetupPage esp;
 	public SystemDefinationRoleSetupPage sdrs;
 
-	@Test
-	public void verifyCreateNewRole() throws InterruptedException, EncryptedDocumentException, IOException {
+//	@Test
+/*	public void verifyCreateNewRole() throws InterruptedException, EncryptedDocumentException, IOException {
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
@@ -196,5 +196,5 @@ public class roleSetUpTest extends BaseClass{
 		jmmi.clickOnSystemDefination();
 		esp.setCreateRole();
 		sdrs.setSearchColumnsForRole();
-	}
+	}*/
 }

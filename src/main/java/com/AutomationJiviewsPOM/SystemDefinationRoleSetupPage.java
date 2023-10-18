@@ -243,7 +243,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setCancelBTN() {
 		cancelBTN.click();
 	}
-	public void setCreateNewRole() throws EncryptedDocumentException, IOException, InterruptedException {
+	/*public void setCreateNewRole() throws EncryptedDocumentException, IOException, InterruptedException {
 
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
@@ -544,5 +544,5 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		sdrs.setSearchColumns(roleNameData);
 
-	}
+	}*/
 }

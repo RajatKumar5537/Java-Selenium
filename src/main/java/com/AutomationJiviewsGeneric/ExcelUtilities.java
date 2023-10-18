@@ -23,9 +23,7 @@ public class ExcelUtilities {
 
 		FileInputStream fis = new FileInputStream(".\\src\\test\\resources\\TestData\\Jivi_Test_Data.xlsx");
 		Workbook wb = WorkbookFactory.create(fis);
-		Sheet sh = wb.getSheet(sheetName);
-		// int last = sh.getLastRowNum();
-		String data = sh.getRow(rowNo).getCell(columnNo).getStringCellValue();
+		String data = wb.getSheet(sheetName).getRow(rowNo).getCell(columnNo).getStringCellValue();
 		return data;
 	}
 

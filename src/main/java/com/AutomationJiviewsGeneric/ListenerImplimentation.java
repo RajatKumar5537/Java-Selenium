@@ -28,9 +28,11 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	ExtentReports report;
 	ExtentTest test;
 	FileLib fileLib;
+	configUtility congigUtiliy;
 
 	public ListenerImplimentation() {
-		fileLib = new FileLib();
+//		fileLib = new FileLib();
+		congigUtiliy= new configUtility();
 	}
 
 	@Override
@@ -40,7 +42,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Add author, category, and description to the test
 		try {
-			test.assignAuthor(fileLib.getPropertyData("author"));
+			test.assignAuthor(congigUtiliy.getCongigPropertyData("author"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -96,9 +98,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		htmlreport.config().setReportName("End-to-End Test Report for Skill Module");
 
 		try {
-			report.setSystemInfo("OS", fileLib.getPropertyData("windows"));
-			report.setSystemInfo("Base Browser", fileLib.getPropertyData("browser"));
-			report.setSystemInfo("Base Url", fileLib.getPropertyData("url"));
+			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
+			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
+			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}

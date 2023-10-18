@@ -10,10 +10,16 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FileLib;
 
 
 public class SystemDefinationSkillSetupPage extends BaseClass {
+	
+	public SystemDefinationSkillSetupPage sds;
+	ExcelUtilities excelUtility= new ExcelUtilities();
+	String timeStamp = LocalDateTime.now().toString();
+	
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
 
@@ -119,14 +125,21 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 
-	public void setNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		FileLib f=new FileLib();
-		String skillCodeData = f.getExcelData("EmployeeTest", 3, 7);
-		String skillDescriptionData = f.getExcelData("EmployeeTest", 3, 8);
-		String sequenceData = f.getExcelData("EmployeeTest", 3, 9);
-		String wageLevelCodedata = f.getExcelData("EmployeeTest", 3, 11);
+	public void setNewSkill() throws Exception {
+//		FileLib f=new FileLib();
+//		String skillCodeData = f.getExcelData("EmployeeTest", 3, 7);
+//		String skillDescriptionData = f.getExcelData("EmployeeTest", 3, 8);
+//		String sequenceData = f.getExcelData("EmployeeTest", 3, 9);
+//		String wageLevelCodedata = f.getExcelData("EmployeeTest", 3, 11);
 
-		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+		
+		
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
+		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
+		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
+		
+		sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(2000);
 		sds.addBtn();
 		String timeStamp = LocalDateTime.now().toString();
@@ -143,19 +156,24 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		sds.saveBtn();
 		sds.setNotificationPopup();
 	}
-	public void setUpdateSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		FileLib f=new FileLib();
-		String timeStamp = LocalDateTime.now().toString();
-		String skillCodeData = f.getExcelData("EmployeeTest", 4, 7);
-		String setSkillDescData = f.getExcelData("EmployeeTest", 4, 8);
+	public void setUpdateSkill() throws Exception {
+//		FileLib f=new FileLib();
+		
+//		String skillCodeData = f.getExcelData("EmployeeTest", 4, 7);
+//		String setSkillDescData = f.getExcelData("EmployeeTest", 4, 8);
 		//	String sequenceData = f.getExcelData("EmployeeTest", 4, 9);
 		//	String wageLevelCodedata = f.getExcelData("EmployeeTest", 4, 11);
+		
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
+//		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 4, 9);
+//		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 11);
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(2000);
 		sds.setEditBtn();
 		sds.skillCode(skillCodeData + " " + timeStamp);
-		sds.skillDescription(setSkillDescData + " " + timeStamp);
+		sds.skillDescription(skillDescriptionData + " " + timeStamp);
 		sds.saveBtn();
 		sds.setNotificationPopup();
 
@@ -200,10 +218,12 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 	}
 
-	public void setSearchColumns() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setSearchColumns() throws Exception {
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-		FileLib f=new FileLib();
-		String searchColumnsData = f.getExcelData("EmployeeTest", 3, 7);
+//		FileLib f=new FileLib();
+		
+//		String searchColumnsData = f.getExcelData("EmployeeTest", 3, 7);
+		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		Thread.sleep(2000);
 		sds.setSearchColumn(searchColumnsData);
 		

@@ -19,8 +19,8 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class skillSetUpTest extends BaseClass{
 
 	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
-	/*@Test
-	public void createNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
+	@Test
+	public void createNewSkill() throws Exception {
 
 		logger.info("Create a new Skill");
 		HomePage hp=new HomePage(driver);
@@ -41,7 +41,7 @@ public class skillSetUpTest extends BaseClass{
 
 	}
 	@Test(priority = 2, dependsOnMethods = "createNewSkill")
-	public void updateSkill() throws InterruptedException, EncryptedDocumentException, IOException {
+	public void updateSkill() throws Exception {
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -97,9 +97,9 @@ public class skillSetUpTest extends BaseClass{
 		esp.setCreateSkill();
 		Thread.sleep(1000);
 		sds.setActivateDeactiveSkill();
-	}*/
-	@Test //(priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
-	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
+	}
+	@Test (priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
+	public void searchColumns() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("searching a skill");
 		HomePage hp=new HomePage(driver);
