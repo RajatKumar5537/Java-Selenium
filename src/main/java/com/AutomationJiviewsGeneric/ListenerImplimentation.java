@@ -3,6 +3,8 @@ package com.AutomationJiviewsGeneric;
 
 import java.io.File;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
@@ -79,7 +81,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onStart(ITestContext context) {
-		ExtentHtmlReporter htmlreport = new ExtentHtmlReporter("./ExtentReport/report.html");
+
+		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		String reportFileName = "ExtentReport_" + timestamp + ".html";
+		ExtentHtmlReporter htmlreport = new ExtentHtmlReporter("./ExtentReport/" + reportFileName);
 		report = new ExtentReports();
 
 		// Attach the HTML reporter to the report

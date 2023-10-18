@@ -1,9 +1,3 @@
 C:\Development\Automation\Jiviewsrpav2\src\test\java\com\practice\AzurePractice.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_TestScript\roleSetUpTestScript.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillReactive.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_TestScript\skillSetUpTestScript.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillDeactive.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillUpdate.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillSearchColumns.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillSetUpTestScript.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\SystemDefination_TestScript_Skill\skillCreateNew.java
+C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\roleSetUpTest.java
+C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\skillSetUpTest.java

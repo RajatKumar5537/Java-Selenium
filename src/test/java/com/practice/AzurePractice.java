@@ -17,7 +17,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
 
-import com.JiviewsAutomation.SystemDefination_TestScript.skillSetUpTestScript;
+import com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest;
 
 
 public class AzurePractice { 

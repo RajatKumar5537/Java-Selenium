@@ -69,29 +69,6 @@ public class BaseClass {
 		Reporter.log("Open Browser", true);
 		logger.info("Open Browser");
 
-		//	    WebDriverManager.iedriver().setup();
-		//	    InternetExplorerOptions options = new InternetExplorerOptions();
-		//	    options.ignoreZoomSettings();
-		//	    options.introduceFlakinessByIgnoringSecurityDomains();
-		//
-		//	    String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-		//
-		//	    if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
-		//	        // Running in Azure, enable headless mode
-		//	        options.destructivelyEnsureCleanSession(); // Ensures a clean session in IE.
-		//	        options.ignoreZoomSettings();
-		//	        options.enablePersistentHovering();
-		//	        options.requireWindowFocus();
-		//
-		//	        driver = new InternetExplorerDriver(options);
-		//	    } else {
-		//	        driver = new InternetExplorerDriver(options);
-		//	    }
-		//
-		//	    driver.manage().window().maximize();
-		//	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-		//	    logger.info("IE Browser launched successfully");
-		//	    
 		/*   WebDriverManager.firefoxdriver().setup();
 	    FirefoxOptions options = new FirefoxOptions();
 	    driver = new FirefoxDriver(options);

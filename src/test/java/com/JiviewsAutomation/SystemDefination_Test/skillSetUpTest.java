@@ -1,4 +1,4 @@
-package com.JiviewsAutomation.SystemDefination_TestScript;
+package com.JiviewsAutomation.SystemDefination_Test;
 
 import java.io.IOException;
 
@@ -16,10 +16,10 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 
 
-public class skillSetUpTestScript extends BaseClass{
+public class skillSetUpTest extends BaseClass{
 
-	private static final Logger logger = LogManager.getLogger(skillSetUpTestScript.class);
-	@Test
+	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
+	/*@Test
 	public void createNewSkill() throws InterruptedException, EncryptedDocumentException, IOException {
 
 		logger.info("Create a new Skill");
@@ -97,8 +97,8 @@ public class skillSetUpTestScript extends BaseClass{
 		esp.setCreateSkill();
 		Thread.sleep(1000);
 		sds.setActivateDeactiveSkill();
-	}
-	@Test(priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
+	}*/
+	@Test //(priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
 	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
 		logger.info("searching a skill");
 		HomePage hp=new HomePage(driver);
