@@ -1,18 +1,18 @@
 package com.AutomationJiviewsGeneric;
 
+import java.io.File;
 import java.io.IOException;
-import java.time.Duration;
 
+import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
-import org.openqa.selenium.ie.InternetExplorerDriver;
-import org.openqa.selenium.ie.InternetExplorerOptions;
-import org.openqa.selenium.ie.InternetExplorerOptions;
 import org.testng.Reporter;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
@@ -28,13 +28,8 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass {
 
 	private static final Logger logger = LogManager.getLogger(BaseClass.class);
-	//	static {
-	//		System.setProperty("webdriver.chrome.driver","./driver/chromedriver.exe"); 
-	//	}
-	static {
-		System.setProperty("webdriver.chrome.driver","./driver/IEDriverServer.exe"); //IEDriverServer.exe
-	}
 	public static WebDriver driver;
+	public static WebUtilities webUtility = new WebUtilities();
 
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
@@ -62,12 +57,12 @@ public class BaseClass {
 			option.addArguments("--headless");
 		}
 		driver= new ChromeDriver();
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+		webUtility.maximizeBrowser(driver);
+//		driver.manage().window().maximize();
+		webUtility.pageLoadWait(driver, 10);
+//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		logger.info("Browser launched successfully");
-
 		Reporter.log("Open Browser", true);
-		logger.info("Open Browser");
 
 		/*   WebDriverManager.firefoxdriver().setup();
 	    FirefoxOptions options = new FirefoxOptions();
@@ -88,19 +83,36 @@ public class BaseClass {
 		 */
 
 	}
+	public void captureScreenshot(WebDriver driver, String res) throws IOException {
+		TakesScreenshot t = (TakesScreenshot) driver;
+		File src = t.getScreenshotAs(OutputType.FILE);
+		File dest = new File("./ScreenShot/" + res + ".png");
+		FileUtils.copyFile(src, dest);
+		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
+
+	}
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		Reporter.log("Close Browser",true);
+		logger.info("Close Browser...");
 		driver.quit();
 	}
 
 	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
 		Reporter.log("Login", true);
-		FileLib fileLib= new FileLib();
-		String url = fileLib.getPropertyData("url");
-		String un = fileLib.getPropertyData("username");
-		String pw = fileLib.getPropertyData("password");
+		logger.info("Login to the Jivi application");
+		
+		configUtility congigUtil =new configUtility();
+		String url = congigUtil.getCongigPropertyData("url");
+		String un = congigUtil.getCongigPropertyData("username");
+		String pw = congigUtil.getCongigPropertyData("password");
+		
+//		FileLib fileLib= new FileLib();
+//		String url = fileLib.getPropertyData("url");
+//		String un = fileLib.getPropertyData("username");
+//		String pw = fileLib.getPropertyData("password");
+		
 		driver.get(url);
 		LoginPage lp=new LoginPage(driver);
 		lp.setLogin(un, pw);
@@ -109,6 +121,7 @@ public class BaseClass {
 	@AfterMethod
 	public void logout() throws InterruptedException {
 		Reporter.log("Logout", true);
+		logger.info("Logout from Jivi application");
 		HomePage hp=new HomePage(driver);
 		hp.setAdmin();
 		Thread.sleep(2000);

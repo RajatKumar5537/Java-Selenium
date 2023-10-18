@@ -1,10 +1,10 @@
 com\AutomationJiviewsGeneric\BaseClass.class
-com\AutomationJiviewsPOM\EmployeeSetupPage.class
-com\AutomationJiviewsPOM\LoginPage.class
 com\AutomationJiviewsPOM\SystemDefinationSkillSetupPage.class
 com\AutomationJiviewsPOM\HomePage.class
 com\AutomationJiviewsPOM\SystemDefinationRoleSetupPage.class
-com\AutomationJiviewsPOM\OrganizationUnitDropDown.class
-com\AutomationJiviewsPOM\jiviewsMainMenuItems.class
 com\AutomationJiviewsGeneric\ListenerImplimentation.class
 com\AutomationJiviewsGeneric\FileLib.class
+com\AutomationJiviewsPOM\EmployeeSetupPage.class
+com\AutomationJiviewsPOM\LoginPage.class
+com\AutomationJiviewsPOM\OrganizationUnitDropDown.class
+com\AutomationJiviewsPOM\jiviewsMainMenuItems.class

@@ -100,6 +100,7 @@ public class skillSetUpTest extends BaseClass{
 	}*/
 	@Test //(priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
 	public void searchColumns() throws InterruptedException, EncryptedDocumentException, IOException {
+		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("searching a skill");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);

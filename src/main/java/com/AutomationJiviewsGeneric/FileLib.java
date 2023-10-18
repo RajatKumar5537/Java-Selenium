@@ -49,7 +49,7 @@ public class FileLib {
 	 * @throws EncryptedDocumentException
 	 * @throws IOException
 	 */
-	public void SETExcelData(String sheet,int row,int cell,String data) throws EncryptedDocumentException, IOException
+	public void setExcelData(String sheet,int row,int cell,String data) throws EncryptedDocumentException, IOException
 	{
 		FileInputStream fis=new FileInputStream(".\\src\\test\\resources\\TestData\\Jivi_Test_Data.xlsx");
 		Workbook wb=WorkbookFactory.create(fis);
