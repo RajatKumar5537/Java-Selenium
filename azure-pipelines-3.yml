@@ -9,7 +9,7 @@ stages:
   jobs:
   - job: SetupChromeDriver
     steps:
-    - script: |
+    - powershell: |
         # Download and install ChromeDriver
         Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
         Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
@@ -22,9 +22,7 @@ stages:
     steps:
     - checkout: self
 
-    - script: |
-        # Add any other setup steps specific to your project
-      displayName: 'Additional Setup'
+    # Add any other setup steps specific to your project
 
     - task: Maven@4
       inputs:
@@ -39,22 +37,6 @@ stages:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
 
-- stage: CodeAnalysis
-  jobs:
-  - job: CodeAnalysis
-    steps:
-    - script: |
-        # Add commands for code analysis (e.g., SonarQube)
-      displayName: 'Code Analysis'
-
-- stage: Deploy
-  jobs:
-  - job: DeployToStaging
-    steps:
-    - script: |
-        # Add commands to deploy to your staging environment
-      displayName: 'Deploy to Staging'
-
 - stage: PublishArtifacts
   jobs:
   - job: Publish
@@ -63,3 +45,8 @@ stages:
       inputs:
         pathtoPublish: '$(System.DefaultWorkingDirectory)'
         artifactName: 'MyJavaArtifacts'
+# Add a step to publish Extent Report artifacts
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
+        artifactName: 'MyExtentReportArtifacts'
