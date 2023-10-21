@@ -20,7 +20,8 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 
-public class WebUtilities {
+
+public class WebUtilities extends BaseClass{
 	/**
 	 * 
 	 * @param driver
@@ -42,13 +43,38 @@ public class WebUtilities {
 	/**
 	 * 
 	 * @param driver
-	 * @param sec
+	 * @param i
 	 * @param element
+	 * @throws Exception 
 	 */
-	public void visibilityOfElement(WebDriver driver,Duration sec,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, sec);
-		wait.until(ExpectedConditions.visibilityOf(element));
+	public void ElementClickable(WebDriver driver,WebElement element) {
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));		
+		wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+	
+	
+	
+	public void visibilityOfElement(WebDriver driver,WebElement element) throws Exception {
+		Duration waitTime = Duration.ofSeconds(10);
+		
+		int a=0;
+		while(a<100)
+		{
+			try
+			{
+				WebDriverWait wait=new WebDriverWait(driver, waitTime);
+			
+				wait.until(ExpectedConditions.visibilityOf(element));
+				break;
+			}
+			catch(Exception e)
+			{
+				a++;
+			}
+		}
+	}
+
+
 	/**
 	 * 
 	 * @param element
@@ -243,7 +269,7 @@ public class WebUtilities {
 	 * @param driver
 	 * @param element
 	 */
-	public void scrollByAction(WebDriver driver,WebElement element) {
+	public void scrollByAction(WebDriver driver,WebElement element) { //....................................................
 		JavascriptExecutor je=(JavascriptExecutor) driver;
 		int loc = element.getLocation().getY();
 		je.executeScript("window.scrollBy(0,"+loc+")", element);
@@ -304,4 +330,54 @@ public class WebUtilities {
 		return path;
 
 	}
+	
+	// Ashok's code 
+	public void scrollIntoeEement(WebElement locator) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",locator);
+	}
+	/*public void scrollUp() {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0,0)");
+
+	}
+
+	public void scrollDown() {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)");
+	}
+	
+	public void scrollDownLittle() {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,500)");
+	}
+	
+	public void scrollDown300() {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)");
+	}
+	
+	public void scrollDown200() {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,200)");
+	}
+	
+	
+	public void scrollIntoeEement(WebElement locator) {
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("arguments[0].scrollIntoView(true);",locator);
+	}
+
+	public void scrollToPosition(int x, int y) {
+
+		WebDriver driver = Browser.getInstance().getDriver();
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(" + x + "," + y + ")");
+	}*/
 }

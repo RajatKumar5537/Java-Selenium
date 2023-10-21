@@ -58,9 +58,7 @@ public class BaseClass {
 		}
 		driver= new ChromeDriver();
 		webUtility.maximizeBrowser(driver);
-//		driver.manage().window().maximize();
 		webUtility.pageLoadWait(driver, 10);
-//		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		logger.info("Browser launched successfully");
 		Reporter.log("Open Browser", true);
 
@@ -102,30 +100,25 @@ public class BaseClass {
 	public void login() throws IOException, InterruptedException {
 		Reporter.log("Login", true);
 		logger.info("Login to the Jivi application");
-		
+
 		configUtility congigUtil =new configUtility();
 		String url = congigUtil.getCongigPropertyData("url");
 		String un = congigUtil.getCongigPropertyData("username");
 		String pw = congigUtil.getCongigPropertyData("password");
-		
-//		FileLib fileLib= new FileLib();
-//		String url = fileLib.getPropertyData("url");
-//		String un = fileLib.getPropertyData("username");
-//		String pw = fileLib.getPropertyData("password");
-		
 		driver.get(url);
 		LoginPage lp=new LoginPage(driver);
 		lp.setLogin(un, pw);
 	}
 
 	@AfterMethod
-	public void logout() throws InterruptedException {
+	public void logout() throws Exception {
 		Reporter.log("Logout", true);
 		logger.info("Logout from Jivi application");
-		HomePage hp=new HomePage(driver);
-		hp.setAdmin();
-		Thread.sleep(2000);
-		hp.setLogout();
+//		HomePage hp=new HomePage(driver);
+//		Thread.sleep(2000);
+//		hp.setAdmin();
+//		Thread.sleep(2000);
+//		hp.setLogout();
 
 
 	}

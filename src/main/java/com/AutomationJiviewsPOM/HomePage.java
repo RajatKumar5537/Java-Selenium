@@ -8,9 +8,11 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class HomePage extends BaseClass{
 	Actions action;
+	WebUtilities webUtility;
 
 	@FindBy(xpath = "//a[@class='nav-link dropdown-toggle']")
 	private WebElement admin;
@@ -23,26 +25,30 @@ public class HomePage extends BaseClass{
 
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.webUtility= new WebUtilities();
 	}
 
-	public void setOrgUnit() throws InterruptedException {
 
-//		Actions a=new Actions(driver);
-//		a.moveToElement(OrgUnit).perform();
-		Thread.sleep(5000);
+
+	public void setOrgUnit() throws Exception {
+	//	webUtility.visibilityOfElement(driver, OrgUnit);
+		webUtility.ElementClickable(driver, OrgUnit);
+//		Thread.sleep(3000);
 		OrgUnit.click();
 	}	
-
 	public void setAdmin() throws InterruptedException {
-		Thread.sleep(2000);
-		action= new Actions(driver);
-		action.moveToElement(admin).perform();
+		webUtility.moveToElement(driver, admin);
 		admin.click();
 	}
+
+//	public void setAdmin() throws InterruptedException {
+//		Thread.sleep(2000);
+//		action= new Actions(driver);
+//		action.moveToElement(admin).perform();
+//		admin.click();
+//	}
 	public void setLogout() throws InterruptedException {
-		Thread.sleep(2000);
-		action= new Actions(driver);
-		action.moveToElement(Logout).perform();
+		Thread.sleep(1000);
 		Logout.click();
 	}
 }

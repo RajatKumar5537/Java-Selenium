@@ -8,6 +8,7 @@ import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.ie.InternetExplorerDriver;
@@ -18,6 +19,8 @@ import org.testng.Reporter;
 import org.testng.annotations.Test;
 
 import com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class AzurePractice { 
@@ -53,8 +56,10 @@ public class AzurePractice {
 	
 		@Test
 		public void practice() throws InterruptedException, AWTException {
-			FirefoxOptions options = new FirefoxOptions();
-			WebDriver d = new FirefoxDriver(options);
+//			FirefoxOptions options = new FirefoxOptions();
+			WebDriverManager.chromedriver().setup();
+			ChromeOptions option=new ChromeOptions();
+			WebDriver d = new ChromeDriver(option);
 
 			d.manage().window().maximize();
 			d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));

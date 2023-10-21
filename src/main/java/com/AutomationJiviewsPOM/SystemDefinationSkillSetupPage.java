@@ -1,9 +1,7 @@
 package com.AutomationJiviewsPOM;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -11,15 +9,16 @@ import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.FileLib;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 
 public class SystemDefinationSkillSetupPage extends BaseClass {
-	
-	public SystemDefinationSkillSetupPage sds;
-	ExcelUtilities excelUtility= new ExcelUtilities();
+
 	String timeStamp = LocalDateTime.now().toString();
-	
+	public SystemDefinationSkillSetupPage sds;
+	public ExcelUtilities excelUtility;
+	public WebUtilities webUtility;
+
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
 
@@ -43,7 +42,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 	@FindBy(id = "btnSaveSkill")
 	private WebElement saveBtn;
-	
+
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
@@ -64,20 +63,31 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 	public SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.webUtility= new WebUtilities();
+		this.excelUtility= new ExcelUtilities();
 	}
 
-	public void addBtn() {
+	public void addBtn() throws Exception {
+		//		Duration waitTime = Duration.ofSeconds(10);
+		webUtility.visibilityOfElement(driver, addBtn);
 		addBtn.click();
 	}
 
-	public void skillCode(String skillCodeData) {
+	//	public void skillCode(String skillCodeData) {
+	//		skillCode.clear();
+	//		skillCode.sendKeys(skillCodeData);
+	//	}
+	public void skillCode(String skillCodeData, String timeStamp) throws Exception {
+		//		Duration waitTime = Duration.ofSeconds(10);
+		webUtility.visibilityOfElement(driver,skillCode);
 		skillCode.clear();
-		skillCode.sendKeys(skillCodeData);
+		skillCode.sendKeys(skillCodeData + " " + timeStamp);
 	}
 
-	public void skillDescription(String skillDescriptionData) {
+
+	public void skillDescription(String skillDescriptionData, String timeStamp) {
 		skillDescription.clear();
-		skillDescription.sendKeys(skillDescriptionData);
+		skillDescription.sendKeys(skillDescriptionData + " "+ timeStamp);
 	}
 
 	public void sequence(String sequenceData) {
@@ -89,25 +99,30 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		ColourCode.sendKeys("");
 	}
 
-	public void wageLevelCode(String wageLevelCodedata) {
+	public void wageLevelCode(String wageLevelCodedata, String timeStamp) {
 		wageLevelCode.clear();
-		wageLevelCode.sendKeys(wageLevelCodedata);
+		wageLevelCode.sendKeys(wageLevelCodedata+ " "+ timeStamp);
 	}
-	public void isActiveOption() {
+	public void isActiveOption() throws Exception {
+		webUtility.visibilityOfElement(driver, isActiveOption);
 		isActiveOption.click();
 
 	}
-	public void saveBtn() {
+	public void saveBtn() throws Exception {
+		webUtility.visibilityOfElement(driver,saveBtn);
 		saveBtn.click();
 	}
-	
-	public void setNotificationPopup() {
+
+	public void setNotificationPopup() throws Exception {
+		webUtility.visibilityOfElement(driver, notificationPopup);
 		notificationPopup.click();
 	}
-	public void setEditBtn() {
+	public void setEditBtn() throws Exception {
+		webUtility.visibilityOfElement(driver, editBtn);
 		editBtn.click();
 	}
-	public void setcheckBox()  {
+	public void setcheckBox() throws Exception  {
+		webUtility.visibilityOfElement(driver, checkBox);
 		checkBox.click();
 	}
 
@@ -118,7 +133,8 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		clickYes.click();
 	}
 
-	public void setSearchColumn(String searchColumnsData) {
+	public void setSearchColumn(String searchColumnsData) throws Exception {
+		webUtility.visibilityOfElement(driver, searchColumns);
 		searchColumns.clear();
 		searchColumns.sendKeys(searchColumnsData);
 
@@ -126,30 +142,100 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 
 	public void setNewSkill() throws Exception {
+
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
+		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
+		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
+		sds=new SystemDefinationSkillSetupPage(driver);
+		String timeStamp = LocalDateTime.now().toString();
+
+		sds.addBtn();
+		driver.getWindowHandle();
+		sds.skillCode(skillCodeData,timeStamp);
+		sds.skillDescription(skillDescriptionData, timeStamp);
+		sds.sequence(sequenceData );
+		sds.coloreCode();
+		sds.wageLevelCode(wageLevelCodedata,timeStamp);
+		//	sds.isActiveOption();
+
+		sds.saveBtn();
+		sds.setNotificationPopup();
+	}
+	public void setUpdateSkill() throws Exception {
+
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
+		//		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 4, 9);
+		//		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 11);
+
+		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+//		Thread.sleep(2000);
+		sds.setEditBtn();
+		driver.getWindowHandle();
+//		Thread.sleep(2000);
+		sds.skillCode(skillCodeData, timeStamp);
+		sds.skillDescription(skillDescriptionData ,timeStamp);
+		sds.saveBtn();
+		sds.setNotificationPopup();
+
+	}
+
+	public void setDeactiveSkil() throws Exception {
+
+
+
+		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+//		here we just need to select the skill code, no need to pass anything 
+//		Thread.sleep(2000);
+		sds.setcheckBox();
+		sds.setDeleteBtn();
+		sds.setClickYes();
+		sds.setNotificationPopup();
+
+	}
+	public void setActivateDeactiveSkill() throws Exception {
+
+		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+//		Thread.sleep(2000);
+		sds.setEditBtn();
+		sds.isActiveOption();
+		sds.saveBtn();
+		sds.setNotificationPopup();
+
+	}
+
+	public void setSearchColumns() throws Exception {
+		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		sds.setSearchColumn(searchColumnsData);
+	}
+	
+	/*	public void setNewSkill() throws Exception {
 //		FileLib f=new FileLib();
 //		String skillCodeData = f.getExcelData("EmployeeTest", 3, 7);
 //		String skillDescriptionData = f.getExcelData("EmployeeTest", 3, 8);
 //		String sequenceData = f.getExcelData("EmployeeTest", 3, 9);
 //		String wageLevelCodedata = f.getExcelData("EmployeeTest", 3, 11);
 
-		
-		
+
+
 		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
 		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
 		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
-		
+
 		sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(2000);
 		sds.addBtn();
 		String timeStamp = LocalDateTime.now().toString();
 		driver.getWindowHandle();
 		Thread.sleep(2000);
-		sds.skillCode(skillCodeData+ " " + timeStamp);
-		sds.skillDescription(skillDescriptionData+ " " + timeStamp);
+		sds.skillCode(skillCodeData,timeStamp);
+		sds.skillDescription(skillDescriptionData, timeStamp);
 		sds.sequence(sequenceData );
 		sds.coloreCode();
-		sds.wageLevelCode(wageLevelCodedata+ " " + timeStamp);
+		sds.wageLevelCode(wageLevelCodedata,timeStamp);
 		//	sds.isActiveOption();
 
 		Thread.sleep(2000);
@@ -157,13 +243,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		sds.setNotificationPopup();
 	}
 	public void setUpdateSkill() throws Exception {
-//		FileLib f=new FileLib();
-		
-//		String skillCodeData = f.getExcelData("EmployeeTest", 4, 7);
-//		String setSkillDescData = f.getExcelData("EmployeeTest", 4, 8);
-		//	String sequenceData = f.getExcelData("EmployeeTest", 4, 9);
-		//	String wageLevelCodedata = f.getExcelData("EmployeeTest", 4, 11);
-		
+
 		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
 		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
 //		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 4, 9);
@@ -172,48 +252,34 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(2000);
 		sds.setEditBtn();
-		sds.skillCode(skillCodeData + " " + timeStamp);
-		sds.skillDescription(skillDescriptionData + " " + timeStamp);
+		sds.skillCode(skillCodeData, timeStamp);
+		sds.skillDescription(skillDescriptionData , timeStamp);
 		sds.saveBtn();
 		sds.setNotificationPopup();
 
 	}
 
-	public void setDeactiveSkil() throws InterruptedException, EncryptedDocumentException, IOException {
-
-		//		fileLib f=new fileLib();
-		//		String skillCodeData = f.getExcelData("SkillData", 2, 5);
-
+	public void setDeactiveSkil() throws Exception {
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-		//		here we just need to select the skill code, no need to pass anything 
+		//		here we just need to select the skill code, no need to pass any skill name 
 		Thread.sleep(2000);
 		sds.setcheckBox();
 
-//				for(; ; ) {
-//					try {
-//						Thread.sleep(2000);
-//						selectSkillCode.click();
-//						break;
-//					} catch (Exception e) {
-//						Thread.sleep(2000);
-//						clickNextBtn.click();
-//					}
-//				}
 		sds.setDeleteBtn();
 		sds.setClickYes();
 		sds.setNotificationPopup();
 
 	}
-	public void setActivateDeactiveSkill() throws InterruptedException {
+	public void setActivateDeactiveSkill() throws Exception {
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 		sds.setEditBtn();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		sds.isActiveOption();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		sds.saveBtn.click();
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		sds.setNotificationPopup();
 
 	}
@@ -221,12 +287,12 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	public void setSearchColumns() throws Exception {
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 //		FileLib f=new FileLib();
-		
+
 //		String searchColumnsData = f.getExcelData("EmployeeTest", 3, 7);
 		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		Thread.sleep(2000);
 		sds.setSearchColumn(searchColumnsData);
-		
 
-	}
+
+	}*/
 }
