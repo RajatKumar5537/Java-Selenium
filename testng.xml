@@ -4,7 +4,7 @@
 	</listeners>
   <test thread-count="5" name="Test">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest"/>
+      <class name="com.practice.TestScriptPractice"/>
     
     </classes>
   </test> <!-- Test -->
