@@ -1,7 +1,6 @@
 package com.practice;
 
 import java.awt.AWTException;
-import java.lang.module.FindException;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
@@ -11,10 +10,8 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.interactions.Actions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
-import com.AutomationJiviewsGeneric.BaseClass;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 

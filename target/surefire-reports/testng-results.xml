@@ -17,12 +17,12 @@
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-23T06:51:00Z" name="Suite" finished-at="2023-10-23T06:51:33Z" duration-ms="32694">
+  <suite started-at="2023-10-23T07:11:24Z" name="Suite" finished-at="2023-10-23T07:11:56Z" duration-ms="31320">
     <groups>
     </groups>
-    <test started-at="2023-10-23T06:51:00Z" name="Test" finished-at="2023-10-23T06:51:33Z" duration-ms="32694">
+    <test started-at="2023-10-23T07:11:24Z" name="Test" finished-at="2023-10-23T07:11:56Z" duration-ms="31320">
       <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T06:51:00Z" name="launchBrowser" finished-at="2023-10-23T06:51:02Z" duration-ms="2112" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T07:11:24Z" name="launchBrowser" finished-at="2023-10-23T07:11:26Z" duration-ms="1785" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -32,25 +32,25 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T06:51:02Z" name="login" finished-at="2023-10-23T06:51:16Z" duration-ms="13215" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T07:11:26Z" name="login" finished-at="2023-10-23T07:11:40Z" duration-ms="13398" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createShiftBandDefinition()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T06:51:16Z" name="createShiftBandDefinition" finished-at="2023-10-23T06:51:33Z" duration-ms="17079" status="PASS">
+        <test-method signature="createShiftBandDefinition()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T07:11:40Z" name="createShiftBandDefinition" finished-at="2023-10-23T07:11:55Z" duration-ms="15847" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createShiftBandDefinition -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T06:51:33Z" name="closeBrowser" finished-at="2023-10-23T06:51:33Z" duration-ms="191" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T07:11:55Z" name="closeBrowser" finished-at="2023-10-23T07:11:56Z" duration-ms="207" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T06:51:33Z" name="logout" finished-at="2023-10-23T06:51:33Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@45905bff]" started-at="2023-10-23T07:11:55Z" name="logout" finished-at="2023-10-23T07:11:55Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
