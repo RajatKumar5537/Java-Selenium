@@ -1,6 +1,7 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
@@ -36,30 +37,29 @@ public class skillSetUpTest extends BaseClass{
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(1000);
 		esp.setCreateSkill();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		sds.setNewSkill();
 		logger.info("A skill is created successfully ");
 
 	}
-/*	@Test (priority = 2, dependsOnMethods = "createNewSkill")
+	@Test (priority = 2, dependsOnMethods = "createNewSkill")
 	public void updateSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
 		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
-//		Thread.sleep(1000);
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
+		Thread.sleep(1000);
 		hp.setOrgUnit();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		oudd.setOLMop();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		esp.setCreateSkill();
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		sds.setUpdateSkill();
 	}
 
@@ -71,17 +71,17 @@ public class skillSetUpTest extends BaseClass{
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
 		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
-//		Thread.sleep(2000);
+		Thread.sleep(2000);
 		hp.setOrgUnit();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		oudd.setOLMop();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		esp.setCreateSkill();
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		sds.setDeactiveSkil();
 	}
 	@Test (priority = 4, dependsOnMethods = {"createNewSkill","updateSkill","deActiveSkill"})
@@ -92,10 +92,15 @@ public class skillSetUpTest extends BaseClass{
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
 		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+		Thread.sleep(2000);
 		hp.setOrgUnit();
+		Thread.sleep(2000);
 		oudd.setOLMop();
+		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
+		Thread.sleep(2000);
 		esp.setCreateSkill();
+		Thread.sleep(2000);
 		sds.setActivateDeactiveSkill();
 	}
 	@Test (priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
@@ -118,5 +123,5 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(1000);
 		sds.setSearchColumns();
 		logger.info("searching a skill is successfull");
-	}*/
+	}
 }

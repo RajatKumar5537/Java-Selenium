@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="7" passed="3" failed="0" skipped="0">
+<testng-results ignored="4" total="11" passed="7" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -26,26 +26,122 @@
       <![CDATA[Logout]]>
     </line>
     <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
+    <line>
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-23T08:16:24Z" name="Suite" finished-at="2023-10-23T08:17:49Z" duration-ms="84986">
+  <suite started-at="2023-10-23T08:39:14Z" name="Suite" finished-at="2023-10-23T08:41:52Z" duration-ms="157977">
     <groups>
     </groups>
-    <test started-at="2023-10-23T08:16:24Z" name="Test" finished-at="2023-10-23T08:17:49Z" duration-ms="84986">
+    <test started-at="2023-10-23T08:39:14Z" name="Test" finished-at="2023-10-23T08:41:52Z" duration-ms="157977">
       <class name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@66b7550d]" started-at="2023-10-23T08:17:32Z" name="login" finished-at="2023-10-23T08:17:34Z" duration-ms="1498" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:19Z" name="login" finished-at="2023-10-23T08:40:21Z" duration-ms="1740" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@66b7550d]" started-at="2023-10-23T08:17:34Z" name="createNewSkill" finished-at="2023-10-23T08:17:49Z" duration-ms="15182" status="PASS">
+        <test-method signature="createNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:21Z" name="createNewSkill" finished-at="2023-10-23T08:40:37Z" duration-ms="16474" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createNewSkill -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@66b7550d]" started-at="2023-10-23T08:17:49Z" name="logout" finished-at="2023-10-23T08:17:49Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:37Z" name="logout" finished-at="2023-10-23T08:40:37Z" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:37Z" name="login" finished-at="2023-10-23T08:40:39Z" duration-ms="1635" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="updateSkill()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:39Z" name="updateSkill" finished-at="2023-10-23T08:40:54Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.createNewSkill" duration-ms="15227" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateSkill -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:54Z" name="logout" finished-at="2023-10-23T08:40:54Z" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:54Z" name="login" finished-at="2023-10-23T08:40:57Z" duration-ms="2584" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="deActiveSkill()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:40:57Z" name="deActiveSkill" finished-at="2023-10-23T08:41:12Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.createNewSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.updateSkill" duration-ms="15380" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deActiveSkill -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:12Z" name="logout" finished-at="2023-10-23T08:41:12Z" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:12Z" name="login" finished-at="2023-10-23T08:41:14Z" duration-ms="2425" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="setReActiveSkill()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:14Z" name="setReActiveSkill" finished-at="2023-10-23T08:41:34Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.createNewSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.updateSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.deActiveSkill" duration-ms="19837" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setReActiveSkill -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:34Z" name="logout" finished-at="2023-10-23T08:41:34Z" duration-ms="0" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:34Z" name="login" finished-at="2023-10-23T08:41:37Z" duration-ms="2722" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="searchColumns()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:37Z" name="searchColumns" finished-at="2023-10-23T08:41:52Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.setReActiveSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.createNewSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.updateSkill, com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.deActiveSkill" duration-ms="14518" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchColumns -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@698122b2]" started-at="2023-10-23T08:41:52Z" name="logout" finished-at="2023-10-23T08:41:52Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
@@ -54,7 +150,7 @@
         </test-method> <!-- logout -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest -->
       <class name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@2ccca26f]" started-at="2023-10-23T08:16:24Z" name="launchBrowser" finished-at="2023-10-23T08:16:26Z" duration-ms="1780" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@3542162a]" started-at="2023-10-23T08:39:14Z" name="launchBrowser" finished-at="2023-10-23T08:39:16Z" duration-ms="1743" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -64,25 +160,25 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@2ccca26f]" started-at="2023-10-23T08:16:26Z" name="login" finished-at="2023-10-23T08:16:43Z" duration-ms="17048" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@3542162a]" started-at="2023-10-23T08:39:16Z" name="login" finished-at="2023-10-23T08:39:28Z" duration-ms="12143" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="verifyCreateNewRole()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@2ccca26f]" started-at="2023-10-23T08:16:43Z" name="verifyCreateNewRole" finished-at="2023-10-23T08:17:10Z" duration-ms="26971" status="PASS">
+        <test-method signature="verifyCreateNewRole()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@3542162a]" started-at="2023-10-23T08:39:28Z" name="verifyCreateNewRole" finished-at="2023-10-23T08:39:57Z" duration-ms="28738" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateNewRole -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@2ccca26f]" started-at="2023-10-23T08:17:10Z" name="logout" finished-at="2023-10-23T08:17:10Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@3542162a]" started-at="2023-10-23T08:39:57Z" name="logout" finished-at="2023-10-23T08:39:57Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@2ccca26f]" started-at="2023-10-23T08:17:49Z" name="closeBrowser" finished-at="2023-10-23T08:17:49Z" duration-ms="203" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest@3542162a]" started-at="2023-10-23T08:41:52Z" name="closeBrowser" finished-at="2023-10-23T08:41:52Z" duration-ms="184" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
@@ -91,18 +187,18 @@
         </test-method> <!-- closeBrowser -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest -->
       <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup">
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@3543df7d]" started-at="2023-10-23T08:17:10Z" name="login" finished-at="2023-10-23T08:17:12Z" duration-ms="2006" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@4212a0c8]" started-at="2023-10-23T08:39:57Z" name="login" finished-at="2023-10-23T08:39:59Z" duration-ms="2299" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="createShiftBandDefinition()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@3543df7d]" started-at="2023-10-23T08:17:12Z" name="createShiftBandDefinition" finished-at="2023-10-23T08:17:32Z" duration-ms="20200" status="PASS">
+        <test-method signature="createShiftBandDefinition()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@4212a0c8]" started-at="2023-10-23T08:39:59Z" name="createShiftBandDefinition" finished-at="2023-10-23T08:40:19Z" duration-ms="20213" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- createShiftBandDefinition -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@3543df7d]" started-at="2023-10-23T08:17:32Z" name="logout" finished-at="2023-10-23T08:17:32Z" duration-ms="3" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.RoaserSetup@4212a0c8]" started-at="2023-10-23T08:40:19Z" name="logout" finished-at="2023-10-23T08:40:19Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
