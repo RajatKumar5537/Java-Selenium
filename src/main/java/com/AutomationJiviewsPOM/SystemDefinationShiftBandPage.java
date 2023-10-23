@@ -56,9 +56,11 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	private WebElement selectEndTime;
 	
 	
+	@FindBy(xpath = "//input[@id='txtStartRangeBegin']")
+	private WebElement startRangeBegin;
 	
-	
-	
+	@FindBy(xpath = "//input[@id='txtStartRangeEnd']")
+	private WebElement startRangeEnd;	
 	
 	
 	@FindBy(xpath = "//input[@name='endRangeBegin']")
@@ -67,6 +69,8 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(xpath = "//input[@name='endRangeEnd']")
 	private WebElement endRangeEnd;
 	
+	@FindBy(id = "btnSaveshiftbandDtls")
+	WebElement btnSaveshiftbandDtls;
 	
 	public SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -115,6 +119,20 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		js.executeScript("arguments[0].scrollIntoView(true);",selectEndTime);
 		selectEndTime.click();
 	}
+	
+	public void setStartRangeBegin() {
+		action.moveToElement(startRangeBegin).perform();
+		startRangeBegin.clear();
+		startRangeBegin.sendKeys("6:59");
+		startRangeBegin.click();
+	}
+	public void setStartRangeEnd() {
+		action.moveToElement(startRangeEnd).perform();
+		startRangeEnd.clear();
+		startRangeEnd.sendKeys("6:59");
+		startRangeEnd.click();
+	}
+	
 	public void setEndRangeBegin() {
 		action.moveToElement(endRangeBegin).perform();
 		endRangeBegin.clear();
@@ -128,6 +146,9 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		endRangeEnd.click();
 	}
 	
+	public void setBtnSaveshiftbandDtls() {
+		btnSaveshiftbandDtls.click();
+	}
 	public void createShiftBandDefinition() {
 		sb= new SystemDefinationShiftBandPage(driver);
 		sb.setAddBtn();
@@ -141,7 +162,10 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setSelectStartTime();
 		sb.setEndTime();
 		sb.setSelectEndTime();
+		sb.setStartRangeBegin();
+		sb.setStartRangeEnd();
 		sb.setEndRangeBegin();
-		setEndRangeEnd();
+		sb.setEndRangeEnd();
+		sb.setBtnSaveshiftbandDtls();
 	}
 }
