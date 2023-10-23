@@ -22,11 +22,15 @@ public class RoaserSetup extends BaseClass{
 //		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
 		RosterSetupPage rsp= new RosterSetupPage(driver);
 		SystemDefinationShiftBandPage sb= new SystemDefinationShiftBandPage(driver);
-
+		Thread.sleep(2000);
 		hp.setOrgUnit();
+		Thread.sleep(2000);
 		oudd.setOLMop();
+		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
+		Thread.sleep(2000);
 		rsp.setCreateRoasterShiftBand();
+		Thread.sleep(2000);
 		sb.createShiftBandDefinition();
 
 

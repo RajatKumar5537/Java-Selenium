@@ -1,11 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <suite name="Suite">
 	<listeners>
-	<listener class-name="com.AutomationJiviewsGeneric.ListenerImplimentation"/>
+		<listener
+			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-  <test thread-count="5" name="Test">
-    <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup"/>
-    
-    </classes>
-  </test> <!-- Test -->
-</suite> <!-- Suite -->
+	<test thread-count="5" name="Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest" />
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup" />
+		</classes>
+	</test> <!--
+	Test -->
+</suite> <!--
+Suite -->

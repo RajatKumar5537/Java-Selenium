@@ -1,5 +1,7 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.LocalDateTime;
+
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,7 +12,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.AutomationJiviewsGeneric.BaseClass;
 
 public class SystemDefinationShiftBandPage  extends BaseClass{
-	
+	String timeStamp = LocalDateTime.now().toString();
 	Actions action= new Actions(driver);
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	SystemDefinationShiftBandPage sb;

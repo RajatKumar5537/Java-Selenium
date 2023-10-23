@@ -1,9 +1,7 @@
 package com.AutomationJiviewsPOM;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
 
-import org.apache.poi.EncryptedDocumentException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -12,12 +10,14 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FileLib;
 
 public class SystemDefinationRoleSetupPage extends BaseClass{
 	public static Actions action;
 	public static Select select;
 	public static FileLib fileLib;
+	public ExcelUtilities excelUtility;
 	public static String timeStamp ;
 	public static SystemDefinationRoleSetupPage sdrs;
 	public String roleNameData;
@@ -79,7 +79,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	@FindBy(xpath = "//button[@id='btnSaveRolesDetails']/span")
 	private WebElement saveBTN;
-	
+
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
@@ -106,6 +106,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public SystemDefinationRoleSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.excelUtility= new ExcelUtilities();
 	}
 
 
@@ -212,7 +213,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setSaveBTN() {
 		saveBTN.click();
 	}
-	
+
 	public void setNotificationPopup() {
 		notificationPopup.click();
 	}
@@ -243,16 +244,23 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setCancelBTN() {
 		cancelBTN.click();
 	}
-	/*public void setCreateNewRole() throws EncryptedDocumentException, IOException, InterruptedException {
-
-		fileLib=new FileLib();
+	public void setCreateNewRole() throws Exception {
+		//
+		//		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+		//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+		//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+		//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+		//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+		//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+		//		
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
 		sdrs.setAddBtn();
@@ -276,15 +284,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	}
 
-	public void setUpdateRole() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setUpdateRole() throws Exception {
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 7, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 7, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 7, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 7, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 7, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 7, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
+
 
 
 		sdrs.setEditBTN();
@@ -322,16 +337,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setNotificationPopup();
 	}
 
-	public void setCreateNewRoleWithoutPriarySkill() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setCreateNewRoleWithoutPriarySkill() throws Exception {
 
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
+
 
 
 		sdrs.setAddBtn();
@@ -353,17 +374,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 
-	public void setCreateNewRoleWithoutRoleName() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setCreateNewRoleWithoutRoleName() throws Exception {
 
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 		sdrs.setAddBtn();
 		//		Thread.sleep(2000);
@@ -382,16 +408,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setNotificationPopup();
 
 	}
-	public void setCreateNewRoleWithoutRoleDescription() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setCreateNewRoleWithoutRoleDescription() throws Exception {
 
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
 		sdrs.setAddBtn();
@@ -412,16 +444,23 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	}
 
-	public void setCreateNewRoleWithoutSecondarySkillEmpty() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setCreateNewRoleWithoutSecondarySkillEmpty() throws Exception {
 
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
+
 
 
 		sdrs.setAddBtn();
@@ -443,16 +482,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	// All Availble skiil should move to secondary skill
-	public void setCreateNewRoleWithAllAvailableSkill() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setCreateNewRoleWithAllAvailableSkill() throws Exception {
 
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
 		sdrs.setAddBtn();
@@ -474,16 +519,22 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	}
 
-	public void setDisSelectSingleSkillFromSelectedSkill() throws EncryptedDocumentException, IOException, InterruptedException {
+	public void setDisSelectSingleSkillFromSelectedSkill() throws Exception {
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 		sdrs.setAddBtn();
 		Thread.sleep(2000);
@@ -505,15 +556,21 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setNotificationPopup();
 	}
 
-	public void setDisselectAllAvailableSkill() throws InterruptedException, EncryptedDocumentException, IOException {
+	public void setDisselectAllAvailableSkill() throws Exception {
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
+//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
+//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
+//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
+
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
+		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
+		preparationTimeData =excelUtility.readDataFromExcelFile("EmployeeTest", 6, 9);
+		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
+		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
 		sdrs.setAddBtn();
@@ -536,13 +593,13 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setNotificationPopup();
 	}
 
-	public void setSearchColumnsForRole() throws EncryptedDocumentException, IOException {
-		fileLib=new FileLib();
+	public void setSearchColumnsForRole() throws Exception {
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 
-		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
+		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 
 		sdrs.setSearchColumns(roleNameData);
 
-	}*/
+	}
 }

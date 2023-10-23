@@ -1,8 +1,5 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
-import java.io.IOException;
-
-import org.apache.poi.EncryptedDocumentException;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -20,22 +17,25 @@ public class roleSetUpTest extends BaseClass{
 	public EmployeeSetupPage esp;
 	public SystemDefinationRoleSetupPage sdrs;
 
-//	@Test
-/*	public void verifyCreateNewRole() throws InterruptedException, EncryptedDocumentException, IOException {
+	@Test
+	public void verifyCreateNewRole() throws Exception {
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		esp=new EmployeeSetupPage(driver);
 		sdrs= new SystemDefinationRoleSetupPage(driver);
-
+		Thread.sleep(2000);
 		hp.setOrgUnit();
+		Thread.sleep(2000);
 		oudd.setOLMop();
+		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
+		Thread.sleep(2000);
 		esp.setCreateRole();
 		sdrs.setCreateNewRole();
 	}
 
-	@Test(priority = 2)
+	/*@Test(priority = 2)
 
 	public void verifyUpdateRole() throws InterruptedException, EncryptedDocumentException, IOException {
 		hp=new HomePage(driver);
@@ -190,7 +190,7 @@ public class roleSetUpTest extends BaseClass{
 		jmmi= new jiviewsMainMenuItems(driver);
 		esp=new EmployeeSetupPage(driver);
 		sdrs= new SystemDefinationRoleSetupPage(driver);
-		
+
 		hp.setOrgUnit();
 		oudd.setOLMop();
 		jmmi.clickOnSystemDefination();

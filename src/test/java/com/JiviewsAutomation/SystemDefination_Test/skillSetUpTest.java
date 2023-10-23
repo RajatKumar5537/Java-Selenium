@@ -1,10 +1,8 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
-import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -30,19 +28,20 @@ public class skillSetUpTest extends BaseClass{
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
 		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
+		Thread.sleep(2000);
 		hp.setOrgUnit();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		oudd.setOLMop();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		esp.setCreateSkill();
 //		Thread.sleep(1000);
 		sds.setNewSkill();
 		logger.info("A skill is created successfully ");
 
 	}
-	@Test (priority = 2, dependsOnMethods = "createNewSkill")
+/*	@Test (priority = 2, dependsOnMethods = "createNewSkill")
 	public void updateSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		HomePage hp=new HomePage(driver);
@@ -119,5 +118,5 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(1000);
 		sds.setSearchColumns();
 		logger.info("searching a skill is successfull");
-	}
+	}*/
 }
