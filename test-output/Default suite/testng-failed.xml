@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="createShiftBandDefinition"/>
+          <include name="verifyDeactiveShiftBand"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.RoaserSetup -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

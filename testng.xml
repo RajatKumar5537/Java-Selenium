@@ -1,17 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
+
 	<test thread-count="5" name="Test">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest" />
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest" />
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetup" />
+				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
 		</classes>
 	</test> <!--
 	Test -->

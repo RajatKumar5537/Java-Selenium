@@ -92,7 +92,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnDeleteRoles']/span")
 	private WebElement deleteBTN;
 
-	@FindBy(xpath = "//button[.='Yes']")
+	@FindBy(xpath = "//button[text()='Yes']")
 	private WebElement clickYes;
 
 	@FindBy(xpath = "//span[.='Is Active?']")
@@ -161,18 +161,13 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("75");	
+		select.selectByValue("271");	
 	}
 	// scroll down the page and select for move multiple skill from available skill table to Selected skiil table 
 	public void setAvailableSkillForMultipleSkill() {
 		action= new Actions(driver);
 		action.scrollToElement(availableSkill).perform();
 
-		//		select=new Select(availableSkill);
-		//		List<WebElement> allOptions = select.getAllSelectedOptions();
-		//		for ( WebElement option:allOptions) {
-		//			select.selectByVisibleText(option.getText());
-		//		}
 	}
 	//	move skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
@@ -245,16 +240,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		cancelBTN.click();
 	}
 	public void setCreateNewRole() throws Exception {
-		//
-		//		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-		//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-		//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-		//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-		//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-		//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
-		//		
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -288,11 +275,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 7, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 7, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 7, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 7, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -313,7 +295,9 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		sdrs.setPrimarySkillID();
 		sdrs.setSelectSkillCode();
 		sdrs.setRoleWaightage(roleWaightageData);
+		Thread.sleep(2000);
 		sdrs.setAvailableSkillForSingleSkill();
+		Thread.sleep(2000);
 		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
 		sdrs.setSaveBTN();
 		sdrs.setNotificationPopup();
@@ -341,11 +325,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -378,12 +357,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
-
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -413,11 +386,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -449,11 +417,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -487,11 +450,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -523,12 +481,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
-
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -560,11 +512,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
-//		roleDescriptionData = fileLib.getExcelData("EmployeeTest", 6, 8);
-//		preparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 9);
-//		depreparationTimeData = fileLib.getExcelData("EmployeeTest", 6, 10);
-//		roleWaightageData = fileLib.getExcelData("EmployeeTest", 6, 11);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -596,7 +543,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setSearchColumnsForRole() throws Exception {
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 
-//		roleNameData = fileLib.getExcelData("EmployeeTest", 6, 7);
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 
 		sdrs.setSearchColumns(roleNameData);

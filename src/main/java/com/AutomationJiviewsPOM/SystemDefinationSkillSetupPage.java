@@ -37,7 +37,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	@FindBy(id = "txtFixedRanking")
 	private WebElement wageLevelCode;
 
-	@FindBy(xpath = "//span[.='Is Active?']")
+	@FindBy(xpath = "//input[@id='chkIsActive']")
 	private WebElement isActiveOption;
 
 	@FindBy(id = "btnSaveSkill")
@@ -68,7 +68,6 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void addBtn() throws Exception {
-		//		Duration waitTime = Duration.ofSeconds(10);
 		webUtility.visibilityOfElement(driver, addBtn);
 		addBtn.click();
 	}
@@ -182,8 +181,6 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void setDeactiveSkil() throws Exception {
-
-
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 //		here we just need to select the skill code, no need to pass anything 

@@ -16,9 +16,15 @@ public class OrganizationUnitDropDown extends BaseClass{
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[1]")
 	private WebElement demoOp;
 
-	// Select EFD Option
+	
+//	select Auto OU
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
-	private WebElement EFDoption;
+	private WebElement autoOu;
+	
+	
+//	// Select EFD Option
+//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
+//	private WebElement EFDoption;
 
 	// Select HSSE Division 
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
@@ -49,21 +55,26 @@ public class OrganizationUnitDropDown extends BaseClass{
 	public void setDemo() {
 		demoOp.click();
 	}
-
-	// for EFD
-	public void setEFDoption() {
-		EFDoption.click();
+	
+//	for Auto OU
+	public void setautoOu() {
+		autoOu.click();
 	}
+
+//	// for EFD
+//	public void setEFDoption() {
+//		EFDoption.click();
+//	}
 
 	// HSSE Division
 	public void setHSSEdivision() {
 		HSSEdivision.click();
 	}
 
-	public void setOLMop() throws InterruptedException  {
+	public void setAutoOu() throws InterruptedException  {
 //		Thread.sleep(2000);
-		webUtility.ElementClickable(driver, OLMop);
-		OLMop.click();			
+		webUtility.ElementClickable(driver, autoOu);
+		autoOu.click();			
 	}
 
 	// Operator 

@@ -27,7 +27,7 @@ public class roleSetUpTest extends BaseClass{
 		Thread.sleep(2000);
 		hp.setOrgUnit();
 		Thread.sleep(2000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(2000);
@@ -35,166 +35,166 @@ public class roleSetUpTest extends BaseClass{
 		sdrs.setCreateNewRole();
 	}
 
-	/*@Test(priority = 2)
-
-	public void verifyUpdateRole() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setUpdateRole();
-	}
-
-	@Test(priority = 3)
-	public void verifyDeactiveRole() throws InterruptedException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setDeactiveRole();
-	}
-
-	@Test(priority = 4)
-
-	public void verifyReactiveRole() throws InterruptedException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setReactiveRole();
-	}
-
-	@Test(priority = 5)
-	public void verifyCreateRoleWithAllAvailableSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setCreateNewRoleWithAllAvailableSkill();
-	}
-
-	@Test(priority = 6)
-	public void verifyDisselectAllAvailableSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setDisselectAllAvailableSkill();
-	}
-
-	@Test(priority = 7)
-	public void verifyCreateNewRoleWithoutPriarySkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setCreateNewRoleWithoutPriarySkill();
-	}
-	@Test(priority = 8)
-	public void verifyCreateNewRoleWithoutRoleName() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setCreateNewRoleWithoutRoleName();
-	}
-
-	@Test(priority = 9)
-	public void verifyCreateNewRoleWithoutRoleDescription() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setCreateNewRoleWithoutRoleDescription();
-	}
-	@Test(priority = 10)
-	public void verifyCreateNewRoleWithoutSecondarySkillEmpty() throws EncryptedDocumentException, IOException, InterruptedException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setCreateNewRoleWithoutSecondarySkillEmpty();
-	}
-	@Test(priority = 11)
-	public void verifyDisselectSingleSkillFromSelectedSkill() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setDisSelectSingleSkillFromSelectedSkill();
-	}
-	@Test(priority = 12)
-	public void verifySearchColumnsForRole() throws InterruptedException, EncryptedDocumentException, IOException {
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		esp=new EmployeeSetupPage(driver);
-		sdrs= new SystemDefinationRoleSetupPage(driver);
-
-		hp.setOrgUnit();
-		oudd.setOLMop();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setSearchColumnsForRole();
-	}*/
+//	@Test(priority = 2)
+//
+//	public void verifyUpdateRole() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setUpdateRole();
+//	}
+//
+//	@Test(priority = 3)
+//	public void verifyDeactiveRole() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setDeactiveRole();
+//	}
+//
+//	@Test(priority = 4)
+//
+//	public void verifyReactiveRole() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setReactiveRole();
+//	}
+//
+//	@Test(priority = 5)
+//	public void verifyCreateRoleWithAllAvailableSkill() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setCreateNewRoleWithAllAvailableSkill();
+//	}
+//
+//	@Test(priority = 6)
+//	public void verifyDisselectAllAvailableSkill() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setDisselectAllAvailableSkill();
+//	}
+//
+//	@Test(priority = 7)
+//	public void verifyCreateNewRoleWithoutPriarySkill() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setCreateNewRoleWithoutPriarySkill();
+//	}
+//	@Test(priority = 8)
+//	public void verifyCreateNewRoleWithoutRoleName() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setCreateNewRoleWithoutRoleName();
+//	}
+//
+//	@Test(priority = 9)
+//	public void verifyCreateNewRoleWithoutRoleDescription() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setCreateNewRoleWithoutRoleDescription();
+//	}
+//	@Test(priority = 10)
+//	public void verifyCreateNewRoleWithoutSecondarySkillEmpty() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setCreateNewRoleWithoutSecondarySkillEmpty();
+//	}
+//	@Test(priority = 11)
+//	public void verifyDisselectSingleSkillFromSelectedSkill() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setDisSelectSingleSkillFromSelectedSkill();
+//	}
+//	@Test(priority = 12)
+//	public void verifySearchColumnsForRole() throws Exception {
+//		hp=new HomePage(driver);
+//		oudd= new OrganizationUnitDropDown(driver);
+//		jmmi= new jiviewsMainMenuItems(driver);
+//		esp=new EmployeeSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
+//
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+//		sdrs.setSearchColumnsForRole();
+//	}
 }

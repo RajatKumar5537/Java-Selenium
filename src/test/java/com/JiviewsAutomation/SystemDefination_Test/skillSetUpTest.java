@@ -32,7 +32,7 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(2000);
 		hp.setOrgUnit();
 		Thread.sleep(1000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(1000);
@@ -45,6 +45,7 @@ public class skillSetUpTest extends BaseClass{
 	@Test (priority = 2, dependsOnMethods = "createNewSkill")
 	public void updateSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
+		logger.info("Update a Skill");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -52,7 +53,7 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(1000);
 		hp.setOrgUnit();
 		Thread.sleep(1000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(1000);
@@ -67,6 +68,7 @@ public class skillSetUpTest extends BaseClass{
 	@Test (priority = 3, dependsOnMethods = {"createNewSkill","updateSkill"})
 	public void deActiveSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
+		logger.info("deactive a Skill");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -74,7 +76,7 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(2000);
 		hp.setOrgUnit();
 		Thread.sleep(1000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(1000);
@@ -87,6 +89,7 @@ public class skillSetUpTest extends BaseClass{
 	@Test (priority = 4, dependsOnMethods = {"createNewSkill","updateSkill","deActiveSkill"})
 	public void setReActiveSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
+		logger.info("ReActive a Skill");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -95,7 +98,7 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(2000);
 		hp.setOrgUnit();
 		Thread.sleep(2000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(2000);
@@ -115,7 +118,7 @@ public class skillSetUpTest extends BaseClass{
 		Thread.sleep(1000);
 		hp.setOrgUnit();
 		Thread.sleep(1000);
-		oudd.setOLMop();
+		oudd.setAutoOu();
 		Thread.sleep(1000);
 		jmmi.clickOnSystemDefination();
 		Thread.sleep(1000);

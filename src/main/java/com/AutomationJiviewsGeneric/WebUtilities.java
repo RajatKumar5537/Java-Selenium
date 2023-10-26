@@ -336,7 +336,12 @@ public class WebUtilities extends BaseClass{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("arguments[0].scrollIntoView(true);",locator);
 	}
-	/*public void scrollUp() {
+	
+	public void scrollDown() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0,350)");
+	}
+	 /*public void scrollUp() {
 		WebDriver driver = Browser.getInstance().getDriver();
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0,0)");
