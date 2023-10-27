@@ -1,32 +1,52 @@
-# Maven
-# Build your Java project and run tests with Apache Maven.
-# Add steps that analyze code, save build artifacts, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/java
-
 trigger:
 - master
 
 pool:
-  vmImage: 'ubuntu-latest'
+  vmImage: 'windows-latest'
 
-steps:
-- task: Maven@3
-  inputs:
-    mavenPomFile: 'pom.xml'
-    mavenOptions: '-Xmx3072m'
-    jdkVersionOption: '1.8'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
-- task: Maven@3  # This should be 'Maven@3' for consistency
-  inputs:
-    mavenPomFile: 'pom.xml'
-    goals: 'clean test'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    jdkVersionOption: '1.8'  # Changed 'javaHomeOption' to 'jdkVersionOption'
-    mavenVersionOption: 'Default'
-    mavenAuthenticateFeed: false
-    effectivePomSkip: false
-    sonarQubeRunAnalysis: false
+stages:
+- stage: SetupEnvironment
+  jobs:
+  - job: SetupChromeDriver
+    steps:
+    - powershell: |
+        # Download and install ChromeDriver
+        Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+        Remove-Item 'chromedriver.zip'
+      displayName: 'Install ChromeDriver'
+
+- stage: BuildAndTest
+  jobs:
+  - job: Build
+    steps:
+    - checkout: self
+
+    # Add any other setup steps specific to your project
+
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'clean install'
+
+    - task: Maven@4
+      inputs:
+        mavenPomFile: 'pom.xml'
+        goals: 'test'
+        publishJUnitResults: true
+        testResultsFiles: '**/surefire-reports/TEST-*.xml'
+      displayName: 'Run Tests'
+
+- stage: PublishArtifacts
+  jobs:
+  - job: Publish
+    steps:
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)'
+        artifactName: 'MyJavaArtifacts'
+# Add a step to publish Extent Report artifacts
+    - task: PublishBuildArtifacts@1
+      inputs:
+        pathtoPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
+        artifactName: 'MyExtentReportArtifacts'
