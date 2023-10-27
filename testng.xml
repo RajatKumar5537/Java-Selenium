@@ -8,11 +8,7 @@
 	<test thread-count="5" name="Test">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.shiftBandTest" />
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest" />
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" />
 		</classes>
 	</test> <!--
 	Test -->

@@ -17,9 +17,17 @@ public class RosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Shift Band Definition']/..")
 	private WebElement shiftBandDefination;
 	
+	@FindBy(xpath = "//div[text()='Roster Creation ']/..")
+	private WebElement rosterCreation;
+	
+	
+	
+	
 	public RosterSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
+	
+	
 	
 	public void setRoasterSetup() {
 		RoasterSetup.click();
@@ -33,5 +41,11 @@ public class RosterSetupPage extends BaseClass{
 		RoasterSetup.click();
 		Thread.sleep(2000);
 		shiftBandDefination.click();
+	}
+	
+	public void setRosterCreation() throws InterruptedException {
+		RoasterSetup.click();
+		Thread.sleep(2000);
+		rosterCreation.click();
 	}
 }

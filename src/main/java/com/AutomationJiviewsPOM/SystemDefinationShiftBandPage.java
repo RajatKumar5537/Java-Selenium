@@ -17,6 +17,7 @@ import com.AutomationJiviewsGeneric.WebUtilities;
 import com.mongodb.diagnostics.logging.Logger;
 
 public class SystemDefinationShiftBandPage  extends BaseClass{
+	
 	String timeStamp = LocalDateTime.now().toString();
 	Actions action= new Actions(driver);
 	Select select;
@@ -65,11 +66,11 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(xpath = "//input[@id='txtShiftCounter']")
 	private WebElement shiftCounterTxt;
 
-	// it is from Available Skill Table 
+	//  Using for select from Available Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
 	private WebElement availableSkill;
 
-	// select for move skill from available skill table to Selected skiil table 
+	// select for single Arrow -> move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
 	private WebElement selectMoveSingle;
 
@@ -316,6 +317,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		String startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
 		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
 		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
+		
 		sb.setAddBtn();
 		sb.setShiftBandName(shiftBandName, timeStamp);
 		sb.setDescriptionTxt(description, timeStamp);

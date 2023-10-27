@@ -57,11 +57,11 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
 	private WebElement availableSkill;
 
-	// select for move skill from available skill table to Selected skiil table 
+	// select for move signle skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
 	private WebElement selectMoveSingle;
 
-	//	select for move skill from available skill table to Selected skiil table 
+	//	select for move multiple skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
 	private WebElement selectMoveAll;
 
@@ -146,7 +146,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	//	
 	// select code in primary skill
 	public void setSelectSkillCode() {
-		action= new Actions(driver);
 		action.moveToElement(selectSkillCode).perform();
 		selectSkillCode.click();
 	}
@@ -157,7 +156,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// scroll down the page and select single skill from  availble skill
 	public void setAvailableSkillForSingleSkill() {
-		action= new Actions(driver);
+//		action= new Actions(driver);
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
@@ -165,27 +164,25 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// scroll down the page and select for move multiple skill from available skill table to Selected skiil table 
 	public void setAvailableSkillForMultipleSkill() {
-		action= new Actions(driver);
+//		action= new Actions(driver);
 		action.scrollToElement(availableSkill).perform();
-
 	}
-	//	move skill from available skills to selected skill for single role  
+	
+	//	move a singel skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
-		action= new Actions(driver);
+//		action= new Actions(driver);
 		action.moveToElement(selectMoveSingle).perform();
 		selectMoveSingle.click();
 	}
 
 	//	move skill from available skills to selected skill for Multiple  role
 	public void setAvailableMultipleSkillMoveToSelectedSkill() {
-		action= new Actions(driver);
 		action.moveToElement(selectMoveAll).perform();
 		selectMoveAll.click();
 	}
 
 	//  select one role and move to available skiil table from selected table 
 	public void setSelectedSkillForMoveToAvailabelSkillForSingle() {
-		action= new Actions(driver);
 		action.scrollToElement(selectedSkill).perform();
 		selectedSkill.click();
 		select=new Select(selectedSkill);
@@ -193,14 +190,13 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// select the skill from Selected Skill tabele and mouse hover on single arrow 
 	public void setRemoveSelectedSkillForSingle() {
-		action= new Actions(driver);
 		action.moveToElement(removeSelectedSkillSingle).perform();
 		removeSelectedSkillSingle.click();
 
 	}
 	// select the skill from Selected Skill tabele and mouse hover on Double arrow
 	public void setRemoveSelectedSkillForAll() {
-		action= new Actions(driver);
+//		action= new Actions(driver);
 		action.moveToElement(removeSelectedSkillAll).perform();
 		removeSelectedSkillAll.click();
 	}
