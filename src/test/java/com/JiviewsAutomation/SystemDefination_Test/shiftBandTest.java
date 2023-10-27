@@ -11,7 +11,7 @@ import com.AutomationJiviewsPOM.SystemDefinationShiftBandPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 
-public class RoaserSetupTest extends BaseClass{
+public class shiftBandTest extends BaseClass{
 
 	@Test 
 	public void verifyCreateShiftBand() throws Exception {

@@ -47,7 +47,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement searchField;
 
-	@FindBy(xpath = "(//li[contains(text(),'Auto_Test')])[1]")
+	@FindBy(xpath = "(//li[contains(text(),'Automation_Test')])[1]")
 	private WebElement selectSkillCode;
 
 	@FindBy(xpath = "//input[@id='txtRolePrioritySeq']")
@@ -161,7 +161,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("271");	
+		select.selectByValue("273");	
 	}
 	// scroll down the page and select for move multiple skill from available skill table to Selected skiil table 
 	public void setAvailableSkillForMultipleSkill() {

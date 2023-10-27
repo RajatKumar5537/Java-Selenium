@@ -3,15 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest">
         <methods>
+          <include name="verifyUpdateRole"/>
           <include name="launchBrowser"/>
-          <include name="verifyDeactiveShiftBand"/>
+          <include name="verifyDisselectSingleSkillFromSelectedSkill"/>
+          <include name="verifyDeactiveRole"/>
           <include name="closeBrowser"/>
+          <include name="verifyCreateNewRoleWithoutPriarySkill"/>
           <include name="login"/>
           <include name="logout"/>
+          <include name="verifyCreateRoleWithAllAvailableSkill"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

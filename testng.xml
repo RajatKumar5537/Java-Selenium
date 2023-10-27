@@ -5,13 +5,12 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-
 	<test thread-count="5" name="Test">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.shiftBandTest" />
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.RoaserSetupTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.roleSetUpTest" />
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
 		</classes>
