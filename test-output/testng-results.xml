@@ -17,12 +17,12 @@
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-10-27T10:04:50Z" name="Default suite" finished-at="2023-10-27T10:05:29Z" duration-ms="39320">
+  <suite started-at="2023-11-01T12:26:25Z" name="Default suite" finished-at="2023-11-01T12:29:05Z" duration-ms="160089">
     <groups>
     </groups>
-    <test started-at="2023-10-27T10:04:50Z" name="Default test" finished-at="2023-10-27T10:05:29Z" duration-ms="39320">
+    <test started-at="2023-11-01T12:26:25Z" name="Default test" finished-at="2023-11-01T12:29:05Z" duration-ms="160089">
       <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@49ef32e0]" started-at="2023-10-27T10:04:50Z" name="launchBrowser" finished-at="2023-10-27T10:04:51Z" duration-ms="1796" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@271f18d3]" started-at="2023-11-01T12:26:25Z" name="launchBrowser" finished-at="2023-11-01T12:27:09Z" duration-ms="43911" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -32,25 +32,25 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@49ef32e0]" started-at="2023-10-27T10:04:51Z" name="login" finished-at="2023-10-27T10:04:54Z" duration-ms="2238" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@271f18d3]" started-at="2023-11-01T12:27:09Z" name="login" finished-at="2023-11-01T12:27:26Z" duration-ms="17017" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="verifyCreateRoaster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@49ef32e0]" started-at="2023-10-27T10:04:54Z" name="verifyCreateRoaster" finished-at="2023-10-27T10:05:29Z" duration-ms="35070" status="PASS">
+        <test-method signature="verifyCreateRoaster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@271f18d3]" started-at="2023-11-01T12:27:26Z" name="verifyCreateRoaster" finished-at="2023-11-01T12:29:05Z" duration-ms="98936" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateRoaster -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@49ef32e0]" started-at="2023-10-27T10:05:29Z" name="logout" finished-at="2023-10-27T10:05:29Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@271f18d3]" started-at="2023-11-01T12:29:05Z" name="logout" finished-at="2023-11-01T12:29:05Z" duration-ms="14" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@49ef32e0]" started-at="2023-10-27T10:05:29Z" name="closeBrowser" finished-at="2023-10-27T10:05:29Z" duration-ms="199" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@271f18d3]" started-at="2023-11-01T12:29:05Z" name="closeBrowser" finished-at="2023-11-01T12:29:05Z" duration-ms="192" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>

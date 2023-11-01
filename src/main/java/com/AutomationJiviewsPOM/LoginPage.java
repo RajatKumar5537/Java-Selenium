@@ -7,6 +7,7 @@ import org.openqa.selenium.support.PageFactory;
 
 
 public class LoginPage {
+	
 	@FindBy(name = "username")
 	private WebElement username;
 	
@@ -19,6 +20,7 @@ public class LoginPage {
 	public LoginPage (WebDriver driver) {
 		PageFactory.initElements(driver, this);
 	}
+	
 	public void setLogin(String un, String pwd) {
 		username.sendKeys(un);
 		password.sendKeys(pwd);

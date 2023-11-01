@@ -17,7 +17,7 @@ public class RosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Shift Band Definition']/..")
 	private WebElement shiftBandDefination;
 	
-	@FindBy(xpath = "//div[text()='Roster Creation ']/..")
+	@FindBy(xpath = "//div[text()='Roster Creation']/..")
 	private WebElement rosterCreation;
 	
 	

@@ -17,12 +17,23 @@ import com.AutomationJiviewsGeneric.WebUtilities;
 import com.mongodb.diagnostics.logging.Logger;
 
 public class SystemDefinationShiftBandPage  extends BaseClass{
-	
-	String timeStamp = LocalDateTime.now().toString();
+
 	Actions action= new Actions(driver);
 	Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
+	public String shiftBandName;
+	public String description ;
+	public String bandCode;
+	public String colorCode;
+	public String shiftCounter;
+	public String startRangeBeginT;
+	public String startRangeEndT;
+	public String endRangeBeginT;
+	public String endRangeEndT;
+	public String otStart;
+	public String otEnd;
+	public String timeStamp = LocalDateTime.now().toString();
 	JavascriptExecutor js = (JavascriptExecutor) driver;
 	SystemDefinationShiftBandPage sb;
 
@@ -108,35 +119,35 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 
 	// Edit ........................................................
 
-	@FindBy(xpath = "(//button[@type='button'])[5]")
-	private WebElement editBtn;
-
-	@FindBy(xpath =  "(//input[@type='checkbox'])[2]")
-	private WebElement checkBox;
-
-	@FindBy(xpath = "//button[@id='btnDeleteshftband']")
-	private WebElement clickDeleteBtn;
-
-	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement clickYes;
-
-	@FindBy(id = "txtShtBandName-error")
-	private WebElement errorShiftBandTxt;
-
-	@FindBy(xpath = "//button[@class='toast-close-button']")
-	private WebElement errorPopup;
-
-	@FindBy(xpath = "//span[@id='select2-cmbOverTimeType-container']")
-	private WebElement overTimeType;
+		@FindBy(xpath = "(//button[@type='button'])[5]")
+		private WebElement editBtn;
 	
-	@FindBy(xpath = "//li[text()='Both']")
-	private WebElement selectBoth;
+		@FindBy(xpath =  "(//input[@type='checkbox'])[2]")
+		private WebElement checkBox;
 	
-	@FindBy(xpath = "//input[@id='txtOverTimeStart']")
-	private WebElement overTimeStartTxt;
+		@FindBy(xpath = "//button[@id='btnDeleteshftband']")
+		private WebElement clickDeleteBtn;
 	
-	@FindBy(xpath = "//input[@id='txtOverTimeEnd']")
-	private WebElement overTimeEndTxt;
+		@FindBy(xpath = "//button[text()='Yes']")
+		private WebElement clickYes;
+	
+		@FindBy(id = "txtShtBandName-error")
+		private WebElement errorShiftBandTxt;
+	
+		@FindBy(xpath = "//button[@class='toast-close-button']")
+		private WebElement errorPopup;
+	
+		@FindBy(xpath = "//span[@id='select2-cmbOverTimeType-container']")
+		private WebElement overTimeType;
+	
+		@FindBy(xpath = "//li[text()='Both']")
+		private WebElement selectBoth;
+	
+		@FindBy(xpath = "//input[@id='txtOverTimeStart']")
+		private WebElement overTimeStartTxt;
+	
+		@FindBy(xpath = "//input[@id='txtOverTimeEnd']")
+		private WebElement overTimeEndTxt;
 
 	public SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -257,7 +268,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		action.moveToElement(overTimeType).perform();
 		overTimeType.click();
 	}
-	
+
 	public void setSelectBoth() {
 		action.moveToElement(selectBoth).perform();
 		selectBoth.click();
@@ -308,16 +319,16 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 
 	public void createShiftBand() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);
-		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
-		String description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
-		String bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
-		String colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
-		String shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
-		String startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
-		String startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
-		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
-		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
-		
+		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
+		description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
+		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
+		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
+		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
+		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
+		endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
+		endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
+
 		sb.setAddBtn();
 		sb.setShiftBandName(shiftBandName, timeStamp);
 		sb.setDescriptionTxt(description, timeStamp);
@@ -340,9 +351,9 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	}
 	public void updateShiftBand() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);
-		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 7);
-		String description = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 8);
-		String bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 9);
+		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 7);
+		description = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 8);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 9);
 
 		sb.setEditBtn();
 		sb.setShiftBandName(shiftBandName, timeStamp);
@@ -364,14 +375,15 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	public void withoutShiftBandName() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);
 		//		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
-		String description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
-		String bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
-		String colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
-		String shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
-		String startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
-		String startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
-		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
-		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
+		description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
+		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
+		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
+		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
+		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
+		endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
+		endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
+		
 		sb.setAddBtn();
 		//		sb.setShiftBandName(shiftBandName, timeStamp);
 		sb.setDescriptionTxt(description, timeStamp);
@@ -397,11 +409,12 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	}
 	public void shiftBandTypeCombinationShift() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);
-		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 7);
-		String description = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 8);
-		String bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 9);
-		String colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 10);
-		String shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 11);
+		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 7);
+		description = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 8);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 9);
+		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 10);
+		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 11);
+		
 		sb.setAddBtn();
 		sb.setShiftBandName(shiftBandName, timeStamp);
 		sb.setDescriptionTxt(description, timeStamp);
@@ -418,17 +431,17 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	}
 	public void shiftBandTypeOvertimeShift() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);
-		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);
-		String description = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 8);
-		String bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 9);
-		String colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 10);
-		String shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 11);
-		String startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 14);
-		String startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 15);
-//		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 16);
-//		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 17);
-		String otStart = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 18);
-		String otEnd = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 19);
+		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);
+		description = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 8);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 9);
+		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 10);
+		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 11);
+		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 14);
+		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 15);
+		//		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 16);
+		//		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 17);
+		otStart = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 18);
+		otEnd = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 19);
 
 		sb.setAddBtn();
 		sb.setShiftBandName(shiftBandName, timeStamp);
@@ -443,15 +456,15 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setSelectStartTime();
 		sb.setEndTime();
 		sb.setSelectEndTime();
-//		sb.setStartRangeBegin(startRangeBeginT);
-//		sb.setStartRangeEnd(startRangeEndT);
-//		sb.setEndRangeBegin(endRangeBeginT);
-//		sb.setEndRangeEnd(endRangeEndT);
+		//		sb.setStartRangeBegin(startRangeBeginT);
+		//		sb.setStartRangeEnd(startRangeEndT);
+		//		sb.setEndRangeBegin(endRangeBeginT);
+		//		sb.setEndRangeEnd(endRangeEndT);
 		sb.setOverTimeType();
 		sb.setSelectBoth();
 		sb.setOverTimeStartTxt(otStart);
 		sb.setOverTimeEndTxt(otEnd);
-		
+
 		sb.setBtnSave();
 		sb.setNotificationPopup();
 	}

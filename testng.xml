@@ -5,12 +5,9 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	<test thread-count="5" name="Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" />
-		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

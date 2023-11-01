@@ -62,6 +62,7 @@ public class skillSetUpTest extends BaseClass{
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(1000);
 		sds.setUpdateSkill();
+		logger.info("A skill is updated successfully ");
 	}
 
 
@@ -85,6 +86,7 @@ public class skillSetUpTest extends BaseClass{
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
 		Thread.sleep(1000);
 		sds.setDeactiveSkil();
+		logger.info("A skill is deactivate successfully ");
 	}
 	@Test (priority = 4, dependsOnMethods = {"createNewSkill","updateSkill","deActiveSkill"})
 	public void setReActiveSkill() throws Exception {
@@ -105,6 +107,7 @@ public class skillSetUpTest extends BaseClass{
 		esp.setCreateSkill();
 		Thread.sleep(2000);
 		sds.setActivateDeactiveSkill();
+		logger.info("A skill is reactivate successfully ");
 	}
 	@Test (priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
 	public void searchColumns() throws Exception {

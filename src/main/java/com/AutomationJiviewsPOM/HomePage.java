@@ -41,12 +41,6 @@ public class HomePage extends BaseClass{
 		admin.click();
 	}
 
-//	public void setAdmin() throws InterruptedException {
-//		Thread.sleep(2000);
-//		action= new Actions(driver);
-//		action.moveToElement(admin).perform();
-//		admin.click();
-//	}
 	public void setLogout() throws InterruptedException {
 		Thread.sleep(1000);
 		Logout.click();

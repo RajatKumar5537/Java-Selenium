@@ -27,24 +27,24 @@ public class OrganizationUnitDropDown extends BaseClass{
 //	private WebElement EFDoption;
 
 	// Select HSSE Division 
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
-	private WebElement HSSEdivision;
+//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
+//	private WebElement HSSEdivision;
 
 	// Select OLM
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[4]")
 	private WebElement OLMop;
 
 	// Select Operator 
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[5]")
-	private WebElement operationOp;
-
-	// Select Test RV
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
-	private WebElement testRV;
-
-	// Select Test OC
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
-	private WebElement testOC;
+//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[5]")
+//	private WebElement operationOp;
+//
+//	// Select Test RV
+//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
+//	private WebElement testRV;
+//
+//	// Select Test OC
+//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
+//	private WebElement testOC;
 
 	public OrganizationUnitDropDown(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -67,28 +67,27 @@ public class OrganizationUnitDropDown extends BaseClass{
 //	}
 
 	// HSSE Division
-	public void setHSSEdivision() {
-		HSSEdivision.click();
-	}
+//	public void setHSSEdivision() {
+//		HSSEdivision.click();
+//	}
 
 	public void setAutoOu() throws InterruptedException  {
-//		Thread.sleep(2000);
 		webUtility.ElementClickable(driver, autoOu);
 		autoOu.click();			
 	}
 
 	// Operator 
-	public void setOperationOp() {
-		operationOp.click();
-	}
-
-	// Test RV
-	public void setTestRV() {
-		testRV.click();
-	}
-
-	// Test OC
-	public void setTestOC() {
-		testOC.click();
-	}
+//	public void setOperationOp() {
+//		operationOp.click();
+//	}
+//
+//	// Test RV
+//	public void setTestRV() {
+//		testRV.click();
+//	}
+//
+//	// Test OC
+//	public void setTestOC() {
+//		testOC.click();
+//	}
 }

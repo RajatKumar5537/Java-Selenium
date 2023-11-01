@@ -53,29 +53,29 @@ public class AzurePractice {
 		logger.info("Search a Skill");
 		Reporter.log("Search a Skill....!",true);
 	}*/
-	
-		@Test
-		public void practice() throws InterruptedException, AWTException {
-//			FirefoxOptions options = new FirefoxOptions();
-			WebDriverManager.chromedriver().setup();
-			ChromeOptions option=new ChromeOptions();
-			WebDriver d = new ChromeDriver(option);
 
-			d.manage().window().maximize();
-			d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//	@Test
+//	public void practice() throws InterruptedException, AWTException {
+//		//			FirefoxOptions options = new FirefoxOptions();
+//		WebDriverManager.chromedriver().setup();
+//		ChromeOptions option=new ChromeOptions();
+//		WebDriver d = new ChromeDriver(option);
+//
+//		d.manage().window().maximize();
+//		d.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//
+//		d.get("https://www.jiviews.com/DEMO/");
+//
+//		// Wait for the username field to be visible
+//		WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
+//
+//		d.findElement(By.name("username")).sendKeys("admin");
+//		d.findElement(By.name("password")).sendKeys("JiViews2.0");
+//		d.findElement(By.id("btnSignIn")).click();
 
-			d.get("https://www.jiviews.com/DEMO/");
-
-			// Wait for the username field to be visible
-			WebDriverWait wait = new WebDriverWait(d, Duration.ofSeconds(10));
-			wait.until(ExpectedConditions.visibilityOfElementLocated(By.name("username")));
-
-			d.findElement(By.name("username")).sendKeys("admin");
-			d.findElement(By.name("password")).sendKeys("JiViews2.0");
-			d.findElement(By.id("btnSignIn")).click();
 
 
-			
-			
-	}
+
+//	}
 }

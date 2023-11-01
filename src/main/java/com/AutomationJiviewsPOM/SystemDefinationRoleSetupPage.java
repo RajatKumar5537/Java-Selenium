@@ -16,7 +16,7 @@ import com.AutomationJiviewsGeneric.FileLib;
 public class SystemDefinationRoleSetupPage extends BaseClass{
 	public static Actions action;
 	public static Select select;
-	public static FileLib fileLib;
+//	public static FileLib fileLib;
 	public ExcelUtilities excelUtility;
 	public static String timeStamp ;
 	public static SystemDefinationRoleSetupPage sdrs;
@@ -107,6 +107,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public SystemDefinationRoleSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.excelUtility= new ExcelUtilities();
+		this.action=new Actions(driver);
 	}
 
 
@@ -143,7 +144,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	//		searchField.sendKeys("Auto_Test");
 	//		searchField.click();
 	//	}
-	//	
+
 	// select code in primary skill
 	public void setSelectSkillCode() {
 		action.moveToElement(selectSkillCode).perform();
@@ -156,7 +157,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// scroll down the page and select single skill from  availble skill
 	public void setAvailableSkillForSingleSkill() {
-//		action= new Actions(driver);
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
@@ -164,13 +164,11 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// scroll down the page and select for move multiple skill from available skill table to Selected skiil table 
 	public void setAvailableSkillForMultipleSkill() {
-//		action= new Actions(driver);
 		action.scrollToElement(availableSkill).perform();
 	}
-	
+
 	//	move a singel skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
-//		action= new Actions(driver);
 		action.moveToElement(selectMoveSingle).perform();
 		selectMoveSingle.click();
 	}
@@ -186,7 +184,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.scrollToElement(selectedSkill).perform();
 		selectedSkill.click();
 		select=new Select(selectedSkill);
-		select.selectByValue("75");	
+		select.selectByValue("273");	
 	}
 	// select the skill from Selected Skill tabele and mouse hover on single arrow 
 	public void setRemoveSelectedSkillForSingle() {
@@ -196,7 +194,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// select the skill from Selected Skill tabele and mouse hover on Double arrow
 	public void setRemoveSelectedSkillForAll() {
-//		action= new Actions(driver);
 		action.moveToElement(removeSelectedSkillAll).perform();
 		removeSelectedSkillAll.click();
 	}
@@ -268,7 +265,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setUpdateRole() throws Exception {
-		fileLib=new FileLib();
+//		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
@@ -379,7 +376,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	public void setCreateNewRoleWithoutRoleDescription() throws Exception {
 
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
@@ -410,7 +406,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public void setCreateNewRoleWithoutSecondarySkillEmpty() throws Exception {
 
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
@@ -443,7 +438,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	// All Availble skiil should move to secondary skill
 	public void setCreateNewRoleWithAllAvailableSkill() throws Exception {
 
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
@@ -474,7 +468,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDisSelectSingleSkillFromSelectedSkill() throws Exception {
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
@@ -505,7 +498,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDisselectAllAvailableSkill() throws Exception {
-		fileLib=new FileLib();
 		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 

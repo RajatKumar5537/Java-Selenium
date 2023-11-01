@@ -1,6 +1,8 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -12,11 +14,12 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 
 public class shiftBandTest extends BaseClass{
-
+	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
+	
 	@Test 
 	public void verifyCreateShiftBand() throws Exception {
-
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("Create Shift Band Difinition");
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -37,7 +40,9 @@ public class shiftBandTest extends BaseClass{
 	
 	@Test
 	public void verifyUpdateShiftBand() throws Exception {
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("verify update shiftBand");
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -58,7 +63,9 @@ public class shiftBandTest extends BaseClass{
 	
 	@Test
 	public void verifyDeactiveShiftBand() throws Exception {
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("verify Deactive Shift band");
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -78,7 +85,9 @@ public class shiftBandTest extends BaseClass{
 	}
 	@Test
 	public void verifyWithoutShiftBandName() throws Exception {
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("verify Without Shift Band Name");
+
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -98,7 +107,9 @@ public class shiftBandTest extends BaseClass{
 	}
 	@Test
 	public void verifyWithCombinationShift() throws Exception {
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("verify With Combination Shift");
+
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -119,7 +130,9 @@ public class shiftBandTest extends BaseClass{
 	}
 	@Test
 	public void verifyWithOvertimeShift() throws Exception {
-		System.out.println("Create Shift Band Difinition");
+		captureScreenshot(driver, "shiftBandTest");
+		logger.info("verify With Overtime Shift");
+
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);

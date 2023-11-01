@@ -8,6 +8,7 @@ import org.openqa.selenium.support.PageFactory;
 import com.AutomationJiviewsGeneric.BaseClass;
 
 public class jiviewsMainMenuItems extends BaseClass{
+	
 	@FindBy(xpath = "//span[text()='SYSTEM SETUP']/..")
 	private WebElement mainMenu;
 

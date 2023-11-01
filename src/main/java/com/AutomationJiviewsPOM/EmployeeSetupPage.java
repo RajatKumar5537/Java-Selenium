@@ -56,17 +56,14 @@ public class EmployeeSetupPage extends BaseClass{
 		empSetPage.setEmpSetup();
 		empSetPage.setRole();
 	}
-	
-	public void setCreateRoleGroups() {
-		empSetPage = new EmployeeSetupPage(driver);
-		EmpSetup.click();
-		rolesGroup.click();
-	}
+
 	public void setPercentageConfiguration() {
 		empSetPage = new EmployeeSetupPage(driver);
 		EmpSetup.click();
 		percentageConfiguration.click();
 	}*/
+	
+	
 	// it will create a new skill 
 	public void setCreateSkill() throws InterruptedException {
 		Thread.sleep(2000);
