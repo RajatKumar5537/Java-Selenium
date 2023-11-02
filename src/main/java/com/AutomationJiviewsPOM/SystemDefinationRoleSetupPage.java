@@ -160,7 +160,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("273");	
+		select.selectByValue("272");
 	}
 	// scroll down the page and select for move multiple skill from available skill table to Selected skiil table 
 	public void setAvailableSkillForMultipleSkill() {

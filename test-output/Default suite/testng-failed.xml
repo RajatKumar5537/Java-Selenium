@@ -6,10 +6,10 @@
       <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="verifyCreateRoaster"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="logout"/>
+          <include name="verifyUpdateRoaster"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
     </classes>

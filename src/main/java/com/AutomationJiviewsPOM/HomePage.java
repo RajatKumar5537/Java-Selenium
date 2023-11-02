@@ -33,7 +33,7 @@ public class HomePage extends BaseClass{
 	public void setOrgUnit() throws Exception {
 	//	webUtility.visibilityOfElement(driver, OrgUnit);
 		webUtility.ElementClickable(driver, OrgUnit);
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		OrgUnit.click();
 	}	
 	public void setAdmin() throws InterruptedException {

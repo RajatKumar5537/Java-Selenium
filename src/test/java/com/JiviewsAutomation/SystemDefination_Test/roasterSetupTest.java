@@ -1,5 +1,6 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
@@ -21,10 +22,11 @@ public class roasterSetupTest extends BaseClass{
 	public EmployeeSetupPage esp;
 	public RosterSetupPage rsp;
 	public SystemDefinationRosterSetupPage sdrs;
+	
 
 
 	@Test
-	public void verifyCreateRoaster() throws Exception {
+	public void verifyCreateRoasterWithGroup() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 
 		hp=new HomePage(driver);
@@ -33,39 +35,94 @@ public class roasterSetupTest extends BaseClass{
 		rsp= new RosterSetupPage(driver);
 		sdrs= new SystemDefinationRosterSetupPage(driver);
 
+		hp.setOrgUnit();
+		oudd.setAutoOu();
+		jmmi.clickOnSystemDefination();
+		rsp.setRosterCreation();
+		sdrs.setCreateRoasterwithGroup();
+		logger.info("Create a Roster Pattern with Roster Group is successfull");
+	}
+
+	@Test
+	public void verifyCreateRoasterwithEmployee() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+
+		hp=new HomePage(driver);
+		oudd= new OrganizationUnitDropDown(driver);
+		jmmi= new jiviewsMainMenuItems(driver);
+		rsp= new RosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterSetupPage(driver);
 		Thread.sleep(2000);
 		hp.setOrgUnit();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
+		oudd.setOLMop();
+		
+		Thread.sleep(1000);
+		hp.setOrgUnit();
+		Thread.sleep(1000);
 		oudd.setAutoOu();
 		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
-		Thread.sleep(2000);
 		rsp.setRosterCreation();
-		Thread.sleep(2000);
-		sdrs.setCreateRoaster();
-		logger.info("A roaster is created successfully ");
-	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+		sdrs.setCreateRoasterwithEmployee();
 
-	
+	}
+
+
+	// We can do it later............... 
+	//	@Test
+	//	public void verifyCreateRoasterWithGroupAndEmp() throws Exception {
+	//		captureScreenshot(driver, "roasterSetupTest");
+	//
+	//		hp=new HomePage(driver);
+	//		oudd= new OrganizationUnitDropDown(driver);
+	//		jmmi= new jiviewsMainMenuItems(driver);
+	//		rsp= new RosterSetupPage(driver);
+	//		sdrs= new SystemDefinationRosterSetupPage(driver);
+	//
+	//		hp.setOrgUnit();
+	//		oudd.setAutoOu();
+	//		jmmi.clickOnSystemDefination();
+	//		rsp.setRosterCreation();
+	//		sdrs.setCreateRoasterwithRosterAndEmp();
+	//	}
+
+	@Test
+	public void verifyUpdateRoaster() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+
+		hp=new HomePage(driver);
+		oudd= new OrganizationUnitDropDown(driver);
+		jmmi= new jiviewsMainMenuItems(driver);
+		rsp= new RosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterSetupPage(driver);
+		
+		Thread.sleep(2000);
+		hp.setOrgUnit();
+		Thread.sleep(1000);
+		oudd.setAutoOu();
+		Thread.sleep(2000);
+		jmmi.clickOnSystemDefination();
+		rsp.setRosterCreation();
+		sdrs.setUpdateRoaster();
+	}
+	@Test
+	public void verifyDeactiveRoster() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+
+		hp=new HomePage(driver);
+		oudd= new OrganizationUnitDropDown(driver);
+		jmmi= new jiviewsMainMenuItems(driver);
+		rsp= new RosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterSetupPage(driver);
+		
+		Thread.sleep(2000);
+		hp.setOrgUnit();
+		Thread.sleep(1000);
+		oudd.setAutoOu();
+		Thread.sleep(2000);
+		jmmi.clickOnSystemDefination();
+		rsp.setRosterCreation();
+		sdrs.setDeactiveRoster();
+	}
 }

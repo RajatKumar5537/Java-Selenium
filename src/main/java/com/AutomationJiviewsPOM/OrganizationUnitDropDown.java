@@ -16,35 +16,35 @@ public class OrganizationUnitDropDown extends BaseClass{
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[1]")
 	private WebElement demoOp;
 
-	
-//	select Auto OU
+
+	//	select Auto OU
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
 	private WebElement autoOu;
-	
-	
-//	// Select EFD Option
-//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
-//	private WebElement EFDoption;
+
+
+	//	// Select EFD Option
+	//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[2]")
+	//	private WebElement EFDoption;
 
 	// Select HSSE Division 
-//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
-//	private WebElement HSSEdivision;
+	//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
+	//	private WebElement HSSEdivision;
 
 	// Select OLM
 	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[4]")
 	private WebElement OLMop;
 
 	// Select Operator 
-//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[5]")
-//	private WebElement operationOp;
-//
-//	// Select Test RV
-//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
-//	private WebElement testRV;
-//
-//	// Select Test OC
-//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
-//	private WebElement testOC;
+	//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[5]")
+	//	private WebElement operationOp;
+	//
+	//	// Select Test RV
+	//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
+	//	private WebElement testRV;
+	//
+	//	// Select Test OC
+	//	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
+	//	private WebElement testOC;
 
 	public OrganizationUnitDropDown(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -55,39 +55,42 @@ public class OrganizationUnitDropDown extends BaseClass{
 	public void setDemo() {
 		demoOp.click();
 	}
-	
-//	for Auto OU
+
+	//	for Auto OU
 	public void setautoOu() {
 		autoOu.click();
 	}
 
-//	// for EFD
-//	public void setEFDoption() {
-//		EFDoption.click();
-//	}
+	//	// for EFD
+	//	public void setEFDoption() {
+	//		EFDoption.click();
+	//	}
 
 	// HSSE Division
-//	public void setHSSEdivision() {
-//		HSSEdivision.click();
-//	}
-
+	//	public void setHSSEdivision() {
+	//		HSSEdivision.click();
+	//	}
+	public void setOLMop() {
+		webUtility.ElementClickable(driver, OLMop);
+		OLMop.click();
+	}
 	public void setAutoOu() throws InterruptedException  {
 		webUtility.ElementClickable(driver, autoOu);
 		autoOu.click();			
 	}
 
 	// Operator 
-//	public void setOperationOp() {
-//		operationOp.click();
-//	}
-//
-//	// Test RV
-//	public void setTestRV() {
-//		testRV.click();
-//	}
-//
-//	// Test OC
-//	public void setTestOC() {
-//		testOC.click();
-//	}
+	//	public void setOperationOp() {
+	//		operationOp.click();
+	//	}
+	//
+	//	// Test RV
+	//	public void setTestRV() {
+	//		testRV.click();
+	//	}
+	//
+	//	// Test OC
+	//	public void setTestOC() {
+	//		testOC.click();
+	//	}
 }
