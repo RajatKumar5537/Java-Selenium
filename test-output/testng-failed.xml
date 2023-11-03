@@ -7,9 +7,9 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="closeBrowser"/>
+          <include name="verifyDeactiveRoster"/>
           <include name="login"/>
           <include name="logout"/>
-          <include name="verifyUpdateRoaster"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
     </classes>

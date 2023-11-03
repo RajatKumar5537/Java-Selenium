@@ -125,4 +125,23 @@ public class roasterSetupTest extends BaseClass{
 		rsp.setRosterCreation();
 		sdrs.setDeactiveRoster();
 	}
+	@Test(dependsOnMethods = "verifyDeactiveRoster")
+	public void verifyReactiveRoster() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+
+		hp=new HomePage(driver);
+		oudd= new OrganizationUnitDropDown(driver);
+		jmmi= new jiviewsMainMenuItems(driver);
+		rsp= new RosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterSetupPage(driver);
+		
+		Thread.sleep(2000);
+		hp.setOrgUnit();
+		Thread.sleep(1000);
+		oudd.setAutoOu();
+		Thread.sleep(2000);
+		jmmi.clickOnSystemDefination();
+		rsp.setRosterCreation();
+		sdrs.setReactiveRoster();
+	}
 }

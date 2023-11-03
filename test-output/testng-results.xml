@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="4" total="5" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -17,12 +17,12 @@
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-02T14:44:43Z" name="Default suite" finished-at="2023-11-02T14:45:40Z" duration-ms="56898">
+  <suite started-at="2023-11-03T03:48:00Z" name="Default suite" finished-at="2023-11-03T03:48:33Z" duration-ms="32572">
     <groups>
     </groups>
-    <test started-at="2023-11-02T14:44:43Z" name="Default test" finished-at="2023-11-02T14:45:40Z" duration-ms="56898">
+    <test started-at="2023-11-03T03:48:00Z" name="Default test" finished-at="2023-11-03T03:48:33Z" duration-ms="32572">
       <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@61e3a1fd]" started-at="2023-11-02T14:44:43Z" name="launchBrowser" finished-at="2023-11-02T14:44:46Z" duration-ms="2605" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@51abf713]" started-at="2023-11-03T03:48:00Z" name="launchBrowser" finished-at="2023-11-03T03:48:02Z" duration-ms="1530" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -32,25 +32,25 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@61e3a1fd]" started-at="2023-11-02T14:44:46Z" name="login" finished-at="2023-11-02T14:45:06Z" duration-ms="20434" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@51abf713]" started-at="2023-11-03T03:48:02Z" name="login" finished-at="2023-11-03T03:48:06Z" duration-ms="4749" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="verifyDeactiveRoster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@61e3a1fd]" started-at="2023-11-02T14:45:06Z" name="verifyDeactiveRoster" finished-at="2023-11-02T14:45:40Z" duration-ms="33547" status="PASS">
+        <test-method signature="verifyReactiveRoster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@51abf713]" started-at="2023-11-03T03:48:06Z" name="verifyReactiveRoster" finished-at="2023-11-03T03:48:32Z" duration-ms="26060" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDeactiveRoster -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@61e3a1fd]" started-at="2023-11-02T14:45:40Z" name="logout" finished-at="2023-11-02T14:45:40Z" duration-ms="1" status="PASS">
+        </test-method> <!-- verifyReactiveRoster -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@51abf713]" started-at="2023-11-03T03:48:32Z" name="logout" finished-at="2023-11-03T03:48:32Z" duration-ms="24" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@61e3a1fd]" started-at="2023-11-02T14:45:40Z" name="closeBrowser" finished-at="2023-11-02T14:45:40Z" duration-ms="290" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@51abf713]" started-at="2023-11-03T03:48:32Z" name="closeBrowser" finished-at="2023-11-03T03:48:33Z" duration-ms="187" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>

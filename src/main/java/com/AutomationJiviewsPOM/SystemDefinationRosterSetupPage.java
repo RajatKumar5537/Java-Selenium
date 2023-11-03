@@ -181,7 +181,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	private WebElement btnPublishRosterPattern;
 
 
-
+	
 	//	@FindBy(xpath = "//input[@id='dtPublishFrom1130']")
 	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr/td[5]")
 	private WebElement txtPublishFrom;
@@ -219,7 +219,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	private WebElement btnByEmp;
 
 	//	(//td[@class=' select-checkbox']/input)[1]
-	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr[1]/td[1]/input")
+	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr[3]/td[1]/input")
 	private WebElement checkBoxDeactive;
 
 	@FindBy(xpath = "//button[@id='btnDeleteTemplateRoster']")
@@ -228,6 +228,9 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//button[text()='Yes']")
 	private WebElement btnYes;
 
+	@FindBy(xpath = "//span[text()='Is Active?']")
+	private WebElement checkBoxActive;
+	
 	public SystemDefinationRosterSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.excelUtility= new ExcelUtilities();
@@ -465,6 +468,10 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	}
 	public void setBtnYes() {
 		btnYes.click();
+	}
+	public void setCheckBoxActive() {
+		action.moveToElement(checkBoxActive).perform();
+		checkBoxActive.click();
 	}
 	public void setCreateRoasterwithGroup() throws Exception {
 		sdrs= new SystemDefinationRosterSetupPage(driver);
@@ -808,5 +815,13 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setCheckBoxDeactive();
 		sdrs.setBtnDeleteTemplateRoster();
 		sdrs.setBtnYes();
+	}
+	
+	public void setReactiveRoster() throws InterruptedException {
+		sdrs= new SystemDefinationRosterSetupPage(driver);
+		Thread.sleep(2000);
+		sdrs.setEditBtn();
+		sdrs.setCheckBoxActive();
+		sdrs.setBtnAddSaveRosterPattern();
 	}
 }
