@@ -1,8 +1,8 @@
 package com.AutomationJiviewsPOM;
 
-import java.io.IOException;
 import java.time.LocalDateTime;
-
+import java.time.format.DateTimeFormatter;
+import java.util.Date;
 
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -11,27 +11,30 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class SystemDefinationRosterSetupPage extends BaseClass{
 
-	public String timeStamp = LocalDateTime.now().toString();
+//	public String timeStamp = LocalDateTime.now().toString();
+	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
+
 	Actions action= new Actions(driver);
 	Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
-	JavascriptExecutor js = (JavascriptExecutor) driver;
 	public SystemDefinationRosterSetupPage sdrs;
 	public String tampName ;
 	public String tempDescription;
 	public String noOfDay;
 	public String noOfBlocks;
 
+//	public  String gerateTmeStamp() {
+//		Date date=new Date();
+//		return date.toString().replace(" ", "_").replace(":", "_");
+//	}
+	
 	@FindBy(id = "btnAddNewTemplateRoster")
 	private WebElement addBtn;
 
@@ -72,7 +75,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
 	private WebElement saveBtn;
 
-	@FindBy(xpath = "(//button[@type='button'])[7]")
+	@FindBy(xpath = "(//button[@type='button'])[9]")
 	private WebElement editBtn;
 
 	// Group A 
@@ -181,7 +184,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	private WebElement btnPublishRosterPattern;
 
 
-	
+
 	//	@FindBy(xpath = "//input[@id='dtPublishFrom1130']")
 	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr/td[5]")
 	private WebElement txtPublishFrom;
@@ -190,6 +193,8 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	//	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr[2]/td[5]")
 	private WebElement dropDownCalenderRoster;
 
+	
+	// 13/Nov/2023 for 
 	@FindBy(xpath = "//div[@class='datepicker-days']/table/tbody/tr[3]/td[2]")
 	private WebElement dropDownCalenderRosterUp;
 
@@ -219,7 +224,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	private WebElement btnByEmp;
 
 	//	(//td[@class=' select-checkbox']/input)[1]
-	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr[3]/td[1]/input")
+	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr[5]/td[1]/input")
 	private WebElement checkBoxDeactive;
 
 	@FindBy(xpath = "//button[@id='btnDeleteTemplateRoster']")
@@ -230,7 +235,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Is Active?']")
 	private WebElement checkBoxActive;
-	
+
 	public SystemDefinationRosterSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.excelUtility= new ExcelUtilities();
@@ -497,28 +502,28 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setBandCode();
 		sdrs.setSelectBandCode();
 		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
+		Thread.sleep(2000);
 
-		//		sdrs.setRosterCreation2ndDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//
-		//		sdrs.setRosterCreation3rdDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//
-		//		sdrs.setRosterCreation4thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//
-		//		sdrs.setrosterCreation5thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
+		sdrs.setRosterCreation2ndDay();
+		sdrs.setBandCode();
+		sdrs.setSelectBandCode();
+		sdrs.setBtnSaveSelectShiftBandBtn();
+		Thread.sleep(2000);
+
+		sdrs.setRosterCreation3rdDay();
+		sdrs.setBandCode();
+		sdrs.setSelectBandCode();
+		sdrs.setBtnSaveSelectShiftBandBtn();
+
+		sdrs.setRosterCreation4thDay();
+		sdrs.setBandCode();
+		sdrs.setSelectBandCode();
+		sdrs.setBtnSaveSelectShiftBandBtn();
+
+		sdrs.setrosterCreation5thDay();
+		sdrs.setBandCode();
+		sdrs.setSelectBandCode();
+		sdrs.setBtnSaveSelectShiftBandBtn();
 
 		Thread.sleep(2000);
 		sdrs.setBtnAddSaveRosterPattern();
@@ -805,9 +810,13 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setEditBtn();
 		sdrs.setBtnPublishRosterPattern() ;
 		sdrs.setDropDownCalenderRosterUp();
+		Thread.sleep(2000);
 		sdrs.setTxtNoOfBlock(noOfBlocks);
+		Thread.sleep(2000);
 		sdrs.setCheckBoxPublishRoster();
+		Thread.sleep(2000);
 		sdrs.setBtnSaveTemplateRoster();
+		Thread.sleep(2000);
 		sdrs.setBtnPublishNow();
 	}
 	public void setDeactiveRoster() {
@@ -816,7 +825,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setBtnDeleteTemplateRoster();
 		sdrs.setBtnYes();
 	}
-	
+
 	public void setReactiveRoster() throws InterruptedException {
 		sdrs= new SystemDefinationRosterSetupPage(driver);
 		Thread.sleep(2000);

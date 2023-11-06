@@ -46,7 +46,7 @@
 		<!-- nav-right -->
 		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
 			<a href='#!'>
-			<span class='label blue darken-3 suite-start-time'>Oct 18, 2023 12:39:05 PM</span>
+			<span class='label blue darken-3 suite-start-time'>Nov 6, 2023 12:35:00 PM</span>
 			</a>
 		</ul>
 	</div>
@@ -61,7 +61,8 @@
 				<i class='material-icons'>warning</i> Status
 				</a>
 				<ul id='tests-toggle' class='dropdown-content'>
-										<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
 					<li class='divider'></li>
 					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
 				</ul>
@@ -114,10 +115,10 @@
                     <canvas id='parent-analysis' width='90' height='70'></canvas>
                 </div>
                 <div class='block text-small'>
-                    <span class='tooltipped' data-position='top' data-tooltip='0%'><span class='strong'>0</span> test(s) passed</span>
+                    <span class='tooltipped' data-position='top' data-tooltip='66.667%'><span class='strong'>2</span> test(s) passed</span>
                 </div>
                 <div class='block text-small'>
-                    <span class='strong tooltipped' data-position='top' data-tooltip='100%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+                    <span class='strong tooltipped' data-position='top' data-tooltip='33.333%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
                 </div>
             </div>
         </div>
@@ -135,17 +136,17 @@
 </div>	<div class='subview-left left'>
 		<div class='view-summary'>
 			<ul id='test-collection' class='test-collection'>
-				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
 					<div class='test-heading'>
-						<span class='test-name'>searchColumns</span>
-						<span class='test-time'>Oct 18, 2023 12:39:16 PM</span>
-						<span class='test-status right fail'>fail</span>
+						<span class='test-name'>verifyCreatePublicHoliday</span>
+						<span class='test-time'>Nov 6, 2023 12:35:05 PM</span>
+						<span class='test-status right pass'>pass</span>
 					</div>
 					<div class='test-content hide'>
 <div class='test-time-info'>
-	<span class='label start-time'>Oct 18, 2023 12:39:16 PM</span>
-	<span class='label end-time'>Oct 18, 2023 12:39:53 PM</span>
-	<span class='label time-taken grey lighten-1 white-text'>0h 0m 36s+483ms</span>
+	<span class='label start-time'>Nov 6, 2023 12:35:05 PM</span>
+	<span class='label end-time'>Nov 6, 2023 12:35:25 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 19s+916ms</span>
 </div>
 <div class='test-attributes'>
 	<div class='category-list'>
@@ -167,7 +168,109 @@
 		<tbody>
 			<tr class='log' status='info'>
 				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
-				<td class='timestamp'>12:39:16 PM</td>
+				<td class='timestamp'>12:35:05 PM</td>
+				<td class='step-details'>
+						Skill Module Test: Verifying user login functionality
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>12:35:25 PM</td>
+				<td class='step-details'>
+						Test passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>verifyUpdatePublicHoliday</span>
+						<span class='test-time'>Nov 6, 2023 12:35:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 6, 2023 12:35:28 PM</span>
+	<span class='label end-time'>Nov 6, 2023 12:35:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 29s+89ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>FunctionalTest</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>Rajath</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:35:28 PM</td>
+				<td class='step-details'>
+						Skill Module Test: Verifying user login functionality
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>12:35:57 PM</td>
+				<td class='step-details'>
+						Test passed
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>verifyDeletePublicHoliday</span>
+						<span class='test-time'>Nov 6, 2023 12:36:01 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Nov 6, 2023 12:36:01 PM</span>
+	<span class='label end-time'>Nov 6, 2023 12:36:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 16s+797ms</span>
+</div>
+<div class='test-attributes'>
+	<div class='category-list'>
+		<span class='category label'>FunctionalTest</span>
+	</div>
+	<div class='author-list'>
+		<span class='author label'>Rajath</span>
+	</div>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>12:36:01 PM</td>
 				<td class='step-details'>
 						Skill Module Test: Verifying user login functionality
 					
@@ -175,10 +278,10 @@
 			</tr>
 			<tr class='log' status='fail'>
 				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
-				<td class='timestamp'>12:39:53 PM</td>
+				<td class='timestamp'>12:36:18 PM</td>
 				<td class='step-details'>
 						Test failed
-					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\searchColumns.png' src='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\searchColumns.png' data-src='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\searchColumns.png'>
+					<img class='r-img' onerror='this.style.display="none"' data-featherlight='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyDeletePublicHoliday.png' src='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyDeletePublicHoliday.png' data-src='C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyDeletePublicHoliday.png'>
 				</td>
 			</tr>
 		</tbody>
@@ -228,12 +331,13 @@
 					<div class='category-heading'>
 						<span class='category-name'>FunctionalTest</span>
 						<span class='category-status right'>
+						<span class='label pass'>2</span>
 						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='category-content hide'>
 						<div class='category-status-counts'>
-							
+							<span status="pass" class='label green accent-4 white-text'>Passed: 2</span>
 							<span status="fail" class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
@@ -248,8 +352,18 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 18, 2023 12:39:16 PM</td>
-										<td class='linked' test-id='1'>searchColumns</td>
+										<td>Nov 6, 2023 12:35:05 PM</td>
+										<td class='linked' test-id='1'>verifyCreatePublicHoliday</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 6, 2023 12:35:28 PM</td>
+										<td class='linked' test-id='2'>verifyUpdatePublicHoliday</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 6, 2023 12:36:01 PM</td>
+										<td class='linked' test-id='3'>verifyDeletePublicHoliday</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -288,12 +402,13 @@
 					<div class='author-heading'>
 						<span class='author-name'>Rajath</span>
 						<span class='author-status right'>
+						<span class='label pass'>2</span>
 						<span class='label fail'>1</span>
 						</span>
 					</div>
 					<div class='author-content hide'>
 						<div class='author-status-counts'>
-							
+							<span class='label green accent-4 white-text'>Passed: 2</span>
 							<span class='label red lighten-1 white-text'>Failed: 1</span>
 							
 						</div>
@@ -308,8 +423,18 @@
 								</thead>
 								<tbody>
 									<tr>
-										<td>Oct 18, 2023 12:39:16 PM</td>
-										<td class='linked' test-id='1'>searchColumns</td>
+										<td>Nov 6, 2023 12:35:05 PM</td>
+										<td class='linked' test-id='1'>verifyCreatePublicHoliday</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 6, 2023 12:35:28 PM</td>
+										<td class='linked' test-id='2'>verifyUpdatePublicHoliday</td>
+										<td><span class='test-status pass'>pass</span></td>
+									</tr>
+									<tr>
+										<td>Nov 6, 2023 12:36:01 PM</td>
+										<td class='linked' test-id='3'>verifyDeletePublicHoliday</td>
 										<td><span class='test-status fail'>fail</span></td>
 									</tr>
 								</tbody>
@@ -334,7 +459,7 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Tests
-					<div class='panel-lead'>1</div>
+					<div class='panel-lead'>3</div>
 				</div>
 			</div>
 			<div class='col s2'>
@@ -346,19 +471,19 @@
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Start
-					<div class='panel-lead'>Oct 18, 2023 12:39:05 PM</div>
+					<div class='panel-lead'>Nov 6, 2023 12:35:00 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 			 		End
-			 		<div class='panel-lead'>Oct 18, 2023 12:39:59 PM</div>
+			 		<div class='panel-lead'>Nov 6, 2023 12:36:18 PM</div>
 				</div>
 			</div>
 			<div class='col s2'>
 				<div class='card-panel r'>
 					Time Taken
-					<div class='panel-lead'>0h 0m 54s+708ms</div>
+					<div class='panel-lead'>0h 1m 18s+192ms</div>
 				</div>
 			</div>
 			<div class='col s4'>
@@ -399,11 +524,11 @@
 						</tr>
 						<tr>
 							<td>FunctionalTest</td>
-							<td>0</td>
+							<td>2</td>
 							<td>1</td>
 							<td>0</td>
 							<td>
-									0%
+									66.667%
 							</td>
 						</tr>
 					</table>
@@ -417,8 +542,8 @@
 		<!-- container -->
 		<script>
 			var statusGroup = {
-                parentCount: 1,
-				passParent: 0,
+                parentCount: 3,
+				passParent: 2,
 				failParent: 1,
 				fatalParent: 0,
 				errorParent: 0,
@@ -449,7 +574,7 @@
 		</script>
 		<script>
 			var timeline = {
-			        "searchColumns":36.483
+			        "verifyCreatePublicHoliday":19.916,"verifyUpdatePublicHoliday":29.089,"verifyDeletePublicHoliday":16.797
 			};
 		</script>
 		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/b65cd69/v3html/js/extent.js' type='text/javascript'></script>

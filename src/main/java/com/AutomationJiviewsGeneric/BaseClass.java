@@ -101,68 +101,68 @@ public class BaseClass {
 		driver.quit();
 	}
 
-//	public void login() throws IOException, InterruptedException {
-//		// Perform login only if the user is not already logged in
-//		if (!isLoggedIn) {
-//			Reporter.log("Login", true);
-//			logger.info("Login to the Jivi application");
-//
-//			configUtility configUtil = new configUtility();
-//			String url = configUtil.getCongigPropertyData("url");
-//			String un = configUtil.getCongigPropertyData("username");
-//			String pw = configUtil.getCongigPropertyData("password");
-//			driver.get(url);
-//			LoginPage lp = new LoginPage(driver);
-//			lp.setLogin(un, pw);
-//			isLoggedIn = true;
-//		}
-//	}
-
-//	public void logout() {
-//		if (isLoggedIn) {
-//			Reporter.log("Logout", true);
-//			logger.info("Logout from Jivi application");
-			// Implement the logout logic here
-			//		HomePage hp=new HomePage(driver);
-			//		Thread.sleep(2000);
-			//		hp.setAdmin();
-			//		Thread.sleep(2000);
-			//		hp.setLogout();
-			// Reset the isLoggedIn flag to allow logging in again in the future
-//			isLoggedIn = false;
-//		}
-//	}
-//	@BeforeClass
-//	public void beforeTestMethod() throws IOException, InterruptedException {
-//		login();
-//	}
-//
-//	@AfterClass
-//	public void afterTestMethod() {
-//		try {
-//			logout();
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//	}
-		@BeforeMethod
-		public void login() throws IOException, InterruptedException {
+	public void login() throws IOException, InterruptedException {
+		// Perform login only if the user is not already logged in
+		if (!isLoggedIn) {
 			Reporter.log("Login", true);
 			logger.info("Login to the Jivi application");
-	
-			configUtility congigUtil =new configUtility();
-			String url = congigUtil.getCongigPropertyData("url");
-			String un = congigUtil.getCongigPropertyData("username");
-			String pw = congigUtil.getCongigPropertyData("password");
+
+			configUtility configUtil = new configUtility();
+			String url = configUtil.getCongigPropertyData("url");
+			String un = configUtil.getCongigPropertyData("username");
+			String pw = configUtil.getCongigPropertyData("password");
 			driver.get(url);
-			LoginPage lp=new LoginPage(driver);
+			LoginPage lp = new LoginPage(driver);
 			lp.setLogin(un, pw);
+			isLoggedIn = true;
 		}
-	
-		@AfterMethod
-		public void logout() throws Exception {
+	}
+
+	public void logout() {
+		if (isLoggedIn) {
 			Reporter.log("Logout", true);
 			logger.info("Logout from Jivi application");
+//			// Implement the logout logic here
+//			//		HomePage hp=new HomePage(driver);
+//			//		Thread.sleep(2000);
+//			//		hp.setAdmin();
+//			//		Thread.sleep(2000);
+//			//		hp.setLogout();
+//			// Reset the isLoggedIn flag to allow logging in again in the future
+			isLoggedIn = false;
+		}
+	}
+	@BeforeClass
+	public void beforeTestMethod() throws IOException, InterruptedException {
+		login();
+	}
+
+	@AfterClass
+	public void afterTestMethod() {
+		try {
+			logout();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+//		@BeforeMethod
+//		public void login() throws IOException, InterruptedException {
+//			Reporter.log("Login", true);
+//			logger.info("Login to the Jivi application");
+//	
+//			configUtility congigUtil =new configUtility();
+//			String url = congigUtil.getCongigPropertyData("url");
+//			String un = congigUtil.getCongigPropertyData("username");
+//			String pw = congigUtil.getCongigPropertyData("password");
+//			driver.get(url);
+//			LoginPage lp=new LoginPage(driver);
+//			lp.setLogin(un, pw);
+//		}
+//	
+//		@AfterMethod
+//		public void logout() throws Exception {
+//			Reporter.log("Logout", true);
+//			logger.info("Logout from Jivi application");
 
 //			HomePage hp=new HomePage(driver);
 //			Thread.sleep(2000);
@@ -170,6 +170,6 @@ public class BaseClass {
 //			Thread.sleep(2000);
 //			hp.setLogout();
 
-		}
+//		}
 
 }

@@ -2,15 +2,11 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener
-			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-	</listeners>
-	<test thread-count="5" name="Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" />
-		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+		<listener class-name="com.AutomationJiviewsGeneric.ListenerImplimentation"/>
+		</listeners>
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

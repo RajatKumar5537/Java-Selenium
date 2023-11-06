@@ -21,7 +21,11 @@ public class RosterSetupPage extends BaseClass{
 	private WebElement rosterCreation;
 	
 	
+	@FindBy(xpath = "//div[text()='Public Holiday']/..")
+	private WebElement pubicHoliday;
 	
+	@FindBy(xpath = "//div[text()='Schedule Creation Rules']/..")
+	private WebElement scheduleCreationRules;
 	
 	public RosterSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -47,5 +51,17 @@ public class RosterSetupPage extends BaseClass{
 		RoasterSetup.click();
 		Thread.sleep(2000);
 		rosterCreation.click();
+	}
+	
+	public void setPubicHoliday() throws InterruptedException {
+		RoasterSetup.click();
+		Thread.sleep(2000);
+		pubicHoliday.click();
+	}
+	public void setScheduleCreationRules() throws InterruptedException {
+		RoasterSetup.click();
+		Thread.sleep(2000);
+		scheduleCreationRules.click();
+		
 	}
 }

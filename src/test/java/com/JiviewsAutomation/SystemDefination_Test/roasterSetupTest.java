@@ -106,7 +106,7 @@ public class roasterSetupTest extends BaseClass{
 		rsp.setRosterCreation();
 		sdrs.setUpdateRoaster();
 	}
-	@Test
+	@Test(dependsOnMethods = "verifyUpdateRoaster")
 	public void verifyDeactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
+<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -14,39 +14,15 @@
       <![CDATA[Logout]]>
     </line>
     <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-03T03:52:47Z" name="Suite" finished-at="2023-11-03T03:56:59Z" duration-ms="251980">
+  <suite started-at="2023-11-06T13:29:58Z" name="Suite" finished-at="2023-11-06T13:31:11Z" duration-ms="72218">
     <groups>
     </groups>
-    <test started-at="2023-11-03T03:52:47Z" name="Test" finished-at="2023-11-03T03:56:59Z" duration-ms="251980">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:52:47Z" name="launchBrowser" finished-at="2023-11-03T03:52:49Z" duration-ms="1601" status="PASS">
+    <test started-at="2023-11-06T13:29:58Z" name="Test" finished-at="2023-11-06T13:31:11Z" duration-ms="72218">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:29:58Z" name="launchBrowser" finished-at="2023-11-06T13:30:00Z" duration-ms="1486" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -56,104 +32,40 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:52:49Z" name="login" finished-at="2023-11-03T03:52:56Z" duration-ms="7776" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:00Z" name="beforeTestMethod" finished-at="2023-11-06T13:30:02Z" duration-ms="2481" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyCreateRoasterWithGroup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:52:56Z" name="verifyCreateRoasterWithGroup" finished-at="2023-11-03T03:53:38Z" duration-ms="41535" status="PASS">
+        </test-method> <!-- beforeTestMethod -->
+        <test-method signature="verifyCreateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:02Z" name="verifyCreateSCR" finished-at="2023-11-06T13:30:28Z" duration-ms="25566" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateRoasterWithGroup -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:53:38Z" name="logout" finished-at="2023-11-03T03:53:38Z" duration-ms="0" status="PASS">
+        </test-method> <!-- verifyCreateSCR -->
+        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:28Z" name="verifyUpdateSCR" finished-at="2023-11-06T13:30:55Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR" duration-ms="26844" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpdateSCR -->
+        <test-method signature="verifyDelectSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:55Z" name="verifyDelectSCR" finished-at="2023-11-06T13:31:10Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyUpdateSCR" duration-ms="15559" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDelectSCR -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:31:10Z" name="afterTestMethod" finished-at="2023-11-06T13:31:10Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:53:38Z" name="login" finished-at="2023-11-03T03:54:01Z" duration-ms="22733" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyCreateRoasterwithEmployee()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:54:01Z" name="verifyCreateRoasterwithEmployee" finished-at="2023-11-03T03:55:27Z" duration-ms="85989" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCreateRoasterwithEmployee -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:55:27Z" name="logout" finished-at="2023-11-03T03:55:27Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:55:27Z" name="login" finished-at="2023-11-03T03:55:36Z" duration-ms="8980" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyDeactiveRoster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:55:36Z" name="verifyDeactiveRoster" finished-at="2023-11-03T03:55:58Z" duration-ms="22024" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeactiveRoster -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:55:58Z" name="logout" finished-at="2023-11-03T03:55:58Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:55:58Z" name="login" finished-at="2023-11-03T03:56:03Z" duration-ms="5040" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyUpdateRoaster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:03Z" name="verifyUpdateRoaster" finished-at="2023-11-03T03:56:30Z" duration-ms="26885" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUpdateRoaster -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:30Z" name="logout" finished-at="2023-11-03T03:56:30Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:30Z" name="login" finished-at="2023-11-03T03:56:35Z" duration-ms="5548" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyReactiveRoster()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:35Z" name="verifyReactiveRoster" finished-at="2023-11-03T03:56:59Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest.verifyDeactiveRoster" duration-ms="23547" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReactiveRoster -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:59Z" name="closeBrowser" finished-at="2023-11-03T03:56:59Z" duration-ms="220" status="PASS">
+        </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:31:10Z" name="closeBrowser" finished-at="2023-11-06T13:31:11Z" duration-ms="180" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@512d92b]" started-at="2023-11-03T03:56:59Z" name="logout" finished-at="2023-11-03T03:56:59Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- logout -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SCRTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>
