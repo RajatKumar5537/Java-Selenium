@@ -41,10 +41,7 @@ stages:
   jobs:
   - job: Publish
     steps:
-    - task: PublishBuildArtifacts@1
-      inputs:
-        pathtoPublish: '$(System.DefaultWorkingDirectory)'
-        artifactName: 'MyJavaArtifacts'
+
 # Add a step to publish Extent Report artifacts
     - task: PublishBuildArtifacts@1
       inputs:
