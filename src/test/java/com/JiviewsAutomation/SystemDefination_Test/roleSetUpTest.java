@@ -37,7 +37,7 @@ public class roleSetUpTest extends BaseClass{
 		Thread.sleep(2000);
 		esp.setCreateRole();
 		sdrs.setCreateNewRole();
-		logger.info("verify Create a new role is successfull");
+//		logger.info("verify Create a new role is successfull");
 	}
 
 	@Test
@@ -55,7 +55,7 @@ public class roleSetUpTest extends BaseClass{
 		jmmi.clickOnSystemDefination();
 		esp.setCreateRole();
 		sdrs.setUpdateRole();
-		logger.info("Verify Update Role successfull");
+//		logger.info("Verify Update Role successfull");
 	}
 
 	@Test

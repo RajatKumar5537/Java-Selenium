@@ -186,7 +186,6 @@ public class SystemDefinationSCRPage extends BaseClass{
 		txtPeriodLength.sendKeys(periodLength);
 	}
 	public void setChkIsActive() {
-
 		action.scrollToElement(chkIsActive).perform();
 		chkIsActive.click();
 	}
@@ -399,12 +398,22 @@ public class SystemDefinationSCRPage extends BaseClass{
 		scr.setBtnSaveScheduleCreationRule();
 
 	}
-	public void setDeleteSCR() throws Exception {
+	public void setDeactivateSCR() throws Exception {
 		scr = new SystemDefinationSCRPage(driver);
 
 		scr.setCheckbox();
 		Thread.sleep(2000);
 		scr.setBtnDeletePublicHlday();
 		scr.setBtnYes();
+	}
+	
+	public void setReactivateSCR() throws Exception {
+		scr = new SystemDefinationSCRPage(driver);
+		
+		scr.setBtnEdit();
+		Thread.sleep(2000);
+		scr.setChkIsActive();
+		Thread.sleep(2000);
+		scr.setBtnSaveScheduleCreationRule();
 	}
 }

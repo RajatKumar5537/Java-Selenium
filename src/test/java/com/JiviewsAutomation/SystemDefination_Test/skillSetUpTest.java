@@ -42,7 +42,7 @@ public class skillSetUpTest extends BaseClass{
 		logger.info("A skill is created successfully ");
 
 	}
-	@Test (priority = 2, dependsOnMethods = "createNewSkill")
+	@Test (priority = 2 )//, dependsOnMethods = "createNewSkill")
 	public void updateSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("Update a Skill");
@@ -66,7 +66,7 @@ public class skillSetUpTest extends BaseClass{
 	}
 
 
-	@Test (priority = 3, dependsOnMethods = {"createNewSkill","updateSkill"})
+	@Test (priority = 3 )//, dependsOnMethods = "updateSkill")
 	public void deActiveSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("deactive a Skill");
@@ -88,7 +88,7 @@ public class skillSetUpTest extends BaseClass{
 		sds.setDeactiveSkil();
 		logger.info("A skill is deactivate successfully ");
 	}
-	@Test (priority = 4, dependsOnMethods = {"createNewSkill","updateSkill","deActiveSkill"})
+	@Test (priority = 4)//, dependsOnMethods = "deActiveSkill")
 	public void setReActiveSkill() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("ReActive a Skill");
@@ -97,19 +97,20 @@ public class skillSetUpTest extends BaseClass{
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
 		EmployeeSetupPage esp=new EmployeeSetupPage(driver);
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		hp.setOrgUnit();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		oudd.setAutoOu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		esp.setCreateSkill();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		sds.setActivateDeactiveSkill();
+		
 		logger.info("A skill is reactivate successfully ");
 	}
-	@Test (priority = 5, dependsOnMethods = {"createNewSkill", "updateSkill", "deActiveSkill", "setReActiveSkill"})
+	@Test (priority = 5)//, dependsOnMethods =  "setReActiveSkill")
 	public void searchColumns() throws Exception {
 		captureScreenshot(driver, "skillSetUpTest");
 		logger.info("searching a skill");

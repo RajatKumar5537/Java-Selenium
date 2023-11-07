@@ -7,9 +7,11 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="verifyDelectSCR"/>
+          <include name="verifyDeactivateSCR"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
+          <include name="verifyUpdateSCR"/>
+          <include name="verifyCreateSCR"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SCRTest -->
     </classes>

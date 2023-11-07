@@ -91,7 +91,7 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,   3 passed</span>
+                    <span class="method-stats">4 methods,   4 passed</span>
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -107,7 +107,12 @@
                       <br/>
                       <span>
                         <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.SCRTest" class="method navigator-link" hash-for-method="verifyDelectSCR">verifyDelectSCR</a> <!-- method navigator-link -->
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.SCRTest" class="method navigator-link" hash-for-method="verifyDeactivateSCR">verifyDeactivateSCR</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.SCRTest" class="method navigator-link" hash-for-method="verifyDereactivateSCR">verifyDereactivateSCR</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
@@ -142,9 +147,16 @@
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="verifyDelectSCR">
-                  </a> <!-- verifyDelectSCR -->
-                  <span class="method-name">verifyDelectSCR</span>
+                  <a name="verifyDeactivateSCR">
+                  </a> <!-- verifyDeactivateSCR -->
+                  <span class="method-name">verifyDeactivateSCR</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="verifyDereactivateSCR">
+                  </a> <!-- verifyDereactivateSCR -->
+                  <span class="method-name">verifyDereactivateSCR</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
@@ -211,19 +223,23 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(4);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'verifyUpdateSCR')
+data.setCell(0, 1, 'verifyCreateSCR')
 data.setCell(0, 2, 'com.JiviewsAutomation.SystemDefination_Test.SCRTest')
-data.setCell(0, 3, 26844);
+data.setCell(0, 3, 27475);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'verifyCreateSCR')
+data.setCell(1, 1, 'verifyDereactivateSCR')
 data.setCell(1, 2, 'com.JiviewsAutomation.SystemDefination_Test.SCRTest')
-data.setCell(1, 3, 25566);
+data.setCell(1, 3, 20914);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'verifyDelectSCR')
+data.setCell(2, 1, 'verifyUpdateSCR')
 data.setCell(2, 2, 'com.JiviewsAutomation.SystemDefination_Test.SCRTest')
-data.setCell(2, 3, 15559);
+data.setCell(2, 3, 17158);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'verifyDeactivateSCR')
+data.setCell(3, 2, 'com.JiviewsAutomation.SystemDefination_Test.SCRTest')
+data.setCell(3, 3, 14703);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -261,27 +277,31 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeTestMethod</span>
-                <span class="method-start">1489 ms</span>
+                <span class="method-start">1548 ms</span>
               </div> <!-- configuration-class before -->
               <div class="test-method">
                 <span class="method-name">verifyCreateSCR</span>
-                <span class="method-start">3974 ms</span>
+                <span class="method-start">3902 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">verifyDereactivateSCR</span>
+                <span class="method-start">31380 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
                 <span class="method-name">verifyUpdateSCR</span>
-                <span class="method-start">29544 ms</span>
+                <span class="method-start">52296 ms</span>
               </div> <!-- test-method -->
               <div class="test-method">
-                <span class="method-name">verifyDelectSCR</span>
-                <span class="method-start">56388 ms</span>
+                <span class="method-name">verifyDeactivateSCR</span>
+                <span class="method-start">69454 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterTestMethod</span>
-                <span class="method-start">71960 ms</span>
+                <span class="method-start">84157 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">71960 ms</span>
+                <span class="method-start">84157 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->

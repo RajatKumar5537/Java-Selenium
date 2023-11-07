@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -11,18 +11,15 @@
       <![CDATA[Login]]>
     </line>
     <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-06T13:29:58Z" name="Suite" finished-at="2023-11-06T13:31:11Z" duration-ms="72218">
+  <suite started-at="2023-11-07T02:56:38Z" name="Suite" finished-at="2023-11-07T02:58:03Z" duration-ms="84478">
     <groups>
     </groups>
-    <test started-at="2023-11-06T13:29:58Z" name="Test" finished-at="2023-11-06T13:31:11Z" duration-ms="72218">
+    <test started-at="2023-11-07T02:56:38Z" name="Test" finished-at="2023-11-07T02:58:03Z" duration-ms="84478">
       <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:29:58Z" name="launchBrowser" finished-at="2023-11-06T13:30:00Z" duration-ms="1486" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:39Z" name="launchBrowser" finished-at="2023-11-07T02:56:40Z" duration-ms="1545" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -32,33 +29,34 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:00Z" name="beforeTestMethod" finished-at="2023-11-06T13:30:02Z" duration-ms="2481" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:40Z" name="beforeTestMethod" finished-at="2023-11-07T02:56:42Z" duration-ms="2352" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="verifyCreateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:02Z" name="verifyCreateSCR" finished-at="2023-11-06T13:30:28Z" duration-ms="25566" status="PASS">
+        <test-method signature="verifyCreateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:42Z" name="verifyCreateSCR" finished-at="2023-11-07T02:57:10Z" duration-ms="27475" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateSCR -->
-        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:28Z" name="verifyUpdateSCR" finished-at="2023-11-06T13:30:55Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR" duration-ms="26844" status="PASS">
+        <test-method signature="verifyDereactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:10Z" name="verifyDereactivateSCR" finished-at="2023-11-07T02:57:31Z" duration-ms="20914" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDereactivateSCR -->
+        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:31Z" name="verifyUpdateSCR" finished-at="2023-11-07T02:57:48Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR" duration-ms="17158" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyUpdateSCR -->
-        <test-method signature="verifyDelectSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:30:55Z" name="verifyDelectSCR" finished-at="2023-11-06T13:31:10Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyUpdateSCR" duration-ms="15559" status="PASS">
+        <test-method signature="verifyDeactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:48Z" name="verifyDeactivateSCR" finished-at="2023-11-07T02:58:03Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyUpdateSCR" duration-ms="14703" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDelectSCR -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:31:10Z" name="afterTestMethod" finished-at="2023-11-06T13:31:10Z" duration-ms="0" status="PASS">
+        </test-method> <!-- verifyDeactivateSCR -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:58:03Z" name="afterTestMethod" finished-at="2023-11-07T02:58:03Z" duration-ms="0" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@58783f6c]" started-at="2023-11-06T13:31:10Z" name="closeBrowser" finished-at="2023-11-06T13:31:11Z" duration-ms="180" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:58:03Z" name="closeBrowser" finished-at="2023-11-07T02:58:03Z" duration-ms="223" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>

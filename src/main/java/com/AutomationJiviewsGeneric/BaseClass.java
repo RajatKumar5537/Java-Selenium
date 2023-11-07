@@ -120,15 +120,15 @@ public class BaseClass {
 
 	public void logout() {
 		if (isLoggedIn) {
-			Reporter.log("Logout", true);
-			logger.info("Logout from Jivi application");
-//			// Implement the logout logic here
-//			//		HomePage hp=new HomePage(driver);
-//			//		Thread.sleep(2000);
-//			//		hp.setAdmin();
-//			//		Thread.sleep(2000);
-//			//		hp.setLogout();
-//			// Reset the isLoggedIn flag to allow logging in again in the future
+//			Reporter.log("Logout", true);
+//			logger.info("Logout from Jivi application");
+			// Implement the logout logic here
+			//		HomePage hp=new HomePage(driver);
+			//		Thread.sleep(2000);
+			//		hp.setAdmin();
+			//		Thread.sleep(2000);
+			//		hp.setLogout();
+			// Reset the isLoggedIn flag to allow logging in again in the future
 			isLoggedIn = false;
 		}
 	}
@@ -169,7 +169,6 @@ public class BaseClass {
 //			hp.setAdmin();
 //			Thread.sleep(2000);
 //			hp.setLogout();
-
 //		}
 
 }
