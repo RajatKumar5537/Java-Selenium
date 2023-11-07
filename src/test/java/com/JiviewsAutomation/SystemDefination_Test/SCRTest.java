@@ -23,7 +23,7 @@ public class SCRTest extends BaseClass{
 	public RosterSetupPage rsp; 
 	public SystemDefinationSCRPage scr;
 
-	@Test
+	@Test(priority = 1)
 	public void verifyCreateSCR ()throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Create SCR");
@@ -44,7 +44,7 @@ public class SCRTest extends BaseClass{
 		logger.info("Create a SCR is successfull");
 	}
 
-	@Test(dependsOnMethods = "verifyCreateSCR"  )
+	@Test //(priority = 2,dependsOnMethods = "verifyCreateSCR"  )
 	public void verifyUpdateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Update SCR");
@@ -63,7 +63,7 @@ public class SCRTest extends BaseClass{
 		rsp.setScheduleCreationRules();
 		scr.setUpdateSCR();
 	}
-	@Test(dependsOnMethods = "verifyUpdateSCR"  )
+	@Test //(priority = 3,dependsOnMethods = "verifyUpdateSCR"  )
 	public void verifyDeactivateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Deactivate SCR");
@@ -83,8 +83,8 @@ public class SCRTest extends BaseClass{
 		scr.setDeactivateSCR();
 	}
 
-	@Test
-	public void verifyDereactivateSCR() throws Exception {
+	@Test //(priority = 4,dependsOnMethods = "verifyDeactivateSCR" )
+	public void verifyReactivateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Reactive SCR");
 		driver.navigate().refresh();

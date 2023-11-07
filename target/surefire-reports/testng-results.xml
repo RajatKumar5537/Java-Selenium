@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="4" total="17" passed="9" failed="4" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -11,15 +11,24 @@
       <![CDATA[Login]]>
     </line>
     <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Role Group Name is required]]>
+    </line>
+    <line>
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-07T02:56:38Z" name="Suite" finished-at="2023-11-07T02:58:03Z" duration-ms="84478">
+  <suite started-at="2023-11-07T10:14:55Z" name="Suite" finished-at="2023-11-07T10:17:56Z" duration-ms="180357">
     <groups>
     </groups>
-    <test started-at="2023-11-07T02:56:38Z" name="Test" finished-at="2023-11-07T02:58:03Z" duration-ms="84478">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:39Z" name="launchBrowser" finished-at="2023-11-07T02:56:40Z" duration-ms="1545" status="PASS">
+    <test started-at="2023-11-07T10:14:55Z" name="Test" finished-at="2023-11-07T10:17:56Z" duration-ms="180357">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:14:55Z" name="launchBrowser" finished-at="2023-11-07T10:14:57Z" duration-ms="1537" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -29,41 +38,462 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:40Z" name="beforeTestMethod" finished-at="2023-11-07T02:56:42Z" duration-ms="2352" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:14:57Z" name="beforeTestMethod" finished-at="2023-11-07T10:14:59Z" duration-ms="2434" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="verifyCreateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:56:42Z" name="verifyCreateSCR" finished-at="2023-11-07T02:57:10Z" duration-ms="27475" status="PASS">
+        <test-method signature="verifyDeletePublicHoliday()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:14:59Z" name="verifyDeletePublicHoliday" finished-at="2023-11-07T10:15:21Z" duration-ms="22155" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateSCR -->
-        <test-method signature="verifyDereactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:10Z" name="verifyDereactivateSCR" finished-at="2023-11-07T02:57:31Z" duration-ms="20914" status="PASS">
+        </test-method> <!-- verifyDeletePublicHoliday -->
+        <test-method signature="verifyUpdatePublicHoliday()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:15:21Z" name="verifyUpdatePublicHoliday" finished-at="2023-11-07T10:15:45Z" duration-ms="24049" status="FAIL">
+          <exception class="org.openqa.selenium.json.JsonException">
+            <message>
+              <![CDATA[java.lang.reflect.InvocationTargetException
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, actions {actions=[org.openqa.selenium.interactions.Sequence@7c2b6acb]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 440fb7eab0a2805cad807ded02b1679a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.json.JsonException: java.lang.reflect.InvocationTargetException
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, actions {actions=[org.openqa.selenium.interactions.Sequence@7c2b6acb]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 440fb7eab0a2805cad807ded02b1679a
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:395)
+at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:165)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
+at org.openqa.selenium.json.JsonOutput.lambda$new$22(JsonOutput.java:185)
+at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.accept(ForEachOps.java:183)
+at java.base/java.util.stream.ReferencePipeline$2$1.accept(ReferencePipeline.java:179)
+at java.base/java.util.Iterator.forEachRemaining(Iterator.java:133)
+at java.base/java.util.Spliterators$IteratorSpliterator.forEachRemaining(Spliterators.java:1845)
+at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+at org.openqa.selenium.json.JsonOutput.lambda$new$23(JsonOutput.java:185)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
+at org.openqa.selenium.json.JsonOutput.lambda$new$24(JsonOutput.java:203)
+at com.google.common.collect.SingletonImmutableBiMap.forEach(SingletonImmutableBiMap.java:68)
+at org.openqa.selenium.json.JsonOutput.lambda$new$25(JsonOutput.java:198)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
+at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:313)
+at org.openqa.selenium.json.Json.toJson(Json.java:43)
+at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:256)
+at org.openqa.selenium.remote.codec.AbstractHttpCommandCodec.encode(AbstractHttpCommandCodec.java:120)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:179)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:603)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:585)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:554)
+at com.AutomationJiviewsPOM.SystemDefinationPublicHolidayPage.setBtnEdit(SystemDefinationPublicHolidayPage.java:105)
+at com.AutomationJiviewsPOM.SystemDefinationPublicHolidayPage.setUpdatePublicHoliday(SystemDefinationPublicHolidayPage.java:156)
+at com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest.verifyUpdatePublicHoliday(publicHolidayTest.java:59)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Suppressed: org.openqa.selenium.json.JsonException: Attempting to close incomplete json stream
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: driver.version: RemoteWebDriver
+at org.openqa.selenium.json.JsonOutput.close(JsonOutput.java:338)
+at org.openqa.selenium.json.Json.toJson(Json.java:41)
+... 41 more
+Caused by: java.lang.reflect.InvocationTargetException
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:391)
+... 62 more
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//td[@class='text-center text-nowrap'])[3]/button"}
+  (Session info: chrome=118.0.5993.120)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, findElement {using=xpath, value=(//td[@class='text-center text-nowrap'])[3]/button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 440fb7eab0a2805cad807ded02b1679a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy30.getWrappedElement(Unknown Source)
+at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:275)
+at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:224)
+at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
+at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
+... 67 more
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.json.JsonException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDereactivateSCR -->
-        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:31Z" name="verifyUpdateSCR" finished-at="2023-11-07T02:57:48Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR" duration-ms="17158" status="PASS">
+        </test-method> <!-- verifyUpdatePublicHoliday -->
+        <test-method signature="verifyCreatePublicHoliday()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:17:45Z" name="verifyCreatePublicHoliday" finished-at="2023-11-07T10:17:48Z" duration-ms="3341" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:37)
+at com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest.verifyCreatePublicHoliday(publicHolidayTest.java:36)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyUpdateSCR -->
-        <test-method signature="verifyDeactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:57:48Z" name="verifyDeactivateSCR" finished-at="2023-11-07T02:58:03Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyUpdateSCR" duration-ms="14703" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeactivateSCR -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:58:03Z" name="afterTestMethod" finished-at="2023-11-07T02:58:03Z" duration-ms="0" status="PASS">
+        </test-method> <!-- verifyCreatePublicHoliday -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:17:48Z" name="afterTestMethod" finished-at="2023-11-07T10:17:48Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3a7b503d]" started-at="2023-11-07T02:58:03Z" name="closeBrowser" finished-at="2023-11-07T02:58:03Z" duration-ms="223" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest@7577b641]" started-at="2023-11-07T10:17:55Z" name="closeBrowser" finished-at="2023-11-07T10:17:56Z" duration-ms="243" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:15:46Z" name="beforeTestMethod" finished-at="2023-11-07T10:15:48Z" duration-ms="2427" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method signature="verifyDeactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:15:48Z" name="verifyDeactivateSCR" finished-at="2023-11-07T10:16:05Z" duration-ms="17201" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeactivateSCR -->
+        <test-method signature="verifyReactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:16:05Z" name="verifyReactivateSCR" finished-at="2023-11-07T10:16:22Z" duration-ms="16613" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyReactivateSCR -->
+        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:16:22Z" name="verifyUpdateSCR" finished-at="2023-11-07T10:16:39Z" duration-ms="16841" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpdateSCR -->
+        <test-method signature="verifyCreateSCR()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:17:48Z" name="verifyCreateSCR" finished-at="2023-11-07T10:17:52Z" duration-ms="3277" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:37)
+at com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR(SCRTest.java:38)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateSCR -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@3704122f]" started-at="2023-11-07T10:17:52Z" name="afterTestMethod" finished-at="2023-11-07T10:17:52Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SCRTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roleGroupTest">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:16:39Z" name="beforeTestMethod" finished-at="2023-11-07T10:16:42Z" duration-ms="3427" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method signature="verifyCreateRoleGrpWithoutAvailableRole()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:16:42Z" name="verifyCreateRoleGrpWithoutAvailableRole" finished-at="2023-11-07T10:16:58Z" duration-ms="15462" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateRoleGrpWithoutAvailableRole -->
+        <test-method signature="verifyCreateRoleGrpWithoutRoleGrpName()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:16:58Z" name="verifyCreateRoleGrpWithoutRoleGrpName" finished-at="2023-11-07T10:17:10Z" duration-ms="12723" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Role Group Name is required]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- verifyCreateRoleGrpWithoutRoleGrpName -->
+        <test-method signature="verifyDeactivateRoleGroups()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:17:10Z" name="verifyDeactivateRoleGroups" finished-at="2023-11-07T10:17:21Z" duration-ms="11205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyDeactivateRoleGroups -->
+        <test-method signature="verifySearchRoleGroup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:17:21Z" name="verifySearchRoleGroup" finished-at="2023-11-07T10:17:32Z" duration-ms="10769" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifySearchRoleGroup -->
+        <test-method signature="verifyUpdateRoleGroups()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:17:32Z" name="verifyUpdateRoleGroups" finished-at="2023-11-07T10:17:45Z" duration-ms="12713" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyUpdateRoleGroups -->
+        <test-method signature="verifyCreateRoleGroups()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:17:52Z" name="verifyCreateRoleGroups" finished-at="2023-11-07T10:17:55Z" duration-ms="3236" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <a class="nav-link dropdown-toggle hide-arrow " href="#" data-toggle="dropdown" aria-expanded="false">...</a> is not clickable at point (1061, 29). Other element would receive the click: <div class="modal fade show" id="modals-RoleGroup-details" style="padding-right: 17px; display: block;">...</div>
+  (Session info: chrome=118.0.5993.120)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [440fb7eab0a2805cad807ded02b1679a, clickElement {id=56D1C97EEA9BEE7EF1E7DC195F560375_element_1162}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 118.0.5993.120, chrome: {chromedriverVersion: 118.0.5993.70 (e52f33f30b91..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65345}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65345/devtoo..., se:cdpVersion: 118.0.5993.120, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (440fb7eab0a2805cad807ded02b1679a)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 440fb7eab0a2805cad807ded02b1679a
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy30.click(Unknown Source)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:37)
+at com.JiviewsAutomation.SystemDefination_Test.roleGroupTest.verifyCreateRoleGroups(roleGroupTest.java:34)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- verifyCreateRoleGroups -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roleGroupTest@3153ddfc]" started-at="2023-11-07T10:17:55Z" name="afterTestMethod" finished-at="2023-11-07T10:17:55Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roleGroupTest -->
     </test> <!-- Test -->
   </suite> <!-- Suite -->
 </testng-results>

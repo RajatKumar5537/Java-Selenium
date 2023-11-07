@@ -41,10 +41,11 @@ public class publicHolidayTest extends BaseClass{
 		logger.info("Create a public holiday is successfull");
 	}
 	
-	@Test (priority = 2, dependsOnMethods = "verifyCreatePublicHoliday")
+	@Test //(priority = 2, dependsOnMethods = "verifyCreatePublicHoliday")
 	public void verifyUpdatePublicHoliday() throws Exception {
 		captureScreenshot(driver, "publicHolidayTest");
-
+		driver.navigate().refresh();
+		
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
@@ -61,10 +62,11 @@ public class publicHolidayTest extends BaseClass{
 	}
 	
 	
-	@Test(priority = 3, dependsOnMethods = "verifyUpdatePublicHoliday")
+	@Test //(priority = 3, dependsOnMethods = "verifyUpdatePublicHoliday")
 	public void verifyDeletePublicHoliday() throws Exception {
 		captureScreenshot(driver, "publicHolidayTest");
-
+		driver.navigate().refresh();
+		
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);

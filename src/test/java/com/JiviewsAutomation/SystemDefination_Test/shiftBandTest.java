@@ -20,6 +20,8 @@ public class shiftBandTest extends BaseClass{
 	public void verifyCreateShiftBand() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("Create Shift Band Difinition");
+		driver.navigate().refresh();
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -42,6 +44,7 @@ public class shiftBandTest extends BaseClass{
 	public void verifyUpdateShiftBand() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("verify update shiftBand");
+		driver.navigate().refresh();
 		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
@@ -65,6 +68,7 @@ public class shiftBandTest extends BaseClass{
 	public void verifyDeactiveShiftBand() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("verify Deactive Shift band");
+		driver.navigate().refresh();
 		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
@@ -87,7 +91,8 @@ public class shiftBandTest extends BaseClass{
 	public void verifyWithoutShiftBandName() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("verify Without Shift Band Name");
-
+		driver.navigate().refresh();
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -109,7 +114,8 @@ public class shiftBandTest extends BaseClass{
 	public void verifyWithCombinationShift() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("verify With Combination Shift");
-
+		driver.navigate().refresh();
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);
@@ -132,7 +138,8 @@ public class shiftBandTest extends BaseClass{
 	public void verifyWithOvertimeShift() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");
 		logger.info("verify With Overtime Shift");
-
+		driver.navigate().refresh();
+		
 		HomePage hp=new HomePage(driver);
 		OrganizationUnitDropDown oudd= new OrganizationUnitDropDown(driver);
 		jiviewsMainMenuItems jmmi= new jiviewsMainMenuItems(driver);

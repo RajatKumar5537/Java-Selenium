@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="5" total="6" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Open Browser]]>
@@ -14,12 +14,12 @@
       <![CDATA[Close Browser]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-07T02:53:13Z" name="Default suite" finished-at="2023-11-07T02:54:31Z" duration-ms="77604">
+  <suite started-at="2023-11-07T10:05:37Z" name="Default suite" finished-at="2023-11-07T10:06:08Z" duration-ms="31081">
     <groups>
     </groups>
-    <test started-at="2023-11-07T02:53:13Z" name="Default test" finished-at="2023-11-07T02:54:31Z" duration-ms="77604">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:53:13Z" name="launchBrowser" finished-at="2023-11-07T02:53:15Z" duration-ms="1643" status="PASS">
+    <test started-at="2023-11-07T10:05:37Z" name="Default test" finished-at="2023-11-07T10:06:08Z" duration-ms="31081">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.shiftBandTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.shiftBandTest@eadb475]" started-at="2023-11-07T10:05:37Z" name="launchBrowser" finished-at="2023-11-07T10:05:38Z" duration-ms="1558" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Open Browser]]>
@@ -29,41 +29,29 @@
             </line>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:53:15Z" name="beforeTestMethod" finished-at="2023-11-07T02:53:17Z" duration-ms="2403" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.shiftBandTest@eadb475]" started-at="2023-11-07T10:05:38Z" name="beforeTestMethod" finished-at="2023-11-07T10:05:41Z" duration-ms="2779" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="verifyCreateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:53:17Z" name="verifyCreateSCR" finished-at="2023-11-07T02:53:43Z" duration-ms="26112" status="PASS">
+        <test-method signature="verifyDeactiveShiftBand()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.shiftBandTest@eadb475]" started-at="2023-11-07T10:05:41Z" name="verifyDeactiveShiftBand" finished-at="2023-11-07T10:06:08Z" duration-ms="26534" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateSCR -->
-        <test-method signature="verifyDereactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:53:43Z" name="verifyDereactivateSCR" finished-at="2023-11-07T02:54:00Z" duration-ms="16496" status="PASS">
+        </test-method> <!-- verifyDeactiveShiftBand -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.shiftBandTest@eadb475]" started-at="2023-11-07T10:06:08Z" name="afterTestMethod" finished-at="2023-11-07T10:06:08Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDereactivateSCR -->
-        <test-method signature="verifyUpdateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:54:00Z" name="verifyUpdateSCR" finished-at="2023-11-07T02:54:16Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyCreateSCR" duration-ms="15995" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyUpdateSCR -->
-        <test-method signature="verifyDeactivateSCR()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:54:16Z" name="verifyDeactivateSCR" finished-at="2023-11-07T02:54:31Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.SCRTest.verifyUpdateSCR" duration-ms="14678" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeactivateSCR -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:54:31Z" name="closeBrowser" finished-at="2023-11-07T02:54:31Z" duration-ms="210" status="PASS">
+        </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.shiftBandTest@eadb475]" started-at="2023-11-07T10:06:08Z" name="closeBrowser" finished-at="2023-11-07T10:06:08Z" duration-ms="195" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Close Browser]]>
             </line>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SCRTest@77b325b3]" started-at="2023-11-07T02:54:31Z" name="afterTestMethod" finished-at="2023-11-07T02:54:31Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SCRTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.shiftBandTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

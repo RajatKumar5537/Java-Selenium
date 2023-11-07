@@ -2,15 +2,13 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
-		<listener
-			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
+	<listener class-name="com.AutomationJiviewsGeneric.ListenerImplimentation"/>
 	</listeners>
-
-	<test thread-count="5" name="Test">
-		<classes>
-			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
-		</classes>
-	</test> <!--
-	Test -->
-</suite> <!--
-Suite -->
+  <test thread-count="5" name="Test">
+    <classes>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.publicHolidayTest"/>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest"/>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roleGroupTest"/>
+    </classes>
+  </test> <!-- Test -->
+</suite> <!-- Suite -->

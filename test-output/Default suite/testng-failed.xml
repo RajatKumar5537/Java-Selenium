@@ -3,17 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roleGroupTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="verifyDeactivateSCR"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="verifyUpdateSCR"/>
-          <include name="verifyCreateSCR"/>
+          <include name="verifySearchRoleGroup"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SCRTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roleGroupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
