@@ -154,7 +154,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 		PageFactory.initElements(driver, this);
 		this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
-		this.webUtility= new WebUtilities();
+		this.webUtility= new WebUtilities(driver);
 	}
 
 	public void setBtnAddScheduleRule() {
@@ -271,10 +271,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 		action.scrollToElement(availableShiftBand).perform();
 		//		availableShiftBand.click();
 		select=new Select(availableShiftBand);
-		select.selectByValue("114");
-
-
-		//		select.selectByVisibleText("1st  Shift"); 
+		select.selectByIndex(1);
 	}
 	public void setSelectMoveSingle() {
 		action.moveToElement(selectMoveSingle).perform();

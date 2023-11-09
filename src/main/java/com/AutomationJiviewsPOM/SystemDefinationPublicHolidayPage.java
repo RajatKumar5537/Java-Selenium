@@ -1,6 +1,9 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.Random;
 
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -18,9 +21,9 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 	public String timeStamp = LocalDateTime.now().toString();
 	public Actions action;
 	public Select select;
-	public WebUtilities webUtility;
+//	public WebUtilities webUtility;
 	public SystemDefinationPublicHolidayPage sdph;
-	public ExcelUtilities excelUtility;
+//	public ExcelUtilities excelUtility;
 	public String holidayName;
 	public String holidayDate;
 	public String holidayNote;
@@ -69,8 +72,6 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 	public SystemDefinationPublicHolidayPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.action= new Actions(driver);
-		this.excelUtility= new ExcelUtilities();
-		this.webUtility= new WebUtilities();
 	}
 	
 	public void setBtnAddNew() {
@@ -79,22 +80,42 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 	
 	public void setTxtHolidayName(String holidayName) {
 		txtHolidayName.clear();
-		txtHolidayName.sendKeys(holidayName);
+		txtHolidayName.sendKeys(holidayName+" "+ timeStamp);
 	}
-	public void setTxtHolidayDate(String holidayDate) {
-		txtHolidayDate.clear();
-		txtHolidayDate.sendKeys(holidayDate);
-		txtHolidayDate.sendKeys(Keys.ENTER);
+	public void setTxtHolidayDate() {
+//		txtHolidayDate.clear();
+//		txtHolidayDate.sendKeys(holidayDate+" "+ timeStamp);
+//		txtHolidayDate.sendKeys(Keys.ENTER);
+		
+	    Random random = new Random();
+
+	    // Generate a random date within a specific range (e.g., the last year)
+	    LocalDate startDate = LocalDate.now().minusYears(1); // Adjust the date range as needed
+	    LocalDate endDate = LocalDate.now();
+	    long startEpochDay = startDate.toEpochDay();
+	    long endEpochDay = endDate.toEpochDay();
+	    long randomEpochDay = startEpochDay + random.nextInt((int) (endEpochDay - startEpochDay + 1));
+
+	    // Convert the random epoch day back to a LocalDate
+	    LocalDate randomDate = LocalDate.ofEpochDay(randomEpochDay);
+
+	    // Format the random date as a string, e.g., in "yyyy-MM-dd" format
+	    String formattedRandomDate = randomDate.format(DateTimeFormatter.ofPattern("yyyy-MM-dd"));
+
+	    // Now set the random date in your text field
+	    txtHolidayDate.clear();
+	    txtHolidayDate.sendKeys(formattedRandomDate + " " + timeStamp);
+	    txtHolidayDate.sendKeys(Keys.ENTER);
 	}
 	
 	public void setChkIsPaid() throws InterruptedException {
-//		Thread.sleep(500);
+		Thread.sleep(500);
 		chkIsPaid.click();
 	}
 	
 	public void setTxtHolidayNote(String holidayNote) {
 		txtHolidayNote.clear();
-		txtHolidayNote.sendKeys(holidayNote);
+		txtHolidayNote.sendKeys(holidayNote+ " "+ timeStamp);
 	}
 	
 	public void setBtnSavePublicHldayDeatils() {
@@ -138,9 +159,9 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 
 		sdph.setBtnAddNew();
 		Thread.sleep(2000);
-		sdph.setTxtHolidayName(holidayName+ " "+ timeStamp);
-		sdph.setTxtHolidayDate(holidayDate + " "+ timeStamp);
-		sdph.setTxtHolidayNote(holidayNote+ " "+ timeStamp);
+		sdph.setTxtHolidayName(holidayName);
+		sdph.setTxtHolidayDate();
+		sdph.setTxtHolidayNote(holidayNote);
 		sdph.setBtnSavePublicHldayDeatils();
 		sdph.setCreateNotificationPopup();
 	}
@@ -154,10 +175,10 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 		holidayNote = excelUtility.readDataFromExcelFile("EmployeeTest", 18, 9);
 		Thread.sleep(2000);
 		sdph.setBtnEdit();
-		sdph.setTxtHolidayName(holidayName + " "+ timeStamp);
-		sdph.setTxtHolidayDate(holidayDate + " "+ timeStamp );
+		sdph.setTxtHolidayName(holidayName);
+		sdph.setTxtHolidayDate();
 		sdph.setChkIsPaid();
-		sdph.setTxtHolidayNote(holidayNote + " "+ timeStamp);
+		sdph.setTxtHolidayNote(holidayNote);
 		sdph.setBtnSavePublicHldayDeatils();
 		sdph.setUpdateNotificationPopup();
 	}
@@ -172,6 +193,6 @@ public class SystemDefinationPublicHolidayPage extends BaseClass{
 		sdph.setCheckbox();
 		sdph.setBtnDeletePublicHlday();
 		sdph.setBtnYes();
-		sdph.setDeleteNotificationPopup();
+//		sdph.setDeleteNotificationPopup();
 	}
 }

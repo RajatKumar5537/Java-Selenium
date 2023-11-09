@@ -2,6 +2,7 @@ package com.JiviewsAutomation.SystemDefination_Test;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -12,9 +13,69 @@ import com.AutomationJiviewsPOM.RosterSetupPage;
 import com.AutomationJiviewsPOM.SystemDefinationPublicHolidayPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
-public class publicHolidayTest extends BaseClass{
+public class PublicHolidayTest extends BaseClass{
 
-	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
+	 private static final Logger logger = LogManager.getLogger(PublicHolidayTest.class);
+
+	    private HomePage hp;
+	    private OrganizationUnitDropDown oudd;
+	    private jiviewsMainMenuItems jmmi;
+	    private RosterSetupPage rsp;
+	    private SystemDefinationPublicHolidayPage sdph;
+
+	    @BeforeMethod
+	    public void setup() throws Exception {
+	        hp = new HomePage(driver);
+	        oudd = new OrganizationUnitDropDown(driver);
+	        jmmi = new jiviewsMainMenuItems(driver);
+	        rsp = new RosterSetupPage(driver);
+	        sdph = new SystemDefinationPublicHolidayPage(driver);
+
+	        hp.setOrgUnit();
+	        oudd.setAutoOu();
+	        jmmi.clickOnSystemDefination();
+	        rsp.setPubicHoliday();
+	    }
+
+	    @Test(priority = 1)
+	    public void verifyCreatePublicHoliday() throws Exception {
+	        captureScreenshot(driver, "PublicHolidayTest_Create");
+	        logger.info("Creating public holiday");
+
+	        sdph.setCreatePublicHoliday();
+
+	        logger.info("Public holiday creation successful");
+	    }
+
+	    @Test(priority = 2, dependsOnMethods = "verifyCreatePublicHoliday")
+	    public void verifyUpdatePublicHoliday() throws Exception {
+	        captureScreenshot(driver, "PublicHolidayTest_Update");
+	        logger.info("Updating public holiday");
+
+	        sdph.setUpdatePublicHoliday();
+
+	        logger.info("Public holiday update successful");
+	    }
+
+	    @Test(priority = 3, dependsOnMethods = "verifyUpdatePublicHoliday")
+	    public void verifyDeletePublicHoliday() throws Exception {
+	        captureScreenshot(driver, "PublicHolidayTest_Delete");
+	        logger.info("Deleting public holiday");
+
+	        sdph.setDeactivatePH();
+
+	        logger.info("Deactivate public holiday successful");
+	    }
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	    
+	/*private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
 
 	public HomePage hp;
 	public OrganizationUnitDropDown oudd;
@@ -41,10 +102,10 @@ public class publicHolidayTest extends BaseClass{
 		logger.info("Create a public holiday is successfull");
 	}
 	
-	@Test //(priority = 2, dependsOnMethods = "verifyCreatePublicHoliday")
+	@Test (priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
 	public void verifyUpdatePublicHoliday() throws Exception {
 		captureScreenshot(driver, "publicHolidayTest");
-		driver.navigate().refresh();
+//		driver.navigate().refresh();
 		
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
@@ -52,6 +113,7 @@ public class publicHolidayTest extends BaseClass{
 		rsp= new RosterSetupPage(driver);
 		sdph= new SystemDefinationPublicHolidayPage(driver);
 		
+		Thread.sleep(2000);
 		hp.setOrgUnit();
 		oudd.setAutoOu();
 		jmmi.clickOnSystemDefination();
@@ -62,17 +124,17 @@ public class publicHolidayTest extends BaseClass{
 	}
 	
 	
-	@Test //(priority = 3, dependsOnMethods = "verifyUpdatePublicHoliday")
+	@Test (priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
 	public void verifyDeletePublicHoliday() throws Exception {
 		captureScreenshot(driver, "publicHolidayTest");
-		driver.navigate().refresh();
+//		driver.navigate().refresh();
 		
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
 		sdph= new SystemDefinationPublicHolidayPage(driver);
-		
+		Thread.sleep(2000);
 		hp.setOrgUnit();
 		oudd.setAutoOu();
 		jmmi.clickOnSystemDefination();
@@ -80,5 +142,5 @@ public class publicHolidayTest extends BaseClass{
 		sdph.setDeactivatePH();
 		
 		logger.info("Deactivate public holiday is successfull");
-	}
+	}*/
 }

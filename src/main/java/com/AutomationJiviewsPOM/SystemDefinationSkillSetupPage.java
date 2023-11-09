@@ -1,6 +1,5 @@
 package com.AutomationJiviewsPOM;
 
-import java.time.LocalDateTime;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -8,16 +7,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
-import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.WebUtilities;
 
 
 public class SystemDefinationSkillSetupPage extends BaseClass {
 
-	String timeStamp = LocalDateTime.now().toString();
+	//	String timeStamp = LocalDateTime.now().toString();
 	public SystemDefinationSkillSetupPage sds;
-	public ExcelUtilities excelUtility;
-	public WebUtilities webUtility;
+	//	public ExcelUtilities excelUtility;
+	//	public WebUtilities webUtility;
 
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
@@ -37,7 +34,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	@FindBy(id = "txtFixedRanking")
 	private WebElement wageLevelCode;
 
-	@FindBy(xpath = "//input[@id='chkIsActive']")
+	@FindBy(xpath = "//span[text()='Is Active?']")
 	private WebElement isActiveOption;
 
 	@FindBy(id = "btnSaveSkill")
@@ -63,83 +60,191 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 	public SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		this.webUtility= new WebUtilities();
-		this.excelUtility= new ExcelUtilities();
+		//		this.webUtility= new WebUtilities(driver);
+		//		this.excelUtility= new ExcelUtilities();
 	}
 
-	public void addBtn() throws Exception {
+	//	public void addBtn() throws Exception {
+	//		webUtility.visibilityOfElement(driver, addBtn);
+	//		addBtn.click();
+	//	}
+	//
+	//	public void skillCode(String skillCodeData, String timeStamp) throws Exception {
+	//		webUtility.visibilityOfElement(driver,skillCode);
+	//		skillCode.clear();
+	//		skillCode.sendKeys(skillCodeData + " " + timeStamp);
+	//	}
+	//
+	//
+	//	public void skillDescription(String skillDescriptionData, String timeStamp) {
+	//		skillDescription.clear();
+	//		skillDescription.sendKeys(skillDescriptionData + " "+ timeStamp);
+	//	}
+	//
+	//	public void sequence(String sequenceData) {
+	//		sequence.clear();
+	//		sequence.sendKeys(sequenceData);
+	//	}
+	//
+	//	public void coloreCode() {
+	//		ColourCode.sendKeys("");
+	//	}
+	//
+	//	public void wageLevelCode(String wageLevelCodedata, String timeStamp) {
+	//		wageLevelCode.clear();
+	//		wageLevelCode.sendKeys(wageLevelCodedata+ " "+ timeStamp);
+	//	}
+	//	public void isActiveOption() {
+	//		isActiveOption.click();
+	//
+	//	}
+	//	public void saveBtn() throws Exception {
+	//		webUtility.visibilityOfElement(driver,saveBtn);
+	//		saveBtn.click();
+	//	}
+	//
+	//	public void setNotificationPopup() throws Exception {
+	//		webUtility.visibilityOfElement(driver, notificationPopup);
+	//		notificationPopup.click();
+	//	}
+	//	public void setEditBtn() throws Exception {
+	//		webUtility.visibilityOfElement(driver, editBtn);
+	//		editBtn.click();
+	//	}
+	//	public void setcheckBox() throws Exception  {
+	//		webUtility.visibilityOfElement(driver, checkBox);
+	//		checkBox.click();
+	//	}
+	//
+	//	public void setDeleteBtn() {
+	//		clickDeleteBtn.click();
+	//	}
+	//	public void setClickYes() {
+	//		clickYes.click();
+	//	}
+	//
+	//	public void setSearchColumn(String searchColumnsData) throws Exception {
+	//		webUtility.visibilityOfElement(driver, searchColumns);
+	//		searchColumns.clear();
+	//		searchColumns.sendKeys(searchColumnsData);
+	//
+	//	}
+	public void clickAddBtn() throws Exception {
 		webUtility.visibilityOfElement(driver, addBtn);
 		addBtn.click();
 	}
 
-	//	public void skillCode(String skillCodeData) {
-	//		skillCode.clear();
-	//		skillCode.sendKeys(skillCodeData);
-	//	}
-	public void skillCode(String skillCodeData, String timeStamp) throws Exception {
-		//		Duration waitTime = Duration.ofSeconds(10);
-		webUtility.visibilityOfElement(driver,skillCode);
+	public void enterSkillCode(String skillCodeData) throws Exception {
+		webUtility.visibilityOfElement(driver, skillCode);
 		skillCode.clear();
 		skillCode.sendKeys(skillCodeData + " " + timeStamp);
 	}
 
-
-	public void skillDescription(String skillDescriptionData, String timeStamp) {
+	public void enterSkillDescription(String skillDescriptionData) {
 		skillDescription.clear();
-		skillDescription.sendKeys(skillDescriptionData + " "+ timeStamp);
+		skillDescription.sendKeys(skillDescriptionData + " " + timeStamp);
 	}
 
-	public void sequence(String sequenceData) {
+	public void enterSequence(String sequenceData) {
 		sequence.clear();
 		sequence.sendKeys(sequenceData);
 	}
 
-	public void coloreCode() {
-		ColourCode.sendKeys("");
-	}
-
-	public void wageLevelCode(String wageLevelCodedata, String timeStamp) {
+	public void enterWageLevelCode(String wageLevelCodedata) {
 		wageLevelCode.clear();
-		wageLevelCode.sendKeys(wageLevelCodedata+ " "+ timeStamp);
+		wageLevelCode.sendKeys(wageLevelCodedata + " " + timeStamp);
 	}
-	public void isActiveOption() throws Exception {
-		webUtility.visibilityOfElement(driver, isActiveOption);
-		isActiveOption.click();
 
+	public void clickIsActiveOption() {
+		isActiveOption.click();
 	}
-	public void saveBtn() throws Exception {
-		webUtility.visibilityOfElement(driver,saveBtn);
+
+	public void clickSaveBtn() throws Exception {
+		webUtility.visibilityOfElement(driver, saveBtn);
 		saveBtn.click();
 	}
 
-	public void setNotificationPopup() throws Exception {
+	public void closeNotificationPopup() throws Exception {
 		webUtility.visibilityOfElement(driver, notificationPopup);
 		notificationPopup.click();
 	}
-	public void setEditBtn() throws Exception {
+
+	public void clickEditBtn() throws Exception {
 		webUtility.visibilityOfElement(driver, editBtn);
 		editBtn.click();
 	}
-	public void setcheckBox() throws Exception  {
+
+	public void checkCheckBox() throws Exception {
 		webUtility.visibilityOfElement(driver, checkBox);
 		checkBox.click();
 	}
 
-	public void setDeleteBtn() {
+	public void clickDeleteBtn() {
 		clickDeleteBtn.click();
 	}
-	public void setClickYes() {
+
+	public void clickYes() {
 		clickYes.click();
 	}
 
-	public void setSearchColumn(String searchColumnsData) throws Exception {
+	public void enterSearchColumns(String searchColumnsData) throws Exception {
 		webUtility.visibilityOfElement(driver, searchColumns);
 		searchColumns.clear();
 		searchColumns.sendKeys(searchColumnsData);
+	}
+	public void createNewSkill() throws Exception {
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
+		String sequenceData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
+		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
 
+		sds = new SystemDefinationSkillSetupPage(driver);
+		sds.clickAddBtn();
+		sds.enterSkillCode(skillCodeData);
+		sds.enterSkillDescription(skillDescriptionData);
+		sds.enterSequence(sequenceData);
+		sds.enterWageLevelCode(wageLevelCodedata);
+		sds.clickIsActiveOption();
+		sds.clickSaveBtn();
+		sds.closeNotificationPopup();
 	}
 
+	public void updateSkill() throws Exception {
+		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
+		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
 
+		sds = new SystemDefinationSkillSetupPage(driver);
+		sds.clickEditBtn();
+		sds.enterSkillCode(skillCodeData);
+		sds.enterSkillDescription(skillDescriptionData);
+		sds.clickSaveBtn();
+		sds.closeNotificationPopup();
+	}
+
+	public void deactivateSkill() throws Exception {
+		sds = new SystemDefinationSkillSetupPage(driver);
+		sds.checkCheckBox();
+		sds.clickDeleteBtn();
+		sds.clickYes();
+		sds.closeNotificationPopup();
+	}
+
+	public void activateDeactivateSkill() throws Exception {
+		sds = new SystemDefinationSkillSetupPage(driver);
+		sds.clickEditBtn();
+		Thread.sleep(1000);
+		sds.clickIsActiveOption();
+		sds.clickSaveBtn();
+		sds.closeNotificationPopup();
+	}
+
+	public void setSearchColumns() throws Exception {
+		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		sds = new SystemDefinationSkillSetupPage(driver);
+		sds.enterSearchColumns(searchColumnsData);
+	}
+
+	/*
 	public void setNewSkill() throws Exception {
 
 		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
@@ -156,8 +261,6 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		sds.sequence(sequenceData );
 		sds.coloreCode();
 		sds.wageLevelCode(wageLevelCodedata,timeStamp);
-		//	sds.isActiveOption();
-
 		sds.saveBtn();
 		sds.setNotificationPopup();
 	}
@@ -165,14 +268,10 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 
 		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
 		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
-		//		String sequenceData =excelUtility.readDataFromExcelFile("EmployeeTest", 4, 9);
-		//		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 11);
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		Thread.sleep(2000);
 		sds.setEditBtn();
 		driver.getWindowHandle();
-//		Thread.sleep(2000);
 		sds.skillCode(skillCodeData, timeStamp);
 		sds.skillDescription(skillDescriptionData ,timeStamp);
 		sds.saveBtn();
@@ -183,8 +282,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	public void setDeactiveSkil() throws Exception {
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		Here we just need to select the skill code from search bar, no need to pass anything 
-//		Thread.sleep(2000);
+		//		Here we just need to select the skill code from search bar, no need to pass anything 
 		sds.setcheckBox();
 		sds.setDeleteBtn();
 		sds.setClickYes();
@@ -194,8 +292,8 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 	public void setActivateDeactiveSkill() throws Exception {
 
 		SystemDefinationSkillSetupPage sds=new SystemDefinationSkillSetupPage(driver);
-//		Thread.sleep(2000);
 		sds.setEditBtn();
+		Thread.sleep(1000);
 		sds.isActiveOption();
 		sds.saveBtn();
 		sds.setNotificationPopup();
@@ -207,6 +305,6 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		sds.setSearchColumn(searchColumnsData);
 	}
-	
-	
+	 */
+
 }

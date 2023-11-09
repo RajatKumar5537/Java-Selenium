@@ -3,6 +3,7 @@ package com.AutomationJiviewsPOM;
 import java.time.LocalDateTime;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -114,7 +115,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
-	@FindBy(id = "btnSaveshiftbandDtls")
+	@FindBy(xpath = "//button[@id='btnSaveshiftbandDtls']")
 	WebElement btnSaveshiftbandDtls;
 
 	// Edit ........................................................
@@ -151,7 +152,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 
 	public SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		this.webUtility= new WebUtilities();
+		this.webUtility= new WebUtilities(driver);
 		this.excelUtility= new ExcelUtilities();
 	}
 
@@ -196,6 +197,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	public void setColorTxt(String colorCode) {
 		colorTxt.clear();
 		colorTxt.sendKeys(colorCode);
+		colorTxt.sendKeys(Keys.ENTER);
 	}
 
 	public void setShiftCounterTxt(String shiftCounter) throws Exception {
@@ -206,10 +208,10 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 
 	// scroll down the page and select single skill from  availble skill
 	public void setAvailableSkillForSingleSkill() {
-		webUtility.moveToElement(driver, availableSkill);
-		availableSkill.click();
-		webUtility.fromDropDown(availableSkill, "109");
-		//		select.selectByValue("110");	
+		action.scrollToElement(availableSkill).perform();
+		//		availableShiftBand.click();
+		select=new Select(availableSkill);
+		select.selectByIndex(1);
 	}
 	//	move skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
@@ -242,26 +244,26 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		action.moveToElement(startRangeBegin).perform();
 		startRangeBegin.clear();
 		startRangeBegin.sendKeys(startRangeBeginT);
-		startRangeBegin.click();
+		startRangeBegin.sendKeys(Keys.ENTER);
 	}
 	public void setStartRangeEnd(String startRangeEndT) {
 		action.moveToElement(startRangeEnd).perform();
 		startRangeEnd.clear();
 		startRangeEnd.sendKeys(startRangeEndT);
-		startRangeEnd.click();
+		startRangeEnd.sendKeys(Keys.ENTER);
 	}
 
 	public void setEndRangeBegin(String endRangeBeginT) {
 		action.moveToElement(endRangeBegin).perform();
 		endRangeBegin.clear();
 		endRangeBegin.sendKeys(endRangeBeginT);
-		endRangeBegin.click();
+		endRangeBegin.sendKeys(Keys.ENTER);
 	}
 	public void setEndRangeEnd(String endRangeEndT) {
 		action.moveToElement(endRangeEnd).perform();
 		endRangeEnd.clear();
 		endRangeEnd.sendKeys(endRangeEndT);
-		endRangeEnd.click();
+		endRangeEnd.sendKeys(Keys.ENTER);
 	}
 
 	public void setOverTimeType() {
@@ -277,12 +279,12 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	public void setOverTimeStartTxt(String otStart) {
 		overTimeStartTxt.clear();
 		overTimeStartTxt.sendKeys(otStart);
-		overTimeStartTxt.click();
+		overTimeStartTxt.sendKeys(Keys.ENTER);
 	}
 	public void setOverTimeEndTxt(String otEnd) {
 		overTimeEndTxt.clear();
 		overTimeEndTxt.sendKeys(otEnd);
-		overTimeEndTxt.click();
+		overTimeEndTxt.sendKeys(Keys.ENTER);
 	}
 	public void setBtnSave() {
 		btnSaveshiftbandDtls.click();
@@ -424,6 +426,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setShiftTpSearchCombiShift();
 		sb.setColorTxt(colorCode);
 		sb.setShiftCounterTxt(shiftCounter);
+		Thread.sleep(500);
 		sb.setAvailableSkillForSingleSkill();
 		sb.setAvailableSingleSkillMoveToSelectedSkill();
 		sb.setBtnSave();

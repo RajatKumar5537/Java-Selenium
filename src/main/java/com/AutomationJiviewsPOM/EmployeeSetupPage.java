@@ -13,7 +13,7 @@ public class EmployeeSetupPage extends BaseClass{
 	public EmployeeSetupPage empSetPage;
 
 	@FindBy(xpath = "//div[text()='Employee Setup']/..")
-	private WebElement EmpSetup;
+	private WebElement empSetup;
 
 	@FindBy(xpath = "//div[text()='Skills']/..")
 	private WebElement skill;
@@ -32,7 +32,8 @@ public class EmployeeSetupPage extends BaseClass{
 	}
 
 	public void setEmpSetup() {
-		EmpSetup.click();
+		webUtility.ElementClickable(driver, empSetup);
+		empSetup.click();
 	}
 	public void setSkill() {
 		skill.click();
@@ -47,34 +48,28 @@ public class EmployeeSetupPage extends BaseClass{
 		percentageConfiguration.click();
 	}
 
-
-
-
 	// it will create a new skill 
 	public void setCreateSkill() throws InterruptedException {
 		empSetPage= new EmployeeSetupPage(driver);
 
 		empSetPage.setEmpSetup();
 		empSetPage.setSkill();
-	}
 
+	}
 
 	public void setCreateRole() {
 		empSetPage= new EmployeeSetupPage(driver);
-
 		empSetPage.setEmpSetup();
 		empSetPage.setRole();
 	}
 
 	public void setCreateRoleGroups() {
 		empSetPage= new EmployeeSetupPage(driver);
-
 		empSetPage.setEmpSetup();
 		empSetPage.setRolesGroup();
 	}
 	public void setCreatePercentageConfiguration() {
 		empSetPage= new EmployeeSetupPage(driver);
-
 		empSetPage.setEmpSetup();
 		empSetPage.setPercentageConfiguration();
 	}

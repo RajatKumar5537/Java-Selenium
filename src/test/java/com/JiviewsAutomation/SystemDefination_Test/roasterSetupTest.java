@@ -25,7 +25,7 @@ public class roasterSetupTest extends BaseClass{
 	
 
 
-	@Test
+	@Test(priority = 1)
 	public void verifyCreateRoasterWithGroup() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 
@@ -39,29 +39,28 @@ public class roasterSetupTest extends BaseClass{
 		oudd.setAutoOu();
 		jmmi.clickOnSystemDefination();
 		rsp.setRosterCreation();
+		Thread.sleep(2000);
 		sdrs.setCreateRoasterwithGroup();
 		logger.info("Create a Roster Pattern with Roster Group is successfull");
 	}
 
-	@Test
+	@Test(priority = 2)
 	public void verifyCreateRoasterwithEmployee() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-
+//		driver.navigate().refresh();
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
 		sdrs= new SystemDefinationRosterSetupPage(driver);
-		Thread.sleep(2000);
-		hp.setOrgUnit();
-		Thread.sleep(1000);
-		oudd.setOLMop();
 		
-		Thread.sleep(1000);
+		Thread.sleep(2000);
 		hp.setOrgUnit();
 		Thread.sleep(1000);
+		hp.setOrgUnit();
+//		Thread.sleep(1000);
 		oudd.setAutoOu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		rsp.setRosterCreation();
 		sdrs.setCreateRoasterwithEmployee();
@@ -87,10 +86,10 @@ public class roasterSetupTest extends BaseClass{
 	//		sdrs.setCreateRoasterwithRosterAndEmp();
 	//	}
 
-	@Test
+	@Test(priority = 3)
 	public void verifyUpdateRoaster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-
+//		driver.navigate().refresh();
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
@@ -101,15 +100,16 @@ public class roasterSetupTest extends BaseClass{
 		hp.setOrgUnit();
 		Thread.sleep(1000);
 		oudd.setAutoOu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		rsp.setRosterCreation();
 		sdrs.setUpdateRoaster();
 	}
-	@Test(dependsOnMethods = "verifyUpdateRoaster")
+	@Test(priority = 4)//,dependsOnMethods = "verifyUpdateRoaster")
 	public void verifyDeactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-
+//		driver.navigate().refresh();
+	
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
@@ -120,15 +120,15 @@ public class roasterSetupTest extends BaseClass{
 		hp.setOrgUnit();
 		Thread.sleep(1000);
 		oudd.setAutoOu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		rsp.setRosterCreation();
 		sdrs.setDeactiveRoster();
 	}
-	@Test(dependsOnMethods = "verifyDeactiveRoster")
+	@Test(priority = 5)//, dependsOnMethods = "verifyDeactiveRoster")
 	public void verifyReactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-
+//		driver.navigate().refresh();
 		hp=new HomePage(driver);
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
@@ -139,7 +139,7 @@ public class roasterSetupTest extends BaseClass{
 		hp.setOrgUnit();
 		Thread.sleep(1000);
 		oudd.setAutoOu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
 		rsp.setRosterCreation();
 		sdrs.setReactiveRoster();

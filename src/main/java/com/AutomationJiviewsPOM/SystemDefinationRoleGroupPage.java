@@ -78,14 +78,151 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
 	private WebElement txtSearch;
-	
+
+	@FindBy(className = "toast-close-button")
+	private WebElement notificationPopup;
+
 	public SystemDefinationRoleGroupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
-		this.webUtility= new WebUtilities();
+		this.webUtility= new WebUtilities(driver);
 	}
+	public void clickAddRoleGroup() {
+        btnAddRoleGroup.click();
+    }
 
+    public void enterRoleGroupName(String roleGrpName) {
+        webUtility.ElementClickable(driver, txtRoleGroupName);
+        txtRoleGroupName.clear();
+        txtRoleGroupName.sendKeys(roleGrpName + " " + timeStamp);
+    }
+
+    public void selectAvailableShiftBand() {
+        action.scrollToElement(availableRoles).perform();
+        select = new Select(availableRoles);
+        select.selectByIndex(1);
+    }
+
+    public void moveSingleAvailableSkillToSelected() {
+        action.moveToElement(selectMoveSingle).perform();
+        selectMoveSingle.click();
+    }
+
+    public void moveAllAvailableSkillsToSelected() {
+        selectMoveAll.click();
+    }
+
+    public void clickSelectedSkill() {
+        selectedSkill.click();
+    }
+
+    public void removeSelectedSkillSingle() {
+        removeSelectedSkillSingle.click();
+    }
+
+    public void removeSelectedSkillAll() {
+        removeSelectedSkillAll.click();
+    }
+
+    public void clickBtnEdit() {
+        webUtility.moveToElement(driver, btnEdit);
+        btnEdit.click();
+    }
+
+    public void clickBtnSaveRoleGroupDtls() {
+        webUtility.moveToElement(driver, btnSaveRoleGroupDtls);
+        btnSaveRoleGroupDtls.click();
+    }
+
+    public void clickCheckbox() {
+        checkBox.click();
+    }
+
+    public void clickBtnDeleteRoleGroup() {
+        btnDeleteRoleGroup.click();
+    }
+
+    public void clickBtnYes() {
+        btnYes.click();
+    }
+
+    public void clickNotificationPopup() throws Exception {
+        action.moveToElement(notificationPopup).perform();
+        notificationPopup.click();
+    }
+
+    public void assertTxtGrpNmRequired() {
+        String actualResult = txtGrpNmRequired.getText();
+        Assert.assertTrue(actualResult.contains("Role Group Name is required"));
+    }
+
+    public void enterTxtSearch(String roleGrpName) {
+        txtSearch.sendKeys(roleGrpName);
+        txtSearch.sendKeys(Keys.ENTER);
+    }
+
+    public void createRolesGroup() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+        String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
+
+        sdrg.clickAddRoleGroup();
+        sdrg.enterRoleGroupName(roleGrpName);
+        sdrg.selectAvailableShiftBand();
+        sdrg.moveSingleAvailableSkillToSelected();
+        sdrg.clickBtnSaveRoleGroupDtls();
+        sdrg.clickNotificationPopup();
+    }
+
+    public void updateRolesGroup() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+        String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 24, 7);
+
+        sdrg.clickBtnEdit();
+        sdrg.enterRoleGroupName(roleGrpName);
+        Thread.sleep(1000);
+        sdrg.clickBtnSaveRoleGroupDtls();
+        sdrg.clickNotificationPopup();
+    }
+
+    public void deactivateRoleGroup() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+
+        sdrg.clickCheckbox();
+        sdrg.clickBtnDeleteRoleGroup();
+        sdrg.clickBtnYes();
+        sdrg.clickNotificationPopup();
+    }
+
+    public void createRoleGrpWithoutAvailableRole() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+        String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
+
+        sdrg.clickAddRoleGroup();
+        sdrg.enterRoleGroupName(roleGrpName);
+        sdrg.clickBtnSaveRoleGroupDtls();
+        sdrg.clickNotificationPopup();
+    }
+
+    public void searchRoleGroup() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+        String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
+
+        sdrg.enterTxtSearch(roleGrpName);
+    }
+
+    public void createRoleGrpWithoutRoleGrpName() throws Exception {
+        sdrg = new SystemDefinationRoleGroupPage(driver);
+
+        sdrg.clickAddRoleGroup();
+        Thread.sleep(1000);
+        sdrg.selectAvailableShiftBand();
+        sdrg.moveSingleAvailableSkillToSelected();
+        sdrg.clickBtnSaveRoleGroupDtls();
+        sdrg.assertTxtGrpNmRequired();
+    }
+    
+    /*
 	public void setBtnAddRoleGroup() {
 		btnAddRoleGroup.click();
 	}
@@ -102,12 +239,12 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 
 		action.scrollToElement(availableRoles).perform();
 		select = new Select(availableRoles);
-		List<WebElement> options = select.getOptions();
-		// Generate a random index between 0 and the number of options minus 1
-		Random rand = new Random();
-		int randomIndex = rand.nextInt(options.size());
+		//		List<WebElement> options = select.getOptions();
+		//		// Generate a random index between 0 and the number of options minus 1
+		//		Random rand = new Random();
+		//		int randomIndex = rand.nextInt(options.size());
 		// Select the option at the random index
-		select.selectByIndex(randomIndex);
+		select.selectByIndex(1);
 	}
 	public void setSelectMoveSingle() {
 		action.moveToElement(selectMoveSingle).perform();
@@ -143,11 +280,15 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 	public void setbtnYes() {
 		btnYes.click();
 	}
-	
+	public void setNotificationPopup() throws Exception {
+		//		webUtility.visibilityOfElement(driver, notificationPopup);
+		action.moveToElement(notificationPopup).perform();
+		notificationPopup.click();
+	}
+
 	public void setTxtGrpNmRequired() {
 		String actualResult = txtGrpNmRequired.getText();
 		Assert.assertTrue(actualResult.contains("Role Group Name is required"));
-		Reporter.log(actualResult);
 	}
 	public void setTxtSearch(String roleGrpName) {
 		txtSearch.sendKeys(roleGrpName);
@@ -163,22 +304,28 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 		sdrg.setAvailableShiftBand();
 		sdrg.setSelectMoveSingle();
 		sdrg.setBtnSaveRoleGroupDtls();
+		sdrg.setNotificationPopup();
+
 	}
 
 	public void setUpdateRolesGroup() throws Exception {
 		sdrg= new SystemDefinationRoleGroupPage(driver);
 		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 24, 7);
-
+		//		sdrg.setNotificationPopup();
 		sdrg.setBtnEdit();
 		sdrg.setTxtRoleGroupName(roleGrpName);
+		Thread.sleep(1000);
 		sdrg.setBtnSaveRoleGroupDtls();
+		sdrg.setNotificationPopup();
 	}
 	public void setDeactivateRoleGroup() throws Exception {
 		sdrg= new SystemDefinationRoleGroupPage(driver);
 
+		//		sdrg.setNotificationPopup();
 		sdrg.setCheckbox();
 		sdrg.setBtnDeleteRoleGroup();
 		sdrg.setbtnYes();
+		sdrg.setNotificationPopup();
 	}
 	public void setCreateRoleGrpWithoutAvailableRole() throws Exception {
 		sdrg= new SystemDefinationRoleGroupPage(driver);
@@ -187,22 +334,27 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 		sdrg.setBtnAddRoleGroup();
 		sdrg.setTxtRoleGroupName(roleGrpName);
 		sdrg.setBtnSaveRoleGroupDtls();
-		
+		sdrg.setNotificationPopup();
+
 	}
 	public void setSearchRoleGroup() throws Exception {
 		sdrg= new SystemDefinationRoleGroupPage(driver);
 		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
-		
+
+		//		sdrg.setNotificationPopup();
 		sdrg.setTxtSearch(roleGrpName);
 	}
-	public void setCreateRoleGrpWithoutRoleGrpName() throws InterruptedException {
+
+
+	public void setCreateRoleGrpWithoutRoleGrpName() throws Exception {
 		sdrg= new SystemDefinationRoleGroupPage(driver);
-		
+
+		//		sdrg.setNotificationPopup();
 		sdrg.setBtnAddRoleGroup();
 		Thread.sleep(1000);
 		sdrg.setAvailableShiftBand();
 		sdrg.setSelectMoveSingle();
 		sdrg.setBtnSaveRoleGroupDtls();
 		sdrg.setTxtGrpNmRequired();
-	}
+	}*/
 }

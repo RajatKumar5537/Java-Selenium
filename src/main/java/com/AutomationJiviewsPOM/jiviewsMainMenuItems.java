@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class jiviewsMainMenuItems extends BaseClass{
-	
+
+	WebUtilities webUtility;
+
 	@FindBy(xpath = "//span[text()='SYSTEM SETUP']/..")
 	private WebElement mainMenu;
 
@@ -35,56 +38,60 @@ public class jiviewsMainMenuItems extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Reports']/..")
 	private WebElement selectReports;
-	
+
 	@FindBy(xpath = "//span[text()='Dashboard']/..")
 	private WebElement selectDashboard;
 
 
 	public jiviewsMainMenuItems(WebDriver driver) {
+		super();
 		PageFactory.initElements(driver, this);
+		this.webUtility= new WebUtilities(driver);
 	}
 
-	public void  setMainMenu() {
+	public void  clickMainMenu() {
+		webUtility.ElementClickable(driver, mainMenu);
 		mainMenu.click();
 	}
 
-	public void setSelectSystemSetup() {
-		selectSystemSetup.click();
-	}
-	public void setSelectSystemDefination() {
+	//	public void setSelectSystemSetup() {
+	//		selectSystemSetup.click();
+	//	}
+
+	public void clickSelectSystemDefination() {
+		webUtility.ElementClickable(driver, selectSystemDefination);
 		selectSystemDefination.click();
 	}
-	public void setSelectEmployeeAdministration() {
-		selectEmployeeAdministration.click();
-	}
-	public void setSelectWorkforceScheduling() {
-		selectWorkforceScheduling.click();
-	}
+	public void clickOnSystemDefination()  {
 
-	public void setSelectEmployeeSelfService() {
-		selectEmployeeSelfService.click();
+		//		jiviewsMainMenuItems jmmi=new jiviewsMainMenuItems(driver);
+		clickMainMenu();
+		clickSelectSystemDefination();
 	}
-	public void setSelectOperationPlanningExecution() {
-		selectOperationPlanningExecution.click();
-	}
-	public void setSelectTimeAttendance() {
-		selectTimeAttendance.click();
-	}
+	//	public void setSelectEmployeeAdministration() {
+	//		selectEmployeeAdministration.click();
+	//	}
+	//	public void setSelectWorkforceScheduling() {
+	//		selectWorkforceScheduling.click();
+	//	}
+	//
+	//	public void setSelectEmployeeSelfService() {
+	//		selectEmployeeSelfService.click();
+	//	}
+	//	public void setSelectOperationPlanningExecution() {
+	//		selectOperationPlanningExecution.click();
+	//	}
+	//	public void setSelectTimeAttendance() {
+	//		selectTimeAttendance.click();
+	//	}
+	//
+	//	public void setSelectReports() {
+	//		selectReports.click();
+	//	}
+	//	
+	//	public void setSelectDashboard() {
+	//		selectDashboard.click();
+	//	}
 
-	public void setSelectReports() {
-		selectReports.click();
-	}
-	
-	public void setSelectDashboard() {
-		selectDashboard.click();
-	}
 
-	public void clickOnSystemDefination() throws InterruptedException {
-		
-		jiviewsMainMenuItems jmmi=new jiviewsMainMenuItems(driver);
-		Thread.sleep(2000);
-		jmmi.setMainMenu();
-		Thread.sleep(2000);
-		jmmi.setSelectSystemDefination();
-	}
 }

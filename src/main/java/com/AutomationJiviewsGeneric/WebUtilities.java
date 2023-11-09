@@ -22,6 +22,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 
 public class WebUtilities extends BaseClass{
+	
+	private WebDriver driver;
+
+    public WebUtilities(WebDriver driver) {
+        this.driver = driver;
+    }
 	/**
 	 * 
 	 * @param driver

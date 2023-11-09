@@ -27,11 +27,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	ExtentReports report;
 	ExtentTest test;
-	FileLib fileLib;
+//	FileLib fileLib;
 	configUtility congigUtiliy;
 
 	public ListenerImplimentation() {
-//		fileLib = new FileLib();
 		congigUtiliy= new configUtility();
 	}
 
@@ -47,7 +46,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 		}
 		test.assignCategory("Functional Test");
-		test.info("Skill Module Test: Verifying user login functionality");
+		test.info("Jivi Automation Test: Verifying user login functionality");
 	}
 
 	@Override
