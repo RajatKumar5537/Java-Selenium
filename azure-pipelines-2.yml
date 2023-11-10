@@ -32,7 +32,7 @@ stages:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'test'
+        goals: 'test -Dextent.reporter.html.outpu=ExtentReport/extent-report.html'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
