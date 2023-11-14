@@ -3,12 +3,8 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	
+
 	<test name="SkillTests">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
@@ -16,33 +12,19 @@
 	</test>
 
 	<test name="RoleSetUpTest">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" />
 		</classes>
 	</test>
-
 	<test name="RoleGroupTests">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" />
 		</classes>
 	</test>
 
-
 	<test name="ShiftBandTest">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" />
@@ -50,24 +32,15 @@
 	</test>
 
 	<test name="SCRTest">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
 		</classes>
 	</test>
 
 	<test name="PublicHolidayTest">
-		<listeners>
-			<listener
-				class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
-		</listeners>
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" />
 		</classes>
 	</test>
-
 </suite>

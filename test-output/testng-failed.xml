@@ -3,16 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="testWithCombinationShift"/>
+          <include name="verifyCreateRoasterWithGroup"/>
           <include name="closeBrowser"/>
-          <include name="setUp"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

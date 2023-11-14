@@ -47,7 +47,7 @@ public class PublicHolidayTest extends BaseClass{
 	        logger.info("Public holiday creation successful");
 	    }
 
-	    @Test(priority = 2, dependsOnMethods = "verifyCreatePublicHoliday")
+	    @Test(priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
 	    public void verifyUpdatePublicHoliday() throws Exception {
 	        captureScreenshot(driver, "PublicHolidayTest_Update");
 	        logger.info("Updating public holiday");
@@ -57,7 +57,7 @@ public class PublicHolidayTest extends BaseClass{
 	        logger.info("Public holiday update successful");
 	    }
 
-	    @Test(priority = 3, dependsOnMethods = "verifyUpdatePublicHoliday")
+	    @Test(priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
 	    public void verifyDeletePublicHoliday() throws Exception {
 	        captureScreenshot(driver, "PublicHolidayTest_Delete");
 	        logger.info("Deleting public holiday");

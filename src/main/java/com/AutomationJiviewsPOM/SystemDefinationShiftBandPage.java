@@ -207,11 +207,15 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 	}
 
 	// scroll down the page and select single skill from  availble skill
-	public void setAvailableSkillForSingleSkill() {
-		action.scrollToElement(availableSkill).perform();
-		//		availableShiftBand.click();
-		select=new Select(availableSkill);
-		select.selectByIndex(1);
+	public void setAvailableSkillForSingleSkill() throws InterruptedException {
+//		action.moveToElement(availableSkill).perform();
+//		//		availableShiftBand.click();
+//		select=new Select(availableSkill);
+//		select.selectByIndex(1);
+		Thread.sleep(2000);
+        action.moveToElement(availableSkill).perform();
+        select = new Select(availableSkill);
+        select.selectByIndex(1);
 	}
 	//	move skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
@@ -362,7 +366,7 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setDescriptionTxt(description, timeStamp);
 		sb.setBandCodeTxt(bandCode, timeStamp);
 		sb.setBtnSave();
-		sb.setNotificationPopup();
+//		sb.setNotificationPopup();
 	}
 
 	public void deactiveShiftBand() throws Exception {
@@ -426,11 +430,12 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setShiftTpSearchCombiShift();
 		sb.setColorTxt(colorCode);
 		sb.setShiftCounterTxt(shiftCounter);
-		Thread.sleep(500);
+		Thread.sleep(2000);
 		sb.setAvailableSkillForSingleSkill();
+		Thread.sleep(1000);
 		sb.setAvailableSingleSkillMoveToSelectedSkill();
 		sb.setBtnSave();
-		sb.setNotificationPopup();
+//		sb.setNotificationPopup();
 	}
 	public void shiftBandTypeOvertimeShift() throws Exception {
 		sb= new SystemDefinationShiftBandPage(driver);

@@ -15,7 +15,7 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class SystemDefinationRosterSetupPage extends BaseClass{
+public class SystemDefinationRosterCreationPage extends BaseClass{
 
 //	public String timeStamp = LocalDateTime.now().toString();
 	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
@@ -24,7 +24,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
-	public SystemDefinationRosterSetupPage sdrs;
+	public SystemDefinationRosterCreationPage sdrs;
 	public String tampName ;
 	public String tempDescription;
 	public String noOfDay;
@@ -236,7 +236,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//span[text()='Is Active?']")
 	private WebElement checkBoxActive;
 
-	public SystemDefinationRosterSetupPage(WebDriver driver) {
+	public SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.excelUtility= new ExcelUtilities();
 //		this.webUtility= new WebUtilities();
@@ -265,14 +265,14 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("113");	
+		select.selectByIndex(1);	
 	}
 	// scroll down the page and select single Employee group from  availble Emp group
 	public void setAvailableSkillForSingleEmp() {
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("650");	
+		select.selectByIndex(1);	
 	}
 
 
@@ -479,7 +479,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		checkBoxActive.click();
 	}
 	public void setCreateRoasterwithGroup() throws Exception {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -490,7 +490,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setAddBtn();
 		Thread.sleep(2000);
 		sdrs.setTemplateNameTxt(tampName+ " "+ timeStamp);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		sdrs.setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
 		sdrs.setNoOfDayTxt(noOfDay);
 		sdrs.setAvailableSkillForSingleRoster();
@@ -648,7 +648,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 	}
 
 	public void setCreateRoasterwithEmployee() throws Exception {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -670,7 +670,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 
 
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		sdrs.setRosterCreation1stDay();
 		sdrs.setBandCode();
 		sdrs.setSelectBandCode();
@@ -711,7 +711,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 
 	}
 	public void setCreateRoasterwithRosterAndEmp() throws Exception {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -804,7 +804,7 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 
 
 	public void setUpdateRoaster() throws Exception {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 15, 10);
 		Thread.sleep(2000);
 		sdrs.setEditBtn();
@@ -820,14 +820,14 @@ public class SystemDefinationRosterSetupPage extends BaseClass{
 		sdrs.setBtnPublishNow();
 	}
 	public void setDeactiveRoster() {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		sdrs.setCheckBoxDeactive();
 		sdrs.setBtnDeleteTemplateRoster();
 		sdrs.setBtnYes();
 	}
 
 	public void setReactiveRoster() throws InterruptedException {
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		Thread.sleep(2000);
 		sdrs.setEditBtn();
 		sdrs.setCheckBoxActive();

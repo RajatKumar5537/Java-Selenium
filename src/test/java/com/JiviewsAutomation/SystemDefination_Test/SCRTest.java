@@ -46,7 +46,6 @@ public class SCRTest extends BaseClass{
 	        logger.info("Create SCR");
 
 	        scr.setCreateSCR();
-
 	        logger.info("Create a SCR is successful");
 	    }
 
@@ -58,7 +57,7 @@ public class SCRTest extends BaseClass{
 	        scr.setUpdateSCR();
 	    }
 
-	    @Test(priority = 3)
+	    @Test(priority = 3,  dependsOnMethods = "verifyUpdateSCR")
 	    public void verifyDeactivateSCR() throws Exception {
 	        captureScreenshot(driver, "SCRTest");
 	        logger.info("Deactivate SCR");
@@ -66,7 +65,7 @@ public class SCRTest extends BaseClass{
 	        scr.setDeactivateSCR();
 	    }
 
-	    @Test(priority = 4)
+	    @Test(priority = 4, dependsOnMethods = "verifyDeactivateSCR")
 	    public void verifyReactivateSCR() throws Exception {
 	        captureScreenshot(driver, "SCRTest");
 	        logger.info("Reactive SCR");

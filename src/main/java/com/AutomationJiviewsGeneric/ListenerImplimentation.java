@@ -25,13 +25,21 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 public class ListenerImplimentation extends BaseClass implements ITestListener{
 
-	ExtentReports report;
-	ExtentTest test;
-//	FileLib fileLib;
-	configUtility congigUtiliy;
+	private ExtentReports report;
+	private ExtentTest test;
+	private configUtility congigUtiliy;
 
 	public ListenerImplimentation() {
 		congigUtiliy= new configUtility();
+		
+		 try {
+	            report = ExtentReportManager.getInstance(); // Use the singleton instance
+	            report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
+	            report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
+	            report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
+	        } catch (IOException e) {
+	            e.printStackTrace();
+	        }
 	}
 
 	@Override
@@ -86,23 +94,26 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		String reportFileName = "ExtentReport_" + timestamp + ".html";
 		ExtentHtmlReporter htmlreport = new ExtentHtmlReporter("./ExtentReport/" + reportFileName);
-		report = new ExtentReports();
-
+		// report = new ExtentReports();
 		// Attach the HTML reporter to the report
-		report.attachReporter(htmlreport);
+		// report.attachReporter(htmlreport);
+		
+		report = ExtentReportManager.getInstance(); // Use the singleton instance
+
+		report.attachReporter(htmlreport); 		// Attach the HTML reporter to the existing report instance
 
 		// Set the configuration for the report
 		htmlreport.config().setTheme(Theme.DARK); // Set the dark theme
 		htmlreport.config().setDocumentTitle("Skill Module Test Report");
 		htmlreport.config().setReportName("End-to-End Test Report for Skill Module");
 
-		try {
-			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
-			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
-			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
-		} catch (IOException e) {
-			e.printStackTrace();
-		}
+//		try {
+//			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
+//			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
+//			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
+//		} catch (IOException e) {
+//			e.printStackTrace();
+//		}
 	}
 
 	@Override

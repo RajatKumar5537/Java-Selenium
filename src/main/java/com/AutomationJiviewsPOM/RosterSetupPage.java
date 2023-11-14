@@ -17,7 +17,7 @@ public class RosterSetupPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Shift Band Definition']/..")
 	private WebElement shiftBandDefination;
 	
-	@FindBy(xpath = "//li[@class='sidenav-item active']")
+	@FindBy(xpath = "//div[text()='Roster Creation ']/..")
 	private WebElement rosterCreation;
 	
 	
@@ -49,7 +49,7 @@ public class RosterSetupPage extends BaseClass{
 	
 	public void setRosterCreation() throws InterruptedException {
 		RoasterSetup.click();
-//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		rosterCreation.click();
 	}
 	

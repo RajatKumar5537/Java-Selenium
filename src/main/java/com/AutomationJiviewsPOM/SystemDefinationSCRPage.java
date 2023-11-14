@@ -391,7 +391,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 		scr.setBtnEdit();
 		scr.setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
 		scr.setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		scr.setBtnSaveScheduleCreationRule();
 
 	}
@@ -410,7 +410,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 		scr.setBtnEdit();
 		Thread.sleep(2000);
 		scr.setChkIsActive();
-		Thread.sleep(2000);
+		Thread.sleep(1000);
 		scr.setBtnSaveScheduleCreationRule();
 	}
 }

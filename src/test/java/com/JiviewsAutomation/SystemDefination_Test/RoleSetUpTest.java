@@ -30,7 +30,7 @@ public class RoleSetUpTest extends BaseClass{
         sdrs = new SystemDefinationRoleSetupPage(driver);
     }
 
-    @Test
+    @Test(priority = 1)
     public void verifyCreateNewRole() throws Exception {
         captureScreenshot(driver, "roleSetUpTest");
         logger.info("Create a new Skill");
@@ -44,7 +44,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("verify Create a new role is successful");
     }
 
-    @Test
+    @Test(priority = 2)
     public void verifyUpdateRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
@@ -57,7 +57,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("Verify Update Role successful");
     }
 
-    @Test
+    @Test(priority = 3, dependsOnMethods = "verifyUpdateRole")
     public void verifyDeactiveRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
@@ -70,7 +70,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("Verify Deactive Role is successful");
     }
 
-    @Test
+    @Test(priority = 4, dependsOnMethods = "verifyDeactiveRole")
     public void verifyReactiveRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
@@ -83,7 +83,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("Verify Reactive Role is successful");
     }
 
-    @Test
+    @Test(priority = 5)
     public void verifyCreateRoleWithAllAvailableSkill()throws Exception {
         captureScreenshot(driver, "roleSetUpTest");
 
@@ -96,7 +96,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("Verify create a role with all available skill");
     }
 
-    @Test
+    @Test(priority = 6)
     public void verifyDisselectAllAvailableSkill() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
@@ -109,7 +109,7 @@ public class RoleSetUpTest extends BaseClass{
         logger.info("Verify disselect all available skill");
     }
 	
-    @Test  
+    @Test  (priority = 7)
 	public void verifySearchColumnsForRole() throws Exception {
 		captureScreenshot(driver, "roleSetUpTest");
 		

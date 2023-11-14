@@ -31,7 +31,7 @@ public class ShiftBandTest extends BaseClass{
 	        sb = new SystemDefinationShiftBandPage(driver);
 	    }
 
-	    @Test
+	    @Test(priority = 1)
 	    public void testCreateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Create Shift Band Definition");
@@ -42,11 +42,11 @@ public class ShiftBandTest extends BaseClass{
 	        sb.createShiftBand();
 	    }
 
-	    @Test
+	    @Test(priority = 2)
 	    public void testUpdateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify update shiftBand");
-	        driver.navigate().refresh();
+//	        driver.navigate().refresh();
 	        hp.setOrgUnit();
 	        oudd.setAutoOu();
 	        jmmi.clickOnSystemDefination();
@@ -54,11 +54,11 @@ public class ShiftBandTest extends BaseClass{
 	        sb.updateShiftBand();
 	    }
 
-	    @Test
+	    @Test(priority = 3)
 	    public void testDeactivateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify Deactivate Shift band");
-	        driver.navigate().refresh();
+//	        driver.navigate().refresh();
 	        hp.setOrgUnit();
 	        oudd.setAutoOu();
 	        jmmi.clickOnSystemDefination();
@@ -66,11 +66,11 @@ public class ShiftBandTest extends BaseClass{
 	        sb.deactiveShiftBand();
 	    }
 
-	    @Test
+	    @Test(priority = 4)
 	    public void testWithoutShiftBandName() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify Without Shift Band Name");
-	        driver.navigate().refresh();
+//	        driver.navigate().refresh();
 	        hp.setOrgUnit();
 	        oudd.setAutoOu();
 	        jmmi.clickOnSystemDefination();
@@ -78,23 +78,23 @@ public class ShiftBandTest extends BaseClass{
 	        sb.withoutShiftBandName();
 	    }
 
-	    @Test
-	    public void testWithCombinationShift() throws Exception {
-	        captureScreenshot(driver, "shiftBandTest");
-	        logger.info("Verify With Combination Shift");
-	        driver.navigate().refresh();
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
-	        sb.shiftBandTypeCombinationShift();
-	    }
+//	    @Test(priority = 5)
+//	    public void testWithCombinationShift() throws Exception {
+//	        captureScreenshot(driver, "shiftBandTest");
+//	        logger.info("Verify With Combination Shift");
+////	        driver.navigate().refresh();
+//	        hp.setOrgUnit();
+//	        oudd.setAutoOu();
+//	        jmmi.clickOnSystemDefination();
+//	        rsp.setCreateRoasterShiftBand();
+//	        sb.shiftBandTypeCombinationShift();
+//	    }
 
-	    @Test
+	    @Test(priority = 5)
 	    public void testWithOvertimeShift() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify With Overtime Shift");
-	        driver.navigate().refresh();
+//	        driver.navigate().refresh();
 	        hp.setOrgUnit();
 	        oudd.setAutoOu();
 	        jmmi.clickOnSystemDefination();

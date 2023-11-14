@@ -46,7 +46,7 @@ public class skillSetUpTest extends BaseClass{
 	        logger.info("A skill is created successfully ");
 	    }
 
-	    @Test(priority = 2)
+	    @Test(priority = 2, dependsOnMethods = "createNewSkill")
 	    public void updateSkill() throws Exception {
 	        captureScreenshot(driver, "updateSkill");
 	        logger.info("Update a Skill");
@@ -58,7 +58,7 @@ public class skillSetUpTest extends BaseClass{
 	        logger.info("A skill is updated successfully ");
 	    }
 
-	    @Test(priority = 3)
+	    @Test(priority = 3, dependsOnMethods= "updateSkill")
 	    public void deActivateSkill() throws Exception {
 	        captureScreenshot(driver, "deActivateSkill");
 	        logger.info("Deactivate a Skill");
@@ -70,7 +70,7 @@ public class skillSetUpTest extends BaseClass{
 	        logger.info("A skill is deactivated successfully ");
 	    }
 
-	    @Test(priority = 4)
+	    @Test(priority = 4, dependsOnMethods ="deActivateSkill")
 	    public void reactivateSkill() throws Exception {
 	        captureScreenshot(driver, "reactivateSkill");
 	        logger.info("Reactivate a Skill");

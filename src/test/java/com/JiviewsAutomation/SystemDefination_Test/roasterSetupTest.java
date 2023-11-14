@@ -10,7 +10,7 @@ import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.RosterSetupPage;
-import com.AutomationJiviewsPOM.SystemDefinationRosterSetupPage;
+import com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class roasterSetupTest extends BaseClass{
@@ -21,7 +21,7 @@ public class roasterSetupTest extends BaseClass{
 	public jiviewsMainMenuItems jmmi;
 	public EmployeeSetupPage esp;
 	public RosterSetupPage rsp;
-	public SystemDefinationRosterSetupPage sdrs;
+	public SystemDefinationRosterCreationPage sdrs;
 	
 
 
@@ -33,7 +33,7 @@ public class roasterSetupTest extends BaseClass{
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 
 		hp.setOrgUnit();
 		oudd.setAutoOu();
@@ -52,11 +52,11 @@ public class roasterSetupTest extends BaseClass{
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		hp.setOrgUnit();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		hp.setOrgUnit();
 //		Thread.sleep(1000);
 		oudd.setAutoOu();
@@ -94,7 +94,7 @@ public class roasterSetupTest extends BaseClass{
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		
 		Thread.sleep(2000);
 		hp.setOrgUnit();
@@ -114,11 +114,11 @@ public class roasterSetupTest extends BaseClass{
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		hp.setOrgUnit();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		oudd.setAutoOu();
 //		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();
@@ -133,11 +133,11 @@ public class roasterSetupTest extends BaseClass{
 		oudd= new OrganizationUnitDropDown(driver);
 		jmmi= new jiviewsMainMenuItems(driver);
 		rsp= new RosterSetupPage(driver);
-		sdrs= new SystemDefinationRosterSetupPage(driver);
+		sdrs= new SystemDefinationRosterCreationPage(driver);
 		
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		hp.setOrgUnit();
-		Thread.sleep(1000);
+//		Thread.sleep(1000);
 		oudd.setAutoOu();
 //		Thread.sleep(2000);
 		jmmi.clickOnSystemDefination();

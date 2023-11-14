@@ -2,22 +2,28 @@ package com.AutomationJiviewsGeneric;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Alert;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import com.AutomationJiviewsPOM.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
+import io.netty.handler.timeout.TimeoutException;
 
 
 public class BaseClass {
@@ -112,7 +118,7 @@ public class BaseClass {
 		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
 
 	}
-
+	
 	// Add a boolean variable to track whether the user is logged in
 	//	private boolean isLoggedIn = false;
 	//	@BeforeClass
