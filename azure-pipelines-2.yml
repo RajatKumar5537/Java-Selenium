@@ -32,6 +32,14 @@ stages:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
 
+    - task: CopyFiles@2 - Extent Reports 
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      inputs:
+        SourceFolder: '$(system.defaultworkingdirectory)'
+        Contents: '**/reports/**'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
+
 - stage: PublishArtifacts
   jobs:
   - job: Publish
