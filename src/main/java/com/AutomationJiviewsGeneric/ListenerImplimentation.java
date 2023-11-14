@@ -31,15 +31,16 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	public ListenerImplimentation() {
 		congigUtiliy= new configUtility();
-		
-		 try {
-	            report = ExtentReportManager.getInstance(); // Use the singleton instance
-	            report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
-	            report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
-	            report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
+
+		try {
+			report = ExtentReportManager.getInstance(); // Use the singleton instance
+			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
+			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
+			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
+			System.out.println("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
 	}
 
 	@Override
@@ -84,8 +85,11 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		// Log test skipped
-		test.skip("Test skipped");
+		String methodName = result.getMethod().getMethodName();
+		String skipReason = result.getThrowable().getMessage(); // Get the reason for test skip
+
+		// Log test skipped with custom message or additional information
+		test.skip("Test skipped - Method: " + methodName + ", Reason: " + skipReason);
 	}
 
 	@Override
@@ -94,26 +98,16 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
 		String reportFileName = "ExtentReport_" + timestamp + ".html";
 		ExtentHtmlReporter htmlreport = new ExtentHtmlReporter("./ExtentReport/" + reportFileName);
-		// report = new ExtentReports();
-		// Attach the HTML reporter to the report
-		// report.attachReporter(htmlreport);
-		
+
 		report = ExtentReportManager.getInstance(); // Use the singleton instance
 
 		report.attachReporter(htmlreport); 		// Attach the HTML reporter to the existing report instance
 
 		// Set the configuration for the report
 		htmlreport.config().setTheme(Theme.DARK); // Set the dark theme
-		htmlreport.config().setDocumentTitle("Skill Module Test Report");
-		htmlreport.config().setReportName("End-to-End Test Report for Skill Module");
+		htmlreport.config().setDocumentTitle("Jivi Automation Test Report");
+		htmlreport.config().setReportName("End-to-End Test Report for Module");
 
-//		try {
-//			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
-//			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
-//			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
-//		} catch (IOException e) {
-//			e.printStackTrace();
-//		}
 	}
 
 	@Override
