@@ -33,6 +33,14 @@ stages:
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
 
+    # Copy files to the artifacts directory
+    - task: CopyFiles@2
+      displayName: 'Copy Extent Report Files'
+      inputs:
+        SourceFolder: '$(System.DefaultWorkingDirectory)'
+        Contents: '**/ExtentReport/**'
+        TargetFolder: '$(Build.ArtifactStagingDirectory)'
+
 - stage: PublishArtifacts
   jobs:
   - job: Publish
@@ -41,5 +49,5 @@ stages:
     # Add a step to publish Extent Report artifacts
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
+        pathToPublish: '$(Build.ArtifactStagingDirectory)'
         artifactName: 'MyExtentReportArtifacts'
