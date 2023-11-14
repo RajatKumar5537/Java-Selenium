@@ -45,5 +45,5 @@ stages:
 # Add a step to publish Extent Report artifacts
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: '$(Build.ArtifactStagingDirectory)/ExtentReport'
+        pathToPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
         artifactName: 'MyExtentReportArtifacts'
