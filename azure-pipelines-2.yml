@@ -27,7 +27,8 @@ stages:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'test -Dextent.reporter.html.output=$(System.DefaultWorkingDirectory)/ExtentReport/extent-report.html'
+        options: '-Dsurefire.suiteXmlFiles=testng.xml'
+        goals: 'clean install'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
