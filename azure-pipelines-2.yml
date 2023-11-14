@@ -32,7 +32,7 @@ stages:
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'test -Dextent.reporter.html.output=$(System.DefaultWorkingDirectory)/ExtentReport/extent-report.html'
+        goals: 'test -Dextent.reporter.html.output=$(Build.ArtifactStagingDirectory)/ExtentReport/extent-report.html'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
       displayName: 'Run Tests'
@@ -45,5 +45,5 @@ stages:
 # Add a step to publish Extent Report artifacts
     - task: PublishBuildArtifacts@1
       inputs:
-        pathToPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
+        pathToPublish: '$(Build.ArtifactStagingDirectory)/ExtentReport'
         artifactName: 'MyExtentReportArtifacts'
