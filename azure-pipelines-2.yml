@@ -22,12 +22,7 @@ stages:
     steps:
     - checkout: self
 
-    # Add any other setup steps specific to your project
-
-    - task: Maven@4
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'clean install'
+    # If you need additional setup steps, add them here
 
     - task: Maven@4
       inputs:
@@ -42,9 +37,8 @@ stages:
   - job: Publish
     steps:
 
-# Add a step to publish Extent Report artifacts
+    # Add a step to publish Extent Report artifacts
     - task: PublishBuildArtifacts@1
       inputs:
         pathToPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
         artifactName: 'MyExtentReportArtifacts'
-
