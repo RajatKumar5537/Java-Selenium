@@ -25,7 +25,7 @@ stages:
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'test'
-        options: '''test -Dsurefire.suiteXmlFiles=testng.xml'''
+        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
