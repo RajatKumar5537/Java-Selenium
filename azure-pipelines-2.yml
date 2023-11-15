@@ -21,29 +21,29 @@ stages:
   - job: Build
     steps:
     - checkout: self
-
-    # Add any other setup steps specific to your project
-
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean install'
-
-    - task: Maven@4
-      inputs:
-        mavenPomFile: 'pom.xml'
-        goals: 'test -Dextent.reporter.html.output=$(Build.ArtifactStagingDirectory)/ExtentReport/extent-report.html'
+        goals: 'test'
+        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
-      displayName: 'Run Tests'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
+        mavenAuthenticateFeed: false
+        effectivePomSkip: false
+        sonarQubeRunAnalysis: false
 
-- stage: PublishArtifacts
-  jobs:
-  - job: Publish
-    steps:
-
-# Add a step to publish Extent Report artifacts
-    - task: PublishBuildArtifacts@1
+    - task: CopyFiles@2 
+      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
       inputs:
-        pathToPublish: '$(System.DefaultWorkingDirectory)/ExtentReport'
-        artifactName: 'MyExtentReportArtifacts'
+        SourceFolder: '$(system.defaultworkingdirectory)'
+        Contents: '**/ExtentReport/**'
+        TargetFolder: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
+
+    - task: PublishBuildArtifacts@1
+      displayName: 'Publish Artifact: drop'
+      inputs:
+        PathtoPublish: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
