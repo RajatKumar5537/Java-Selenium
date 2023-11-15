@@ -34,10 +34,10 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
 
-    - task: CopyFiles@2
+    - task: CopyFiles@2 
       displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
       inputs:
-        SourceFolder: '$(system.defaultworkingdirectory)'
+        SourceFolder: '$(system.defaultworkingdirectory)/ExtentReport/extent-report.html'
         Contents: '**/reports/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()
