@@ -1,80 +1,101 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2023-11-14T03:03:44Z" name="Default suite" finished-at="2023-11-14T03:05:22Z" duration-ms="97167">
+  <suite started-at="2023-11-15T05:29:36Z" name="Default suite" finished-at="2023-11-15T05:30:54Z" duration-ms="78152">
     <groups>
     </groups>
-    <test started-at="2023-11-14T03:03:44Z" name="Default test" finished-at="2023-11-14T03:05:22Z" duration-ms="97167">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@467f77a5]" started-at="2023-11-14T03:03:44Z" name="launchBrowser" finished-at="2023-11-14T03:04:30Z" duration-ms="45454" status="PASS">
+    <test started-at="2023-11-15T05:29:36Z" name="Default test" finished-at="2023-11-15T05:30:54Z" duration-ms="78152">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:29:36Z" name="launchBrowser" finished-at="2023-11-15T05:29:37Z" duration-ms="1498" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@467f77a5]" started-at="2023-11-14T03:04:30Z" name="login" finished-at="2023-11-14T03:04:51Z" duration-ms="21474" status="PASS">
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:29:37Z" name="login" finished-at="2023-11-15T05:29:51Z" duration-ms="14235" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
-        <test-method signature="verifyCreateRoasterWithGroup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@467f77a5]" started-at="2023-11-14T03:04:51Z" name="verifyCreateRoasterWithGroup" finished-at="2023-11-14T03:05:21Z" duration-ms="29880" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[Cannot locate option with index: 1
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: driver.version: unknown]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: Cannot locate option with index: 1
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: driver.version: unknown
-at org.openqa.selenium.support.ui.Select.setSelectedByIndex(Select.java:303)
-at org.openqa.selenium.support.ui.Select.selectByIndex(Select.java:179)
-at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setAvailableSkillForSingleRoster(SystemDefinationRosterCreationPage.java:268)
-at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setCreateRoasterwithGroup(SystemDefinationRosterCreationPage.java:496)
-at com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest.verifyCreateRoasterWithGroup(roasterSetupTest.java:43)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:29:51Z" name="setUp" finished-at="2023-11-15T05:29:51Z" duration-ms="10" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateRoasterWithGroup -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@467f77a5]" started-at="2023-11-14T03:05:21Z" name="logout" finished-at="2023-11-14T03:05:21Z" duration-ms="0" status="PASS">
+        </test-method> <!-- setUp -->
+        <test-method signature="createNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:29:51Z" name="createNewSkill" finished-at="2023-11-15T05:30:01Z" duration-ms="10102" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- createNewSkill -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:01Z" name="login" finished-at="2023-11-15T05:30:03Z" duration-ms="2111" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:01Z" name="logout" finished-at="2023-11-15T05:30:01Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest@467f77a5]" started-at="2023-11-14T03:05:21Z" name="closeBrowser" finished-at="2023-11-14T03:05:22Z" duration-ms="266" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:03Z" name="setUp" finished-at="2023-11-15T05:30:03Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="updateSkill()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:03Z" name="updateSkill" finished-at="2023-11-15T05:30:14Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.createNewSkill" duration-ms="10946" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- updateSkill -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:14Z" name="logout" finished-at="2023-11-15T05:30:14Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:14Z" name="login" finished-at="2023-11-15T05:30:23Z" duration-ms="8484" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:23Z" name="setUp" finished-at="2023-11-15T05:30:23Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="deActivateSkill()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:23Z" name="deActivateSkill" finished-at="2023-11-15T05:30:31Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.updateSkill" duration-ms="7812" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deActivateSkill -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:31Z" name="login" finished-at="2023-11-15T05:30:34Z" duration-ms="3492" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:31Z" name="logout" finished-at="2023-11-15T05:30:31Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:34Z" name="setUp" finished-at="2023-11-15T05:30:34Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method signature="reactivateSkill()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:34Z" name="reactivateSkill" finished-at="2023-11-15T05:30:43Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest.deActivateSkill" duration-ms="9037" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- reactivateSkill -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:43Z" name="logout" finished-at="2023-11-15T05:30:43Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:43Z" name="login" finished-at="2023-11-15T05:30:46Z" duration-ms="2991" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- login -->
+        <test-method signature="searchColumnsForSkill()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:46Z" name="searchColumnsForSkill" finished-at="2023-11-15T05:30:53Z" duration-ms="7222" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- searchColumnsForSkill -->
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:46Z" name="setUp" finished-at="2023-11-15T05:30:46Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUp -->
+        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:53Z" name="logout" finished-at="2023-11-15T05:30:53Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logout -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest@2e6ee0bc]" started-at="2023-11-15T05:30:53Z" name="closeBrowser" finished-at="2023-11-15T05:30:54Z" duration-ms="195" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

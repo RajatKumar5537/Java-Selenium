@@ -204,7 +204,7 @@ public class SystemDefinationSkillSetupPage extends BaseClass {
 		sds.enterSkillDescription(skillDescriptionData);
 		sds.enterSequence(sequenceData);
 		sds.enterWageLevelCode(wageLevelCodedata);
-		sds.clickIsActiveOption();
+//		sds.clickIsActiveOption();
 		sds.clickSaveBtn();
 		sds.closeNotificationPopup();
 	}
