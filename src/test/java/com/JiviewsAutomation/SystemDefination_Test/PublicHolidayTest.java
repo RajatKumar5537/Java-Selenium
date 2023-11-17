@@ -39,7 +39,7 @@ public class PublicHolidayTest extends BaseClass{
 
 	    @Test(priority = 1)
 	    public void verifyCreatePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "PublicHolidayTest_Create");
+	        captureScreenshot(driver, "verifyCreatePublicHoliday");
 	        logger.info("Creating public holiday");
 
 	        sdph.setCreatePublicHoliday();
@@ -49,7 +49,7 @@ public class PublicHolidayTest extends BaseClass{
 
 	    @Test(priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
 	    public void verifyUpdatePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "PublicHolidayTest_Update");
+	        captureScreenshot(driver, "verifyUpdatePublicHoliday");
 	        logger.info("Updating public holiday");
 
 	        sdph.setUpdatePublicHoliday();
@@ -59,7 +59,7 @@ public class PublicHolidayTest extends BaseClass{
 
 	    @Test(priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
 	    public void verifyDeletePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "PublicHolidayTest_Delete");
+	        captureScreenshot(driver, "verifyDeletePublicHoliday");
 	        logger.info("Deleting public holiday");
 
 	        sdph.setDeactivatePH();

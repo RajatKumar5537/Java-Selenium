@@ -58,19 +58,33 @@ public class jiviewsMainMenuItems extends BaseClass{
 	//		selectSystemSetup.click();
 	//	}
 
-	public void clickSelectSystemDefination() {
+	public void clickSystemDefination() {
 		webUtility.ElementClickable(driver, selectSystemDefination);
 		selectSystemDefination.click();
 	}
+	
+	public void clickEmployeeAdministration() {
+		webUtility.ElementClickable(driver, selectEmployeeAdministration);
+		selectEmployeeAdministration.click();
+	}
+	
+	
+	
+	
+	
 	public void clickOnSystemDefination()  {
 
 		//		jiviewsMainMenuItems jmmi=new jiviewsMainMenuItems(driver);
 		clickMainMenu();
-		clickSelectSystemDefination();
+		clickSystemDefination();
 	}
-	//	public void setSelectEmployeeAdministration() {
-	//		selectEmployeeAdministration.click();
-	//	}
+	
+	public void setEmployeeAdministration() {
+		clickMainMenu();
+		clickEmployeeAdministration();
+	}
+	
+	
 	//	public void setSelectWorkforceScheduling() {
 	//		selectWorkforceScheduling.click();
 	//	}

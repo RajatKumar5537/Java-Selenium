@@ -141,7 +141,7 @@ public class WebUtilities extends BaseClass{
 	public void moveToElement(WebDriver driver,WebElement element) {
 
 		Actions a=new Actions(driver);
-		a.moveToElement(element).click().perform();;
+		a.moveToElement(element).perform();;
 
 	}
 	/**

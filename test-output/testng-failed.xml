@@ -3,15 +3,15 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest">
         <methods>
+          <include name="verifyCreateEmpProfile"/>
           <include name="launchBrowser"/>
-          <include name="verifyCreateRoasterWithGroup"/>
           <include name="closeBrowser"/>
           <include name="login"/>
           <include name="logout"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

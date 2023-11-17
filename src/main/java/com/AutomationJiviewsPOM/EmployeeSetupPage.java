@@ -50,27 +50,28 @@ public class EmployeeSetupPage extends BaseClass{
 
 	// it will create a new skill 
 	public void setCreateSkill() throws InterruptedException {
-		empSetPage= new EmployeeSetupPage(driver);
+//		empSetPage= new EmployeeSetupPage(driver);
 
-		empSetPage.setEmpSetup();
-		empSetPage.setSkill();
+		setEmpSetup();
+		setSkill();
 
 	}
 
 	public void setCreateRole() {
-		empSetPage= new EmployeeSetupPage(driver);
-		empSetPage.setEmpSetup();
-		empSetPage.setRole();
+//		empSetPage= new EmployeeSetupPage(driver);
+		setEmpSetup();
+		setRole();
 	}
 
 	public void setCreateRoleGroups() {
-		empSetPage= new EmployeeSetupPage(driver);
-		empSetPage.setEmpSetup();
-		empSetPage.setRolesGroup();
+//		empSetPage= new EmployeeSetupPage(driver);
+		
+		setEmpSetup();
+		setRolesGroup();
 	}
 	public void setCreatePercentageConfiguration() {
-		empSetPage= new EmployeeSetupPage(driver);
-		empSetPage.setEmpSetup();
-		empSetPage.setPercentageConfiguration();
+//		empSetPage= new EmployeeSetupPage(driver);
+		setEmpSetup();
+		setPercentageConfiguration();
 	}
 }
