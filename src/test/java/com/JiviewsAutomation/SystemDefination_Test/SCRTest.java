@@ -15,153 +15,62 @@ import com.AutomationJiviewsPOM.SystemDefinationSCRPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class SCRTest extends BaseClass{
-	
-	
-	  private static final Logger logger = LogManager.getLogger(SCRTest.class);
 
-	    public HomePage hp;
-	    public OrganizationUnitDropDown oudd;
-	    public jiviewsMainMenuItems jmmi;
-	    public EmployeeSetupPage esp;
-	    public RosterSetupPage rsp;
-	    public SystemDefinationSCRPage scr;
 
-	    @BeforeMethod
-	    public void setup() throws Exception {
-	        hp = new HomePage(driver);
-	        oudd = new OrganizationUnitDropDown(driver);
-	        jmmi = new jiviewsMainMenuItems(driver);
-	        rsp = new RosterSetupPage(driver);
-	        scr = new SystemDefinationSCRPage(driver);
-
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setScheduleCreationRules();
-	    }
-
-	    @Test(priority = 1)
-	    public void verifyCreateSCR() throws Exception {
-	        captureScreenshot(driver, "SCRTest");
-	        logger.info("Create SCR");
-
-	        scr.setCreateSCR();
-	        logger.info("Create a SCR is successful");
-	    }
-
-	    @Test(priority = 2)
-	    public void verifyUpdateSCR() throws Exception {
-	        captureScreenshot(driver, "SCRTest");
-	        logger.info("Update SCR");
-
-	        scr.setUpdateSCR();
-	    }
-
-	    @Test(priority = 3,  dependsOnMethods = "verifyUpdateSCR")
-	    public void verifyDeactivateSCR() throws Exception {
-	        captureScreenshot(driver, "SCRTest");
-	        logger.info("Deactivate SCR");
-
-	        scr.setDeactivateSCR();
-	    }
-
-	    @Test(priority = 4, dependsOnMethods = "verifyDeactivateSCR")
-	    public void verifyReactivateSCR() throws Exception {
-	        captureScreenshot(driver, "SCRTest");
-	        logger.info("Reactive SCR");
-
-	        scr.setReactivateSCR();
-	    }
-	
-	    
-	    
-	    
-	/*    private static final Logger logger = LogManager.getLogger(SCRTest.class);
-
+	private static final Logger logger = LogManager.getLogger(SCRTest.class);
 	public HomePage hp;
 	public OrganizationUnitDropDown oudd;
 	public jiviewsMainMenuItems jmmi;
 	public EmployeeSetupPage esp;
-	public RosterSetupPage rsp; 
+	public RosterSetupPage rsp;
 	public SystemDefinationSCRPage scr;
 
+	@BeforeMethod
+	public void setup() throws Exception {
+		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		hp = new HomePage(driver);
+		oudd = new OrganizationUnitDropDown(driver);
+		jmmi = new jiviewsMainMenuItems(driver);
+		rsp = new RosterSetupPage(driver);
+		scr = new SystemDefinationSCRPage(driver);
+
+		hp.setOrgUnit();
+		oudd.setAutoOu();
+		jmmi.clickOnSystemDefination();
+		rsp.setScheduleCreationRules();
+	}
+
 	@Test(priority = 1)
-	public void verifyCreateSCR ()throws Exception {
+	public void testCreateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Create SCR");
 
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		scr= new SystemDefinationSCRPage(driver);
-
-
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setScheduleCreationRules();
 		scr.setCreateSCR();
-
-		logger.info("Create a SCR is successfull");
+		logger.info("Create a SCR is successful");
 	}
 
-	@Test (priority = 2)//,dependsOnMethods = "verifyCreateSCR"  )
-	public void verifyUpdateSCR() throws Exception {
+	@Test(priority = 2)
+	public void testUpdateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Update SCR");
-		driver.navigate().refresh();
 
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		scr= new SystemDefinationSCRPage(driver);
-
-
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setScheduleCreationRules();
 		scr.setUpdateSCR();
 	}
-	@Test (priority = 3)//,dependsOnMethods = "verifyUpdateSCR"  )
-	public void verifyDeactivateSCR() throws Exception {
+
+	@Test(priority = 3,  dependsOnMethods = "testUpdateSCR")
+	public void testDeactivateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Deactivate SCR");
-		driver.navigate().refresh();
 
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		scr= new SystemDefinationSCRPage(driver);
-
-
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setScheduleCreationRules();
 		scr.setDeactivateSCR();
 	}
 
-	@Test (priority = 4)//,dependsOnMethods = "verifyDeactivateSCR" )
-	public void verifyReactivateSCR() throws Exception {
+	@Test(priority = 4, dependsOnMethods = "testDeactivateSCR")
+	public void testReactivateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("Reactive SCR");
-		driver.navigate().refresh();
 
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		scr= new SystemDefinationSCRPage(driver);
-
-
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setScheduleCreationRules();
 		scr.setReactivateSCR();
-	}*/
+	}
 }

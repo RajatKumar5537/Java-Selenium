@@ -138,7 +138,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[1]")
 	private WebElement btnEdit;
 
-	@FindBy(xpath = "//div[text()='Schedule Creation Rules details updated successfully.']")
+	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
 	@FindBy(xpath = "(//tr[@role='row']/td/input)[1]")
@@ -307,7 +307,7 @@ public class SystemDefinationSCRPage extends BaseClass{
 		notificationPopup.click();
 	}
 	public void setCheckbox() {
-//		webUtility.moveToElement(driver, checkBox);
+		//		webUtility.moveToElement(driver, checkBox);
 		checkBox.click();
 	}
 	public void setBtnDeletePublicHlday() {
@@ -317,13 +317,16 @@ public class SystemDefinationSCRPage extends BaseClass{
 		webUtility.visibilityOfElement(driver, btnYes);
 		btnYes.click();
 	}
-
+	public void clickNotificationPopup() throws Exception {
+		webUtility.moveToElement(driver, notificationPopup);
+		notificationPopup.click();
+	}
 	public void setCreateSCR() throws Exception {
 		scr = new SystemDefinationSCRPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
-		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 7);
-		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 8);
+//		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 7);
+//		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 8);
 		String validFrom = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 9);
 		//		String validTo = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 10);
 		String periodLength = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 11);
@@ -346,40 +349,45 @@ public class SystemDefinationSCRPage extends BaseClass{
 		String shiftBandMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 27);
 		String minHourRest = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 28);
 
-		scr.setBtnAddScheduleRule();
-		scr.setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
-		scr.setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
-		scr.setTxtValidFrom(validFrom);
-		//		scr.setTxtValidTo(validTo);
-		scr.setTxtPeriodLength(periodLength);
-		scr.setChkIsActive();
-		scr.setTxtShiftlengthMin(lengthMin);
-		scr.setTxtShiftlengthMax(lengthMax);
-		scr.setTxtContDaysScheduleOnMin(workDayMin);
-		scr.setTxtContDaysScheduleOnMax(workDayMax);
-		scr.setTxtDaysPerPeriodMin(dayPeriodMin);
-		scr.setTxtDaysPerPeriodMax(dayPeriodMax);
-		scr.setTxtContDaysScheduleOffMin(offDayMin);
-		scr.setTxtContDaysScheduleOffMax(offDayMax);
-		scr.setTxtTimePerPeriodMin(timePeriodMin);
-		scr.setTxtTimePerPeriodMax(timePeriodMax);
+		setBtnAddScheduleRule();
+//		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
+		setTxtScheduleRuleName(fakeEmployee.getFirstName());
+		
+//		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
+		setTxtScheduleRuleDesc(fakeEmployee.getDescription());
+		
+		setTxtValidFrom(validFrom);
+		//		setTxtValidTo(validTo);
+		setTxtPeriodLength(periodLength);
+		setChkIsActive();
+		setTxtShiftlengthMin(lengthMin);
+		setTxtShiftlengthMax(lengthMax);
+		setTxtContDaysScheduleOnMin(workDayMin);
+		setTxtContDaysScheduleOnMax(workDayMax);
+		setTxtDaysPerPeriodMin(dayPeriodMin);
+		setTxtDaysPerPeriodMax(dayPeriodMax);
+		setTxtContDaysScheduleOffMin(offDayMin);
+		setTxtContDaysScheduleOffMax(offDayMax);
+		setTxtTimePerPeriodMin(timePeriodMin);
+		setTxtTimePerPeriodMax(timePeriodMax);
 		//Include Leave Option 
-		scr.setChkIsActive2();
+		setChkIsActive2();
 		//Next button 
-		scr.setBtnAddScheduleRuleShiftBands();
-		scr.setTxtContDaysOnMin(countDayMin);
-		scr.setTxtContDaysOnMax(countDayMax);
-		scr.setTxtContDaysOffMin(countOffMin);
-		scr.setTxtContDaysOffMax(countOffMax);
-		scr.setTxtShiftBandsPerPeriodMin(shiftBandMin);
-		scr.setTxtShiftBandsPerPeriodMax(shiftBandMax);
-		scr.setTxtMinHourRest(minHourRest);
+		setBtnAddScheduleRuleShiftBands();
+		setTxtContDaysOnMin(countDayMin);
+		setTxtContDaysOnMax(countDayMax);
+		setTxtContDaysOffMin(countOffMin);
+		setTxtContDaysOffMax(countOffMax);
+		setTxtShiftBandsPerPeriodMin(shiftBandMin);
+		setTxtShiftBandsPerPeriodMax(shiftBandMax);
+		setTxtMinHourRest(minHourRest);
 		Thread.sleep(2000);
-		scr.setAvailableShiftBand();
-		scr.setSelectMoveSingle();
-		scr. setBtnSaveScheduleRulePeriod();
+		setAvailableShiftBand();
+		setSelectMoveSingle();
+		setBtnSaveScheduleRulePeriod();
 		Thread.sleep(2000);
-		scr.setBtnSaveScheduleCreationRule();
+		setBtnSaveScheduleCreationRule();
+		clickNotificationPopup();
 	}
 
 	public void setUpdateSCR() throws Exception {
@@ -388,29 +396,32 @@ public class SystemDefinationSCRPage extends BaseClass{
 		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 8);
 
 
-		scr.setBtnEdit();
-		scr.setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
-		scr.setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
+		setBtnEdit();
+		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
+		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
 		Thread.sleep(1000);
-		scr.setBtnSaveScheduleCreationRule();
+		setBtnSaveScheduleCreationRule();
+		clickNotificationPopup();
 
 	}
 	public void setDeactivateSCR() throws Exception {
 		scr = new SystemDefinationSCRPage(driver);
 
-		scr.setCheckbox();
+		setCheckbox();
 		Thread.sleep(2000);
-		scr.setBtnDeletePublicHlday();
-		scr.setBtnYes();
+		setBtnDeletePublicHlday();
+		setBtnYes();
+		clickNotificationPopup();
 	}
-	
+
 	public void setReactivateSCR() throws Exception {
 		scr = new SystemDefinationSCRPage(driver);
-		
-		scr.setBtnEdit();
+
+		setBtnEdit();
 		Thread.sleep(2000);
-		scr.setChkIsActive();
+		setChkIsActive();
 		Thread.sleep(1000);
-		scr.setBtnSaveScheduleCreationRule();
+		setBtnSaveScheduleCreationRule();
+		clickNotificationPopup();
 	}
 }

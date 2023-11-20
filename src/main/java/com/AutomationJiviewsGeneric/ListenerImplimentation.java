@@ -7,6 +7,8 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
@@ -24,7 +26,7 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 
 public class ListenerImplimentation extends BaseClass implements ITestListener{
-
+	 private static final Logger logger = LogManager.getLogger(ListenerImplimentation.class);
 	private ExtentReports report;
 	private ExtentTest test;
 	private configUtility congigUtiliy;
@@ -37,7 +39,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
 			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
 			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
-			System.out.println("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
+			logger.info("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -45,8 +47,8 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onTestStart(ITestResult result) {
-		String method = result.getMethod().getMethodName();
-		test = report.createTest(method);
+		String methodName = result.getMethod().getMethodName();
+		test = report.createTest(methodName);
 
 		// Add author, category, and description to the test
 		try {
@@ -86,16 +88,23 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		String skipReason = result.getThrowable().getMessage(); // Get the reason for test skip
+		test = report.createTest(methodName);
+		try {
+			test.assignAuthor(congigUtiliy.getCongigPropertyData("author"));
+		}catch (IOException e) {
+			e.printStackTrace();
+		}
+		test.assignCategory("Functional Test");
+		test.info("Jivi Automation Test: Verifying user login functionality");
 
 		// Log test skipped with custom message or additional information
-		test.skip("Test skipped - Method: " + methodName + ", Reason: " + skipReason);
+		test.skip("Test skipped - Method: " + methodName);
 	}
 
 	@Override
 	public void onStart(ITestContext context) {
 
-		String timestamp = new SimpleDateFormat("yyyyMMddHHmmss").format(new Date());
+		String timestamp = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
 		String reportFileName = "ExtentReport_" + timestamp + ".html";
 		ExtentHtmlReporter htmlreport = new ExtentHtmlReporter("./ExtentReport/" + reportFileName);
 
@@ -106,7 +115,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		// Set the configuration for the report
 		htmlreport.config().setTheme(Theme.DARK); // Set the dark theme
 		htmlreport.config().setDocumentTitle("Jivi Automation Test Report");
-		htmlreport.config().setReportName("End-to-End Test Report for Module");
+		htmlreport.config().setReportName("End-to-End Test Report for Jivi Modules");
 
 	}
 

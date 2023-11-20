@@ -23,6 +23,10 @@ public class FakeEmployee {
 	private String hireDate;
 	private String probationExpirydate;
 	private String designation;
+	private String documentName;
+	private String description;
+	
+
 	private String interests;
 	private String email;
 
@@ -87,6 +91,13 @@ public class FakeEmployee {
 
 	public void setFirstName(String firstName) {
 		this.firstName = firstName;
+	}
+	public String getDescription() {
+		return description;
+	}
+
+	public void setDescription(String description) {
+		this.description = description;
 	}
 	public String getMiddleName() {
 		return middleName;
@@ -195,7 +206,13 @@ public class FakeEmployee {
 	public void setEmail(String email) {
 		this.email = email;
 	}
+	public String getDocumentName() {
+		return documentName;
+	}
 
+	public void setDocumentName(String documentName) {
+		this.documentName = documentName;
+	}
 	public String getDesignation() {
 		return designation;
 	}

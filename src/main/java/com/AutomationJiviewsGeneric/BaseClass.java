@@ -17,8 +17,10 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Reporter;
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
+import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import com.AutomationJiviewsPOM.LoginPage;
@@ -33,6 +35,7 @@ public class BaseClass {
 	public static WebDriver driver;
 	public static WebUtilities webUtility = new WebUtilities(driver);
 	public static ExcelUtilities excelUtility= new ExcelUtilities();
+	public static configUtility configUtil = new configUtility();
 	public static FakeEmployee fakeEmployee=new FakeEmployee();
 	public static String timeStamp = LocalDateTime.now().toString();
 
@@ -85,9 +88,9 @@ public class BaseClass {
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		logger.info("Close Browser...");
-		//		driver.quit();
+//		driver.quit();
 	}
-	@BeforeMethod
+	/*	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
 		logger.info("Login to the Jivi application");
 
@@ -111,7 +114,7 @@ public class BaseClass {
 		//		hp.setAdmin();
 		//		Thread.sleep(2000);
 		//		hp.setLogout();
-	}
+	}*/
 
 	// Capture screenshot on test failure for Test method and add it in Extent report  
 	public void captureScreenshot(WebDriver driver, String res) throws IOException {
@@ -126,12 +129,15 @@ public class BaseClass {
 	private void generateFakeEmployeeData() {
 		Faker fakeData=new Faker();
 		fakeEmployee.setFirstName(fakeData.name().firstName());
+		 // Generate a fake description
+	    fakeEmployee.setDescription(fakeData.lorem().sentence()); 
+	    fakeEmployee.setDocumentName("Medical Report"); 
 		fakeEmployee.setMiddleName(fakeData.name().firstName());
 		fakeEmployee.setLastName(fakeData.name().lastName());
 		// For AlphaNumeric value
 		//	fakeEmployee.setEmpNumber(UUID.randomUUID().toString());
 		//	fakeEmployee.setBadgeNumber(UUID.randomUUID().toString().substring(0, 8).toUpperCase()); //"BADGE_" +
-		
+
 		// For Numeric value
 		fakeEmployee.setEmpNumber(generateNumericString(8));
 		fakeEmployee.setBadgeNumber(generateNumericString(8));
@@ -149,17 +155,17 @@ public class BaseClass {
 		fakeEmployee.setMobileNumber(fakeData.phoneNumber().cellPhone());
 		fakeEmployee.setPhoneNumber(fakeData.phoneNumber().cellPhone());
 		fakeEmployee.setEmail(fakeData.internet().emailAddress());
+		
 		// Set the minimum hire date (2 years ago from the current date)
 		LocalDate hireDate = LocalDate.now().minusYears(2);
 		fakeEmployee.setHireDate(hireDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		
 		// Set probation expiry date (hire date + 90 days)
 		LocalDate probationExpiryDate = LocalDate.parse(fakeEmployee.getHireDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).plusDays(90);
 		fakeEmployee.setProbationExpirydate(probationExpiryDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 
 		System.out.println("Hire Date: " + fakeEmployee.getHireDate());
 		System.out.println("Probation Expiry Date: " + fakeEmployee.getProbationExpirydate());
-		Reporter.log("Hire Date: " + fakeEmployee.getHireDate());
-		Reporter.log("Probation Expiry Date: " + fakeEmployee.getProbationExpirydate());
 		//		fakeEmployee.setDesignation(fakeData.job().position());
 		//		fakeEmployee.setInterests(fakeData.internet().domainWord());
 
@@ -174,50 +180,51 @@ public class BaseClass {
 
 		return numericString.toString();
 	}
+
+
 	// Add a boolean variable to track whether the user is logged in
-	//	private boolean isLoggedIn = false;
-	//	@BeforeClass
-	//	public void beforeTestMethod() throws IOException, InterruptedException {
-	//		login();
-	//	}
-	//	@AfterClass
-	//	public void afterTestMethod() {
-	//		try {
-	//			logout();
-	//		} catch (Exception e) {
-	//			e.printStackTrace();
-	//		}
-	//	}
-	//	public void login() throws IOException, InterruptedException {
-	//		// Perform login only if the user is not already logged in
-	//		if (!isLoggedIn) {
-	//			Reporter.log("Login", true);
-	//			logger.info("Login to the Jivi application");
-	//
-	//			configUtility configUtil = new configUtility();
-	//			String url = configUtil.getCongigPropertyData("url");
-	//			String un = configUtil.getCongigPropertyData("username");
-	//			String pw = configUtil.getCongigPropertyData("password");
-	//			driver.get(url);
-	//			LoginPage lp = new LoginPage(driver);
-	//			lp.setLogin(un, pw);
-	//			isLoggedIn = true;
-	//		}
-	//	}
-	//
-	//	public void logout() {
-	//		if (isLoggedIn) {
-	//			Reporter.log("Logout", true);
-	//			logger.info("Logout from Jivi application");
-	//			//		HomePage hp=new HomePage(driver);
-	//			//		Thread.sleep(2000);
-	//			//		hp.setAdmin();
-	//			//		Thread.sleep(2000);
-	//			//		hp.setLogout();
-	//			// Reset the isLoggedIn flag to allow logging in again in the future
-	//			isLoggedIn = false;
-	//		}
-	//	}
+	private boolean isLoggedIn = false;
+	@BeforeClass
+	public void beforeTestMethod() throws IOException, InterruptedException {
+		login();
+	}
+	@AfterClass
+	public void afterTestMethod() {
+		try {
+			logout();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void login() throws IOException, InterruptedException {
+		// Perform login only if the user is not already logged in
+		if (!isLoggedIn) {
+			Reporter.log("Login", true);
+			logger.info("Login to the Jivi application");
+
+//			configUtility configUtil = new configUtility();
+			String url = configUtil.getCongigPropertyData("url");
+			String un = configUtil.getCongigPropertyData("username");
+			String pw = configUtil.getCongigPropertyData("password");
+			driver.get(url);
+			LoginPage lp = new LoginPage(driver);
+			lp.setLogin(un, pw);
+			isLoggedIn = true;
+		}
+	}
+	public void logout() {
+		if (isLoggedIn) {
+			Reporter.log("Logout", true);
+			logger.info("Logout from Jivi application");
+			//		HomePage hp=new HomePage(driver);
+			//		Thread.sleep(2000);
+			//		hp.setAdmin();
+			//		Thread.sleep(2000);
+			//		hp.setLogout();
+			// Reset the isLoggedIn flag to allow logging in again in the future
+			isLoggedIn = false;
+		}
+	}
 
 
 

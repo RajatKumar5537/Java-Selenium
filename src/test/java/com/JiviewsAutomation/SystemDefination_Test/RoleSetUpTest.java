@@ -6,6 +6,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage;
+import com.AutomationJiviewsPOM.EmployeeAdminstrationPage;
 import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
@@ -15,19 +17,24 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class RoleSetUpTest extends BaseClass{
 	
 	private static final Logger logger = LogManager.getLogger(RoleSetUpTest.class);
-    public HomePage hp;
-    public OrganizationUnitDropDown oudd;
-    public jiviewsMainMenuItems jmmi;
-    public EmployeeSetupPage esp;
-    public SystemDefinationRoleSetupPage sdrs;
+	private HomePage homePage;
+    private OrganizationUnitDropDown orgUnit;
+    private jiviewsMainMenuItems jmMenuItem;
+    public EmployeeSetupPage empSetup;
+    public SystemDefinationRoleSetupPage roleSetup;
 
     @BeforeMethod
-    public void setup() {
-        hp = new HomePage(driver);
-        oudd = new OrganizationUnitDropDown(driver);
-        jmmi = new jiviewsMainMenuItems(driver);
-        esp = new EmployeeSetupPage(driver);
-        sdrs = new SystemDefinationRoleSetupPage(driver);
+    public void setup() throws Exception {
+    	homePage = new HomePage(driver);
+        orgUnit = new OrganizationUnitDropDown(driver);
+        jmMenuItem = new jiviewsMainMenuItems(driver);
+        empSetup = new EmployeeSetupPage(driver);
+        roleSetup = new SystemDefinationRoleSetupPage(driver);
+        
+        homePage.setOrgUnit();
+        orgUnit.setAutoOu();
+        jmMenuItem.clickOnSystemDefination();
+        empSetup.setCreateRole();
     }
 
     @Test(priority = 1)
@@ -35,11 +42,11 @@ public class RoleSetUpTest extends BaseClass{
         captureScreenshot(driver, "roleSetUpTest");
         logger.info("Create a new Skill");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setCreateNewRole();
+//        homePage.setOrgUnit();
+//        orgUnit.setAutoOu();
+//        jmMenuItem.clickOnSystemDefination();
+//        empSetup.setCreateRole();
+        roleSetup.setCreateNewRole();
 
         logger.info("verify Create a new role is successful");
     }
@@ -48,11 +55,11 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyUpdateRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setUpdateRole();
+//        hp.setOrgUnit();
+//        oudd.setAutoOu();
+//        jmmi.clickOnSystemDefination();
+//        esp.setCreateRole();
+        roleSetup.setUpdateRole();
 
         logger.info("Verify Update Role successful");
     }
@@ -61,11 +68,11 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyDeactiveRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setDeactiveRole();
+//        hp.setOrgUnit();
+//        oudd.setAutoOu();
+//        jmmi.clickOnSystemDefination();
+//        esp.setCreateRole();
+        roleSetup.setDeactiveRole();
 
         logger.info("Verify Deactive Role is successful");
     }
@@ -74,11 +81,11 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyReactiveRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setReactiveRole();
+//        hp.setOrgUnit();
+//        oudd.setAutoOu();
+//        jmmi.clickOnSystemDefination();
+//        esp.setCreateRole();
+        roleSetup.setReactiveRole();
 
         logger.info("Verify Reactive Role is successful");
     }
@@ -87,11 +94,11 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyCreateRoleWithAllAvailableSkill()throws Exception {
         captureScreenshot(driver, "roleSetUpTest");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setCreateNewRoleWithAllAvailableSkill();
+//        hp.setOrgUnit();
+//        oudd.setAutoOu();
+//        jmmi.clickOnSystemDefination();
+//        esp.setCreateRole();
+        roleSetup.setCreateNewRoleWithAllAvailableSkill();
 
         logger.info("Verify create a role with all available skill");
     }
@@ -100,11 +107,11 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyDisselectAllAvailableSkill() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
-        hp.setOrgUnit();
-        oudd.setAutoOu();
-        jmmi.clickOnSystemDefination();
-        esp.setCreateRole();
-        sdrs.setDisselectAllAvailableSkill();
+//        hp.setOrgUnit();
+//        oudd.setAutoOu();
+//        jmmi.clickOnSystemDefination();
+//        esp.setCreateRole();
+        roleSetup.setDisselectAllAvailableSkill();
 
         logger.info("Verify disselect all available skill");
     }
@@ -113,11 +120,11 @@ public class RoleSetUpTest extends BaseClass{
 	public void verifySearchColumnsForRole() throws Exception {
 		captureScreenshot(driver, "roleSetUpTest");
 		
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		esp.setCreateRole();
-		sdrs.setSearchColumnsForRole();
+//		hp.setOrgUnit();
+//		oudd.setAutoOu();
+//		jmmi.clickOnSystemDefination();
+//		esp.setCreateRole();
+		roleSetup.setSearchColumnsForRole();
 		logger.info("verify Search Columns For Role is successfull");
 	}
 	
@@ -344,32 +351,7 @@ public class RoleSetUpTest extends BaseClass{
 		logger.info("verify Search Columns For Role is successfull");
 	}
 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+	////////////////////////////////////////////////////////////////////////////////////////////////
 	/*
 	@Test
 	public void verifyCreateNewRole() throws Exception {

@@ -17,7 +17,7 @@ import com.AutomationJiviewsGeneric.FileLib;
 
 public class SystemDefinationRoleSetupPage extends BaseClass{
 	public Actions action;
-	public static Select select;
+	public Select select;
 	public ExcelUtilities excelUtility;
 	public static String timeStamp ;
 	public static SystemDefinationRoleSetupPage sdrs;
@@ -138,14 +138,10 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		depreparationTime.clear();
 		depreparationTime.sendKeys(depreparationTimeData);
 	}
-
 	public void setPrimarySkillID() {
 		action.moveToElement(selectPrimarySkillId).perform();
 		selectPrimarySkillId.click();
-
-
 	}
-
 	// select code in primary skill
 	public void setSelectSkillCode() {
 		action.scrollToElement(selectSkillCode).perform();
@@ -158,9 +154,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	// scroll down the page and select single skill from  availble skill
 	public void setAvailableSkillForSingleSkill() {
-		//		select=new Select(availableSkill);
-		//		select.selectByValue("272");
-
 		action.scrollToElement(availableSkill).perform();
 		select = new Select(availableSkill);
 		List<WebElement> options = select.getOptions();
@@ -186,14 +179,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.moveToElement(selectMoveAll).perform();
 		selectMoveAll.click();
 	}
-
 	//  select one role and move to available skiil table from selected table 
 	public void setSelectedSkillForMoveToAvailabelSkillForSingle() {
-		//		action.scrollToElement(selectedSkill).perform();
-		//		selectedSkill.click();
-		//		select=new Select(selectedSkill);
-		//		select.selectByValue("273");
-
 		action.scrollToElement(selectedSkill).perform();
 		select = new Select(selectedSkill);
 		List<WebElement> options = select.getOptions();
@@ -217,30 +204,24 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		action.moveToElement(saveBTN).perform();
 		saveBTN.click();
 	}
-
 	public void setNotificationPopup() {
 		notificationPopup.click();
 	}
-
 	public void setEditBTN() {
 		editBTN.click();
 	}
-
 	public void setCheckBox() {
 		checkBox.click();
 	}
-
 	public void setDeleteBTN() {
 		deleteBTN.click();
 	}
-
 	public void setClickYes() {
 		clickYes.click();
 	}
 	public void setIsActive() {
 		isActive.click();
 	}
-
 	public void setSearchColumns(String roleNameData) {
 		searchColumns.sendKeys(roleNameData);
 		searchColumns.click();
@@ -251,9 +232,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void changeRoleName() {
 		chanegRoleName.click();
 	}
-
 	public void setCreateNewRole() throws Exception {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -263,28 +243,28 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 		//		Thread.sleep(1000);
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(1000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
+		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
 		//		Thread.sleep(2000);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
 		//		action.moveToElement(selectMoveSingle).perform();
 		//		selectMoveSingle.click();
 		//		
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 
 	public void setUpdateRole() throws Exception {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 7, 7);
@@ -295,43 +275,43 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		//		sdrs.changeRoleName();
-		sdrs.setEditBTN();
+		setEditBTN();
 		Thread.sleep(1000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
+		setSaveBTN();
+		setNotificationPopup();
 	}
 
 	public void setDeactiveRole() throws InterruptedException {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		Thread.sleep(2000);
-		sdrs.setCheckBox();
-		sdrs.setDeleteBTN();
-		sdrs.setClickYes();
-		sdrs.setNotificationPopup();
+		setCheckBox();
+		setDeleteBTN();
+		setClickYes();
+		setNotificationPopup();
 	}
 
 	public void setReactiveRole() throws InterruptedException {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		Thread.sleep(2000);
-		sdrs.setEditBTN();
+		setEditBTN();
 		Thread.sleep(1000);
-		sdrs.setIsActive();
-		sdrs.setSaveBTN();
+		setIsActive();
+		setSaveBTN();
 		//		sdrs.setNotificationPopup();
 	}
 
 	public void setCreateNewRoleWithoutPriarySkill() throws Exception {
 
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -342,28 +322,28 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 
 
 	public void setCreateNewRoleWithoutRoleName() throws Exception {
 
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -372,26 +352,26 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleName(roleNameData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 	public void setCreateNewRoleWithoutRoleDescription() throws Exception {
 
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -401,26 +381,26 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
-		sdrs.setAddBtn();
+		setAddBtn();
 //		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + timeStamp);
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 
 	public void setCreateNewRoleWithoutSecondarySkillEmpty() throws Exception {
 
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -431,28 +411,28 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 
-		sdrs.setAddBtn();
+		setAddBtn();
 //		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + timeStamp);
 //		Thread.sleep(2000);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 //		Thread.sleep(2000);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
 		//		sdrs.setSelectMoveSingleRole();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 
 	// All Availble skiil should move to secondary skill
 	public void setCreateNewRoleWithAllAvailableSkill() throws Exception {
 
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -462,26 +442,26 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
+		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
 
-		sdrs.setAvailableSkillForMultipleSkill();
-		sdrs.setAvailableMultipleSkillMoveToSelectedSkill();
+		setAvailableSkillForMultipleSkill();
+		setAvailableMultipleSkillMoveToSelectedSkill();
 		//		sdrs.setSelectedSkillForMoveToAvailabelSkillForSingle();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setSaveBTN();
+		setNotificationPopup();
 
 	}
 
 	public void setDisSelectSingleSkillFromSelectedSkill() throws Exception {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -490,28 +470,28 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-		sdrs.setAvailableSkillForSingleSkill();
-		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForSingleSkill();
+		setAvailableSingleSkillMoveToSelectedSkill();
 		Thread.sleep(2000);
-		sdrs.setSelectedSkillForMoveToAvailabelSkillForSingle();
-		sdrs.setRemoveSelectedSkillForSingle();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setSelectedSkillForMoveToAvailabelSkillForSingle();
+		setRemoveSelectedSkillForSingle();
+		setSaveBTN();
+		setNotificationPopup();
 	}
 
 	public void setDisselectAllAvailableSkill() throws Exception {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -521,32 +501,31 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(2000);
-		sdrs.setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		Thread.sleep(2000);
-		sdrs.setPreparationTime(preparationTimeData);
-		sdrs.setDepreparationTime(depreparationTimeData);
-		sdrs.setPrimarySkillID();
-		sdrs.setSelectSkillCode();
-		sdrs.setRoleWaightage(roleWaightageData);
-
-		sdrs.setAvailableSkillForMultipleSkill();
-		sdrs.setAvailableMultipleSkillMoveToSelectedSkill();
+		setPreparationTime(preparationTimeData);
+		setDepreparationTime(depreparationTimeData);
+		setPrimarySkillID();
+		setSelectSkillCode();
+		setRoleWaightage(roleWaightageData);
+		setAvailableSkillForMultipleSkill();
+		setAvailableMultipleSkillMoveToSelectedSkill();
 		Thread.sleep(2000);
-		sdrs.setRemoveSelectedSkillForAll();
-		sdrs.setSaveBTN();
-		sdrs.setNotificationPopup();
+		setRemoveSelectedSkillForAll();
+		setSaveBTN();
+		setNotificationPopup();
 	}
 
 	public void setSearchColumnsForRole() throws Exception {
-		sdrs= new SystemDefinationRoleSetupPage(driver);
+//		sdrs= new SystemDefinationRoleSetupPage(driver);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		Thread.sleep(1000);
-		sdrs.setSearchColumns(roleNameData);
+		setSearchColumns(roleNameData);
 
 	}
 }

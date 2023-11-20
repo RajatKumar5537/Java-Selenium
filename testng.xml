@@ -4,13 +4,57 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
 	<test name="SkillTests">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
+		</classes>
+	</test>
+	
+	<test name="SCRTest">
+		<classes>
+			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
+		</classes>
+	</test>
+<!--
+	<test name="RoleSetUpTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" />
+		</classes>
+	</test>
+	<test name="RoleGroupTests">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" />
+		</classes>
+	</test>
+
+	<test name="ShiftBandTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" />
+		</classes>
+	</test>
+
+	<test name="SCRTest">
+		<classes>
+			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
+		</classes>
+	</test>
+
+	<test name="PublicHolidayTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" />
+		</classes>
+	</test>
+
+	<test name="EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" />
 		</classes>
 	</test>
-
-
+		-->
 </suite>

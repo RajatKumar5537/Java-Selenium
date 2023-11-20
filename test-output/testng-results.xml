@@ -1,29 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <testng-results ignored="0" total="1" passed="1" failed="0" skipped="0">
   <reporter-output>
+    <line>
+      <![CDATA[Login]]>
+    </line>
+    <line>
+      <![CDATA[Logout]]>
+    </line>
   </reporter-output>
-  <suite started-at="2023-11-17T03:41:58Z" name="Default suite" finished-at="2023-11-17T03:42:26Z" duration-ms="27897">
+  <suite started-at="2023-11-20T09:25:43Z" name="Default suite" finished-at="2023-11-20T09:27:29Z" duration-ms="105361">
     <groups>
     </groups>
-    <test started-at="2023-11-17T03:41:58Z" name="Default test" finished-at="2023-11-17T03:42:26Z" duration-ms="27897">
+    <test started-at="2023-11-20T09:25:43Z" name="Default test" finished-at="2023-11-20T09:27:29Z" duration-ms="105361">
       <class name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@772485dd]" started-at="2023-11-17T03:41:58Z" name="launchBrowser" finished-at="2023-11-17T03:42:00Z" duration-ms="1786" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:25:43Z" name="launchBrowser" finished-at="2023-11-20T09:26:27Z" duration-ms="43996" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="login()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@772485dd]" started-at="2023-11-17T03:42:00Z" name="login" finished-at="2023-11-17T03:42:02Z" duration-ms="2306" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:26:27Z" name="beforeTestMethod" finished-at="2023-11-20T09:26:43Z" duration-ms="15685" status="PASS">
+          <reporter-output>
+            <line>
+              <![CDATA[Login]]>
+            </line>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:26:43Z" name="setup" finished-at="2023-11-20T09:26:53Z" duration-ms="9656" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- login -->
-        <test-method signature="verifyCreateEmpProfile()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@772485dd]" started-at="2023-11-17T03:42:02Z" name="verifyCreateEmpProfile" finished-at="2023-11-17T03:42:26Z" duration-ms="23773" status="PASS">
+        </test-method> <!-- setup -->
+        <test-method signature="verifyCreateEmpProfile()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:26:53Z" name="verifyCreateEmpProfile" finished-at="2023-11-20T09:27:29Z" duration-ms="36007" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateEmpProfile -->
-        <test-method is-config="true" signature="logout()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@772485dd]" started-at="2023-11-17T03:42:26Z" name="logout" finished-at="2023-11-17T03:42:26Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:27:29Z" name="afterTestMethod" finished-at="2023-11-20T09:27:29Z" duration-ms="2" status="PASS">
           <reporter-output>
+            <line>
+              <![CDATA[Logout]]>
+            </line>
           </reporter-output>
-        </test-method> <!-- logout -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@772485dd]" started-at="2023-11-17T03:42:26Z" name="closeBrowser" finished-at="2023-11-17T03:42:26Z" duration-ms="1" status="PASS">
+        </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest@3d829787]" started-at="2023-11-20T09:27:29Z" name="closeBrowser" finished-at="2023-11-20T09:27:29Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
