@@ -5,12 +5,12 @@
     <classes>
       <class name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest">
         <methods>
-          <include name="verifyCreateEmpProfile"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
           <include name="setup"/>
+          <include name="verifyDeleteEmpProfile"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest -->
     </classes>

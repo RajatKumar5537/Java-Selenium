@@ -42,7 +42,6 @@ public class BaseClass {
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
 		logger.info("Open Browser");
-
 		// Setting up ChromeDriver and ChromeOptions
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option=new ChromeOptions();
@@ -88,7 +87,7 @@ public class BaseClass {
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		logger.info("Close Browser...");
-//		driver.quit();
+//				driver.quit();
 	}
 	/*	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
@@ -116,72 +115,6 @@ public class BaseClass {
 		//		hp.setLogout();
 	}*/
 
-	// Capture screenshot on test failure for Test method and add it in Extent report  
-	public void captureScreenshot(WebDriver driver, String res) throws IOException {
-		TakesScreenshot t = (TakesScreenshot) driver;
-		File src = t.getScreenshotAs(OutputType.FILE);
-		File dest = new File("./ScreenShot/" + res + ".png");
-		FileUtils.copyFile(src, dest);
-		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
-
-	}
-
-	private void generateFakeEmployeeData() {
-		Faker fakeData=new Faker();
-		fakeEmployee.setFirstName(fakeData.name().firstName());
-		 // Generate a fake description
-	    fakeEmployee.setDescription(fakeData.lorem().sentence()); 
-	    fakeEmployee.setDocumentName("Medical Report"); 
-		fakeEmployee.setMiddleName(fakeData.name().firstName());
-		fakeEmployee.setLastName(fakeData.name().lastName());
-		// For AlphaNumeric value
-		//	fakeEmployee.setEmpNumber(UUID.randomUUID().toString());
-		//	fakeEmployee.setBadgeNumber(UUID.randomUUID().toString().substring(0, 8).toUpperCase()); //"BADGE_" +
-
-		// For Numeric value
-		fakeEmployee.setEmpNumber(generateNumericString(8));
-		fakeEmployee.setBadgeNumber(generateNumericString(8));
-
-		fakeEmployee.setDisplayName(fakeData.name().fullName());
-		// Set date of birth (DOB) at least 20 years ago and Generate a random date between minDOB (inclusive) and maxDOB (inclusive)
-		LocalDate minDOB = LocalDate.of(1990, 1, 1);
-		LocalDate maxDOB = LocalDate.of(2004, 12, 31);
-		LocalDate randomDOB = minDOB.plusDays(new Random().nextInt((int) (maxDOB.toEpochDay() - minDOB.toEpochDay()) + 1));
-		fakeEmployee.setDOB(randomDOB.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		fakeEmployee.setAddress(fakeData.address().streetAddress());
-		fakeEmployee.setCity(fakeData.address().city());
-		fakeEmployee.setState(fakeData.address().state());
-		fakeEmployee.setPostCode(fakeEmployee.generateFakePostalCode());
-		fakeEmployee.setMobileNumber(fakeData.phoneNumber().cellPhone());
-		fakeEmployee.setPhoneNumber(fakeData.phoneNumber().cellPhone());
-		fakeEmployee.setEmail(fakeData.internet().emailAddress());
-		
-		// Set the minimum hire date (2 years ago from the current date)
-		LocalDate hireDate = LocalDate.now().minusYears(2);
-		fakeEmployee.setHireDate(hireDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		
-		// Set probation expiry date (hire date + 90 days)
-		LocalDate probationExpiryDate = LocalDate.parse(fakeEmployee.getHireDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).plusDays(90);
-		fakeEmployee.setProbationExpirydate(probationExpiryDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-
-		System.out.println("Hire Date: " + fakeEmployee.getHireDate());
-		System.out.println("Probation Expiry Date: " + fakeEmployee.getProbationExpirydate());
-		//		fakeEmployee.setDesignation(fakeData.job().position());
-		//		fakeEmployee.setInterests(fakeData.internet().domainWord());
-
-	}
-	private String generateNumericString(int length) {
-		Random random = new Random();
-		StringBuilder numericString = new StringBuilder();
-
-		for (int i = 0; i < length; i++) {
-			numericString.append(random.nextInt(10)); // Append a random digit (0-9)
-		}
-
-		return numericString.toString();
-	}
-
-
 	// Add a boolean variable to track whether the user is logged in
 	private boolean isLoggedIn = false;
 	@BeforeClass
@@ -202,7 +135,7 @@ public class BaseClass {
 			Reporter.log("Login", true);
 			logger.info("Login to the Jivi application");
 
-//			configUtility configUtil = new configUtility();
+			//			configUtility configUtil = new configUtility();
 			String url = configUtil.getCongigPropertyData("url");
 			String un = configUtil.getCongigPropertyData("username");
 			String pw = configUtil.getCongigPropertyData("password");
@@ -225,7 +158,76 @@ public class BaseClass {
 			isLoggedIn = false;
 		}
 	}
+	// Capture screenshot on test failure for Test method and add it in Extent report  
+	public void captureScreenshot(WebDriver driver, String res) throws IOException {
+		TakesScreenshot t = (TakesScreenshot) driver;
+		File src = t.getScreenshotAs(OutputType.FILE);
+		File dest = new File("./ScreenShot/" + res + ".png");
+		FileUtils.copyFile(src, dest);
+		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
 
+	}
+	private void generateFakeEmployeeData() {
+		Faker fakeData=new Faker();
+		fakeEmployee.setFirstName(fakeData.name().firstName());
+		// Generate a fake description
+		fakeEmployee.setDescription(fakeData.lorem().sentence()); 
+		fakeEmployee.setDocumentName("Medical Report"); 
+		fakeEmployee.setMiddleName(fakeData.name().firstName());
+		fakeEmployee.setLastName(fakeData.name().lastName());
+		// For AlphaNumeric value
+		//	fakeEmployee.setEmpNumber(UUID.randomUUID().toString());
+		//	fakeEmployee.setBadgeNumber(UUID.randomUUID().toString().substring(0, 8).toUpperCase()); //"BADGE_" +
 
+		// For Numeric value
+		fakeEmployee.setEmpNumber(generateNumericString(8));
+		fakeEmployee.setBadgeNumber(generateNumericString(8));
+		fakeEmployee.setDisplayName(fakeData.name().fullName());
+		// Set date of birth (DOB) at least 20 years ago and Generate a random date between minDOB (inclusive) and maxDOB (inclusive)
+		LocalDate minDOB = LocalDate.of(1990, 1, 1);
+		LocalDate maxDOB = LocalDate.of(2004, 12, 31);
+		LocalDate randomDOB = minDOB.plusDays(new Random().nextInt((int) (maxDOB.toEpochDay() - minDOB.toEpochDay()) + 1));
+		fakeEmployee.setDOB(randomDOB.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		fakeEmployee.setAddress(fakeData.address().streetAddress());
+		fakeEmployee.setCity(fakeData.address().city());
+		fakeEmployee.setState(fakeData.address().state());
+		fakeEmployee.setPostCode(fakeEmployee.generateFakePostalCode());
+		fakeEmployee.setMobileNumber(fakeData.phoneNumber().cellPhone());
+		fakeEmployee.setPhoneNumber(fakeData.phoneNumber().cellPhone());
+		fakeEmployee.setEmail(fakeData.internet().emailAddress());
+		// Set the minimum hire date (2 years ago from the current date)
+		LocalDate hireDate = LocalDate.now().minusYears(2);
+		fakeEmployee.setHireDate(hireDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		// Set probation expiry date (hire date + 90 days)
+		LocalDate probationExpiryDate = LocalDate.parse(fakeEmployee.getHireDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).plusDays(90);
+		fakeEmployee.setProbationExpirydate(probationExpiryDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		// Generate a random date for WorkFlowStartDate (2 months after the current date)
+		LocalDate startDate = LocalDate.now().plusMonths(2);
+		fakeEmployee.setWorkFlowStartDate(startDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		// Generate a random date for WorkFlowEndDate (4 months after the current date)
+		LocalDate endDate = LocalDate.now().plusMonths(4);
+		fakeEmployee.setWorkFlowEndDate(endDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		// Generate a random date for SkillStartDate (2 months after the current date)
+		LocalDate skillStartDate = LocalDate.now().plusMonths(2);
+		fakeEmployee.setSkillStartDate(skillStartDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		// Generate a random date for SkillEndDate (between 3 to 6 months after the current date)
+		LocalDate skillEndDate = LocalDate.now().plusMonths(3 + new Random().nextInt(4)); // Random number between 3 and 6
+		fakeEmployee.setSkillEndDate(skillEndDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+		 // Set termination date after 3 months from the skill end date
+        LocalDate terminationDate = skillEndDate.plusMonths(3);
+        fakeEmployee.setTerminatedDate(terminationDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+
+		//		fakeEmployee.setDesignation(fakeData.job().position());
+		//		fakeEmployee.setInterests(fakeData.internet().domainWord());
+
+	}
+	private String generateNumericString(int length) {
+		Random random = new Random();
+		StringBuilder numericString = new StringBuilder();
+		for (int i = 0; i < length; i++) {
+			numericString.append(random.nextInt(10)); // Append a random digit (0-9)
+		}
+		return numericString.toString();
+	}
 
 }

@@ -25,8 +25,11 @@ public class FakeEmployee {
 	private String designation;
 	private String documentName;
 	private String description;
-	
-
+	private String WorkFlowStartDate;
+	private String WorkFlowEndDate;
+	private String SkillStartDate;
+	private String SkillEndDate;
+	private String TerminatedDate;
 	private String interests;
 	private String email;
 
@@ -220,4 +223,42 @@ public class FakeEmployee {
 	public void setDesignation(String designation) {
 		this.designation = designation;
 	}
+	public String getWorkFlowStartDate() {
+		return WorkFlowStartDate;
+	}
+
+	public void setWorkFlowStartDate(String workFlowStartDate) {
+		WorkFlowStartDate = workFlowStartDate;
+	}
+
+	public String getWorkFlowEndDate() {
+		return WorkFlowEndDate;
+	}
+
+	public void setWorkFlowEndDate(String workFlowEndDate) {
+		WorkFlowEndDate = workFlowEndDate;
+	}
+	public String getSkillStartDate() {
+		return SkillStartDate;
+	}
+
+	public void setSkillStartDate(String skillStartDate) {
+		SkillStartDate = skillStartDate;
+	}
+
+	public String getSkillEndDate() {
+		return SkillEndDate;
+	}
+
+	public void setSkillEndDate(String skillEndDate) {
+		SkillEndDate = skillEndDate;
+	}
+	public String getTerminatedDate() {
+		return TerminatedDate;
+	}
+
+	public void setTerminatedDate(String terminatedDate) {
+		TerminatedDate = terminatedDate;
+	}
+
 }

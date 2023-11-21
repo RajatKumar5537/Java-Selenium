@@ -1,5 +1,6 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
@@ -44,5 +45,77 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 
 		empProfile.createEmpProfile(fakeEmployee);
 		logger.info("Employee Profile creation successful");
+	}
+	@Test(priority =  2)
+	public void verifyUpdateEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Updating Employee Profile...");
+
+		empProfile.updateEmpProfile(fakeEmployee);
+		logger.info("Employee Profile updated");
+	}
+	@Test(priority = 3)
+	public void verifyDuplicateEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Duplicate Employee Profile...");
+
+		empProfile.duplicateEmpProfile(fakeEmployee);
+		logger.info("Employee Profile is successfully Duplicated ");
+	}
+	@Test(priority = 4)
+	public void verifyDeleteEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Delete Employee Profile...");
+
+		empProfile.deleteEmpProfile();
+		logger.info("Employee Profile is successfully Ddeleted");	
+	}
+	@Test(priority = 5)
+	public void verifySearchEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Search Employee Profile...");
+
+		empProfile.searchEmpProfile();
+		logger.info("Employee Profile is successfully Searched");	
+	}
+	@Test(priority = 6)
+	public void verifysearchRosterGroup() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Search RosterGroup...");
+
+		empProfile.searchRosterGroup();
+		logger.info("RosterGroup is successfully Searched");	
+	}
+	@Test(priority = 7)
+	public void verifysearchRoleGroup() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Search Role Group...");
+
+		empProfile.searchRoleGroup();
+		logger.info("Role Group is successfully Searched");	
+	}
+	@Test(priority = 8)
+	public void verifysearchEmpStatus() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Search Employee Status...");
+
+		empProfile.searchEmpStatus();
+		logger.info("Employee Status is successfully Searched");	
+	}
+	@Test(priority = 9)
+	public void verifyEmpNoInSearchBar() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Search Employee number...");
+
+		empProfile.enterEmpNoInSearchBar();
+		logger.info("Employee is successfully Searched");	
+	}
+	@Test(priority = 10)
+	public void verifyTerminateEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Terminate Employee ...");
+
+		empProfile.terminateEmpProfile();
+		logger.info("Employee is successfully terminated");	
 	}
 }

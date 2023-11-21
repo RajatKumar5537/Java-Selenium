@@ -3,16 +3,21 @@ package com.AutomationJiviewsPOM;
 
 
 import java.io.File;
-
+import java.time.Duration;
+import java.util.List;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
@@ -150,8 +155,6 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	@FindBy(xpath = "//li[text()='Fixed OT']")
 	private WebElement selectOtSetting;
 
-	@FindBy(xpath = "//span[text()='IsActive?']")
-	private WebElement checkBox;
 
 	@FindBy(xpath = "//a[text()='Roles']")
 	private WebElement tabRole;
@@ -242,7 +245,6 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//button[@id='btnAddLeaveProfile']")
 	private WebElement btnAddLeaveProfile;
-
 	@FindBy(xpath = "//span[@id='select2-cmbEmpLeaveProfileName-container']")
 	private WebElement cmbEmpLeaveProfileName;
 	@FindBy(xpath = "//li[text()='Default Leave Profile ']")
@@ -254,7 +256,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//button[@id='btnAddEmpWorkflowRoute']")
 	private WebElement btnAddEmpWorkflowRoute;
-	@FindBy(xpath = "(//td[@class=' select-checkbox'])[2]")
+	@FindBy(xpath = "//span[@id='select2-cmbWorkFlowModuleName-container']")
 	private WebElement selectModuleName;
 	@FindBy(xpath = "//li[text()='HajLeave']")
 	private WebElement selectHajLeave;
@@ -272,38 +274,166 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement selectUnControlledLeave;
 	@FindBy(xpath = "//li[text()='UnpaidLeave']")
 	private WebElement selectUnpaidLeave;
-	
+
 	@FindBy(xpath = "//span[@id='select2-cmbWorkflowRouteName-container']")
 	private WebElement selectRouteName;
 	@FindBy(xpath = "//li[text()='Leave Route']")
 	private WebElement selectLeaveRoute;
 	@FindBy(xpath = "//li[text()='route 01']")
 	private WebElement selectRoute01;
-	
+
 	@FindBy(xpath = "//input[@id='dtWorkFlowStartDate']")
 	private WebElement dtWorkFlowStartDate;
 	@FindBy(xpath = "//input[@id='dtWorkFlowEndDate']")
 	private WebElement dtWorkFlowEndDate;
 	@FindBy(xpath = "//button[@id='btnSaveEmpWorkflowRoute']")
 	private WebElement btnSaveEmpWorkflowRoute;
-	
+
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 	@FindBy(xpath = "//button[@id='btnSaveEmployee']")
 	private WebElement btnSaveEmployee;
+
+	// Edit Employee Profile ....................//////////////////////.............................
+	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 edit'])[3]")
+	private WebElement btnEdit;
+	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 duplicate'])[1]")
+	private WebElement btnDuplicate;
+
+	@FindBy(xpath = "//a[text()='Excluded Skills']")
+	private WebElement tabExcludedSkills;
+	@FindBy(xpath = "//button[@id='btnAddNewExcludedSkills']")
+	private WebElement btnAddNewExcludedSkills;
+	@FindBy(xpath = "//span[@id='select2-cmbExcludedSkill-container']")
+	private WebElement txtSkillDescription;
+	@FindBy(xpath = "//li[text()='Auto_Test 2023-11-15T10:57:36.776370800']")
+	private WebElement dropDownSkill;
+	@FindBy(xpath = "//input[@id='dtExcludedSkillStartDate']")
+	private WebElement dtExcludedSkillStartDate;
+	@FindBy(xpath = "//input[@id='dtExcludedSkillEndDate']")
+	private WebElement dtExcludedSkillEndDate;
+	@FindBy(xpath = "//input[@id='txtExcludedSkillReason']")
+	private WebElement txtExcludedSkillReason;
+	@FindBy(xpath = "//button[@id='btnSaveExcludedSkill']")
+	private WebElement btnSaveExcludedSkill;
+
+	@FindBy(xpath = "//a[text()='Disciplinary']")
+	private WebElement tabDisciplinary;
+	@FindBy(xpath = "//button[@id='btnDeleteDisciplinary']")
+	private WebElement btnDeleteDisciplinary;
+	@FindBy(xpath = "//button[@id='btnAddSuspension']")
+	private WebElement btnAddSuspension;
+	@FindBy(xpath = "//input[@id='dtDisciplinaryStart']")
+	private WebElement dtDisciplinaryStart;
+	@FindBy(xpath = "//input[@id='dtDisciplinaryEnd']")
+	private WebElement dtDisciplinaryEnd;
+	@FindBy(xpath = "//span[text()='Exclude Accrual Process']")
+	private WebElement chkExcludeAccrualProcess;
+	@FindBy(xpath = "//input[@id='txtDisciplinaryRemarks']")
+	private WebElement txtDisciplinaryRemarks;
+	@FindBy(xpath = "//button[@id='btnSaveDisciplinaryDetails']")
+	private WebElement btnSaveDisciplinaryDetails;
+
+	//chk Is Employee Terminated
+	@FindBy(xpath = "(//div[@class='input-group-text']/label)[3]")
+	private WebElement chkIsEmployeeTerminated;
+	@FindBy(xpath = "//button[text()='Yes']")
+	private WebElement btnYes;
+	@FindBy(xpath = "//input[@id='dtEmployeeTerminatedDate']")
+	private WebElement dtEmployeeTerminatedDate;
+	@FindBy(xpath = "//textarea[@id='txtEmployeeTerminationRemarks']")
+	private WebElement txtEmployeeTerminationRemarks;
+
+	@FindBy(xpath = "//a[text()='Security']")
+	private WebElement tabSecurity;
+	@FindBy(xpath = "//button[@id='btnAddEmployeeOU']")
+	private WebElement btnAddEmployeeOU;
+	@FindBy(xpath = "//span[@id='select2-cmbSharedOrgUnit-container']")
+	private WebElement selectOrganizationName;
+	@FindBy(xpath = "(//li[text()='DEMO'])[2]")
+	private WebElement chooseOrgUnit;
+	@FindBy(xpath = "//input[@id='dtShareOrgUnitStartDate']")
+	private WebElement dtShareOrgUnitStartDate;
+	@FindBy(xpath = "//input[@id='dtShareOrgUnitEndDate']")
+	private WebElement dtShareOrgUnitEndDate;
+	@FindBy(xpath = "//button[@id='btnSaveEmployeeOU']")
+	private WebElement btnSaveEmployeeOU;
+
+	//	@FindBy(xpath = "//tr[@role='row']")
+	//	private WebElement selectRow;
+	//	@FindBy(xpath = "//td/input[@type='checkbox']")
+	//	private WebElement selectCheckbox;
+
+	@FindBy(xpath = "//th[text()='Employee Number']")
+	private WebElement empNumber;
+
+	@FindBy(xpath = "//table[@id='emp-list']/tbody/tr")
+	private List<WebElement> rows;
+
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkboxes;
+	@FindBy(xpath = "//li[@id='emp-list_next']")
+	private WebElement nextPage;
+
+	@FindBy(xpath = "//button[@id='btnDeleteEmployee']")
+	private WebElement btnDeleteEmployee;
+	//	@FindBy(xpath = "//button[text()='Yes']")
+	//	private WebElement btnYes;
+	@FindBy(xpath = "//span[text()='IsActive?']")
+	private WebElement checkBox;
+
+	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[1]")
+	private WebElement chooseEmpBasis;
+	@FindBy(xpath = "//li[text()='Contract Emp - Contract Emp']")
+	private WebElement selectContractEmp;
+	@FindBy(xpath = "//li[text()='Fixed Emp - Fixed Emp']")
+	private WebElement selectFixedEmp;
+	@FindBy(xpath = "//li[text()='White Color Emp - White Color Emp']")
+	private WebElement selectWhiteClrEmp;
+
+	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[2]")
+	private WebElement chooseRosterGroup;
+	@FindBy(xpath = "//li[text()='Default Roster  Group']")
+	private WebElement selectDftRosterGroup;
+
+	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[3]")
+	private WebElement chooseRoleGroup;
+	@FindBy(xpath = "//li[text()='RTGO Operator  2023-11-10T00:21:32.396903900']")
+	private WebElement selectRoleGroup;
+
+	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[4]")
+	private WebElement chooseEmpStatus;
+	@FindBy(xpath = "//li[text()='Active']")
+	private WebElement selectActiveEmp;
+	@FindBy(xpath = "//li[text()='Terminated']")
+	private WebElement selectTerminatedEmp;
+
+	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
+	private WebElement txtSearchBar;
+
+	@FindBy(xpath = "//button[@id='btnSearchEmployeeProfile']")
+	private WebElement btnSearchEmployeeProfile;
+
+
 
 	public EmpAdmEmployeeProfilePage(WebDriver driver) {
 		super();
 		PageFactory.initElements(driver, this);
 		this.action= new Actions(driver);
 	}
-
+	public void scrollAndClick(WebDriver driver, WebElement element) {
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		// Scroll to the top of the page
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		element.click();
+	}
 	public void clickBtnAddEmployee() {
 		btnAddEmployee.click();
 	}
 
 	public void clickBasicProfile() {
-		//		        webUtility.moveToElement(driver, basicProfile);
+		//	webUtility.moveToElement(driver, basicProfile);
 		basicProfile.click();
 	}
 
@@ -328,6 +458,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 
 	public void enterLastName(String lastName) {
+		txtLastName.clear();
 		txtLastName.sendKeys(lastName);
 	}
 
@@ -466,15 +597,18 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		}
 	}
 	public void enterMobileNumber(String mobileNumber) {
+		txtMobileNumber.clear();
 		txtMobileNumber.sendKeys(mobileNumber);
 	}
 	public void enterHomePhoneNumber(String phoneNumber) {
+		txtHomePhoneNumber.clear();
 		txtHomePhoneNumber.sendKeys(phoneNumber);
 	}
 	public void enterEmailAddress(String email) {
+		txtEmailAddress.clear();
 		txtEmailAddress.sendKeys(email);
 	}
-	public void enterHireDate(String hireDate) { //
+	public void enterHireDate(String hireDate) { 
 		dtHireDate.clear();
 		dtHireDate.sendKeys(hireDate);
 		dtHireDate.sendKeys(Keys.ENTER);
@@ -621,6 +755,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		btnSaveContact.click();
 	}
 	public void clickNotificationPopup() throws Exception {
+		Thread.sleep(1000);
 		action.moveToElement(notificationPopup).perform();
 		notificationPopup.click();
 	}
@@ -644,7 +779,6 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		btnAddAttachment.click();
 	}
 	public void selectFileToUpload() {
-		//		btnFileToUpload.click();
 		File file= new File(".\\src\\test\\resources\\TestData\\Jiviews Team.jpg");
 		String  absolutePath = file.getAbsolutePath();
 		btnFileToUpload.sendKeys(absolutePath);
@@ -671,7 +805,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		webUtility.moveToElement(driver, btnAddLeaveProfile);
 		btnAddLeaveProfile.click();
 	}
-	public void chooseEmpLeaveProfileName() {
+	public void chooseEmpLeaveProfileName() throws InterruptedException {
+		Thread.sleep(1000);
 		webUtility.moveToElement(driver, cmbEmpLeaveProfileName);
 		cmbEmpLeaveProfileName.click();
 	}
@@ -687,13 +822,319 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	public void clickBtnSaveLeaveProfile() {
 		btnSaveLeaveProfile.click();
 	}
-
-
-
-	public void pressBtnSaveEmployee() {
-		webUtility.moveToElement(driver, btnSaveEmployee);
-		btnSaveEmployee.click();
+	public void clickBtnAddEmpWorkflowRoute() {
+		webUtility.moveToElement(driver, btnAddEmpWorkflowRoute);
+		btnAddEmpWorkflowRoute.click();
 	}
+	public void chooseModuleName() {
+		//		webUtility.moveToElement(driver, selectModuleName);
+		selectModuleName.click();
+		//		switch (moduleName.toLowerCase()) {
+		//		case "HajLeav":
+		//			webUtility.moveToElement(driver, selectHajLeave);
+		//			selectHajLeave.click();
+		//			break;
+		//		case "Leave":
+		//			selectLeave.click();
+		//			break;
+		//		case"RequestLeave":
+		//			selectRequestLeave.click();
+		//			break;
+		//		case"SpecialLeave":
+		//			selectSpecialLeave.click();
+		//			break;
+		//		case"TimeAttendance":
+		//			selectTimeAttendance.click();
+		//			break;
+		//		case"TimeOff":
+		//			selectTimeOff.click();
+		//			break;
+		//		case"UnControlledLeave":
+		//			selectUnControlledLeave.click();
+		//			break;
+		//		case"UnpaidLeave":
+		//			selectUnpaidLeave.click();
+		//			break;
+		//		}
+	}
+	public void selectHajLeave() {
+		webUtility.moveToElement(driver, selectHajLeave);
+		selectHajLeave.click();
+	}
+	public void chooseRouteName() {
+		webUtility.moveToElement(driver, selectRouteName);
+		selectRouteName.click();
+		//		switch (routeName.toLowerCase()) {
+		//		case "LeaveRoute":
+		//			webUtility.moveToElement(driver, selectLeaveRoute);
+		//			selectLeaveRoute.click();
+		//			break;
+		//		case "Route01":
+		//			selectRoute01.click();
+		//			break;
+		//		}
+	}
+	public void selectLeaveRoute() {
+		webUtility.moveToElement(driver, selectLeaveRoute);
+		selectLeaveRoute.click();
+	}
+	public void enterWorkFlowStartDate(String workFlowStartDate) {
+		dtWorkFlowStartDate.clear();
+		dtWorkFlowStartDate.sendKeys(workFlowStartDate);
+		dtWorkFlowStartDate.sendKeys(Keys.ENTER);
+	}
+	public void enterWorkFlowEndDate(String workFlowEndDate) {
+		dtWorkFlowEndDate.clear();
+		dtWorkFlowEndDate.sendKeys(workFlowEndDate);
+		dtWorkFlowEndDate.sendKeys(Keys.ENTER);
+	}
+	public void clickBtnSaveEmpWorkflowRoute() {
+		webUtility.moveToElement(driver, btnSaveEmpWorkflowRoute);
+		btnSaveEmpWorkflowRoute.click();
+	}
+	public void pressBtnSaveEmployee() throws InterruptedException {
+		//		webUtility.moveToElement(driver, btnSaveEmployee);
+		//		btnSaveEmployee.click();
+		Thread.sleep(2000);
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnSaveEmployee);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	//............................................../////////////////////////////////............................................\
+
+	public void clickonBtnEdit() {
+		btnEdit.click();
+	}
+	public void clickBtnDuplicate() {
+		btnDuplicate.click();
+	}
+	public void clickonTabExcludedSkills() throws Exception {
+		Thread.sleep(5000);
+		webUtility.moveToElement(driver, tabExcludedSkills);
+		tabExcludedSkills.click();
+	}
+	public void clickonBtnAddNewExcludedSkills() throws InterruptedException {
+		Thread.sleep(1000);
+		webUtility.moveToElement(driver, btnAddNewExcludedSkills);
+		btnAddNewExcludedSkills.click();	
+	}
+	public void selecttxtSkillDescription() throws InterruptedException {
+		Thread.sleep(1000);
+		//		webUtility.moveToElement(driver, txtSkillDescription);
+		txtSkillDescription.click();
+	}
+	public void chooseSkill() {
+		dropDownSkill.click();
+	}
+	public void enterExcludedSkillStartDate(String skillStartDate) {
+		dtExcludedSkillStartDate.clear();
+		dtExcludedSkillStartDate.sendKeys(skillStartDate);
+		dtExcludedSkillStartDate.sendKeys(Keys.ENTER);
+	}
+	public void enterExcludedSkillEndDate(String skillEndDate) {
+		dtExcludedSkillEndDate.clear();
+		dtExcludedSkillEndDate.sendKeys(skillEndDate);
+		dtExcludedSkillEndDate.sendKeys(Keys.ENTER);
+	}
+	public void entertxtExcludedSkillReason(String reason) {
+		txtExcludedSkillReason.sendKeys(reason);
+	}
+	public void clickonBtnSaveExcludedSkill() {
+		btnSaveExcludedSkill.click();
+	}
+	public void clickonTabDisciplinary() {
+		webUtility.moveToElement(driver, tabDisciplinary);
+		tabDisciplinary.click();
+	}
+	public void deleteDisciplinaryIfPresentAndClickAddSuspension(WebDriver driver) throws InterruptedException {
+		try {
+			webUtility.ElementClickable(driver, btnDeleteDisciplinary);
+			btnDeleteDisciplinary.click();
+		} catch (Exception e) {
+			// If btnDeleteDisciplinary is not present or not clickable, do nothing
+		}
+		btnAddSuspension.click();
+	}
+	public void enterdtDisciplinaryStart(String disciplinaryStartDate) throws InterruptedException {
+		Thread.sleep(1000);
+		dtDisciplinaryStart.clear();
+		dtDisciplinaryStart.sendKeys(disciplinaryStartDate);
+		dtDisciplinaryStart.sendKeys(Keys.ENTER);
+	}
+	public void enterDisciplinaryEnd(String disciplinaryEndDate) {
+		dtDisciplinaryEnd.clear();
+		dtDisciplinaryEnd.sendKeys(disciplinaryEndDate);
+		dtDisciplinaryEnd.sendKeys(Keys.ENTER);
+	}
+	public void clickonExcludeAccrualProcess() throws InterruptedException {
+		Thread.sleep(1000);
+		chkExcludeAccrualProcess.click();
+	}
+	public void entertxtDisciplinaryRemarks(String remark) {
+		txtDisciplinaryRemarks.sendKeys(remark);
+	}
+	public void clickonbtnSaveDisciplinaryDetails() {
+		btnSaveDisciplinaryDetails.click();
+	}
+	public void clickonIsEmployeeTerminated() throws InterruptedException {
+		Thread.sleep(2000);
+		webUtility.moveToElement(driver, chkIsEmployeeTerminated);
+		chkIsEmployeeTerminated.click();
+	}
+	public void clickonBtnYes() throws InterruptedException {
+		Thread.sleep(2000);
+		webUtility.moveToElement(driver, btnYes);
+		btnYes.click();
+	}
+	public void enterEmployeeTerminatedDate(String terminatedDate) {
+		dtEmployeeTerminatedDate.clear();
+		dtEmployeeTerminatedDate.sendKeys(terminatedDate);
+		dtEmployeeTerminatedDate.sendKeys(Keys.ENTER);
+	}
+	public void entertxtEmployeeTerminationRemarks(String remark) {
+		txtEmployeeTerminationRemarks.sendKeys(remark);
+	}
+	public void clickonTabSecurity() {
+		tabSecurity.click();
+	}
+	public void clickonBtnAddEmployeeOU() {
+		btnAddEmployeeOU.click();
+	}
+	public void enterOrganizationName() {
+		selectOrganizationName.click();
+	}
+	public void chooseOrgUnit() {
+		chooseOrgUnit.click();
+	}
+	public void enterShareOrgUnitStartDate(String orgUnitStartDate) {
+		dtShareOrgUnitStartDate.sendKeys(orgUnitStartDate);
+	}
+	public void enterdtShareOrgUnitEndDate(String orgUnitEndDate) {
+		dtShareOrgUnitEndDate.sendKeys(orgUnitEndDate);
+	}
+	public void changeEmpNumber() throws InterruptedException {
+		Thread.sleep(2000);
+		webUtility.moveToElement(driver, empNumber);
+		empNumber.click();
+	}
+	/*public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				checkbox.click();
+				performDeleteAction();
+				break;
+			}
+		}
+	}*/
+	public void performDeleteAction() throws InterruptedException {
+		Thread.sleep(2000);
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnDeleteEmployee);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				checkbox.click();
+				performDeleteAction();
+				checkboxFound = true;
+				break;
+			}
+		}
+
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndDelete();
+		}
+	}
+
+	private void goToNextPageAndDelete() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage); // Click on the next page button
+			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+
+	public void cickonBtnSaveEmployeeOU() {
+		btnSaveEmployeeOU.click();
+	}
+	public void chooseEmpBasis(String empBasis) throws InterruptedException {
+		//		Thread.sleep(5000);
+		webUtility.moveToElement(driver, chooseEmpBasis);
+		chooseEmpBasis.click();
+		switch (empBasis) {
+		case "Contract Emp":
+			selectContractEmp.click();
+			break;
+		case "Fixed Emp":
+			selectFixedEmp.click();
+			break;
+		case "White Color Emp":
+			selectWhiteClrEmp.click();
+			break;
+		default:
+			throw new IllegalArgumentException("Invalid employment basis: " + empBasis);
+		}
+	}
+	public void chooseRosterGroup(String rosterGroup) {
+		webUtility.moveToElement(driver, chooseRosterGroup);
+		chooseRosterGroup.click();
+		switch (rosterGroup) {
+		case "Default Roster  Group":
+			selectDftRosterGroup.click();
+			break;
+		}
+	}
+	public void chooseRoleGroup(String roleGroup) {
+		webUtility.moveToElement(driver, chooseRoleGroup);
+		chooseRoleGroup.click();
+		switch (roleGroup) {
+		case "RTGO Operator":
+			selectRoleGroup.click();
+			break;
+		}
+	}
+	public void chooseEmpStatus(String empStatus) {
+		webUtility.moveToElement(driver, chooseEmpStatus);
+		chooseEmpStatus.click();
+		switch (empStatus) {
+		case "Active":
+			selectActiveEmp.click();
+			break;
+		case "Terminated":
+			selectTerminatedEmp.click();
+			break;
+		}
+	}
+	public void performSearchEmployeeProfile() {
+		btnSearchEmployeeProfile.click();
+	}
+	public void performSearchBar(String empNo){
+		txtSearchBar.sendKeys(empNo);	
+		txtSearchBar.sendKeys(Keys.ENTER);
+	}
+
+
+
+
+
+
 	//-------------------------------------------------#############**********####################------------------------------------------//
 
 	public void createEmpProfile(FakeEmployee fakeEmployee) throws Exception {
@@ -753,14 +1194,23 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		clickNotificationPopup();
 		clickTabMiscellaneous();
 		activeCheckBoxShiftEmp();
-		
+
 		clickTabESS();
 		clickBtnAddLeaveProfile();
+
 		chooseEmpLeaveProfileName();
 		selectEmpProfileName();
 		enterLeaveProfileEndDate();
 		clickBtnSaveLeaveProfile();
 
+		clickBtnAddEmpWorkflowRoute();
+		chooseModuleName();
+		selectHajLeave();
+		chooseRouteName();
+		selectLeaveRoute();
+		enterWorkFlowStartDate(fakeEmployee.getWorkFlowStartDate());
+		enterWorkFlowEndDate(fakeEmployee.getWorkFlowEndDate());
+		clickBtnSaveEmpWorkflowRoute();
 		clickTabAttachments();
 		clickBtnAddEmployeeAttachment();
 		enterTxtDocumentName(fakeEmployee.getDocumentName()); 
@@ -770,8 +1220,97 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		clickBtnUpload();
 		clickBtnSaveAttachment();
 		clickNotificationPopup();
-		
+
 		pressBtnSaveEmployee();
 		clickNotificationPopup();
+	}
+	public void updateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
+		clickonBtnEdit();
+		enterFirstName(fakeEmployee.getFirstName());
+		enterMiddleName(fakeEmployee.getMiddleName());
+		enterLastName(fakeEmployee.getLastName());
+		enterDateBirthDate(fakeEmployee.getDOB());
+		enterAddressLine1(fakeEmployee.getAddress());
+		enterMobileNumber(fakeEmployee.getMobileNumber());
+		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
+		enterEmailAddress(fakeEmployee.getEmail());
+		clickonTabExcludedSkills();
+		clickonBtnAddNewExcludedSkills();
+		selecttxtSkillDescription();
+		chooseSkill();
+		enterExcludedSkillStartDate(fakeEmployee.getSkillStartDate());
+		enterExcludedSkillEndDate(fakeEmployee.getSkillEndDate());
+		entertxtExcludedSkillReason(fakeEmployee.getDescription());
+		clickonBtnSaveExcludedSkill();
+		clickNotificationPopup();
+		clickonTabDisciplinary();
+		deleteDisciplinaryIfPresentAndClickAddSuspension(driver);
+		enterdtDisciplinaryStart(fakeEmployee.getSkillStartDate());
+		enterDisciplinaryEnd(fakeEmployee.getSkillEndDate());
+		clickonExcludeAccrualProcess();
+		entertxtDisciplinaryRemarks(fakeEmployee.getDescription());
+		clickonbtnSaveDisciplinaryDetails();
+		clickNotificationPopup();
+		clickonTabSecurity();
+		clickonBtnAddEmployeeOU();
+		enterOrganizationName();
+		chooseOrgUnit();
+		enterShareOrgUnitStartDate(fakeEmployee.getSkillStartDate());
+		enterdtShareOrgUnitEndDate(fakeEmployee.getSkillEndDate());
+		cickonBtnSaveEmployeeOU();
+		//		Thread.sleep(2000);
+		pressBtnSaveEmployee();
+		clickNotificationPopup();
+	}
+	public void duplicateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
+		clickBtnDuplicate();
+		enterEmployeeNumber(fakeEmployee.getEmpNumber());
+		enterBadgeNumber(fakeEmployee.getBadgeNumber());
+		enterFirstName(fakeEmployee.getFirstName());
+		enterMiddleName(fakeEmployee.getMiddleName());
+		enterLastName(fakeEmployee.getLastName());
+		enterDateBirthDate(fakeEmployee.getDOB());
+		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
+		enterEmailAddress(fakeEmployee.getEmail());
+		//		Thread.sleep(3000);
+		//		clickTabMiscellaneous();
+		//		activeCheckBoxShiftEmp();
+		pressBtnSaveEmployee();
+	}
+	public void terminateEmpProfile() throws Exception {
+		clickonBtnEdit();
+		Thread.sleep(10000);
+		clickonTabDisciplinary();
+		clickonIsEmployeeTerminated();
+		clickonBtnYes();
+		enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
+		entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
+		pressBtnSaveEmployee();
+		//		clickNotificationPopup();
+	}
+	public void deleteEmpProfile() throws Exception {
+		deleteRowsWithEnabledCheckbox();
+		clickonBtnYes();
+		clickNotificationPopup();
+	}
+	public void searchEmpProfile() throws InterruptedException {
+		chooseEmpBasis("Contract Emp");
+		performSearchEmployeeProfile();
+	}
+	public void searchRosterGroup() {
+		chooseRosterGroup("Default Roster  Group");
+		performSearchEmployeeProfile();
+	}
+	public void searchRoleGroup() {
+		chooseRoleGroup("roleGroup");
+		performSearchEmployeeProfile();
+
+	}
+	public void searchEmpStatus() {
+		chooseEmpStatus("Active");
+		performSearchEmployeeProfile();
+	}
+	public void enterEmpNoInSearchBar() {
+		performSearchBar("00418009");
 	}
 }
