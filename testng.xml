@@ -3,26 +3,21 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-
-	<test name="SkillTests">
+	
+	<test name="skillSetUpTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" />
-		</classes>
-	</test>
-	<!--
-	<test name="SCRTest">
-		<classes>
-			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
 		</classes>
 	</test>
 
-	<test name="RoleSetUpTest">
+<!--	<test name="RoleSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" />
 		</classes>
 	</test>
+	-->
 	<test name="RoleGroupTests">
 		<classes>
 			<class
@@ -56,5 +51,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" />
 		</classes>
 	</test>
-		-->
+	
+	
+	
 </suite>

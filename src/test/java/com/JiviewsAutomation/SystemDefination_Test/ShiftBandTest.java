@@ -1,6 +1,8 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
@@ -23,7 +25,9 @@ public class ShiftBandTest extends BaseClass{
 	    private SystemDefinationShiftBandPage sb;
 
 	    @BeforeMethod
-	    public void setUp() {
+	    public void setUp() throws IOException {
+	    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
+	    	driver.navigate().to(homeUrl);
 	        hp = new HomePage(driver);
 	        oudd = new OrganizationUnitDropDown(driver);
 	        jmmi = new jiviewsMainMenuItems(driver);

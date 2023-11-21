@@ -23,6 +23,8 @@ public class RoleGroupTest extends BaseClass{
 
     @BeforeMethod
     public void setUp() throws Exception {
+    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
+    	driver.navigate().to(homeUrl);
         hp = new HomePage(driver);
         oudd = new OrganizationUnitDropDown(driver);
         jmmi = new jiviewsMainMenuItems(driver);

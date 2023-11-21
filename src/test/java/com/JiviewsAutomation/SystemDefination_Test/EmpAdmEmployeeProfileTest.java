@@ -62,7 +62,7 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.duplicateEmpProfile(fakeEmployee);
 		logger.info("Employee Profile is successfully Duplicated ");
 	}
-	@Test(priority = 4)
+	@Test(priority = 4, dependsOnMethods = "verifyCreateEmpProfile")
 	public void verifyDeleteEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("Delete Employee Profile...");

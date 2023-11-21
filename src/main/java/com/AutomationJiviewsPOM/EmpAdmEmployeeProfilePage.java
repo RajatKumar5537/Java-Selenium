@@ -359,17 +359,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSaveEmployeeOU']")
 	private WebElement btnSaveEmployeeOU;
 
-	//	@FindBy(xpath = "//tr[@role='row']")
-	//	private WebElement selectRow;
-	//	@FindBy(xpath = "//td/input[@type='checkbox']")
-	//	private WebElement selectCheckbox;
-
-	@FindBy(xpath = "//th[text()='Employee Number']")
-	private WebElement empNumber;
-
 	@FindBy(xpath = "//table[@id='emp-list']/tbody/tr")
 	private List<WebElement> rows;
-
 	@FindBy(xpath = "//td/input[@type='checkbox']")
 	private List<WebElement> checkboxes;
 	@FindBy(xpath = "//li[@id='emp-list_next']")
@@ -1016,11 +1007,6 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	public void enterdtShareOrgUnitEndDate(String orgUnitEndDate) {
 		dtShareOrgUnitEndDate.sendKeys(orgUnitEndDate);
 	}
-	public void changeEmpNumber() throws InterruptedException {
-		Thread.sleep(2000);
-		webUtility.moveToElement(driver, empNumber);
-		empNumber.click();
-	}
 	/*public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
 		// Iterate through rows
 		for (int i = 0; i < rows.size(); i++) {
@@ -1033,7 +1019,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		}
 	}*/
 	public void performDeleteAction() throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnDeleteEmployee);
@@ -1044,11 +1030,12 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
 		boolean checkboxFound = false;
-
+		
 		// Iterate through rows
 		for (int i = 0; i < rows.size(); i++) {
 			WebElement checkbox = checkboxes.get(i);
 			if (checkbox.isEnabled()) {
+//				scrollAndClick(driver, checkbox);
 				checkbox.click();
 				performDeleteAction();
 				checkboxFound = true;
@@ -1065,12 +1052,18 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private void goToNextPageAndDelete() throws InterruptedException {
 		try {
 			scrollAndClick(driver, nextPage); // Click on the next page button
+			scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+			
 		} catch (ElementClickInterceptedException e) {
 			// Handle the exception if necessary
 		}
 	}
-
+	// Method to perform scroll-up action
+	private void scrollUp(WebDriver driver) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+	}
 	public void cickonBtnSaveEmployeeOU() {
 		btnSaveEmployeeOU.click();
 	}
