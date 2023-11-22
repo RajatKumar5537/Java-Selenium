@@ -3,7 +3,7 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	
+
 	<test name="skillSetUpTest">
 		<classes>
 			<class
@@ -11,13 +11,13 @@
 		</classes>
 	</test>
 
-<!--	<test name="RoleSetUpTest">
+	<test name="RoleSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" />
 		</classes>
 	</test>
-	-->
+
 	<test name="RoleGroupTests">
 		<classes>
 			<class
@@ -29,6 +29,13 @@
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" />
+		</classes>
+	</test>
+
+	<test name="roasterSetupTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" />
 		</classes>
 	</test>
 
@@ -51,7 +58,6 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" />
 		</classes>
 	</test>
-	
-	
-	
+
+
 </suite>

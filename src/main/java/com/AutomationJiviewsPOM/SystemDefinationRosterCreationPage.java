@@ -17,9 +17,7 @@ import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class SystemDefinationRosterCreationPage extends BaseClass{
 
-//	public String timeStamp = LocalDateTime.now().toString();
 	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
-
 	Actions action= new Actions(driver);
 	Select select;
 	public ExcelUtilities excelUtility;
@@ -75,7 +73,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
 	private WebElement saveBtn;
 
-	@FindBy(xpath = "(//button[@type='button'])[9]")
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	private WebElement editBtn;
 
 	// Group A 
@@ -224,7 +222,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	private WebElement btnByEmp;
 
 	//	(//td[@class=' select-checkbox']/input)[1]
-	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr[5]/td[1]/input")
+	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr/td/input")
 	private WebElement checkBoxDeactive;
 
 	@FindBy(xpath = "//button[@id='btnDeleteTemplateRoster']")
@@ -265,7 +263,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByIndex(1);	
+		select.selectByIndex(0);	
 	}
 	// scroll down the page and select single Employee group from  availble Emp group
 	public void setAvailableSkillForSingleEmp() {

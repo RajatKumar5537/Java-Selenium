@@ -1,13 +1,10 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
-import java.io.IOException;
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
-
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
@@ -25,7 +22,7 @@ public class ShiftBandTest extends BaseClass{
 	    private SystemDefinationShiftBandPage sb;
 
 	    @BeforeMethod
-	    public void setUp() throws IOException {
+	    public void setUp() throws Exception {
 	    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
 	    	driver.navigate().to(homeUrl);
 	        hp = new HomePage(driver);
@@ -33,16 +30,19 @@ public class ShiftBandTest extends BaseClass{
 	        jmmi = new jiviewsMainMenuItems(driver);
 	        rsp = new RosterSetupPage(driver);
 	        sb = new SystemDefinationShiftBandPage(driver);
+	        
+	        hp.setOrgUnit();
+	        oudd.setAutoOu();
+	        jmmi.clickOnSystemDefination();
+	        rsp.setCreateRoasterShiftBand();
+	        
 	    }
 
 	    @Test(priority = 1)
 	    public void testCreateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Create Shift Band Definition");
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
+	       
 	        sb.createShiftBand();
 	    }
 
@@ -50,11 +50,7 @@ public class ShiftBandTest extends BaseClass{
 	    public void testUpdateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify update shiftBand");
-//	        driver.navigate().refresh();
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
+	        
 	        sb.updateShiftBand();
 	    }
 
@@ -62,11 +58,7 @@ public class ShiftBandTest extends BaseClass{
 	    public void testDeactivateShiftBand() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify Deactivate Shift band");
-//	        driver.navigate().refresh();
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
+
 	        sb.deactiveShiftBand();
 	    }
 
@@ -74,11 +66,7 @@ public class ShiftBandTest extends BaseClass{
 	    public void testWithoutShiftBandName() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify Without Shift Band Name");
-//	        driver.navigate().refresh();
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
+
 	        sb.withoutShiftBandName();
 	    }
 
@@ -86,11 +74,7 @@ public class ShiftBandTest extends BaseClass{
 //	    public void testWithCombinationShift() throws Exception {
 //	        captureScreenshot(driver, "shiftBandTest");
 //	        logger.info("Verify With Combination Shift");
-////	        driver.navigate().refresh();
-//	        hp.setOrgUnit();
-//	        oudd.setAutoOu();
-//	        jmmi.clickOnSystemDefination();
-//	        rsp.setCreateRoasterShiftBand();
+//
 //	        sb.shiftBandTypeCombinationShift();
 //	    }
 
@@ -98,11 +82,7 @@ public class ShiftBandTest extends BaseClass{
 	    public void testWithOvertimeShift() throws Exception {
 	        captureScreenshot(driver, "shiftBandTest");
 	        logger.info("Verify With Overtime Shift");
-//	        driver.navigate().refresh();
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setCreateRoasterShiftBand();
+
 	        sb.shiftBandTypeOvertimeShift();
 	    }
 	    

@@ -1,15 +1,20 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
@@ -87,11 +92,21 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	@FindBy(xpath = "(//button[@type='button'])[5]/i")
 	private WebElement editBTN;
 
-	@FindBy(xpath = "(//input[@type='checkbox'])[2]")
+	@FindBy(xpath = "//table[@id='roles-list']/tbody/tr")
+	private List<WebElement> rows;
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkboxes;
+	@FindBy(xpath = "//input[@type='checkbox']")
 	private WebElement checkBox;
+	@FindBy(xpath = "//li[@id='roles-list_next']")
+	private WebElement nextPage;
 
-	@FindBy(xpath = "//button[@id='btnDeleteRoles']/span")
-	private WebElement deleteBTN;
+
+
+
+
+	@FindBy(xpath = "//button[@id='btnDeleteRoles']")
+	private WebElement btnDelete;
 
 	@FindBy(xpath = "//button[text()='Yes']")
 	private WebElement clickYes;
@@ -214,11 +229,66 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		checkBox.click();
 	}
 	public void setDeleteBTN() {
-		deleteBTN.click();
+		btnDelete.click();
 	}
 	public void setClickYes() {
 		clickYes.click();
 	}
+	public void performDeleteAction() throws InterruptedException {
+		//		Thread.sleep(2000);
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnDelete);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				//				scrollAndClick(driver, checkbox);
+				checkbox.click();
+				performDeleteAction();
+				checkboxFound = true;
+				break;
+			}
+		}
+
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndDelete();
+		}
+	}
+
+	private void goToNextPageAndDelete() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage); // Click on the next page button
+			scrollUp(driver);
+			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+	public void scrollAndClick(WebDriver driver, WebElement element) {
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		// Scroll to the top of the page
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		element.click();
+	}
+	// Method to perform scroll-up action
+	private void scrollUp(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+	}
+	
+	
 	public void setIsActive() {
 		isActive.click();
 	}
@@ -233,7 +303,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		chanegRoleName.click();
 	}
 	public void setCreateNewRole() throws Exception {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -264,7 +334,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setUpdateRole() throws Exception {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 7, 7);
@@ -291,16 +361,18 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDeactiveRole() throws InterruptedException {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		Thread.sleep(2000);
-		setCheckBox();
-		setDeleteBTN();
+		deleteRowsWithEnabledCheckbox();
+		
+//		setCheckBox();
+//		setDeleteBTN();
 		setClickYes();
 		setNotificationPopup();
 	}
 
 	public void setReactiveRole() throws InterruptedException {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		Thread.sleep(2000);
 		setEditBTN();
 		Thread.sleep(1000);
@@ -311,7 +383,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public void setCreateNewRoleWithoutPriarySkill() throws Exception {
 
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -343,7 +415,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public void setCreateNewRoleWithoutRoleName() throws Exception {
 
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -371,7 +443,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 	public void setCreateNewRoleWithoutRoleDescription() throws Exception {
 
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -382,7 +454,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		setAddBtn();
-//		Thread.sleep(2000);
+		//		Thread.sleep(2000);
 		setRoleName(roleNameData+ " " + timeStamp);
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
@@ -400,7 +472,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public void setCreateNewRoleWithoutSecondarySkillEmpty() throws Exception {
 
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -412,11 +484,11 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		setAddBtn();
-//		Thread.sleep(2000);
+		//		Thread.sleep(2000);
 		setRoleName(roleNameData+ " " + timeStamp);
-//		Thread.sleep(2000);
+		//		Thread.sleep(2000);
 		setRoleDescription(roleDescriptionData+ " " + timeStamp);
-//		Thread.sleep(2000);
+		//		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		setPrimarySkillID();
@@ -432,7 +504,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	// All Availble skiil should move to secondary skill
 	public void setCreateNewRoleWithAllAvailableSkill() throws Exception {
 
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -461,7 +533,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDisSelectSingleSkillFromSelectedSkill() throws Exception {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -491,7 +563,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDisselectAllAvailableSkill() throws Exception {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -521,7 +593,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setSearchColumnsForRole() throws Exception {
-//		sdrs= new SystemDefinationRoleSetupPage(driver);
+		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		Thread.sleep(1000);

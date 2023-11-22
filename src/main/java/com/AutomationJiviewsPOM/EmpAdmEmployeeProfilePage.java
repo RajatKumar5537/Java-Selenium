@@ -164,7 +164,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//ul[@id='select2-cmbPrimaryRole-results']")
 	private WebElement cmbPrimaryRoleSearch;
-	@FindBy(xpath = "(//li[contains(text(),'RTGO')])[2]")
+	@FindBy(xpath = "(//li[contains(text(),'RTGO')])")
 	private WebElement selectSkill;
 	@FindBy(xpath = "//select[@id='bootstrap-duallistbox-nonselected-list_']")
 	private WebElement availableListBox;
@@ -295,7 +295,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement btnSaveEmployee;
 
 	// Edit Employee Profile ....................//////////////////////.............................
-	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 edit'])[3]")
+	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 edit'])")
 	private WebElement btnEdit;
 	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 duplicate'])[1]")
 	private WebElement btnDuplicate;
@@ -306,7 +306,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement btnAddNewExcludedSkills;
 	@FindBy(xpath = "//span[@id='select2-cmbExcludedSkill-container']")
 	private WebElement txtSkillDescription;
-	@FindBy(xpath = "//li[text()='Auto_Test 2023-11-15T10:57:36.776370800']")
+	@FindBy(xpath = "//li[contains(text(),'Auto_Test')]")
 	private WebElement dropDownSkill;
 	@FindBy(xpath = "//input[@id='dtExcludedSkillStartDate']")
 	private WebElement dtExcludedSkillStartDate;
@@ -428,7 +428,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		basicProfile.click();
 	}
 
-	public void enterEmployeeNumber(String empNumber) {
+	public void enterEmployeeNumber(String empNumber) throws InterruptedException {
+		Thread.sleep(5000);
 		txtEmployeeNumber.clear();
 		txtEmployeeNumber.sendKeys(empNumber);
 	}

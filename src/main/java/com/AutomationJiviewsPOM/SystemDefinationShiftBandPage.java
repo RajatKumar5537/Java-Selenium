@@ -208,14 +208,10 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 
 	// scroll down the page and select single skill from  availble skill
 	public void setAvailableSkillForSingleSkill() throws InterruptedException {
-//		action.moveToElement(availableSkill).perform();
-//		//		availableShiftBand.click();
-//		select=new Select(availableSkill);
-//		select.selectByIndex(1);
 		Thread.sleep(2000);
         action.moveToElement(availableSkill).perform();
         select = new Select(availableSkill);
-        select.selectByIndex(1);
+        select.selectByIndex(0);
 	}
 	//	move skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
@@ -427,6 +423,8 @@ public class SystemDefinationShiftBandPage  extends BaseClass{
 		sb.setBandCodeTxt(bandCode, timeStamp);
 		sb.setShiftBandTypeTxt();
 		sb.setSearchBox();
+//		sb.setShiftTpSearchOvertime();
+//		sb.setSearchBox();
 		sb.setShiftTpSearchCombiShift();
 		sb.setColorTxt(colorCode);
 		sb.setShiftCounterTxt(shiftCounter);

@@ -15,7 +15,6 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class roasterSetupTest extends BaseClass{
 	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
-
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
@@ -27,7 +26,6 @@ public class roasterSetupTest extends BaseClass{
 	public void setup() throws Exception {
 		String homeUrl = configUtil.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
-		homePage = new HomePage(driver);
 		homePage=new HomePage(driver);
 		orgUnit= new OrganizationUnitDropDown(driver);
 		jmMenuItem= new jiviewsMainMenuItems(driver);
@@ -36,23 +34,14 @@ public class roasterSetupTest extends BaseClass{
 		
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
-		jmMenuItem.setEmployeeAdministration();
+		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setRosterCreation();
 	}
 	@Test(priority = 1)
 	public void verifyCreateRoasterWithGroup() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-
-		homePage=new HomePage(driver);
-		orgUnit= new OrganizationUnitDropDown(driver);
-		jmMenuItem= new jiviewsMainMenuItems(driver);
-		rosterSetup= new RosterSetupPage(driver);
-		rosterCreation= new SystemDefinationRosterCreationPage(driver);
-
-//		homePage.setOrgUnit();
-//		orgUnit.setAutoOu();
-//		jmMenuItem.clickOnSystemDefination();
-//		rosterSetup.setRosterCreation();
+		logger.info("Creating Roaster with Employee...");
+		
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup();
 		logger.info("Create a Roster Pattern with Roster Group is successfull");
@@ -61,24 +50,10 @@ public class roasterSetupTest extends BaseClass{
 	@Test(priority = 2)
 	public void verifyCreateRoasterwithEmployee() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-//		driver.navigate().refresh();
-		homePage=new HomePage(driver);
-		orgUnit= new OrganizationUnitDropDown(driver);
-		jmMenuItem= new jiviewsMainMenuItems(driver);
-		rosterSetup= new RosterSetupPage(driver);
-		rosterCreation= new SystemDefinationRosterCreationPage(driver);
+		logger.info("Creating Roaster with Employee...");
 		
-//		Thread.sleep(2000);
-		homePage.setOrgUnit();
-//		Thread.sleep(1000);
-		homePage.setOrgUnit();
-//		Thread.sleep(1000);
-		orgUnit.setAutoOu();
-//		Thread.sleep(2000);
-		jmMenuItem.clickOnSystemDefination();
-		rosterSetup.setRosterCreation();
 		rosterCreation.setCreateRoasterwithEmployee();
-
+		logger.info("Creating Roaster with Employee is successful");
 	}
 
 
@@ -103,58 +78,19 @@ public class roasterSetupTest extends BaseClass{
 	@Test(priority = 3)
 	public void verifyUpdateRoaster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-//		driver.navigate().refresh();
-		homePage=new HomePage(driver);
-		orgUnit= new OrganizationUnitDropDown(driver);
-		jmMenuItem= new jiviewsMainMenuItems(driver);
-		rosterSetup= new RosterSetupPage(driver);
-		rosterCreation= new SystemDefinationRosterCreationPage(driver);
 		
-		Thread.sleep(2000);
-		homePage.setOrgUnit();
-		Thread.sleep(1000);
-		orgUnit.setAutoOu();
-//		Thread.sleep(2000);
-		jmMenuItem.clickOnSystemDefination();
-		rosterSetup.setRosterCreation();
 		rosterCreation.setUpdateRoaster();
 	}
 	@Test(priority = 4)//,dependsOnMethods = "verifyUpdateRoaster")
 	public void verifyDeactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-//		driver.navigate().refresh();
-		homePage=new HomePage(driver);
-		orgUnit= new OrganizationUnitDropDown(driver);
-		jmMenuItem= new jiviewsMainMenuItems(driver);
-		rosterSetup= new RosterSetupPage(driver);
-		rosterCreation= new SystemDefinationRosterCreationPage(driver);
-		
-//		Thread.sleep(2000);
-		homePage.setOrgUnit();
-//		Thread.sleep(1000);
-		orgUnit.setAutoOu();
-//		Thread.sleep(2000);
-		jmMenuItem.clickOnSystemDefination();
-		rosterSetup.setRosterCreation();
+
 		rosterCreation.setDeactiveRoster();
 	}
 	@Test(priority = 5)//, dependsOnMethods = "verifyDeactiveRoster")
 	public void verifyReactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-//		driver.navigate().refresh();
-		homePage=new HomePage(driver);
-		orgUnit= new OrganizationUnitDropDown(driver);
-		jmMenuItem= new jiviewsMainMenuItems(driver);
-		rosterSetup= new RosterSetupPage(driver);
-		rosterCreation= new SystemDefinationRosterCreationPage(driver);
 		
-//		Thread.sleep(2000);
-		homePage.setOrgUnit();
-//		Thread.sleep(1000);
-		orgUnit.setAutoOu();
-//		Thread.sleep(2000);
-		jmMenuItem.clickOnSystemDefination();
-		rosterSetup.setRosterCreation();
 		rosterCreation.setReactiveRoster();
 	}
 }

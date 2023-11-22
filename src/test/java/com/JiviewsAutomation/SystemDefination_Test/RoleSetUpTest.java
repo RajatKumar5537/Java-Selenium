@@ -25,6 +25,8 @@ public class RoleSetUpTest extends BaseClass{
 
     @BeforeMethod
     public void setup() throws Exception {
+    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
+    	driver.navigate().to(homeUrl);
     	homePage = new HomePage(driver);
         orgUnit = new OrganizationUnitDropDown(driver);
         jmMenuItem = new jiviewsMainMenuItems(driver);
@@ -68,10 +70,6 @@ public class RoleSetUpTest extends BaseClass{
     public void verifyDeactiveRole() throws Exception{
         captureScreenshot(driver, "roleSetUpTest");
 
-//        hp.setOrgUnit();
-//        oudd.setAutoOu();
-//        jmmi.clickOnSystemDefination();
-//        esp.setCreateRole();
         roleSetup.setDeactiveRole();
 
         logger.info("Verify Deactive Role is successful");
