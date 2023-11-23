@@ -1,16 +1,21 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Random;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import org.testng.Reporter;
 
@@ -61,11 +66,18 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSaveRoleGroupDtls']")
 	private WebElement btnSaveRoleGroupDtls;
 
-	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[2]")
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	private WebElement btnEdit;
 
-	@FindBy(xpath = "(//tr[@role='row']/td/input)[2]")
-	private WebElement checkBox;
+	@FindBy(xpath = "//table[@id='RoleGroup-list']/tbody/tr")
+	private List<WebElement> rows;
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkboxes;
+	@FindBy(xpath = "//li[@id='RoleGroup-list_next']")
+	private WebElement nextPage;
+	
+//	@FindBy(xpath = "(//tr[@role='row']/td/input)[2]")
+//	private WebElement checkBox;
 
 	@FindBy(xpath = "//button[@id='btnDeleteRoleGroup']")
 	private WebElement btnDeleteRoleGroup;
@@ -135,10 +147,61 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
         btnSaveRoleGroupDtls.click();
     }
 
-    public void clickCheckbox() {
-        checkBox.click();
-    }
+//    public void clickCheckbox() {
+//        checkBox.click();
+//    }
+    public void performDeleteAction() throws InterruptedException {
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnDeleteRoleGroup);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+		
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+//				scrollAndClick(driver, checkbox);
+				checkbox.click();
+				performDeleteAction();
+				checkboxFound = true;
+				break;
+			}
+		}
 
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndDelete();
+		}
+	}
+
+	private void goToNextPageAndDelete() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage); // Click on the next page button
+			scrollUp(driver);
+			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+			
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+	// Method to perform scroll-up action
+	private void scrollUp(WebDriver driver) {
+	    JavascriptExecutor js = (JavascriptExecutor) driver;
+	    js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+	}
+	public void scrollAndClick(WebDriver driver, WebElement element) {
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		// Scroll to the top of the page
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		element.click();
+	}
     public void clickBtnDeleteRoleGroup() {
         btnDeleteRoleGroup.click();
     }
@@ -166,195 +229,58 @@ public class SystemDefinationRoleGroupPage extends BaseClass{
         sdrg = new SystemDefinationRoleGroupPage(driver);
         String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
 
-        sdrg.clickAddRoleGroup();
-        sdrg.enterRoleGroupName(roleGrpName);
-        sdrg.selectAvailableShiftBand();
-        sdrg.moveSingleAvailableSkillToSelected();
-        sdrg.clickBtnSaveRoleGroupDtls();
-        sdrg.clickNotificationPopup();
+        clickAddRoleGroup();
+        enterRoleGroupName(roleGrpName);
+        selectAvailableShiftBand();
+        moveSingleAvailableSkillToSelected();
+        clickBtnSaveRoleGroupDtls();
+        clickNotificationPopup();
     }
 
     public void updateRolesGroup() throws Exception {
         sdrg = new SystemDefinationRoleGroupPage(driver);
         String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 24, 7);
 
-        sdrg.clickBtnEdit();
-        sdrg.enterRoleGroupName(roleGrpName);
-        Thread.sleep(1000);
-        sdrg.clickBtnSaveRoleGroupDtls();
-        sdrg.clickNotificationPopup();
+        clickBtnEdit();
+        enterRoleGroupName(roleGrpName);
+        clickBtnSaveRoleGroupDtls();
+//        clickNotificationPopup();
     }
 
     public void deactivateRoleGroup() throws Exception {
         sdrg = new SystemDefinationRoleGroupPage(driver);
 
-        sdrg.clickCheckbox();
-        sdrg.clickBtnDeleteRoleGroup();
-        sdrg.clickBtnYes();
-        sdrg.clickNotificationPopup();
+        deleteRowsWithEnabledCheckbox();
+        clickBtnYes();
+        clickNotificationPopup();
     }
 
     public void createRoleGrpWithoutAvailableRole() throws Exception {
         sdrg = new SystemDefinationRoleGroupPage(driver);
         String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
 
-        sdrg.clickAddRoleGroup();
-        sdrg.enterRoleGroupName(roleGrpName);
-        sdrg.clickBtnSaveRoleGroupDtls();
-        sdrg.clickNotificationPopup();
+        clickAddRoleGroup();
+        enterRoleGroupName(roleGrpName);
+        clickBtnSaveRoleGroupDtls();
+        clickNotificationPopup();
     }
 
     public void searchRoleGroup() throws Exception {
         sdrg = new SystemDefinationRoleGroupPage(driver);
         String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
 
-        sdrg.enterTxtSearch(roleGrpName);
+        enterTxtSearch(roleGrpName);
     }
 
     public void createRoleGrpWithoutRoleGrpName() throws Exception {
         sdrg = new SystemDefinationRoleGroupPage(driver);
 
-        sdrg.clickAddRoleGroup();
+        clickAddRoleGroup();
         Thread.sleep(1000);
-        sdrg.selectAvailableShiftBand();
-        sdrg.moveSingleAvailableSkillToSelected();
-        sdrg.clickBtnSaveRoleGroupDtls();
-        sdrg.assertTxtGrpNmRequired();
+        selectAvailableShiftBand();
+        moveSingleAvailableSkillToSelected();
+        clickBtnSaveRoleGroupDtls();
+        assertTxtGrpNmRequired();
     }
     
-    /*
-	public void setBtnAddRoleGroup() {
-		btnAddRoleGroup.click();
-	}
-	public void setTxtRoleGroupName(String roleGrpName)  { 
-		webUtility.ElementClickable(driver, txtRoleGroupName);
-		txtRoleGroupName.clear();
-		txtRoleGroupName.sendKeys(roleGrpName+" "+ timeStamp);;
-	}
-	public void setAvailableShiftBand() {
-		//		action.scrollToElement(availableRoles).perform();
-		//		//availableShiftBand.click();
-		//		select=new Select(availableRoles);
-		//		select.selectByValue("109");
-
-		action.scrollToElement(availableRoles).perform();
-		select = new Select(availableRoles);
-		//		List<WebElement> options = select.getOptions();
-		//		// Generate a random index between 0 and the number of options minus 1
-		//		Random rand = new Random();
-		//		int randomIndex = rand.nextInt(options.size());
-		// Select the option at the random index
-		select.selectByIndex(1);
-	}
-	public void setSelectMoveSingle() {
-		action.moveToElement(selectMoveSingle).perform();
-		selectMoveSingle.click();
-	}
-	public void setSelectMoveAll() {
-		selectMoveAll.click();
-	}
-	public void setSelectedSkill() {
-		selectedSkill.click();
-	}
-	public void setRemoveSelectedSkillSingle() {
-		removeSelectedSkillSingle.click();
-	}
-	public void setRemoveSelectedSkillAll() {
-		removeSelectedSkillAll.click();
-	}
-
-	public void setBtnEdit() {
-		webUtility.moveToElement(driver, btnEdit);
-		btnEdit.click();
-	}
-	public void setBtnSaveRoleGroupDtls() {
-		webUtility.moveToElement(driver, btnSaveRoleGroupDtls);
-		btnSaveRoleGroupDtls.click();
-	}
-	public void setCheckbox() {
-		checkBox.click();
-	}
-	public void setBtnDeleteRoleGroup() {
-		btnDeleteRoleGroup.click();
-	}
-	public void setbtnYes() {
-		btnYes.click();
-	}
-	public void setNotificationPopup() throws Exception {
-		//		webUtility.visibilityOfElement(driver, notificationPopup);
-		action.moveToElement(notificationPopup).perform();
-		notificationPopup.click();
-	}
-
-	public void setTxtGrpNmRequired() {
-		String actualResult = txtGrpNmRequired.getText();
-		Assert.assertTrue(actualResult.contains("Role Group Name is required"));
-	}
-	public void setTxtSearch(String roleGrpName) {
-		txtSearch.sendKeys(roleGrpName);
-		txtSearch.sendKeys(Keys.ENTER);
-	}
-
-	public void setCreateRolesGroup() throws Exception  {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
-
-		sdrg.setBtnAddRoleGroup();
-		sdrg.setTxtRoleGroupName(roleGrpName);
-		sdrg.setAvailableShiftBand();
-		sdrg.setSelectMoveSingle();
-		sdrg.setBtnSaveRoleGroupDtls();
-		sdrg.setNotificationPopup();
-
-	}
-
-	public void setUpdateRolesGroup() throws Exception {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 24, 7);
-		//		sdrg.setNotificationPopup();
-		sdrg.setBtnEdit();
-		sdrg.setTxtRoleGroupName(roleGrpName);
-		Thread.sleep(1000);
-		sdrg.setBtnSaveRoleGroupDtls();
-		sdrg.setNotificationPopup();
-	}
-	public void setDeactivateRoleGroup() throws Exception {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-
-		//		sdrg.setNotificationPopup();
-		sdrg.setCheckbox();
-		sdrg.setBtnDeleteRoleGroup();
-		sdrg.setbtnYes();
-		sdrg.setNotificationPopup();
-	}
-	public void setCreateRoleGrpWithoutAvailableRole() throws Exception {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
-
-		sdrg.setBtnAddRoleGroup();
-		sdrg.setTxtRoleGroupName(roleGrpName);
-		sdrg.setBtnSaveRoleGroupDtls();
-		sdrg.setNotificationPopup();
-
-	}
-	public void setSearchRoleGroup() throws Exception {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-		String roleGrpName = excelUtility.readDataFromExcelFile("EmployeeTest", 23, 7);
-
-		//		sdrg.setNotificationPopup();
-		sdrg.setTxtSearch(roleGrpName);
-	}
-
-
-	public void setCreateRoleGrpWithoutRoleGrpName() throws Exception {
-		sdrg= new SystemDefinationRoleGroupPage(driver);
-
-		//		sdrg.setNotificationPopup();
-		sdrg.setBtnAddRoleGroup();
-		Thread.sleep(1000);
-		sdrg.setAvailableShiftBand();
-		sdrg.setSelectMoveSingle();
-		sdrg.setBtnSaveRoleGroupDtls();
-		sdrg.setTxtGrpNmRequired();
-	}*/
 }

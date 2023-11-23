@@ -19,26 +19,26 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class skillSetUpTest extends BaseClass{
 
 	 private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
-	    private HomePage hp;
-	    private OrganizationUnitDropDown oudd;
-	    private jiviewsMainMenuItems jmmi;
-	    private EmployeeSetupPage esp;
-	    private SystemDefinationSkillSetupPage sds;
+	    private HomePage homePage;
+	    private OrganizationUnitDropDown orgUnit;
+	    private jiviewsMainMenuItems jmMenuItem;
+	    private EmployeeSetupPage empSetup;
+	    private SystemDefinationSkillSetupPage skillSetup;
 
 	    @BeforeMethod
 	    public void setUp() throws Exception {
 	    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
 	    	driver.navigate().to(homeUrl);
-	        hp = new HomePage(driver);
-	        oudd = new OrganizationUnitDropDown(driver);
-	        jmmi = new jiviewsMainMenuItems(driver);
-	        esp = new EmployeeSetupPage(driver);
-	        sds = new SystemDefinationSkillSetupPage(driver);
+	        homePage = new HomePage(driver);
+	        orgUnit = new OrganizationUnitDropDown(driver);
+	        jmMenuItem = new jiviewsMainMenuItems(driver);
+	        empSetup = new EmployeeSetupPage(driver);
+	        skillSetup = new SystemDefinationSkillSetupPage(driver);
 	        
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        esp.setCreateSkill();
+	        homePage.setOrgUnit();
+	        orgUnit.setAutoOu();
+	        jmMenuItem.clickOnSystemDefination();
+	        empSetup.setCreateSkill();
 	        
 	    }
 
@@ -47,34 +47,34 @@ public class skillSetUpTest extends BaseClass{
 	        captureScreenshot(driver, "createNewSkill");
 	        logger.info("Create a new Skill");
 	        
-	        sds.createNewSkill();
+	        skillSetup.createNewSkill(fakeEmployee);
 	        logger.info("A skill is created successfully ");
 	    }
 
-	    @Test(priority = 2, dependsOnMethods = "createNewSkill")
+	    @Test(priority = 2) //, dependsOnMethods = "createNewSkill")
 	    public void updateSkill() throws Exception {
 	        captureScreenshot(driver, "updateSkill");
 	        logger.info("Update a Skill");
 	        
-	        sds.updateSkill();
+	        skillSetup.updateSkill();
 	        logger.info("A skill is updated successfully ");
 	    }
 
-	    @Test(priority = 3, dependsOnMethods= "updateSkill")
+	    @Test(priority = 3) //, dependsOnMethods= "updateSkill")
 	    public void deActivateSkill() throws Exception {
 	        captureScreenshot(driver, "deActivateSkill");
 	        logger.info("Deactivate a Skill");
 	        
-	        sds.deactivateSkill();
+	        skillSetup.deactivateSkill();
 	        logger.info("A skill is deactivated successfully ");
 	    }
 
-	    @Test(priority = 4, dependsOnMethods ="deActivateSkill")
+	    @Test(priority = 4) //, dependsOnMethods ="deActivateSkill")
 	    public void reactivateSkill() throws Exception {
 	        captureScreenshot(driver, "reactivateSkill");
 	        logger.info("Reactivate a Skill");
 	        
-	        sds.activateDeactivateSkill();
+	        skillSetup.activateDeactivateSkill();
 	        logger.info("A skill is reactivated successfully ");
 	    }
 
@@ -83,7 +83,7 @@ public class skillSetUpTest extends BaseClass{
 	        captureScreenshot(driver, "searchColumnsForSkill");
 	        logger.info("Searching a skill");
 	        
-	        sds.setSearchColumns();
+	        skillSetup.setSearchColumns();
 	        logger.info("Searching a skill is successful");
 	    }
 	

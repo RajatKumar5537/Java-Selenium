@@ -7,6 +7,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Random;
 import java.util.UUID;
+import java.util.concurrent.TimeUnit;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -87,7 +88,7 @@ public class BaseClass {
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		logger.info("Close Browser...");
-				driver.quit();
+//				driver.quit();
 	}
 	/*	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
@@ -169,8 +170,42 @@ public class BaseClass {
 	}
 	private void generateFakeEmployeeData() {
 		Faker fakeData=new Faker();
+
+		// Generate a random port operator name
+		String portOperatorName = fakeData.options().option("Auto_Test","crane operator", "cfs", "efo", "flo", "lsh obc","Automation_Test");
+
+		// Set the generated skill code with a timestamp
+		String uniqueSkillCode = portOperatorName + "_" + System.currentTimeMillis();
+		fakeEmployee.setSkillCode(uniqueSkillCode);
+
+		// Set the description based on the skill
+		String description;
+		switch (portOperatorName) {
+		    case "crane operator":
+		        description = "Responsible for operating cranes.";
+		        break;
+		    case "cfs":
+		        description = "Handles Container Freight Station (CFS) operations.";
+		        break;
+		    case "efo":
+		        description = "Manages Empty Container Yard (EFO) activities.";
+		        break;
+		    case "flo":
+		        description = "Oversees Freight Loading Operations (FLO).";
+		        break;
+		    case "lsh obc":
+		        description = "Works with Logistics and Shipping (LSH) - Outward Bound Cargo (OBC).";
+		        break;
+		    default:
+		        description = "Default description for the skill.";
+		}
+
+		// Add a timestamp to the description
+		String uniqueDescription = description + " - " + System.currentTimeMillis();
+		fakeEmployee.setSkillCodeDesc(uniqueDescription);
+
+		
 		fakeEmployee.setFirstName(fakeData.name().firstName());
-		// Generate a fake description
 		fakeEmployee.setDescription(fakeData.lorem().sentence()); 
 		fakeEmployee.setDocumentName("Medical Report"); 
 		fakeEmployee.setMiddleName(fakeData.name().firstName());
@@ -216,6 +251,17 @@ public class BaseClass {
 		 // Set termination date after 3 months from the skill end date
         LocalDate terminationDate = skillEndDate.plusMonths(3);
         fakeEmployee.setTerminatedDate(terminationDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
+
+     // Add a timestamp to the holidayName for uniqueness
+        String uniqueHolidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
+        fakeEmployee.setHolidayName(uniqueHolidayName);
+
+     // Add a timestamp to the holidayDate for uniqueness
+        String uniqueHolidayDate = LocalDateTime.now().toString();
+        fakeEmployee.setHolidayDate(uniqueHolidayDate);
+        
+        // Set holidayNote with a random fake sentence
+        fakeEmployee.setHolidayNote(fakeData.lorem().sentence());
 
 		//		fakeEmployee.setDesignation(fakeData.job().position());
 		//		fakeEmployee.setInterests(fakeData.internet().domainWord());

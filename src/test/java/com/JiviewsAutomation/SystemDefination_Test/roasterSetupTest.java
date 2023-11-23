@@ -20,7 +20,7 @@ public class roasterSetupTest extends BaseClass{
 	private jiviewsMainMenuItems jmMenuItem;
 	private RosterSetupPage rosterSetup;
 	private SystemDefinationRosterCreationPage rosterCreation;
-	
+
 
 	@BeforeMethod
 	public void setup() throws Exception {
@@ -31,7 +31,7 @@ public class roasterSetupTest extends BaseClass{
 		jmMenuItem= new jiviewsMainMenuItems(driver);
 		rosterSetup= new RosterSetupPage(driver);
 		rosterCreation= new SystemDefinationRosterCreationPage(driver);
-		
+
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
@@ -41,7 +41,7 @@ public class roasterSetupTest extends BaseClass{
 	public void verifyCreateRoasterWithGroup() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 		logger.info("Creating Roaster with Employee...");
-		
+
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup();
 		logger.info("Create a Roster Pattern with Roster Group is successfull");
@@ -51,34 +51,15 @@ public class roasterSetupTest extends BaseClass{
 	public void verifyCreateRoasterwithEmployee() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 		logger.info("Creating Roaster with Employee...");
-		
+
 		rosterCreation.setCreateRoasterwithEmployee();
 		logger.info("Creating Roaster with Employee is successful");
 	}
 
-
-	// We can do it later............... 
-	//	@Test
-	//	public void verifyCreateRoasterWithGroupAndEmp() throws Exception {
-	//		captureScreenshot(driver, "roasterSetupTest");
-	//
-	//		homePage=new HomePage(driver);
-	//		orgUnit= new OrganizationUnitDropDown(driver);
-	//		jmMenuItem= new jiviewsMainMenuItems(driver);
-	//		rosterSetup= new RosterSetupPage(driver);
-	//		rosterCreation= new SystemDefinationRosterSetupPage(driver);
-	//
-	//		homePage.setOrgUnit();
-	//		orgUnit.setAutoOu();
-	//		jmMenuItem.clickOnSystemDefination();
-	//		rosterSetup.setRosterCreation();
-	//		rosterCreation.setCreateRoasterwithRosterAndEmp();
-	//	}
-
 	@Test(priority = 3)
 	public void verifyUpdateRoaster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-		
+
 		rosterCreation.setUpdateRoaster();
 	}
 	@Test(priority = 4)//,dependsOnMethods = "verifyUpdateRoaster")
@@ -90,7 +71,13 @@ public class roasterSetupTest extends BaseClass{
 	@Test(priority = 5)//, dependsOnMethods = "verifyDeactiveRoster")
 	public void verifyReactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-		
+
 		rosterCreation.setReactiveRoster();
+	}
+	@Test(priority = 6)
+	public void verifyCreateRoasterWithGroupAndEmp() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+
+		rosterCreation.setCreateRoasterwithRosterAndEmp();
 	}
 }

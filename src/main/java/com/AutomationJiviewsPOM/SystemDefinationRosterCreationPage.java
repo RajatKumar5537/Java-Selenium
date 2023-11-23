@@ -1,19 +1,27 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
+import java.util.List;
 
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
+
+import io.netty.handler.timeout.TimeoutException;
 
 public class SystemDefinationRosterCreationPage extends BaseClass{
 
@@ -28,11 +36,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	public String noOfDay;
 	public String noOfBlocks;
 
-//	public  String gerateTmeStamp() {
-//		Date date=new Date();
-//		return date.toString().replace(" ", "_").replace(":", "_");
-//	}
-	
+
 	@FindBy(id = "btnAddNewTemplateRoster")
 	private WebElement addBtn;
 
@@ -77,77 +81,85 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	private WebElement editBtn;
 
 	// Group A 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[1]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[1]")
 	private WebElement rosterCreation1stDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[2]")
-	private WebElement rosterCreation2ndDay;
+	@FindBy(xpath = "//div[@class='scheduler_default_matrix']/div/div")
+	private List<WebElement> rosterCreationDays;
+	@FindBy(xpath = "//div[@style='text-align:center']")
+	private List<WebElement> rosterCreationDaysFillUp;
+	
+	@FindBy(xpath = "//*[@id=\"dpRosterPattern\"]/div[3]/div/div/div/div/div/div")
+	private List<WebElement> fillCells;
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div")
+	private List<WebElement> emptyCells;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[3]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[2]")
+	private WebElement rosterCreation2ndDay;//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[3]
+
+	@FindBy(xpath = "(//div[text()='Off']/..)[3]")
 	private WebElement rosterCreation3rdDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[4]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[4]")
 	private WebElement rosterCreation4thDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[5]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[5]")
 	private WebElement rosterCreation5thDay;
 
 	// Group B
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[6]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[6]")
 	private WebElement rosterCreation6thDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[7]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[7]")
 	private WebElement rosterCreation7thDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[8]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[8]")
 	private WebElement rosterCreation8thDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[9]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[9]")
 	private WebElement rosterCreation9thDay;
 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[10]")
+	@FindBy(xpath = "(//div[text()='Off']/..)[10]")
 	private WebElement rosterCreation10thDay;
 
-	//	// Employee 
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[11]")
-	//	private WebElement rosterCreation11thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[15]")
-	//	private WebElement rosterCreation12thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[19]")
-	//	private WebElement rosterCreation13thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[23]")
-	//	private WebElement rosterCreation14thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[27]")
-	//	private WebElement rosterCreation15thDay;
-	//
-	//
-	//	// Employee 2
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[4]")
-	//	private WebElement rosterCreation16thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[8]")
-	//	private WebElement rosterCreation17thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[12]")
-	//	private WebElement rosterCreation18thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[16]")
-	//	private WebElement rosterCreation19thDay;
-	//
-	//	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[20]")
-	//	private WebElement rosterCreation20thDay;
+	//	//	// Employee 
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[11]")
+	private WebElement rosterCreation11thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[15]")
+	private WebElement rosterCreation12thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[19]")
+	private WebElement rosterCreation13thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[23]")
+	private WebElement rosterCreation14thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[27]")
+	private WebElement rosterCreation15thDay;
+
+	//	//	// Employee 2
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[4]")
+	private WebElement rosterCreation16thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[8]")
+	private WebElement rosterCreation17thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[12]")
+	private WebElement rosterCreation18thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[16]")
+	private WebElement rosterCreation19thDay;
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[20]")
+	private WebElement rosterCreation20thDay;
 
 	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
 	private WebElement 	bandCode;
 
 
 	// in Band code search box need the select one shift from drop down box
-	@FindBy(xpath = "(//li[contains(text(),'1st  Shift ')])[1]")
+	@FindBy(xpath = "(//li[contains(text(),'1st  Shift ')])[2]")
 	private WebElement selectBandCode;
 
 
@@ -188,10 +200,9 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	private WebElement txtPublishFrom;
 
 	@FindBy(xpath = "//div[@class='datepicker-days']/table/tbody/tr[2]/td[2]")
-	//	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr[2]/td[5]")
 	private WebElement dropDownCalenderRoster;
 
-	
+
 	// 13/Nov/2023 for 
 	@FindBy(xpath = "//div[@class='datepicker-days']/table/tbody/tr[3]/td[2]")
 	private WebElement dropDownCalenderRosterUp;
@@ -233,18 +244,22 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Is Active?']")
 	private WebElement checkBoxActive;
+	
+	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
+	private WebElement rosterUpdateNotification;
 
 	public SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.excelUtility= new ExcelUtilities();
-//		this.webUtility= new WebUtilities();
+		this.webUtility= new WebUtilities(driver);
 	}
 
 	public void setAddBtn() {
 		addBtn.click();
 	}
 
-	public void setTemplateNameTxt(String tampName) {
+	public void setTemplateNameTxt(String tampName) throws InterruptedException {
+		Thread.sleep(2000);
 		templateNameTxt.clear();
 		templateNameTxt.sendKeys(tampName);
 	}
@@ -270,7 +285,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByIndex(1);	
+		select.selectByIndex(0);	
 	}
 
 
@@ -333,32 +348,49 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		action.moveToElement(rosterCreation10thDay).perform();
 		rosterCreation10thDay.click();
 	}
-	/*public void setrosterCreation11thDay() {
-		action.moveToElement(rosterCreation11thDay).perform();
-		rosterCreation11thDay.click();
-	}
-	public void setrosterCreation12thDay() {
-		action.moveToElement(rosterCreation12thDay).perform();
-		rosterCreation12thDay.click();
-	}
-	public void setrosterCreation13thDay() {
-		action.moveToElement(rosterCreation13thDay).perform();
-		rosterCreation13thDay.click();
-	}
-	public void setrosterCreation14thDay() {
-		action.moveToElement(rosterCreation14thDay).perform();
-		rosterCreation14thDay.click();
-	}
-	public void setrosterCreation15thDay() {
-		action.moveToElement(rosterCreation15thDay).perform();
-		rosterCreation15thDay.click();
-	}
-	public void setrosterCreation16thDay() {
-		action.moveToElement(rosterCreation16thDay).perform();
-		rosterCreation16thDay.click();
-	}*/
+	private void fillTable() throws Exception {
+	    int workingDays = 5; // Adjust this based on your requirement
 
-	public void setBandCode() {
+	    int rowCount = 0;
+	    int columnCount = 0;
+
+	    for (WebElement fillCell : fillCells) {
+	        System.out.println("Row: " + rowCount + ", Column: " + columnCount);
+
+	        if (rowCount > 0 && columnCount > 0) {
+	            WebElement emptyCell = emptyCells.get(rowCount * (workingDays - 1) + columnCount - 1);
+
+	            // Check if the emptyCell is enabled
+	            if (emptyCell.isEnabled()) {
+	                System.out.println("Filling empty cell: " + emptyCell.getText());
+	                // Perform your actions (setBandCode, setSelectBandCode, setBtnSaveSelectShiftBandBtn)
+	                setBandCode();
+	                setSelectBandCode();
+	                setBtnSaveSelectShiftBandBtn();
+	            } else {
+	                System.out.println("Empty cell not available. Skipping to next cell.");
+	            }
+
+	            // Press Enter to move to the next cell
+	            fillCell.sendKeys(Keys.ENTER);
+	        }
+
+	        columnCount++;
+
+	        if (columnCount > workingDays - 1) {
+	            columnCount = 0;
+	            rowCount++;
+	        }
+
+	        if (rowCount >= workingDays) {
+	            break;
+	        }
+	    }
+	}
+
+
+	public void setBandCode() throws InterruptedException {
+//		Thread.sleep(2000);
 		action.moveToElement(bandCode).perform();
 		bandCode.click();
 	}
@@ -379,11 +411,12 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		btnAddEmployee.click();
 	}
 	// Select Emp name from available roster group
-	public void setAvailableEmpTable() {
+	public void setAvailableEmpTable() throws InterruptedException {
+		Thread.sleep(2000);
 		action.moveToElement(availableEmpTable).perform();
-		availableEmpTable.click();
+//		availableEmpTable.click();
 		select= new Select(availableEmpTable);
-		select.selectByValue("650");
+		select.selectByIndex(0);
 	}
 
 	public void setBtnMoveFromAvailable() {
@@ -404,7 +437,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByValue("114");	
+		select.selectByIndex(0);	
 	}
 
 	public void setBtnSaveRosterTemplateRosterGroups() {
@@ -477,7 +510,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		checkBoxActive.click();
 	}
 	public void setCreateRoasterwithGroup() throws Exception {
-		sdrs= new SystemDefinationRosterCreationPage(driver);
+		//		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -485,168 +518,75 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
-		sdrs.setAddBtn();
-		Thread.sleep(2000);
-		sdrs.setTemplateNameTxt(tampName+ " "+ timeStamp);
-//		Thread.sleep(2000);
-		sdrs.setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
-		sdrs.setNoOfDayTxt(noOfDay);
-		sdrs.setAvailableSkillForSingleRoster();
-		sdrs.setAvailableSingleGroupMoveToSelectedGrp();
-		sdrs.setSaveBtn();
-		Thread.sleep(2000);
-
-		sdrs.setRosterCreation1stDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setAddBtn();
+		//		Thread.sleep(2000);
+		setTemplateNameTxt(tampName+ " "+ timeStamp);
+		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		setNoOfDayTxt(noOfDay);
+		setAvailableSkillForSingleRoster();
+		setAvailableSingleGroupMoveToSelectedGrp();
+		setSaveBtn();
 		Thread.sleep(2000);
 
-		sdrs.setRosterCreation2ndDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation1stDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 		Thread.sleep(2000);
 
-		sdrs.setRosterCreation3rdDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
-
-		sdrs.setRosterCreation4thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
-
-		sdrs.setrosterCreation5thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
-
-		Thread.sleep(2000);
-		sdrs.setBtnAddSaveRosterPattern();
-		sdrs.setNotificationPopup();
+		setRosterCreation2ndDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 		Thread.sleep(2000);
 
-		sdrs.setBtnPublishRosterPattern() ;
-		sdrs.setDropDownCalender();
-		sdrs.setTxtNoOfBlock(noOfBlocks);
-		sdrs.setCheckBoxPublishRoster();
-		sdrs.setBtnSaveTemplateRoster();
-		sdrs.setBtnPublishNow();
+		setRosterCreation3rdDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+
+		setRosterCreation4thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+
+		setrosterCreation5thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+
+		Thread.sleep(2000);
+		setBtnAddSaveRosterPattern();
+		setNotificationPopup();
+		Thread.sleep(2000);
+		
 
 		// Add Employee
-		//		sdrs.setBtnAddEmployee();
-		//		Thread.sleep(2000);
-		//		sdrs.setAvailableEmpTable();
-		//		sdrs.setBtnMoveFromAvailable();
-		//		sdrs.setBtnSaveRosterTemplateEmployee();
+				setBtnAddEmployee();
+				Thread.sleep(2000);
+				setAvailableEmpTable();
+				setBtnMoveFromAvailable();
+				setBtnSaveRosterTemplateEmployee();
 		//
 		//		// Add Roster group
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnAddRosterGroups();
-		//		Thread.sleep(2000);
-		//		sdrs.setAvailableRosterGroup();
-		//		sdrs.setAvailableSingleSkillMoveToSelectedSkill();
-		//		sdrs.setBtnSaveRosterTemplateRosterGroups();
-
-		//		sdrs.setrosterCreation6thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-
-		//		sdrs.setrosterCreation7thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
+//				Thread.sleep(2000);
+//				setBtnAddRosterGroups();
+//				Thread.sleep(2000);
+//				setAvailableRosterGroup();
+//				setAvailableSingleSkillMoveToSelectedSkill();
+//				setBtnSaveRosterTemplateRosterGroups();
+				
+				setBtnPublishRosterPattern() ;
+				setDropDownCalender();
+				setTxtNoOfBlock(noOfBlocks);
+				setCheckBoxPublishRoster();
+				setBtnSaveTemplateRoster();
+				setBtnPublishNow();
 		//		
-		//		sdrs.setrosterCreation8thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation9thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation10thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation11thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation12thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation13thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation14thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation15thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//		
-		//		sdrs.setrosterCreation16thDay();
-		//		Thread.sleep(2000);
-		//		sdrs.setBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
 	}
 
+
 	public void setCreateRoasterwithEmployee() throws Exception {
-		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -654,58 +594,58 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(1000);
-		sdrs.setTemplateNameTxt(tampName+ " "+ timeStamp);
+		setTemplateNameTxt(tampName+ " "+ timeStamp);
 		Thread.sleep(1000);
-		sdrs.setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
-		sdrs.setNoOfDayTxt(noOfDay);
-		sdrs.setBtnByEmp();
+		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		setNoOfDayTxt(noOfDay);
+		setBtnByEmp();
 		Thread.sleep(1000);
-		sdrs.setAvailableSkillForSingleEmp();
-		sdrs.setAvailableSingleGroupMoveToSelectedGrp();
-		sdrs.setSaveBtn();
+		setAvailableSkillForSingleEmp();
+		setAvailableSingleGroupMoveToSelectedGrp();
+		setSaveBtn();
 
 
 
 		Thread.sleep(2000);
-		sdrs.setRosterCreation1stDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation1stDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 
-		sdrs.setRosterCreation2ndDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation2ndDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 		//		Thread.sleep(2000);
 
-		sdrs.setRosterCreation3rdDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation3rdDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 
-		sdrs.setRosterCreation4thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation4thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 
-		sdrs.setrosterCreation5thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setrosterCreation5thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 		Thread.sleep(2000);
 
-		sdrs.setBtnAddSaveRosterPattern();
-		sdrs.setNotificationPopup();
+		setBtnAddSaveRosterPattern();
+		setNotificationPopup();
 		Thread.sleep(2000);
-		sdrs.setBtnPublishRosterPattern() ;
+		setBtnPublishRosterPattern() ;
 		Thread.sleep(2000);
-		sdrs.setDropDownCalender();
-		sdrs.setTxtNoOfBlock(noOfBlocks);
-		sdrs.setCheckBoxPublishRoster();
-		sdrs.setBtnSaveTemplateRoster();
-		sdrs.setBtnPublishNow();
+		setDropDownCalender();
+		setTxtNoOfBlock(noOfBlocks);
+		setCheckBoxPublishRoster();
+		setBtnSaveTemplateRoster();
+		setBtnPublishNow();
 
 	}
 	public void setCreateRoasterwithRosterAndEmp() throws Exception {
@@ -717,86 +657,89 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
-		sdrs.setAddBtn();
+		setAddBtn();
 		Thread.sleep(2000);
-		sdrs.setTemplateNameTxt(tampName+ " "+ timeStamp);
+		setTemplateNameTxt(tampName+ " "+ timeStamp);
 		Thread.sleep(2000);
-		sdrs.setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
-		sdrs.setNoOfDayTxt(noOfDay);
-		sdrs.setAvailableSkillForSingleRoster();
-		sdrs.setAvailableSingleGroupMoveToSelectedGrp();
-		sdrs.setSaveBtn();
-
-		sdrs.setRosterCreation1stDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		setNoOfDayTxt(noOfDay);
+		setAvailableSkillForSingleRoster();
+		setAvailableSingleGroupMoveToSelectedGrp();
+		setSaveBtn();
+		setRosterCreation1stDay();
 		Thread.sleep(2000);
-
-		sdrs.setRosterCreation2ndDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 		Thread.sleep(2000);
 
-		sdrs.setRosterCreation3rdDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
+		setRosterCreation2ndDay();
+		Thread.sleep(2000);
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+		Thread.sleep(2000);
+		setRosterCreation3rdDay();
+		Thread.sleep(2000);
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+		Thread.sleep(2000);
+		setRosterCreation4thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+		Thread.sleep(2000);
+////		fillTable();
+		setrosterCreation5thDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
 
-		sdrs.setRosterCreation4thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
-
-		sdrs.setrosterCreation5thDay();
-		sdrs.setBandCode();
-		sdrs.setSelectBandCode();
-		sdrs.setBtnSaveSelectShiftBandBtn();
-
+		
 		//	Add Employee
 		Thread.sleep(2000);
-		sdrs.setBtnAddEmployee();
-		Thread.sleep(5000);
-		sdrs.setAvailableEmpTable();
+		setBtnAddEmployee();
 		Thread.sleep(2000);
-		sdrs.setBtnMoveFromAvailable();
-		Thread.sleep(2000);
-		sdrs.setBtnSaveRosterTemplateEmployee();
+		setAvailableEmpTable();
+		setBtnMoveFromAvailable();
+		setBtnSaveRosterTemplateEmployee();
+		
+		
 
-		//		Thread.sleep(2000);
-		//		sdrs.setRosterCreation2ndDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-		//
-		//		sdrs.setRosterCreation3rdDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//
-		//		sdrs.setRosterCreation4thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		Thread.sleep(2000);
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-		//
-		//		sdrs.setrosterCreation5thDay();
-		//		sdrs.setBandCode();
-		//		sdrs.setSelectBandCode();
-		//		sdrs.setBtnSaveSelectShiftBandBtn();
-
-		sdrs.setBtnAddSaveRosterPattern();
-		sdrs.setNotificationPopup();
 		Thread.sleep(2000);
-		sdrs.setBtnPublishRosterPattern() ;
-		sdrs.setDropDownCalender();
-		sdrs.setTxtNoOfBlock(noOfBlocks);
-		sdrs.setCheckBoxPublishRoster();
-		sdrs.setBtnSaveTemplateRoster();
-		sdrs.setBtnPublishNow();
+		setRosterCreation2ndDay();
+		setBandCode();
+		setSelectBandCode();
+		setBtnSaveSelectShiftBandBtn();
+		Thread.sleep(2000);
+
+//		setRosterCreation4thDay();
+//		setBandCode();
+//		setSelectBandCode();
+//		Thread.sleep(2000);
+//		setBtnSaveSelectShiftBandBtn();
+//
+//		setrosterCreation6thDay();
+//		setBandCode();
+//		setSelectBandCode();
+//		Thread.sleep(2000);
+//		setBtnSaveSelectShiftBandBtn();
+//
+//		setrosterCreation8thDay();
+//		setBandCode();
+//		setSelectBandCode();
+//		setBtnSaveSelectShiftBandBtn();
+
+//		setBtnAddSaveRosterPattern();
+//		setNotificationPopup();
+//		Thread.sleep(2000);
+//		setBtnPublishRosterPattern() ;
+//		setDropDownCalender();
+//		setTxtNoOfBlock(noOfBlocks);
+//		setCheckBoxPublishRoster();
+//		setBtnSaveTemplateRoster();
+//		setBtnPublishNow();
 	}
 
 
@@ -804,31 +747,27 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	public void setUpdateRoaster() throws Exception {
 		sdrs= new SystemDefinationRosterCreationPage(driver);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 15, 10);
-		Thread.sleep(2000);
-		sdrs.setEditBtn();
-		sdrs.setBtnPublishRosterPattern() ;
-		sdrs.setDropDownCalenderRosterUp();
-		Thread.sleep(2000);
-		sdrs.setTxtNoOfBlock(noOfBlocks);
-		Thread.sleep(2000);
-		sdrs.setCheckBoxPublishRoster();
-		Thread.sleep(2000);
-		sdrs.setBtnSaveTemplateRoster();
-		Thread.sleep(2000);
-		sdrs.setBtnPublishNow();
+		//		Thread.sleep(2000);
+		setEditBtn();
+		setBtnPublishRosterPattern() ;
+		setDropDownCalenderRosterUp();
+		setTxtNoOfBlock(noOfBlocks);
+		setCheckBoxPublishRoster();
+		setBtnSaveTemplateRoster();
+		setBtnPublishNow();
 	}
 	public void setDeactiveRoster() {
 		sdrs= new SystemDefinationRosterCreationPage(driver);
-		sdrs.setCheckBoxDeactive();
-		sdrs.setBtnDeleteTemplateRoster();
-		sdrs.setBtnYes();
+		setCheckBoxDeactive();
+		setBtnDeleteTemplateRoster();
+		setBtnYes();
 	}
 
 	public void setReactiveRoster() throws InterruptedException {
 		sdrs= new SystemDefinationRosterCreationPage(driver);
 		Thread.sleep(2000);
-		sdrs.setEditBtn();
-		sdrs.setCheckBoxActive();
-		sdrs.setBtnAddSaveRosterPattern();
+		setEditBtn();
+		setCheckBoxActive();
+		setBtnAddSaveRosterPattern();
 	}
 }

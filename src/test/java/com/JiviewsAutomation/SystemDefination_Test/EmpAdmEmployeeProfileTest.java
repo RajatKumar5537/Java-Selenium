@@ -118,4 +118,12 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.terminateEmpProfile();
 		logger.info("Employee is successfully terminated");	
 	}
+	@Test(priority = 11)
+	public void verifyreactivateEmpProfile() throws Exception{
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("Reactivate Employee profile...");
+		
+		empProfile.reactivateEmpProfile();
+		logger.info("Employee profile is successfully reactivated");	
+	}
 }

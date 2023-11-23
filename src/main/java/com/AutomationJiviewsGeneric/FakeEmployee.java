@@ -9,6 +9,8 @@ public class FakeEmployee {
 
 	private String empNumber;
 	private String badgeNumber;
+	private String skillCode;
+	private String skillCodeDesc;
 	private String firstName;
 	private String middleName;
 	private String lastName;
@@ -32,6 +34,9 @@ public class FakeEmployee {
 	private String TerminatedDate;
 	private String interests;
 	private String email;
+	private String holidayName;
+	private String holidayDate;
+	private String holidayNote;
 
 	// Constructor
 	public FakeEmployee() {
@@ -259,6 +264,43 @@ public class FakeEmployee {
 
 	public void setTerminatedDate(String terminatedDate) {
 		TerminatedDate = terminatedDate;
+	}
+	public String getSkillCode() {
+		return skillCode;
+	}
+
+	public void setSkillCode(String skillCode) {
+		this.skillCode = skillCode;
+	}
+	public String getSkillCodeDesc() {
+		return skillCodeDesc;
+	}
+
+	public void setSkillCodeDesc(String skillCodeDesc) {
+		this.skillCodeDesc = skillCodeDesc;
+	}
+	public String getHolidayName() {
+		return holidayName;
+	}
+
+	public void setHolidayName(String holidayName) {
+		this.holidayName = holidayName;
+	}
+
+	public String getHolidayDate() {
+		return holidayDate;
+	}
+
+	public void setHolidayDate(String holidayDate) {
+		this.holidayDate = holidayDate;
+	}
+
+	public String getHolidayNote() {
+		return holidayNote;
+	}
+
+	public void setHolidayNote(String holidayNote) {
+		this.holidayNote = holidayNote;
 	}
 
 }

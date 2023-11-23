@@ -18,27 +18,27 @@ public class SCRTest extends BaseClass{
 
 
 	private static final Logger logger = LogManager.getLogger(SCRTest.class);
-	public HomePage hp;
-	public OrganizationUnitDropDown oudd;
-	public jiviewsMainMenuItems jmmi;
-	public EmployeeSetupPage esp;
-	public RosterSetupPage rsp;
+	public HomePage homePage;
+	public OrganizationUnitDropDown orgUnit;
+	public jiviewsMainMenuItems jmMenuItem;
+	public EmployeeSetupPage empSetup;
+	public RosterSetupPage rosterSetup;
 	public SystemDefinationSCRPage scr;
 
 	@BeforeMethod
 	public void setup() throws Exception {
 		String homeUrl = configUtil.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
-		hp = new HomePage(driver);
-		oudd = new OrganizationUnitDropDown(driver);
-		jmmi = new jiviewsMainMenuItems(driver);
-		rsp = new RosterSetupPage(driver);
+		homePage = new HomePage(driver);
+		orgUnit = new OrganizationUnitDropDown(driver);
+		jmMenuItem = new jiviewsMainMenuItems(driver);
+		rosterSetup = new RosterSetupPage(driver);
 		scr = new SystemDefinationSCRPage(driver);
 
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setScheduleCreationRules();
+		homePage.setOrgUnit();
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setScheduleCreationRules();
 	}
 
 	@Test(priority = 1)

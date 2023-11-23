@@ -18,6 +18,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
@@ -217,6 +218,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//button[@id='btnSaveContact']")
 	private WebElement btnSaveContact;
+	@FindBy(xpath = "//div[text()='Add New Contact - Success']")
+	private WebElement addNewContactSuccessMsg;
 
 	@FindBy(xpath = "//a[text()='Attachments']")
 	private WebElement tabAttachments;
@@ -234,6 +237,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement btnUpload;
 	@FindBy(xpath = "//button[@id='btnSaveAttachment']")
 	private WebElement btnSaveAttachment;
+	@FindBy(xpath = "//div[text()='Attachment created Successfully']") 
+	private WebElement attachmentcreatedSuccessfullyMsg;
 
 	@FindBy(xpath = "//a[text()='Miscellaneous']")
 	private WebElement tabMiscellaneous;
@@ -293,6 +298,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement notificationPopup;
 	@FindBy(xpath = "//button[@id='btnSaveEmployee']")
 	private WebElement btnSaveEmployee;
+	@FindBy(xpath = "//div[text()='Employee Profile created successfully']")
+	private WebElement employeeProfilecreatedSuccessfullyMsg;
 
 	// Edit Employee Profile ....................//////////////////////.............................
 	@FindBy(xpath = "(//button[@class='btn btn-xs btn-outline-primary icon-btn mx-1 edit'])")
@@ -316,6 +323,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement txtExcludedSkillReason;
 	@FindBy(xpath = "//button[@id='btnSaveExcludedSkill']")
 	private WebElement btnSaveExcludedSkill;
+	@FindBy(xpath = "//div[text()='Add Excluded Skill - Success']")
+	private WebElement addExcludedSkillSuccessMsg;
 
 	@FindBy(xpath = "//a[text()='Disciplinary']")
 	private WebElement tabDisciplinary;
@@ -333,6 +342,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement txtDisciplinaryRemarks;
 	@FindBy(xpath = "//button[@id='btnSaveDisciplinaryDetails']")
 	private WebElement btnSaveDisciplinaryDetails;
+	@FindBy(xpath = "//div[text()='Add Disciplinary Action - Success']")
+	private WebElement addDisciplinaryActionSuccessMsg;
 
 	//chk Is Employee Terminated
 	@FindBy(xpath = "(//div[@class='input-group-text']/label)[3]")
@@ -371,7 +382,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	//	@FindBy(xpath = "//button[text()='Yes']")
 	//	private WebElement btnYes;
 	@FindBy(xpath = "//span[text()='IsActive?']")
-	private WebElement checkBox;
+	private WebElement checkBoxIsActive;
 
 	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[1]")
 	private WebElement chooseEmpBasis;
@@ -658,7 +669,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		Thread.sleep(2000);
 		action.moveToElement(availableListBox).perform();
 		select = new Select(availableListBox);
-		select.selectByValue("53");               
+		select.selectByIndex(0);               
 	}
 	//	move a singel skill from available skills to selected skill for single role  
 	public void setAvailableSingleSkillMoveToSelectedSkill() {
@@ -746,6 +757,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		webUtility.moveToElement(driver, btnSaveContact);
 		btnSaveContact.click();
 	}
+
 	public void clickNotificationPopup() throws Exception {
 		Thread.sleep(1000);
 		action.moveToElement(notificationPopup).perform();
@@ -900,6 +912,70 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	public void clickonBtnEdit() {
 		btnEdit.click();
+		
+	}
+	public void enableCheckBoxIsActive() throws InterruptedException{
+//		scrollAndClick(driver, checkBoxIsActive);
+		webUtility.moveToElement(driver, checkBoxIsActive);
+		Thread.sleep(2000);
+		checkBoxIsActive.click();
+		
+	}
+	public void updateRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				clickonBtnEdit();
+//				checkboxFound = true;
+				break;
+			}
+		}
+
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndUpdate();
+		}
+	}
+	private void goToNextPageAndUpdate() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage); // Click on the next page button
+			scrollUp(driver);
+			updateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+	public void reactivateRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+		// Iterate through rows
+		for (int i = 0; i < rows.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (!checkbox.isEnabled()) {
+				clickonBtnEdit();
+				enableCheckBoxIsActive();
+				//...................................................
+//				checkboxFound = true;
+				break;
+			}
+		}
+
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (checkboxFound) {
+			goToNextPageAndReactivate();
+		}
+	}
+	private void goToNextPageAndReactivate() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage); // Click on the next page button
+			scrollUp(driver);
+			reactivateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
 	}
 	public void clickBtnDuplicate() {
 		btnDuplicate.click();
@@ -1008,19 +1084,8 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	public void enterdtShareOrgUnitEndDate(String orgUnitEndDate) {
 		dtShareOrgUnitEndDate.sendKeys(orgUnitEndDate);
 	}
-	/*public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
-		// Iterate through rows
-		for (int i = 0; i < rows.size(); i++) {
-			WebElement checkbox = checkboxes.get(i);
-			if (checkbox.isEnabled()) {
-				checkbox.click();
-				performDeleteAction();
-				break;
-			}
-		}
-	}*/
+
 	public void performDeleteAction() throws InterruptedException {
-//		Thread.sleep(2000);
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnDeleteEmployee);
@@ -1031,12 +1096,12 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
 		boolean checkboxFound = false;
-		
+
 		// Iterate through rows
 		for (int i = 0; i < rows.size(); i++) {
 			WebElement checkbox = checkboxes.get(i);
 			if (checkbox.isEnabled()) {
-//				scrollAndClick(driver, checkbox);
+				//				scrollAndClick(driver, checkbox);
 				checkbox.click();
 				performDeleteAction();
 				checkboxFound = true;
@@ -1055,15 +1120,15 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 			scrollAndClick(driver, nextPage); // Click on the next page button
 			scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-			
+
 		} catch (ElementClickInterceptedException e) {
 			// Handle the exception if necessary
 		}
 	}
 	// Method to perform scroll-up action
 	private void scrollUp(WebDriver driver) {
-	    JavascriptExecutor js = (JavascriptExecutor) driver;
-	    js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
 	}
 	public void cickonBtnSaveEmployeeOU() {
 		btnSaveEmployeeOU.click();
@@ -1123,11 +1188,26 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		txtSearchBar.sendKeys(empNo);	
 		txtSearchBar.sendKeys(Keys.ENTER);
 	}
-
-
-
-
-
+	public void getAddNewContactSuccessMsg() {
+		String actualResult =addNewContactSuccessMsg.getText();
+		Assert.assertTrue(actualResult.contains("Add New Contact - Success"));
+	}
+	public void getAttachmentcreatedSuccessfullyMsg() {
+		String actualResult = attachmentcreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Attachment created Successfully"));
+	}
+	public void getEmployeeProfilecreatedSuccessfullyMsg() {
+		String actualResult = employeeProfilecreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Employee Profile created successfully"));
+	}
+	public void getaddExcludedSkillSuccessMsg() {
+		String actualResult = addExcludedSkillSuccessMsg.getText();
+		Assert.assertTrue(actualResult.contains("Add Excluded Skill - Success"));
+	}
+	public void getAddDisciplinaryActionSuccessMsg() {
+		String actualResult = addDisciplinaryActionSuccessMsg.getText();
+		Assert.assertTrue(actualResult.contains("Add Disciplinary Action - Success"));
+	}
 
 	//-------------------------------------------------#############**********####################------------------------------------------//
 
@@ -1185,18 +1265,16 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		enterContactHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterContactEmailAddress(fakeEmployee.getEmail());
 		clickBtnSaveContact();
+		getAddNewContactSuccessMsg();
 		clickNotificationPopup();
 		clickTabMiscellaneous();
 		activeCheckBoxShiftEmp();
-
 		clickTabESS();
 		clickBtnAddLeaveProfile();
-
 		chooseEmpLeaveProfileName();
 		selectEmpProfileName();
 		enterLeaveProfileEndDate();
 		clickBtnSaveLeaveProfile();
-
 		clickBtnAddEmpWorkflowRoute();
 		chooseModuleName();
 		selectHajLeave();
@@ -1213,13 +1291,15 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		selectFileToUpload();
 		clickBtnUpload();
 		clickBtnSaveAttachment();
+		getAttachmentcreatedSuccessfullyMsg();
 		clickNotificationPopup();
-
 		pressBtnSaveEmployee();
+		getEmployeeProfilecreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 	public void updateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
-		clickonBtnEdit();
+//		clickonBtnEdit();
+		updateRowsWithEnabledCheckbox();
 		enterFirstName(fakeEmployee.getFirstName());
 		enterMiddleName(fakeEmployee.getMiddleName());
 		enterLastName(fakeEmployee.getLastName());
@@ -1236,6 +1316,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		enterExcludedSkillEndDate(fakeEmployee.getSkillEndDate());
 		entertxtExcludedSkillReason(fakeEmployee.getDescription());
 		clickonBtnSaveExcludedSkill();
+		getaddExcludedSkillSuccessMsg();
 		clickNotificationPopup();
 		clickonTabDisciplinary();
 		deleteDisciplinaryIfPresentAndClickAddSuspension(driver);
@@ -1244,6 +1325,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		clickonExcludeAccrualProcess();
 		entertxtDisciplinaryRemarks(fakeEmployee.getDescription());
 		clickonbtnSaveDisciplinaryDetails();
+		getAddDisciplinaryActionSuccessMsg();
 		clickNotificationPopup();
 		clickonTabSecurity();
 		clickonBtnAddEmployeeOU();
@@ -1252,9 +1334,10 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		enterShareOrgUnitStartDate(fakeEmployee.getSkillStartDate());
 		enterdtShareOrgUnitEndDate(fakeEmployee.getSkillEndDate());
 		cickonBtnSaveEmployeeOU();
-		//		Thread.sleep(2000);
+//		clickNotificationPopup();
 		pressBtnSaveEmployee();
-		clickNotificationPopup();
+//		getEmployeeProfilecreatedSuccessfullyMsg();
+//		clickNotificationPopup();
 	}
 	public void duplicateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickBtnDuplicate();
@@ -1270,10 +1353,12 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		//		clickTabMiscellaneous();
 		//		activeCheckBoxShiftEmp();
 		pressBtnSaveEmployee();
+		getEmployeeProfilecreatedSuccessfullyMsg();
+		clickNotificationPopup();
 	}
 	public void terminateEmpProfile() throws Exception {
 		clickonBtnEdit();
-		Thread.sleep(10000);
+		Thread.sleep(15000);
 		clickonTabDisciplinary();
 		clickonIsEmployeeTerminated();
 		clickonBtnYes();
@@ -1286,6 +1371,10 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		deleteRowsWithEnabledCheckbox();
 		clickonBtnYes();
 		clickNotificationPopup();
+	}
+	public void reactivateEmpProfile() throws InterruptedException {
+		reactivateRowsWithEnabledCheckbox();
+		pressBtnSaveEmployee();
 	}
 	public void searchEmpProfile() throws InterruptedException {
 		chooseEmpBasis("Contract Emp");

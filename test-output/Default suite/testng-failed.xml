@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="testWithCombinationShift"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="setUp"/>
+          <include name="setup"/>
+          <include name="verifyreactivateEmpProfile"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

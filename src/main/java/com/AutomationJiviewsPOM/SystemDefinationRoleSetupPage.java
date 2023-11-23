@@ -15,6 +15,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
@@ -122,6 +123,17 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	@FindBy(xpath = "//th[text()='Role Name']")
 	private WebElement chanegRoleName;
+	
+	@FindBy(xpath = "//div[text()='Role Created Successfully']")
+	private WebElement roleCreatedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='Role Updated Successfully.']")
+	private WebElement roleUpdatedSuccessfullyMsg;
+	@FindBy(xpath = "//label[text()='Role Code is reqired']")
+	private WebElement roleCodeErrorMsg;
+	@FindBy(xpath = "//label[text()='Primary Skill is required']")
+	private WebElement primarySkillErrorMsg;
+	@FindBy(xpath = "//label[text()='Role Description is required']")
+	private WebElement roleDescriptionErrorMsg;
 
 	public SystemDefinationRoleSetupPage(WebDriver driver) {
 		super();
@@ -302,8 +314,27 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void changeRoleName() {
 		chanegRoleName.click();
 	}
+	public void getroleCreatedSuccessfullyMsg() {
+		String actualResult = roleCreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Role Created Successfully"));
+	}
+	public void getroleUpdatedSuccessfullyMsg() {
+		String actualResult = roleUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Role Updated Successfully."));
+	}
+	public void getroleCodeErrorMsg() {
+		String actualResult = roleCodeErrorMsg.getText();
+		Assert.assertTrue(actualResult.contains("Role Code is reqired"));
+	}
+	public void getprimarySkillErrorMsg() {
+		String actualResult = primarySkillErrorMsg.getText();
+		 Assert.assertTrue(actualResult.contains("Primary Skill is required"));
+	}
+	public void getRoleDescriptionErrorMsg() {
+		String actualResult = roleDescriptionErrorMsg.getText();
+        Assert.assertTrue(actualResult.contains("Role Description is required"));
+	}
 	public void setCreateNewRole() throws Exception {
-		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -327,8 +358,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		setAvailableSingleSkillMoveToSelectedSkill();
 		//		action.moveToElement(selectMoveSingle).perform();
 		//		selectMoveSingle.click();
-		//		
 		setSaveBTN();
+		getroleCreatedSuccessfullyMsg();
 		setNotificationPopup();
 
 	}
@@ -357,6 +388,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		setAvailableSkillForSingleSkill();
 		setAvailableSingleSkillMoveToSelectedSkill();
 		setSaveBTN();
+		getroleUpdatedSuccessfullyMsg();
 		setNotificationPopup();
 	}
 
@@ -402,18 +434,18 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
-		setPrimarySkillID();
-		setSelectSkillCode();
+//		setPrimarySkillID();
+//		setSelectSkillCode();
 		setRoleWaightage(roleWaightageData);
 		setAvailableSkillForSingleSkill();
 		setAvailableSingleSkillMoveToSelectedSkill();
 		setSaveBTN();
-		setNotificationPopup();
+		getprimarySkillErrorMsg();
 
 	}
 
 
-	public void setCreateNewRoleWithoutRoleName() throws Exception {
+	public void setCreateNewRoleWithoutRoleCode() throws Exception {
 
 		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
@@ -438,12 +470,10 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		setAvailableSkillForSingleSkill();
 		setAvailableSingleSkillMoveToSelectedSkill();
 		setSaveBTN();
-		setNotificationPopup();
-
+		getroleCodeErrorMsg();
 	}
 	public void setCreateNewRoleWithoutRoleDescription() throws Exception {
 
-		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -454,7 +484,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		setAddBtn();
-		//		Thread.sleep(2000);
+		Thread.sleep(2000);
 		setRoleName(roleNameData+ " " + timeStamp);
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
@@ -466,7 +496,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		setAvailableSkillForSingleSkill();
 		setAvailableSingleSkillMoveToSelectedSkill();
 		setSaveBTN();
-		setNotificationPopup();
+		getRoleDescriptionErrorMsg();
 
 	}
 
@@ -484,18 +514,14 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		setAddBtn();
-		//		Thread.sleep(2000);
 		setRoleName(roleNameData+ " " + timeStamp);
-		//		Thread.sleep(2000);
 		setRoleDescription(roleDescriptionData+ " " + timeStamp);
-		//		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		setPrimarySkillID();
 		setSelectSkillCode();
 		setRoleWaightage(roleWaightageData);
 		setAvailableSkillForSingleSkill();
-		//		sdrs.setSelectMoveSingleRole();
 		setSaveBTN();
 		setNotificationPopup();
 
@@ -563,7 +589,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setDisselectAllAvailableSkill() throws Exception {
-		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
@@ -576,7 +601,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		setAddBtn();
 		Thread.sleep(2000);
 		setRoleName(roleNameData+ " " + timeStamp);
-		Thread.sleep(2000);
 		setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
@@ -593,7 +617,6 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	}
 
 	public void setSearchColumnsForRole() throws Exception {
-		//		sdrs= new SystemDefinationRoleSetupPage(driver);
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		Thread.sleep(1000);

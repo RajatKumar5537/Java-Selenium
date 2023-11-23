@@ -15,134 +15,57 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class PublicHolidayTest extends BaseClass{
 
-	 private static final Logger logger = LogManager.getLogger(PublicHolidayTest.class);
+	private static final Logger logger = LogManager.getLogger(PublicHolidayTest.class);
 
-	    private HomePage hp;
-	    private OrganizationUnitDropDown oudd;
-	    private jiviewsMainMenuItems jmmi;
-	    private RosterSetupPage rsp;
-	    private SystemDefinationPublicHolidayPage sdph;
+	private HomePage homePage;
+	private OrganizationUnitDropDown orgUnit;
+	private jiviewsMainMenuItems jmMenuItem;
+	private RosterSetupPage rosterSetup;
+	private SystemDefinationPublicHolidayPage publicHoliday;
 
-	    @BeforeMethod
-	    public void setup() throws Exception {
-	    	String homeUrl = configUtil.getCongigPropertyData("homeurl");
-	    	driver.navigate().to(homeUrl);
-	        hp = new HomePage(driver);
-	        oudd = new OrganizationUnitDropDown(driver);
-	        jmmi = new jiviewsMainMenuItems(driver);
-	        rsp = new RosterSetupPage(driver);
-	        sdph = new SystemDefinationPublicHolidayPage(driver);
+	@BeforeMethod
+	public void setup() throws Exception {
+		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage = new HomePage(driver);
+		orgUnit = new OrganizationUnitDropDown(driver);
+		jmMenuItem = new jiviewsMainMenuItems(driver);
+		rosterSetup = new RosterSetupPage(driver);
+		publicHoliday = new SystemDefinationPublicHolidayPage(driver);
 
-	        hp.setOrgUnit();
-	        oudd.setAutoOu();
-	        jmmi.clickOnSystemDefination();
-	        rsp.setPubicHoliday();
-	    }
-
-	    @Test(priority = 1)
-	    public void verifyCreatePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "verifyCreatePublicHoliday");
-	        logger.info("Creating public holiday");
-
-	        sdph.setCreatePublicHoliday();
-
-	        logger.info("Public holiday creation successful");
-	    }
-
-	    @Test(priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
-	    public void verifyUpdatePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "verifyUpdatePublicHoliday");
-	        logger.info("Updating public holiday");
-
-	        sdph.setUpdatePublicHoliday();
-
-	        logger.info("Public holiday update successful");
-	    }
-
-	    @Test(priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
-	    public void verifyDeletePublicHoliday() throws Exception {
-	        captureScreenshot(driver, "verifyDeletePublicHoliday");
-	        logger.info("Deleting public holiday");
-
-	        sdph.setDeactivatePH();
-
-	        logger.info("Deactivate public holiday successful");
-	    }
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	    
-	/*private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
-
-	public HomePage hp;
-	public OrganizationUnitDropDown oudd;
-	public jiviewsMainMenuItems jmmi;
-	public EmployeeSetupPage esp;
-	public RosterSetupPage rsp;
-	public SystemDefinationPublicHolidayPage sdph;
+		homePage.setOrgUnit();
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setPubicHoliday();
+	}
 
 	@Test(priority = 1)
 	public void verifyCreatePublicHoliday() throws Exception {
-		captureScreenshot(driver, "publicHolidayTest");
+		captureScreenshot(driver, "verifyCreatePublicHoliday");
+		logger.info("Creating public holiday");
 
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		sdph= new SystemDefinationPublicHolidayPage(driver);
-		
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setPubicHoliday();
-		sdph.setCreatePublicHoliday();
-		logger.info("Create a public holiday is successfull");
+		publicHoliday.setCreatePublicHoliday(fakeEmployee);
+
+		logger.info("Public holiday creation successful");
 	}
-	
-	@Test (priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
+
+	@Test(priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
 	public void verifyUpdatePublicHoliday() throws Exception {
-		captureScreenshot(driver, "publicHolidayTest");
-//		driver.navigate().refresh();
-		
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		sdph= new SystemDefinationPublicHolidayPage(driver);
-		
-		Thread.sleep(2000);
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setPubicHoliday();
-		sdph.setUpdatePublicHoliday();
-		
-		logger.info("Update public holiday is successfull");
+		captureScreenshot(driver, "verifyUpdatePublicHoliday");
+		logger.info("Updating public holiday");
+
+		publicHoliday.setUpdatePublicHoliday(fakeEmployee);
+
+		logger.info("Public holiday update successful");
 	}
-	
-	
-	@Test (priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
+
+	@Test(priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
 	public void verifyDeletePublicHoliday() throws Exception {
-		captureScreenshot(driver, "publicHolidayTest");
-//		driver.navigate().refresh();
-		
-		hp=new HomePage(driver);
-		oudd= new OrganizationUnitDropDown(driver);
-		jmmi= new jiviewsMainMenuItems(driver);
-		rsp= new RosterSetupPage(driver);
-		sdph= new SystemDefinationPublicHolidayPage(driver);
-		Thread.sleep(2000);
-		hp.setOrgUnit();
-		oudd.setAutoOu();
-		jmmi.clickOnSystemDefination();
-		rsp.setPubicHoliday();
-		sdph.setDeactivatePH();
-		
-		logger.info("Deactivate public holiday is successfull");
-	}*/
+		captureScreenshot(driver, "verifyDeletePublicHoliday");
+		logger.info("Deleting public holiday");
+
+		publicHoliday.setDeactivatePublicHoliday(fakeEmployee);
+
+		logger.info("Deactivate public holiday successful");
+	}
 }
