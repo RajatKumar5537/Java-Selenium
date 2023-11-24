@@ -604,6 +604,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		Thread.sleep(1000);
 		setAvailableSkillForSingleEmp();
 		setAvailableSingleGroupMoveToSelectedGrp();
+		Thread.sleep(2000);
 		setSaveBtn();
 
 
@@ -660,12 +661,13 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setAddBtn();
 		Thread.sleep(2000);
 		setTemplateNameTxt(tampName+ " "+ timeStamp);
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
 		setNoOfDayTxt(noOfDay);
 		setAvailableSkillForSingleRoster();
 		setAvailableSingleGroupMoveToSelectedGrp();
 		setSaveBtn();
+		Thread.sleep(2000);
 		setRosterCreation1stDay();
 		Thread.sleep(2000);
 		setBandCode();

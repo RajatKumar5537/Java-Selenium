@@ -1048,6 +1048,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	public void clickonbtnSaveDisciplinaryDetails() {
 		btnSaveDisciplinaryDetails.click();
 	}
+	
 	public void clickonIsEmployeeTerminated() throws InterruptedException {
 		Thread.sleep(2000);
 		webUtility.moveToElement(driver, chkIsEmployeeTerminated);
@@ -1360,11 +1361,25 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		clickonBtnEdit();
 		Thread.sleep(15000);
 		clickonTabDisciplinary();
-		clickonIsEmployeeTerminated();
-		clickonBtnYes();
-		enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
-		entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
-		pressBtnSaveEmployee();
+		
+		 if (chkIsEmployeeTerminated.isEnabled()) {
+		        // Checkbox is enabled, proceed with termination
+		        clickonIsEmployeeTerminated();
+		        clickonBtnYes();
+		        enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
+		        entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
+		        pressBtnSaveEmployee();
+		        // Uncomment the line below if there is a notification popup
+		        // clickNotificationPopup();
+		    } else {
+		        System.out.println("Employee is already terminated.");
+		    }
+		
+//		clickonIsEmployeeTerminated();
+//		clickonBtnYes();
+//		enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
+//		entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
+//		pressBtnSaveEmployee();
 		//		clickNotificationPopup();
 	}
 	public void deleteEmpProfile() throws Exception {

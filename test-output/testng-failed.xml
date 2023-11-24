@@ -7,10 +7,10 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
+          <include name="verifyTerminateEmpProfile"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
           <include name="setup"/>
-          <include name="verifyreactivateEmpProfile"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest -->
     </classes>
