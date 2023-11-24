@@ -33,6 +33,8 @@ public class roasterSetupTest extends BaseClass{
 		rosterCreation= new SystemDefinationRosterCreationPage(driver);
 
 		homePage.setOrgUnit();
+		orgUnit.clickOLMop();
+		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setRosterCreation();
@@ -40,7 +42,7 @@ public class roasterSetupTest extends BaseClass{
 	@Test(priority = 1)
 	public void verifyCreateRoasterWithGroup() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-		logger.info("Creating Roaster with Employee...");
+		logger.info("Creating Roaster with Roster Group ...");
 
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup();
@@ -61,23 +63,28 @@ public class roasterSetupTest extends BaseClass{
 		captureScreenshot(driver, "roasterSetupTest");
 
 		rosterCreation.setUpdateRoaster();
+		logger.info("Update Roaster with Employee is successful");
+		
 	}
 	@Test(priority = 4)//,dependsOnMethods = "verifyUpdateRoaster")
 	public void verifyDeactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 
 		rosterCreation.setDeactiveRoster();
+		logger.info("Deactivate Roaster is successful");
 	}
 	@Test(priority = 5)//, dependsOnMethods = "verifyDeactiveRoster")
 	public void verifyReactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 
 		rosterCreation.setReactiveRoster();
+		logger.info("Reactivate Roaster is successful");
 	}
 	@Test(priority = 6)
 	public void verifyCreateRoasterWithGroupAndEmp() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 
 		rosterCreation.setCreateRoasterwithRosterAndEmp();
+		logger.info("Roaster with Roster Group and Employee is successful");
 	}
 }

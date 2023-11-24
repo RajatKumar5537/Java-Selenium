@@ -917,7 +917,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	public void enableCheckBoxIsActive() throws InterruptedException{
 //		scrollAndClick(driver, checkBoxIsActive);
 		webUtility.moveToElement(driver, checkBoxIsActive);
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		checkBoxIsActive.click();
 		
 	}

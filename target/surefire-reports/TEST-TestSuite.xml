@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="995.593" tests="62" errors="0" skipped="13" failures="4">
+<testsuite xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="https://maven.apache.org/surefire/maven-surefire-plugin/xsd/surefire-test-report-3.0.xsd" version="3.0" name="TestSuite" time="885.013" tests="54" errors="0" skipped="0" failures="4">
   <properties>
     <property name="java.specification.version" value="17"/>
     <property name="webdriver.chrome.driver" value="C:\Users\kumar\.cache\selenium\chromedriver\win64\119.0.6045.105\chromedriver.exe"/>
@@ -16,7 +16,7 @@
     <property name="sun.java.launcher" value="SUN_STANDARD"/>
     <property name="user.country" value="IN"/>
     <property name="sun.boot.library.path" value="C:\Users\kumar\.p2\pool\plugins\org.eclipse.justj.openjdk.hotspot.jre.full.win32.x86_64_17.0.8.v20230831-1047\jre\bin"/>
-    <property name="sun.java.command" value="C:\Users\kumar\AppData\Local\Temp\surefire3441735236827900432\surefirebooter-20231124062516535_3.jar C:\Users\kumar\AppData\Local\Temp\surefire3441735236827900432 2023-11-24T06-25-16_329-jvmRun1 surefire-20231124062516535_1tmp surefire_0-20231124062516535_2tmp"/>
+    <property name="sun.java.command" value="C:\Users\kumar\AppData\Local\Temp\surefire16884429078089882157\surefirebooter-20231124071720300_3.jar C:\Users\kumar\AppData\Local\Temp\surefire16884429078089882157 2023-11-24T07-17-20_130-jvmRun1 surefire-20231124071720300_1tmp surefire_0-20231124071720300_2tmp"/>
     <property name="jdk.debug" value="release"/>
     <property name="surefire.test.class.path" value="C:\Development\Automation\Jiviewsrpav2\target\test-classes;C:\Development\Automation\Jiviewsrpav2\target\classes;C:\Users\kumar\.m2\repository\org\testng\testng\6.14.3\testng-6.14.3.jar;C:\Users\kumar\.m2\repository\com\beust\jcommander\1.72\jcommander-1.72.jar;C:\Users\kumar\.m2\repository\org\apache-extras\beanshell\bsh\2.0b6\bsh-2.0b6.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-java\4.10.0\selenium-java-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-api\4.10.0\selenium-api-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-chrome-driver\4.10.0\selenium-chrome-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\com\google\auto\service\auto-service-annotations\1.0.1\auto-service-annotations-1.0.1.jar;C:\Users\kumar\.m2\repository\com\google\auto\service\auto-service\1.0.1\auto-service-1.0.1.jar;C:\Users\kumar\.m2\repository\com\google\auto\auto-common\1.2\auto-common-1.2.jar;C:\Users\kumar\.m2\repository\com\google\guava\guava\31.1-jre\guava-31.1-jre.jar;C:\Users\kumar\.m2\repository\com\google\guava\failureaccess\1.0.1\failureaccess-1.0.1.jar;C:\Users\kumar\.m2\repository\com\google\guava\listenablefuture\9999.0-empty-to-avoid-conflict-with-guava\listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar;C:\Users\kumar\.m2\repository\com\google\code\findbugs\jsr305\3.0.2\jsr305-3.0.2.jar;C:\Users\kumar\.m2\repository\org\checkerframework\checker-qual\3.12.0\checker-qual-3.12.0.jar;C:\Users\kumar\.m2\repository\com\google\errorprone\error_prone_annotations\2.11.0\error_prone_annotations-2.11.0.jar;C:\Users\kumar\.m2\repository\com\google\j2objc\j2objc-annotations\1.3\j2objc-annotations-1.3.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-chromium-driver\4.10.0\selenium-chromium-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-json\4.10.0\selenium-json-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-manager\4.10.0\selenium-manager-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v112\4.10.0\selenium-devtools-v112-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v113\4.10.0\selenium-devtools-v113-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v114\4.10.0\selenium-devtools-v114-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-devtools-v85\4.10.0\selenium-devtools-v85-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-edge-driver\4.10.0\selenium-edge-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-firefox-driver\4.10.0\selenium-firefox-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-http\4.10.0\selenium-http-4.10.0.jar;C:\Users\kumar\.m2\repository\dev\failsafe\failsafe\3.3.1\failsafe-3.3.1.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-ie-driver\4.10.0\selenium-ie-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-remote-driver\4.10.0\selenium-remote-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\io\netty\netty-buffer\4.1.92.Final\netty-buffer-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-codec-http\4.1.92.Final\netty-codec-http-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-codec\4.1.92.Final\netty-codec-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-handler\4.1.92.Final\netty-handler-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-common\4.1.92.Final\netty-common-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-classes-epoll\4.1.92.Final\netty-transport-classes-epoll-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-classes-kqueue\4.1.92.Final\netty-transport-classes-kqueue-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-native-epoll\4.1.92.Final\netty-transport-native-epoll-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.92.Final\netty-transport-native-kqueue-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-native-unix-common\4.1.92.Final\netty-transport-native-unix-common-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport\4.1.92.Final\netty-transport-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-resolver\4.1.92.Final\netty-resolver-4.1.92.Final.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-api\1.26.0\opentelemetry-api-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-context\1.26.0\opentelemetry-context-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-exporter-logging\1.26.0\opentelemetry-exporter-logging-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-metrics\1.26.0\opentelemetry-sdk-metrics-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-extension-incubator\1.26.0-alpha\opentelemetry-extension-incubator-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-logs\1.26.0-alpha\opentelemetry-sdk-logs-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-api-logs\1.26.0-alpha\opentelemetry-api-logs-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-api-events\1.26.0-alpha\opentelemetry-api-events-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-common\1.26.0\opentelemetry-sdk-common-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure-spi\1.26.0\opentelemetry-sdk-extension-autoconfigure-spi-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-extension-autoconfigure\1.26.0-alpha\opentelemetry-sdk-extension-autoconfigure-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk-trace\1.26.0\opentelemetry-sdk-trace-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-sdk\1.26.0\opentelemetry-sdk-1.26.0.jar;C:\Users\kumar\.m2\repository\io\opentelemetry\opentelemetry-semconv\1.26.0-alpha\opentelemetry-semconv-1.26.0-alpha.jar;C:\Users\kumar\.m2\repository\net\bytebuddy\byte-buddy\1.14.4\byte-buddy-1.14.4.jar;C:\Users\kumar\.m2\repository\org\apache\commons\commons-exec\1.3\commons-exec-1.3.jar;C:\Users\kumar\.m2\repository\org\asynchttpclient\async-http-client\2.12.3\async-http-client-2.12.3.jar;C:\Users\kumar\.m2\repository\org\asynchttpclient\async-http-client-netty-utils\2.12.3\async-http-client-netty-utils-2.12.3.jar;C:\Users\kumar\.m2\repository\io\netty\netty-codec-socks\4.1.60.Final\netty-codec-socks-4.1.60.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-handler-proxy\4.1.60.Final\netty-handler-proxy-4.1.60.Final.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-native-epoll\4.1.60.Final\netty-transport-native-epoll-4.1.60.Final-linux-x86_64.jar;C:\Users\kumar\.m2\repository\io\netty\netty-transport-native-kqueue\4.1.60.Final\netty-transport-native-kqueue-4.1.60.Final-osx-x86_64.jar;C:\Users\kumar\.m2\repository\org\reactivestreams\reactive-streams\1.0.3\reactive-streams-1.0.3.jar;C:\Users\kumar\.m2\repository\com\typesafe\netty\netty-reactive-streams\2.0.4\netty-reactive-streams-2.0.4.jar;C:\Users\kumar\.m2\repository\com\sun\activation\jakarta.activation\1.2.2\jakarta.activation-1.2.2.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-safari-driver\4.10.0\selenium-safari-driver-4.10.0.jar;C:\Users\kumar\.m2\repository\org\seleniumhq\selenium\selenium-support\4.10.0\selenium-support-4.10.0.jar;C:\Users\kumar\.m2\repository\io\github\bonigarcia\webdrivermanager\5.5.3\webdrivermanager-5.5.3.jar;C:\Users\kumar\.m2\repository\org\slf4j\slf4j-api\2.0.7\slf4j-api-2.0.7.jar;C:\Users\kumar\.m2\repository\com\google\code\gson\gson\2.10.1\gson-2.10.1.jar;C:\Users\kumar\.m2\repository\com\github\docker-java\docker-java\3.3.3\docker-java-3.3.3.jar;C:\Users\kumar\.m2\repository\com\github\docker-java\docker-java-core\3.3.3\docker-java-core-3.3.3.jar;C:\Users\kumar\.m2\repository\com\github\docker-java\docker-java-api\3.3.3\docker-java-api-3.3.3.jar;C:\Users\kumar\.m2\repository\com\fasterxml\jackson\core\jackson-annotations\2.10.3\jackson-annotations-2.10.3.jar;C:\Users\kumar\.m2\repository\com\fasterxml\jackson\core\jackson-databind\2.10.3\jackson-databind-2.10.3.jar;C:\Users\kumar\.m2\repository\com\fasterxml\jackson\core\jackson-core\2.10.3\jackson-core-2.10.3.jar;C:\Users\kumar\.m2\repository\org\bouncycastle\bcpkix-jdk18on\1.75\bcpkix-jdk18on-1.75.jar;C:\Users\kumar\.m2\repository\org\bouncycastle\bcprov-jdk18on\1.75\bcprov-jdk18on-1.75.jar;C:\Users\kumar\.m2\repository\org\bouncycastle\bcutil-jdk18on\1.75\bcutil-jdk18on-1.75.jar;C:\Users\kumar\.m2\repository\org\slf4j\jcl-over-slf4j\1.7.30\jcl-over-slf4j-1.7.30.jar;C:\Users\kumar\.m2\repository\com\github\docker-java\docker-java-transport-httpclient5\3.3.3\docker-java-transport-httpclient5-3.3.3.jar;C:\Users\kumar\.m2\repository\com\github\docker-java\docker-java-transport\3.3.3\docker-java-transport-3.3.3.jar;C:\Users\kumar\.m2\repository\net\java\dev\jna\jna\5.12.1\jna-5.12.1.jar;C:\Users\kumar\.m2\repository\org\brotli\dec\0.1.2\dec-0.1.2.jar;C:\Users\kumar\.m2\repository\org\apache\commons\commons-lang3\3.13.0\commons-lang3-3.13.0.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\client5\httpclient5\5.2.1\httpclient5-5.2.1.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\core5\httpcore5\5.2\httpcore5-5.2.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\core5\httpcore5-h2\5.2\httpcore5-h2-5.2.jar;C:\Users\kumar\.m2\repository\org\apache\poi\poi\5.2.3\poi-5.2.3.jar;C:\Users\kumar\.m2\repository\commons-codec\commons-codec\1.15\commons-codec-1.15.jar;C:\Users\kumar\.m2\repository\org\apache\commons\commons-collections4\4.4\commons-collections4-4.4.jar;C:\Users\kumar\.m2\repository\org\apache\commons\commons-math3\3.6.1\commons-math3-3.6.1.jar;C:\Users\kumar\.m2\repository\commons-io\commons-io\2.11.0\commons-io-2.11.0.jar;C:\Users\kumar\.m2\repository\com\zaxxer\SparseBitSet\1.2\SparseBitSet-1.2.jar;C:\Users\kumar\.m2\repository\org\apache\poi\poi-ooxml\5.2.3\poi-ooxml-5.2.3.jar;C:\Users\kumar\.m2\repository\org\apache\poi\poi-ooxml-lite\5.2.3\poi-ooxml-lite-5.2.3.jar;C:\Users\kumar\.m2\repository\org\apache\xmlbeans\xmlbeans\5.1.1\xmlbeans-5.1.1.jar;C:\Users\kumar\.m2\repository\org\apache\commons\commons-compress\1.21\commons-compress-1.21.jar;C:\Users\kumar\.m2\repository\com\github\virtuald\curvesapi\1.07\curvesapi-1.07.jar;C:\Users\kumar\.m2\repository\org\apache\poi\poi-ooxml-schemas\4.1.2\poi-ooxml-schemas-4.1.2.jar;C:\Users\kumar\.m2\repository\org\apache\logging\log4j\log4j-api\2.14.1\log4j-api-2.14.1.jar;C:\Users\kumar\.m2\repository\org\apache\logging\log4j\log4j-core\2.14.1\log4j-core-2.14.1.jar;C:\Users\kumar\.m2\repository\com\aventstack\extentreports\4.0.9\extentreports-4.0.9.jar;C:\Users\kumar\.m2\repository\org\freemarker\freemarker\2.3.23\freemarker-2.3.23.jar;C:\Users\kumar\.m2\repository\org\mongodb\mongodb-driver\3.3.0\mongodb-driver-3.3.0.jar;C:\Users\kumar\.m2\repository\org\mongodb\mongodb-driver-core\3.3.0\mongodb-driver-core-3.3.0.jar;C:\Users\kumar\.m2\repository\org\mongodb\bson\3.3.0\bson-3.3.0.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\httpclient\4.5.2\httpclient-4.5.2.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\httpcore\4.4.4\httpcore-4.4.4.jar;C:\Users\kumar\.m2\repository\commons-logging\commons-logging\1.2\commons-logging-1.2.jar;C:\Users\kumar\.m2\repository\org\apache\httpcomponents\httpmime\4.5.2\httpmime-4.5.2.jar;C:\Users\kumar\.m2\repository\com\github\javafaker\javafaker\1.0.2\javafaker-1.0.2.jar;C:\Users\kumar\.m2\repository\org\yaml\snakeyaml\1.23\snakeyaml-1.23-android.jar;C:\Users\kumar\.m2\repository\com\github\mifmif\generex\1.0.2\generex-1.0.2.jar;C:\Users\kumar\.m2\repository\dk\brics\automaton\automaton\1.11-8\automaton-1.11-8.jar;C:\Users\kumar\.m2\repository\org\json\json\20230618\json-20230618.jar;"/>
     <property name="sun.cpu.endian" value="little"/>
@@ -32,7 +32,7 @@
     <property name="line.separator" value="&#10;"/>
     <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
     <property name="java.specification.name" value="Java Platform API Specification"/>
-    <property name="surefire.real.class.path" value="C:\Users\kumar\AppData\Local\Temp\surefire3441735236827900432\surefirebooter-20231124062516535_3.jar"/>
+    <property name="surefire.real.class.path" value="C:\Users\kumar\AppData\Local\Temp\surefire16884429078089882157\surefirebooter-20231124071720300_3.jar"/>
     <property name="user.script" value=""/>
     <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
     <property name="java.runtime.version" value="17.0.8.1+1"/>
@@ -59,248 +59,248 @@
     <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
     <property name="java.class.version" value="61.0"/>
   </properties>
-  <testcase name="createNewSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="3.845">
+  <testcase name="createNewSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="3.759">
     <system-out><![CDATA[[TestNGContentHandler] [WARN] It is strongly recommended to add "<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >" at the top of your file, otherwise TestNG may fail or not work as expected.
-06:25:17.683 [main] INFO  com.AutomationJiviewsGeneric.ListenerImplimentation - Extent Report Output Path: null
-06:25:17.959 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:26:02.324 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:17:21.408 [main] INFO  com.AutomationJiviewsGeneric.ListenerImplimentation - Extent Report Output Path: null
+07:17:21.679 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:17:23.523 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:26:02.581 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:26:54.659 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\createNewSkill.png
-06:26:54.659 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Create a new Skill
-06:26:58.221 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is created successfully 
+07:17:23.799 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:17:34.019 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\createNewSkill.png
+07:17:34.019 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Create a new Skill
+07:17:37.490 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is created successfully 
 ]]></system-out>
     <system-err><![CDATA[SLF4J: No SLF4J providers were found.
 SLF4J: Defaulting to no-operation (NOP) logger implementation
 SLF4J: See https://www.slf4j.org/codes.html#noProviders for further details.
-Nov 24, 2023 6:26:00 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+Nov 24, 2023 7:17:22 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:26:02 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:17:23 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:26:02 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:17:23 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="updateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="2.695">
-    <system-out><![CDATA[06:27:03.270 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\updateSkill.png
-06:27:03.270 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Update a Skill
-06:27:05.768 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is updated successfully 
+  <testcase name="updateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="2.671">
+    <system-out><![CDATA[07:17:42.002 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\updateSkill.png
+07:17:42.002 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Update a Skill
+07:17:44.522 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is updated successfully 
 ]]></system-out>
   </testcase>
-  <testcase name="deActivateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="1.828">
-    <system-out><![CDATA[06:27:10.682 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\deActivateSkill.png
-06:27:10.682 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Deactivate a Skill
-06:27:12.334 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is deactivated successfully 
+  <testcase name="deActivateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="1.785">
+    <system-out><![CDATA[07:17:49.082 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\deActivateSkill.png
+07:17:49.082 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Deactivate a Skill
+07:17:50.716 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is deactivated successfully 
 ]]></system-out>
   </testcase>
-  <testcase name="reactivateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="2.685">
-    <system-out><![CDATA[06:27:17.166 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\reactivateSkill.png
-06:27:17.166 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Reactivate a Skill
-06:27:19.668 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is reactivated successfully 
+  <testcase name="reactivateSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="2.668">
+    <system-out><![CDATA[07:17:55.461 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\reactivateSkill.png
+07:17:55.461 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Reactivate a Skill
+07:17:57.965 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - A skill is reactivated successfully 
 ]]></system-out>
   </testcase>
-  <testcase name="searchColumnsForSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="1.185">
-    <system-out><![CDATA[06:27:24.586 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\searchColumnsForSkill.png
-06:27:24.586 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Searching a skill
-06:27:25.596 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Searching a skill is successful
+  <testcase name="searchColumnsForSkill" classname="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" time="1.17">
+    <system-out><![CDATA[07:18:05.674 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\searchColumnsForSkill.png
+07:18:05.674 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Searching a skill
+07:18:06.695 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Searching a skill is successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateNewRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="6.611">
+  <testcase name="verifyCreateNewRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="4.744">
     <system-out><![CDATA[Logout
-06:27:25.599 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:27:25.599 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:27:26.737 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:27:27.630 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:18:06.697 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:18:06.697 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:18:07.450 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:18:08.365 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:27:27.960 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:27:42.001 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:27:42.005 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Create a new Skill
-06:27:48.421 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Create a new role is successful
+07:18:08.723 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:18:20.198 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:18:20.198 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Create a new Skill
+07:18:24.806 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Create a new role is successful
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:27:26 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:18:07 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:27:27 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:18:08 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:27:27 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:18:08 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyUpdateRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="8.331">
-    <system-out><![CDATA[06:27:53.081 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:28:01.268 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Update Role successful
+  <testcase name="verifyUpdateRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="4.832">
+    <system-out><![CDATA[07:18:29.370 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:18:34.043 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Update Role successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDeactiveRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="2.839">
-    <system-out><![CDATA[06:28:11.904 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:28:14.607 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Deactive Role is successful
+  <testcase name="verifyDeactiveRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="2.863">
+    <system-out><![CDATA[07:18:38.415 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:18:41.164 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Deactive Role is successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyReactiveRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="3.512">
-    <system-out><![CDATA[06:28:21.626 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:28:24.977 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Reactive Role is successful
+  <testcase name="verifyReactiveRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="3.466">
+    <system-out><![CDATA[07:18:50.145 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:18:53.443 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify Reactive Role is successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateRoleWithAllAvailableSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="5.796">
-    <system-out><![CDATA[06:28:32.008 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:28:37.660 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify create a role with all available skill
+  <testcase name="verifyCreateRoleWithAllAvailableSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="4.617">
+    <system-out><![CDATA[07:19:00.458 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:19:04.942 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify create a role with all available skill
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDisselectAllAvailableSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="9.408">
-    <system-out><![CDATA[06:28:44.399 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:28:53.652 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify disselect all available skill
+  <testcase name="verifyDisselectAllAvailableSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="8.713">
+    <system-out><![CDATA[07:19:10.852 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:19:19.439 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - Verify disselect all available skill
 ]]></system-out>
   </testcase>
-  <testcase name="verifySearchColumnsForRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="1.451">
-    <system-out><![CDATA[06:29:00.107 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:29:01.395 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Search Columns For Role is successfull
+  <testcase name="verifySearchColumnsForRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="1.247">
+    <system-out><![CDATA[07:19:25.416 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:19:26.550 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Search Columns For Role is successfull
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateNewRoleWithoutRoleCode" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="7.483">
-    <system-out><![CDATA[06:29:08.594 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:29:15.743 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without role code
+  <testcase name="verifyCreateNewRoleWithoutRoleCode" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="7.296">
+    <system-out><![CDATA[07:19:32.464 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:19:39.642 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without role code
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateNewRoleWithoutRoleDescription" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="5.629">
-    <system-out><![CDATA[06:29:21.987 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:29:27.459 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without role description
+  <testcase name="verifyCreateNewRoleWithoutRoleDescription" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="4.945">
+    <system-out><![CDATA[07:19:45.976 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:19:50.802 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without role description
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateNewRoleWithoutSecondarySkillEmpty" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="3.562">
-    <system-out><![CDATA[06:29:33.900 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:29:37.112 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Create New Role Without Secondary Skill Empty is successfull
+  <testcase name="verifyCreateNewRoleWithoutSecondarySkillEmpty" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="3.857">
+    <system-out><![CDATA[07:19:56.689 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:20:00.409 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Create New Role Without Secondary Skill Empty is successfull
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDisselectSingleSkillFromSelectedSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="12.513">
-    <system-out><![CDATA[06:29:43.464 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:29:55.827 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Disselect Single Skill From Selected Skill is successfull
+  <testcase name="verifyDisselectSingleSkillFromSelectedSkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="11.637">
+    <system-out><![CDATA[07:20:06.202 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:20:17.721 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify Disselect Single Skill From Selected Skill is successfull
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateNewRoleWithoutPriarySkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="9.641">
-    <system-out><![CDATA[06:30:01.987 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
-06:30:11.449 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without priary skill
+  <testcase name="verifyCreateNewRoleWithoutPriarySkill" classname="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" time="8.518">
+    <system-out><![CDATA[07:20:23.549 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roleSetUpTest.png
+07:20:31.915 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest - verify create new role without priary skill
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="3.23">
+  <testcase name="verifyCreateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.938">
     <system-out><![CDATA[Logout
-06:30:11.453 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:30:11.454 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:30:12.110 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:30:12.972 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:20:31.916 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:20:31.916 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:20:32.114 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:20:32.840 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:30:13.067 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:30:23.011 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
-06:30:23.011 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create Role Group
+07:20:32.876 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:20:43.205 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
+07:20:43.205 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create Role Group
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:30:12 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:20:32 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:30:12 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:20:32 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:30:12 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:20:32 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyUpdateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.746">
-    <system-out><![CDATA[06:30:31.080 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
-06:30:31.080 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Update Role Group
+  <testcase name="verifyUpdateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.705">
+    <system-out><![CDATA[07:20:50.337 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
+07:20:50.337 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Update Role Group
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDeactivateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.378">
-    <system-out><![CDATA[06:30:38.600 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
-06:30:38.600 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Deactivate Role Group
+  <testcase name="verifyDeactivateRoleGroups" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.531">
+    <system-out><![CDATA[07:21:05.566 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
+07:21:05.566 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Deactivate Role Group
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateRoleGrpWithoutAvailableRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.553">
-    <system-out><![CDATA[06:30:45.625 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
-06:30:45.625 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without available role Group
+  <testcase name="verifyCreateRoleGrpWithoutAvailableRole" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.198">
+    <system-out><![CDATA[07:21:14.837 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
+07:21:14.837 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without available role Group
 ]]></system-out>
   </testcase>
-  <testcase name="verifySearchRoleGroup" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="1.077">
-    <system-out><![CDATA[06:30:59.708 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without available role Group
+  <testcase name="verifySearchRoleGroup" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="0.885">
+    <system-out><![CDATA[07:21:22.441 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without available role Group
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateRoleGrpWithoutRoleGrpName" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.779">
-    <system-out><![CDATA[06:31:07.419 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
-06:31:07.419 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without role group name
+  <testcase name="verifyCreateRoleGrpWithoutRoleGrpName" classname="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" time="2.734">
+    <system-out><![CDATA[07:21:28.742 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\RoleGroupTest.png
+07:21:28.742 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest - Create role group without role group name
 ]]></system-out>
   </testcase>
-  <testcase name="testCreateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="6.046">
+  <testcase name="testCreateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="3.985">
     <system-out><![CDATA[Logout
-06:31:10.049 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:31:10.049 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:31:10.634 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:31:11.930 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:21:31.340 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:21:31.340 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:21:31.675 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:21:32.455 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:31:11.979 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:31:23.245 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:31:23.245 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Create Shift Band Definition
+07:21:32.506 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:21:46.136 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:21:46.136 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Create Shift Band Definition
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:31:11 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:21:31 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:31:11 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:21:32 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:31:11 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:21:32 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="testUpdateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="5.979">
-    <system-out><![CDATA[06:31:39.055 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:31:39.055 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify update shiftBand
+  <testcase name="testUpdateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="4.799">
+    <system-out><![CDATA[07:21:57.381 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:21:57.381 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify update shiftBand
 ]]></system-out>
   </testcase>
-  <testcase name="testDeactivateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="2.87">
-    <system-out><![CDATA[06:31:55.669 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:31:55.669 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Deactivate Shift band
+  <testcase name="testDeactivateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="3.149">
+    <system-out><![CDATA[07:22:15.496 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:22:15.496 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Deactivate Shift band
 ]]></system-out>
   </testcase>
-  <testcase name="testReactivateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="3.448">
-    <system-out><![CDATA[06:32:06.424 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:32:06.428 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Reactivate Shift band
+  <testcase name="testReactivateShiftBand" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="1.652">
+    <system-out><![CDATA[07:22:26.423 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:22:26.423 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Reactivate Shift band
 ]]></system-out>
   </testcase>
-  <testcase name="testWithoutShiftBandName" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="6.862">
-    <system-out><![CDATA[06:32:17.215 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:32:17.215 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Without Shift Band Name
+  <testcase name="testWithoutShiftBandName" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="4.149">
+    <system-out><![CDATA[07:22:35.808 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:22:35.808 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify Without Shift Band Name
 ]]></system-out>
   </testcase>
-  <testcase name="testWithCombinationShift" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="8.228">
-    <system-out><![CDATA[06:32:31.772 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:32:31.773 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify With Combination Shift
+  <testcase name="testWithCombinationShift" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="7.814">
+    <system-out><![CDATA[07:22:47.262 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:22:47.262 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify With Combination Shift
 ]]></system-out>
   </testcase>
-  <testcase name="testWithOvertimeShift" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="5.42">
-    <system-out><![CDATA[06:32:47.672 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
-06:32:47.672 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify With Overtime Shift
+  <testcase name="testWithOvertimeShift" classname="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" time="3.619">
+    <system-out><![CDATA[07:23:02.359 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\shiftBandTest.png
+07:23:02.359 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest - Verify With Overtime Shift
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateRoasterWithGroup" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="39.077">
+  <testcase name="verifyCreateRoasterWithGroup" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="38.033">
     <system-out><![CDATA[Logout
-06:32:52.779 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:32:52.779 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:32:53.588 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:32:54.635 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:23:05.677 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:23:05.677 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:23:05.897 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:23:06.625 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:32:54.682 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:33:06.367 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
-06:33:06.367 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Creating Roaster with Employee...
-06:33:45.105 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Create a Roster Pattern with Roster Group is successfull
+07:23:06.639 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:23:17.889 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+07:23:17.890 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Creating Roaster with Employee...
+07:23:55.641 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Create a Roster Pattern with Roster Group is successfull
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:32:53 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:23:05 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:32:54 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:23:06 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:32:54 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:23:06 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyCreateRoasterwithEmployee" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="19.683">
-    <failure message="java.lang.reflect.InvocationTargetException&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a069efdb1beb8fc17574e12c96da7e75, actions {actions=[org.openqa.selenium.interactions.Sequence@4ff33674]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a069efdb1beb8fc17574e12c96da7e75" type="org.openqa.selenium.json.JsonException"><![CDATA[org.openqa.selenium.json.JsonException: 
+  <testcase name="verifyCreateRoasterwithEmployee" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="21.417">
+    <failure message="java.lang.reflect.InvocationTargetException&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a89845faa9a7b4dc5492f7877a99f0de, actions {actions=[org.openqa.selenium.interactions.Sequence@2cbe6c4d]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a89845faa9a7b4dc5492f7877a99f0de" type="org.openqa.selenium.json.JsonException"><![CDATA[org.openqa.selenium.json.JsonException: 
 java.lang.reflect.InvocationTargetException
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a069efdb1beb8fc17574e12c96da7e75, actions {actions=[org.openqa.selenium.interactions.Sequence@4ff33674]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a069efdb1beb8fc17574e12c96da7e75
+Command: [a89845faa9a7b4dc5492f7877a99f0de, actions {actions=[org.openqa.selenium.interactions.Sequence@2cbe6c4d]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a89845faa9a7b4dc5492f7877a99f0de
 	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:395)
 	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:165)
 	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
@@ -333,7 +333,7 @@ Session ID: a069efdb1beb8fc17574e12c96da7e75
 	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:585)
 	at org.openqa.selenium.interactions.Actions.perform(Actions.java:554)
 	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setRosterCreation1stDay(SystemDefinationRosterCreationPage.java:307)
-	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setCreateRoasterwithEmployee(SystemDefinationRosterCreationPage.java:612)
+	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setCreateRoasterwithEmployee(SystemDefinationRosterCreationPage.java:613)
 	at com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest.verifyCreateRoasterwithEmployee(roasterSetupTest.java:55)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -383,9 +383,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a069efdb1beb8fc17574e12c96da7e75, findElement {using=xpath, value=(//div[text()='Off']/..)[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a069efdb1beb8fc17574e12c96da7e75
+Command: [a89845faa9a7b4dc5492f7877a99f0de, findElement {using=xpath, value=(//div[text()='Off']/..)[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a89845faa9a7b4dc5492f7877a99f0de
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -411,31 +411,31 @@ Session ID: a069efdb1beb8fc17574e12c96da7e75
 	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
 	... 66 more
 ]]></failure>
-    <system-out><![CDATA[06:33:55.108 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
-06:33:55.108 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Creating Roaster with Employee...
+    <system-out><![CDATA[07:24:02.756 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+07:24:02.756 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest - Creating Roaster with Employee...
 ]]></system-out>
   </testcase>
-  <testcase name="verifyUpdateRoaster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="5.378">
-    <system-out><![CDATA[06:34:20.927 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+  <testcase name="verifyUpdateRoaster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="4.906">
+    <system-out><![CDATA[07:24:30.156 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDeactiveRoster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="1.004">
-    <system-out><![CDATA[06:34:33.645 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+  <testcase name="verifyDeactiveRoster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="0.851">
+    <system-out><![CDATA[07:24:42.356 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
 ]]></system-out>
   </testcase>
-  <testcase name="verifyReactiveRoster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="3.776">
-    <system-out><![CDATA[06:34:40.610 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+  <testcase name="verifyReactiveRoster" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="3.614">
+    <system-out><![CDATA[07:24:48.880 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
 ]]></system-out>
   </testcase>
   <testcase name="verifyCreateRoasterWithGroupAndEmp" classname="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" time="17.855">
-    <failure message="java.lang.reflect.InvocationTargetException&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a069efdb1beb8fc17574e12c96da7e75, actions {actions=[org.openqa.selenium.interactions.Sequence@48bbcd9d]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a069efdb1beb8fc17574e12c96da7e75" type="org.openqa.selenium.json.JsonException"><![CDATA[org.openqa.selenium.json.JsonException: 
+    <failure message="java.lang.reflect.InvocationTargetException&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a89845faa9a7b4dc5492f7877a99f0de, actions {actions=[org.openqa.selenium.interactions.Sequence@2067e2c0]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a89845faa9a7b4dc5492f7877a99f0de" type="org.openqa.selenium.json.JsonException"><![CDATA[org.openqa.selenium.json.JsonException: 
 java.lang.reflect.InvocationTargetException
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a069efdb1beb8fc17574e12c96da7e75, actions {actions=[org.openqa.selenium.interactions.Sequence@48bbcd9d]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a069efdb1beb8fc17574e12c96da7e75
+Command: [a89845faa9a7b4dc5492f7877a99f0de, actions {actions=[org.openqa.selenium.interactions.Sequence@2067e2c0]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a89845faa9a7b4dc5492f7877a99f0de
 	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:395)
 	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:165)
 	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
@@ -468,7 +468,7 @@ Session ID: a069efdb1beb8fc17574e12c96da7e75
 	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:585)
 	at org.openqa.selenium.interactions.Actions.perform(Actions.java:554)
 	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setRosterCreation1stDay(SystemDefinationRosterCreationPage.java:307)
-	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setCreateRoasterwithRosterAndEmp(SystemDefinationRosterCreationPage.java:669)
+	at com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage.setCreateRoasterwithRosterAndEmp(SystemDefinationRosterCreationPage.java:671)
 	at com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest.verifyCreateRoasterWithGroupAndEmp(roasterSetupTest.java:81)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -518,9 +518,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [a069efdb1beb8fc17574e12c96da7e75, findElement {using=xpath, value=(//div[text()='Off']/..)[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59354}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59354/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: a069efdb1beb8fc17574e12c96da7e75
+Command: [a89845faa9a7b4dc5492f7877a99f0de, findElement {using=xpath, value=(//div[text()='Off']/..)[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60194}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60194/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a89845faa9a7b4dc5492f7877a99f0de
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -546,115 +546,115 @@ Session ID: a069efdb1beb8fc17574e12c96da7e75
 	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
 	... 66 more
 ]]></failure>
-    <system-out><![CDATA[06:34:50.306 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
+    <system-out><![CDATA[07:24:58.537 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\roasterSetupTest.png
 ]]></system-out>
   </testcase>
-  <testcase name="testCreateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="13.237">
+  <testcase name="testCreateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="11.758">
     <system-out><![CDATA[Logout
-06:35:08.006 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:35:08.006 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:35:08.938 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:35:09.754 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:25:16.289 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:25:16.290 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:25:16.769 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:25:17.504 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:35:09.807 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:35:22.692 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
-06:35:22.692 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Create SCR
-06:35:35.774 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Create a SCR is successful
+07:25:17.528 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:25:30.010 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
+07:25:30.010 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Create SCR
+07:25:41.371 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Create a SCR is successful
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:35:08 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:25:16 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:35:09 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:25:17 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:35:09 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:25:17 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="testUpdateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="5.334">
-    <system-out><![CDATA[06:35:50.849 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
-06:35:50.849 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Update SCR
+  <testcase name="testUpdateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="5.066">
+    <system-out><![CDATA[07:26:09.184 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
+07:26:09.184 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Update SCR
 ]]></system-out>
   </testcase>
-  <testcase name="testDeactivateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="3.532">
-    <system-out><![CDATA[06:36:06.710 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
-06:36:06.713 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Deactivate SCR
+  <testcase name="testDeactivateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="3.308">
+    <system-out><![CDATA[07:26:22.326 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
+07:26:22.326 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Deactivate SCR
 ]]></system-out>
   </testcase>
-  <testcase name="testReactivateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="6.114">
-    <system-out><![CDATA[06:36:20.164 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
-06:36:20.164 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Reactive SCR
+  <testcase name="testReactivateSCR" classname="com.JiviewsAutomation.SystemDefination_Test.SCRTest" time="5.045">
+    <system-out><![CDATA[07:26:33.137 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\SCRTest.png
+07:26:33.138 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.SCRTest - Reactive SCR
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreatePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="3.52">
+  <testcase name="verifyCreatePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="3.163">
     <system-out><![CDATA[Logout
-06:36:24.896 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:36:24.898 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:36:25.491 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:36:26.451 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:26:37.795 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:26:37.795 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:26:38.196 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:27:21.272 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:36:26.537 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:36:38.797 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyCreatePublicHoliday.png
-06:36:38.797 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Creating public holiday
-06:36:41.961 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Public holiday creation successful
+07:27:21.302 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:27:33.455 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyCreatePublicHoliday.png
+07:27:33.456 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Creating public holiday
+07:27:36.293 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Public holiday creation successful
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:36:25 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:27:20 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:36:26 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:27:21 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:36:26 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:27:21 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyUpdatePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="4.929">
-    <system-out><![CDATA[06:36:48.466 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyUpdatePublicHoliday.png
-06:36:48.466 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Updating public holiday
-06:36:53.107 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Public holiday update successful
+  <testcase name="verifyUpdatePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="7.493">
+    <system-out><![CDATA[07:27:46.467 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyUpdatePublicHoliday.png
+07:27:46.467 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Updating public holiday
+07:27:50.502 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Public holiday update successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDeletePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="1.164">
-    <system-out><![CDATA[06:37:01.202 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyDeletePublicHoliday.png
-06:37:01.202 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Deleting public holiday
-06:37:02.016 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Deactivate public holiday successful
+  <testcase name="verifyDeletePublicHoliday" classname="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" time="0.958">
+    <system-out><![CDATA[07:28:03.560 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\verifyDeletePublicHoliday.png
+07:28:03.560 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Deleting public holiday
+07:28:04.213 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest - Deactivate public holiday successful
 ]]></system-out>
   </testcase>
-  <testcase name="verifyCreateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="49.305">
+  <testcase name="verifyCreateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="45.034">
     <system-out><![CDATA[Logout
-06:37:02.023 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
-06:37:02.024 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
-06:37:02.712 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
-06:37:03.553 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
+07:28:04.213 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Logout from Jivi application
+07:28:04.213 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Close Browser...
+07:28:04.603 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Open Browser
+07:28:05.373 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Browser launched successfully
 Login
-06:37:03.617 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
-06:37:12.662 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
-06:37:12.663 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Creating Employee Profile...
-06:37:23.201 [main] INFO  com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage - Choosing Male gender...
-06:37:23.411 [main] INFO  com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage - Male gender selected.
-06:38:01.834 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile creation successful
+07:28:05.397 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Login to the Jivi application
+07:28:15.488 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:28:15.489 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Creating Employee Profile...
+07:28:25.186 [main] INFO  com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage - Choosing Male gender...
+07:28:25.386 [main] INFO  com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage - Male gender selected.
+07:29:00.391 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile creation successful
 ]]></system-out>
-    <system-err><![CDATA[Nov 24, 2023 6:37:02 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
+    <system-err><![CDATA[Nov 24, 2023 7:28:04 AM org.openqa.selenium.remote.service.DriverService$Builder getLogOutput
 INFO: Driver logs no longer sent to console by default; https://www.selenium.dev/documentation/webdriver/drivers/service/#setting-log-output
-Nov 24, 2023 6:37:03 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
+Nov 24, 2023 7:28:05 AM org.openqa.selenium.devtools.CdpVersionFinder findNearestMatch
 WARNING: Unable to find CDP implementation matching 119
-Nov 24, 2023 6:37:03 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
+Nov 24, 2023 7:28:05 AM org.openqa.selenium.chromium.ChromiumDriver lambda$new$4
 WARNING: Unable to find version of CDP to use for . You may need to include a dependency on a specific version of the CDP using something similar to `org.seleniumhq.selenium:selenium-devtools-v86:4.10.0` where the version ("v86") matches the version of the chromium-based browser you're using and the version number of the artifact is the same as Selenium's.
 ]]></system-err>
   </testcase>
-  <testcase name="verifyUpdateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="45.295">
-    <system-out><![CDATA[06:38:15.221 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
-06:38:15.221 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Updating Employee Profile...
-06:39:00.363 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile updated
+  <testcase name="verifyUpdateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="47.823">
+    <system-out><![CDATA[07:29:04.934 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:29:04.934 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Updating Employee Profile...
+07:29:52.623 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile updated
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDuplicateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="22.167">
-    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Employee Profile created successfully&apos;]&quot;}&#10;  (Session info: chrome=119.0.6045.160)&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[text()=&apos;Employee Profile created successfully&apos;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: 
+  <testcase name="verifyDuplicateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="21.584">
+    <failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[text()=&apos;Employee Profile created successfully&apos;]&quot;}&#10;  (Session info: chrome=119.0.6045.160)&#10;For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [a3b0ae7d05f888fe89892ab6a1713df7, findElement {using=xpath, value=//div[text()=&apos;Employee Profile created successfully&apos;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60315/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: a3b0ae7d05f888fe89892ab6a1713df7" type="org.openqa.selenium.NoSuchElementException"><![CDATA[org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Employee Profile created successfully']"}
   (Session info: chrome=119.0.6045.160)
 For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[text()='Employee Profile created successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6b12d92427b3b5094b23238fe186353c
+Command: [a3b0ae7d05f888fe89892ab6a1713df7, findElement {using=xpath, value=//div[text()='Employee Profile created successfully']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60315/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3b0ae7d05f888fe89892ab6a1713df7
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -674,8 +674,8 @@ Session ID: 6b12d92427b3b5094b23238fe186353c
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
 	at jdk.proxy2/jdk.proxy2.$Proxy31.getText(Unknown Source)
-	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.getEmployeeProfilecreatedSuccessfullyMsg(EmpAdmEmployeeProfilePage.java:1200)
-	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.duplicateEmpProfile(EmpAdmEmployeeProfilePage.java:1356)
+	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.getEmployeeProfilecreatedSuccessfullyMsg(EmpAdmEmployeeProfilePage.java:1201)
+	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.duplicateEmpProfile(EmpAdmEmployeeProfilePage.java:1357)
 	at com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest.verifyDuplicateEmpProfile(EmpAdmEmployeeProfileTest.java:62)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
@@ -707,63 +707,66 @@ Session ID: 6b12d92427b3b5094b23238fe186353c
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]></failure>
-    <system-out><![CDATA[06:39:10.887 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
-06:39:10.887 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Duplicate Employee Profile...
+    <system-out><![CDATA[07:29:56.969 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:29:56.969 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Duplicate Employee Profile...
 ]]></system-out>
   </testcase>
-  <testcase name="verifyDeleteEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="7.167">
-    <system-out><![CDATA[06:39:40.728 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
-06:39:40.728 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Delete Employee Profile...
-06:39:47.744 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile is successfully Ddeleted
+  <testcase name="verifyDeleteEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="6.962">
+    <system-out><![CDATA[07:30:23.060 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:30:23.060 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Delete Employee Profile...
+07:30:29.904 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile is successfully Ddeleted
 ]]></system-out>
   </testcase>
-  <testcase name="verifySearchEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="2.14">
-    <system-out><![CDATA[06:39:55.336 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
-06:39:55.338 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search Employee Profile...
-06:39:57.314 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile is successfully Searched
+  <testcase name="verifySearchEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="1.772">
+    <system-out><![CDATA[07:30:34.656 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:30:34.656 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search Employee Profile...
+07:30:36.294 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Profile is successfully Searched
 ]]></system-out>
   </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="9.174">
-    <failure message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c" type="org.openqa.selenium.WebDriverException"><![CDATA[org.openqa.selenium.WebDriverException: 
-disconnected: not connected to DevTools
-  (failed to check if window was closed: disconnected: not connected to DevTools)
-  (Session info: chrome=119.0.6045.160)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id='dvOrgUnitDropdown']/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 6b12d92427b3b5094b23238fe186353c
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy31.click(Unknown Source)
-	at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:39)
-	at com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest.setup(EmpAdmEmployeeProfileTest.java:34)
+  <testcase name="verifysearchRosterGroup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="2.399">
+    <system-out><![CDATA[07:30:40.744 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:30:40.744 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search RosterGroup...
+07:30:42.999 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - RosterGroup is successfully Searched
+]]></system-out>
+  </testcase>
+  <testcase name="verifysearchRoleGroup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="3.196">
+    <system-out><![CDATA[07:30:47.792 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:30:47.792 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search Role Group...
+07:30:50.849 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Role Group is successfully Searched
+]]></system-out>
+  </testcase>
+  <testcase name="verifysearchEmpStatus" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="3.026">
+    <system-out><![CDATA[07:30:55.595 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:30:55.595 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search Employee Status...
+07:30:58.490 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee Status is successfully Searched
+]]></system-out>
+  </testcase>
+  <testcase name="verifyEmpNoInSearchBar" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.949">
+    <system-out><![CDATA[07:31:03.381 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:31:03.381 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Search Employee number...
+07:31:04.195 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee is successfully Searched
+]]></system-out>
+  </testcase>
+  <testcase name="verifyTerminateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="25.24">
+    <system-out><![CDATA[07:31:10.028 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:31:10.028 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Terminate Employee ...
+07:31:35.132 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Employee is successfully terminated
+]]></system-out>
+  </testcase>
+  <testcase name="verifyreactivateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="25.068">
+    <failure message="Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //button[@id=&apos;btnSaveEmployee&apos;]&apos; (tried for 10 second(s) with 500 milliseconds interval)" type="org.openqa.selenium.TimeoutException"><![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator 'By.xpath: //button[@id='btnSaveEmployee']' (tried for 10 second(s) with 500 milliseconds interval)
+	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.scrollAndClick(EmpAdmEmployeeProfilePage.java:427)
+	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.pressBtnSaveEmployee(EmpAdmEmployeeProfilePage.java:905)
+	at com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage.reactivateEmpProfile(EmpAdmEmployeeProfilePage.java:1392)
+	at com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest.verifyreactivateEmpProfile(EmpAdmEmployeeProfileTest.java:126)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
-	at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
-	at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -787,45 +790,45 @@ Session ID: 6b12d92427b3b5094b23238fe186353c
 	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[@id='btnSaveEmployee']"}
+  (Session info: chrome=119.0.6045.160)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [a3b0ae7d05f888fe89892ab6a1713df7, findElement {using=xpath, value=//button[@id='btnSaveEmployee']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60315}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60315/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: a3b0ae7d05f888fe89892ab6a1713df7
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+	at jdk.proxy2/jdk.proxy2.$Proxy31.isDisplayed(Unknown Source)
+	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+	... 33 more
 ]]></failure>
-  </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="setup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="verifysearchRosterGroup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="verifysearchRoleGroup" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="verifysearchEmpStatus" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="verifyEmpNoInSearchBar" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="verifyTerminateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="verifyreactivateEmpProfile" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped message="disconnected: not connected to DevTools&#10;  (failed to check if window was closed: disconnected: not connected to DevTools)&#10;  (Session info: chrome=119.0.6045.160)&#10;Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;&#10;System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [6b12d92427b3b5094b23238fe186353c, findElement {using=xpath, value=//div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 119.0.6045.160, chrome: {chromedriverVersion: 119.0.6045.105 (38c72552c5e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59442}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59442/devtoo..., se:cdpVersion: 119.0.6045.160, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 6b12d92427b3b5094b23238fe186353c"/>
-  </testcase>
-  <testcase name="afterTestMethod" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
-  </testcase>
-  <testcase name="closeBrowser" classname="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" time="0.0">
-    <skipped/>
+    <system-out><![CDATA[07:31:40.001 [main] INFO  com.AutomationJiviewsGeneric.BaseClass - Screenshot captured for test failure. View it at: C:\Development\Automation\Jiviewsrpav2\.\ScreenShot\EmpAdmEmployeeProfileTest.png
+07:31:40.001 [main] INFO  com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest - Reactivate Employee profile...
+]]></system-out>
   </testcase>
 </testsuite>
