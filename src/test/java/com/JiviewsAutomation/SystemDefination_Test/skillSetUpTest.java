@@ -35,8 +35,10 @@ public class skillSetUpTest extends BaseClass{
 	        empSetup = new EmployeeSetupPage(driver);
 	        skillSetup = new SystemDefinationSkillSetupPage(driver);
 	        
-	        homePage.setOrgUnit();
-	        orgUnit.setAutoOu();
+//	        homePage.setOrgUnit();
+//			orgUnit.clickOLMop();
+			homePage.setOrgUnit();
+			orgUnit.setAutoOu();
 	        jmMenuItem.clickOnSystemDefination();
 	        empSetup.setCreateSkill();
 	        

@@ -2,13 +2,7 @@ package com.AutomationJiviewsGeneric;
 
 import java.io.File;
 import java.io.IOException;
-import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
-import java.util.Random;
-import java.util.UUID;
-import java.util.concurrent.TimeUnit;
-
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -19,13 +13,10 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeClass;
-import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.BeforeTest;
 import com.AutomationJiviewsPOM.LoginPage;
-import com.github.javafaker.Faker;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 
@@ -81,14 +72,14 @@ public class BaseClass {
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    logger.info("Firefox Browser launched successfully");
 		 */
-		generateFakeEmployeeData();
+		fakeEmployee.generateFakeEmployeeData();
 
 	}
 
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		logger.info("Close Browser...");
-				driver.quit();
+		driver.quit();
 	}
 	/*	@BeforeMethod
 	public void login() throws IOException, InterruptedException {
@@ -136,10 +127,9 @@ public class BaseClass {
 			Reporter.log("Login", true);
 			logger.info("Login to the Jivi application");
 
-			//			configUtility configUtil = new configUtility();
-			String url = configUtil.getCongigPropertyData("url");
-			String un = configUtil.getCongigPropertyData("username");
-			String pw = configUtil.getCongigPropertyData("password");
+			String url = configUtility.getCongigPropertyData("url");
+			String un = configUtility.getCongigPropertyData("username");
+			String pw = configUtility.getCongigPropertyData("password");
 			driver.get(url);
 			LoginPage lp = new LoginPage(driver);
 			lp.setLogin(un, pw);
@@ -150,12 +140,11 @@ public class BaseClass {
 		if (isLoggedIn) {
 			Reporter.log("Logout", true);
 			logger.info("Logout from Jivi application");
-			//		HomePage hp=new HomePage(driver);
-			//		Thread.sleep(2000);
-			//		hp.setAdmin();
-			//		Thread.sleep(2000);
-			//		hp.setLogout();
-			// Reset the isLoggedIn flag to allow logging in again in the future
+			//	HomePage hp=new HomePage(driver);
+			//	Thread.sleep(2000);
+			//	hp.setAdmin();
+			//	Thread.sleep(2000);
+			//	hp.setLogout();
 			isLoggedIn = false;
 		}
 	}
@@ -165,115 +154,8 @@ public class BaseClass {
 		File src = t.getScreenshotAs(OutputType.FILE);
 		File dest = new File("./ScreenShot/" + res + ".png");
 		FileUtils.copyFile(src, dest);
-		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
+//		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
 
-	}
-	private void generateFakeEmployeeData() {
-		Faker fakeData=new Faker();
-
-		// Generate a random port operator name
-		String portOperatorName = fakeData.options().option("Auto_Test","crane operator", "cfs", "efo", "flo", "lsh obc","Automation_Test");
-
-		// Set the generated skill code with a timestamp
-		String uniqueSkillCode = portOperatorName + "_" + System.currentTimeMillis();
-		fakeEmployee.setSkillCode(uniqueSkillCode);
-
-		// Set the description based on the skill
-		String description;
-		switch (portOperatorName) {
-		    case "crane operator":
-		        description = "Responsible for operating cranes.";
-		        break;
-		    case "cfs":
-		        description = "Handles Container Freight Station (CFS) operations.";
-		        break;
-		    case "efo":
-		        description = "Manages Empty Container Yard (EFO) activities.";
-		        break;
-		    case "flo":
-		        description = "Oversees Freight Loading Operations (FLO).";
-		        break;
-		    case "lsh obc":
-		        description = "Works with Logistics and Shipping (LSH) - Outward Bound Cargo (OBC).";
-		        break;
-		    default:
-		        description = "Default description for the skill.";
-		}
-
-		// Add a timestamp to the description
-		String uniqueDescription = description + " - " + System.currentTimeMillis();
-		fakeEmployee.setSkillCodeDesc(uniqueDescription);
-
-		
-		fakeEmployee.setFirstName(fakeData.name().firstName());
-		fakeEmployee.setDescription(fakeData.lorem().sentence()); 
-		fakeEmployee.setDocumentName("Medical Report"); 
-		fakeEmployee.setMiddleName(fakeData.name().firstName());
-		fakeEmployee.setLastName(fakeData.name().lastName());
-		// For AlphaNumeric value
-		//	fakeEmployee.setEmpNumber(UUID.randomUUID().toString());
-		//	fakeEmployee.setBadgeNumber(UUID.randomUUID().toString().substring(0, 8).toUpperCase()); //"BADGE_" +
-
-		// For Numeric value
-		fakeEmployee.setEmpNumber(generateNumericString(8));
-		fakeEmployee.setBadgeNumber(generateNumericString(8));
-		fakeEmployee.setDisplayName(fakeData.name().fullName());
-		// Set date of birth (DOB) at least 20 years ago and Generate a random date between minDOB (inclusive) and maxDOB (inclusive)
-		LocalDate minDOB = LocalDate.of(1990, 1, 1);
-		LocalDate maxDOB = LocalDate.of(2004, 12, 31);
-		LocalDate randomDOB = minDOB.plusDays(new Random().nextInt((int) (maxDOB.toEpochDay() - minDOB.toEpochDay()) + 1));
-		fakeEmployee.setDOB(randomDOB.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		fakeEmployee.setAddress(fakeData.address().streetAddress());
-		fakeEmployee.setCity(fakeData.address().city());
-		fakeEmployee.setState(fakeData.address().state());
-		fakeEmployee.setPostCode(fakeEmployee.generateFakePostalCode());
-		fakeEmployee.setMobileNumber(fakeData.phoneNumber().cellPhone());
-		fakeEmployee.setPhoneNumber(fakeData.phoneNumber().cellPhone());
-		fakeEmployee.setEmail(fakeData.internet().emailAddress());
-		// Set the minimum hire date (2 years ago from the current date)
-		LocalDate hireDate = LocalDate.now().minusYears(2);
-		fakeEmployee.setHireDate(hireDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Set probation expiry date (hire date + 90 days)
-		LocalDate probationExpiryDate = LocalDate.parse(fakeEmployee.getHireDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).plusDays(90);
-		fakeEmployee.setProbationExpirydate(probationExpiryDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for WorkFlowStartDate (2 months after the current date)
-		LocalDate startDate = LocalDate.now().plusMonths(2);
-		fakeEmployee.setWorkFlowStartDate(startDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for WorkFlowEndDate (4 months after the current date)
-		LocalDate endDate = LocalDate.now().plusMonths(4);
-		fakeEmployee.setWorkFlowEndDate(endDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for SkillStartDate (2 months after the current date)
-		LocalDate skillStartDate = LocalDate.now().plusMonths(2);
-		fakeEmployee.setSkillStartDate(skillStartDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for SkillEndDate (between 3 to 6 months after the current date)
-		LocalDate skillEndDate = LocalDate.now().plusMonths(3 + new Random().nextInt(4)); // Random number between 3 and 6
-		fakeEmployee.setSkillEndDate(skillEndDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		 // Set termination date after 3 months from the skill end date
-        LocalDate terminationDate = skillEndDate.plusMonths(3);
-        fakeEmployee.setTerminatedDate(terminationDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-
-     // Add a timestamp to the holidayName for uniqueness
-        String uniqueHolidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
-        fakeEmployee.setHolidayName(uniqueHolidayName);
-
-     // Add a timestamp to the holidayDate for uniqueness
-        String uniqueHolidayDate = LocalDateTime.now().toString();
-        fakeEmployee.setHolidayDate(uniqueHolidayDate);
-        
-        // Set holidayNote with a random fake sentence
-        fakeEmployee.setHolidayNote(fakeData.lorem().sentence());
-
-		//		fakeEmployee.setDesignation(fakeData.job().position());
-		//		fakeEmployee.setInterests(fakeData.internet().domainWord());
-
-	}
-	private String generateNumericString(int length) {
-		Random random = new Random();
-		StringBuilder numericString = new StringBuilder();
-		for (int i = 0; i < length; i++) {
-			numericString.append(random.nextInt(10)); // Append a random digit (0-9)
-		}
-		return numericString.toString();
 	}
 
 }

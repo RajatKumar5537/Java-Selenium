@@ -940,8 +940,10 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	private void goToNextPageAndUpdate() throws InterruptedException {
 		try {
-			scrollAndClick(driver, nextPage); // Click on the next page button
-			scrollUp(driver);
+			webUtility.scrollAndClick(driver, nextPage);
+//			scrollAndClick(driver, nextPage); // Click on the next page button
+//			scrollUp(driver);
+			webUtility.scrollUp(driver);
 			updateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
@@ -963,14 +965,16 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		}
 
 		// If no enabled checkbox found on the current page, go to the next page and try again
-		if (checkboxFound) {
+		if (!checkboxFound) {
 			goToNextPageAndReactivate();
 		}
 	}
 	private void goToNextPageAndReactivate() throws InterruptedException {
 		try {
-			scrollAndClick(driver, nextPage); // Click on the next page button
-			scrollUp(driver);
+			webUtility.scrollAndClick(driver, nextPage);
+//			scrollAndClick(driver, nextPage);
+			webUtility.scrollUp(driver);
+//			scrollUp(driver);
 			reactivateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
@@ -1015,6 +1019,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		btnSaveExcludedSkill.click();
 	}
 	public void clickonTabDisciplinary() {
+		webUtility.ElementClickable(driver, tabDisciplinary);
 		webUtility.moveToElement(driver, tabDisciplinary);
 		tabDisciplinary.click();
 	}
@@ -1050,12 +1055,12 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	
 	public void clickonIsEmployeeTerminated() throws InterruptedException {
-		Thread.sleep(2000);
+		webUtility.ElementClickable(driver, chkIsEmployeeTerminated);
 		webUtility.moveToElement(driver, chkIsEmployeeTerminated);
 		chkIsEmployeeTerminated.click();
 	}
 	public void clickonBtnYes() throws InterruptedException {
-		Thread.sleep(2000);
+		webUtility.ElementClickable(driver, btnYes);
 		webUtility.moveToElement(driver, btnYes);
 		btnYes.click();
 	}
@@ -1118,8 +1123,10 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 
 	private void goToNextPageAndDelete() throws InterruptedException {
 		try {
-			scrollAndClick(driver, nextPage); // Click on the next page button
-			scrollUp(driver);
+			webUtility.scrollAndClick(driver, nextPage);
+//			scrollAndClick(driver, nextPage); 
+			webUtility.scrollUp(driver);
+//			scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
@@ -1357,7 +1364,7 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		getEmployeeProfilecreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
-	public void terminateEmpProfile() throws Exception {
+	public void terminateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickonBtnEdit();
 		Thread.sleep(15000);
 		clickonTabDisciplinary();
@@ -1369,18 +1376,11 @@ public class EmpAdmEmployeeProfilePage extends BaseClass{
 		        enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
 		        entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
 		        pressBtnSaveEmployee();
-		        // Uncomment the line below if there is a notification popup
 		        // clickNotificationPopup();
 		    } else {
 		        System.out.println("Employee is already terminated.");
 		    }
 		
-//		clickonIsEmployeeTerminated();
-//		clickonBtnYes();
-//		enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
-//		entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
-//		pressBtnSaveEmployee();
-		//		clickNotificationPopup();
 	}
 	public void deleteEmpProfile() throws Exception {
 		deleteRowsWithEnabledCheckbox();

@@ -6,7 +6,6 @@ import java.io.File;
 import java.time.Duration;
 import java.util.Iterator;
 import java.util.Set;
-
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -24,43 +23,41 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 public class WebUtilities extends BaseClass{
 	
 	private WebDriver driver;
+	
 
     public WebUtilities(WebDriver driver) {
         this.driver = driver;
     }
-	/**
-	 * 
-	 * @param driver
-	 */
+    public void scrollDown(WebDriver driver) {
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("window.scrollBy(0, 500);"); // Adjust the scroll distance as needed
+    }
+
+    public void scrollAndClick(WebDriver driver, WebElement element) {
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		// Scroll to the top of the page
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		element.click();
+	}
+    public void scrollUp(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+	}
 	public void maximizeBrowser(WebDriver driver) {
 
 		driver.manage().window().maximize();
 	}
 
-	/**
-	 * 
-	 * @param driver
-	 * @param sec
-	 */
 	public void pageLoadWait(WebDriver driver,int sec) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(sec));
 	}
 
-	/**
-	 * 
-	 * @param driver
-	 * @param i
-	 * @param element
-	 * @throws Exception 
-	 */
 	public void ElementClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));		
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(70));		
 		wait.until(ExpectedConditions.elementToBeClickable(element));
 		
 	}
-	
-	
-	
 	public void visibilityOfElement(WebDriver driver,WebElement element) throws Exception {
 		Duration waitTime = Duration.ofSeconds(10);
 		
@@ -82,107 +79,52 @@ public class WebUtilities extends BaseClass{
 	}
 
 
-	/**
-	 * 
-	 * @param element
-	 * @param index
-	 */
 	public void fromDropDown(WebElement element,int index) {
 
-		Select sel=new Select(element);
-		sel.selectByIndex(index);
+		Select select=new Select(element);
+		select.selectByIndex(index);
 	}
-	/**
-	 * 
-	 * @param element
-	 * @param value
-	 */
 	public void fromDropDown(WebElement element,String value) {
 
-		Select sel=new Select(element);
-		sel.selectByValue(value);
+		Select select=new Select(element);
+		select.selectByValue(value);
 	}
 
-	/**
-	 * 
-	 * @param visibletext
-	 * @param element
-	 */
 	public void fromDropDown(String visibletext,WebElement element) {
 
-		Select sel=new Select(element);
-		sel.selectByVisibleText(visibletext);
+		Select select=new Select(element);
+		select.selectByVisibleText(visibletext);
 	}
-
-	/**
-	 * 
-	 * @param driver
-	 * @param element
-	 */
 	public void rightClickOnElement(WebDriver driver,WebElement element) {
-
-		Actions a= new Actions(driver);
-		a.contextClick(element).perform();
+		Actions action=new Actions(driver);
+		action.contextClick(element).perform();
 	}
-	/**
-	 * 
-	 * @param driver
-	 * @param element
-	 */
 	public void doubleClickOnElement(WebDriver driver,WebElement element) {
-		Actions a=new Actions(driver);
-		a.doubleClick(element).perform();
+		Actions action=new Actions(driver);
+		action.doubleClick(element).perform();
 
 	}
-	/**
-	 * 
-	 * @param driver
-	 * @param element
-	 */
 	public void moveToElement(WebDriver driver,WebElement element) {
-
-		Actions a=new Actions(driver);
-		a.moveToElement(element).perform();;
+		Actions action=new Actions(driver);
+		action.moveToElement(element).perform();;
 
 	}
-	/**
-	 * 
-	 * @param driver
-	 */
 	public void doubleClick(WebDriver driver) {
-		Actions a=new Actions(driver);
-		a.doubleClick().perform();
+		Actions action=new Actions(driver);
+		action.doubleClick().perform();
 
 	}
-	/**
-	 * 
-	 * @param driver
-	 */
 	public void rightClick(WebDriver driver) {
-		Actions a=new Actions(driver);
-		a.contextClick().perform();
+		Actions action=new Actions(driver);
+		action.contextClick().perform();
 	}
-
-	/**
-	 * 
-	 * @param driver
-	 * @param source
-	 * @param target
-	 */
 	public void dragAndDropElement(WebDriver driver,WebElement source,WebElement target) {
-		Actions a= new Actions(driver);
-		a.dragAndDrop(source, target).perform();
+		Actions action= new Actions(driver);
+		action.dragAndDrop(source, target).perform();
 	}
-
-	/**
-	 * 
-	 * @param driver
-	 * @param x
-	 * @param y
-	 */
 	public void moveByOffset(WebDriver driver,int x,int y) {
-		Actions a= new Actions(driver);
-		a.moveByOffset(x, y).click().perform();
+		Actions action= new Actions(driver);
+		action.moveByOffset(x, y).click().perform();
 
 	}
 	/**

@@ -1,11 +1,15 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.RosterSetupPage;
@@ -23,7 +27,7 @@ public class ShiftBandTest extends BaseClass{
 
 	@BeforeMethod
 	public void setUp() throws Exception {
-		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
@@ -32,12 +36,19 @@ public class ShiftBandTest extends BaseClass{
 		shiftBand = new SystemDefinationShiftBandPage(driver);
 
 		homePage.setOrgUnit();
+		orgUnit.clickOLMop();
+		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setCreateRoasterShiftBand();
 
 	}
-
+	//	@AfterMethod
+	//	public void tearDown() throws IOException {
+	//		// Add logic to navigate back to the home URL
+	//		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+	//		driver.navigate().to(homeUrl);
+	//	}
 	@Test(priority = 1)
 	public void testCreateShiftBand() throws Exception {
 		captureScreenshot(driver, "shiftBandTest");

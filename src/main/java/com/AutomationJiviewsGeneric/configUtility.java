@@ -11,7 +11,7 @@ public class configUtility {
 	 * @return
 	 * @throws IOException
 	 */
-	public String getCongigPropertyData(String key) throws IOException
+	public static String getCongigPropertyData(String key) throws IOException
 	{
 		FileInputStream fis=new FileInputStream("./Configure/jiviLoginCredential.properties");
 		Properties prop=new Properties();

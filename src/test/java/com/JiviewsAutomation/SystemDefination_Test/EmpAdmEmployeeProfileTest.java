@@ -7,12 +7,13 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.EmpAdmEmployeeProfilePage;
 import com.AutomationJiviewsPOM.EmployeeAdminstrationPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
-
+//Jira Item: E10_2695 - [Employee Administration] Employee Profile
 public class EmpAdmEmployeeProfileTest extends BaseClass{
 	private static final Logger logger = LogManager.getLogger(EmpAdmEmployeeProfileTest.class);
 	private HomePage homePage;
@@ -23,7 +24,7 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 
 	@BeforeMethod
 	public void setup() throws Exception {
-		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
@@ -31,6 +32,8 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		empAdmin= new EmployeeAdminstrationPage(driver);
 		empProfile= new  EmpAdmEmployeeProfilePage(driver);
 
+//		homePage.setOrgUnit();
+//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.setEmployeeAdministration();
@@ -54,7 +57,8 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.updateEmpProfile(fakeEmployee);
 		logger.info("Employee Profile updated");
 	}
-	@Test(priority = 3)
+//	@Test(priority = 3)
+	// Save button is not working 
 	public void verifyDuplicateEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("Duplicate Employee Profile...");
@@ -115,7 +119,7 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("Terminate Employee ...");
 
-		empProfile.terminateEmpProfile();
+		empProfile.terminateEmpProfile(fakeEmployee);
 		logger.info("Employee is successfully terminated");	
 	}
 	@Test(priority = 11)

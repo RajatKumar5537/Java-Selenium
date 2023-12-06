@@ -6,6 +6,7 @@ import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -88,80 +89,18 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	private List<WebElement> rosterCreationDays;
 	@FindBy(xpath = "//div[@style='text-align:center']")
 	private List<WebElement> rosterCreationDaysFillUp;
-	
-	@FindBy(xpath = "//*[@id=\"dpRosterPattern\"]/div[3]/div/div/div/div/div/div")
+
+	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div/div/div/div/div/div")
 	private List<WebElement> fillCells;
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div")
+	@FindBy(xpath = "//div[text()='Off']/..")
 	private List<WebElement> emptyCells;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[2]")
-	private WebElement rosterCreation2ndDay;//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[3]
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[3]")
-	private WebElement rosterCreation3rdDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[4]")
-	private WebElement rosterCreation4thDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[5]")
-	private WebElement rosterCreation5thDay;
-
-	// Group B
-	@FindBy(xpath = "(//div[text()='Off']/..)[6]")
-	private WebElement rosterCreation6thDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[7]")
-	private WebElement rosterCreation7thDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[8]")
-	private WebElement rosterCreation8thDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[9]")
-	private WebElement rosterCreation9thDay;
-
-	@FindBy(xpath = "(//div[text()='Off']/..)[10]")
-	private WebElement rosterCreation10thDay;
-
-	//	//	// Employee 
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[11]")
-	private WebElement rosterCreation11thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[15]")
-	private WebElement rosterCreation12thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[19]")
-	private WebElement rosterCreation13thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[23]")
-	private WebElement rosterCreation14thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[27]")
-	private WebElement rosterCreation15thDay;
-
-	//	//	// Employee 2
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[4]")
-	private WebElement rosterCreation16thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[8]")
-	private WebElement rosterCreation17thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[12]")
-	private WebElement rosterCreation18thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[16]")
-	private WebElement rosterCreation19thDay;
-
-	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div[3]/div/div[2]/div[20]")
-	private WebElement rosterCreation20thDay;
 
 	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
 	private WebElement 	bandCode;
 
-
 	// in Band code search box need the select one shift from drop down box
 	@FindBy(xpath = "(//li[contains(text(),'1st  Shift ')])[2]")
 	private WebElement selectBandCode;
-
 
 	@FindBy(xpath = "//button[@id='btnSelectShiftBand']")
 	private WebElement btnSaveSelectShiftBandBtn;
@@ -190,38 +129,31 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
 	private WebElement notificationPopup;
 
-	@FindBy(xpath = "//button[@id='btnPublishRosterPattern']/span")
+	@FindBy(xpath = "//button[@id='btnPublishRosterPattern']")
 	private WebElement btnPublishRosterPattern;
 
 
 
 	//	@FindBy(xpath = "//input[@id='dtPublishFrom1130']")
-	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr/td[5]")
+	@FindBy(xpath = "//input[@class='form-control form-label-sm bootstrap-datepicker roster-pattern-from']")
 	private WebElement txtPublishFrom;
 
-	@FindBy(xpath = "//div[@class='datepicker-days']/table/tbody/tr[2]/td[2]")
-	private WebElement dropDownCalenderRoster;
-
-
-	// 13/Nov/2023 for 
-	@FindBy(xpath = "//div[@class='datepicker-days']/table/tbody/tr[3]/td[2]")
-	private WebElement dropDownCalenderRosterUp;
-
-	@FindBy(xpath = "//table[@id=\"extract-shift-list\"]/tbody/tr/td[5]")
-	private WebElement dropDownCalenderEmp;
-
-
 	//	@FindBy(xpath = "//input[@id='txtNoOfBlocks1130']")
-	@FindBy(xpath = "(//table[@id='extract-shift-list']/tbody/tr/td[6]/input)[1]")
+	@FindBy(xpath = "//input[@class='form-control roster-pattern-blocks']")
 	private WebElement txtNoOfBlock;
 
-	@FindBy(xpath = "(//td[@class='sorting_1']/input)[1]")
-	private WebElement checkBoxPublishRoster;
+//	@FindBy(xpath = "(//td[@class='sorting_1']/input)[1]")
+//	private WebElement checkBoxPublishRoster;
+
+	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr")
+	private List<WebElement> rows;
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkBoxPublishRosterMulti;
 
 	@FindBy(xpath = "(//td[@class='sorting_1']/input)[2]")
 	private WebElement checkBoxPublishRoster2;
 
-	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']/span")
+	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
 	private WebElement btnSaveTemplateRoster;
 
 	@FindBy(xpath = "//button[text()='Publish Now']")
@@ -244,7 +176,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Is Active?']")
 	private WebElement checkBoxActive;
-	
+
 	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
 	private WebElement rosterUpdateNotification;
 
@@ -272,29 +204,30 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDayTxt.clear();
 		noOfDayTxt.sendKeys(noOfDay);
 	}
-
 	// scroll down the page and select single roster group from  availble roaster group
 	public void setAvailableSkillForSingleRoster() {
 		action.scrollToElement(availableSkill).perform();
-		availableSkill.click();
+		//		availableSkill.click();
 		select=new Select(availableSkill);
 		select.selectByIndex(0);	
+		//		select.selectByVisibleText("8689");
 	}
 	// scroll down the page and select single Employee group from  availble Emp group
 	public void setAvailableSkillForSingleEmp() {
 		action.scrollToElement(availableSkill).perform();
-		availableSkill.click();
+		//		availableSkill.click();
 		select=new Select(availableSkill);
 		select.selectByIndex(0);	
 	}
-
-
 	//move a singel Roaster/Emp from available Roaster/Emp group to selected roaster group 
 	public void setAvailableSingleGroupMoveToSelectedGrp() {
 		action.moveToElement(selectMoveSingle).perform();
 		selectMoveSingle.click();
 	}
-
+	public void setSelectMoveAll() {
+		action.moveToElement(selectMoveSingle).perform();
+		selectMoveAll.click();
+	}
 	public void setSaveBtn() {
 		saveBtn.click();
 	}
@@ -308,93 +241,11 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		rosterCreation1stDay.click();
 	}
 
-	public void setRosterCreation2ndDay() {
-		action.moveToElement(rosterCreation2ndDay).perform();
-		rosterCreation2ndDay.click();
-	}
-
-	public void setRosterCreation3rdDay() {
-		action.moveToElement(rosterCreation3rdDay).perform();
-		rosterCreation3rdDay.click();
-	}
-
-	public void setRosterCreation4thDay() {
-		action.moveToElement(rosterCreation4thDay).perform();
-		rosterCreation4thDay.click();
-	}
-	public void setrosterCreation5thDay() {
-		action.moveToElement(rosterCreation5thDay).perform();
-		rosterCreation5thDay.click();
-	}
-
-	public void setrosterCreation6thDay() {
-		action.moveToElement(rosterCreation6thDay).perform();
-		rosterCreation6thDay.click();
-	}
-
-	public void setrosterCreation7thDay() {
-		action.moveToElement(rosterCreation7thDay).perform();
-		rosterCreation7thDay.click();
-	}
-	public void setrosterCreation8thDay() {
-		action.moveToElement(rosterCreation8thDay).perform();
-		rosterCreation8thDay.click();
-	}
-	public void setrosterCreation9thDay() {
-		action.moveToElement(rosterCreation9thDay).perform();
-		rosterCreation9thDay.click();
-	}
-	public void setrosterCreation10thDay() {
-		action.moveToElement(rosterCreation10thDay).perform();
-		rosterCreation10thDay.click();
-	}
-	private void fillTable() throws Exception {
-	    int workingDays = 5; // Adjust this based on your requirement
-
-	    int rowCount = 0;
-	    int columnCount = 0;
-
-	    for (WebElement fillCell : fillCells) {
-	        System.out.println("Row: " + rowCount + ", Column: " + columnCount);
-
-	        if (rowCount > 0 && columnCount > 0) {
-	            WebElement emptyCell = emptyCells.get(rowCount * (workingDays - 1) + columnCount - 1);
-
-	            // Check if the emptyCell is enabled
-	            if (emptyCell.isEnabled()) {
-	                System.out.println("Filling empty cell: " + emptyCell.getText());
-	                // Perform your actions (setBandCode, setSelectBandCode, setBtnSaveSelectShiftBandBtn)
-	                setBandCode();
-	                setSelectBandCode();
-	                setBtnSaveSelectShiftBandBtn();
-	            } else {
-	                System.out.println("Empty cell not available. Skipping to next cell.");
-	            }
-
-	            // Press Enter to move to the next cell
-	            fillCell.sendKeys(Keys.ENTER);
-	        }
-
-	        columnCount++;
-
-	        if (columnCount > workingDays - 1) {
-	            columnCount = 0;
-	            rowCount++;
-	        }
-
-	        if (rowCount >= workingDays) {
-	            break;
-	        }
-	    }
-	}
-
-
 	public void setBandCode() throws InterruptedException {
-//		Thread.sleep(2000);
+		//		Thread.sleep(2000);
 		action.moveToElement(bandCode).perform();
 		bandCode.click();
 	}
-
 	public void setSelectBandCode() {
 		action.moveToElement(selectBandCode).perform();
 		selectBandCode.click();
@@ -404,8 +255,6 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		Thread.sleep(2000);
 		btnSaveSelectShiftBandBtn.click();
 	}
-
-
 	public void setBtnAddEmployee() {
 		action.moveToElement(btnAddEmployee).perform();
 		btnAddEmployee.click();
@@ -414,7 +263,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	public void setAvailableEmpTable() throws InterruptedException {
 		Thread.sleep(2000);
 		action.moveToElement(availableEmpTable).perform();
-//		availableEmpTable.click();
+		//		availableEmpTable.click();
 		select= new Select(availableEmpTable);
 		select.selectByIndex(0);
 	}
@@ -450,6 +299,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	}
 
 	public void setBtnAddSaveRosterPattern() {
+		webUtility.moveToElement(driver, btnAddSaveRosterPattern);
 		btnAddSaveRosterPattern.click();
 	}
 	public void setBtnPublishRosterPattern() throws InterruptedException {
@@ -457,28 +307,14 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		Thread.sleep(2000);
 		btnPublishRosterPattern.click();
 	}
-	public void setDropDownCalender() {
-		txtPublishFrom.click();
-		action.scrollToElement(dropDownCalenderRoster).perform();
-		dropDownCalenderRoster.click();
-	}
 
-	public void setDropDownCalenderRosterUp() {
-		txtPublishFrom.click();
-		action.scrollToElement(dropDownCalenderRosterUp).perform();
-		dropDownCalenderRosterUp.click();
-	}
-	public void setDropDownCalenderEmp() {
-		txtPublishFrom.click();
-		action.scrollToElement(dropDownCalenderEmp).perform();
-		dropDownCalenderEmp.click();
+	public void setDropDownCalenderRosterUp(String PublishFrom) {
+		txtPublishFrom.clear();
+		txtPublishFrom.sendKeys(PublishFrom);
+		txtPublishFrom.sendKeys(Keys.ENTER);
 	}
 	public void setTxtNoOfBlock(String noOfBlocks) {
 		txtNoOfBlock.sendKeys(noOfBlocks);
-	}
-
-	public void setCheckBoxPublishRoster() {
-		checkBoxPublishRoster.click();
 	}
 
 	public void setCheckBoxPublishRoster2() {
@@ -509,8 +345,96 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		action.moveToElement(checkBoxActive).perform();
 		checkBoxActive.click();
 	}
+	public void enterEmptyCell(int daysToAdd, int totalRows, int columnsPerRow) throws Exception {
+		int totalCells = emptyCells.size();
+
+		try {
+			for (int i = 0; i < totalCells; i++) {
+				WebElement emptyCell = emptyCells.get(i);
+				String off = emptyCell.getText();
+
+				// Calculate the column index based on the current iteration
+				double columnIndex = (double) i % columnsPerRow;
+
+				// Calculate the row index based on the current iteration
+				int rowIndex = i / columnsPerRow;
+
+				// Check if the current cell is within the specified days to add and within the valid rows
+				if ((int) columnIndex < daysToAdd && rowIndex < totalRows && off.equalsIgnoreCase("Off") && emptyCell.isEnabled()) {
+					// Perform actions if "Off" and the cell is enabled
+					Thread.sleep(2000);
+					emptyCell.click();
+					setBandCode();
+					setSelectBandCode();
+					setBtnSaveSelectShiftBandBtn();
+				} else {
+					// Perform actions if not "Off" or the cell is disabled
+					emptyCell.sendKeys(Keys.ENTER);
+				}
+			}
+		} catch (Exception e) {
+			// Handle the exception, log it, or take appropriate action
+			e.printStackTrace();
+		}
+	}
+
+	/*public void performActionsOnCheckboxes() throws InterruptedException {
+	    // Get the size of the list
+	    int size = checkBoxPublishRosterMulti.size();
+
+	    // Loop through the checkboxes
+	    for (int i = 0; i < size; i++) {
+	        // Check if the checkbox is enabled
+	        if (checkBoxPublishRosterMulti.get(i).isEnabled()) {
+	            // Check the checkbox if it's not already checked
+	            if (!checkBoxPublishRosterMulti.get(i).isSelected()) {
+	                checkBoxPublishRosterMulti.get(i).click();
+	                Thread.sleep(3000);
+	            }
+
+	            // Perform actions after checking the checkbox
+	            setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
+	            setTxtNoOfBlock(noOfBlocks);
+	        }
+	    }
+
+	    // Perform save actions after processing all checkboxes
+	    setBtnSaveTemplateRoster();
+	    setBtnPublishNow();
+	}*/
+	public void performActionsOnCheckboxes() {
+	    // Check if the first checkbox is enabled
+	    if (checkBoxPublishRosterMulti.size() > 0 && isElementEnabled(checkBoxPublishRosterMulti.get(0))) {
+	        // Check the first checkbox if it's not already checked
+	        if (!checkBoxPublishRosterMulti.get(0).isSelected()) {
+	            checkBoxPublishRosterMulti.get(0).click();
+	        }
+
+	        // Check if setDropDownCalenderRosterUp is enabled
+	        if (isElementEnabled(txtPublishFrom)) {
+	            setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
+	        }
+
+	        // Check if setTxtNoOfBlock is enabled
+	        if (isElementEnabled(txtNoOfBlock)) {
+	            setTxtNoOfBlock(noOfBlocks);
+	        }
+	    }
+
+	    // Perform save actions after processing the first checkbox
+	    setBtnSaveTemplateRoster();
+	    setBtnPublishNow();
+	}
+	// Function to check if an element is enabled
+	private boolean isElementEnabled(WebElement element) {
+	    try {
+	        return element.isEnabled();
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+
 	public void setCreateRoasterwithGroup() throws Exception {
-		//		sdrs= new SystemDefinationRosterCreationPage(driver);
 		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
@@ -520,75 +444,36 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 		setAddBtn();
 		//		Thread.sleep(2000);
-		setTemplateNameTxt(tampName+ " "+ timeStamp);
-		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
+		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
 		setAvailableSkillForSingleRoster();
 		setAvailableSingleGroupMoveToSelectedGrp();
 		setSaveBtn();
-		Thread.sleep(2000);
-
-		setRosterCreation1stDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-
-		setRosterCreation2ndDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-
-		setRosterCreation3rdDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		setRosterCreation4thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		setrosterCreation5thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
+		enterEmptyCell(6,2,7);
 		Thread.sleep(2000);
 		setBtnAddSaveRosterPattern();
 		setNotificationPopup();
 		Thread.sleep(2000);
-		
-
 		// Add Employee
-				setBtnAddEmployee();
-				Thread.sleep(2000);
-				setAvailableEmpTable();
-				setBtnMoveFromAvailable();
-				setBtnSaveRosterTemplateEmployee();
+		//				setBtnAddEmployee();
+		//				Thread.sleep(2000);
+		//				setAvailableEmpTable();
+		//				setBtnMoveFromAvailable();
+		//				setBtnSaveRosterTemplateEmployee();
 		//
-		//		// Add Roster group
-//				Thread.sleep(2000);
-//				setBtnAddRosterGroups();
-//				Thread.sleep(2000);
-//				setAvailableRosterGroup();
-//				setAvailableSingleSkillMoveToSelectedSkill();
-//				setBtnSaveRosterTemplateRosterGroups();
-				
-				setBtnPublishRosterPattern() ;
-				setDropDownCalender();
-				setTxtNoOfBlock(noOfBlocks);
-				setCheckBoxPublishRoster();
-				setBtnSaveTemplateRoster();
-				setBtnPublishNow();
-		//		
+		// Add Roster group
+		//				Thread.sleep(2000);
+		//				setBtnAddRosterGroups();
+		//				Thread.sleep(2000);
+		//				setAvailableRosterGroup();
+		//				setAvailableSingleSkillMoveToSelectedSkill();
+		//				setBtnSaveRosterTemplateRosterGroups();
+
+		setBtnPublishRosterPattern() ;
+		performActionsOnCheckboxes();
 	}
-
-
 	public void setCreateRoasterwithEmployee() throws Exception {
-		timeStamp = LocalDateTime.now().toString();
-
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
@@ -596,109 +481,36 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(1000);
-		setTemplateNameTxt(tampName+ " "+ timeStamp);
-		Thread.sleep(1000);
-		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
+		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
 		setBtnByEmp();
-		Thread.sleep(1000);
 		setAvailableSkillForSingleEmp();
 		setAvailableSingleGroupMoveToSelectedGrp();
-		Thread.sleep(2000);
 		setSaveBtn();
-
-
-
+		enterEmptyCell(6,3,7);
 		Thread.sleep(2000);
-		setRosterCreation1stDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		setRosterCreation2ndDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		//		Thread.sleep(2000);
-
-		setRosterCreation3rdDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		setRosterCreation4thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		setrosterCreation5thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-
 		setBtnAddSaveRosterPattern();
 		setNotificationPopup();
-		Thread.sleep(2000);
-		setBtnPublishRosterPattern() ;
-		Thread.sleep(2000);
-		setDropDownCalender();
-		setTxtNoOfBlock(noOfBlocks);
-		setCheckBoxPublishRoster();
-		setBtnSaveTemplateRoster();
-		setBtnPublishNow();
+		setBtnPublishRosterPattern();
+		performActionsOnCheckboxes();
 
 	}
 	public void setCreateRoasterwithRosterAndEmp() throws Exception {
-		sdrs= new SystemDefinationRosterCreationPage(driver);
-		timeStamp = LocalDateTime.now().toString();
-
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
 		setAddBtn();
-		Thread.sleep(2000);
-		setTemplateNameTxt(tampName+ " "+ timeStamp);
-//		Thread.sleep(2000);
-		setTempDescriptionTxt(tempDescription+ " "+ timeStamp);
+		Thread.sleep(1000);
+		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
+		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
 		setAvailableSkillForSingleRoster();
 		setAvailableSingleGroupMoveToSelectedGrp();
 		setSaveBtn();
-		Thread.sleep(2000);
-		setRosterCreation1stDay();
-		Thread.sleep(2000);
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-
-		setRosterCreation2ndDay();
-		Thread.sleep(2000);
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-		setRosterCreation3rdDay();
-		Thread.sleep(2000);
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-		setRosterCreation4thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-////		fillTable();
-		setrosterCreation5thDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-
-		
+		enterEmptyCell(6,3,7);
 		//	Add Employee
 		Thread.sleep(2000);
 		setBtnAddEmployee();
@@ -706,42 +518,10 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setAvailableEmpTable();
 		setBtnMoveFromAvailable();
 		setBtnSaveRosterTemplateEmployee();
-		
-		
-
-		Thread.sleep(2000);
-		setRosterCreation2ndDay();
-		setBandCode();
-		setSelectBandCode();
-		setBtnSaveSelectShiftBandBtn();
-		Thread.sleep(2000);
-
-//		setRosterCreation4thDay();
-//		setBandCode();
-//		setSelectBandCode();
-//		Thread.sleep(2000);
-//		setBtnSaveSelectShiftBandBtn();
-//
-//		setrosterCreation6thDay();
-//		setBandCode();
-//		setSelectBandCode();
-//		Thread.sleep(2000);
-//		setBtnSaveSelectShiftBandBtn();
-//
-//		setrosterCreation8thDay();
-//		setBandCode();
-//		setSelectBandCode();
-//		setBtnSaveSelectShiftBandBtn();
-
-//		setBtnAddSaveRosterPattern();
-//		setNotificationPopup();
-//		Thread.sleep(2000);
-//		setBtnPublishRosterPattern() ;
-//		setDropDownCalender();
-//		setTxtNoOfBlock(noOfBlocks);
-//		setCheckBoxPublishRoster();
-//		setBtnSaveTemplateRoster();
-//		setBtnPublishNow();
+		setBtnAddSaveRosterPattern();
+		setNotificationPopup();
+		setBtnPublishRosterPattern();
+		performActionsOnCheckboxes();
 	}
 
 
@@ -752,11 +532,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		//		Thread.sleep(2000);
 		setEditBtn();
 		setBtnPublishRosterPattern() ;
-		setDropDownCalenderRosterUp();
-		setTxtNoOfBlock(noOfBlocks);
-		setCheckBoxPublishRoster();
-		setBtnSaveTemplateRoster();
-		setBtnPublishNow();
+		performActionsOnCheckboxes();
 	}
 	public void setDeactiveRoster() {
 		sdrs= new SystemDefinationRosterCreationPage(driver);
@@ -771,5 +547,28 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setEditBtn();
 		setCheckBoxActive();
 		setBtnAddSaveRosterPattern();
+	}
+
+	public void setMoveAllAndPublishAll() throws Exception {
+		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
+		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
+		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
+		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
+
+		setAddBtn();
+		//		Thread.sleep(2000);
+		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
+		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
+		setNoOfDayTxt(noOfDay);
+		setAvailableSkillForSingleRoster();
+		setAvailableSingleGroupMoveToSelectedGrp();
+		setSaveBtn();
+		//		enterEmptyCell(6,2,7);
+		setBtnAddSaveRosterPattern();
+		Thread.sleep(20000);
+		setNotificationPopup();
+		Thread.sleep(2000);
+		setBtnPublishRosterPattern() ;
+		performActionsOnCheckboxes();
 	}
 }

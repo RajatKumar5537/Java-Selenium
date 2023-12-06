@@ -3,6 +3,9 @@ package com.JiviewsAutomation.SystemDefination_Test;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -14,7 +17,7 @@ import com.AutomationJiviewsPOM.SystemDefinationRosterCreationPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class roasterSetupTest extends BaseClass{
-	private static final Logger logger = LogManager.getLogger(skillSetUpTest.class);
+	private static final Logger logger = LogManager.getLogger(roasterSetupTest.class);
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
@@ -87,4 +90,12 @@ public class roasterSetupTest extends BaseClass{
 		rosterCreation.setCreateRoasterwithRosterAndEmp();
 		logger.info("Roaster with Roster Group and Employee is successful");
 	}
+	
+//	@Test
+//	public void verifyMoveAllAndPublishAll()throws Exception {
+//		captureScreenshot(driver, "roasterSetupTest");
+//
+//		rosterCreation.setMoveAllAndPublishAll();
+//		logger.info("Roaster with Roster Group and Employee is successful");	
+//	}
 }

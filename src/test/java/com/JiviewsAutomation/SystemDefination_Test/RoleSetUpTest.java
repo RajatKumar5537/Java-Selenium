@@ -1,7 +1,10 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
+import java.io.IOException;
+
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -30,11 +33,18 @@ public class RoleSetUpTest extends BaseClass{
 		empSetup = new EmployeeSetupPage(driver);
 		roleSetup = new SystemDefinationRoleSetupPage(driver);
 
+//		homePage.setOrgUnit();
+//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 		empSetup.setCreateRole();
 	}
+//	@AfterMethod
+//	public void tearDown() throws IOException {
+//		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+//		driver.navigate().to(homeUrl);
+//	}
 
 	@Test(priority = 1)
 	public void verifyCreateNewRole() throws Exception {
@@ -53,7 +63,7 @@ public class RoleSetUpTest extends BaseClass{
 		logger.info("Verify Update Role successful");
 	}
 
-	@Test(priority = 3, dependsOnMethods = "verifyUpdateRole")
+	@Test(priority = 3)//, dependsOnMethods = "verifyUpdateRole")
 	public void verifyDeactiveRole() throws Exception{
 		captureScreenshot(driver, "roleSetUpTest");
 

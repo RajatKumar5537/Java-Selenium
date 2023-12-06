@@ -14,7 +14,8 @@ public class EmployeeAdminstrationPage extends BaseClass{
 	
 	@FindBy(xpath ="//div[text()='Employee Profile']/.." )
 	private WebElement employeeProfile;
-	
+	@FindBy(xpath = "//div[text()='Roster Group Assignment']/..")
+	private WebElement rosterGroupAssignment;
 	
 	
 	
@@ -31,11 +32,17 @@ public class EmployeeAdminstrationPage extends BaseClass{
 	public void clickEmployeeProfile() {
 		employeeProfile.click();
 	}
-	
+	public void clickonRosterGroupAssignment() {
+		rosterGroupAssignment.click();
+	}
 	
 	
 	public void setEmployeeProfile() {
 		clickEmployee();
 		clickEmployeeProfile();
+	}
+	public void setRosterGroupAssignment() {
+		clickEmployee();
+		clickonRosterGroupAssignment();
 	}
 }

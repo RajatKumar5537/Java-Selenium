@@ -31,8 +31,10 @@ public class RoleGroupTest extends BaseClass{
         empSetup = new EmployeeSetupPage(driver);
         roleGroup = new SystemDefinationRoleGroupPage(driver);
 
-        homePage.setOrgUnit();
-        orgUnit.setAutoOu();
+//        homePage.setOrgUnit();
+//		orgUnit.clickOLMop();
+		homePage.setOrgUnit();
+		orgUnit.setAutoOu();
         jmMenuItem.clickOnSystemDefination();
         empSetup.setCreateRoleGroups();
     }

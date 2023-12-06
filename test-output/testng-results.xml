@@ -8,41 +8,41 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-11-24T03:00:00Z" name="Default suite" finished-at="2023-11-24T03:01:06Z" duration-ms="65438">
+  <suite started-at="2023-12-06T06:08:39Z" name="Default suite" finished-at="2023-12-06T06:08:59Z" duration-ms="20086">
     <groups>
     </groups>
-    <test started-at="2023-11-24T03:00:00Z" name="Default test" finished-at="2023-11-24T03:01:06Z" duration-ms="65438">
+    <test started-at="2023-12-06T06:08:39Z" name="Default test" finished-at="2023-12-06T06:08:59Z" duration-ms="20086">
       <class name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:00:00Z" name="launchBrowser" finished-at="2023-11-24T03:00:44Z" duration-ms="43862" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:39Z" name="launchBrowser" finished-at="2023-12-06T06:08:40Z" duration-ms="1577" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:00:44Z" name="beforeTestMethod" finished-at="2023-11-24T03:00:47Z" duration-ms="2444" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:41Z" name="beforeTestMethod" finished-at="2023-12-06T06:08:43Z" duration-ms="2603" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:00:47Z" name="setUp" finished-at="2023-11-24T03:00:57Z" duration-ms="10403" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:43Z" name="setUp" finished-at="2023-12-06T06:08:53Z" duration-ms="9883" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="testWithCombinationShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:00:57Z" name="testWithCombinationShift" finished-at="2023-11-24T03:01:06Z" duration-ms="8710" status="PASS">
+        <test-method signature="testCreateShiftBand()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:53Z" name="testCreateShiftBand" finished-at="2023-12-06T06:08:59Z" duration-ms="5840" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- testWithCombinationShift -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:01:06Z" name="afterTestMethod" finished-at="2023-11-24T03:01:06Z" duration-ms="1" status="PASS">
+        </test-method> <!-- testCreateShiftBand -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:59Z" name="closeBrowser" finished-at="2023-12-06T06:08:59Z" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-12-06T06:08:59Z" name="afterTestMethod" finished-at="2023-12-06T06:08:59Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest@2fb68ec6]" started-at="2023-11-24T03:01:06Z" name="closeBrowser" finished-at="2023-11-24T03:01:06Z" duration-ms="0" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

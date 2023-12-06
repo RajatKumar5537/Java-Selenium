@@ -263,8 +263,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		for (int i = 0; i < rows.size(); i++) {
 			WebElement checkbox = checkboxes.get(i);
 			if (checkbox.isEnabled()) {
-				//				scrollAndClick(driver, checkbox);
-				checkbox.click();
+								scrollAndClick(driver, checkbox);
+//				checkbox.click();
 				performDeleteAction();
 				checkboxFound = true;
 				break;
@@ -335,7 +335,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
         Assert.assertTrue(actualResult.contains("Role Description is required"));
 	}
 	public void setCreateNewRole() throws Exception {
-		timeStamp = LocalDateTime.now().toString();
+//		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -346,8 +346,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		//		Thread.sleep(1000);
 		setAddBtn();
 		Thread.sleep(1000);
-		setRoleName(roleNameData+ " " + timeStamp);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		//		Thread.sleep(2000);
@@ -366,7 +366,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 	public void setUpdateRole() throws Exception {
 		//		sdrs= new SystemDefinationRoleSetupPage(driver);
-		timeStamp = LocalDateTime.now().toString();
+//		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 7, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 7, 8);
@@ -378,8 +378,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		//		sdrs.changeRoleName();
 		setEditBTN();
 		Thread.sleep(1000);
-		setRoleName(roleNameData+ " " + timeStamp);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		setPrimarySkillID();
@@ -416,7 +416,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 	public void setCreateNewRoleWithoutPriarySkill() throws Exception {
 
 		//		sdrs= new SystemDefinationRoleSetupPage(driver);
-		timeStamp = LocalDateTime.now().toString();
+//		timeStamp = LocalDateTime.now().toString();
 
 		roleNameData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 7);
 		roleDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 8);
@@ -428,9 +428,9 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(2000);
-		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
@@ -460,7 +460,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleName(roleNameData+ " " + timeStamp);
 		Thread.sleep(2000);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
@@ -485,7 +485,7 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(2000);
-		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
 		//		Thread.sleep(2000);
 		//		sdrs.setRoleDescription(roleDescriptionData+ " " + timeStamp);
 		setPreparationTime(preparationTimeData);
@@ -514,8 +514,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 
 		setAddBtn();
-		setRoleName(roleNameData+ " " + timeStamp);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		setPrimarySkillID();
@@ -542,8 +542,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(2000);
-		setRoleName(roleNameData+ " " + timeStamp);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
 		setPrimarySkillID();
@@ -570,9 +570,9 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(2000);
-		setRoleName(roleNameData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);
@@ -600,8 +600,8 @@ public class SystemDefinationRoleSetupPage extends BaseClass{
 
 		setAddBtn();
 		Thread.sleep(2000);
-		setRoleName(roleNameData+ " " + timeStamp);
-		setRoleDescription(roleDescriptionData+ " " + timeStamp);
+		setRoleName(roleNameData+ " " + System.currentTimeMillis());
+		setRoleDescription(roleDescriptionData+ " " + System.currentTimeMillis());
 		Thread.sleep(2000);
 		setPreparationTime(preparationTimeData);
 		setDepreparationTime(depreparationTimeData);

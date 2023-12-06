@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test">
         <methods>
-          <include name="verifyCreateRoasterwithEmployee"/>
           <include name="launchBrowser"/>
-          <include name="beforeTestMethod"/>
           <include name="setup"/>
+          <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
+          <include name="verifyApplyUncontrolledLeave"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

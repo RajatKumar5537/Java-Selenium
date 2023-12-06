@@ -26,19 +26,17 @@ import com.aventstack.extentreports.reporter.configuration.Theme;
 
 
 public class ListenerImplimentation extends BaseClass implements ITestListener{
-	 private static final Logger logger = LogManager.getLogger(ListenerImplimentation.class);
+	private static final Logger logger = LogManager.getLogger(ListenerImplimentation.class);
 	private ExtentReports report;
 	private ExtentTest test;
-	private configUtility congigUtiliy;
-
 	public ListenerImplimentation() {
-		congigUtiliy= new configUtility();
+		new configUtility();
 
 		try {
 			report = ExtentReportManager.getInstance(); // Use the singleton instance
-			report.setSystemInfo("OS", congigUtiliy.getCongigPropertyData("windows"));
-			report.setSystemInfo("Base Browser", congigUtiliy.getCongigPropertyData("browser"));
-			report.setSystemInfo("Base Url", congigUtiliy.getCongigPropertyData("url"));
+			report.setSystemInfo("OS", configUtility.getCongigPropertyData("windows"));
+			report.setSystemInfo("Base Browser", configUtility.getCongigPropertyData("browser"));
+			report.setSystemInfo("Base Url", configUtility.getCongigPropertyData("url"));
 			logger.info("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
 		} catch (IOException e) {
 			e.printStackTrace();
@@ -48,7 +46,8 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	@Override
 	public void onTestStart(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		test = report.createTest(methodName);
+		setupTest(methodName);
+		/*	test = report.createTest(methodName);
 
 		// Add author, category, and description to the test
 		try {
@@ -57,7 +56,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 		}
 		test.assignCategory("Functional Test");
-		test.info("Jivi Automation Test: Verifying user login functionality");
+		test.info("Jivi Automation Test: Verifying user login functionality");*/
 	}
 
 	@Override
@@ -74,21 +73,28 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		File dest = new File("./ScreenShot/" + res + ".png");
 		try {
 			FileUtils.copyFile(src, dest);
+			logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
+			logger.error("Error capturing or saving screenshot:", e);
 		}
 		// Log test failure with a screenshot
 		try {
 			test.fail("Test failed", MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build());
 		} catch (IOException e) {
 			e.printStackTrace();
+			logger.error("Error attaching screenshot to the test report:", e);
 		}
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		test = report.createTest(methodName);
+		setupTest(methodName);
+
+		// Log test skipped with custom message or additional information
+		test.skip("Test skipped - Method: " + methodName);
+		/*test = report.createTest(methodName);
 		try {
 			test.assignAuthor(congigUtiliy.getCongigPropertyData("author"));
 		}catch (IOException e) {
@@ -98,7 +104,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		test.info("Jivi Automation Test: Verifying user login functionality");
 
 		// Log test skipped with custom message or additional information
-		test.skip("Test skipped - Method: " + methodName);
+		test.skip("Test skipped - Method: " + methodName);*/
 	}
 
 	@Override
@@ -129,7 +135,18 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		// TODO Auto-generated method stub
 
 	}
+	private void setupTest(String methodName) {
+		test = report.createTest(methodName);
 
+		try {
+			test.assignAuthor(configUtility.getCongigPropertyData("author"));
+		} catch (IOException e) {
+			e.printStackTrace();
+		}
+
+		test.assignCategory("Functional Test");
+		test.info("Jivi Automation Test: Verifying user login functionality");
+	}
 
 
 }

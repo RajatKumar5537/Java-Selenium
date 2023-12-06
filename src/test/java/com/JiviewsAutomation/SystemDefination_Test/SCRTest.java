@@ -35,6 +35,8 @@ public class SCRTest extends BaseClass{
 		rosterSetup = new RosterSetupPage(driver);
 		scr = new SystemDefinationSCRPage(driver);
 
+//		homePage.setOrgUnit();
+//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
