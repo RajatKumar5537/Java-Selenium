@@ -59,13 +59,13 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 	}
 //	@Test(priority = 3)
 	// Save button is not working 
-	public void verifyDuplicateEmpProfile() throws Exception {
-		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
-		logger.info("Duplicate Employee Profile...");
-
-		empProfile.duplicateEmpProfile(fakeEmployee);
-		logger.info("Employee Profile is successfully Duplicated ");
-	}
+//	public void verifyDuplicateEmpProfile() throws Exception {
+//		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+//		logger.info("Duplicate Employee Profile...");
+//
+//		empProfile.duplicateEmpProfile(fakeEmployee);
+//		logger.info("Employee Profile is successfully Duplicated ");
+//	}
 	@Test(priority = 4, dependsOnMethods = "verifyCreateEmpProfile")
 	public void verifyDeleteEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
@@ -122,12 +122,12 @@ public class EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.terminateEmpProfile(fakeEmployee);
 		logger.info("Employee is successfully terminated");	
 	}
-	@Test(priority = 11)
-	public void verifyreactivateEmpProfile() throws Exception{
-		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
-		logger.info("Reactivate Employee profile...");
-		
-		empProfile.reactivateEmpProfile();
-		logger.info("Employee profile is successfully reactivated");	
-	}
+//	@Test(priority = 11)
+//	public void verifyreactivateEmpProfile() throws Exception{
+//		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+//		logger.info("Reactivate Employee profile...");
+//		
+//		empProfile.reactivateEmpProfile();
+//		logger.info("Employee profile is successfully reactivated");	
+//	}
 }

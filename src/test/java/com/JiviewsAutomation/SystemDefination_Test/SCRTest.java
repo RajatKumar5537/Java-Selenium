@@ -6,6 +6,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
@@ -27,7 +28,7 @@ public class SCRTest extends BaseClass{
 
 	@BeforeMethod
 	public void setup() throws Exception {
-		String homeUrl = configUtil.getCongigPropertyData("homeurl");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);

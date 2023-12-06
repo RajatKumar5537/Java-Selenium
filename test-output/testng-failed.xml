@@ -3,16 +3,24 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest">
         <methods>
-          <include name="launchBrowser"/>
-          <include name="setup"/>
+          <include name="verifyCreateEmpProfile"/>
+          <include name="verifyUpdateEmpProfile"/>
           <include name="beforeTestMethod"/>
+          <include name="verifySearchEmpProfile"/>
+          <include name="verifysearchEmpStatus"/>
+          <include name="launchBrowser"/>
+          <include name="verifyEmpNoInSearchBar"/>
+          <include name="verifyTerminateEmpProfile"/>
           <include name="afterTestMethod"/>
+          <include name="verifysearchRoleGroup"/>
           <include name="closeBrowser"/>
-          <include name="verifyApplyUncontrolledLeave"/>
+          <include name="setup"/>
+          <include name="verifysearchRosterGroup"/>
+          <include name="verifyDeleteEmpProfile"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
