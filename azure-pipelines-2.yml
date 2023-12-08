@@ -38,7 +38,7 @@ stages:
       displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)'
-        Contents: '**/ExtentReport/**'
+        Contents: '**/ExtentReport/**, **/ScreenShots/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()
 
