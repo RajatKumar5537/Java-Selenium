@@ -138,8 +138,13 @@ public class EmployeeRosterV2Page extends BaseClass{
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
-	@FindBy(xpath = "//div[@class='cssShiftCard']") //div[@id='idCardCloseButton']
+	@FindBy(xpath = "//div[@class='cssShiftCard']") 
 	private WebElement cssShiftCard;
+	@FindBy(xpath = "//div[text()='HE']")
+	private WebElement applyExcludeDeployment;
+	@FindBy(xpath = "//div[text()='TI']")
+	private WebElement applyTimeOff;
+	
 	@FindBy(xpath = "//span[text()='Copy']")
 	private WebElement copyOption;
 
@@ -245,8 +250,8 @@ public class EmployeeRosterV2Page extends BaseClass{
 	private WebElement txtUCLRemarks;
 	@FindBy(xpath = "//button[@id='btnApplyUCL']")
 	private WebElement btnApplyUCL;
-	
-	
+
+
 	@FindBy(xpath = "//span[text()='Exclude Deployment']")
 	private WebElement excludeDeploymentOption;
 	@FindBy(xpath = "//span[@id='select2-cmbEDExceptionType-container']")
@@ -259,6 +264,10 @@ public class EmployeeRosterV2Page extends BaseClass{
 	private WebElement txtEDRemarks;
 	@FindBy(xpath = "//button[@id='btnApplyExcludeDeployment']")
 	private WebElement btnApplyExcludeDeployment;
+	@FindBy(xpath = "//div[text()='Exclude Deployment Exception Created Successfully']")
+	private WebElement excludeDeploymentExceptionCreatedSuccessfullyMsg;
+
+	
 
 	public EmployeeRosterV2Page(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -281,6 +290,7 @@ public class EmployeeRosterV2Page extends BaseClass{
 		clickApply.click();
 	}
 	public void cmbRosterGroupBy() {
+		webUtility.ElementClickable(driver, cmbRosterGroupBy);
 		cmbRosterGroupBy.click();
 		selectRoleGroup.click();
 	}
@@ -370,7 +380,9 @@ public class EmployeeRosterV2Page extends BaseClass{
 	public void selectResultsShiftBand(){
 		selectResultsShiftBand.click();
 	}
-	public void selectOnCallShift() {
+	public void selectOnCallShift() throws InterruptedException {
+//		webUtility.ElementClickable(driver, onCallShift);
+		Thread.sleep(3000);
 		onCallShift.click();
 	}
 	public void selectRoleName() {
@@ -386,6 +398,7 @@ public class EmployeeRosterV2Page extends BaseClass{
 		txtShiftNotes.sendKeys(shiftNote);
 	}
 	public void clickBtnSelectShiftBand() {
+		webUtility.moveToElement(driver, btnSelectShiftBand);
 		btnSelectShiftBand.click();
 	}
 	public void getShiftCreatedSuccessfullyMsg() {
@@ -393,9 +406,62 @@ public class EmployeeRosterV2Page extends BaseClass{
 		Assert.assertTrue(actualResult.contains("Shift created successfully"));
 	}
 	public void clickShiftCardForCopy() {
-		//		cssShiftCard.click();
-		webUtility.rightClickOnElement(driver, cssShiftCard);
+	    // Right-click on cssShiftCard
+	    webUtility.rightClickOnElement(driver, cssShiftCard);
+
 	}
+
+//	public void clickFilledCell() {
+//	    try {
+//	        // Check if applyExcludeDeployment and applyTimeOff are visible
+//	        boolean isExcludeDeploymentVisible = applyExcludeDeployment.isDisplayed();
+//	        boolean isTimeOffVisible = applyTimeOff.isDisplayed();
+//
+//	        if (!isExcludeDeploymentVisible && !isTimeOffVisible) {
+//	            // Both elements are not visible, perform the desired actions
+//	            clickShiftCardForCopy();
+//	            mouseHoverApplyOnBehalfOption();
+//	            clickExcludeDeploymentOption();
+//	        } else {
+//	            // At least one of the elements is visible, you may choose to handle this case accordingly
+//	            // For example, you might want to log a message or perform an alternative action
+//	            System.out.println("applyExcludeDeployment and/or applyTimeOff are visible, not right-clicking cssShiftCard.");
+//
+//	            // Perform alternative actions if needed
+//	        }
+//	    } catch (NoSuchElementException e) {
+//	        // Handle the case where cssShiftCard is not found in the DOM
+//	        System.out.println("cssShiftCard element not found.");
+//	    }
+//	}
+
+
+	public void performActionsIfConditionsMet() {
+	    try {
+	        // Check if applyExcludeDeployment and applyTimeOff are displayed
+	        boolean isExcludeDeploymentVisible = applyExcludeDeployment.isDisplayed();
+	        boolean isTimeOffVisible = applyTimeOff.isDisplayed();
+
+	        // Skip the cell if both applyExcludeDeployment and applyTimeOff are present
+	        if (isExcludeDeploymentVisible && isTimeOffVisible) {
+	            System.out.println("Skipping the cell as applyExcludeDeployment and applyTimeOff are present.");
+	        } else {
+	            // Check if cssShiftCard is visible
+	            if (cssShiftCard.isDisplayed()) {
+	                // cssShiftCard is visible, right-click on it
+	                webUtility.rightClickOnElement(driver, cssShiftCard);
+	                // Continue with additional actions if needed
+	            } else {
+	                // Handle the case where cssShiftCard is not visible
+	                System.out.println("cssShiftCard is not visible.");
+	            }
+	        }
+	    } catch (NoSuchElementException e) {
+	        // Handle the case where applyExcludeDeployment, applyTimeOff, or cssShiftCard is not found in the DOM
+	        System.out.println("Element not found: " + e.getMessage());
+	    }
+	}
+
 	public void performCopy() {
 		copyOption.click();
 	}
@@ -581,9 +647,34 @@ public class EmployeeRosterV2Page extends BaseClass{
 		txtUCLRemarks.sendKeys(UCLRemarks);
 	}
 	public void clickBtnApplyUCL() {
-//		btnApplyUCL.click();
+		//		btnApplyUCL.click();
 		webUtility.scrollAndClick(driver, btnApplyUCL);
 	}
+
+	public void clickExcludeDeploymentOption() {
+		excludeDeploymentOption.click();
+	}
+	public void clickEDExceptionType() {
+		cmbEDExceptionType.click();
+	}
+	public void chooseExcludeDeployment() {
+		chooseExcludeDeployment.click();
+	}
+	public void enterEDReferenceNo(String referenceNo) {
+		txtEDReferenceNo.sendKeys(referenceNo);
+	}
+	public void enterEDRemarks(String EDRemark) {
+		txtEDRemarks.sendKeys(EDRemark);
+	}
+	public void clickBtnApplyExcludeDeployment() {
+		btnApplyExcludeDeployment.click();
+	}
+	public void getexcludeDeploymentExceptionCreatedSuccessfullyMsg() { 
+		String actualResult = excludeDeploymentExceptionCreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Exclude Deployment Exception Created Successfully"));
+	}
+
+
 
 
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
@@ -654,12 +745,7 @@ public class EmployeeRosterV2Page extends BaseClass{
 		clickBtnExpand();
 		selectColumns("Disable");
 		clickBtnClose();
-		performBtnFullScreen();
-		Thread.sleep(1000);
-		performBtnFullScreen();
 		doubleClickEmptyCell(emptyCell);
-		//		rightClickEmptyCell(emptyCell);
-		//		selectCreateShift();
 		selectRoleName();
 		selectResultsRoleName();
 		selectShiftBandCode();
@@ -965,23 +1051,31 @@ public class EmployeeRosterV2Page extends BaseClass{
 		clickBtnExpand();
 		selectColumns("Disable");
 		clickBtnClose();
-
+		doubleClickEmptyCell(emptyCell);
+		selectRoleName();
+		selectResultsRoleName();
+		selectShiftBandCode();
+		selectResultsShiftBand();
+		enterShiftNotes(fakeEmployee.getDescription());
+		clickBtnSelectShiftBand();
+		getShiftCreatedSuccessfullyMsg();
+		clickNotificationPopup();		
+		
 		clickShiftCardForCopy();
 		mouseHoverApplyOnBehalfOption();
 
 		clickApplyTimeOffOption();
 		selectTxtTimeOffPeriod();
 		chooseShiftStart();
-		//	chooseShiftEnd();
 		enterTimeOffRemarks(fakeEmployee.getRemarksLeave());
 		//	@FindBy(xpath = "(//button[@id='btnAddAttachment'])[2]")
-		//	private WebElement btnAddAttachment; not working button 
+		//	private WebElement btnAddAttachment; ....................Not working button 
 
 		clickApplyTimeOff();
 		getTimeOffRequestSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
-	
+
 	//	Jira Item: E10-3039 - Employee Roster V2  [Right Click] [Apply On Behalf] Apply Uncontrolled Leave
 	public void ApplyUncontrolledLeave(FakeEmployee fakeEmployee) throws Exception {
 		clickStartAndEndDate();
@@ -993,16 +1087,60 @@ public class EmployeeRosterV2Page extends BaseClass{
 		clickBtnExpand();
 		selectColumns("Disable");
 		clickBtnClose();
+		doubleClickEmptyCell(emptyCell);
+		selectRoleName();
+		selectResultsRoleName();
+		selectShiftBandCode();
+		selectResultsShiftBand();
+		enterShiftNotes(fakeEmployee.getDescription());
+		clickBtnSelectShiftBand();
+		getShiftCreatedSuccessfullyMsg();
+		clickNotificationPopup();
 
 		clickShiftCardForCopy();
-
 		mouseHoverApplyOnBehalfOption();
+
 		clickApplyUncontrolledLeaveOption();
 		selectUCLExceptionType();
 		chooseUncontrolLeave();
 		enterUCLReferenceNo(fakeEmployee.getReferenceNo());
 		enterUCLRemarks(fakeEmployee.getRemarksLeave());
 		clickBtnApplyUCL();
-		
+
+	}
+	//	Jira Item: E10-3040 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Exclude Deployment
+	public void applyExcludeDeployment(FakeEmployee fakeEmployee) throws Exception  {
+		clickStartAndEndDate();
+		enterStartDate(fakeEmployee.getRosterStartDate());
+		enterEndDate(fakeEmployee.getRosterEndDate());
+		clickApply();
+		cmbRosterGroupBy();
+		clickbtnSearchEmployeeRoster();
+		clickBtnExpand();
+		selectColumns("Disable");
+		clickBtnClose();
+		doubleClickEmptyCell(emptyCell);
+		selectRoleName();
+		selectResultsRoleName();
+		selectShiftBandCode();
+		selectResultsShiftBand();
+		enterShiftNotes(fakeEmployee.getDescription());
+		clickBtnSelectShiftBand();
+		getShiftCreatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		clickShiftCardForCopy();
+//		performActionsIfConditionsMet();
+		mouseHoverApplyOnBehalfOption();
+
+		clickExcludeDeploymentOption();
+		clickEDExceptionType();
+		chooseExcludeDeployment();
+		enterEDReferenceNo(fakeEmployee.getReferenceNo());
+		enterEDRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnApplyExcludeDeployment();
+		clickBtnYes();
+		getexcludeDeploymentExceptionCreatedSuccessfullyMsg();
+		clickNotificationPopup();
 	}
 }

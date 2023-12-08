@@ -17,6 +17,7 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
@@ -127,7 +128,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	private WebElement btnSaveRosterTemplateRosterGroups;
 
 	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
-	private WebElement notificationPopup;
+	private WebElement templateRosterUpdatedSuccessfullyMsg;
 
 	@FindBy(xpath = "//button[@id='btnPublishRosterPattern']")
 	private WebElement btnPublishRosterPattern;
@@ -142,8 +143,8 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 	@FindBy(xpath = "//input[@class='form-control roster-pattern-blocks']")
 	private WebElement txtNoOfBlock;
 
-//	@FindBy(xpath = "(//td[@class='sorting_1']/input)[1]")
-//	private WebElement checkBoxPublishRoster;
+	//	@FindBy(xpath = "(//td[@class='sorting_1']/input)[1]")
+	//	private WebElement checkBoxPublishRoster;
 
 	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr")
 	private List<WebElement> rows;
@@ -158,6 +159,8 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 	@FindBy(xpath = "//button[text()='Publish Now']")
 	private WebElement btnPublishNow;
+	@FindBy(xpath = "//div[text()='Shift extraction process completed successfully']")
+	private WebElement shiftExtractionProcessCompletedSuccessfullyMsg;
 
 
 	// Select By Employee Button 
@@ -179,6 +182,9 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 
 	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
 	private WebElement rosterUpdateNotification;
+
+	@FindBy(className = "toast-close-button")
+	private WebElement notificationPopup;
 
 	public SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -293,9 +299,9 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		btnSaveRosterTemplateRosterGroups.click();
 	}
 
-	public void setNotificationPopup() {
-		action.moveToElement(notificationPopup).perform();
-		notificationPopup.click();
+	public void getTemplateRosterUpdatedSuccessfullyMsg() {
+		String actualResult = templateRosterUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Template Roster updated successfully"));
 	}
 
 	public void setBtnAddSaveRosterPattern() {
@@ -378,64 +384,54 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		}
 	}
 
-	/*public void performActionsOnCheckboxes() throws InterruptedException {
-	    // Get the size of the list
-	    int size = checkBoxPublishRosterMulti.size();
-
-	    // Loop through the checkboxes
-	    for (int i = 0; i < size; i++) {
-	        // Check if the checkbox is enabled
-	        if (checkBoxPublishRosterMulti.get(i).isEnabled()) {
-	            // Check the checkbox if it's not already checked
-	            if (!checkBoxPublishRosterMulti.get(i).isSelected()) {
-	                checkBoxPublishRosterMulti.get(i).click();
-	                Thread.sleep(3000);
-	            }
-
-	            // Perform actions after checking the checkbox
-	            setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
-	            setTxtNoOfBlock(noOfBlocks);
-	        }
-	    }
-
-	    // Perform save actions after processing all checkboxes
-	    setBtnSaveTemplateRoster();
-	    setBtnPublishNow();
-	}*/
 	public void performActionsOnCheckboxes() {
-	    // Check if the first checkbox is enabled
-	    if (checkBoxPublishRosterMulti.size() > 0 && isElementEnabled(checkBoxPublishRosterMulti.get(0))) {
-	        // Check the first checkbox if it's not already checked
-	        if (!checkBoxPublishRosterMulti.get(0).isSelected()) {
-	            checkBoxPublishRosterMulti.get(0).click();
-	        }
+		// Check if the first checkbox is enabled
+		if (checkBoxPublishRosterMulti.size() > 0 && isElementEnabled(checkBoxPublishRosterMulti.get(0))) {
+			// Check the first checkbox if it's not already checked
+			if (!checkBoxPublishRosterMulti.get(0).isSelected()) {
+				checkBoxPublishRosterMulti.get(0).click();
+			}
 
-	        // Check if setDropDownCalenderRosterUp is enabled
-	        if (isElementEnabled(txtPublishFrom)) {
-	            setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
-	        }
+			// Check if setDropDownCalenderRosterUp is enabled
+			if (isElementEnabled(txtPublishFrom)) {
+				setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
+			}
 
-	        // Check if setTxtNoOfBlock is enabled
-	        if (isElementEnabled(txtNoOfBlock)) {
-	            setTxtNoOfBlock(noOfBlocks);
-	        }
-	    }
+			// Check if setTxtNoOfBlock is enabled
+			if (isElementEnabled(txtNoOfBlock)) {
+				setTxtNoOfBlock(noOfBlocks);
+			}
+		}
 
-	    // Perform save actions after processing the first checkbox
-	    setBtnSaveTemplateRoster();
-	    setBtnPublishNow();
+		// Perform save actions after processing the first checkbox
+		setBtnSaveTemplateRoster();
+		setBtnPublishNow();
 	}
 	// Function to check if an element is enabled
 	private boolean isElementEnabled(WebElement element) {
-	    try {
-	        return element.isEnabled();
-	    } catch (Exception e) {
-	        return false;
-	    }
+		try {
+			return element.isEnabled();
+		} catch (Exception e) {
+			return false;
+		}
 	}
+	public void getShiftExtractionProcessCompletedSuccessfullyMsg() { // Shift extraction process completed successfully
+		String actualResult = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Shift extraction process completed successfully"));
 
+	}
+	public void clickNotificationPopup() throws Exception {
+		Thread.sleep(1000);
+		action.moveToElement(notificationPopup).perform();
+		notificationPopup.click();
+	}
+	
+	
+	
+	
+	
 	public void setCreateRoasterwithGroup() throws Exception {
-		timeStamp = LocalDateTime.now().toString();
+//		timeStamp = LocalDateTime.now().toString();
 
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
@@ -453,7 +449,8 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		enterEmptyCell(6,2,7);
 		Thread.sleep(2000);
 		setBtnAddSaveRosterPattern();
-		setNotificationPopup();
+		getTemplateRosterUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
 		Thread.sleep(2000);
 		// Add Employee
 		//				setBtnAddEmployee();
@@ -491,7 +488,9 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		enterEmptyCell(6,3,7);
 		Thread.sleep(2000);
 		setBtnAddSaveRosterPattern();
-		setNotificationPopup();
+		getTemplateRosterUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+		
 		setBtnPublishRosterPattern();
 		performActionsOnCheckboxes();
 
@@ -510,7 +509,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setAvailableSkillForSingleRoster();
 		setAvailableSingleGroupMoveToSelectedGrp();
 		setSaveBtn();
-		enterEmptyCell(6,3,7);
+		//		enterEmptyCell(6,3,7);
 		//	Add Employee
 		Thread.sleep(2000);
 		setBtnAddEmployee();
@@ -518,10 +517,17 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setAvailableEmpTable();
 		setBtnMoveFromAvailable();
 		setBtnSaveRosterTemplateEmployee();
+
+		enterEmptyCell(6,3,7);
+
 		setBtnAddSaveRosterPattern();
-		setNotificationPopup();
+		getTemplateRosterUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+		
 		setBtnPublishRosterPattern();
 		performActionsOnCheckboxes();
+		getShiftExtractionProcessCompletedSuccessfullyMsg();
+		clickNotificationPopup();
 	}
 
 
@@ -549,7 +555,7 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		setBtnAddSaveRosterPattern();
 	}
 
-	public void setMoveAllAndPublishAll() throws Exception {
+	/*public void setMoveAllAndPublishAll() throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
@@ -566,9 +572,9 @@ public class SystemDefinationRosterCreationPage extends BaseClass{
 		//		enterEmptyCell(6,2,7);
 		setBtnAddSaveRosterPattern();
 		Thread.sleep(20000);
-		setNotificationPopup();
+		getTemplateRosterUpdatedSuccessfullyMsg();
 		Thread.sleep(2000);
 		setBtnPublishRosterPattern() ;
 		performActionsOnCheckboxes();
-	}
+	}*/
 }

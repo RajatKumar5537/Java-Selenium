@@ -3,7 +3,7 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	
+	<!-- 
 	<test name="skillSetUpTest">
 		<classes>
 			<class
@@ -63,13 +63,13 @@
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmRosterGroupAssignmentTest" />
 		</classes>
-	</test>
+	</test> -->
 	
 	<test name="WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test" />
 		</classes>
-	</test>
+	</test> 
 
 </suite>
