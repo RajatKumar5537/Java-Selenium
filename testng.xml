@@ -3,73 +3,74 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	<!-- 
-	<test name="skillSetUpTest">
+
+	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.skillSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
 		</classes>
 	</test>
 
-	<test name="RoleSetUpTest">
+	<test name="E10_3089_RoleSetUpTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.RoleSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
 		</classes>
 	</test>
 
-	<test name="RoleGroupTests">
+	<test name="E10_2749_RoleGroupTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.RoleGroupTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
 		</classes>
 	</test>
 
-	<test name="ShiftBandTest">
+	<test name="E10_2606_ShiftBandTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.ShiftBandTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
 		</classes>
 	</test>
 
-	<test name="roasterSetupTest">
+	<test name="E10_2608_RoasterSetupTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.roasterSetupTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
 		</classes>
 	</test>
 
-	<test name="SCRTest">
+	<test name="E10_2639_SCRTest">
 		<classes>
-			<class name="com.JiviewsAutomation.SystemDefination_Test.SCRTest" />
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
 		</classes>
 	</test>
 
-	<test name="PublicHolidayTest">
+	<test name="E10_2638_PublicHolidayTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.PublicHolidayTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest" />
 		</classes>
 	</test>
 
-	<test name="EmpAdmEmployeeProfileTest">
+	<test name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmEmployeeProfileTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest" />
 		</classes>
 	</test>
-	<test name="EmpAdmRosterGroupAssignmentTest">
+	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.EmpAdmRosterGroupAssignmentTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest" />
 		</classes>
-	</test> -->
-	
-	<test name="WorkforceEmployeeRosterV2Test">
+	</test>
+
+	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.WorkforceEmployeeRosterV2Test" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test" />
 		</classes>
-	</test> 
+	</test>
 
 </suite>

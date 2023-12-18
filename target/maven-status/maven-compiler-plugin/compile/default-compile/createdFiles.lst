@@ -1,5 +1,3 @@
-com\AutomationJiviewsPOM\SystemDefinationSkillSetupPage.class
-com\AutomationJiviewsPOM\SystemDefinationRoleSetupPage.class
 com\AutomationJiviewsGeneric\ListenerImplimentation.class
 com\AutomationJiviewsGeneric\FileLib.class
 com\AutomationJiviewsPOM\LoginPage.class

@@ -54,15 +54,11 @@ public class jiviewsMainMenuItems extends BaseClass{
 		mainMenu.click();
 	}
 
-	//	public void setSelectSystemSetup() {
-	//		selectSystemSetup.click();
-	//	}
-
 	public void clickSystemDefination() {
 		webUtility.ElementClickable(driver, selectSystemDefination);
 		selectSystemDefination.click();
 	}
-	
+
 	public void clickEmployeeAdministration() {
 		webUtility.ElementClickable(driver, selectEmployeeAdministration);
 		selectEmployeeAdministration.click();
@@ -71,46 +67,28 @@ public class jiviewsMainMenuItems extends BaseClass{
 		webUtility.ElementClickable(driver, selectWorkforceScheduling);
 		selectWorkforceScheduling.click();
 	}
-	
-	
-	
-	
-	public void clickOnSystemDefination()  {
+	public void clickSelectOperationPlanningExecution() {
+		webUtility.ElementClickable(driver, selectOperationPlanningExecution);
+		selectOperationPlanningExecution.click();
+	}
 
-		//		jiviewsMainMenuItems jmmi=new jiviewsMainMenuItems(driver);
+
+
+	public void clickOnSystemDefination()  {
 		clickMainMenu();
 		clickSystemDefination();
 	}
-	
 	public void setEmployeeAdministration() {
 		clickMainMenu();
 		clickEmployeeAdministration();
 	}
-	
-	
-		public void setSelectWorkforceScheduling() throws InterruptedException {
-			clickMainMenu();
-			Thread.sleep(2000);
-			clickWorkforceScheduling();
-		}
-	//
-	//	public void setSelectEmployeeSelfService() {
-	//		selectEmployeeSelfService.click();
-	//	}
-	//	public void setSelectOperationPlanningExecution() {
-	//		selectOperationPlanningExecution.click();
-	//	}
-	//	public void setSelectTimeAttendance() {
-	//		selectTimeAttendance.click();
-	//	}
-	//
-	//	public void setSelectReports() {
-	//		selectReports.click();
-	//	}
-	//	
-	//	public void setSelectDashboard() {
-	//		selectDashboard.click();
-	//	}
-
-
+	public void setSelectWorkforceScheduling() throws InterruptedException {
+		clickMainMenu();
+		Thread.sleep(2000);
+		clickWorkforceScheduling();
+	}
+	public void clickOnOperationPlanningExecution() {
+		clickMainMenu();
+		clickSelectOperationPlanningExecution();
+	}
 }

@@ -44,15 +44,23 @@ public class FakeEmployee {
 	private String rosterPublishDate;
 	private String rosterStartDate;
 	private String rosterEndDate;
-	 private String leaveFrom;
-	    private String leaveTo;
-	    private String referenceNo;
-	    private String remarksLeave;
+	private String leaveFrom;
+	private String leaveTo;
+	private String referenceNo;
+	private String remarksLeave;
 
-	
+	private String dtPlanning;
+	private String txtVesselName;
+	private String txtVesselVisitId;
+	private String dtVesselArrival;
+	private String vesselArrivalTime;
+	private String dtVesselDeparture;
+	private String tmVesselDeparture;
+
+
 	// Constructor
 	public FakeEmployee() {
-		// You can generate unique IDs for empNumber and badgeNumber using UUID
+		// we can generate unique IDs for empNumber and badgeNumber using UUID
 		this.empNumber = generateEmpNumber(8);
 		this.badgeNumber = generateBadgeNumber();
 		this.postCode= generateFakePostalCode();
@@ -341,45 +349,102 @@ public class FakeEmployee {
 		this.rosterEndDate = rosterEndDate;
 	}
 
-    public String getLeaveFrom() {
-        return leaveFrom;
-    }
+	public String getLeaveFrom() {
+		return leaveFrom;
+	}
 
-    public void setLeaveFrom(String leaveFrom) {
-//        // Set the leaveFrom date to be 2 days after the current date
-//        LocalDate currentDate = LocalDate.now().plusDays(2);
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
-        this.leaveFrom = leaveFrom;
-    }
+	public void setLeaveFrom(String leaveFrom) {
+		//        // Set the leaveFrom date to be 2 days after the current date
+		//        LocalDate currentDate = LocalDate.now().plusDays(2);
+		//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
+		this.leaveFrom = leaveFrom;
+	}
 
-    public String getLeaveTo() {
-        return leaveTo;
-    }
+	public String getLeaveTo() {
+		return leaveTo;
+	}
 
-    public void setLeaveTo(String leaveTo) {
-        // Set a random leaveTo date within the next 30 days
-//        LocalDate randomLeaveToDate = LocalDate.now().plusDays(new Faker().number().numberBetween(1, 30));
-//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
-        this.leaveTo = leaveTo;
-    }
+	public void setLeaveTo(String leaveTo) {
+		// Set a random leaveTo date within the next 30 days
+		//        LocalDate randomLeaveToDate = LocalDate.now().plusDays(new Faker().number().numberBetween(1, 30));
+		//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
+		this.leaveTo = leaveTo;
+	}
 
-    public String getReferenceNo() {
-        return referenceNo;
-    }
+	public String getReferenceNo() {
+		return referenceNo;
+	}
 
-    public void setReferenceNo(String ReferenceNo) {
-        // Set a random referenceNo using Faker
-        this.referenceNo = ReferenceNo;
-    }
+	public void setReferenceNo(String ReferenceNo) {
+		// Set a random referenceNo using Faker
+		this.referenceNo = ReferenceNo;
+	}
 
-    public String getRemarksLeave() {
-        return remarksLeave;
-    }
+	public String getRemarksLeave() {
+		return remarksLeave;
+	}
 
-    public void setRemarksLeave(String RemarksLeave) {
-        // Set a random remarksLeave using Faker
-        this.remarksLeave = RemarksLeave;
-    }
+	public void setRemarksLeave(String RemarksLeave) {
+		// Set a random remarksLeave using Faker
+		this.remarksLeave = RemarksLeave;
+	}
+	public String getDtPlanning() {
+		return dtPlanning;
+	}
+
+	public void setDtPlanning(String dtPlanning) {
+		this.dtPlanning = dtPlanning;
+	}
+
+	public String getTxtVesselName() {
+		return txtVesselName;
+	}
+
+	public void setTxtVesselName(String txtVesselName) {
+		this.txtVesselName = txtVesselName;
+	}
+
+	public String getTxtVesselVisitId() {
+		return txtVesselVisitId;
+	}
+
+	public void setTxtVesselVisitId(String txtVesselVisitId) {
+		this.txtVesselVisitId = txtVesselVisitId;
+	}
+
+	public String getDtVesselArrival() {
+		return dtVesselArrival;
+	}
+
+	public void setDtVesselArrival(String dtVesselArrival) {
+		this.dtVesselArrival = dtVesselArrival;
+	}
+
+	public String getVesselArrivalTime() {
+		return vesselArrivalTime;
+	}
+
+	public void setVesselArrivalTime(String vesselArrivalTime) {
+		this.vesselArrivalTime = vesselArrivalTime;
+	}
+
+	public String getDtVesselDeparture() {
+		return dtVesselDeparture;
+	}
+
+	public void setDtVesselDeparture(String dtVesselDeparture) {
+		this.dtVesselDeparture = dtVesselDeparture;
+	}
+
+	public String getTmVesselDeparture() {
+		return tmVesselDeparture;
+	}
+
+	public void setTmVesselDeparture(String tmVesselDeparture) {
+		this.tmVesselDeparture = tmVesselDeparture;
+	}
+
+
 
 	private static final int EMPLOYEE_NUMBER_LENGTH = 8;
 	private static final int HIRE_DATE_YEARS_AGO = 2;
@@ -396,7 +461,7 @@ public class FakeEmployee {
 	public void generateFakeEmployeeData() {
 		Faker fakeData = new Faker();
 
-		String portOperatorName = fakeData.options().option("Auto_Test","crane operator", "cfs", "efo", "flo", "lsh obc","Automation_Test");
+		String portOperatorName = fakeData.options().option("TT Operator","Crane Operator", "YC operator", "FLT Operator", "RS Operator", "QC Operator");
 		String uniqueSkillCode = portOperatorName + "_" + System.currentTimeMillis();
 		setSkillCode(uniqueSkillCode);
 
@@ -467,7 +532,7 @@ public class FakeEmployee {
 		setRosterPublishDate(LocalDateTime.now().minusDays(2).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 
 		calculateRosterDates();
-		
+
 
 		// Set leaveFrom (2 days after the current date)
 		LocalDate leaveFromDate = LocalDate.now().plusDays(2);
@@ -477,11 +542,28 @@ public class FakeEmployee {
 		LocalDate leaveToDate = leaveFromDate.plusDays(2);
 		setLeaveTo(leaveToDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
 
-	    // Set referenceNo (random digits)
-	    setReferenceNo(fakeData.number().digits(8));
+		// Set referenceNo (random digits)
+		setReferenceNo(fakeData.number().digits(8));
 
-	    // Set remarksLeave (random sentence)
-	    setRemarksLeave(fakeData.lorem().sentence());
+		// Set remarksLeave (random sentence)
+		setRemarksLeave(fakeData.lorem().sentence());
+		
+	    setTxtVesselName(fakeData.company().name());
+	    setTxtVesselVisitId(fakeData.idNumber().valid());
+
+	 // Set both planning, arrival, and departure dates to the same date
+	    LocalDate commonDate = LocalDate.now().plusDays(fakeData.number().numberBetween(1, 30));
+	    LocalDate currentDate = LocalDate.now(); // Get the current date
+        setDtPlanning(formatDate(currentDate));
+//	    setDtPlanning(formatDate(commonDate));
+	    setDtVesselArrival(formatDate(commonDate));
+	    setDtVesselDeparture(formatDate(commonDate));
+	    
+	    // Set specific arrival and departure times
+	    setVesselArrivalTime("07:00");
+	    setTmVesselDeparture("19:00");
+
+
 	}
 
 	private String generateDescriptionForPortOperator(String portOperatorName) {
@@ -526,7 +608,18 @@ public class FakeEmployee {
 	protected String generateDescriptionForRosterGroupName(String groupName) {
 		return "Description for " + groupName;
 	}
+	private String generateFutureDate() {
+		LocalDate futureDate = LocalDate.now().plusDays(30); // Generate a date within the next 30 days
+		return formatDate(futureDate);
+	}
 
+	private String generateRandomTime() {
+		return LocalDateTime.now().plusHours((long) (Math.random() * 24)).format(DateTimeFormatter.ofPattern("HH:mm"));
+	}
+
+	private String formatDate(LocalDate date) {
+		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+	}
 	/*
 	private void generateFakeEmployeeData() {
 		Faker fakeData=new Faker();
