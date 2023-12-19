@@ -34,12 +34,27 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
 
+    - powershell: |
+        $testResultsPath = "$(System.DefaultWorkingDirectory)/surefire-reports/TEST-*.xml"
+        $failedTests = Get-Content $testResultsPath | Select-String 'failure' -Context 2 | ForEach-Object { $_.Context.PreContext + $_.Context.PostContext }
+        # Rest of your script
+      displayName: 'Process Test Results'
+      condition: succeededOrFailed()
+
     - task: CopyFiles@2 
-      displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+      displayName: 'Copy ExtentReport Files'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)'
         Contents: '**/ExtentReport/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
+
+    - task: CopyFiles@2 
+      displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
+      inputs:
+        SourceFolder: '$(system.defaultworkingdirectory)/ScreenShot'
+        Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
+        TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
 
     - task: PublishBuildArtifacts@1
