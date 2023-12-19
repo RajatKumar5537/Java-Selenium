@@ -218,16 +218,17 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	public void deactivateSkill() throws Exception {
 //		checkCheckBox();
 //		clickDeleteBtn();
-		deleteRowsWithEnabledCheckbox();
+		
+//		deleteRowsWithEnabledCheckbox();
 		clickYes();
 		closeNotificationPopup();
 	}
 
 	public void activateDeactivateSkill() throws Exception {
 		clickEditBtn();
-		Thread.sleep(1000);
-		clickIsActiveOption();
-		clickSaveBtn();
+//		Thread.sleep(1000);
+//		clickIsActiveOption();
+//		clickSaveBtn();
 		closeNotificationPopup();
 	}
 

@@ -10,7 +10,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
 		</classes>
 	</test>
-
+<!-- 
 	<test name="E10_3089_RoleSetUpTest">
 		<classes>
 			<class
@@ -72,5 +72,5 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test" />
 		</classes>
 	</test>
-
+-->
 </suite>

@@ -76,9 +76,6 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 	@FindBy(xpath = "//li[@id='RoleGroup-list_next']")
 	private WebElement nextPage;
 	
-//	@FindBy(xpath = "(//tr[@role='row']/td/input)[2]")
-//	private WebElement checkBox;
-
 	@FindBy(xpath = "//button[@id='btnDeleteRoleGroup']")
 	private WebElement btnDeleteRoleGroup;
 
@@ -147,9 +144,6 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
         btnSaveRoleGroupDtls.click();
     }
 
-//    public void clickCheckbox() {
-//        checkBox.click();
-//    }
     public void performDeleteAction() throws InterruptedException {
 		for (int i = 0; i < 3; i++) {
 			try {
