@@ -1,15 +1,12 @@
 package com.AutomationJiviewsPOM;
 
 
-import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.openqa.selenium.support.ui.ExpectedConditions;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
@@ -46,5 +43,10 @@ public class HomePage extends BaseClass{
 	public void setLogout() throws InterruptedException {
 		Thread.sleep(1000);
 		Logout.click();
+	}
+	
+	public void clickOnBtnLogout() throws InterruptedException {
+		setAdmin();
+		setLogout();
 	}
 }
