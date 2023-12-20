@@ -1,99 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="7" passed="7" failed="0" skipped="0">
+<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
     </line>
     <line>
-      <![CDATA[ShiftBand Name Is Required]]>
-    </line>
-    <line>
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2023-12-20T04:18:51Z" name="Default suite" finished-at="2023-12-20T04:21:37Z" duration-ms="165788">
+  <suite started-at="2023-12-20T04:34:26Z" name="Default suite" finished-at="2023-12-20T04:35:15Z" duration-ms="48826">
     <groups>
     </groups>
-    <test started-at="2023-12-20T04:18:51Z" name="Default test" finished-at="2023-12-20T04:21:37Z" duration-ms="165788">
+    <test started-at="2023-12-20T04:34:26Z" name="Default test" finished-at="2023-12-20T04:35:15Z" duration-ms="48826">
       <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:18:51Z" name="launchBrowser" finished-at="2023-12-20T04:18:52Z" duration-ms="1571" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:34:26Z" name="launchBrowser" finished-at="2023-12-20T04:34:28Z" duration-ms="1610" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:18:52Z" name="beforeTestMethod" finished-at="2023-12-20T04:19:09Z" duration-ms="16849" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:34:28Z" name="beforeTestMethod" finished-at="2023-12-20T04:34:42Z" duration-ms="14159" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:19:09Z" name="setUp" finished-at="2023-12-20T04:19:22Z" duration-ms="13257" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:34:42Z" name="setUp" finished-at="2023-12-20T04:35:03Z" duration-ms="21646" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3115_VerifyCreateShiftBand()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:19:22Z" name="E10_3115_VerifyCreateShiftBand" finished-at="2023-12-20T04:19:28Z" duration-ms="5471" status="PASS">
+        <test-method signature="E10_3115_VerifyCreateShiftBand()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:35:03Z" name="E10_3115_VerifyCreateShiftBand" finished-at="2023-12-20T04:35:15Z" duration-ms="11395" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3115_VerifyCreateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:19:28Z" name="setUp" finished-at="2023-12-20T04:19:46Z" duration-ms="17742" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3116_VerifyUpdateShiftBand()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:19:46Z" name="E10_3116_VerifyUpdateShiftBand" finished-at="2023-12-20T04:19:49Z" duration-ms="3265" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3116_VerifyUpdateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:19:49Z" name="setUp" finished-at="2023-12-20T04:20:10Z" duration-ms="21437" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3117_VerifyDeactivateShiftBand()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:10Z" name="E10_3117_VerifyDeactivateShiftBand" finished-at="2023-12-20T04:20:13Z" duration-ms="2182" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3117_VerifyDeactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:13Z" name="setUp" finished-at="2023-12-20T04:20:30Z" duration-ms="17668" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3118_VerifyReactivateShiftBand()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:30Z" name="E10_3118_VerifyReactivateShiftBand" finished-at="2023-12-20T04:20:32Z" duration-ms="1660" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3118_VerifyReactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:32Z" name="setUp" finished-at="2023-12-20T04:20:50Z" duration-ms="17956" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3119_VerifyWithoutShiftBandName()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:50Z" name="E10_3119_VerifyWithoutShiftBandName" finished-at="2023-12-20T04:20:54Z" duration-ms="3981" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[ShiftBand Name Is Required]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- E10_3119_VerifyWithoutShiftBandName -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:20:54Z" name="setUp" finished-at="2023-12-20T04:21:09Z" duration-ms="15010" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3120_VerifyWithCombinationShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:21:09Z" name="E10_3120_VerifyWithCombinationShift" finished-at="2023-12-20T04:21:17Z" duration-ms="8598" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3120_VerifyWithCombinationShift -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:21:17Z" name="setUp" finished-at="2023-12-20T04:21:31Z" duration-ms="13886" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3121_VerifyWithOvertimeShift()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:21:31Z" name="E10_3121_VerifyWithOvertimeShift" finished-at="2023-12-20T04:21:37Z" duration-ms="5231" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3121_VerifyWithOvertimeShift -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:21:37Z" name="afterTestMethod" finished-at="2023-12-20T04:21:37Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:35:15Z" name="afterTestMethod" finished-at="2023-12-20T04:35:15Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@3d829787]" started-at="2023-12-20T04:21:37Z" name="closeBrowser" finished-at="2023-12-20T04:21:37Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@2fb68ec6]" started-at="2023-12-20T04:35:15Z" name="closeBrowser" finished-at="2023-12-20T04:35:15Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

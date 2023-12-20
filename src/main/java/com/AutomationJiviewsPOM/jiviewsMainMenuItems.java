@@ -71,7 +71,10 @@ public class jiviewsMainMenuItems extends BaseClass{
 		webUtility.ElementClickable(driver, selectOperationPlanningExecution);
 		selectOperationPlanningExecution.click();
 	}
-
+	public void clickSelectEmployeeSelfService() {
+		webUtility.ElementClickable(driver, selectEmployeeSelfService);
+		selectEmployeeSelfService.click();
+	}
 
 
 	public void clickOnSystemDefination()  {
@@ -90,5 +93,9 @@ public class jiviewsMainMenuItems extends BaseClass{
 	public void clickOnOperationPlanningExecution() {
 		clickMainMenu();
 		clickSelectOperationPlanningExecution();
+	}
+	public void clickOnEmployeeSelfService() {
+		clickMainMenu();
+		clickSelectEmployeeSelfService();
 	}
 }

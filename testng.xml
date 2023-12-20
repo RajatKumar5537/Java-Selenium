@@ -5,14 +5,7 @@
 	</listeners>
 
 
-	<test name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
-	<!-- 
-<test name="E10_3082_SkillSetUpTest">
+	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
@@ -57,31 +50,31 @@
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
-	/>
+			/>
 		</classes>
 	</test>
 
 	<test name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
-	/>
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+			/>
 		</classes>
 	</test>
 	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
-	/>
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
+			/>
 		</classes>
 	</test>
 
 	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-	/>
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+			/>
 		</classes>
 	</test>
--->
+
 </suite>
