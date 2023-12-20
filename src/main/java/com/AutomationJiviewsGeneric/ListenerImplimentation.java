@@ -70,7 +70,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String res = result.getName();
 		TakesScreenshot t = (TakesScreenshot) driver;
 		File src = t.getScreenshotAs(OutputType.FILE);
-		File dest = new File("./ScreenShot/" + res + ".png");
+//		File dest = new File("./ScreenShot/" + res + ".png");
+		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + res + ".png");
+		logger.info("Screenshot destination path: " + dest.getAbsolutePath());
 		try {
 			FileUtils.copyFile(src, dest);
 			logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
