@@ -34,35 +34,6 @@ stages:
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
 
-    - powershell: |
-        $testResultsPath = "$(System.DefaultWorkingDirectory)/surefire-reports/TEST-*.xml"
-        $failedTests = Get-Content $testResultsPath | Select-String 'failure' -Context 2 | ForEach-Object { $_.Context.PreContext + $_.Context.PostContext }
-
-        foreach ($failedTest in $failedTests) {
-            # Extract test name from the failure context (you may need to adjust this based on your test output)
-            $testName = $failedTest -match 'Test Name: (.+)' | Out-Null; $matches[1]
-
-            # Construct the path to the screenshot (adjust the pattern based on your naming convention)
-            $screenshotPath = "$(System.DefaultWorkingDirectory)/ScreenShot/$testName.png"
-
-            # Check if the screenshot exists
-            if (Test-Path $screenshotPath) {
-                # Embed the screenshot in the Extent report
-                # You should replace the following command with the appropriate Extent report update command
-                Write-Host "Attaching screenshot for failed test: $testName"
-                # Update Extent report with the screenshot information
-                # Example: $extentReport.UpdateScreenshot($testName, $screenshotPath)
-            }
-            else {
-                Write-Host "Screenshot not found for failed test: $testName"
-            }
-        }
-      displayName: 'Process Test Results'
-      condition: succeededOrFailed()
-
-    - powershell: Get-ChildItem -Path "$(System.DefaultWorkingDirectory)" -Recurse
-      displayName: 'List Contents of DefaultWorkingDirectory'
-
     - task: CopyFiles@2 
       displayName: 'Copy ExtentReport Files'
       inputs:
