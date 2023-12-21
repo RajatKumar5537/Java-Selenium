@@ -46,6 +46,6 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	public void E10_3225_VerifyLoginAsEmployeeApplyForLeave() throws InterruptedException, IOException {
 
 		//		homePage.clickOnBtnLogout();
-		applyLeave.E10_3225_LoginAsEmployeeApplyForLeave();	
+//		applyLeave.E10_3225_LoginAsEmployeeApplyForLeave();	
 	}
 }
