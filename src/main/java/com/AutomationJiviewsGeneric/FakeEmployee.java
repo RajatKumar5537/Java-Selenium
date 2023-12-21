@@ -56,6 +56,7 @@ public class FakeEmployee {
 	private String vesselArrivalTime;
 	private String dtVesselDeparture;
 	private String tmVesselDeparture;
+	private String tmrwDate;
 
 
 	// Constructor
@@ -354,9 +355,6 @@ public class FakeEmployee {
 	}
 
 	public void setLeaveFrom(String leaveFrom) {
-		//        // Set the leaveFrom date to be 2 days after the current date
-		//        LocalDate currentDate = LocalDate.now().plusDays(2);
-		//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
 		this.leaveFrom = leaveFrom;
 	}
 
@@ -365,9 +363,6 @@ public class FakeEmployee {
 	}
 
 	public void setLeaveTo(String leaveTo) {
-		// Set a random leaveTo date within the next 30 days
-		//        LocalDate randomLeaveToDate = LocalDate.now().plusDays(new Faker().number().numberBetween(1, 30));
-		//        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("ddMMyyyy");
 		this.leaveTo = leaveTo;
 	}
 
@@ -385,7 +380,6 @@ public class FakeEmployee {
 	}
 
 	public void setRemarksLeave(String RemarksLeave) {
-		// Set a random remarksLeave using Faker
 		this.remarksLeave = RemarksLeave;
 	}
 	public String getDtPlanning() {
@@ -443,6 +437,13 @@ public class FakeEmployee {
 	public void setTmVesselDeparture(String tmVesselDeparture) {
 		this.tmVesselDeparture = tmVesselDeparture;
 	}
+	public String getTmrwDate() {
+        return tmrwDate;
+    }
+
+    public void setTmrwDate(String TmrwDate) {
+        this.tmrwDate= TmrwDate;
+    }
 
 
 
@@ -562,6 +563,12 @@ public class FakeEmployee {
 	    // Set specific arrival and departure times
 	    setVesselArrivalTime("07:00");
 	    setTmVesselDeparture("19:00");
+	 // Set tmrwDate
+	    LocalDate tomorrow = LocalDate.now().plusDays(1);
+	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+	    String tmrwDateValue = tomorrow.format(formatter);
+	    setTmrwDate(tmrwDateValue);
+
 
 
 	}

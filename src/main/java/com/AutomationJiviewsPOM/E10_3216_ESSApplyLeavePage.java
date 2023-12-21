@@ -8,6 +8,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.configUtility;
 
 public class E10_3216_ESSApplyLeavePage extends BaseClass{
@@ -24,6 +25,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	private WebElement leaveType;
 	@FindBy(xpath = "//li[text()='Sick Leave']")
 	private WebElement selectSickLeave;
+	@FindBy(xpath = "//li[text()='Emergency Leave']")
+	private WebElement selectEmergencyLeave;
 	@FindBy(xpath = "//input[@id='dtLeaveStartDate']")
 	private WebElement dtLeaveStartDate;
 	@FindBy(xpath = "//input[@id='dtLeaveEndDate']")
@@ -67,7 +70,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void pressBtnNext() {
 		btnNext.click();
 	}
-	public void E10_3225_LoginAsEmployeeApplyForLeave() throws InterruptedException, IOException {
+	public void E10_3225_LoginAsEmployeeApplyForLeave(FakeEmployee fakeEmployee) throws InterruptedException, IOException {
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
 
