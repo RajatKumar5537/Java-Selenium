@@ -32,8 +32,8 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 		rosterSetup = new RosterSetupPage(driver);
 		shiftBand = new E10_2606_SystemDefinationShiftBandPage(driver);
 
-		homePage.setOrgUnit();
-		orgUnit.clickOLMop();
+//		homePage.setOrgUnit();
+//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
@@ -48,7 +48,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 	//	}
 	@Test(priority = 1)
 	public void E10_3115_VerifyCreateShiftBand() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10_3115 Create Shift Band Definition...");
 
 		shiftBand.createShiftBand();
@@ -57,7 +57,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 	@Test(priority = 2)
 	public void E10_3116_VerifyUpdateShiftBand() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3116 Verify update shiftBand...");
 
 		shiftBand.updateShiftBand();
@@ -66,7 +66,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 	@Test(priority = 3)
 	public void E10_3117_VerifyDeactivateShiftBand() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3117 Verify Deactivate Shift band...");
 
 		shiftBand.deactiveShiftBand();
@@ -74,7 +74,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 	}
 	@Test(priority = 4)
 	public void E10_3118_VerifyReactivateShiftBand() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3118 Verify Reactivate Shift band...");
 
 		shiftBand.reactivateShiftBand();
@@ -82,7 +82,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 	}
 	@Test(priority = 5)
 	public void E10_3119_VerifyWithoutShiftBandName() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3119 Verify Without Shift Band Name...");
 
 		shiftBand.withoutShiftBandName();
@@ -91,7 +91,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 	@Test(priority = 6)
 	public void E10_3120_VerifyWithCombinationShift() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3120 Verify With Combination Shift...");
 
 		shiftBand.shiftBandTypeCombinationShift();
@@ -100,7 +100,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 	@Test(priority = 7)
 	public void E10_3121_VerifyWithOvertimeShift() throws Exception {
-		captureScreenshot(driver, "shiftBandTest");
+		captureScreenshot(driver, "E10_2606_ShiftBandTest");
 		logger.info("E10-3121 Verify With Overtime Shift");
 
 		shiftBand.shiftBandTypeOvertimeShift();

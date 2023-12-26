@@ -15,6 +15,9 @@ public class EmployeeKioskPage extends BaseClass{
 	@FindBy(xpath = "//div[text()='Apply Leave']/..")
 	private WebElement applyLeave;
 	
+	@FindBy(xpath = "//div[text()='Approver Kiosk']/..")
+	private WebElement approverKiosk;
+	
 	
 	public EmployeeKioskPage(WebDriver driver) {
 		super();
@@ -27,9 +30,12 @@ public class EmployeeKioskPage extends BaseClass{
 	public void clickApplyLeave() {
 		applyLeave.click();
 	}
-	
+	public void clickApproverKiosk() {
+		approverKiosk.click();
+	}
 	public void clickOnApplyLeave() {
 		clickEmployeeKiosk();
 		clickApplyLeave();
 	}
+	
 }

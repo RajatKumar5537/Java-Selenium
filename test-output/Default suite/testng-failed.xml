@@ -9,7 +9,7 @@
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="E10_3225_VerifyLoginAsEmployeeApplyForLeave"/>
+          <include name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave"/>
           <include name="setup"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->

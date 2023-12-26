@@ -38,6 +38,7 @@ public class RosterSetupPage extends BaseClass{
 	}
 	
 	public void setShiftBandDefination() {
+		webUtility.ElementClickable(driver, shiftBandDefination);
 		shiftBandDefination.click();
 	}
 	

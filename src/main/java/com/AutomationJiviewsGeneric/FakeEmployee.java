@@ -438,12 +438,12 @@ public class FakeEmployee {
 		this.tmVesselDeparture = tmVesselDeparture;
 	}
 	public String getTmrwDate() {
-        return tmrwDate;
-    }
+		return tmrwDate;
+	}
 
-    public void setTmrwDate(String TmrwDate) {
-        this.tmrwDate= TmrwDate;
-    }
+	public void setTmrwDate(String TmrwDate) {
+		this.tmrwDate= TmrwDate;
+	}
 
 
 
@@ -548,26 +548,26 @@ public class FakeEmployee {
 
 		// Set remarksLeave (random sentence)
 		setRemarksLeave(fakeData.lorem().sentence());
-		
-	    setTxtVesselName(fakeData.company().name());
-	    setTxtVesselVisitId(fakeData.idNumber().valid());
 
-	 // Set both planning, arrival, and departure dates to the same date
-	    LocalDate commonDate = LocalDate.now().plusDays(fakeData.number().numberBetween(1, 30));
-	    LocalDate currentDate = LocalDate.now(); // Get the current date
-        setDtPlanning(formatDate(currentDate));
-//	    setDtPlanning(formatDate(commonDate));
-	    setDtVesselArrival(formatDate(commonDate));
-	    setDtVesselDeparture(formatDate(commonDate));
-	    
-	    // Set specific arrival and departure times
-	    setVesselArrivalTime("07:00");
-	    setTmVesselDeparture("19:00");
-	 // Set tmrwDate
-	    LocalDate tomorrow = LocalDate.now().plusDays(1);
-	    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-	    String tmrwDateValue = tomorrow.format(formatter);
-	    setTmrwDate(tmrwDateValue);
+		setTxtVesselName(fakeData.company().name());
+		setTxtVesselVisitId(fakeData.idNumber().valid());
+
+		// Set both planning, arrival, and departure dates to the same date
+		LocalDate commonDate = LocalDate.now().plusDays(fakeData.number().numberBetween(1, 30));
+		LocalDate currentDate = LocalDate.now(); // Get the current date
+		setDtPlanning(formatDate(currentDate));
+		//	    setDtPlanning(formatDate(commonDate));
+		setDtVesselArrival(formatDate(commonDate));
+		setDtVesselDeparture(formatDate(commonDate));
+
+		// Set specific arrival and departure times
+		setVesselArrivalTime("07:00");
+		setTmVesselDeparture("19:00");
+		// Set tmrwDate
+		LocalDate tomorrow = LocalDate.now().plusDays(1);
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		String tmrwDateValue = tomorrow.format(formatter);
+		setTmrwDate(tmrwDateValue);
 
 
 

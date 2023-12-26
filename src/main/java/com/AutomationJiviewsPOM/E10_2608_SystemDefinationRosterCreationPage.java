@@ -150,6 +150,15 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	private List<WebElement> rows;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
 	private List<WebElement> checkBoxPublishRosterMulti;
+	
+	
+	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr")
+	private List<WebElement> row;
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkboxes;
+	@FindBy(xpath = "//li[@id='skill-list_next']")
+	private WebElement nextPage;
+
 
 	@FindBy(xpath = "(//td[@class='sorting_1']/input)[2]")
 	private WebElement checkBoxPublishRoster2;
@@ -223,7 +232,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		action.scrollToElement(availableSkill).perform();
 		//		availableSkill.click();
 		select=new Select(availableSkill);
-		select.selectByIndex(0);	
+		select.selectByIndex(1);	
 	}
 	//move a singel Roaster/Emp from available Roaster/Emp group to selected roaster group 
 	public void setAvailableSingleGroupMoveToSelectedGrp() {
@@ -425,7 +434,57 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		action.moveToElement(notificationPopup).perform();
 		notificationPopup.click();
 	}
-	
+	public void performDeleteAction() throws InterruptedException {
+		//		Thread.sleep(2000);
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnDeleteTemplateRoster);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+
+		// Iterate through rows
+		for (int i = 0; i < row.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				//				scrollAndClick(driver, checkbox);
+				checkbox.click();
+				performDeleteAction();
+				checkboxFound = true;
+				break;
+			}
+		}
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndDelete();
+		}
+	}
+	private void goToNextPageAndDelete() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage);
+			scrollUp(driver);
+			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+	// Method to perform scroll-up action
+	private void scrollUp(WebDriver driver) {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+	}
+	public void scrollAndClick(WebDriver driver, WebElement element) {
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+		// Scroll to the top of the page
+		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		element.click();
+	}
 	
 	
 	
@@ -482,6 +541,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
 		setBtnByEmp();
+		Thread.sleep(2000);
 		setAvailableSkillForSingleEmp();
 		setAvailableSingleGroupMoveToSelectedGrp();
 		setSaveBtn();
@@ -539,10 +599,14 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		setBtnPublishRosterPattern() ;
 		performActionsOnCheckboxes();
 	}
-	public void setDeactiveRoster() {
-		setCheckBoxDeactive();
-		setBtnDeleteTemplateRoster();
+	public void setDeactiveRoster() throws Exception {
+//		setCheckBoxDeactive();
+//		setBtnDeleteTemplateRoster();
+		
+		
+		deleteRowsWithEnabledCheckbox();
 		setBtnYes();
+		clickNotificationPopup();
 	}
 
 	public void setReactiveRoster() throws InterruptedException {
@@ -552,26 +616,4 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		setBtnAddSaveRosterPattern();
 	}
 
-	/*public void setMoveAllAndPublishAll() throws Exception {
-		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
-		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
-		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
-		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-
-		setAddBtn();
-		//		Thread.sleep(2000);
-		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
-		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
-		setNoOfDayTxt(noOfDay);
-		setAvailableSkillForSingleRoster();
-		setAvailableSingleGroupMoveToSelectedGrp();
-		setSaveBtn();
-		//		enterEmptyCell(6,2,7);
-		setBtnAddSaveRosterPattern();
-		Thread.sleep(20000);
-		getTemplateRosterUpdatedSuccessfullyMsg();
-		Thread.sleep(2000);
-		setBtnPublishRosterPattern() ;
-		performActionsOnCheckboxes();
-	}*/
 }

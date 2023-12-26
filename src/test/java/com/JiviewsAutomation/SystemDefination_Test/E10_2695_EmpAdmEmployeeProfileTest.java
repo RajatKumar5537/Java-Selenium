@@ -56,15 +56,14 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.updateEmpProfile(fakeEmployee);
 		logger.info("E10-3136 Employee Profile updated successful");
 	}
-//	@Test(priority = 3)
-	// Save button is not working 
-//	public void E10-3137_VerifyDuplicateEmpProfile() throws Exception {
-//		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
-//		logger.info("E10-3137 Duplicate Employee Profile...");
-//
-//		empProfile.duplicateEmpProfile(fakeEmployee);
-//		logger.info("E10-3137 Employee Profile is successfully Duplicated ");
-//	}
+	@Test(priority = 3)
+	public void E10_3137_VerifyDuplicateEmpProfile() throws Exception {
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("E10-3137 Duplicate Employee Profile...");
+
+		empProfile.duplicateEmpProfile(fakeEmployee);
+		logger.info("E10-3137 Employee Profile is successfully Duplicated ");
+	}
 	@Test(priority = 4, dependsOnMethods = "E10_3135_VerifyCreateEmpProfile")
 	public void E10_3138_VerifyDeleteEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
@@ -74,6 +73,14 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		logger.info("E10-3138 Employee Profile is successfully Ddeleted");	
 	}
 	@Test(priority = 5)
+	public void E10_3145_VerifyreactivateEmpProfile() throws Exception{
+		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
+		logger.info("E10-3145 Reactivate Employee profile...");
+		
+		empProfile.reactivateEmpProfile();
+		logger.info("E10-3145 Employee profile is successfully reactivated");	
+	}
+	@Test(priority = 6)
 	public void E10_3139_VerifySearchEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3139 Search Employee Profile...");
@@ -81,7 +88,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.searchEmpProfile();
 		logger.info("E10-3139 Employee Profile is successfully Searched");	
 	}
-	@Test(priority = 6)
+	@Test(priority = 7)
 	public void E10_3140_VerifysearchRosterGroup() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3140 Search RosterGroup...");
@@ -89,7 +96,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.searchRosterGroup();
 		logger.info("E10-3140 RosterGroup is successfully Searched");	
 	}
-	@Test(priority = 7)
+	@Test(priority = 8)
 	public void E10_3141_VerifysearchRoleGroup() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3141 Search Role Group...");
@@ -97,7 +104,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.searchRoleGroup();
 		logger.info("E10-3141 Role Group is successfully Searched");	
 	}
-	@Test(priority = 8)
+	@Test(priority = 9)
 	public void E10_3142_VerifysearchEmpStatus() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3142 Search Employee Status...");
@@ -105,7 +112,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.searchEmpStatus();
 		logger.info("E10-3142 Employee Status is successfully Searched");	
 	}
-	@Test(priority = 9)
+	@Test(priority = 10)
 	public void E10_3143_VerifyEmpNoInSearchBar() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3143 Search Employee number...");
@@ -113,7 +120,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.enterEmpNoInSearchBar();
 		logger.info("E10-3143 Employee is successfully Searched");	
 	}
-	@Test(priority = 10)
+	@Test(priority = 11)
 	public void E10_3144_VerifyTerminateEmpProfile() throws Exception {
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3144 Terminate Employee ...");
@@ -121,12 +128,4 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile.terminateEmpProfile(fakeEmployee);
 		logger.info("E10-3144 Employee is successfully terminated");	
 	}
-//	@Test(priority = 11)
-//	public void E10-3145_VerifyreactivateEmpProfile() throws Exception{
-//		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
-//		logger.info("E10-3145 Reactivate Employee profile...");
-//		
-//		empProfile.reactivateEmpProfile();
-//		logger.info("E10-3145 Employee profile is successfully reactivated");	
-//	}
 }

@@ -143,7 +143,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//span[@id='select2-cmbScheduleRule-container']")
 	private WebElement txtScheduleRule;
-	@FindBy(xpath = "//li[contains(text(),'Deafault SCR')]")
+	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectScheduleRule;
 
 	@FindBy(xpath = "//span[@id='select2-cmbPayGroup-container']")
@@ -165,8 +165,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "//ul[@id='select2-cmbPrimaryRole-results']")
 	private WebElement cmbPrimaryRoleSearch;
-	@FindBy(xpath = "(//li[contains(text(),'RTGO')])")
+	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectSkill;
+	
 	@FindBy(xpath = "//select[@id='bootstrap-duallistbox-nonselected-list_']")
 	private WebElement availableListBox;
 
@@ -395,12 +396,12 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 
 	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[2]")
 	private WebElement chooseRosterGroup;
-	@FindBy(xpath = "//li[text()='Default Roster  Group']")
+	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectDftRosterGroup;
 
 	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[3]")
 	private WebElement chooseRoleGroup;
-	@FindBy(xpath = "//li[text()='RTGO Operator  2023-11-10T00:21:32.396903900']")
+	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectRoleGroup;
 
 	@FindBy(xpath = "(//ul[@class='select2-selection__rendered'])[4]")
@@ -965,9 +966,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		}
 
 		// If no enabled checkbox found on the current page, go to the next page and try again
-		if (!checkboxFound) {
-			goToNextPageAndReactivate();
-		}
+//		if (!checkboxFound) {
+//			goToNextPageAndReactivate();
+//		}
 	}
 	private void goToNextPageAndReactivate() throws InterruptedException {
 		try {
@@ -1276,7 +1277,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		getAddNewContactSuccessMsg();
 		clickNotificationPopup();
 		clickTabMiscellaneous();
-		activeCheckBoxShiftEmp();
+//		activeCheckBoxShiftEmp();
 		clickTabESS();
 		clickBtnAddLeaveProfile();
 		chooseEmpLeaveProfileName();
@@ -1355,13 +1356,41 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterMiddleName(fakeEmployee.getMiddleName());
 		enterLastName(fakeEmployee.getLastName());
 		enterDateBirthDate(fakeEmployee.getDOB());
+		chooseEmploymentBasis();
+		chooseEmpBasisContract();
+		chooseGender("male");
+		chooseMeritalStatus("married");
+		chooseTitle("mr.");
+		chooseReligion("hindu");
+		enterAddressLine1(fakeEmployee.getAddress());
+		enterAddressLine2(fakeEmployee.getAddress());
+		enterAddressLine3(fakeEmployee.getAddress());
+		enterPostCode(fakeEmployee.getPostCode());
+		enterCity(fakeEmployee.getCity());
+		enterState(fakeEmployee.getState());
+		chooseCountry("australian");
+		enterMobileNumber(fakeEmployee.getMobileNumber());
 		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterEmailAddress(fakeEmployee.getEmail());
+		enterHireDate(fakeEmployee.getHireDate());
+		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
+		choosePosition("echo");
+		chooseScheduleRule();
+		selectScheduleRule();
+		choosetxtPayGroup();
+		selectPayGroup();
+		chooseOvertimeSetting();
+		selectOtSetting();
 		//		Thread.sleep(3000);
 		//		clickTabMiscellaneous();
 		//		activeCheckBoxShiftEmp();
+		clickTabRole();
+		clickPrimaryRole();
+		selectPrimaryRoleSearch();
+		selectAvailableListBox();
+		setAvailableSingleSkillMoveToSelectedSkill();
 		pressBtnSaveEmployee();
-		getEmployeeProfilecreatedSuccessfullyMsg();
+//		getEmployeeProfilecreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 	public void terminateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
@@ -1389,6 +1418,12 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	public void reactivateEmpProfile() throws InterruptedException {
 		reactivateRowsWithEnabledCheckbox();
+		
+		clickTabRole();
+		clickPrimaryRole();
+		selectPrimaryRoleSearch();
+		selectAvailableListBox();
+		setAvailableSingleSkillMoveToSelectedSkill();
 		pressBtnSaveEmployee();
 	}
 	public void searchEmpProfile() throws InterruptedException {

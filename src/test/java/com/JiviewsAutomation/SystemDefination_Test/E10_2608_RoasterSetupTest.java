@@ -22,27 +22,47 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 	private E10_2608_SystemDefinationRosterCreationPage rosterCreation;
 
 
-	@BeforeMethod
-	public void setup() throws Exception {
-		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-		driver.navigate().to(homeUrl);
+//	@BeforeMethod
+//	public void setup() throws Exception {
+//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+//		driver.navigate().to(homeUrl);
+//		homePage=new HomePage(driver);
+//		orgUnit= new OrganizationUnitDropDown(driver);
+//		jmMenuItem= new jiviewsMainMenuItems(driver);
+//		rosterSetup= new RosterSetupPage(driver);
+//		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
+//
+////		homePage.setOrgUnit();
+////		Thread.sleep(2000);
+////		orgUnit.clickOLMop();
+//		Thread.sleep(2000);
+//		homePage.setOrgUnit();
+//		Thread.sleep(2000);
+//		orgUnit.setAutoOu();
+//		jmMenuItem.clickOnSystemDefination();
+//		rosterSetup.setRosterCreation();
+//	}
+	@Test(priority = 1)
+	public void E10_2697_VerifyCreateRoasterWithGroup() throws Exception {
+		captureScreenshot(driver, "roasterSetupTest");
+		logger.info("E10-2697 Creating Roaster with Roster Group ...");
+//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+//		driver.navigate().to(homeUrl);
 		homePage=new HomePage(driver);
 		orgUnit= new OrganizationUnitDropDown(driver);
 		jmMenuItem= new jiviewsMainMenuItems(driver);
 		rosterSetup= new RosterSetupPage(driver);
 		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 
+//		homePage.setOrgUnit();
+//		Thread.sleep(2000);
+//		orgUnit.clickOLMop();
+		Thread.sleep(2000);
 		homePage.setOrgUnit();
-		orgUnit.clickOLMop();
-		homePage.setOrgUnit();
+		Thread.sleep(2000);
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setRosterCreation();
-	}
-	@Test(priority = 1)
-	public void E10_2697_VerifyCreateRoasterWithGroup() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
-		logger.info("E10-2697 Creating Roaster with Roster Group ...");
 
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup();
@@ -53,7 +73,24 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 	public void E10_2698_VerifyCreateRoasterwithEmployee() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 		logger.info("E10-2698 Creating Roaster with Employee...");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage=new HomePage(driver);
+		orgUnit= new OrganizationUnitDropDown(driver);
+		jmMenuItem= new jiviewsMainMenuItems(driver);
+		rosterSetup= new RosterSetupPage(driver);
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.clickOLMop();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setRosterCreation();
+		
 		rosterCreation.setCreateRoasterwithEmployee();
 		logger.info("E10-2698 Creating Roaster with Employee is successful");
 	}
@@ -63,28 +100,97 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 		captureScreenshot(driver, "roasterSetupTest");
 		logger.info("E10-2738 Update Roaster with Employee...");
 		
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage=new HomePage(driver);
+		orgUnit= new OrganizationUnitDropDown(driver);
+		jmMenuItem= new jiviewsMainMenuItems(driver);
+		rosterSetup= new RosterSetupPage(driver);
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
+
+//		homePage.setOrgUnit();
+//		Thread.sleep(2000);
+//		orgUnit.clickOLMop();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setRosterCreation();
+		
 		rosterCreation.setUpdateRoaster();
 		logger.info("E10-2738 Update Roaster with Employee is successful");
 		
 	}
-	@Test(priority = 4)//,dependsOnMethods = "verifyUpdateRoaster")
+	@Test(priority = 4)
 	public void E10_3151_VerifyDeactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage=new HomePage(driver);
+		orgUnit= new OrganizationUnitDropDown(driver);
+		jmMenuItem= new jiviewsMainMenuItems(driver);
+		rosterSetup= new RosterSetupPage(driver);
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 
+//		homePage.setOrgUnit();
+//		Thread.sleep(2000);
+//		orgUnit.clickOLMop();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setRosterCreation();
+		
 		rosterCreation.setDeactiveRoster();
 		logger.info("Deactivate Roaster is successful");
 	}
-	@Test(priority = 5)//, dependsOnMethods = "verifyDeactiveRoster")
+	@Test(priority = 5)
 	public void E10_3152_verifyReactiveRoster() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage=new HomePage(driver);
+		orgUnit= new OrganizationUnitDropDown(driver);
+		jmMenuItem= new jiviewsMainMenuItems(driver);
+		rosterSetup= new RosterSetupPage(driver);
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 
+//		homePage.setOrgUnit();
+//		Thread.sleep(2000);
+//		orgUnit.clickOLMop();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setRosterCreation();
+		
 		rosterCreation.setReactiveRoster();
 		logger.info("Reactivate Roaster is successful");
 	}
 	@Test(priority = 6)
 	public void E10_3153_VerifyCreateRoasterWithGroupAndEmp() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		homePage=new HomePage(driver);
+		orgUnit= new OrganizationUnitDropDown(driver);
+		jmMenuItem= new jiviewsMainMenuItems(driver);
+		rosterSetup= new RosterSetupPage(driver);
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.clickOLMop();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		Thread.sleep(2000);
+		orgUnit.setAutoOu();
+		jmMenuItem.clickOnSystemDefination();
+		rosterSetup.setRosterCreation();
+		
 		rosterCreation.setCreateRoasterwithRosterAndEmp();
 		logger.info("Roaster with Roster Group and Employee is successful");
 	}
