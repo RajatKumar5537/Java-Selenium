@@ -25,8 +25,9 @@ public class WorkforceSchedulingPage extends BaseClass{
 	}
 	
 	
-	public void setEmployeeRosterV2() {
+	public void setEmployeeRosterV2() throws InterruptedException {
 		clickScheduling();
+//		Thread.sleep(2000);
 		clickEmployeeRosterV2();
 	}
 }

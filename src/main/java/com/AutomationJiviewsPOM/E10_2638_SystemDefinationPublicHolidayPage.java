@@ -2,6 +2,7 @@ package com.AutomationJiviewsPOM;
 
 import java.time.Duration;
 import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -188,6 +189,9 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	public void setBtnYes() {
 		btnYes.click();
 	}
+	
+	String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy"));
+	
 	public void setCreatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
 		setBtnAddNew();
 		Thread.sleep(2000);
@@ -202,7 +206,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 		
 		Thread.sleep(2000);
 		setBtnEdit();
-		setTxtHolidayName(fakeEmployee.getHolidayName());
+		setTxtHolidayName(fakeEmployee.getHolidayName()+ "_" + timestamp);
 		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setChkIsPaid();
 		setTxtHolidayNote(fakeEmployee.getHolidayNote());

@@ -48,7 +48,6 @@ public class FakeEmployee {
 	private String leaveTo;
 	private String referenceNo;
 	private String remarksLeave;
-
 	private String dtPlanning;
 	private String txtVesselName;
 	private String txtVesselVisitId;
@@ -65,6 +64,10 @@ public class FakeEmployee {
 		this.empNumber = generateEmpNumber(8);
 		this.badgeNumber = generateBadgeNumber();
 		this.postCode= generateFakePostalCode();
+		 // Set uniqueHolidayDate to a future date
+	    this.uniqueHolidayDate = generateFutureDate();
+
+		generateTmrwDate();
 	}
 
 	String generateEmpNumber(int length) {
@@ -458,6 +461,8 @@ public class FakeEmployee {
 	private static final int TERMINATION_MONTHS_AFTER_SKILL_END = 3;
 	private static final int ROSTER_START_DAYS_BEFORE = 7;
 	private static final int ROSTER_END_DAYS_AFTER_START = 20;
+	private String uniqueHolidayDate;
+	
 
 	public void generateFakeEmployeeData() {
 		Faker fakeData = new Faker();
@@ -517,8 +522,10 @@ public class FakeEmployee {
 		String uniqueHolidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
 		setHolidayName(uniqueHolidayName);
 
-		String uniqueHolidayDate = LocalDateTime.now().toString();
-		setHolidayDate(uniqueHolidayDate);
+//		String uniqueHolidayDate = LocalDateTime.now().toString();
+//		setHolidayDate(uniqueHolidayDate);
+		
+		setHolidayDate(generateFutureDate() + "_" + System.currentTimeMillis());
 
 		setHolidayNote(fakeData.lorem().sentence());
 
@@ -563,13 +570,8 @@ public class FakeEmployee {
 		// Set specific arrival and departure times
 		setVesselArrivalTime("07:00");
 		setTmVesselDeparture("19:00");
-		// Set tmrwDate
-		LocalDate tomorrow = LocalDate.now().plusDays(1);
-		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String tmrwDateValue = tomorrow.format(formatter);
-		setTmrwDate(tmrwDateValue);
-
-
+		generateTmrwDate();
+		
 
 	}
 
@@ -589,7 +591,11 @@ public class FakeEmployee {
 			return "Default description for the skill.";
 		}
 	}
-
+	private void generateTmrwDate() {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		String tmrwDateValue = LocalDate.now().plusDays(1).format(formatter);
+		setTmrwDate(tmrwDateValue);
+	}
 	private void calculateRosterDates() {
 		LocalDateTime currentDate = LocalDateTime.now();
 		LocalDateTime startDate = currentDate.minusDays(ROSTER_START_DAYS_BEFORE);
@@ -616,10 +622,11 @@ public class FakeEmployee {
 		return "Description for " + groupName;
 	}
 	private String generateFutureDate() {
-		LocalDate futureDate = LocalDate.now().plusDays(30); // Generate a date within the next 30 days
-		return formatDate(futureDate);
+	    Random random = new Random();
+	    int randomDays = random.nextInt(30) + 1; // Generate a random number of days between 1 and 30
+	    LocalDate futureDate = LocalDate.now().plusDays(randomDays);
+	    return formatDate(futureDate);
 	}
-
 	private String generateRandomTime() {
 		return LocalDateTime.now().plusHours((long) (Math.random() * 24)).format(DateTimeFormatter.ofPattern("HH:mm"));
 	}
@@ -627,147 +634,5 @@ public class FakeEmployee {
 	private String formatDate(LocalDate date) {
 		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 	}
-	/*
-	private void generateFakeEmployeeData() {
-		Faker fakeData=new Faker();
-
-		// Generate a random port operator name
-		String portOperatorName = fakeData.options().option("Auto_Test","crane operator", "cfs", "efo", "flo", "lsh obc","Automation_Test","");
-
-		// Set the generated skill code with a timestamp
-		String uniqueSkillCode = portOperatorName + "_" + System.currentTimeMillis();
-		setSkillCode(uniqueSkillCode);
-
-		// Set the description based on the skill
-		String description;
-		switch (portOperatorName) {
-		case "crane operator":
-			description = "Responsible for operating cranes.";
-			break;
-		case "cfs":
-			description = "Handles Container Freight Station (CFS) operations.";
-			break;
-		case "efo":
-			description = "Manages Empty Container Yard (EFO) activities.";
-			break;
-		case "flo":
-			description = "Oversees Freight Loading Operations (FLO).";
-			break;
-		case "lsh obc":
-			description = "Works with Logistics and Shipping (LSH) - Outward Bound Cargo (OBC).";
-			break;
-		default:
-			description = "Default description for the skill.";
-		}
-
-		// Add a timestamp to the description
-		String uniqueDescription = description + " - " + System.currentTimeMillis();
-		setSkillCodeDesc(uniqueDescription);
-		setFirstName(fakeData.name().firstName());
-		setDescription(fakeData.lorem().sentence()); 
-		setDocumentName("Medical Report"); 
-		setMiddleName(fakeData.name().firstName());
-		setLastName(fakeData.name().lastName());
-		// For AlphaNumeric value
-		//	setEmpNumber(UUID.randomUUID().toString());
-		//	setBadgeNumber(UUID.randomUUID().toString().substring(0, 8).toUpperCase()); //"BADGE_" +
-
-		// For Numeric value
-		setEmpNumber(generateNumericString(8));
-		setBadgeNumber(generateNumericString(8));
-		setDisplayName(fakeData.name().fullName());
-		// Set date of birth (DOB) at least 20 years ago and Generate a random date between minDOB (inclusive) and maxDOB (inclusive)
-		LocalDate minDOB = LocalDate.of(1990, 1, 1);
-		LocalDate maxDOB = LocalDate.of(2004, 12, 31);
-		LocalDate randomDOB = minDOB.plusDays(new Random().nextInt((int) (maxDOB.toEpochDay() - minDOB.toEpochDay()) + 1));
-		setDOB(randomDOB.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		setAddress(fakeData.address().streetAddress());
-		setCity(fakeData.address().city());
-		setState(fakeData.address().state());
-		setPostCode(generateFakePostalCode());
-		setMobileNumber(fakeData.phoneNumber().cellPhone());
-		setPhoneNumber(fakeData.phoneNumber().cellPhone());
-		setEmail(fakeData.internet().emailAddress());
-		// Set the minimum hire date (2 years ago from the current date)
-		LocalDate hireDate = LocalDate.now().minusYears(2);
-		setHireDate(hireDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Set probation expiry date (hire date + 90 days)
-		LocalDate probationExpiryDate = LocalDate.parse(getHireDate(), DateTimeFormatter.ofPattern("dd-MM-yyyy")).plusDays(90);
-		setProbationExpirydate(probationExpiryDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for WorkFlowStartDate (2 months after the current date)
-		LocalDate startDate = LocalDate.now().plusMonths(2);
-		setWorkFlowStartDate(startDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for WorkFlowEndDate (4 months after the current date)
-		LocalDate endDate = LocalDate.now().plusMonths(4);
-		setWorkFlowEndDate(endDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for SkillStartDate (2 months after the current date)
-		LocalDate skillStartDate = LocalDate.now().plusMonths(2);
-		setSkillStartDate(skillStartDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Generate a random date for SkillEndDate (between 3 to 6 months after the current date)
-		LocalDate skillEndDate = LocalDate.now().plusMonths(3 + new Random().nextInt(4)); // Random number between 3 and 6
-		setSkillEndDate(skillEndDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Set termination date after 3 months from the skill end date
-		LocalDate terminationDate = skillEndDate.plusMonths(3);
-		setTerminatedDate(terminationDate.format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		// Add a timestamp to the holidayName for uniqueness
-		String uniqueHolidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
-		setHolidayName(uniqueHolidayName);
-
-		// Add a timestamp to the holidayDate for uniqueness
-		String uniqueHolidayDate = LocalDateTime.now().toString();
-		setHolidayDate(uniqueHolidayDate);
-
-		// Set holidayNote with a random fake sentence
-		setHolidayNote(fakeData.lorem().sentence());
-
-		// Generate a random roster group name
-		String rosterGroupName = fakeData.options().option("Crew Group", "PM1_A", "PM1_B", "PM1_C", "RBR");
-
-		// Set the generated roster group name with a timestamp
-		String uniqueRosterGroupName = rosterGroupName + "_" + System.currentTimeMillis();
-		setRosterGroupName(uniqueRosterGroupName);
-
-		// Set the description based on the roster group name
-		String descriptionGroupName = generateDescriptionForRosterGroupName(rosterGroupName);
-
-		// Add a timestamp to the description Group Name
-		String uniqueDescriptionGroupName = descriptionGroupName + " - " + System.currentTimeMillis();
-		setRosterGroupDescription(uniqueDescriptionGroupName);
-		setRosterPublishDate(LocalDateTime.now().minusDays(2).format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-
-
-		//		setDesignation(fakeData.job().position());
-		//		setInterests(fakeData.internet().domainWord());
-
-	}
-	public void calculateRosterDates() {
-		// Get the current date and time
-		LocalDateTime currentDate = LocalDateTime.now();
-
-		// Calculate rosterStartDate (7 days before the current date)
-		LocalDateTime startDate = currentDate.minusDays(7);
-		setRosterStartDate(formatDate(startDate));
-
-		// Calculate rosterEndDate (20 days after the rosterStartDate)
-		LocalDateTime endDate = startDate.plusDays(20);
-		setRosterEndDate(formatDate(endDate));
-	}
-
-	private String formatDate(LocalDateTime date) {
-		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-	}
-	private String generateNumericString(int length) {
-		Random random = new Random();
-		StringBuilder numericString = new StringBuilder();
-		for (int i = 0; i < length; i++) {
-			numericString.append(random.nextInt(10)); // Append a random digit (0-9)
-		}
-		return numericString.toString();
-	}
-	protected String generateDescriptionForRosterGroupName(String groupName) {
-		// Customize this logic to generate descriptions based on the roster group name
-		return "Description for " + groupName;
-	}*/
-
 
 }

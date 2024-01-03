@@ -1,14 +1,20 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.Duration;
 import java.time.LocalDateTime;
+import java.util.List;
 
+import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
@@ -135,12 +141,19 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSaveScheduleCreationRule']")
 	private WebElement btnSaveScheduleCreationRule;
 
-	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[1]")
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	private WebElement btnEdit;
 
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
+	@FindBy(xpath = "//table[@id='ScheduleRule-list']/tbody/tr")
+	private List<WebElement> row;
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	private List<WebElement> checkboxes;
+	@FindBy(xpath = "//li[@id='ScheduleRule-list_next']")
+	private WebElement nextPage;
+	
 	@FindBy(xpath = "(//tr[@role='row']/td/input)[1]")
 	private WebElement checkBox;
 
@@ -310,6 +323,60 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 		//		webUtility.moveToElement(driver, checkBox);
 		checkBox.click();
 	}
+	public void performDeleteAction() throws InterruptedException {
+		//		Thread.sleep(2000);
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnDeletePublicHlday);
+				break; 
+			} catch (ElementClickInterceptedException e) {
+			}
+		}
+	}
+	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
+		boolean checkboxFound = false;
+
+		// Iterate through rows
+		for (int i = 0; i < row.size(); i++) {
+			WebElement checkbox = checkboxes.get(i);
+			if (checkbox.isEnabled()) {
+				//				scrollAndClick(driver, checkbox);
+				checkbox.click();
+				performDeleteAction();
+				checkboxFound = true;
+				break;
+			}
+		}
+		// If no enabled checkbox found on the current page, go to the next page and try again
+		if (!checkboxFound) {
+			goToNextPageAndDelete();
+		}
+	}
+	private void goToNextPageAndDelete() throws InterruptedException {
+		try {
+			scrollAndClick(driver, nextPage);
+			scrollUp(driver);
+			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
+
+		} catch (ElementClickInterceptedException e) {
+			// Handle the exception if necessary
+		}
+	}
+	// Method to perform scroll-up action
+		private void scrollUp(WebDriver driver) {
+			JavascriptExecutor js = (JavascriptExecutor) driver;
+			js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+		}
+		public void scrollAndClick(WebDriver driver, WebElement element) {
+			WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
+			// Scroll to the top of the page
+			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+			element.click();
+		}
+		
+		
+		
 	public void setBtnDeletePublicHlday() {
 		btnDeletePublicHlday.click();
 	}
@@ -395,8 +462,11 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 
 
 		setBtnEdit();
-		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
-		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
+//		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
+		setTxtScheduleRuleName(fakeEmployee.getFirstName());
+		
+//		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
+		setTxtScheduleRuleDesc(fakeEmployee.getDescription());
 		Thread.sleep(1000);
 		setBtnSaveScheduleCreationRule();
 		clickNotificationPopup();
@@ -404,10 +474,12 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 	}
 	public void setDeactivateSCR() throws Exception {
 
-		setCheckbox();
-		Thread.sleep(2000);
-		setBtnDeletePublicHlday();
+		deleteRowsWithEnabledCheckbox();
 		setBtnYes();
+//		setCheckbox();
+//		Thread.sleep(2000);
+//		setBtnDeletePublicHlday();
+//		setBtnYes();
 		clickNotificationPopup();
 	}
 

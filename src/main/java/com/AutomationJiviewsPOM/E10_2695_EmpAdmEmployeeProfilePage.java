@@ -232,7 +232,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement txtDescription;
 	@FindBy(xpath = "//button[@id='btnAddAttachment']")
 	private WebElement btnAddAttachment;
-	@FindBy(xpath = "(//input[@id='fileToUpload'])[2]")
+	@FindBy(xpath = "(//input[@id='fileToUpload'])[2]") 
 	private WebElement btnFileToUpload;
 	@FindBy(xpath = "//button[text()='Upload']")
 	private WebElement btnUpload;
@@ -1026,7 +1026,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 	public void deleteDisciplinaryIfPresentAndClickAddSuspension(WebDriver driver) throws InterruptedException {
 		try {
-			webUtility.ElementClickable(driver, btnDeleteDisciplinary);
+//			webUtility.ElementClickable(driver, btnDeleteDisciplinary);
 			btnDeleteDisciplinary.click();
 		} catch (Exception e) {
 			// If btnDeleteDisciplinary is not present or not clickable, do nothing
@@ -1327,6 +1327,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		clickonBtnSaveExcludedSkill();
 		getaddExcludedSkillSuccessMsg();
 		clickNotificationPopup();
+		
 		clickonTabDisciplinary();
 		deleteDisciplinaryIfPresentAndClickAddSuspension(driver);
 		enterdtDisciplinaryStart(fakeEmployee.getSkillStartDate());

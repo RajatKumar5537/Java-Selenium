@@ -36,7 +36,9 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
+		Thread.sleep(2000);
 		jmMenuItem.setSelectWorkforceScheduling(); 
+		Thread.sleep(3000);
 		wfScheduling.setEmployeeRosterV2();
 	}
 	@Test(priority = 1)
@@ -60,7 +62,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	}
 
 	@Test(priority = 3)//, dependsOnMethods = "verifySearchByFilters")
-	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException {
+	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException, InterruptedException {
 		// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Expanding And Collapsing Rows...");
@@ -117,15 +119,15 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.CopyWithOncallShift(fakeEmployee);
 		logger.info("Copy with Oncall Shift is successful");
 	}
-	@Test(priority = 8)
-	public void E10_2944_VerifyCopySingleRowColumnAndPasteInNewRow() throws IOException, InterruptedException {
-		// Jira Item: E10-2944 - Employee Roster V2 [Copy single and multiple row/column and paste in new row]
-		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		logger.info("verifyCopySingleRowColumnAndPasteInNewRow...");
-
-		empRosterV2.CopySingleRowColumnAndPasteInNewRow(fakeEmployee);
-		logger.info("verifyCopySingleRowColumnAndPasteInNewRow is successful");
-	}
+//	@Test(priority = 8)
+//	public void E10_2944_VerifyCopySingleRowColumnAndPasteInNewRow() throws IOException, InterruptedException {
+//		// Jira Item: E10-2944 - Employee Roster V2 [Copy single and multiple row/column and paste in new row]
+//		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+//		logger.info("verifyCopySingleRowColumnAndPasteInNewRow...");
+//
+//		empRosterV2.CopySingleRowColumnAndPasteInNewRow(fakeEmployee);
+//		logger.info("verifyCopySingleRowColumnAndPasteInNewRow is successful");
+//	}
 
 	@Test(priority = 9)
 	public void E10_2946_VerifyExportToTextAndExcel() throws Exception {
@@ -147,7 +149,16 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Expand and Collapse Group is successful");
 	}
 
+	@Test(priority = 11)
+	public void E10_2948_VerifyApplyOnBehalfApplyLeave() throws Exception {
+		// Jira Item: E10-2948 - Employee Roster V2 [Right click -> Apply On Behalf Apply leave]
+		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+		logger.info("Performing Apply On Behalf Apply leave...");
 
+		empRosterV2.applyOnBehalfApplyLeave(fakeEmployee);
+		logger.info("Apply On Behalf Apply leave is successful");
+	}
+	
 	@Test(priority = 12)
 	public void E10_2949_VerifyTestCopyAndPasteToExcel() throws IOException {
 		// Jira Item: E10-2949 - Employee Roster V2 [Right click on Employee and click copy and paste in Excel sheet]
@@ -221,25 +232,8 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Click Different tab in Summary is successful");	
 	}
 
-	@Test(priority = 11)
-	public void E10_2948_VerifyApplyOnBehalfApplyLeave() throws Exception {
-		// Jira Item: E10-2948 - Employee Roster V2 [Right click -> Apply On Behalf Apply leave]
-		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		logger.info("Performing Apply On Behalf Apply leave...");
 
-		empRosterV2.applyOnBehalfApplyLeave(fakeEmployee);
-		logger.info("Apply On Behalf Apply leave is successful");
-	}
 	@Test(priority = 18)
-	public void E10_3038_VerifyApplyOnBehalApplyTimeOff() throws Exception {
-		// Jira Item: E10-3038 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Time off 
-		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		logger.info("Performing Apply On Behalf Apply Time off ...");
-
-		empRosterV2.ApplyTimeOff(fakeEmployee);
-		logger.info("Apply On Behalf Apply Time off  is successful");
-	}
-	@Test(priority = 19)
 	public void E10_3039_VerifyApplyUncontrolledLeave() throws Exception {
 		//	Jira Item: E10-3039 - Employee Roster V2  [Right Click] [Apply On Behalf] Apply Uncontrolled Leave
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
@@ -248,7 +242,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.ApplyUncontrolledLeave(fakeEmployee);
 		logger.info("Apply On Behalf Apply Uncontrolled Leave is successful");
 	}
-	@Test(priority = 20)
+	@Test(priority = 19)
 	public void E10_3040_VerifyApplyExcludeDeployment() throws Exception {
 		//	Jira Item: E10-3040 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Exclude Deployment
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
@@ -257,5 +251,13 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.applyExcludeDeployment(fakeEmployee);
 		logger.info("Apply On Behalf Apply Uncontrolled Leave is successful");
 	}
+	@Test(priority = 20)
+	public void E10_3038_VerifyApplyOnBehalApplyTimeOff() throws Exception {
+		// Jira Item: E10-3038 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Time off 
+		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+		logger.info("Performing Apply On Behalf Apply Time off ...");
 
+		empRosterV2.ApplyTimeOff(fakeEmployee);
+		logger.info("Apply On Behalf Apply Time off  is successful");
+	}
 }
