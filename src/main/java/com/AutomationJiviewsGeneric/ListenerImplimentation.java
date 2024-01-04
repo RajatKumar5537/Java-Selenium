@@ -47,6 +47,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	public void onTestStart(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
 		setupTest(methodName);
+
 		/*	test = report.createTest(methodName);
 
 		// Add author, category, and description to the test
@@ -59,6 +60,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		test.info("Jivi Automation Test: Verifying user login functionality");*/
 	}
 
+
 	@Override
 	public void onTestSuccess(ITestResult result) {
 		// Log test success
@@ -70,7 +72,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String res = result.getName();
 		TakesScreenshot t = (TakesScreenshot) driver;
 		File src = t.getScreenshotAs(OutputType.FILE);
-//		File dest = new File("./ScreenShot/" + res + ".png");
+		//		File dest = new File("./ScreenShot/" + res + ".png");
 		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + res + ".png");
 		logger.info("Screenshot destination path: " + dest.getAbsolutePath());
 		try {
@@ -87,6 +89,17 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 			logger.error("Error attaching screenshot to the test report:", e);
 		}
+
+		// Update the path for attaching the screenshot
+		String screenshotPath = "../ScreenShot/" + res + ".png";
+
+		// Log test failure with a screenshot
+		try {
+			test.fail("Test failed", MediaEntityBuilder.createScreenCaptureFromPath(screenshotPath).build());
+		} catch (IOException e) {
+			e.printStackTrace();
+			logger.error("Error attaching screenshot to the test report:", e);
+		}
 	}
 
 	@Override
@@ -96,17 +109,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Log test skipped with custom message or additional information
 		test.skip("Test skipped - Method: " + methodName);
-		/*test = report.createTest(methodName);
-		try {
-			test.assignAuthor(congigUtiliy.getCongigPropertyData("author"));
-		}catch (IOException e) {
-			e.printStackTrace();
-		}
-		test.assignCategory("Functional Test");
-		test.info("Jivi Automation Test: Verifying user login functionality");
 
-		// Log test skipped with custom message or additional information
-		test.skip("Test skipped - Method: " + methodName);*/
 	}
 
 	@Override

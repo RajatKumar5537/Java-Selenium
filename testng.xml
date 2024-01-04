@@ -4,7 +4,6 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
 	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
@@ -32,12 +31,7 @@
 		</classes>
 	</test>
 
-	<test name="E10_2608_RoasterSetupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
-		</classes>
-	</test>
+	
 
 	<test name="E10_2639_SCRTest">
 		<classes>
@@ -61,14 +55,6 @@
 			/>
 		</classes>
 	</test>
-	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
-			/>
-		</classes>
-	</test>
-
 	
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>

@@ -13,12 +13,12 @@ public class OrganizationUnitDropDown extends BaseClass{
 	WebUtilities webUtility;
 
 	//	select Auto OU
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
+	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[6]")
 	private WebElement autoOu;
 
 
 	// Select OLM
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
+	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[12]")
 	private WebElement OLMop;
 
 

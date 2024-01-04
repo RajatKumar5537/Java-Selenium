@@ -1038,6 +1038,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnClose();
 		rightClickEmptyCell(emptyCell);
 		mouseHoverApplyOnBehalfOption();
+		Thread.sleep(2000);
 		clickonapplyLeaveOption();
 		enterLeaveStartDate(fakeEmployee.getLeaveFrom());
 		Thread.sleep(2000);

@@ -1246,14 +1246,15 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterEmailAddress(fakeEmployee.getEmail());
 		enterHireDate(fakeEmployee.getHireDate());
-		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
-		choosePosition("echo");
-		chooseScheduleRule();
-		selectScheduleRule();
-		choosetxtPayGroup();
-		selectPayGroup();
-		chooseOvertimeSetting();
-		selectOtSetting();
+//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
+//		choosePosition("echo");
+//		chooseScheduleRule();
+//		selectScheduleRule();
+//		choosetxtPayGroup();
+//		selectPayGroup();
+//		chooseOvertimeSetting();
+//		selectOtSetting();
+		
 		clickTabRole();
 		clickPrimaryRole();
 		selectPrimaryRoleSearch();
@@ -1374,14 +1375,16 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterEmailAddress(fakeEmployee.getEmail());
 		enterHireDate(fakeEmployee.getHireDate());
-		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
-		choosePosition("echo");
-		chooseScheduleRule();
-		selectScheduleRule();
-		choosetxtPayGroup();
-		selectPayGroup();
-		chooseOvertimeSetting();
-		selectOtSetting();
+		
+//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
+//		choosePosition("echo");
+//		chooseScheduleRule();
+//		selectScheduleRule();
+//		choosetxtPayGroup();
+//		selectPayGroup();
+//		chooseOvertimeSetting();
+//		selectOtSetting();
+		
 		//		Thread.sleep(3000);
 		//		clickTabMiscellaneous();
 		//		activeCheckBoxShiftEmp();

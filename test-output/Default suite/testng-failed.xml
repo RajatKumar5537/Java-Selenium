@@ -3,16 +3,19 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest">
         <methods>
           <include name="launchBrowser"/>
-          <include name="setup"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3090_VerifyCreateNewRole"/>
+          <include name="E10_3152_verifyReactiveRoster"/>
           <include name="closeBrowser"/>
+          <include name="E10_2698_VerifyCreateRoasterwithEmployee"/>
+          <include name="E10_3153_VerifyCreateRoasterWithGroupAndEmp"/>
+          <include name="E10_2738_VerifyUpdateRoaster"/>
+          <include name="E10_3151_VerifyDeactiveRoster"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
