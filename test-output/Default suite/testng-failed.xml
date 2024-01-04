@@ -8,12 +8,8 @@
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3152_verifyReactiveRoster"/>
           <include name="closeBrowser"/>
           <include name="E10_2698_VerifyCreateRoasterwithEmployee"/>
-          <include name="E10_3153_VerifyCreateRoasterWithGroupAndEmp"/>
-          <include name="E10_2738_VerifyUpdateRoaster"/>
-          <include name="E10_3151_VerifyDeactiveRoster"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest -->
     </classes>
