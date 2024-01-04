@@ -50,6 +50,14 @@ stages:
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
 
+    - task: CopyFiles@2
+      displayName: 'Copy Emailable Report'
+      inputs:
+        SourceFolder: '$(system.defaultworkingdirectory)/target/surefire-reports'
+        Contents: 'emailable-report.html'
+        TargetFolder: '$(build.artifactstagingdirectory)/EmailableReport'
+      condition: succeededOrFailed()
+
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
       inputs:
