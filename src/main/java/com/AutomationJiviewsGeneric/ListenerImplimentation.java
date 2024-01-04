@@ -29,6 +29,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	private static final Logger logger = LogManager.getLogger(ListenerImplimentation.class);
 	private ExtentReports report;
 	private ExtentTest test;
+	
 	public ListenerImplimentation() {
 		new configUtility();
 
@@ -67,7 +68,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		test.pass("Test passed");
 	}
 
-	@Override
+	/*@Override
 	public void onTestFailure(ITestResult result) {
 		String res = result.getName();
 		TakesScreenshot t = (TakesScreenshot) driver;
@@ -100,7 +101,79 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 			logger.error("Error attaching screenshot to the test report:", e);
 		}
+	}*/
+	@Override
+	public void onTestFailure(ITestResult result) {
+	    String res = result.getName();
+	    TakesScreenshot t = (TakesScreenshot) driver;
+	    File src = t.getScreenshotAs(OutputType.FILE);
+	    File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + res + ".png");
+	    logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+
+	    try {
+	        FileUtils.copyFile(src, dest);
+	        logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error capturing or saving screenshot:", e);
+	    }
+
+	    // Log test failure with a customized message
+	    try {
+	        // Get the exception message
+	        String exceptionMessage = result.getThrowable().getMessage();
+	        
+	        // Get the exception type
+	        String exceptionType = result.getThrowable().getClass().getSimpleName();
+	        
+	        // Get the line number where the exception occurred
+	        int lineNumber = result.getThrowable().getStackTrace()[0].getLineNumber();
+
+	        // Log a customized failure message to the extent report
+	        String customFailureMessage = String.format("Test failed due to: %s (%s) at line %d",
+	                exceptionMessage, exceptionType, lineNumber);
+	        
+	        test.fail(customFailureMessage,
+	                MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error attaching screenshot to the test report:", e);
+	    }
 	}
+	/*@Override
+	public void onTestFailure(ITestResult result) {
+	    String res = result.getName();
+	    TakesScreenshot t = (TakesScreenshot) driver;
+	    File src = t.getScreenshotAs(OutputType.FILE);
+	    File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + res + ".png");
+	    logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+
+	    try {
+	        FileUtils.copyFile(src, dest);
+	        logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error capturing or saving screenshot:", e);
+	    }
+
+	    // Log test failure with a customized message
+	    try {
+	        // Get the exception message
+	        String exceptionMessage = result.getThrowable().getMessage();
+
+	        // Log a concise failure message to the extent report
+	        String customFailureMessage = String.format("Test failed due to: %s", exceptionMessage);
+
+	        // Attach the screenshot and log the failure
+	        test.fail(customFailureMessage,
+	                MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error attaching screenshot to the test report:", e);
+	    }
+	}*/
+
+
 
 	@Override
 	public void onTestSkipped(ITestResult result) {

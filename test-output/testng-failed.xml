@@ -3,15 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="E10_2698_VerifyCreateRoasterwithEmployee"/>
+          <include name="setUp"/>
+          <include name="E10_3083_VerifyCreateNewSkill"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1279,6 +1279,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		clickNotificationPopup();
 		clickTabMiscellaneous();
 //		activeCheckBoxShiftEmp();
+		
 		clickTabESS();
 		clickBtnAddLeaveProfile();
 		chooseEmpLeaveProfileName();
