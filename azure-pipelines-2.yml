@@ -22,6 +22,9 @@ stages:
   - job: Build
     steps:
     - checkout: self
+
+
+
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
@@ -29,8 +32,6 @@ stages:
         options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
-        javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
