@@ -295,7 +295,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	}*/
 	
-	@Override
+	/*@Override
 	public void onTestFailure(ITestResult result) {
 	    String res = result.getName();
 	    
@@ -338,8 +338,58 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	    // Log failure to extent report
 	    test.fail(customFailureMessage,
 	            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build());
-	}
+	}*/
 
+	@Override
+	public void onTestFailure(ITestResult result) {
+	    String testName = result.getName();
+
+	    // Include timestamp in screenshot file name
+	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+	    File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+
+	    TakesScreenshot ts = (TakesScreenshot) driver;
+	    File src = ts.getScreenshotAs(OutputType.FILE);
+
+	    logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+
+	    try {
+	        FileUtils.copyFile(src, dest);
+	        logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error capturing or saving screenshot:", e);
+	    }
+
+	    // Log the exception stack trace
+	    logger.error("Exception Stack Trace:", result.getThrowable());
+
+	    // Get the exception message
+	    String exceptionMessage = result.getThrowable().getMessage();
+
+	    // Get the exception type
+	    String exceptionType = result.getThrowable().getClass().getSimpleName();
+
+	    // Get the line number where the exception occurred
+	    int lineNumber = result.getThrowable().getStackTrace()[0].getLineNumber();
+
+	    // Log a customized failure message to the extent report
+	    String customFailureMessage = String.format("Test failed due to: %s (%s) at line %d",
+	            exceptionMessage, exceptionType, lineNumber);
+
+	    // Log failure details to console
+	    System.out.println(customFailureMessage);
+
+	    // Log failure to extent report
+	    ExtentReports extent = ExtentReportManager.getInstance();
+	    extent.createTest(testName).fail(customFailureMessage,
+	            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build());
+
+	    // Log additional information to the extent report
+	    extent.createTest(testName).log(Status.FAIL, "Exception details: " + exceptionMessage);
+	    extent.createTest(testName).log(Status.FAIL, "Exception type: " + exceptionType);
+	    extent.createTest(testName).log(Status.FAIL, "Exception occurred at line: " + lineNumber);
+	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {

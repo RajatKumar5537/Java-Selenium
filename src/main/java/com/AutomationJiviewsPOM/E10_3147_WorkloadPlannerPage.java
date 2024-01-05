@@ -507,7 +507,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickNotificationPopup();
 	}
 	public void E10_3211_CreateVesselScheduleTableView() throws InterruptedException {
-//		Thread.sleep(5000);
+		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
 		Thread.sleep(10000);
