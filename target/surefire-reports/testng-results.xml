@@ -8,67 +8,67 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-05T08:16:52Z" name="Suite" finished-at="2024-01-05T08:18:38Z" duration-ms="106370">
+  <suite started-at="2024-01-05T09:10:01Z" name="Suite" finished-at="2024-01-05T09:11:41Z" duration-ms="99971">
     <groups>
     </groups>
-    <test started-at="2024-01-05T08:16:52Z" name="E10_2749_RoleGroupTest" finished-at="2024-01-05T08:18:38Z" duration-ms="106370">
+    <test started-at="2024-01-05T09:10:01Z" name="E10_2749_RoleGroupTest" finished-at="2024-01-05T09:11:41Z" duration-ms="99971">
       <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:16:52Z" name="launchBrowser" finished-at="2024-01-05T08:16:54Z" duration-ms="2042" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:01Z" name="launchBrowser" finished-at="2024-01-05T09:10:03Z" duration-ms="1800" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:16:54Z" name="beforeTestMethod" finished-at="2024-01-05T08:17:01Z" duration-ms="6899" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:03Z" name="beforeTestMethod" finished-at="2024-01-05T09:10:10Z" duration-ms="7561" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:17:01Z" name="setUp" finished-at="2024-01-05T08:17:16Z" duration-ms="15507" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:10Z" name="setUp" finished-at="2024-01-05T09:10:23Z" duration-ms="13215" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3122_VerifyCreateRoleGroups()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:17:16Z" name="E10_3122_VerifyCreateRoleGroups" finished-at="2024-01-05T08:17:20Z" duration-ms="3468" status="PASS">
+        <test-method signature="E10_3122_VerifyCreateRoleGroups()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:23Z" name="E10_3122_VerifyCreateRoleGroups" finished-at="2024-01-05T09:10:27Z" duration-ms="3296" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3122_VerifyCreateRoleGroups -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:17:20Z" name="setUp" finished-at="2024-01-05T08:17:42Z" duration-ms="21916" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:27Z" name="setUp" finished-at="2024-01-05T09:10:48Z" duration-ms="21121" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3123_VerifyUpdateRoleGroups()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:17:42Z" name="E10_3123_VerifyUpdateRoleGroups" finished-at="2024-01-05T08:17:45Z" duration-ms="3824" status="PASS">
+        <test-method signature="E10_3123_VerifyUpdateRoleGroups()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:48Z" name="E10_3123_VerifyUpdateRoleGroups" finished-at="2024-01-05T09:10:52Z" duration-ms="4520" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3123_VerifyUpdateRoleGroups -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:17:45Z" name="setUp" finished-at="2024-01-05T08:18:04Z" duration-ms="19113" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:10:52Z" name="setUp" finished-at="2024-01-05T09:11:08Z" duration-ms="15794" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3124_VerifyDeactivateRoleGroups()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:04Z" name="E10_3124_VerifyDeactivateRoleGroups" finished-at="2024-01-05T08:18:07Z" duration-ms="2539" status="PASS">
+        <test-method signature="E10_3124_VerifyDeactivateRoleGroups()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:08Z" name="E10_3124_VerifyDeactivateRoleGroups" finished-at="2024-01-05T09:11:11Z" duration-ms="2592" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3124_VerifyDeactivateRoleGroups -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:07Z" name="setUp" finished-at="2024-01-05T08:18:15Z" duration-ms="7664" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:11Z" name="setUp" finished-at="2024-01-05T09:11:18Z" duration-ms="7285" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:15Z" name="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole" finished-at="2024-01-05T08:18:17Z" duration-ms="2430" status="PASS">
+        <test-method signature="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:18Z" name="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole" finished-at="2024-01-05T09:11:20Z" duration-ms="2538" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3125_VerifyCreateRoleGrpWithoutAvailableRole -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:17Z" name="setUp" finished-at="2024-01-05T08:18:25Z" duration-ms="8375" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:20Z" name="setUp" finished-at="2024-01-05T09:11:28Z" duration-ms="7777" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3126_VerifySearchRoleGroup()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:25Z" name="E10_3126_VerifySearchRoleGroup" finished-at="2024-01-05T08:18:27Z" duration-ms="1099" status="PASS">
+        <test-method signature="E10_3126_VerifySearchRoleGroup()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:28Z" name="E10_3126_VerifySearchRoleGroup" finished-at="2024-01-05T09:11:29Z" duration-ms="1165" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3126_VerifySearchRoleGroup -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:27Z" name="setUp" finished-at="2024-01-05T08:18:34Z" duration-ms="7732" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:29Z" name="setUp" finished-at="2024-01-05T09:11:37Z" duration-ms="7298" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setUp -->
-        <test-method signature="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:34Z" name="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName" finished-at="2024-01-05T08:18:37Z" duration-ms="2899" status="FAIL">
+        <test-method signature="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:37Z" name="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName" finished-at="2024-01-05T09:11:40Z" duration-ms="3052" status="FAIL">
           <exception class="java.lang.AssertionError">
             <message>
               <![CDATA[expected [true] but found [false]]]>
@@ -117,17 +117,17 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           <reporter-output>
           </reporter-output>
         </test-method> <!-- E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:38Z" name="afterTestMethod" finished-at="2024-01-05T08:18:38Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:40Z" name="closeBrowser" finished-at="2024-01-05T09:11:41Z" duration-ms="267" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T09:11:40Z" name="afterTestMethod" finished-at="2024-01-05T09:11:40Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest@f6c03cb]" started-at="2024-01-05T08:18:38Z" name="closeBrowser" finished-at="2024-01-05T08:18:38Z" duration-ms="231" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest -->
     </test> <!-- E10_2749_RoleGroupTest -->
   </suite> <!-- Suite -->
