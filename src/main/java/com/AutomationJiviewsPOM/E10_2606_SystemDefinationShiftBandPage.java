@@ -20,7 +20,6 @@ import org.testng.Reporter;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
-import com.mongodb.diagnostics.logging.Logger;
 
 public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 

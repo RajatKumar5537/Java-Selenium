@@ -6,11 +6,13 @@ import java.time.LocalDateTime;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterTest;
@@ -53,6 +55,7 @@ public class BaseClass {
 		}
 		// Launch ChromeDriver with the configured ChromeOptions
 		driver= new ChromeDriver();
+		
 
 		webUtility.maximizeBrowser(driver);
 		webUtility.pageLoadWait(driver, 10);
@@ -157,5 +160,18 @@ public class BaseClass {
 //		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
 
 	}
+	
+	public void setUpDriver() {
+	    // Assuming you are working with a specific browser (e.g., Chrome)
+	    WebDriverManager.chromedriver().setup();
+	    
+	    // Initialize the ChromeDriver
+	    driver = new ChromeDriver();
+	    
+	    // Now you can retrieve the capabilities
+	    Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
+	    
+	}
+
 
 }

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="4" total="5" passed="0" failed="1" skipped="0">
+<testng-results ignored="3" total="4" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,50 +8,51 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-04T11:09:36Z" name="Default suite" finished-at="2024-01-04T11:10:17Z" duration-ms="40297">
+  <suite started-at="2024-01-05T02:55:30Z" name="Default suite" finished-at="2024-01-05T02:56:54Z" duration-ms="84037">
     <groups>
     </groups>
-    <test started-at="2024-01-04T11:09:36Z" name="Default test" finished-at="2024-01-04T11:10:17Z" duration-ms="40297">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:09:36Z" name="launchBrowser" finished-at="2024-01-04T11:09:38Z" duration-ms="1632" status="PASS">
+    <test started-at="2024-01-05T02:55:30Z" name="Default test" finished-at="2024-01-05T02:56:54Z" duration-ms="84037">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:55:30Z" name="launchBrowser" finished-at="2024-01-05T02:56:15Z" duration-ms="44527" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:09:38Z" name="beforeTestMethod" finished-at="2024-01-04T11:09:40Z" duration-ms="2349" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:56:15Z" name="beforeTestMethod" finished-at="2024-01-05T02:56:33Z" duration-ms="17972" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:09:40Z" name="setUp" finished-at="2024-01-04T11:09:48Z" duration-ms="8119" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:56:33Z" name="setup" finished-at="2024-01-05T02:56:41Z" duration-ms="8473" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3083_VerifyCreateNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:09:48Z" name="E10_3083_VerifyCreateNewSkill" finished-at="2024-01-04T11:10:17Z" duration-ms="28065" status="FAIL">
-          <exception class="org.openqa.selenium.WebDriverException">
+        </test-method> <!-- setup -->
+        <test-method signature="E10_3211_VerifyCreateVesselScheduleTableView()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:56:41Z" name="E10_3211_VerifyCreateVesselScheduleTableView" finished-at="2024-01-05T02:56:54Z" duration-ms="12822" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
             <message>
-              <![CDATA[disconnected: not connected to DevTools
-  (failed to check if window was closed: disconnected: not connected to DevTools)
+              <![CDATA[element not interactable
   (Session info: chrome=120.0.6099.130)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8b6b66807c0db1abf44bf03fe24c66db, findElement {using=class name, value=toast-close-button}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59691}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59691/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8b6b66807c0db1abf44bf03fe24c66db]]>
+Command: [220b9fa76914591594a5a0b4c61d8270, clickElement {id=6583E16010BE8CAD3B5F33871A63D5CB_element_3154}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64880}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64880/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (220b9fa76914591594a5a0b4c61d8270)] -> xpath: //a[@id='btnTableView']]
+Session ID: 220b9fa76914591594a5a0b4c61d8270]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
-  (failed to check if window was closed: disconnected: not connected to DevTools)
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
   (Session info: chrome=120.0.6099.130)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [8b6b66807c0db1abf44bf03fe24c66db, findElement {using=class name, value=toast-close-button}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59691}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59691/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 8b6b66807c0db1abf44bf03fe24c66db
-at jdk.internal.reflect.GeneratedConstructorAccessor33.newInstance(Unknown Source)
+Command: [220b9fa76914591594a5a0b4c61d8270, clickElement {id=6583E16010BE8CAD3B5F33871A63D5CB_element_3154}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64880}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64880/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (220b9fa76914591594a5a0b4c61d8270)] -> xpath: //a[@id='btnTableView']]
+Session ID: 220b9fa76914591594a5a0b4c61d8270
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -62,16 +63,17 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
 at jdk.proxy2/jdk.proxy2.$Proxy34.click(Unknown Source)
-at com.AutomationJiviewsPOM.E10_3082_SystemDefinationSkillSetupPage.closeNotificationPopup(E10_3082_SystemDefinationSkillSetupPage.java:119)
-at com.AutomationJiviewsPOM.E10_3082_SystemDefinationSkillSetupPage.createNewSkill(E10_3082_SystemDefinationSkillSetupPage.java:204)
-at com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest.E10_3083_VerifyCreateNewSkill(E10_3082_SkillSetUpTest.java:54)
+at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.clickBtnTableView(E10_3147_WorkloadPlannerPage.java:358)
+at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3211_CreateVesselScheduleTableView(E10_3147_WorkloadPlannerPage.java:512)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3211_VerifyCreateVesselScheduleTableView(E10_3147_WorkloadPlannerTest.java:56)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -99,22 +101,22 @@ at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
 at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3083_VerifyCreateNewSkill -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:10:17Z" name="afterTestMethod" finished-at="2024-01-04T11:10:17Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_3211_VerifyCreateVesselScheduleTableView -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:56:54Z" name="closeBrowser" finished-at="2024-01-05T02:56:54Z" duration-ms="205" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-05T02:56:54Z" name="afterTestMethod" finished-at="2024-01-05T02:56:54Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@7726e185]" started-at="2024-01-04T11:10:17Z" name="closeBrowser" finished-at="2024-01-04T11:10:17Z" duration-ms="117" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

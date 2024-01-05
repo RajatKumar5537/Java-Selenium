@@ -1,16 +1,16 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
-Tests run: 6, Failures: 2, Errors: 0, Skipped: 0, Time elapsed: 63.11 s <<< FAILURE! -- in TestSuite
-com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3124_VerifyDeactivateRoleGroups -- Time elapsed: 12.17 s <<< FAILURE!
+Tests run: 10, Failures: 5, Errors: 0, Skipped: 0, Time elapsed: 231.1 s <<< FAILURE! -- in TestSuite
+com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3124_VerifyDeactivateRoleGroups -- Time elapsed: 11.98 s <<< FAILURE!
 org.openqa.selenium.json.JsonException: 
 java.lang.reflect.InvocationTargetException
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fafa0c238661da7e6c90812fa459ef4c, actions {actions=[org.openqa.selenium.interactions.Sequence@466bf366]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60229}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60229/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fafa0c238661da7e6c90812fa459ef4c
+Command: [12e16dca0fd521649c65dac353ae9806, actions {actions=[org.openqa.selenium.interactions.Sequence@5f92e5eb]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65242}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65242/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12e16dca0fd521649c65dac353ae9806
 	at org.openqa.selenium.json.JsonOutput.convertUsingMethod(JsonOutput.java:395)
 	at org.openqa.selenium.json.JsonOutput.lambda$new$16(JsonOutput.java:165)
 	at org.openqa.selenium.json.JsonOutput.write(JsonOutput.java:322)
@@ -94,9 +94,9 @@ For documentation on this error, please visit: https://www.selenium.dev/document
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [fafa0c238661da7e6c90812fa459ef4c, findElement {using=class name, value=toast-close-button}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:60229}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:60229/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: fafa0c238661da7e6c90812fa459ef4c
+Command: [12e16dca0fd521649c65dac353ae9806, findElement {using=class name, value=toast-close-button}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65242}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65242/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 12e16dca0fd521649c65dac353ae9806
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -115,14 +115,14 @@ Session ID: fafa0c238661da7e6c90812fa459ef4c
 	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
 	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
 	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy31.getWrappedElement(Unknown Source)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.getWrappedElement(Unknown Source)
 	at org.openqa.selenium.interactions.PointerInput$Origin.asArg(PointerInput.java:275)
 	at org.openqa.selenium.interactions.PointerInput$Move.encode(PointerInput.java:224)
 	at org.openqa.selenium.interactions.Sequence.encode(Sequence.java:72)
 	at org.openqa.selenium.interactions.Sequence.toJson(Sequence.java:81)
 	... 67 more
 
-com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -- Time elapsed: 2.758 s <<< FAILURE!
+com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -- Time elapsed: 3.025 s <<< FAILURE!
 java.lang.AssertionError: expected [true] but found [false]
 	at org.testng.Assert.fail(Assert.java:96)
 	at org.testng.Assert.failNotEquals(Assert.java:776)
@@ -131,6 +131,195 @@ java.lang.AssertionError: expected [true] but found [false]
 	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.assertTxtGrpNmRequired(E10_2749_SystemDefinationRoleGroupPage.java:214)
 	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.createRoleGrpWithoutRoleGrpName(E10_2749_SystemDefinationRoleGroupPage.java:271)
 	at com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName(E10_2749_RoleGroupTest.java:91)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3211_VerifyCreateVesselScheduleTableView -- Time elapsed: 40.92 s <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <button type="button" class="btn btn-success btn-round icon-btn btn-sm mr-1" id="btnAddEquipmentSchedule" data-toggle="modal" data-placement="bottom" title="" data-target="#equipment-schedule-modal" data-original-title="Add">...</button> is not clickable at point (1137, 585). Other element would receive the click: <div class="modal-footer">...</div>
+  (Session info: chrome=120.0.6099.130)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [69dc4f28245b7be56149d7e20fafb3de, clickElement {id=ADDF5569BF830B3DAD01908BC1DC1B47_element_281}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65294}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65294/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (69dc4f28245b7be56149d7e20fafb3de)] -> xpath: //button[@id='btnAddEquipmentSchedule']]
+Session ID: 69dc4f28245b7be56149d7e20fafb3de
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.clickBtnAddEquipmentSchedule(E10_3147_WorkloadPlannerPage.java:366)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3211_CreateVesselScheduleTableView(E10_3147_WorkloadPlannerPage.java:540)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3211_VerifyCreateVesselScheduleTableView(E10_3147_WorkloadPlannerTest.java:56)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3181_VerifyGenerateEquipments -- Time elapsed: 6.249 s <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <button type="button" class="btn btn-info btn-round icon-btn dropdown-toggle hide-arrow" data-toggle="dropdown" data_tooltip="tooltip" data-placement="bottom" title="" data-original-title="Change Layout">...</button> is not clickable at point (1063, 101). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.8; cursor: wait; position: absolute;"></div>
+  (Session info: chrome=120.0.6099.130)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [69dc4f28245b7be56149d7e20fafb3de, clickElement {id=B49CF4A305B1FEDAD3797E63A0FFFC22_element_625}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65294}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65294/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (69dc4f28245b7be56149d7e20fafb3de)] -> xpath: //button[@class='btn btn-info btn-round icon-btn dropdown-toggle hide-arrow']]
+Session ID: 69dc4f28245b7be56149d7e20fafb3de
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.clickBtnChangeButton(E10_3147_WorkloadPlannerPage.java:352)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3181_GenerateEquipments(E10_3147_WorkloadPlannerPage.java:625)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3181_VerifyGenerateEquipments(E10_3147_WorkloadPlannerTest.java:97)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:648)
+	at org.testng.TestRunner.run(TestRunner.java:505)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+	at org.testng.TestNG.runSuites(TestNG.java:1049)
+	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+	at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+
+com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3182_VerifyPlanningSignoff -- Time elapsed: 2.227 s <<< FAILURE!
+org.openqa.selenium.ElementClickInterceptedException: 
+element click intercepted: Element <button type="button" class="btn btn-success btn-round icon-btn" id="btnPlanningSignOff" data-toggle="tooltip" data-placement="bottom" title="" data-original-title="Planning Signoff">...</button> is not clickable at point (1222, 101). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.0304482; cursor: wait; position: absolute;"></div>
+  (Session info: chrome=120.0.6099.130)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [69dc4f28245b7be56149d7e20fafb3de, clickElement {id=6CDDE284AAD9246F4A43CF631D8FF5BB_element_812}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.130, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:65294}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:65294/devtoo..., se:cdpVersion: 120.0.6099.130, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (69dc4f28245b7be56149d7e20fafb3de)] -> xpath: //button[@id='btnPlanningSignOff']]
+Session ID: 69dc4f28245b7be56149d7e20fafb3de
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.pressBtnPlanningSignOff(E10_3147_WorkloadPlannerPage.java:463)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3182_PlanningSignoff(E10_3147_WorkloadPlannerPage.java:641)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3182_VerifyPlanningSignoff(E10_3147_WorkloadPlannerTest.java:104)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
