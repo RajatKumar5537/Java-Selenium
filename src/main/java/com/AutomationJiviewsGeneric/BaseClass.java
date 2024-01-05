@@ -162,13 +162,6 @@ public class BaseClass {
 	}
 	
 	public void setUpDriver() {
-	    // Assuming you are working with a specific browser (e.g., Chrome)
-	    WebDriverManager.chromedriver().setup();
-	    
-	    // Initialize the ChromeDriver
-	    driver = new ChromeDriver();
-	    
-	    // Now you can retrieve the capabilities
 	    Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
 	    
 	}

@@ -211,7 +211,7 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
     public void assertTxtGrpNmRequired() {
         String actualResult = txtGrpNmRequired.getText();
-        Assert.assertTrue(actualResult.contains("Role Group Name is required   hjkiki"));
+        Assert.assertTrue(actualResult.contains("Role Group Name is required opop"));
     }
 
     public void enterTxtSearch(String roleGrpName) {
@@ -235,6 +235,8 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
         clickBtnEdit();
         enterRoleGroupName(roleGrpName);
+        selectAvailableShiftBand();
+        moveSingleAvailableSkillToSelected();
         clickBtnSaveRoleGroupDtls();
 //        clickNotificationPopup();
     }
@@ -242,7 +244,7 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
     public void deactivateRoleGroup() throws Exception {
 
         deleteRowsWithEnabledCheckbox();
-//        clickBtnYes();
+        clickBtnYes();
         clickNotificationPopup();
     }
 

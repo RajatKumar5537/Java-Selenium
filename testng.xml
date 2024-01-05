@@ -4,20 +4,18 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	<test name="E10_2749_RoleGroupTest">
+
+<test name="E10_2749_RoleGroupTest"> 
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
 		</classes>
 	</test>
-	<test name="E10_2638_PublicHolidayTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
-			/>
-		</classes>
-	</test>
-	<!--<test name="E10_3082_SkillSetUpTest">
+
+
+
+<!-- 
+	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
@@ -87,5 +85,5 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
-	</test> -->
+	</test>-->
 </suite>
