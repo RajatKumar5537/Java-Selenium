@@ -1247,13 +1247,13 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterEmailAddress(fakeEmployee.getEmail());
 		enterHireDate(fakeEmployee.getHireDate());
 //		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
-//		choosePosition("echo");
-//		chooseScheduleRule();
-//		selectScheduleRule();
-//		choosetxtPayGroup();
-//		selectPayGroup();
-//		chooseOvertimeSetting();
-//		selectOtSetting();
+		choosePosition("echo");
+		chooseScheduleRule();
+		selectScheduleRule();
+		choosetxtPayGroup();
+		selectPayGroup();
+		chooseOvertimeSetting();
+		selectOtSetting();
 		
 		clickTabRole();
 		clickPrimaryRole();

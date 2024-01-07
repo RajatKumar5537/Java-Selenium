@@ -4,31 +4,20 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
-<test name="E10_2749_RoleGroupTest"> 
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
-		</classes>
-	</test>
-
-
-
-<!-- 
 	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
 		</classes>
 	</test>
-	 <test name="E10_3089_RoleSetUpTest">
+	<test name="E10_3089_RoleSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
 		</classes>
 	</test>
 
-	<test name="E10_2749_RoleGroupTest"> 
+	<test name="E10_2749_RoleGroupTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
@@ -71,7 +60,7 @@
 			/>
 		</classes>
 	</test>
-	
+
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class
@@ -85,5 +74,5 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
-	</test>-->
+	</test>
 </suite>
