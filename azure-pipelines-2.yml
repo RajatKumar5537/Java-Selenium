@@ -5,37 +5,41 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
-- stage: SetupEnvironment
+- stage: BuildAndTest
   jobs:
-  - job: SetupChromeDriver
+  - job: Build
     steps:
-    - powershell: |
-        # Download and install ChromeDriver
-        $chromeDriverVersion = '118.0.5993.70'
-        $chromeDriverZip = "$(Agent.ToolsDirectory)\chromedriver.zip"
-        $chromeDriverDir = "$(Agent.ToolsDirectory)\chromedriver"
+    - task: JavaToolInstaller@0
+      inputs:
+        versionSpec: '11'
+        jdkArchitectureOption: 'x64'
+        jdkSourceOption: 'PreInstalled'
 
-        Invoke-WebRequest -Uri "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$($chromeDriverVersion)/win64/chromedriver-win64.zip" -OutFile $chromeDriverZip
-        Expand-Archive -Path $chromeDriverZip -DestinationPath $chromeDriverDir
-        Remove-Item $chromeDriverZip
-      displayName: 'Install ChromeDriver'
+    - task: UseJavaVersion@0
+      inputs:
+        versionSpec: '11'
+        addToPath: true
+
+    - checkout: self
 
 - stage: BuildAndTest
   jobs:
   - job: Build
     steps:
     - checkout: self
-
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'test'
-        options: '-Dsurefire.suiteXmlFiles=testng.xml'
+        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
+        javaHomeOption: 'JDKVersion'
+        mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
+
 
     - task: CopyFiles@2
       displayName: 'Copy ExtentReport Files'
