@@ -4,7 +4,16 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	<test name="E10_3082_SkillSetUpTest">
+	<test name="E10_2639_SCRTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
+		</classes>
+	</test>
+	
+	
+	
+	<!-- <test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
@@ -74,5 +83,5 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
-	</test>
+	</test> -->
 </suite>
