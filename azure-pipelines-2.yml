@@ -5,9 +5,9 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
-- stage: BuildAndTest
+- stage: Build
   jobs:
-  - job: Build
+  - job: InstallJava
     steps:
     - task: JavaToolInstaller@0
       inputs:
@@ -15,19 +15,14 @@ stages:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
 
-
-    - checkout: self
-
-- stage: BuildAndTest
-  jobs:
-  - job: Build
+  - job: MavenBuild
     steps:
     - checkout: self
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'test'
-        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
+        goals: 'clean test'
+        options: '-e -X -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
@@ -35,7 +30,6 @@ stages:
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
-
 
     - task: CopyFiles@2
       displayName: 'Copy ExtentReport Files'
