@@ -5,54 +5,54 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
-- stage: Build
+- stage: SetupEnvironment
   jobs:
-  - job: InstallJava
+  - job: SetupChromeDriver
     steps:
-    - task: JavaToolInstaller@0
-      inputs:
-        versionSpec: '11'
-        jdkArchitectureOption: 'x64'
-        jdkSourceOption: 'PreInstalled'
+    - powershell: |
+        # Download and install ChromeDriver
+        Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+        Remove-Item 'chromedriver.zip'
+      displayName: 'Install ChromeDriver'
 
-  - job: MavenBuild
+- stage: BuildAndTest
+  jobs:
+  - job: Build
     steps:
     - checkout: self
+
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
-        goals: 'clean test'
+        goals: 'test'
         options: '-e -X -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'
+        mavenVersionOption: 'Default'  # Specify the Maven version here
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
 
-    - task: CopyFiles@2
+    - task: CopyFiles@2 
       displayName: 'Copy ExtentReport Files'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)'
         Contents: '**/ExtentReport/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
 
     - task: CopyFiles@2 
-      displayName: 'Copy Screenshots'
+      displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)/ScreenShot'
-        Contents: '**/*.png'
+        Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
-
-    - task: CopyFiles@2
-      displayName: 'Copy Emailable Report'
-      inputs:
-        SourceFolder: '$(system.defaultworkingdirectory)/target/surefire-reports'
-        Contents: 'emailable-report.html'
-        TargetFolder: '$(build.artifactstagingdirectory)/EmailableReport'
+      condition: succeededOrFailed()
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
       inputs:
         PathtoPublish: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
