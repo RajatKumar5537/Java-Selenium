@@ -12,9 +12,12 @@ stages:
     - powershell: |
         # Download and install ChromeDriver
         $chromeDriverVersion = '118.0.5993.70'
-        Invoke-WebRequest -Uri "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$($chromeDriverVersion)/win64/chromedriver-win64.zip" -OutFile 'chromedriver.zip'
-        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
-        Remove-Item 'chromedriver.zip'
+        $chromeDriverZip = "$(Agent.ToolsDirectory)\chromedriver.zip"
+        $chromeDriverDir = "$(Agent.ToolsDirectory)\chromedriver"
+
+        Invoke-WebRequest -Uri "https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/$($chromeDriverVersion)/win64/chromedriver-win64.zip" -OutFile $chromeDriverZip
+        Expand-Archive -Path $chromeDriverZip -DestinationPath $chromeDriverDir
+        Remove-Item $chromeDriverZip
       displayName: 'Install ChromeDriver'
 
 - stage: BuildAndTest
@@ -23,34 +26,30 @@ stages:
     steps:
     - checkout: self
 
-
-
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'test'
-        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
+        options: '-Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
 
-    - task: CopyFiles@2 
+    - task: CopyFiles@2
       displayName: 'Copy ExtentReport Files'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)'
         Contents: '**/ExtentReport/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
-      condition: succeededOrFailed()
 
     - task: CopyFiles@2 
-      displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
+      displayName: 'Copy Screenshots'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)/ScreenShot'
-        Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
+        Contents: '**/*.png'
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
-      condition: succeededOrFailed()
 
     - task: CopyFiles@2
       displayName: 'Copy Emailable Report'
@@ -58,10 +57,8 @@ stages:
         SourceFolder: '$(system.defaultworkingdirectory)/target/surefire-reports'
         Contents: 'emailable-report.html'
         TargetFolder: '$(build.artifactstagingdirectory)/EmailableReport'
-      condition: succeededOrFailed()
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
       inputs:
         PathtoPublish: '$(build.artifactstagingdirectory)'
-      condition: succeededOrFailed()
