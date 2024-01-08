@@ -22,7 +22,7 @@
 							<rules>
 								<requireMavenVersion>
 									<!-- Update the required Maven version here -->
-									<version>3.8.7</version>
+									<version>[3.8.7,)</version>
 								</requireMavenVersion>
 							</rules>
 						</configuration>
