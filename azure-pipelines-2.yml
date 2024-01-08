@@ -21,16 +21,15 @@ stages:
   - job: Build
     steps:
     - checkout: self
-
     - task: Maven@4
       inputs:
         mavenPomFile: 'pom.xml'
         goals: 'test'
-        options: '-e -X -Dsurefire.suiteXmlFiles=testng.xml'
+        options: 'test -Dsurefire.suiteXmlFiles=testng.xml'
         publishJUnitResults: true
         testResultsFiles: '**/surefire-reports/TEST-*.xml'
         javaHomeOption: 'JDKVersion'
-        mavenVersionOption: 'Default'  # Specify the Maven version here
+        mavenVersionOption: 'Default'
         mavenAuthenticateFeed: false
         effectivePomSkip: false
         sonarQubeRunAnalysis: false
@@ -51,14 +50,9 @@ stages:
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
 
-    - task: JavaToolInstaller@0
-      inputs:
-        versionSpec: '11'
-        jdkArchitectureOption: 'x64'
-        jdkSourceOption: 'PreInstalled'
-
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
       inputs:
         PathtoPublish: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()
+
