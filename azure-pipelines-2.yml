@@ -15,10 +15,6 @@ stages:
         jdkArchitectureOption: 'x64'
         jdkSourceOption: 'PreInstalled'
 
-    - task: UseJavaVersion@0
-      inputs:
-        versionSpec: '11'
-        addToPath: true
 
     - checkout: self
 
