@@ -24,7 +24,7 @@
     <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 1 failed test</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +38,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-passed">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,7 +91,21 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">6 methods,   6 passed</span>
+                    <span class="method-stats">6 methods, 1 failed,   5 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
+                    </span>
+                    <div class="method-list-content failed suite-Suite">
+                      <span>
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" class="method navigator-link" hash-for-method="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content failed suite-Suite -->
                   </li>
                   <li>
                     <span class="method-list-title passed">Passed methods</span>
@@ -125,11 +139,6 @@
                         <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" class="method navigator-link" hash-for-method="E10_3126_VerifySearchRoleGroup">E10_3126_VerifySearchRoleGroup</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                      <span>
-                        <img src="passed.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" class="method navigator-link" hash-for-method="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</a> <!-- method navigator-link -->
-                      </span>
-                      <br/>
                     </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
@@ -142,6 +151,27 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
+          <div class="suite-Suite-class-failed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="failed.png"/>
+              <span class="class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName">
+                  </a> <!-- E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -->
+                  <span class="method-name">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</span>
+                  <div class="stack-trace">java.lang.AssertionError: expected [true] but found [false]
+	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.assertTxtGrpNmRequired(E10_2749_SystemDefinationRoleGroupPage.java:214)
+	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.createRoleGrpWithoutRoleGrpName(E10_2749_SystemDefinationRoleGroupPage.java:273)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName(E10_2749_RoleGroupTest.java:91)
+... Removed 33 stack frames
+</div> <!-- stack-trace -->
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-failed -->
           <div class="suite-Suite-class-passed">
             <div class="main-panel-header rounded-window-top">
               <img src="passed.png"/>
@@ -181,13 +211,6 @@
                   <a name="E10_3126_VerifySearchRoleGroup">
                   </a> <!-- E10_3126_VerifySearchRoleGroup -->
                   <span class="method-name">E10_3126_VerifySearchRoleGroup</span>
-                </div> <!-- method-content -->
-              </div> <!-- method -->
-              <div class="method">
-                <div class="method-content">
-                  <a name="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName">
-                  </a> <!-- E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -->
-                  <span class="method-name">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</span>
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
@@ -249,29 +272,29 @@ data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
 data.addRows(6);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'E10_3123_VerifyUpdateRoleGroups')
+data.setCell(0, 1, 'E10_3122_VerifyCreateRoleGroups')
 data.setCell(0, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(0, 3, 3339);
+data.setCell(0, 3, 3622);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'E10_3122_VerifyCreateRoleGroups')
+data.setCell(1, 1, 'E10_3123_VerifyUpdateRoleGroups')
 data.setCell(1, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(1, 3, 3331);
+data.setCell(1, 3, 2930);
 data.setCell(2, 0, 2)
 data.setCell(2, 1, 'E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName')
 data.setCell(2, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(2, 3, 2771);
+data.setCell(2, 3, 2362);
 data.setCell(3, 0, 3)
-data.setCell(3, 1, 'E10_3125_VerifyCreateRoleGrpWithoutAvailableRole')
+data.setCell(3, 1, 'E10_3124_VerifyDeactivateRoleGroups')
 data.setCell(3, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(3, 3, 2270);
+data.setCell(3, 3, 2308);
 data.setCell(4, 0, 4)
-data.setCell(4, 1, 'E10_3124_VerifyDeactivateRoleGroups')
+data.setCell(4, 1, 'E10_3125_VerifyCreateRoleGrpWithoutAvailableRole')
 data.setCell(4, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(4, 3, 2216);
+data.setCell(4, 3, 2217);
 data.setCell(5, 0, 5)
 data.setCell(5, 1, 'E10_3126_VerifySearchRoleGroup')
 data.setCell(5, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest')
-data.setCell(5, 3, 916);
+data.setCell(5, 3, 1003);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
@@ -309,63 +332,65 @@ return data;
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeTestMethod</span>
-                <span class="method-start">2379 ms</span>
+                <span class="method-start">1909 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">35251 ms</span>
+                <span class="method-start">33026 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">E10_3122_VerifyCreateRoleGroups</span>
-                <span class="method-start">52615 ms</span>
+                <span class="method-start">48786 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">55948 ms</span>
+                <span class="method-start">52410 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">E10_3123_VerifyUpdateRoleGroups</span>
-                <span class="method-start">61917 ms</span>
+                <span class="method-start">57593 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">65257 ms</span>
+                <span class="method-start">60523 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">E10_3124_VerifyDeactivateRoleGroups</span>
-                <span class="method-start">75304 ms</span>
+                <span class="method-start">70136 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">77521 ms</span>
+                <span class="method-start">72444 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">E10_3125_VerifyCreateRoleGrpWithoutAvailableRole</span>
-                <span class="method-start">83441 ms</span>
+                <span class="method-start">77538 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">85712 ms</span>
+                <span class="method-start">79755 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
                 <span class="method-name">E10_3126_VerifySearchRoleGroup</span>
-                <span class="method-start">91863 ms</span>
+                <span class="method-start">84933 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-method before">
                 <span class="method-name">setUp</span>
-                <span class="method-start">92780 ms</span>
+                <span class="method-start">85937 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
+                <img src="failed.png">
+                </img>
                 <span class="method-name">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</span>
-                <span class="method-start">99050 ms</span>
+                <span class="method-start">92343 ms</span>
               </div> <!-- test-method -->
               <div class="configuration-class after">
                 <span class="method-name">afterTestMethod</span>
-                <span class="method-start">101822 ms</span>
+                <span class="method-start">95137 ms</span>
               </div> <!-- configuration-class after -->
               <div class="configuration-test after">
                 <span class="method-name">closeBrowser</span>
-                <span class="method-start">101824 ms</span>
+                <span class="method-start">95137 ms</span>
               </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
