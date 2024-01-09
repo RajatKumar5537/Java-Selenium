@@ -75,9 +75,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Include timestamp in screenshot file name
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-//		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+		//		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
 		// Specify the absolute path for the screenshot
-	    File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
+		File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
 
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -92,31 +92,36 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 			logger.error("Error capturing or saving screenshot:", e);
 		}
-		 // Log paths for debugging
-	    logger.info("Working Directory: " + System.getProperty("user.dir"));
-	    logger.info("Screenshot Path: " + dest.getAbsolutePath());
+		// Log paths for debugging
+		logger.info("Working Directory: " + System.getProperty("user.dir"));
+		logger.info("Screenshot Path: " + dest.getAbsolutePath());
 
 		// Log failure to extent report with screenshot and full view of exception message
-//		ExtentReports extent = ExtentReportManager.getInstance();
+		//		ExtentReports extent = ExtentReportManager.getInstance();
 
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-//		 test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
-//		    .addScreenCaptureFromPath(dest.getAbsolutePath());
 
-		 // Log failure to extent report with screenshot
-//		    test.log(Status.FAIL, "Test Failed - Check screenshot below:",
-//		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-//		            .addScreenCaptureFromPath(dest.getAbsolutePath());
-		 // Log failure to extent report with screenshot and error message
-		    test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
-		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-		            .addScreenCaptureFromPath(dest.getAbsolutePath())
-		            .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
+//		test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
+//		.addScreenCaptureFromPath(dest.getAbsolutePath());
 
-		 
-	    // Log additional failure details to console
-	    logger.error("Exception Stack Trace:", result.getThrowable());
+		// Log failure to extent report with screenshot
+		//		    test.log(Status.FAIL, "Test Failed - Check screenshot below:",
+		//		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+		//		            .addScreenCaptureFromPath(dest.getAbsolutePath());
+		// Log failure to extent report with screenshot and error message
+//		test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
+//				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+//		.addScreenCaptureFromPath(dest.getAbsolutePath())
+//		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
+		
+		test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
+		        MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+		        .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
+
+
+		// Log additional failure details to console
+		logger.error("Exception Stack Trace:", result.getThrowable());
 
 	}
 
@@ -202,11 +207,5 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String logMessage = String.format("%s: %s", label, details);
 		test.log(Status.INFO, MarkupHelper.createLabel(logMessage, color).getMarkup());
 	}
-
-	// Helper method to add a log with a table
-	private void logTable(Object[][] data, String cssClass) {
-		test.info(MarkupHelper.createTable((String[][]) data).getMarkup());
-	}
-
 
 }

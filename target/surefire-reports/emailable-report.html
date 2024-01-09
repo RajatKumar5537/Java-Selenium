@@ -9,41 +9,15 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">E10_2749_RoleGroupTest</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">2</td><td class="num">46,885</td><td></td><td></td></tr>
+<tr><td><a href="#t0">E10_2749_RoleGroupTest</a></td><td class="num">1</td><td class="num">0</td><td class="num attn">1</td><td class="num">31,935</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">E10_2749_RoleGroupTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="2">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</td><td><a href="#m0">E10_3126_VerifySearchRoleGroup</a></td><td rowspan="1">1704794426627</td><td rowspan="1">10923</td></tr><tr class="failedeven"><td><a href="#m1">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</a></td><td rowspan="1">1704794443191</td><td rowspan="1">3016</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">E10_2749_RoleGroupTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</td><td><a href="#m0">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</a></td><td rowspan="1">1704797730531</td><td rowspan="1">3720</td></tr><tr><th colspan="4">E10_2749_RoleGroupTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</td><td><a href="#m1">E10_3126_VerifySearchRoleGroup</a></td><td rowspan="1">1704797720104</td><td rowspan="1">1481</td></tr></tbody>
 </table>
-<h2>E10_2749_RoleGroupTest</h2><h3 id="m0">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3126_VerifySearchRoleGroup</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//input[@class=&apos;form-control form-control-sm&apos;]&quot;}
-  (Session info: chrome=120.0.6099.200)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [4f074c9872e63783e82aba1be6c0ee10, findElement {using=xpath, value=//input[@class=&apos;form-control form-control-sm&apos;]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.200, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50854}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50854/devtoo..., se:cdpVersion: 120.0.6099.200, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 4f074c9872e63783e82aba1be6c0ee10
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy32.sendKeys(Unknown Source)
-	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.enterTxtSearch(E10_2749_SystemDefinationRoleGroupPage.java:218)
-	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.searchRoleGroup(E10_2749_SystemDefinationRoleGroupPage.java:263)
-	at com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3126_VerifySearchRoleGroup(E10_2749_RoleGroupTest.java:82)
-... Removed 34 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
+<h2>E10_2749_RoleGroupTest</h2><h3 id="m0">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
 	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.assertTxtGrpNmRequired(E10_2749_SystemDefinationRoleGroupPage.java:214)
 	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.createRoleGrpWithoutRoleGrpName(E10_2749_SystemDefinationRoleGroupPage.java:273)
 	at com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName(E10_2749_RoleGroupTest.java:91)
 ... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3126_VerifySearchRoleGroup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>
