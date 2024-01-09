@@ -245,7 +245,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		// Wait for the overlay to disappear
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		btnAddVesselSchedule.click();
 	}
 
@@ -437,6 +440,9 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Crane Schedule deleted successfully"));
 	}
 	public void clickBtnEquipmentsMatrix() {
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		webUtility.ElementClickable(driver, btnEquipmentsMatrix);
 		btnEquipmentsMatrix.click();
 	}
 	public void enterActivityGenPlanning(String GenPlanning) {
@@ -451,6 +457,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		searchShiftBand.sendKeys(Keys.ENTER);
 	}
 	public void clickEquipmentRequirementMatrixTemplate() {
+		webUtility.ElementClickable(driver, equipmentRequirementMatrixTemplate);
 		equipmentRequirementMatrixTemplate.click();
 	}
 	public void chooseEquipmentRequirement() {
@@ -460,6 +467,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		btnPerformActivityGenerationTask.click();
 	}
 	public void pressBtnPlanningSignOff() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		btnPlanningSignOff.click();
 	}
 	public void getSignOffProcessCompletedSuccessfullyForShiftbandMsg() { 
@@ -637,7 +646,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	}
 
-	public void E10_3182_PlanningSignoff(){
+	public void E10_3182_PlanningSignoff() throws InterruptedException{
+		Thread.sleep(5000);
 		pressBtnPlanningSignOff();
 		clickActivityGenShiftBand();
 		enterSearchShiftBand();

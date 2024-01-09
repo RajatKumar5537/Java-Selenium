@@ -56,7 +56,7 @@ public class E10_3147_WorkloadPlannerTest extends BaseClass{
 		workloadPlanner.E10_3211_CreateVesselScheduleTableView();
 		logger.info("E10_3211_Create a Vessel Schedule with Table view is successful");
 	}
-//	@Test(priority = 1)  Crane button is not displaing 
+//	@Test(priority = 1)  selecting for Crane option is not displaying 
 //	public void E10_3173_VerifyUpdateVesselSchedule() throws InterruptedException, IOException {
 //		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
 //		logger.info("E10_3173 Update Vessel Schedule...");

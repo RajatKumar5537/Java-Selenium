@@ -1,5 +1,7 @@
 package com.AutomationJiviewsPOM;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
 import java.util.List;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
@@ -14,16 +16,16 @@ import org.testng.Reporter;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 
-
-public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
+public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	Select select;
 	public Actions action;
-	HomePage homePage=new HomePage(driver);
-	OrganizationUnitDropDown orgUnit= new OrganizationUnitDropDown(driver);
+	HomePage homePage = new HomePage(driver);
+	OrganizationUnitDropDown orgUnit = new OrganizationUnitDropDown(driver);
 	jiviewsMainMenuItems jmMenuItem = new jiviewsMainMenuItems(driver);
-	RosterSetupPage rosterSetup= new RosterSetupPage(driver);;
-	E10_2608_SystemDefinationRosterCreationPage rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
-	EmployeeAdminstrationPage empAdmin= new EmployeeAdminstrationPage(driver);
+	RosterSetupPage rosterSetup = new RosterSetupPage(driver);;
+	E10_2608_SystemDefinationRosterCreationPage rosterCreation = new E10_2608_SystemDefinationRosterCreationPage(
+			driver);
+	EmployeeAdminstrationPage empAdmin = new EmployeeAdminstrationPage(driver);
 
 	@FindBy(xpath = "//button[@id='btnAddRosterGroup']")
 	private WebElement btnAddRosterGroup;
@@ -37,8 +39,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 	@FindBy(xpath = "//table[@id='availableEmpListDataTable']")
 	private WebElement availableEmpListDataTable;
 	@FindBy(xpath = "//td[@class='align-middle py-3']")
-	private  List<WebElement> checkboxesMembers;;
-
+	private List<WebElement> checkboxesMembers;;
 
 	@FindBy(xpath = "//table[@id='RosterGroup-list']/tbody/tr")
 	private List<WebElement> rows;
@@ -62,6 +63,8 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 	private WebElement btnEdit;
 	@FindBy(xpath = "//div[text()='Roster Group Updated SuccessFully.']")
 	private WebElement rosterGroupUpdatedSuccessFullyMsg;
+	@FindBy(xpath = "//div[text()='Successfully moved employee(s) to current Roster Group']")
+	private WebElement SuccessfullyMovedEmployeeToCurrentRosterGroup;
 
 	@FindBy(xpath = "//button[@id='btnDeleteRosterGroup']")
 	private WebElement btnDeleteRosterGroup;
@@ -74,7 +77,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 	private WebElement checkBoxIsActive;
 	@FindBy(xpath = "//tbody[@id='currentRosterGroupTableBody']/tr//td[@class='align-middle py-3']")
 	private List<WebElement> checkboxNonMembers;
-	@FindBy (xpath = "(//td[@class='font-weight-bold align-middle py-3'])[2]")
+	@FindBy(xpath = "(//td[@class='font-weight-bold align-middle py-3'])[2]")
 	private WebElement clickonAlignMiddleRemove;
 
 	@FindBy(xpath = "//a[@data-item='RemoveSelected']")
@@ -97,11 +100,13 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 	public E10_2909_EmpAdmRosterGroupAssignmentPage(WebDriver driver) {
 		super();
 		PageFactory.initElements(driver, this);
-		this.action= new Actions(driver);
+		this.action = new Actions(driver);
 	}
+
 	public void clickBtnAddRosterGroup() {
 		btnAddRosterGroup.click();
 	}
+
 	public void enterTxtRosterGroupname(String RosterGroupname) {
 		txtRosterGroupname.clear();
 		txtRosterGroupname.sendKeys(RosterGroupname);
@@ -114,56 +119,68 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 		txtRosterGroupDesc.clear();
 		txtRosterGroupDesc.sendKeys(RosterGroupDesc);
 	}
+
 	public void enterTxtRemarks(String Remarks) {
 		txtRemarks.clear();
 		txtRemarks.sendKeys(Remarks);
 	}
+
 	public void performAvailableEmpListDataTable() {
 		webUtility.moveToElement(driver, availableEmpListDataTable);
 	}
+
 	public void enableCheckboxesMember(int count) {
 		for (int i = 0; i < count && i < checkboxesMembers.size(); i++) {
 			checkboxesMembers.get(i).click();
 		}
 	}
+
 	public void enableCheckboxNonMembers(int count) {
 		for (int i = 0; i < count && i < checkboxNonMembers.size(); i++) {
 			checkboxNonMembers.get(i).click();
 		}
 	}
+
 	public void clickonAlignMiddleSelect() {
 		clickonAlignMiddle.click();
 	}
+
 	public void clickonAddSelectedItem() {
 		addSelectedItem.click();
 	}
+
 	public void clickonAlignMiddleRemove() {
 		clickonAlignMiddleRemove.click();
 	}
+
 	public void clickonRemoveSelectedItem() {
 		removeSelectedItem.click();
 	}
+
 	public void clickonBtnSaveRosterGroup() {
 		webUtility.scrollAndClick(driver, btnSaveRosterGroup);
 	}
+
 	public void clickBtnEdit() {
 		btnEdit.click();
 	}
+
 	public void performDeleteAction() throws InterruptedException {
 		for (int i = 0; i < 3; i++) {
 			try {
 				webUtility.scrollAndClick(driver, btnDeleteRosterGroup);
-				break; 
+				break;
 			} catch (ElementClickInterceptedException e) {
 			}
 		}
 	}
+
 	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
 		boolean checkboxFound = false;
 		for (int i = 0; i < rows.size(); i++) {
 			WebElement checkbox = checkboxesForDlt.get(i);
 			if (checkbox.isEnabled()) {
-				//				scrollAndClick(driver, checkbox);
+				// scrollAndClick(driver, checkbox);
 				checkbox.click();
 				performDeleteAction();
 				checkboxFound = true;
@@ -178,19 +195,21 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 	private void goToNextPageAndDelete() throws InterruptedException {
 		try {
 			webUtility.scrollAndClick(driver, nextPage);
-			//			scrollAndClick(driver, nextPage); 
+			// scrollAndClick(driver, nextPage);
 			webUtility.scrollUp(driver);
-			//			scrollUp(driver);
+			// scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
 			// Handle the exception if necessary
 		}
 	}
-	public void enableCheckBoxIsActive() throws InterruptedException{
+
+	public void enableCheckBoxIsActive() throws InterruptedException {
 		checkBoxIsActive.click();
 
 	}
+
 	public void reactivateRowsWithEnabledCheckbox() throws Exception {
 		boolean checkboxFound = false;
 		// Iterate through rows
@@ -208,7 +227,8 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 			}
 		}
 
-		// If no enabled checkbox found on the current page, go to the next page and try again
+		// If no enabled checkbox found on the current page, go to the next page and try
+		// again
 		if (!checkboxFound) {
 			goToNextPageAndReactivate();
 		}
@@ -228,41 +248,51 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 		btnYes.click();
 	}
 
-
 	public void clickonBtnCloseRosterPattern() {
 		btnCloseRosterPattern.click();
 	}
+
 	public void clickNotificationPopup() throws Exception {
 		Thread.sleep(1000);
 		action.moveToElement(notificationPopup).perform();
 		notificationPopup.click();
 	}
 
-	public void enterTxtSearch(){
+	public void enterTxtSearch() {
 		txtSearch.sendKeys("2323");
 	}
+
 	public void clickonSelectRosterPattern() {
-		//		selectRosterPattern.click();
+		// selectRosterPattern.click();
 		action.moveToElement(selectRosterPattern).perform();
 		selectRosterPattern.click();
-		//		select= new Select(selectRosterPattern);
-		//		select.selectByIndex(0);
+		// select= new Select(selectRosterPattern);
+		// select.selectByIndex(0);
 		chooseRosterPattern.click();
 	}
+
 	public void clickonBtnSubmitChanges() {
 		btnSubmitChanges.click();
 	}
+
 	public void checkRosterGroupCreatedSuccessfullyMsg() {
 		String actualResult = rosterGroupCreatedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Roster Group Created Successfully."));
 	}
+
 	public void checkRosterGroupUpdatedSuccessFullyMsg() {
 		String actualResult = rosterGroupUpdatedSuccessFullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Roster Group Updated SuccessFully."));
 	}
+
 	public void checkRosterGroupDeletedSuccessfullyMsg() {
 		String actualResult = rosterGroupDeletedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Selected RosterGroup deleted successfully."));
+	}
+
+	public void checkSuccessfullyMovedEmployeeToCurrentRosterGroup() {
+		String actualResult = SuccessfullyMovedEmployeeToCurrentRosterGroup.getText();
+		Assert.assertTrue(actualResult.contains("Successfully moved employee(s) to current Roster Group"));
 	}
 
 	public void createRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
@@ -273,7 +303,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 		// Scroll down to make sure the checkbox is in view
 		webUtility.scrollDown(driver);
 
-		//		performAvailableEmpListDataTable();
+		// performAvailableEmpListDataTable();
 		enableCheckboxesMember(2);
 		webUtility.scrollUp(driver);
 		clickonAlignMiddleSelect();
@@ -284,63 +314,56 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 		checkRosterGroupCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
+
+	String timestamp = new SimpleDateFormat("HHmmss").format(new Date(0));
+
 	public void updateRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
 		clickBtnEdit();
-		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
+		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName() + timestamp);
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
 		enterTxtRemarks(fakeEmployee.getDescription());
 		clickonBtnSaveRosterGroup();
 		checkRosterGroupUpdatedSuccessFullyMsg();
 		clickNotificationPopup();
 	}
+
 	public void deleteRosterGroupAssignment() throws Exception {
 		deleteRowsWithEnabledCheckbox();
 		clickonBtnYes();
 		checkRosterGroupDeletedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
-	public void reactivateRosterGroupAssignmentx() throws Exception{
+
+	public void reactivateRosterGroupAssignmentx() throws Exception {
 		reactivateRowsWithEnabledCheckbox();
-		//		clickonBtnSaveRosterGroup();
+		// clickonBtnSaveRosterGroup();
 	}
 
-	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception{
-		clickBtnAddRosterGroup();
-		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
-		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
-		enterTxtRemarks(fakeEmployee.getDescription());
-		// Scroll down to make sure the checkbox is in view
-		webUtility.scrollDown(driver);
-		//		performAvailableEmpListDataTable();
-		enableCheckboxesMember(2);
-		webUtility.scrollUp(driver);
-		clickonAlignMiddleSelect();
-		clickonAddSelectedItem();
-		// Scroll down before clicking on Save Roster Group
-		webUtility.scrollDown(driver);
-		clickonBtnSaveRosterGroup();
-		clickNotificationPopup();
-
-		driver.navigate().refresh();
-		homePage.setOrgUnit();
-		orgUnit.clickOLMop();
-		homePage.setOrgUnit();
-		orgUnit.setAutoOu();
-		jmMenuItem.clickOnSystemDefination();
-		rosterSetup.setRosterCreation();
-		rosterCreation.setCreateRoasterwithGroup();
-		clickNotificationPopup();
-		driver.navigate().refresh();
-		homePage.setOrgUnit();
-		orgUnit.clickOLMop();
-		homePage.setOrgUnit();
-		orgUnit.setAutoOu();
-		jmMenuItem.setEmployeeAdministration();
-		empAdmin.setRosterGroupAssignment();
+	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
+		/*
+		 * clickBtnAddRosterGroup();
+		 * enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
+		 * enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
+		 * enterTxtRemarks(fakeEmployee.getDescription()); // Scroll down to make sure
+		 * the checkbox is in view webUtility.scrollDown(driver); //
+		 * performAvailableEmpListDataTable(); enableCheckboxesMember(2);
+		 * webUtility.scrollUp(driver); clickonAlignMiddleSelect();
+		 * clickonAddSelectedItem(); // Scroll down before clicking on Save Roster Group
+		 * webUtility.scrollDown(driver); clickonBtnSaveRosterGroup();
+		 * clickNotificationPopup();
+		 * 
+		 * driver.navigate().refresh(); homePage.setOrgUnit(); orgUnit.clickOLMop();
+		 * homePage.setOrgUnit(); orgUnit.setAutoOu();
+		 * jmMenuItem.clickOnSystemDefination(); rosterSetup.setRosterCreation();
+		 * rosterCreation.setCreateRoasterwithGroup(); clickNotificationPopup();
+		 * driver.navigate().refresh(); homePage.setOrgUnit(); orgUnit.clickOLMop();
+		 * homePage.setOrgUnit(); orgUnit.setAutoOu();
+		 * jmMenuItem.setEmployeeAdministration(); empAdmin.setRosterGroupAssignment();
+		 */
 
 		enterTxtSearch();
 		clickBtnEdit();
-		//				enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
+		// enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
 		enterTxtRemarks(fakeEmployee.getDescription());
 		webUtility.scrollDown(driver);
@@ -356,7 +379,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass{
 		clickonBtnSaveRosterGroup();
 		clickonSelectRosterPattern();
 		clickonBtnSubmitChanges();
-		checkRosterGroupUpdatedSuccessFullyMsg();
+		checkSuccessfullyMovedEmployeeToCurrentRosterGroup();
 		clickNotificationPopup();
 
 	}

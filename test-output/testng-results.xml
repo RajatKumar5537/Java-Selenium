@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="4" passed="4" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,66 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-09T07:15:10Z" name="Default suite" finished-at="2024-01-09T07:16:39Z" duration-ms="88025">
+  <suite started-at="2024-01-09T16:06:22Z" name="Default suite" finished-at="2024-01-09T16:06:57Z" duration-ms="34624">
     <groups>
     </groups>
-    <test started-at="2024-01-09T07:15:10Z" name="Default test" finished-at="2024-01-09T07:16:39Z" duration-ms="88025">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:15:10Z" name="launchBrowser" finished-at="2024-01-09T07:15:12Z" duration-ms="1756" status="PASS">
+    <test started-at="2024-01-09T16:06:22Z" name="Default test" finished-at="2024-01-09T16:06:57Z" duration-ms="34624">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:22Z" name="launchBrowser" finished-at="2024-01-09T16:06:24Z" duration-ms="2013" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:15:12Z" name="beforeTestMethod" finished-at="2024-01-09T07:15:23Z" duration-ms="11095" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:24Z" name="beforeTestMethod" finished-at="2024-01-09T16:06:27Z" duration-ms="2402" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:15:23Z" name="setup" finished-at="2024-01-09T07:15:36Z" duration-ms="12828" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:27Z" name="setup" finished-at="2024-01-09T16:06:36Z" duration-ms="9209" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3131_VerifyCreateSCR()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:15:36Z" name="E10_3131_VerifyCreateSCR" finished-at="2024-01-09T07:15:50Z" duration-ms="13807" status="PASS">
+        <test-method signature="E10_3182_VerifyPlanningSignoff()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:36Z" name="E10_3182_VerifyPlanningSignoff" finished-at="2024-01-09T16:06:56Z" duration-ms="20595" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3131_VerifyCreateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:15:50Z" name="setup" finished-at="2024-01-09T07:16:03Z" duration-ms="13300" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3132_VerifyUpdateSCR()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:03Z" name="E10_3132_VerifyUpdateSCR" finished-at="2024-01-09T07:16:08Z" duration-ms="4796" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3132_VerifyUpdateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:08Z" name="setup" finished-at="2024-01-09T07:16:20Z" duration-ms="11502" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3133_VerifyDeactivateSCR()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:20Z" name="E10_3133_VerifyDeactivateSCR" finished-at="2024-01-09T07:16:22Z" duration-ms="2033" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3133_VerifyDeactivateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:22Z" name="setup" finished-at="2024-01-09T07:16:33Z" duration-ms="11464" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3134_VerifyReactivateSCR()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:33Z" name="E10_3134_VerifyReactivateSCR" finished-at="2024-01-09T07:16:38Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest.E10_3133_VerifyDeactivateSCR" duration-ms="5230" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3134_VerifyReactivateSCR -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:38Z" name="afterTestMethod" finished-at="2024-01-09T07:16:38Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_3182_VerifyPlanningSignoff -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:56Z" name="afterTestMethod" finished-at="2024-01-09T16:06:56Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@1f2d2181]" started-at="2024-01-09T07:16:38Z" name="closeBrowser" finished-at="2024-01-09T07:16:39Z" duration-ms="200" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-09T16:06:56Z" name="closeBrowser" finished-at="2024-01-09T16:06:57Z" duration-ms="376" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

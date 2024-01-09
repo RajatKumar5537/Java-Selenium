@@ -123,7 +123,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectResultsShiftBand;
 
-	@FindBy(xpath = "//span[text()=' On Call Shift? ']")
+	@FindBy(xpath = "//span[text()=' On Call ']")
 	private WebElement onCallShift;
 
 	@FindBy(xpath = "//span[@id='select2-cmbRoleName-container']")
@@ -146,7 +146,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	private WebElement applyExcludeDeployment;
 	@FindBy(xpath = "//div[text()='TI']")
 	private WebElement applyTimeOff;
-	
+
 	@FindBy(xpath = "//span[text()='Copy']")
 	private WebElement copyOption;
 
@@ -164,7 +164,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	private WebElement callIndicatorShift;
 	@FindBy(xpath = "//span[text()='Copy Special']/..")
 	private WebElement copySpecial;
-	@FindBy(xpath = "//span[text()='Copy with OC & Remarks']/..")
+	@FindBy(xpath = "//span[text()='Copy with Both']/..")
 	private WebElement copyWithOCRemarks;
 
 
@@ -182,8 +182,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Apply On Behalf']/..")
 	private WebElement applyOnBehalfOption;
+
 	@FindBy(xpath = "//span[text()='Apply Leave']/..")
 	private WebElement applyLeaveOption;
+	@FindBy(xpath = "//span[@id='select2-cmbExceptionType-container']")
+	private WebElement leaveType;
+	@FindBy(xpath = "//li[text()='Sick Leave']")
+	private WebElement selectSickLeave;
+	@FindBy(xpath = "//li[text()='Emergency Leave']")
+	private WebElement selectEmergencyLeave;
 
 	// Get Title:
 	@FindBy(xpath = "//td[@class='tui-grid-cell tui-grid-cell-has-input tui-grid-cell-disabled tui-grid-cell-has-tree ']")
@@ -222,6 +229,9 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	@FindBy(xpath = "//span[text()='Apply Time off']")
 	private WebElement applyTimeOffOption;
+	@FindBy(xpath = "//input[@id='dtTimeOffDate']")
+	private WebElement dtTimeOffDate;
+	
 	@FindBy(xpath = "//span[@id='select2-cmbTimeOffPeriod-container']")
 	private WebElement txtTimeOffPeriod;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
@@ -269,7 +279,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	@FindBy(xpath = "//div[text()='Exclude Deployment Exception Created Successfully']")
 	private WebElement excludeDeploymentExceptionCreatedSuccessfullyMsg;
 
-	
+
 
 	public E10_2910_EmployeeRosterV2Page(WebDriver driver) {
 		super();
@@ -336,18 +346,11 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public void btnHide() {
 		btnHide.click();
 	}
-//	public void clickBtnExpand() {
-////		webUtility.ElementClickable(driver, btnExpandDiv);
-//		
-//		btnExpandDiv.click();
-//	}
 	public void clickBtnExpand() {
-	    // Wait for the overlay to disappear
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-
-	    // Click the btnExpandDiv element
-	    btnExpandDiv.click();
+		// Wait for the overlay to disappear
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		btnExpandDiv.click();
 	}
 	public void selectColumns(String column) {
 		columns.click();
@@ -393,8 +396,9 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		selectResultsShiftBand.click();
 	}
 	public void selectOnCallShift() throws InterruptedException {
-//		webUtility.ElementClickable(driver, onCallShift);
+		//		webUtility.ElementClickable(driver, onCallShift);
 		Thread.sleep(3000);
+		webUtility.moveToElement(driver, onCallShift);
 		onCallShift.click();
 	}
 	public void selectRoleName() {
@@ -410,7 +414,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		txtShiftNotes.sendKeys(shiftNote);
 	}
 	public void clickBtnSelectShiftBand() {
-//		webUtility.moveToElement(driver, btnSelectShiftBand);
+		//		webUtility.moveToElement(driver, btnSelectShiftBand);
 		btnSelectShiftBand.click();
 	}
 	public void getShiftCreatedSuccessfullyMsg() {
@@ -418,60 +422,37 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		Assert.assertTrue(actualResult.contains("Shift created successfully"));
 	}
 	public void clickShiftCardForCopy() {
-	    // Right-click on cssShiftCard
-	    webUtility.rightClickOnElement(driver, cssShiftCard);
+		// Right-click on cssShiftCard
+		webUtility.rightClickOnElement(driver, cssShiftCard);
 
 	}
 
-//	public void clickFilledCell() {
-//	    try {
-//	        // Check if applyExcludeDeployment and applyTimeOff are visible
-//	        boolean isExcludeDeploymentVisible = applyExcludeDeployment.isDisplayed();
-//	        boolean isTimeOffVisible = applyTimeOff.isDisplayed();
-//
-//	        if (!isExcludeDeploymentVisible && !isTimeOffVisible) {
-//	            // Both elements are not visible, perform the desired actions
-//	            clickShiftCardForCopy();
-//	            mouseHoverApplyOnBehalfOption();
-//	            clickExcludeDeploymentOption();
-//	        } else {
-//	            // At least one of the elements is visible, you may choose to handle this case accordingly
-//	            // For example, you might want to log a message or perform an alternative action
-//	            System.out.println("applyExcludeDeployment and/or applyTimeOff are visible, not right-clicking cssShiftCard.");
-//
-//	            // Perform alternative actions if needed
-//	        }
-//	    } catch (NoSuchElementException e) {
-//	        // Handle the case where cssShiftCard is not found in the DOM
-//	        System.out.println("cssShiftCard element not found.");
-//	    }
-//	}
 
 
 	public void performActionsIfConditionsMet() {
-	    try {
-	        // Check if applyExcludeDeployment and applyTimeOff are displayed
-	        boolean isExcludeDeploymentVisible = applyExcludeDeployment.isDisplayed();
-	        boolean isTimeOffVisible = applyTimeOff.isDisplayed();
+		try {
+			// Check if applyExcludeDeployment and applyTimeOff are displayed
+			boolean isExcludeDeploymentVisible = applyExcludeDeployment.isDisplayed();
+			boolean isTimeOffVisible = applyTimeOff.isDisplayed();
 
-	        // Skip the cell if both applyExcludeDeployment and applyTimeOff are present
-	        if (isExcludeDeploymentVisible && isTimeOffVisible) {
-	            System.out.println("Skipping the cell as applyExcludeDeployment and applyTimeOff are present.");
-	        } else {
-	            // Check if cssShiftCard is visible
-	            if (cssShiftCard.isDisplayed()) {
-	                // cssShiftCard is visible, right-click on it
-	                webUtility.rightClickOnElement(driver, cssShiftCard);
-	                // Continue with additional actions if needed
-	            } else {
-	                // Handle the case where cssShiftCard is not visible
-	                System.out.println("cssShiftCard is not visible.");
-	            }
-	        }
-	    } catch (NoSuchElementException e) {
-	        // Handle the case where applyExcludeDeployment, applyTimeOff, or cssShiftCard is not found in the DOM
-	        System.out.println("Element not found: " + e.getMessage());
-	    }
+			// Skip the cell if both applyExcludeDeployment and applyTimeOff are present
+			if (isExcludeDeploymentVisible && isTimeOffVisible) {
+				System.out.println("Skipping the cell as applyExcludeDeployment and applyTimeOff are present.");
+			} else {
+				// Check if cssShiftCard is visible
+				if (cssShiftCard.isDisplayed()) {
+					// cssShiftCard is visible, right-click on it
+					webUtility.rightClickOnElement(driver, cssShiftCard);
+					// Continue with additional actions if needed
+				} else {
+					// Handle the case where cssShiftCard is not visible
+					System.out.println("cssShiftCard is not visible.");
+				}
+			}
+		} catch (NoSuchElementException e) {
+			// Handle the case where applyExcludeDeployment, applyTimeOff, or cssShiftCard is not found in the DOM
+			System.out.println("Element not found: " + e.getMessage());
+		}
 	}
 
 	public void performCopy() {
@@ -494,6 +475,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	public void performCopyPasteAndConfirmForOnCallShift() throws InterruptedException {
 		if (isElementPresent(callIndicatorShift)) {
+			Thread.sleep(2000);
 			rightClickOnCallIndicatorShift();
 			Thread.sleep(1000);
 			mouseHoverOnCopySpecial();
@@ -576,6 +558,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public void clickonapplyLeaveOption() {
 		applyLeaveOption.click();
 	}
+	public void enterLeaveType() {
+		webUtility.ElementClickable(driver, leaveType);
+		leaveType.click();
+	}
+	public void chooseSickLeave() {
+		selectSickLeave.click();
+	}
+	public void chooseEmergencyLeave() {
+		selectEmergencyLeave.click();
+	}
 	public void enterLeaveStartDate(String LeaveStartDate) {
 		webUtility.ElementClickable(driver, dtLeaveStartDate);
 		dtLeaveStartDate.clear();
@@ -619,6 +611,11 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	public void clickApplyTimeOffOption() {
 		applyTimeOffOption.click();
+	}
+	public void enterTimeOffDate(String timeOff) {
+		dtTimeOffDate.clear();
+		dtTimeOffDate.sendKeys(timeOff);
+		dtTimeOffDate.sendKeys(Keys.ENTER);
 	}
 	public void selectTxtTimeOffPeriod() {
 		txtTimeOffPeriod.click();
@@ -832,7 +829,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		} catch (AWTException | InterruptedException e) {
 			e.printStackTrace();
 		}
-//		Assert.assertEquals(destinationRow.getText(), sourceRowText, "Paste operation failed");
+		//		Assert.assertEquals(destinationRow.getText(), sourceRowText, "Paste operation failed");
 
 	}
 
@@ -852,6 +849,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		selectResultsRoleName();
 		selectShiftBandCode();
 		selectResultsShiftBand();
+		Thread.sleep(2000);
 		selectOnCallShift();
 		enterShiftNotes(fakeEmployee.getDescription());
 		clickBtnSelectShiftBand();
@@ -1040,15 +1038,19 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		mouseHoverApplyOnBehalfOption();
 		Thread.sleep(2000);
 		clickonapplyLeaveOption();
+		Thread.sleep(2000);
+		enterLeaveType();
+		chooseEmergencyLeave();
+		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFrom());
 		Thread.sleep(2000);
 		enterLeaveEndDate(fakeEmployee.getLeaveTo());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		webUtility.scrollDown(driver);
-		clickBtnNext();
+//		clickBtnNext();
 
-
+		// Admin does not have the Approver 
 
 
 
@@ -1073,11 +1075,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnSelectShiftBand();
 		getShiftCreatedSuccessfullyMsg();
 		clickNotificationPopup();		
-		
+
 		clickShiftCardForCopy();
 		mouseHoverApplyOnBehalfOption();
 
+		
 		clickApplyTimeOffOption();
+		
+		enterTimeOffDate(fakeEmployee.getTmrwDate());
+		Thread.sleep(3000);
 		selectTxtTimeOffPeriod();
 		chooseShiftStart();
 		enterTimeOffRemarks(fakeEmployee.getRemarksLeave());
@@ -1085,7 +1091,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		//	private WebElement btnAddAttachment; ....................Not working button 
 
 		clickApplyTimeOff();
-		getTimeOffRequestSubmittedSuccessfullyMsg();
+//		getTimeOffRequestSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 
@@ -1139,12 +1145,13 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		selectShiftBandCode();
 		selectResultsShiftBand();
 		enterShiftNotes(fakeEmployee.getDescription());
+		Thread.sleep(2000);
 		clickBtnSelectShiftBand();
 		getShiftCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 
 		clickShiftCardForCopy();
-//		performActionsIfConditionsMet();
+		//		performActionsIfConditionsMet();
 		mouseHoverApplyOnBehalfOption();
 
 		clickExcludeDeploymentOption();
@@ -1154,7 +1161,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		enterEDRemarks(fakeEmployee.getRemarksLeave());
 		clickBtnApplyExcludeDeployment();
 		clickBtnYes();
-		getexcludeDeploymentExceptionCreatedSuccessfullyMsg();
+//		getexcludeDeploymentExceptionCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 }

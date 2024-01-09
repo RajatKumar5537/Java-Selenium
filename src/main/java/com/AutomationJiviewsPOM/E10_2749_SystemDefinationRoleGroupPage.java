@@ -211,7 +211,7 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
     public void assertTxtGrpNmRequired() {
         String actualResult = txtGrpNmRequired.getText();
-        Assert.assertTrue(actualResult.contains("Role Group Name is required ggggg"));
+        Assert.assertTrue(actualResult.contains("Role Group Name is required"));
     }
 
     public void enterTxtSearch(String roleGrpName) {
