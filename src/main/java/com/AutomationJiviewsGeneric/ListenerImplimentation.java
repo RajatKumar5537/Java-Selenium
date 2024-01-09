@@ -75,7 +75,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Include timestamp in screenshot file name
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+//		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+		// Specify the absolute path for the screenshot
+	    File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
+
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
@@ -94,7 +97,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	    logger.info("Screenshot Path: " + dest.getAbsolutePath());
 
 		// Log failure to extent report with screenshot and full view of exception message
-		ExtentReports extent = ExtentReportManager.getInstance();
+//		ExtentReports extent = ExtentReportManager.getInstance();
 
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
@@ -102,9 +105,15 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 //		    .addScreenCaptureFromPath(dest.getAbsolutePath());
 
 		 // Log failure to extent report with screenshot
-		    test.log(Status.FAIL, "Test Failed - Check screenshot below:",
+//		    test.log(Status.FAIL, "Test Failed - Check screenshot below:",
+//		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+//		            .addScreenCaptureFromPath(dest.getAbsolutePath());
+		 // Log failure to extent report with screenshot and error message
+		    test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
 		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-		            .addScreenCaptureFromPath(dest.getAbsolutePath());
+		            .addScreenCaptureFromPath(dest.getAbsolutePath())
+		            .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
+
 		 
 	    // Log additional failure details to console
 	    logger.error("Exception Stack Trace:", result.getThrowable());
