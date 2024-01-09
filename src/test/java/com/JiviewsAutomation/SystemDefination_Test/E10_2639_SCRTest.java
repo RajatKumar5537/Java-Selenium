@@ -62,7 +62,7 @@ public class E10_2639_SCRTest extends BaseClass{
 		logger.info("E10-3132 Update SCR is successful");
 	}
 
-//	@Test(priority = 3) //,  dependsOnMethods = "E10_3132_VerifyUpdateSCR")
+	@Test(priority = 3) //,  dependsOnMethods = "E10_3132_VerifyUpdateSCR")
 	public void E10_3133_VerifyDeactivateSCR() throws Exception {
 		captureScreenshot(driver, "SCRTest");
 		logger.info("E10-3133 Deactivate SCR");

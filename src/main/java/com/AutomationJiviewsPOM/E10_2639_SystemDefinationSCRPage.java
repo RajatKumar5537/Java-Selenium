@@ -489,7 +489,7 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 		Thread.sleep(2000);
 		setChkIsActive();
 		Thread.sleep(1000);
-//		setBtnSaveScheduleCreationRule(); comment this one only for testing purpose 
+		setBtnSaveScheduleCreationRule();
 		clickNotificationPopup();
 	}
 }
