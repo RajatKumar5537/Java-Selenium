@@ -27,7 +27,6 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import com.aventstack.extentreports.reporter.configuration.ViewName;
 
 
 
@@ -95,8 +94,13 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
 		 // Log failure to extent report with screenshot and full view of exception message
-	    test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
-	        .addScreenCaptureFromPath(dest.getAbsolutePath());
+	    try {
+			test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
+			    .addScreenCaptureFromPath(dest.getAbsolutePath());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 	    // Log additional failure details to console
 	    logger.error("Exception Stack Trace:", result.getThrowable());
@@ -133,16 +137,16 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		spark.config().setReportName("End-to-End Test Report for Jivi Modules");
 
 		// Configure the order of views
-		spark.viewConfigurer().viewOrder()
-		.as(new ViewName[] { 
-				ViewName.DASHBOARD, 
-				ViewName.TEST, 
-				ViewName.CATEGORY, 
-				ViewName.AUTHOR, 
-				ViewName.DEVICE, 
-				ViewName.EXCEPTION, 
-				ViewName.LOG 
-		}).apply();
+//		spark.viewConfigurer().viewOrder()
+//		.as(new ViewName[] { 
+//				ViewName.DASHBOARD, 
+//				ViewName.TEST, 
+//				ViewName.CATEGORY, 
+//				ViewName.AUTHOR, 
+//				ViewName.DEVICE, 
+//				ViewName.EXCEPTION, 
+//				ViewName.LOG 
+//		}).apply();
 	}
 
 	@Override
