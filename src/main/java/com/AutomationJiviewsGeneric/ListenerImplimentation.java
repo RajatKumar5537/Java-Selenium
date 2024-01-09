@@ -75,9 +75,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Include timestamp in screenshot file name
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-		//		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+				File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
 		// Specify the absolute path for the screenshot
-		File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
+//		File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
 
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
