@@ -9,11 +9,14 @@ stages:
   jobs:
   - job: SetupChromeDriver
     steps:
-    - powershell: |
-        # Download and install ChromeDriver
-        Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
-        Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
-        Remove-Item 'chromedriver.zip'
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Download and install ChromeDriver
+          Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+          Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+          Remove-Item 'chromedriver.zip'
       displayName: 'Install ChromeDriver'
 
 - stage: BuildAndTest
@@ -55,4 +58,3 @@ stages:
       inputs:
         PathtoPublish: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()
-
