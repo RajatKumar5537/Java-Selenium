@@ -93,14 +93,8 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-		 // Log failure to extent report with screenshot and full view of exception message
-	    try {
-			test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
-			    .addScreenCaptureFromPath(dest.getAbsolutePath());
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
+		 test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
+		    .addScreenCaptureFromPath(dest.getAbsolutePath());
 
 	    // Log additional failure details to console
 	    logger.error("Exception Stack Trace:", result.getThrowable());
