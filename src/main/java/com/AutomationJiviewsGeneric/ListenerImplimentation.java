@@ -27,6 +27,7 @@ import com.aventstack.extentreports.markuputils.ExtentColor;
 import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
+import com.aventstack.extentreports.reporter.configuration.ViewName;
 
 
 
@@ -131,16 +132,16 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		spark.config().setReportName("End-to-End Test Report for Jivi Modules");
 
 		// Configure the order of views
-//		spark.viewConfigurer().viewOrder()
-//		.as(new ViewName[] { 
-//				ViewName.DASHBOARD, 
-//				ViewName.TEST, 
-//				ViewName.CATEGORY, 
-//				ViewName.AUTHOR, 
-//				ViewName.DEVICE, 
-//				ViewName.EXCEPTION, 
-//				ViewName.LOG 
-//		}).apply();
+		spark.viewConfigurer().viewOrder()
+		.as(new ViewName[] { 
+				ViewName.DASHBOARD, 
+				ViewName.TEST, 
+				ViewName.CATEGORY, 
+				ViewName.AUTHOR, 
+				ViewName.DEVICE, 
+				ViewName.EXCEPTION, 
+				ViewName.LOG 
+		}).apply();
 	}
 
 	@Override
