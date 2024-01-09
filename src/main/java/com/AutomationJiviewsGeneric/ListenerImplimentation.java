@@ -89,6 +89,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 			logger.error("Error capturing or saving screenshot:", e);
 		}
+		 // Log paths for debugging
+	    logger.info("Working Directory: " + System.getProperty("user.dir"));
+	    logger.info("Screenshot Path: " + dest.getAbsolutePath());
+
 		// Log failure to extent report with screenshot and full view of exception message
 		ExtentReports extent = ExtentReportManager.getInstance();
 

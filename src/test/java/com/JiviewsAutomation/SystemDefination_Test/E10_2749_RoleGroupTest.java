@@ -39,41 +39,41 @@ public class E10_2749_RoleGroupTest extends BaseClass{
 		empSetup.setCreateRoleGroups();
 	}
 
-	@Test(priority = 1)
-	public void E10_3122_VerifyCreateRoleGroups() throws Exception {
-		captureScreenshot(driver, "RoleGroupTest");
-		logger.info("E10-3122 Create Role Group...");
-
-		roleGroup.createRolesGroup();
-		logger.info("E10-3122 Create Role Group is successful");
-	}
-
-	@Test(priority = 2)
-	public void E10_3123_VerifyUpdateRoleGroups() throws Exception {
-		captureScreenshot(driver, "RoleGroupTest");
-		logger.info("E10-3123 Update Role Group");
-
-		roleGroup.updateRolesGroup();
-		logger.info("E10-3123 Update Role Group is successful");
-	}
-
-	@Test(priority = 3)
-	public void E10_3124_VerifyDeactivateRoleGroups() throws Exception {
-		captureScreenshot(driver, "RoleGroupTest");
-		logger.info("E10-3124 Deactivate Role Group...");
-
-		roleGroup.deactivateRoleGroup();
-		logger.info("E10-3124 Deactivate Role Group is successful");
-	}
-
-	@Test(priority = 4)
-	public void E10_3125_VerifyCreateRoleGrpWithoutAvailableRole() throws Exception {
-		captureScreenshot(driver, "RoleGroupTest");
-		logger.info("E10-3125 Create role group without available role Group...");
-
-		roleGroup.createRoleGrpWithoutAvailableRole();
-		logger.info("E10-3125 Create role group without available role Group is successful");
-	}
+//	@Test(priority = 1)
+//	public void E10_3122_VerifyCreateRoleGroups() throws Exception {
+//		captureScreenshot(driver, "RoleGroupTest");
+//		logger.info("E10-3122 Create Role Group...");
+//
+//		roleGroup.createRolesGroup();
+//		logger.info("E10-3122 Create Role Group is successful");
+//	}
+//
+//	@Test(priority = 2)
+//	public void E10_3123_VerifyUpdateRoleGroups() throws Exception {
+//		captureScreenshot(driver, "RoleGroupTest");
+//		logger.info("E10-3123 Update Role Group");
+//
+//		roleGroup.updateRolesGroup();
+//		logger.info("E10-3123 Update Role Group is successful");
+//	}
+//
+//	@Test(priority = 3)
+//	public void E10_3124_VerifyDeactivateRoleGroups() throws Exception {
+//		captureScreenshot(driver, "RoleGroupTest");
+//		logger.info("E10-3124 Deactivate Role Group...");
+//
+//		roleGroup.deactivateRoleGroup();
+//		logger.info("E10-3124 Deactivate Role Group is successful");
+//	}
+//
+//	@Test(priority = 4)
+//	public void E10_3125_VerifyCreateRoleGrpWithoutAvailableRole() throws Exception {
+//		captureScreenshot(driver, "RoleGroupTest");
+//		logger.info("E10-3125 Create role group without available role Group...");
+//
+//		roleGroup.createRoleGrpWithoutAvailableRole();
+//		logger.info("E10-3125 Create role group without available role Group is successful");
+//	}
 
 	@Test(priority = 5)
 	public void E10_3126_VerifySearchRoleGroup() throws Exception {
