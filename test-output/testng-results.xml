@@ -8,41 +8,41 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-18T15:03:21Z" name="Default suite" finished-at="2024-01-18T15:04:30Z" duration-ms="68740">
+  <suite started-at="2024-01-18T15:30:36Z" name="Default suite" finished-at="2024-01-18T15:31:43Z" duration-ms="67137">
     <groups>
     </groups>
-    <test started-at="2024-01-18T15:03:21Z" name="Default test" finished-at="2024-01-18T15:04:30Z" duration-ms="68740">
+    <test started-at="2024-01-18T15:30:36Z" name="Default test" finished-at="2024-01-18T15:31:43Z" duration-ms="67137">
       <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:03:21Z" name="launchBrowser" finished-at="2024-01-18T15:03:23Z" duration-ms="1675" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:30:36Z" name="launchBrowser" finished-at="2024-01-18T15:30:38Z" duration-ms="1703" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:03:23Z" name="beforeTestMethod" finished-at="2024-01-18T15:03:38Z" duration-ms="15470" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:30:38Z" name="beforeTestMethod" finished-at="2024-01-18T15:30:40Z" duration-ms="2507" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:03:38Z" name="setup" finished-at="2024-01-18T15:04:09Z" duration-ms="30774" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:30:40Z" name="setup" finished-at="2024-01-18T15:31:01Z" duration-ms="20522" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2939_VerifySearchByFilters()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:04:09Z" name="E10_2939_VerifySearchByFilters" finished-at="2024-01-18T15:04:30Z" duration-ms="20610" status="PASS">
+        <test-method signature="E10_2940_VerifyExpandAndCollapseRows()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:31:01Z" name="E10_2940_VerifyExpandAndCollapseRows" finished-at="2024-01-18T15:31:43Z" duration-ms="42227" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2939_VerifySearchByFilters -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:04:30Z" name="closeBrowser" finished-at="2024-01-18T15:04:30Z" duration-ms="192" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:04:30Z" name="afterTestMethod" finished-at="2024-01-18T15:04:30Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_2940_VerifyExpandAndCollapseRows -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:31:43Z" name="afterTestMethod" finished-at="2024-01-18T15:31:43Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-18T15:31:43Z" name="closeBrowser" finished-at="2024-01-18T15:31:43Z" duration-ms="163" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- closeBrowser -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
