@@ -87,7 +87,7 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void setSelectWorkforceScheduling() throws InterruptedException {
 		clickMainMenu();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		clickWorkforceScheduling();
 	}
 	public void clickOnOperationPlanningExecution() {
