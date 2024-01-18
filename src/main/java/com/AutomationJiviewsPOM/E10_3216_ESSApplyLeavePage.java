@@ -747,8 +747,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		Thread.sleep(2000);
-		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();

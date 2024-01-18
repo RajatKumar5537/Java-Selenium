@@ -56,7 +56,14 @@ public class FakeEmployee {
 	private String dtVesselDeparture;
 	private String tmVesselDeparture;
 	private String tmrwDate;
+	
+	private String LeaveFromDate;
+	private String LeaveEndDate;
+	
 
+
+
+	
 
 	// Constructor
 	public FakeEmployee() {
@@ -446,6 +453,21 @@ public class FakeEmployee {
 	public void setTmrwDate(String TmrwDate) {
 		this.tmrwDate= TmrwDate;
 	}
+	public String getLeaveFromDate() {
+		return LeaveFromDate;
+	}
+
+	public void setLeaveFromDate(String leaveFromDate) {
+		LeaveFromDate = leaveFromDate;
+	}
+
+	public String getLeaveEndDate() {
+		return LeaveEndDate;
+	}
+
+	public void setLeaveEndDate(String leaveEndDate) {
+		LeaveEndDate = leaveEndDate;
+	}
 
 
 
@@ -576,10 +598,12 @@ public class FakeEmployee {
 		setTmVesselDeparture("19:00");
 		//		generateTmrwDate();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String tmrwDateValue = LocalDate.now().plusDays(10).format(formatter); // Set to 7 days in the future
-		
-		setTmrwDate(tmrwDateValue);
-//		setTmrwDate(generateFutureDate());
+		String tmrwDateValue = LocalDate.now().plusDays(7).format(formatter); // Set to 7 days in the future
+
+//		setTmrwDate(tmrwDateValue);
+		setLeaveFromDate(tmrwDateValue);
+		setLeaveEndDate(tmrwDateValue);
+		//		setTmrwDate(generateFutureDate());
 
 
 
