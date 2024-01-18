@@ -191,15 +191,49 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	}
 
 	public void enterPlanning(String planning) {
-		webUtility.ElementClickable(driver, dtPlanning);
-		dtPlanning.clear();
-		dtPlanning.sendKeys(planning);
-		dtPlanning.sendKeys(Keys.ENTER);
+		//		webUtility.ElementClickable(driver, dtPlanning);
+		//		dtPlanning.clear();
+		//		dtPlanning.sendKeys(planning);
+		//		dtPlanning.sendKeys(Keys.ENTER);
+		try {
+			// Wait for the element to be clickable
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement planningElement = wait.until(ExpectedConditions.elementToBeClickable(dtPlanning));
+
+			// Clear the existing content
+			planningElement.clear();
+
+			// Send keys
+			planningElement.sendKeys(planning);
+
+			// Press Enter (optional)
+			planningElement.sendKeys(Keys.ENTER);
+		} catch (Exception e) {
+			// Handle any exceptions or log the error
+			e.printStackTrace(); 
+		}
 	}
 	public void selectShiftBandType(String bandType) {
-		webUtility.ElementClickable(driver, selectShiftBandType);
-		selectShiftBandType.sendKeys(bandType);
-		selectShiftBandType.sendKeys(Keys.ENTER);
+		//		webUtility.ElementClickable(driver, selectShiftBandType);
+		//		selectShiftBandType.sendKeys(bandType);
+		//		selectShiftBandType.sendKeys(Keys.ENTER);
+		try {
+			// Wait for the element to be clickable
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(selectShiftBandType));
+
+			// Clear the existing content
+			bandTypeElement.clear();
+
+			// Send keys
+			bandTypeElement.sendKeys(bandType);
+
+			// Press Enter (optional)
+			bandTypeElement.sendKeys(Keys.ENTER);
+		} catch (Exception e) {
+			// Handle any exceptions or log the error
+			e.printStackTrace(); 
+		}
 	}
 	//	public void chooseShiftBandOption() {
 	//		shiftBandOption.click();	
@@ -351,15 +385,28 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Vessel Schedule deleted successfully"));
 	}
 	public void clickBtnChangeButton() {
-		webUtility.ElementClickable(driver, btnChangeButton);
-		btnChangeButton.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		// Wait until the button is clickable
+		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+
+		// Use Actions class to click
+		new Actions(driver).moveToElement(changeButton).click().perform();
+		//		btnChangeButton.click();
 	}
 	public void clickBtnTimeLineView() {
 		btnTimeLineView.click();
 	}
 	public void clickBtnTableView() {
-		btnTableView.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		// Wait until the button is clickable
+		WebElement tableViewButton = wait.until(ExpectedConditions.elementToBeClickable(btnTableView));
+
+		// Click the button
+		tableViewButton.click();
+		//		btnTableView.click();
 	}
+
 	public void clickVesselScheduleEdit() {
 		webUtility.ElementClickable(driver, vesselScheduleEdit);
 		vesselScheduleEdit.click();
@@ -516,14 +563,14 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickNotificationPopup();
 	}
 	public void E10_3211_CreateVesselScheduleTableView() throws InterruptedException {
-		Thread.sleep(5000);
+		//		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-		Thread.sleep(10000);
+		//		Thread.sleep(10000);
 		enterPlanning(fakeEmployee.getDtPlanning());
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
-		//		clickSearchDailyPlanning();
+		clickSearchDailyPlanning();
 		Thread.sleep(5000);
 		clickBtnAddVesselSchedule();
 
@@ -573,7 +620,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnSaveVesselSchedule();
 	}
 	public void E10_3174_DeleteVesselSchedule() throws InterruptedException {
-		Thread.sleep(5000);
+		//		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
 		Thread.sleep(10000);
@@ -584,7 +631,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(10000);
 		deleteRowsWithEnabledCheckbox();
 		clickBtnYes();
-		//		getCraneScheduleDeletedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 

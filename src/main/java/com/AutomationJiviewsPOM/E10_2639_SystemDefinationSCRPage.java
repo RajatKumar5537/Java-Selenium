@@ -457,8 +457,8 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 	}
 
 	public void setUpdateSCR() throws Exception {
-		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 7);
-		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 8);
+//		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 7);
+//		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 8);
 
 
 		setBtnEdit();

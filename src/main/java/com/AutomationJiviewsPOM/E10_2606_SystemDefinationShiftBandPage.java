@@ -121,7 +121,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
-	@FindBy(xpath = "//button[@id='btnSaveshiftbandDtls']") //button[@id='btnSaveshiftbandDtls']
+	@FindBy(xpath = "//button[@id='btnSaveshiftbandDtls']") 
 	WebElement btnSaveshiftbandDtls;
 
 	// Edit ........................................................
@@ -138,8 +138,6 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(xpath = "//li[@id='shftband-list_next']")
 	private WebElement nextPage;
 
-	//		@FindBy(xpath =  "(//input[@type='checkbox'])[2]")
-	//		private WebElement checkBox;
 
 	@FindBy(xpath = "//button[@id='btnDeleteshftband']")
 	private WebElement btnDeleteshftband;

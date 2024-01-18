@@ -64,8 +64,8 @@ public class FakeEmployee {
 		this.empNumber = generateEmpNumber(8);
 		this.badgeNumber = generateBadgeNumber();
 		this.postCode= generateFakePostalCode();
-		 // Set uniqueHolidayDate to a future date
-	    this.uniqueHolidayDate = generateFutureDate();
+		// Set uniqueHolidayDate to a future date
+		this.uniqueHolidayDate = generateFutureDate();
 
 		generateTmrwDate();
 	}
@@ -374,7 +374,6 @@ public class FakeEmployee {
 	}
 
 	public void setReferenceNo(String ReferenceNo) {
-		// Set a random referenceNo using Faker
 		this.referenceNo = ReferenceNo;
 	}
 
@@ -462,7 +461,7 @@ public class FakeEmployee {
 	private static final int ROSTER_START_DAYS_BEFORE = 7;
 	private static final int ROSTER_END_DAYS_AFTER_START = 20;
 	private String uniqueHolidayDate;
-	
+
 
 	public void generateFakeEmployeeData() {
 		Faker fakeData = new Faker();
@@ -522,9 +521,9 @@ public class FakeEmployee {
 		String uniqueHolidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
 		setHolidayName(uniqueHolidayName);
 
-//		String uniqueHolidayDate = LocalDateTime.now().toString();
-//		setHolidayDate(uniqueHolidayDate);
-		
+		//		String uniqueHolidayDate = LocalDateTime.now().toString();
+		//		setHolidayDate(uniqueHolidayDate);
+
 		setHolidayDate(generateFutureDate() + "_" + System.currentTimeMillis());
 
 		setHolidayNote(fakeData.lorem().sentence());
@@ -561,8 +560,13 @@ public class FakeEmployee {
 
 		// Set both planning, arrival, and departure dates to the same date
 		LocalDate commonDate = LocalDate.now().plusDays(fakeData.number().numberBetween(1, 30));
+		//		LocalDate currentDate = LocalDate.now(); // Get the current date
+		//		setDtPlanning(formatDate(currentDate));
 		LocalDate currentDate = LocalDate.now(); // Get the current date
-		setDtPlanning(formatDate(currentDate));
+		LocalDate tomorrowDate = currentDate.plusDays(1); // Get the date for tomorrow
+		setDtPlanning(formatDate(tomorrowDate)); // Set the date for tomorrow
+
+
 		//	    setDtPlanning(formatDate(commonDate));
 		setDtVesselArrival(formatDate(commonDate));
 		setDtVesselDeparture(formatDate(commonDate));
@@ -570,8 +574,14 @@ public class FakeEmployee {
 		// Set specific arrival and departure times
 		setVesselArrivalTime("07:00");
 		setTmVesselDeparture("19:00");
-		generateTmrwDate();
+		//		generateTmrwDate();
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		String tmrwDateValue = LocalDate.now().plusDays(10).format(formatter); // Set to 7 days in the future
 		
+		setTmrwDate(tmrwDateValue);
+//		setTmrwDate(generateFutureDate());
+
+
 
 	}
 
@@ -591,9 +601,10 @@ public class FakeEmployee {
 			return "Default description for the skill.";
 		}
 	}
-	private void generateTmrwDate() {
+
+	public void generateTmrwDate() {
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String tmrwDateValue = LocalDate.now().plusDays(1).format(formatter);
+		String tmrwDateValue = LocalDate.now().plusDays(7).format(formatter); // Set to 7 days in the future
 		setTmrwDate(tmrwDateValue);
 	}
 	private void calculateRosterDates() {
@@ -609,6 +620,7 @@ public class FakeEmployee {
 		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
 	}
 
+
 	private String generateNumericString(int length) {
 		Random random = new Random();
 		StringBuilder numericString = new StringBuilder();
@@ -621,11 +633,12 @@ public class FakeEmployee {
 	protected String generateDescriptionForRosterGroupName(String groupName) {
 		return "Description for " + groupName;
 	}
+
 	private String generateFutureDate() {
-	    Random random = new Random();
-	    int randomDays = random.nextInt(30) + 1; // Generate a random number of days between 1 and 30
-	    LocalDate futureDate = LocalDate.now().plusDays(randomDays);
-	    return formatDate(futureDate);
+		Random random = new Random();
+		int randomDays = random.nextInt(30) + 1; // Generate a random number of days between 1 and 30
+		LocalDate futureDate = LocalDate.now().plusDays(randomDays);
+		return formatDate(futureDate);
 	}
 	private String generateRandomTime() {
 		return LocalDateTime.now().plusHours((long) (Math.random() * 24)).format(DateTimeFormatter.ofPattern("HH:mm"));

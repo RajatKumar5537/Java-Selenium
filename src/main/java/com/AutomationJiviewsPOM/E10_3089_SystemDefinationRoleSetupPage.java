@@ -49,7 +49,7 @@ public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
 	private WebElement depreparationTime;
 
 	@FindBy(xpath = "//span[@id='select2-cmbPrimarySkillId-container']")
-	private WebElement selectPrimarySkillId; //span[@id='select2-cmbPrimarySkillId-container']
+	private WebElement selectPrimarySkillId; 
 
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement searchField;

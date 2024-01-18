@@ -6,7 +6,7 @@ import java.util.Properties;
 
 public class configUtility {
 	/**
-	 * 
+	 * class using for read the data from properties file.
 	 * @param key
 	 * @return
 	 * @throws IOException

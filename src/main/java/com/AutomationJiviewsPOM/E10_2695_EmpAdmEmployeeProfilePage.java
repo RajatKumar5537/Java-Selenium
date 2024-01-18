@@ -909,8 +909,6 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 			}
 		}
 	}
-	//............................................../////////////////////////////////............................................\
-
 	public void clickonBtnEdit() {
 		btnEdit.click();
 		
@@ -942,8 +940,6 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	private void goToNextPageAndUpdate() throws InterruptedException {
 		try {
 			webUtility.scrollAndClick(driver, nextPage);
-//			scrollAndClick(driver, nextPage); // Click on the next page button
-//			scrollUp(driver);
 			webUtility.scrollUp(driver);
 			updateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
@@ -959,7 +955,6 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 			if (!checkbox.isEnabled()) {
 				clickonBtnEdit();
 				enableCheckBoxIsActive();
-				//...................................................
 //				checkboxFound = true;
 				break;
 			}
@@ -973,9 +968,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	private void goToNextPageAndReactivate() throws InterruptedException {
 		try {
 			webUtility.scrollAndClick(driver, nextPage);
-//			scrollAndClick(driver, nextPage);
 			webUtility.scrollUp(driver);
-//			scrollUp(driver);
 			reactivateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {

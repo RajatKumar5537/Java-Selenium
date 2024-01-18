@@ -12,7 +12,6 @@ public class ExtentReportManager {
 	public static synchronized ExtentReports getInstance() {
 		if (extent == null) {
 			extent = new ExtentReports();
-			// Add other configurations if needed
 		}
 		return extent;
 	}

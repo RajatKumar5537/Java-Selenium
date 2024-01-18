@@ -31,6 +31,7 @@ public class EmployeeKioskPage extends BaseClass{
 		applyLeave.click();
 	}
 	public void clickApproverKiosk() {
+		webUtility.moveToElement(driver, approverKiosk);
 		approverKiosk.click();
 	}
 	public void clickOnApplyLeave() {

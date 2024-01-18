@@ -856,7 +856,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		Thread.sleep(2000);
 		performCopyPasteAndConfirmForOnCallShift();
 		getShiftCreatedSuccessfullyMsg();
-		clickNotificationPopup();
+//		clickNotificationPopup();
 	}
 
 	// Jira Item: E10-2946 - Employee Roster V2 [Right Click -> Export to Text and Excel]
@@ -1092,7 +1092,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 		clickApplyTimeOff();
 //		getTimeOffRequestSubmittedSuccessfullyMsg();
-		clickNotificationPopup();
+//		clickNotificationPopup();
 	}
 
 	//	Jira Item: E10-3039 - Employee Roster V2  [Right Click] [Apply On Behalf] Apply Uncontrolled Leave

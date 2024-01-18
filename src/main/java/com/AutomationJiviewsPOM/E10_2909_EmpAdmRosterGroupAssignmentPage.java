@@ -23,8 +23,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	OrganizationUnitDropDown orgUnit = new OrganizationUnitDropDown(driver);
 	jiviewsMainMenuItems jmMenuItem = new jiviewsMainMenuItems(driver);
 	RosterSetupPage rosterSetup = new RosterSetupPage(driver);;
-	E10_2608_SystemDefinationRosterCreationPage rosterCreation = new E10_2608_SystemDefinationRosterCreationPage(
-			driver);
+	E10_2608_SystemDefinationRosterCreationPage rosterCreation = new E10_2608_SystemDefinationRosterCreationPage(driver);
 	EmployeeAdminstrationPage empAdmin = new EmployeeAdminstrationPage(driver);
 
 	@FindBy(xpath = "//button[@id='btnAddRosterGroup']")
@@ -341,6 +340,8 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 
 	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
 		/*
+		 * create a new Roster Group and save 
+		 * 
 		 * clickBtnAddRosterGroup();
 		 * enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
 		 * enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
@@ -351,6 +352,8 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 		 * clickonAddSelectedItem(); // Scroll down before clicking on Save Roster Group
 		 * webUtility.scrollDown(driver); clickonBtnSaveRosterGroup();
 		 * clickNotificationPopup();
+		 * 
+		 * set the Roster pattern for newly created Roster group 
 		 * 
 		 * driver.navigate().refresh(); homePage.setOrgUnit(); orgUnit.clickOLMop();
 		 * homePage.setOrgUnit(); orgUnit.setAutoOu();

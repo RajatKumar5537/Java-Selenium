@@ -1,13 +1,15 @@
 package com.AutomationJiviewsPOM;
 
 import java.io.File;
-import java.io.IOException;
 import java.time.Duration;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
+import java.util.Random;
 
+import javax.xml.xpath.XPath;import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
+import org.openqa.selenium.ElementNotInteractableException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
@@ -38,10 +40,24 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	@FindBy(xpath = "//span[@id='select2-cmbExceptionType-container']")
 	private WebElement leaveType;
-	@FindBy(xpath = "//li[text()='Sick Leave']")
+	@FindBy(xpath = "//li[text()='Annual Leave']")
+	private WebElement selectAnnualLeave;
+	@FindBy(xpath = "//li[text()='Sick Leave L']")
 	private WebElement selectSickLeave;
 	@FindBy(xpath = "//li[text()='Emergency Leave']")
 	private WebElement selectEmergencyLeave;
+	@FindBy(xpath = "//li[text()='Hospitalization leave']")
+	private WebElement selectHospitalizationLeave;
+	@FindBy(xpath = "//li[text()='Marriage leave']")
+	private WebElement selectMarriageLeave;
+	@FindBy(xpath = "//li[text()='Paternity leave']")
+	private WebElement selectPaternityLeave;
+	@FindBy(xpath = "//li[text()='Maternity leave']")
+	private WebElement selectMaternityLeave;
+
+
+
+
 	@FindBy(xpath = "//input[@id='dtLeaveStartDate']") 
 	private WebElement dtLeaveStartDate;
 	@FindBy(xpath = "//input[@id='dtLeaveEndDate']")
@@ -120,17 +136,28 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnSearchLeaveApplications']")
 	private WebElement btnSearchLeaveApplications;
 
-	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']")
-	private WebElement btnCancleLeave;
+	//	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel'])[1]")
+	//	private WebElement btnCancleLeave;
+
+	@FindBy(xpath = "//table[@id='emp-leave-records-list']/tbody/tr")
+	private List<WebElement> leaveRecordsRows;
+	@FindBy(xpath = "//table[@id='emp-leave-records-list']/tbody/tr/td//button[@data-original-title='Cancel']")
+	private List<WebElement> btnLeaveRecordsCancel;
+	@FindBy(xpath = "//li[@id='emp-leave-records-list_next']")
+	private WebElement btnNextPage;
+
+
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']" )
+	private WebElement btnCancle;
+
 	@FindBy(xpath = "//button[text()='Yes']")
 	private WebElement btnYes;
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
-	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']")
-	private WebElement btnCancle;
-	@FindBy(xpath = "//div[text()='Leave Cancelled Successfully']")
-	private WebElement LeaveCancelledSuccessfullyMsg;
+	//	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']")
+	//	private WebElement btnCancle;
+
 
 
 	@FindBy(xpath = "//div[text()='ESS Workflow Setup']/..")
@@ -182,6 +209,77 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnApplyUCL']")
 	private WebElement btnApplyUCL;
 
+	@FindBy(xpath = "//span[@id='select2-cmbPanelClinicName-container']")
+	private WebElement PanelClinicName;
+	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
+	private WebElement selectPanelClinicName;
+
+
+	@FindBy(xpath = "//div[text()='Leave Application Submitted Successfully']")  
+	private WebElement LeaveApplicationSubmittedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='Leave Cancelled Successfully']")
+	private WebElement LeaveCancelledSuccessfullyMsg;
+
+
+	@FindBy(xpath =  "//li[@data-menu-link='SelfService/UncontrolledLeave/UncontrolledLeaveIndex']")
+	private WebElement UncontrolledLeave;
+	@FindBy(xpath = "//span[@id='select2-cmbUCLExceptionType-container']")
+	private WebElement cmbUCLExceptionType;
+	@FindBy(xpath = "//li[@role='treeitem']")
+	private WebElement chooseLeaveTypeUCL;
+	@FindBy(xpath = "//div[text()='UnControlled Leave Application Submitted Successfuly']")
+	private WebElement UnControlledLeaveApplicationSubmittedSuccessfulyMsg;
+	// Not Required 
+	//	@FindBy(xpath = "//button[@id='btnApplyUCL']")
+	//	private WebElement btnApplyUCL;
+	//	@FindBy(xpath = "//input[@id='dtUCLDate']")
+	//	private WebElement dtUCLDate;
+	//	@FindBy(xpath = "//input[@id='txtUCLReferenceNo']")
+	//	private WebElement txtUCLReferenceNo;
+	//	@FindBy(xpath = "//textarea[@id='txtUCLRemarks']")
+	//	private WebElement txtUCLRemarks;
+
+	@FindBy(xpath = "//li[@data-menu-link='SelfService/UncontrolledLeave/UploadUCLDocumentIndex']")
+	private WebElement UploadUCLDocumentIndex;
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1 view']")
+	private WebElement btnUCLview;
+	@FindBy(xpath = "//button[@id='btnSave']")
+	private WebElement btnSave;
+	// Not Required 
+	//	@FindBy(xpath = "//button[@id='btnAddAttachment']")
+	//	private WebElement btnAddAttachment;
+	//	@FindBy(xpath = "(//input[@id='fileToUpload'])[2]") 
+	//	private WebElement btnFileToUpload;
+	//	@FindBy(xpath = "//button[text()='Upload']")
+	//	private WebElement btnUpload;
+	@FindBy(xpath = "//li[@data-menu-link='SelfService/UncontrolledLeave/ManageUCLDocumentIndex']")
+	private WebElement ManageUCLDocumentIndex;
+	@FindBy(xpath = "//input[@id='dtStartEnd']")
+	private WebElement dtStartEnd;
+	@FindBy(xpath = "//input[@name='daterangepicker_start']")
+	private WebElement dateRangePicker_Start;
+	@FindBy(xpath = "//input[@name='daterangepicker_end']")
+	private WebElement dateRangePicker_End;
+	@FindBy(xpath = "//button[text()='Apply']")
+	private WebElement btnApply;
+
+	@FindBy(xpath = "//span[@id='select2-cmbEmployeeList-container']")
+	private WebElement employeeNumber;
+	@FindBy(xpath = "(//input[@class='select2-search__field'])[1]")
+	private WebElement searchEmployee;
+	@FindBy(xpath = "//button[@id='btnSearchLeaveList']")
+	private WebElement btnSearchLeaveListUCL;
+
+
+	@FindBy(xpath = "//li[@data-menu-link='SelfService/RescheduleMessage']")
+	private WebElement RescheduleLeave;
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1 view']")
+	private WebElement RescheduleLeaveView;
+	@FindBy(xpath = "//button[@id='btnEditRescheduleLeave']")
+	private WebElement btnEditRescheduleLeave;
+
+
+
 	public E10_3216_ESSApplyLeavePage(WebDriver driver) {
 		super();
 		PageFactory.initElements(driver, this);
@@ -199,11 +297,26 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		webUtility.ElementClickable(driver, leaveType);
 		leaveType.click();
 	}
+	public void chooseAnnualLeave(){
+		selectAnnualLeave.click();
+	}
 	public void chooseSickLeave() {
 		selectSickLeave.click();
 	}
 	public void chooseEmergencyLeave() {
 		selectEmergencyLeave.click();
+	}
+	public void chooseHospitalizationLeave() {
+		selectHospitalizationLeave.click();
+	}
+	public void chooseMarriageLeave() {
+		selectMarriageLeave.click();
+	}
+	public void choosePaternityLeave() {
+		selectPaternityLeave.click();
+	}
+	public void chooseMaternityLeave() {
+		selectMaternityLeave.click();
 	}
 	public void enterLeaveStartDate(String startDate) {
 		dtLeaveStartDate.clear();
@@ -259,6 +372,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		LeaveRecords.click();
 	}
 	public void clickApproveLeave() {
+		webUtility.ElementClickable(driver, approveLeave);
 		approveLeave.click();
 	}
 	public void clickStartAndEnd() {
@@ -283,8 +397,15 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		cancelApprovedLeaves.click();
 	}
 	public void clickCancelLeaveEmpNumber() {
-		webUtility.ElementClickable(driver, cmbCancelLeaveEmpNumber);
-		cmbCancelLeaveEmpNumber.click();
+		//		webUtility.ElementClickable(driver, cmbCancelLeaveEmpNumber);
+		//		cmbCancelLeaveEmpNumber.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+
+		// Wait until the button is clickable
+		WebElement cancleLeave = wait.until(ExpectedConditions.elementToBeClickable(cmbCancelLeaveEmpNumber));
+
+		// Click the button
+		cancleLeave.click();
 	}
 	public void enterSearchFiled(String empId) {
 		searchFiled.clear();
@@ -294,9 +415,80 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickBtnSearchLeaveApplications() {
 		btnSearchLeaveApplications.click();
 	}
-	public void clickBtnCancleLeave() {
-		webUtility.ElementClickable(driver, btnCancleLeave);
-		btnCancleLeave.click();
+	//		public void clickBtnCancleLeave() {
+	//			webUtility.ElementClickable(driver, btnLeaveRecordsCancle);
+	//			btnCancleLeave.click();
+	//		}
+	public void performCancelAction() throws InterruptedException {
+		for (int i = 0; i < 3; i++) {
+			try {
+				scrollAndClick(driver, btnLeaveRecordsCancel.get(0)); // Assuming you want to click the first cancel button
+				break;
+			} catch (ElementClickInterceptedException e) {
+				// Handle the exception if necessary
+			}
+		}
+	}
+	public void cancelLeaveRecordWithEnabledBtn() throws InterruptedException {
+		boolean leaveRecordFound = false;
+
+		// Check if there are any leave records
+		if (!leaveRecordsRows.isEmpty() && !btnLeaveRecordsCancel.isEmpty()) {
+			// Iterate through rows
+			for (int i = 0; i < leaveRecordsRows.size(); i++) {
+				// Check if the current index is within the bounds of the list
+				if (i < btnLeaveRecordsCancel.size()) {
+					WebElement leaveRecord = btnLeaveRecordsCancel.get(i);
+					if (leaveRecord.isDisplayed()) {
+						leaveRecord.click();
+						leaveRecordFound = true;
+						performCancelAction();
+						break;
+					}
+				}
+			}
+		}
+
+		// If no enabled cancel button found on the current page, go to the next page and try again
+		if (!leaveRecordFound) {
+			boolean nextPageAvailable = goToNextPage();
+
+			if (nextPageAvailable) {
+				cancelLeaveRecordWithEnabledBtn(); // Recursive call to check for cancel buttons on the next page
+			}
+		}
+	}
+	private boolean goToNextPage() throws InterruptedException {
+		try {
+			// Check if the "Next Page" button is displayed
+			if (isElementVisible(btnNextPage)) {
+				scrollAndClick(driver, btnNextPage); // Click on the next page button
+				Thread.sleep(2000);
+				scrollUp(driver);
+				Thread.sleep(4000);
+				return true; // Return true indicating that the next page is available
+			}
+		} catch (ElementNotInteractableException e) {
+			// Handle the exception if necessary
+		}
+		return false;
+	}
+
+	// Additional method to check if an element is visible
+	private boolean isElementVisible(WebElement element) {
+		try {
+			return element.isDisplayed();
+		} catch (Exception e) {
+			return false;
+		}
+	}
+	// Method to perform scroll-up action
+	private void scrollUp(WebDriver driver) {
+		//		JavascriptExecutor js = (JavascriptExecutor) driver;
+		//		js.executeScript("window.scrollBy(0, 0)"); // Adjust the scroll distance as needed
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollTo(0, 0)");
+
 	}
 	public void clickBtnYes() {
 		btnYes.click();
@@ -443,6 +635,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		btnSearchEmployee.click();
 	}
 	public void clickApplyLeaveOnBehalf() {
+
 		ApplyLeaveOnBehalf.click();
 	}
 	public void clickApplyTimeOffOnBehalf() {
@@ -472,7 +665,73 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickBtnApplyUCL() {
 		btnApplyUCL.click();
 	}
+	public void selectPanelClinicName() {
+		PanelClinicName.click();
+	}
+	public void choosePanelClinicName() {
+		selectPanelClinicName.click();
+	}
 
+	public void getLeaveApplicationSubmittedSuccessfullyMsg() {
+		String actualResult =LeaveApplicationSubmittedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Leave Application Submitted Successfully"));
+	}
+
+	public void clickUncontrolledLeave() {
+		UncontrolledLeave.click();
+	}
+	public void clickUCLExceptionType() {
+		webUtility.ElementClickable(driver, cmbUCLExceptionType);
+		cmbUCLExceptionType.click();
+	}
+	public void chooseLeaveTypeUCL() {
+		chooseLeaveTypeUCL.click();
+	}
+	public void getUnControlledLeaveApplicationSubmittedSuccessfulyMsg() { 
+		String actualResult =UnControlledLeaveApplicationSubmittedSuccessfulyMsg.getText();
+		Assert.assertTrue(actualResult.contains("UnControlled Leave Application Submitted Successfuly"));
+	}
+
+	public void clickUploadUCLDocumentIndex() {
+		UploadUCLDocumentIndex.click();
+	}
+	public void clickBtnUCLview() {
+		btnUCLview.click();
+	}
+	public void clickManageUCLDocumentIndex() {
+		ManageUCLDocumentIndex.click();
+	}
+	public void clickDateStartEnd() {
+		dtStartEnd.click();
+	}
+	public void enterDateRangePicker_Start(String startDate) {
+		dateRangePicker_Start.clear();
+		dateRangePicker_Start.sendKeys(startDate);
+		dateRangePicker_Start.sendKeys(Keys.ENTER);	
+	}
+	public void enterDateRangePicker_End(String endDate) {
+		dateRangePicker_End.clear();
+		dateRangePicker_End.sendKeys(endDate);
+		dateRangePicker_End.sendKeys(Keys.ENTER);
+	}
+	public void clickBtnApply() {
+		btnApply.click();
+	}
+
+	public void employeeNumber() {
+		employeeNumber.click();
+	}
+	public void performSearchEmployee(String empNo) {
+		searchEmployee.clear();
+		searchEmployee.sendKeys(empNo);
+		searchEmployee.sendKeys(Keys.ENTER);
+	}
+	public void clickBtnSearchLeaveListUCL() {
+		btnSearchLeaveListUCL.click();
+	}
+	public void clickBtnCancle() {
+		btnCancle.click();
+	}
 
 	public void E10_3225_EmployeeKiosk_ApplyForLeave(FakeEmployee fakeEmployee) throws Exception {
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
@@ -487,86 +746,26 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//						enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//						enterLeaveEndDate(fakeEmployee.getTmrwDate());
-		//		 enterLeaveStartDate(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		//		 enterLeaveEndDate(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		//		 enterLeaveStartDate("28-12-2023");
-		//		 enterLeaveEndDate("28-12-2023");
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
-		//		homePage.clickOnBtnLogout();
+//		homePage.clickOnBtnLogout();
 
-		E10_3229_ApproverKiosk_ApproveLeave(fakeEmployee);
-
-		//		String unApprover = configUtility.getCongigPropertyData("unApprover");
-		//		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
-		//
-		//		homePage.clickOnBtnLogout();
-		//		loginPage.setLogin(unApprover, pwdApprover);
-		//		clickNotificationPopup();
-		//		Thread.sleep(2000);
-		//		homePage.setOrgUnit();
-		//		clickOn_OLM();
-		//		jmMenuItem.clickOnEmployeeSelfService();
-		//		Thread.sleep(2000);
-		//		empKiosk.clickApproverKiosk();
-		//		clickNotificationPopup();
-		//		Thread.sleep(2000);
-		//
-		//		clickApproveLeave();
-		//		Thread.sleep(2000);
-		//
-		//		pendingForApprovalRowsWithEnabledCheckbox();
-		//		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
-		//		Thread.sleep(2000);
-		//		clickBtnSaveRemarks();
-		//		Thread.sleep(2000);
-		//		clickBtnYes();
-		//		Thread.sleep(2000);
-		//		clickNotificationPopup();
-		//
-		//
-		//		homePage.clickOnBtnLogout();
-
-		E10_3230_ApproverKiosk_CancelApproveleave(fakeEmployee);
-		//		
-		//		String un = configUtility.getCongigPropertyData("unApprover");
-		//		String pwd = configUtility.getCongigPropertyData("pwdApprover");
-		//
-		//		homePage.clickOnBtnLogout();
-		//		loginPage.setLogin(un, pwd);
-		//		clickNotificationPopup();
-		//		Thread.sleep(2000);
-		//		homePage.setOrgUnit();
-		//		clickOn_OLM();
-		//		jmMenuItem.clickOnEmployeeSelfService();
-		//		Thread.sleep(2000);
-		//		empKiosk.clickApproverKiosk();
-		//		clickNotificationPopup();
-		//
-		//		//		Thread.sleep(5000);
-		//		clickCancelApprovedLeaves();
-		//		clickCancelLeaveEmpNumber();
-		//		enterSearchFiled("33128455");
-		//		clickBtnSearchLeaveApplications();
-		//		clickBtnCancleLeave();
-		//		clickBtnYes();
-		//		clickNotificationPopup();
-		//
-		//		homePage.clickOnBtnLogout();
 
 	}
 
-	public void E10_3226_EmployeeKiosk_ViewCalendarCheckShiftDetails() throws IOException, InterruptedException{
+	public void E10_3226_EmployeeKiosk_ViewCalendarCheckShiftDetails() throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -585,12 +784,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String expectedTitle = "Calendar - JiViews";
 		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
-
+		clickNotificationPopup();
 		homePage.clickOnBtnLogout();
 	}
 
 
-	public void E10_3227_EmployeeKiosk_LeaveRecords() throws IOException, InterruptedException{
+	public void E10_3227_EmployeeKiosk_LeaveRecords() throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -608,11 +807,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String expectedTitle = "Leave Records - JiViews";
 		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
-
-
+		clickNotificationPopup();
 		homePage.clickOnBtnLogout();
 	}
-	public void E10_3228_EmployeeKiosk_MyleaveProfile()throws IOException, InterruptedException{
+	public void E10_3228_EmployeeKiosk_MyleaveProfile()throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -623,7 +821,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		empKiosk.clickEmployeeKiosk();
 
 		clickMyLeaveProfile();
-
+		clickNotificationPopup();
 		homePage.clickOnBtnLogout();
 	}
 	public void E10_3229_ApproverKiosk_ApproveLeave(FakeEmployee fakeEmployee)throws Exception{
@@ -639,7 +837,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickApproverKiosk();
-		clickNotificationPopup();
+		//		clickNotificationPopup();
 		Thread.sleep(2000);
 
 		clickApproveLeave();
@@ -655,7 +853,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickNotificationPopup();
 
 
-		homePage.clickOnBtnLogout();
+//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3230_ApproverKiosk_CancelApproveleave(FakeEmployee fakeEmployee) throws Exception {
 		String un = configUtility.getCongigPropertyData("unApprover");
@@ -670,18 +868,22 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickApproverKiosk();
-		clickNotificationPopup();
+		//		clickNotificationPopup();
 
-		//		Thread.sleep(5000);
+		Thread.sleep(3000);
 		clickCancelApprovedLeaves();
 		clickCancelLeaveEmpNumber();
+		Thread.sleep(2000);
 		enterSearchFiled("33128455");
 		clickBtnSearchLeaveApplications();
-		clickBtnCancleLeave();
+		///////////////////////////////////////////////////check it proper for Approver 
+		//				cancleLeaveRecordWithEnabledBtn();
+		//		cancelLeaveRecordWithEnabledBtn();
+		clickBtnCancle();
 		clickBtnYes();
 		clickNotificationPopup();
 
-		homePage.clickOnBtnLogout();
+//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(FakeEmployee fakeEmployee)throws Exception {
 		String un = configUtility.getCongigPropertyData("unEmp");
@@ -689,6 +891,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(un, pwd);
+		clickNotificationPopup();
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
@@ -696,8 +899,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -707,14 +910,26 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 
-
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
+		clickNotificationPopup();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
 		clickLeaveRecords();
-		clickBtnCancleLeave();
+		Thread.sleep(2000);
+		//		clickBtnCancleLeave();
+		//		cancleLeaveRecordWithEnabledBtn();
+		cancelLeaveRecordWithEnabledBtn();
 		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
 		clickNotificationPopup();
-		homePage.clickOnBtnLogout();
+		Thread.sleep(2000);
+//		homePage.clickOnBtnLogout();
 
 	}
 	public void E10_3232_CancelApprovedLeave_ApproverApprovedCancelLeave(FakeEmployee fakeEmployee) throws Exception{
@@ -731,12 +946,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
-		//		 enterLeaveStartDate(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		//		 enterLeaveEndDate(LocalDate.now().format(DateTimeFormatter.ofPattern("dd-MM-yyyy")));
-		//		 enterLeaveStartDate("28-12-2023");
-		//		 enterLeaveEndDate("28-12-2023");
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -746,8 +957,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
-		//		homePage.clickOnBtnLogout();
+
+		//		Approver approve Leave 
 
 		String un = configUtility.getCongigPropertyData("unApprover");
 		String pwd = configUtility.getCongigPropertyData("pwdApprover");
@@ -761,7 +974,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickApproverKiosk();
-		clickNotificationPopup();
+		//		clickNotificationPopup();
 		Thread.sleep(2000);
 
 		clickApproveLeave();
@@ -776,22 +989,22 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		clickNotificationPopup();
 
-		//		homePage.clickOnBtnLogout();
-
-		String unEmp1 = configUtility.getCongigPropertyData("unEmp");
-		String pwdEmp1 = configUtility.getCongigPropertyData("pwdEmp");
+		// Employee Cancle Leave 
 
 		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unEmp1, pwdEmp1);
+		loginPage.setLogin(unEmp, pwdEmp);
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 
 		clickLeaveRecords();
-		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn();
 		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
 		clickNotificationPopup();
-		//		homePage.clickOnBtnLogout();
+
+		//		Approver approve cancle leave 
 
 		String unApprover = configUtility.getCongigPropertyData("unApprover");
 		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
@@ -807,7 +1020,6 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickApproverKiosk(); 
-		clickNotificationPopup();
 
 		clickApproveLeave();
 		Thread.sleep(2000);
@@ -822,7 +1034,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickNotificationPopup();
 
 
-		homePage.clickOnBtnLogout(); 
+//		homePage.clickOnBtnLogout(); 
 
 		/*String unApprover2 = configUtility.getCongigPropertyData("unApprover2");
 		String pwdApprover2 = configUtility.getCongigPropertyData("pwdApprover2");
@@ -872,8 +1084,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -883,6 +1095,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 		//		homePage.clickOnBtnLogout();
 
@@ -928,8 +1141,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -939,6 +1152,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 		//		homePage.clickOnBtnLogout();
 
@@ -957,7 +1171,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickCancelLeaveEmpNumber();
 		enterSearchFiled("33128455");
 		clickBtnSearchLeaveApplications();
-		clickBtnCancleLeave();
+		//		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn(); 
 		clickBtnYes();
 		clickNotificationPopup();
 
@@ -975,8 +1190,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -986,6 +1201,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 	public void E10_3248_PreventLeaveOverlaps(FakeEmployee fakeEmployee) throws Exception{
@@ -1001,8 +1217,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveType();
 		chooseEmergencyLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -1012,6 +1228,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnUpload();
 		pressBtnNext();
 		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 
 	}
@@ -1064,6 +1281,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		selectFileToUpload();
 		clickBtnUpload();
 		clickApplyTimeOff();
+
+		clickNotificationPopup();
+//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3213_ApplyOnBehalf(FakeEmployee fakeEmployee) throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
@@ -1079,12 +1299,13 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterSearchEmployee();
 		Thread.sleep(2000);
 		clickSearchEmployee();
+		Thread.sleep(2000);
 		clickApplyLeaveOnBehalf();
-
+		Thread.sleep(2000);
 		enterLeaveType();
 		chooseSickLeave();
-		//		enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		pressBtnNext();
@@ -1092,7 +1313,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
-		 
+
 		//		clickBtnFinish();
 		//		clickNotificationPopup();
 
@@ -1134,13 +1355,549 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickSearchEmployee();
 
 		clickApplyforUncontrolledLeave();
+		Thread.sleep(2000);
 		clickSearchLeaveType();
 		clickchooseLeaveType();
 		clickUCLDate(fakeEmployee.getTmrwDate());
 		entertxtUCLReferenceNo(fakeEmployee.getReferenceNo());
 		entertxtUCLRemarks(fakeEmployee.getRemarksLeave());
 		clickBtnApplyUCL();
+//		homePage.clickOnBtnLogout();
 	}
 
+	public void E10_3222_ApplyLeaveP2(FakeEmployee fakeEmployee) throws Exception{
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		String unApprover = configUtility.getCongigPropertyData("unApprover");
+		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
 
+		// Apply Hospitalization Leave as Employee 
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseHospitalizationLeave();
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		selectPanelClinicName();
+		choosePanelClinicName();
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(4000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		//		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		//		Approver Approve apply Hospitalization Leave ..........................................
+
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		//		Employee Cancel approved Hospitalization Leave ..........................................  
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickLeaveRecords();
+		Thread.sleep(2000);
+		//		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn();
+		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+
+		//		Approver Approve Cancel  Hospitalization Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk(); 
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingCancelApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		// Apply Marriage Leave as Employee..........................................
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseMarriageLeave();
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(3000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		//		Approver Approve apply Marriage Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		//		Employee Cancel approved Marriage Leave ..........................................  
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickLeaveRecords();
+		Thread.sleep(2000);
+		//		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn();
+		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+
+		//		Approver Approve Cancel  Marriage Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk(); 
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingCancelApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		// Apply Paternity Leave as Employee..........................................
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		choosePaternityLeave();
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		//		Approver approve apply Paternity Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		//		Employee Cancel approved Paternity Leave ..........................................  
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickLeaveRecords();
+		Thread.sleep(2000);
+		//		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn();
+		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+
+		//		Approver Approve Cancel  Paternity Leave ..........................................
+
+		Thread.sleep(2000);
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk(); 
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingCancelApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+
+		// Apply Maternity Leave as Employee..........................................
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseMaternityLeave();
+		enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		//		Approver approve apply Maternity Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+
+		//		Employee Cancel approved Maternity Leave ..........................................  
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickLeaveRecords();
+		Thread.sleep(2000);
+		//		clickBtnCancleLeave();
+		cancelLeaveRecordWithEnabledBtn();
+		clickBtnYes();
+		Thread.sleep(2000);
+		getLeaveCancelledSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+
+		//		Approver Approve Cancel  Maternity Leave ..........................................
+
+		Thread.sleep(2000);
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk(); 
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingCancelApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+//		homePage.clickOnBtnLogout();
+	}
+
+	public  void E10_3219_ApplyForUncontrolledLeave(FakeEmployee fakeEmployee) throws Exception {
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		String unApprover = configUtility.getCongigPropertyData("unApprover");
+		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		clickUncontrolledLeave();
+		Thread.sleep(2000);
+		clickUCLExceptionType();
+		chooseLeaveTypeUCL();
+
+		clickUCLDate("23/01/2024");
+		entertxtUCLReferenceNo(fakeEmployee.getReferenceNo());
+		entertxtUCLRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnApplyUCL();
+		getUnControlledLeaveApplicationSubmittedSuccessfulyMsg();
+		clickNotificationPopup();
+
+
+		//		E10_3221	[Employee Self Service] [Employee Kiosk] Upload UCL Document
+
+		driver.navigate().to(homeUrl);		
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickNotificationPopup();
+
+
+		clickUploadUCLDocumentIndex();
+		clickBtnUCLview();
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		//		E10_3220	[Employee Self Service] [Employee Kiosk] Manage UCL Document
+
+		Thread.sleep(2000);
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk(); 
+
+		clickManageUCLDocumentIndex();
+		clickDateStartEnd();
+		enterDateRangePicker_Start(fakeEmployee.getRosterStartDate());
+		enterDateRangePicker_End(fakeEmployee.getRosterEndDate());
+		clickBtnApply();
+		employeeNumber();
+
+		performSearchEmployee("33128455");
+		clickBtnSearchLeaveListUCL();
+		clickBtnUCLview();
+
+//		homePage.clickOnBtnLogout();
+	}
+	private String formatDate(LocalDate date) {
+		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
+		return date.format(formatter);
+	}
+	public void E10_3223_RescheduleLeave(FakeEmployee fakeEmployee) throws Exception{
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		String unApprover = configUtility.getCongigPropertyData("unApprover");
+		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseAnnualLeave();
+		// write logic for apply Annual leave for 6 days 
+		// Set the range to 6 days
+		int range = 6;
+
+		// Get the current date
+		LocalDate currentDate = LocalDate.now();
+
+		// Generate random start date within the range
+		LocalDate startDate = currentDate.plusDays(new Random().nextInt(range));
+		// Generate end date within the same range
+		LocalDate endDate = startDate.plusDays(new Random().nextInt(range));
+
+		enterLeaveStartDate(formatDate(startDate));
+		enterLeaveEndDate(formatDate(endDate));
+		//				enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		//				enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		//		Approver Approve apply Annual Leave ..........................................
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApprover, pwdApprover);
+
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		Thread.sleep(2000);
+		clickNotificationPopup();
+
+	}
 }

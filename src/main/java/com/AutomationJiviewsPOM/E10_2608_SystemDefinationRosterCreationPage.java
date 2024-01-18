@@ -400,12 +400,10 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 			if (!checkBoxPublishRosterMulti.get(0).isSelected()) {
 				checkBoxPublishRosterMulti.get(0).click();
 			}
-
 			// Check if setDropDownCalenderRosterUp is enabled
 			if (isElementEnabled(txtPublishFrom)) {
 				setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
 			}
-
 			// Check if setTxtNoOfBlock is enabled
 			if (isElementEnabled(txtNoOfBlock)) {
 				setTxtNoOfBlock(noOfBlocks);
@@ -490,15 +488,12 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	
 	
 	public void setCreateRoasterwithGroup() throws Exception {
-//		timeStamp = LocalDateTime.now().toString();
-
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
 		setAddBtn();
-		//		Thread.sleep(2000);
 		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);

@@ -5,16 +5,12 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.List;
-import java.util.Map;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.Capabilities;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
@@ -28,7 +24,6 @@ import com.aventstack.extentreports.markuputils.MarkupHelper;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
 import com.aventstack.extentreports.reporter.configuration.ViewName;
-
 
 
 
@@ -72,12 +67,11 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	@Override
 	public void onTestFailure(ITestResult result) {
 		String testName = result.getName();
-
-		// Include timestamp in screenshot file name
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-				File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
-		// Specify the absolute path for the screenshot
-//		File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
+		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+		// Specify the absolute path for the screenshot...
+		// After update the path as ArtifactStagingDirectory, not getting the screenshot in Azure Pipeline 
+		// File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
 
 
 		TakesScreenshot ts = (TakesScreenshot) driver;
@@ -95,41 +89,19 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		// Log paths for debugging
 		logger.info("Working Directory: " + System.getProperty("user.dir"));
 		logger.info("Screenshot Path: " + dest.getAbsolutePath());
-
-		// Log failure to extent report with screenshot and full view of exception message
-		//		ExtentReports extent = ExtentReportManager.getInstance();
-
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-
-//		test.log(Status.FAIL, MarkupHelper.createCodeBlock(result.getThrowable().getMessage()))
-//		.addScreenCaptureFromPath(dest.getAbsolutePath());
-
-		// Log failure to extent report with screenshot
-		//		    test.log(Status.FAIL, "Test Failed - Check screenshot below:",
-		//		            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-		//		            .addScreenCaptureFromPath(dest.getAbsolutePath());
-		// Log failure to extent report with screenshot and error message
-//		test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
-//				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-//		.addScreenCaptureFromPath(dest.getAbsolutePath())
-//		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
-		
 		test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
-		        MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-		        .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
-
-
+				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-
 	}
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
 		String methodName = result.getMethod().getMethodName();
-		setupTest(methodName, result.getTestContext()); // Pass the ITestContext to setupTest
-
+		setupTest(methodName, result.getTestContext()); 
 		// Log test skipped with custom message or additional information
 		test.skip("Test skipped - Method: " + methodName);
 		// Log the skip status to extent report
@@ -141,14 +113,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String timestamp = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
 		String suiteName = context.getSuite().getName();
 		String testName = context.getCurrentXmlTest().getName();
-
-
 		String reportFileName = "ExtentReport_" + timestamp + ".html";
 		ExtentSparkReporter spark = new ExtentSparkReporter("./ExtentReport/" + reportFileName);
 		report = ExtentReportManager.getInstance(); // Use the singleton instance
-
 		report.attachReporter(spark); // Attach the HTML reporter to the existing report instance
-
 
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
@@ -176,11 +144,8 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	public void onTestFailedButWithinSuccessPercentage(ITestResult result) {
 		// TODO Auto-generated method stub
 	}
-
-
 	private void setupTest(String methodName, ITestContext context) {
 		test = report.createTest(methodName);
-
 		try {
 			test.assignAuthor(configUtility.getCongigPropertyData("author"));
 		} catch (IOException e) {
