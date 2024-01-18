@@ -785,7 +785,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
 		clickNotificationPopup();
-		homePage.clickOnBtnLogout();
+//		homePage.clickOnBtnLogout();
 	}
 
 
@@ -807,8 +807,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String expectedTitle = "Leave Records - JiViews";
 		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
-		clickNotificationPopup();
-		homePage.clickOnBtnLogout();
+//		clickNotificationPopup();
+//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3228_EmployeeKiosk_MyleaveProfile()throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
@@ -822,7 +822,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		clickMyLeaveProfile();
 		clickNotificationPopup();
-		homePage.clickOnBtnLogout();
+//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3229_ApproverKiosk_ApproveLeave(FakeEmployee fakeEmployee)throws Exception{
 		String un = configUtility.getCongigPropertyData("unApprover");
@@ -924,6 +924,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		clickBtnCancleLeave();
 		//		cancleLeaveRecordWithEnabledBtn();
 		cancelLeaveRecordWithEnabledBtn();
+		Thread.sleep(2000);
 		clickBtnYes();
 		Thread.sleep(2000);
 		getLeaveCancelledSuccessfullyMsg();

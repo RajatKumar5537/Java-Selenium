@@ -3,18 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
         <methods>
+          <include name="setup"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval"/>
+          <include name="E10_3211_VerifyCreateVesselScheduleTableView"/>
           <include name="closeBrowser"/>
-          <include name="E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave"/>
-          <include name="logoutAfterTestMethod"/>
-          <include name="setup"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

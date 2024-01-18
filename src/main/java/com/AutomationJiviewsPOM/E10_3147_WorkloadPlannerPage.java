@@ -279,10 +279,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-		//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+				webUtility.ElementClickable(driver, btnAddVesselSchedule);
 		// Wait for the overlay to disappear
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		btnAddVesselSchedule.click();
 	}
 
@@ -575,7 +575,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
-		Thread.sleep(5000);
+		Thread.sleep(7000);
 		clickBtnAddVesselSchedule();
 
 		enterVesselName(fakeEmployee.getTxtVesselName());

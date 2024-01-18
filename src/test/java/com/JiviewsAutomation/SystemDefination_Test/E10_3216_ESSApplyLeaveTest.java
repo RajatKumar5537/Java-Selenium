@@ -68,16 +68,16 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	    }
 	}
 
-	/*@Test(priority = 1)
+	@Test(priority = 1)
 	public void E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3226_Verify_EmployeeKiosk_View Calendar Check Shift Details...");
 
 		applyLeave.E10_3226_EmployeeKiosk_ViewCalendarCheckShiftDetails();
-		String unAdmin = configUtility.getCongigPropertyData("username");
-		String pwdAdmin = configUtility.getCongigPropertyData("password");
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.setLogin(unAdmin, pwdAdmin);
+//		String unAdmin = configUtility.getCongigPropertyData("username");
+//		String pwdAdmin = configUtility.getCongigPropertyData("password");
+//		LoginPage loginPage = new LoginPage(driver);
+//		loginPage.setLogin(unAdmin, pwdAdmin);
 		logger.info("E10_3226_Verify_EmployeeKiosk_View Calendar Check Shift Details is successful");
 	}
 	@Test(priority = 2)
@@ -86,10 +86,10 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		logger.info("E10_3227_Verify_EmployeeKiosk_Leave Records...");
 
 		applyLeave.E10_3227_EmployeeKiosk_LeaveRecords();
-		String unAdmin = configUtility.getCongigPropertyData("username");
-		String pwdAdmin = configUtility.getCongigPropertyData("password");
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.setLogin(unAdmin, pwdAdmin);
+//		String unAdmin = configUtility.getCongigPropertyData("username");
+//		String pwdAdmin = configUtility.getCongigPropertyData("password");
+//		LoginPage loginPage = new LoginPage(driver);
+//		loginPage.setLogin(unAdmin, pwdAdmin);
 		logger.info("E10_3227_Verify_EmployeeKiosk_Leave Records is successful");
 	}
 	@Test(priority = 3)
@@ -98,12 +98,12 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		logger.info("E10_3228_Verify_EmployeeKiosk_My leave Profile...");
 
 		applyLeave.E10_3228_EmployeeKiosk_MyleaveProfile();	
-		String unAdmin = configUtility.getCongigPropertyData("username");
-		String pwdAdmin = configUtility.getCongigPropertyData("password");
-		LoginPage loginPage = new LoginPage(driver);
-		loginPage.setLogin(unAdmin, pwdAdmin);
+//		String unAdmin = configUtility.getCongigPropertyData("username");
+//		String pwdAdmin = configUtility.getCongigPropertyData("password");
+//		LoginPage loginPage = new LoginPage(driver);
+//		loginPage.setLogin(unAdmin, pwdAdmin);
 		logger.info("E10_3228_Verify_EmployeeKiosk_My leave Profile is successful");
-	}*/
+	}
 	@Test(priority = 4)
 	public void E10_3225_Verify_EmployeeKiosk_ApplyForLeave() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
@@ -204,7 +204,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		LoginPage loginPage = new LoginPage(driver);
 //		loginPage.setLogin(unAdmin, pwdAdmin);
 //		logger.info("E10_3235_Verify_ReapplyCancelledApprovedLeave is successful");
-//	}
+//	}*/
 
 	@Test(priority = 10)
 	public void E10_3218_Verify_ApplyTimeOff() throws Exception {
@@ -265,6 +265,6 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		applyLeave.E10_3223_RescheduleLeave(fakeEmployee);
 //
 //		logger.info("E10_3223_Verify_RescheduleLeave is successful");
-//	}*/
+//	}
 
 }
