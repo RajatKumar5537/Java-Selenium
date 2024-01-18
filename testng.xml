@@ -6,15 +6,6 @@
 
 
 	<test
-		name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-			/>
-		</classes>
-	</test>
-	<!-- 
-	<test
 		name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
@@ -74,7 +65,7 @@
 		name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
 			/>
 		</classes>
 	</test>
@@ -91,8 +82,17 @@
 		name="E10_2910_WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
-	</test> -->
+	</test>
+
+	<test
+		name="E10_3216_ESSApplyLeaveTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
+			/>
+		</classes>
+	</test>
 </suite>
