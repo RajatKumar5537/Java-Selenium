@@ -100,12 +100,30 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		String methodName = result.getMethod().getMethodName();
-		setupTest(methodName, result.getTestContext()); 
-		// Log test skipped with custom message or additional information
-		test.skip("Test skipped - Method: " + methodName);
-		// Log the skip status to extent report
-		test.log(Status.SKIP, "Test skipped - Method: " + methodName);
+		//		String methodName = result.getMethod().getMethodName();
+		//		setupTest(methodName, result.getTestContext()); 
+		//		// Log test skipped with custom message or additional information
+		//		test.skip("Test skipped - Method: " + methodName);
+		//		// Log the skip status to extent report
+		//		test.log(Status.SKIP, "Test skipped - Method: " + methodName);
+
+		 String methodName = result.getMethod().getMethodName();
+		    setupTest(methodName, result.getTestContext());
+
+		    // Log test skipped with custom message or additional information
+		    String skipMessage = "Test skipped - Method: " + methodName;
+
+		    // Check if there is a throwable (exception) associated with the skipped test
+		    if (result.getThrowable() != null) {
+		        skipMessage += " - Reason: " + result.getThrowable().getMessage();
+
+		        // Log the exception message within a code block
+		        String codeBlock = MarkupHelper.createCodeBlock(result.getThrowable().getMessage()).getMarkup();
+		        test.log(Status.SKIP, codeBlock);
+		    } else {
+		        // Log the skip status to extent report
+		        test.log(Status.SKIP, skipMessage);
+		    }
 	}
 
 	@Override
