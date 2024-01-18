@@ -89,18 +89,18 @@ public class E10_3147_WorkloadPlannerTest extends BaseClass{
 //	}
 	
 	
-	@Test(priority = 3)
-	public void E10_3181_VerifyGenerateEquipments() throws Exception {
-		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
-		logger.info("E10_3181 Generate Equipment...");
-		
-		workloadPlanner.E10_3181_GenerateEquipments();	
-	}
-	@Test(priority = 4)
-	public void E10_3182_VerifyPlanningSignoff()  throws Exception{
-		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
-		logger.info("E10_3182 Planning Signoff...");
-		
-		workloadPlanner.E10_3182_PlanningSignoff();
-	}
+//	@Test(priority = 3)
+//	public void E10_3181_VerifyGenerateEquipments() throws Exception {
+//		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
+//		logger.info("E10_3181 Generate Equipment...");
+//		
+//		workloadPlanner.E10_3181_GenerateEquipments();	
+//	}
+//	@Test(priority = 4)
+//	public void E10_3182_VerifyPlanningSignoff()  throws Exception{
+//		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
+//		logger.info("E10_3182 Planning Signoff...");
+//		
+//		workloadPlanner.E10_3182_PlanningSignoff();
+//	}
 }

@@ -385,13 +385,17 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Vessel Schedule deleted successfully"));
 	}
 	public void clickBtnChangeButton() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		// Wait until the button is clickable
-		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
-
-		// Use Actions class to click
-		new Actions(driver).moveToElement(changeButton).click().perform();
-		//		btnChangeButton.click();
+//		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+//
+//		// Use Actions class to click
+//		new Actions(driver).moveToElement(changeButton).click().perform();
+//		//		btnChangeButton.click();
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		btnChangeButton.click();
 	}
 	public void clickBtnTimeLineView() {
 		btnTimeLineView.click();
@@ -563,7 +567,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickNotificationPopup();
 	}
 	public void E10_3211_CreateVesselScheduleTableView() throws InterruptedException {
-		//		Thread.sleep(5000);
+				Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
 		//		Thread.sleep(10000);
