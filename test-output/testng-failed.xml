@@ -3,21 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="E10_2952_VerifyOpenNewTabApprovalRoute"/>
           <include name="afterTestMethod"/>
-          <include name="E10_2945_VerifyCopyWithOncallShift"/>
-          <include name="E10_2939_VerifySearchByFilters"/>
-          <include name="setup"/>
-          <include name="E10_2947_VerifyExpandAndCollapseGroup"/>
           <include name="closeBrowser"/>
-          <include name="E10_3039_VerifyApplyUncontrolledLeave"/>
-          <include name="E10_3038_VerifyApplyOnBehalApplyTimeOff"/>
+          <include name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave"/>
+          <include name="logoutAfterTestMethod"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

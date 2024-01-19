@@ -267,4 +267,12 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		logger.info("E10_3223_Verify_RescheduleLeave is successful");
 //	}
 
+	@Test
+	public void E10_3442_Verify_ApplyLeaveOnPublicHoliday() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
+
+		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday();
+		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
+	}
 }

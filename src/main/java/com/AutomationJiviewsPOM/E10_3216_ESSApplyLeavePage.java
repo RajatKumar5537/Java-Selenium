@@ -278,6 +278,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	@FindBy(xpath = "//button[@id='btnEditRescheduleLeave']")
 	private WebElement btnEditRescheduleLeave;
 
+	
+	@FindBy(xpath = "//div[text()='MC,HP,UML,UNREC only can be applied on Public Holiday']")
+	private WebElement publicHolidayCannotBeApplyMsg;
 
 
 	public E10_3216_ESSApplyLeavePage(WebDriver driver) {
@@ -323,8 +326,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		dtLeaveStartDate.sendKeys(startDate);
 		dtLeaveStartDate.sendKeys(Keys.ENTER);
 	}
-	public void enterLeaveEndDate(String endDate) {
+	public void enterLeaveEndDate(String endDate) throws InterruptedException {
 		dtLeaveEndDate.clear();
+		Thread.sleep(2000);
 		dtLeaveEndDate.sendKeys(endDate);
 		dtLeaveEndDate.sendKeys(Keys.ENTER);
 	}
@@ -733,6 +737,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		btnCancle.click();
 	}
 
+	public void getpublicHolidayCannotBeApplyMsg() { 
+		String actualResult =publicHolidayCannotBeApplyMsg.getText();
+	Assert.assertTrue(actualResult.contains("MC,HP,UML,UNREC only can be applied on Public Holiday"));
+	}
 	public void E10_3225_EmployeeKiosk_ApplyForLeave(FakeEmployee fakeEmployee) throws Exception {
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
@@ -1901,4 +1909,36 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickNotificationPopup();
 
 	}
+	
+	public void E10_3442_ApplyLeaveOnPublicHoliday() throws Exception{
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseMaternityLeave();
+		enterLeaveStartDate("22-01-2024");
+		Thread.sleep(2000);
+		enterLeaveEndDate("22-01-2024");
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		getpublicHolidayCannotBeApplyMsg();
+		
+//		Thread.sleep(5000);
+//		clickBtnAddAttachment();
+//		selectFileToUpload();
+//		clickBtnUpload();
+//		pressBtnNext();
+//		clickBtnFinish();
+//		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+	}
+
 }
