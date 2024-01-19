@@ -4,14 +4,8 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-<test
-		name="E10_2639_SCRTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
-		</classes>
-	</test>
-	<!-- <test
+
+	<test
 		name="E10_2749_RoleGroupTest">
 		<classes>
 			<class
@@ -101,5 +95,5 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
-	</test>-->
+	</test>
 </suite>
