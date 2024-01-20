@@ -49,10 +49,9 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	@AfterMethod
 	public void logoutAfterTestMethod() {
 	    try {
-	    	Thread.sleep(10000);
+	    	Thread.sleep(5000);
 	    	 // Add your logout logic here
 	        homePage.clickOnBtnLogout();
-	        Thread.sleep(2000);
 	        // Add your login logic for the admin user here
 	        String unAdmin = configUtility.getCongigPropertyData("username");
 			String pwdAdmin = configUtility.getCongigPropertyData("password");
@@ -267,12 +266,22 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		logger.info("E10_3223_Verify_RescheduleLeave is successful");
 //	}
 
-	@Test
+	@Test(priority = 15)
 	public void E10_3442_Verify_ApplyLeaveOnPublicHoliday() throws Exception{
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
 
 		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday();
 		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
+	}
+	
+	@Test (priority = 15)
+	public void E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception {
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");
+
+		
+		applyLeave.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave();
+		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave is successful");
 	}
 }

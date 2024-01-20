@@ -6,7 +6,7 @@
 	
 
 
-		<test
+		 <test
 		name="E10_2749_RoleGroupTest">
 		<classes>
 			<class
@@ -79,7 +79,7 @@
 			/>
 		</classes>
 	</test>
-
+<!-- 
 	<test
 		name="E10_3147_WorkloadPlannerTest">
 		<classes>
@@ -90,7 +90,7 @@
 	</test>
 
 
-	<!--  <test
+	 <test
 		name="E10_3216_ESSApplyLeaveTest">
 		<classes>
 			<class
