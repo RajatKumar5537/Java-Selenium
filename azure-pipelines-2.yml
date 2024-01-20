@@ -52,6 +52,7 @@ stages:
         Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
+
     - task: ArchiveFiles@2
       displayName: 'Archive ExtentReport and ScreenShot'
       inputs:
@@ -62,7 +63,7 @@ stages:
       condition: succeededOrFailed()
 
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: drop'
+      displayName: 'Publish Artifact: MyArtifacts'
       inputs:
-        PathtoPublish: '$(build.artifactstagingdirectory)'
+        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
       condition: succeededOrFailed()
