@@ -52,6 +52,14 @@ stages:
         Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
+    - task: ArchiveFiles@2
+      displayName: 'Archive ExtentReport and ScreenShot'
+      inputs:
+        rootFolderOrFile: '$(build.artifactstagingdirectory)'
+        includeRootFolder: false
+        archiveType: 'zip'
+        archiveFile: '$(Build.ArtifactStagingDirectory)/MyArtifacts.zip'
+      condition: succeededOrFailed()
 
     - task: PublishBuildArtifacts@1
       displayName: 'Publish Artifact: drop'
