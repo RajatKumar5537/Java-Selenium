@@ -38,13 +38,20 @@ stages:
         sonarQubeRunAnalysis: false
 
     - task: CopyFiles@2 
-      displayName: 'Copy ExtentReport and Screenshots'
+      displayName: 'Copy ExtentReport Files'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)'
-        Contents: |
-          **/ExtentReport/**
-          Screenshots/**/*.png
+        Contents: '**/ExtentReport/**'
         TargetFolder: '$(build.artifactstagingdirectory)'
+      condition: succeededOrFailed()
+
+    - task: CopyFiles@2 
+      displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
+      inputs:
+        SourceFolder: '$(system.artifactstagingdirectory)/ScreenShot'
+        Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
+        TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
+      condition: succeededOrFailed()
 
     - task: ArchiveFiles@2
       displayName: 'Archive ExtentReport and ScreenShot'
