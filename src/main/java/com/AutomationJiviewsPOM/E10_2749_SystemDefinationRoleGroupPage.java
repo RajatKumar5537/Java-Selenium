@@ -267,7 +267,7 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
         clickAddRoleGroup();
         Thread.sleep(1000);
-        selectAvailableShiftBand();
+//        selectAvailableShiftBand();
         moveSingleAvailableSkillToSelected();
         clickBtnSaveRoleGroupDtls(); 
         assertTxtGrpNmRequired();

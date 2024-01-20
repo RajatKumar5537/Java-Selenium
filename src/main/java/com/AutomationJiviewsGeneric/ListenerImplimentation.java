@@ -4,6 +4,8 @@ package com.AutomationJiviewsGeneric;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
@@ -138,7 +140,10 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
-		spark.config().setReportName("End-to-End Test Report for Jivi Modules");
+		
+		String buildName = "Build Release v4.22.00.159";
+		String reportName = "Automation Test Report - " + buildName;
+		spark.config().setReportName(reportName);
 
 		// Configure the order of views
 		spark.viewConfigurer().viewOrder()
