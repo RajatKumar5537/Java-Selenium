@@ -48,7 +48,7 @@ stages:
     - task: CopyFiles@2 
       displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
       inputs:
-        SourceFolder: '$(system.defaultworkingdirectory)/ScreenShot'
+        SourceFolder: '$(system.artifactstagingdirectory)/ScreenShot'
         Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
