@@ -711,7 +711,6 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickApply();
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
-		Thread.sleep(5000);
 		clickBtnExpand();
 	}
 	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]

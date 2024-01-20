@@ -66,7 +66,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	}
 
 
-/*	@Override
+	@Override
 	public void onTestFailure(ITestResult result) {
 		String testName = result.getName();
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -98,8 +98,8 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-	}*/
-	@Override
+	}
+	/*@Override
 	public void onTestFailure(ITestResult result) {
 	    String testName = result.getName();
 	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -142,7 +142,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	    // Log additional failure details to console
 	    logger.error("Exception Stack Trace:", result.getThrowable());
 	}
-
+*/
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
