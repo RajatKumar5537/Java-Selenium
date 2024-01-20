@@ -66,7 +66,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 	}
 
 
-	@Override
+/*	@Override
 	public void onTestFailure(ITestResult result) {
 		String testName = result.getName();
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
@@ -98,7 +98,51 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
+	}*/
+	@Override
+	public void onTestFailure(ITestResult result) {
+	    String testName = result.getName();
+	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+
+	    // Check if running in Azure Pipeline
+	    String artifactStagingDirectory = System.getenv("AGENT_BUILDDIRECTORY");
+	    File dest;
+
+	    if (artifactStagingDirectory != null && !artifactStagingDirectory.isEmpty()) {
+	        // Running in Azure Pipeline
+	        dest = new File(artifactStagingDirectory + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+	    } else {
+	        // Running locally
+	        dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
+	    }
+
+	    TakesScreenshot ts = (TakesScreenshot) driver;
+	    File src = ts.getScreenshotAs(OutputType.FILE);
+
+	    logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+
+	    try {
+	        FileUtils.copyFile(src, dest);
+	        logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+	    } catch (IOException e) {
+	        e.printStackTrace();
+	        logger.error("Error capturing or saving screenshot:", e);
+	    }
+
+	    // Log paths for debugging
+	    logger.info("Working Directory: " + System.getProperty("user.dir"));
+	    logger.info("Screenshot Path: " + dest.getAbsolutePath());
+
+	    // Log additional failure details to console
+	    logger.error("Exception Stack Trace:", result.getThrowable());
+	    test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
+	            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
+	            .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
+
+	    // Log additional failure details to console
+	    logger.error("Exception Stack Trace:", result.getThrowable());
 	}
+
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
