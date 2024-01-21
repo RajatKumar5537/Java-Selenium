@@ -55,8 +55,7 @@ public class WebUtilities extends BaseClass{
 
 	public void ElementClickable(WebDriver driver,WebElement element) {
 		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(80));		
-		wait.until(ExpectedConditions.elementToBeClickable(element));
-		
+		 wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
 	public void visibilityOfElement(WebDriver driver,WebElement element) throws Exception {
 		Duration waitTime = Duration.ofSeconds(10);

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="19" total="20" passed="1" failed="0" skipped="0">
+<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,42 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-20T18:41:14Z" name="Default suite" finished-at="2024-01-20T18:42:07Z" duration-ms="52934">
+  <suite started-at="2024-01-21T09:58:15Z" name="Default suite" finished-at="2024-01-21T09:58:45Z" duration-ms="29731">
     <groups>
     </groups>
-    <test started-at="2024-01-20T18:41:14Z" name="Default test" finished-at="2024-01-20T18:42:07Z" duration-ms="52934">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:41:14Z" name="launchBrowser" finished-at="2024-01-20T18:41:16Z" duration-ms="1635" status="PASS">
+    <test started-at="2024-01-21T09:58:15Z" name="Default test" finished-at="2024-01-21T09:58:45Z" duration-ms="29731">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:15Z" name="launchBrowser" finished-at="2024-01-21T09:58:17Z" duration-ms="1547" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:41:16Z" name="beforeTestMethod" finished-at="2024-01-20T18:41:18Z" duration-ms="2456" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:17Z" name="beforeTestMethod" finished-at="2024-01-21T09:58:20Z" duration-ms="2607" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:41:18Z" name="setup" finished-at="2024-01-20T18:41:37Z" duration-ms="18599" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:20Z" name="setup" finished-at="2024-01-21T09:58:29Z" duration-ms="9536" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2940_VerifyExpandAndCollapseRows()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:41:37Z" name="E10_2940_VerifyExpandAndCollapseRows" finished-at="2024-01-20T18:42:07Z" duration-ms="30225" status="PASS">
+        <test-method signature="E10_3182_VerifyPlanningSignoff()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:29Z" name="E10_3182_VerifyPlanningSignoff" finished-at="2024-01-21T09:58:45Z" duration-ms="16026" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2940_VerifyExpandAndCollapseRows -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:42:07Z" name="afterTestMethod" finished-at="2024-01-20T18:42:07Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_3182_VerifyPlanningSignoff -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:45Z" name="afterTestMethod" finished-at="2024-01-21T09:58:45Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-20T18:42:07Z" name="closeBrowser" finished-at="2024-01-20T18:42:07Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:45Z" name="closeBrowser" finished-at="2024-01-21T09:58:45Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

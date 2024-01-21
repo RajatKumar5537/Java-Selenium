@@ -543,7 +543,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		driver.switchTo().window(newWindowHandle);
 		// Wait for the title to be non-empty
 		wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-		Thread.sleep(8000);
+		Thread.sleep(10000);
 		// Get the title of the new window
 		String pageTitle = driver.getTitle();
 		// Close the new window
@@ -772,8 +772,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		selectColumns("Disable");
+//		clickBtnClose();
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -901,8 +901,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		selectColumns("Disable");
+//		clickBtnClose();
 		// Step 1: Create a list to store the data
 		List<String> allData = new ArrayList<>();
 
@@ -954,6 +954,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnExpand();
 		selectColumns("Disable");
 		clickBtnClose();
+		Thread.sleep(2000);
 		// Get the title of the new tab
 		String employeeProfileTitle = getTitleOfNewTab(rightClickEmployee, employeeProfileOption);
 		System.out.println("Actual Title is-: "+ employeeProfileTitle);
@@ -1091,7 +1092,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 		clickApplyTimeOff();
 //		getTimeOffRequestSubmittedSuccessfullyMsg();
-//		clickNotificationPopup();
+		clickNotificationPopup();
 	}
 
 	//	Jira Item: E10-3039 - Employee Roster V2  [Right Click] [Apply On Behalf] Apply Uncontrolled Leave

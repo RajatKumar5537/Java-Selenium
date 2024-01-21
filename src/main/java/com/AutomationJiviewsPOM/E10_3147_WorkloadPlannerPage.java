@@ -218,20 +218,12 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		selectShiftBandType.sendKeys(bandType);
 		//		selectShiftBandType.sendKeys(Keys.ENTER);
 		try {
-			// Wait for the element to be clickable
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(selectShiftBandType));
-
-			// Clear the existing content
 			bandTypeElement.clear();
-
-			// Send keys
 			bandTypeElement.sendKeys(bandType);
-
-			// Press Enter (optional)
 			bandTypeElement.sendKeys(Keys.ENTER);
 		} catch (Exception e) {
-			// Handle any exceptions or log the error
 			e.printStackTrace(); 
 		}
 	}
@@ -279,10 +271,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-				webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		webUtility.ElementClickable(driver, btnAddVesselSchedule);
 		// Wait for the overlay to disappear
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		btnAddVesselSchedule.click();
 	}
 
@@ -385,14 +377,14 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Vessel Schedule deleted successfully"));
 	}
 	public void clickBtnChangeButton() {
-//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		// Wait until the button is clickable
-//		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
-//
-//		// Use Actions class to click
-//		new Actions(driver).moveToElement(changeButton).click().perform();
-//		//		btnChangeButton.click();
-		
+		//		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+		//
+		//		// Use Actions class to click
+		//		new Actions(driver).moveToElement(changeButton).click().perform();
+		//		//		btnChangeButton.click();
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		btnChangeButton.click();
@@ -499,6 +491,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	public void enterActivityGenPlanning(String GenPlanning) {
 		dtActivityGenPlanning.clear();
 		dtActivityGenPlanning.sendKeys(GenPlanning);
+		dtActivityGenPlanning.sendKeys(Keys.ENTER);
 	}
 	public void clickActivityGenShiftBand() {
 		cmbActivityGenShiftBand.click();
@@ -566,8 +559,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		getCraneScheduleCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
-	public void E10_3211_CreateVesselScheduleTableView() throws InterruptedException {
-				Thread.sleep(5000);
+	public void E10_3211_CreateVesselScheduleTableView(FakeEmployee fakeEmployee) throws InterruptedException {
+		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
 		//		Thread.sleep(10000);
@@ -608,8 +601,9 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(2000);
 		clickBtnGetEquipments();
 		clickBtnSaveEquipmentSchedule();
+		clickNotificationPopup();
 	}
-	public void E10_3173_UpdateVesselSchedule() throws InterruptedException {
+	public void E10_3173_UpdateVesselSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
 		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
@@ -623,8 +617,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(2000);
 		clickBtnSaveVesselSchedule();
 	}
-	public void E10_3174_DeleteVesselSchedule() throws InterruptedException {
-		//		Thread.sleep(5000);
+	public void E10_3174_DeleteVesselSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
+		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
 		Thread.sleep(10000);
@@ -640,7 +634,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 
 
-	public void E10_3175_CreateCraneSchedule() throws InterruptedException {
+	public void E10_3175_CreateCraneSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
 		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
 		selectShiftBandType("PM");
@@ -661,7 +655,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		getCraneScheduleCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
-	public void E10_3178_CreateEquipmentSchedule() throws InterruptedException {
+	public void E10_3178_CreateEquipmentSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
 		Thread.sleep(5000);
 		clickBtnChangeButton();
 		//		clickBtnTableView();
@@ -679,28 +673,33 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickEquipmentOption();
 	}
 
-	public void E10_3181_GenerateEquipments() throws InterruptedException{
-		Thread.sleep(5000);
-		clickBtnChangeButton();
-		clickBtnTableView();
+	public void E10_3181_GenerateEquipments(FakeEmployee fakeEmployee) throws InterruptedException{
+		//		Thread.sleep(5000);
+		//		clickBtnChangeButton();
+		//		clickBtnTableView();
 		Thread.sleep(5000);
 		clickBtnEquipmentsMatrix();
-		enterActivityGenPlanning(fakeEmployee.getDtPlanning());
 		Thread.sleep(5000);
 		clickActivityGenShiftBand();
 		enterSearchShiftBand();
+		Thread.sleep(2000);
+		enterActivityGenPlanning(fakeEmployee.getDtPlanning());
 		Thread.sleep(5000);
 		clickEquipmentRequirementMatrixTemplate();
 		chooseEquipmentRequirement();
+		
 		pressBtnPerformActivityGenerationTask();
 
 	}
 
-	public void E10_3182_PlanningSignoff() throws InterruptedException{
+	public void E10_3182_PlanningSignoff(FakeEmployee fakeEmployee) throws InterruptedException{
 		Thread.sleep(5000);
 		pressBtnPlanningSignOff();
+		
 		clickActivityGenShiftBand();
 		enterSearchShiftBand();
+		Thread.sleep(2000);
+		enterActivityGenPlanning(fakeEmployee.getDtPlanning());
 		clickEquipmentRequirementMatrixTemplate();
 		chooseEquipmentRequirement();
 		pressBtnPerformActivityGenerationTask();

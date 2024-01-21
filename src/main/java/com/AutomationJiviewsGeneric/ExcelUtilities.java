@@ -123,7 +123,13 @@ public class ExcelUtilities {
 		}
 	}
 
-
+	/**
+	 *  This method is using for write the data into Excel file 
+	 * @param existingSheetName
+	 * @param copiedData
+	 * @param newSheetName
+	 * @throws IOException
+	 */
 	public void writeDataToExcel(String existingSheetName, List<String> copiedData, String newSheetName) throws IOException {
 		FileInputStream fis = new FileInputStream(FILE_PATH_EMP_V2);
 		Workbook workbook = WorkbookFactory.create(fis);

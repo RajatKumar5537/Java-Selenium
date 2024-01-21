@@ -9,19 +9,93 @@
 <table>
 <tr><th>Test</th><th># Passed</th><th># Skipped</th><th># Failed</th><th>Time (ms)</th><th>Included Groups</th><th>Excluded Groups</th></tr>
 <tr><th colspan="7">Suite</th></tr>
-<tr><td><a href="#t0">E10_2749_RoleGroupTest</a></td><td class="num">5</td><td class="num">0</td><td class="num attn">1</td><td class="num">121,082</td><td></td><td></td></tr>
+<tr><td><a href="#t0">E10_3147_WorkloadPlannerTest</a></td><td class="num">0</td><td class="num">0</td><td class="num attn">4</td><td class="num">160,768</td><td></td><td></td></tr>
 </table>
-<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">E10_2749_RoleGroupTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</td><td><a href="#m0">E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</a></td><td rowspan="1">1705772995798</td><td rowspan="1">2813</td></tr><tr><th colspan="4">E10_2749_RoleGroupTest &#8212; passed</th></tr><tr class="passedeven"><td rowspan="5">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest</td><td><a href="#m1">E10_3122_VerifyCreateRoleGroups</a></td><td rowspan="1">1705772936037</td><td rowspan="1">3990</td></tr><tr class="passedeven"><td><a href="#m2">E10_3123_VerifyUpdateRoleGroups</a></td><td rowspan="1">1705772949869</td><td rowspan="1">3429</td></tr><tr class="passedeven"><td><a href="#m3">E10_3124_VerifyDeactivateRoleGroups</a></td><td rowspan="1">1705772964678</td><td rowspan="1">2408</td></tr><tr class="passedeven"><td><a href="#m4">E10_3125_VerifyCreateRoleGrpWithoutAvailableRole</a></td><td rowspan="1">1705772974070</td><td rowspan="1">2903</td></tr><tr class="passedeven"><td><a href="#m5">E10_3126_VerifySearchRoleGroup</a></td><td rowspan="1">1705772986675</td><td rowspan="1">612</td></tr></tbody>
+<table id='summary'><thead><tr><th>Class</th><th>Method</th><th>Start</th><th>Time (ms)</th></tr></thead><tbody><tr><th colspan="4">Suite</th></tr></tbody><tbody id="t0"><tr><th colspan="4">E10_3147_WorkloadPlannerTest &#8212; failed</th></tr><tr class="failedeven"><td rowspan="4">com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest</td><td><a href="#m0">E10_3174_VerifyDeleteVesselSchedule</a></td><td rowspan="1">1705831662466</td><td rowspan="1">49157</td></tr><tr class="failedeven"><td><a href="#m1">E10_3181_VerifyGenerateEquipments</a></td><td rowspan="1">1705831600751</td><td rowspan="1">6300</td></tr><tr class="failedeven"><td><a href="#m2">E10_3182_VerifyPlanningSignoff</a></td><td rowspan="1">1705831621105</td><td rowspan="1">30439</td></tr><tr class="failedeven"><td><a href="#m3">E10_3211_VerifyCreateVesselScheduleTableView</a></td><td rowspan="1">1705831565764</td><td rowspan="1">25326</td></tr></tbody>
 </table>
-<h2>E10_2749_RoleGroupTest</h2><h3 id="m0">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.AssertionError: expected [true] but found [false]
-	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.assertTxtGrpNmRequired(E10_2749_SystemDefinationRoleGroupPage.java:214)
-	at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.createRoleGrpWithoutRoleGrpName(E10_2749_SystemDefinationRoleGroupPage.java:273)
-	at com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName(E10_2749_RoleGroupTest.java:91)
+<h2>E10_3147_WorkloadPlannerTest</h2><h3 id="m0">com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest#E10_3174_VerifyDeleteVesselSchedule</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+	at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+	at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+	at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+	at java.base/java.util.Objects.checkIndex(Objects.java:361)
+	at java.base/java.util.ArrayList.get(ArrayList.java:427)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy33.get(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.deleteRowsWithEnabledCheckbox(E10_3147_WorkloadPlannerPage.java:458)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3174_DeleteVesselSchedule(E10_3147_WorkloadPlannerPage.java:630)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3174_VerifyDeleteVesselSchedule(E10_3147_WorkloadPlannerTest.java:73)
 ... Removed 33 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m1">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3122_VerifyCreateRoleGroups</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m2">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3123_VerifyUpdateRoleGroups</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m3">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3124_VerifyDeactivateRoleGroups</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m4">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3125_VerifyCreateRoleGrpWithoutAvailableRole</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
-<h3 id="m5">com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest#E10_3126_VerifySearchRoleGroup</h3><table class="result"><tr><th class="invisible"/></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m1">com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest#E10_3181_VerifyGenerateEquipments</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;btn btn-warning btn-round icon-btn&quot; id=&quot;btnEquipmentsMatrix&quot; data-toggle=&quot;tooltip&quot; data-placement=&quot;bottom&quot; title=&quot;&quot; data-original-title=&quot;Generate Equipments&quot;&gt;...&lt;/button&gt; is not clickable at point (1158, 102). Other element would receive the click: &lt;div class=&quot;blockUI blockOverlay&quot; style=&quot;z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.8; cursor: wait; position: absolute;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=120.0.6099.225)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c7680fb3328e6427cfdc81fd9409fa2c, clickElement {id=69C6E6EE05F55094DF2CB40F5BE5619F_element_20342}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55281}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c7680fb3328e6427cfdc81fd9409fa2c)] -&gt; xpath: //button[@id=&apos;btnEquipmentsMatrix&apos;]]
+Session ID: c7680fb3328e6427cfdc81fd9409fa2c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.clickBtnEquipmentsMatrix(E10_3147_WorkloadPlannerPage.java:489)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3181_GenerateEquipments(E10_3147_WorkloadPlannerPage.java:681)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3181_VerifyGenerateEquipments(E10_3147_WorkloadPlannerTest.java:57)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m2">com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest#E10_3182_VerifyPlanningSignoff</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementNotInteractableException: element not interactable
+  (Session info: chrome=120.0.6099.225)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c7680fb3328e6427cfdc81fd9409fa2c, clickElement {id=AF596B65BA1850C801CB290C7822A99A_element_31669}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55281}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c7680fb3328e6427cfdc81fd9409fa2c)] -&gt; xpath: //button[@id=&apos;btnPerformActivityGenerationTask&apos;]]
+Session ID: c7680fb3328e6427cfdc81fd9409fa2c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.pressBtnPerformActivityGenerationTask(E10_3147_WorkloadPlannerPage.java:511)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3182_PlanningSignoff(E10_3147_WorkloadPlannerPage.java:705)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3182_VerifyPlanningSignoff(E10_3147_WorkloadPlannerTest.java:65)
+... Removed 37 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
+<h3 id="m3">com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest#E10_3211_VerifyCreateVesselScheduleTableView</h3><table class="result"><tr><th>Exception</th></tr><tr><td><div class="stacktrace">org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element &lt;button type=&quot;button&quot; class=&quot;btn btn-success btn-round icon-btn btn-sm mr-1&quot; id=&quot;btnAddVesselSchedule&quot; data-toggle=&quot;modal&quot; data-placement=&quot;bottom&quot; title=&quot;&quot; data-target=&quot;#vessel-schedule-modal&quot; data-original-title=&quot;Add&quot;&gt;...&lt;/button&gt; is not clickable at point (1137, 393). Other element would receive the click: &lt;div class=&quot;blockUI blockOverlay&quot; style=&quot;z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.000608731; cursor: default; position: absolute;&quot;&gt;&lt;/div&gt;
+  (Session info: chrome=120.0.6099.225)
+Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
+System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c7680fb3328e6427cfdc81fd9409fa2c, clickElement {id=5549167CE08530E70C96F18015350AEB_element_5003}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:55281}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:55281/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c7680fb3328e6427cfdc81fd9409fa2c)] -&gt; xpath: //button[@id=&apos;btnAddVesselSchedule&apos;]]
+Session ID: c7680fb3328e6427cfdc81fd9409fa2c
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+	at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.clickBtnAddVesselSchedule(E10_3147_WorkloadPlannerPage.java:278)
+	at com.AutomationJiviewsPOM.E10_3147_WorkloadPlannerPage.E10_3211_CreateVesselScheduleTableView(E10_3147_WorkloadPlannerPage.java:572)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest.E10_3211_VerifyCreateVesselScheduleTableView(E10_3147_WorkloadPlannerTest.java:49)
+... Removed 38 stack frames</div></td></tr></table><p class="totop"><a href="#summary">back to summary</a></p>
 </body>
 </html>

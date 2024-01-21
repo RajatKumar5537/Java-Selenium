@@ -3,16 +3,17 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	
 
 
-		 <test
-		name="E10_2749_RoleGroupTest">
+	<test
+		name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest"
+			/>
 		</classes>
 	</test>
+
 
 	<!--<test
 		name="E10_2910_WorkforceEmployeeRosterV2Test">
