@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="3" total="4" passed="1" failed="0" skipped="0">
+<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,42 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-21T09:58:15Z" name="Default suite" finished-at="2024-01-21T09:58:45Z" duration-ms="29731">
+  <suite started-at="2024-01-21T12:25:07Z" name="Default suite" finished-at="2024-01-21T12:25:49Z" duration-ms="42034">
     <groups>
     </groups>
-    <test started-at="2024-01-21T09:58:15Z" name="Default test" finished-at="2024-01-21T09:58:45Z" duration-ms="29731">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:15Z" name="launchBrowser" finished-at="2024-01-21T09:58:17Z" duration-ms="1547" status="PASS">
+    <test started-at="2024-01-21T12:25:07Z" name="Default test" finished-at="2024-01-21T12:25:49Z" duration-ms="42034">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:07Z" name="launchBrowser" finished-at="2024-01-21T12:25:09Z" duration-ms="1726" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:17Z" name="beforeTestMethod" finished-at="2024-01-21T09:58:20Z" duration-ms="2607" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:09Z" name="beforeTestMethod" finished-at="2024-01-21T12:25:11Z" duration-ms="2374" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:20Z" name="setup" finished-at="2024-01-21T09:58:29Z" duration-ms="9536" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:11Z" name="setup" finished-at="2024-01-21T12:25:18Z" duration-ms="7366" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3182_VerifyPlanningSignoff()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:29Z" name="E10_3182_VerifyPlanningSignoff" finished-at="2024-01-21T09:58:45Z" duration-ms="16026" status="PASS">
+        <test-method signature="E10_3136_VerifyUpdateEmpProfile()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:18Z" name="E10_3136_VerifyUpdateEmpProfile" finished-at="2024-01-21T12:25:49Z" duration-ms="30554" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3182_VerifyPlanningSignoff -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:45Z" name="afterTestMethod" finished-at="2024-01-21T09:58:45Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_3136_VerifyUpdateEmpProfile -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:49Z" name="afterTestMethod" finished-at="2024-01-21T12:25:49Z" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@126be319]" started-at="2024-01-21T09:58:45Z" name="closeBrowser" finished-at="2024-01-21T09:58:45Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@75201592]" started-at="2024-01-21T12:25:49Z" name="closeBrowser" finished-at="2024-01-21T12:25:49Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

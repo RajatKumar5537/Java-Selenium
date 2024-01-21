@@ -71,8 +71,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String testName = result.getName();
 		String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 		File dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
-		// Specify the absolute path for the screenshot...
-		// After update the path as ArtifactStagingDirectory, not getting the screenshot in Azure Pipeline 
+		
+		// After updating the path to use ArtifactStagingDirectory, 
+		// I am not able to retrieve the screenshots in the Azure Pipeline.
 		// File dest = new File("$(Build.ArtifactStagingDirectory)/ScreenShot/" + testName + "_" + timestamp + ".png");
 
 
@@ -93,83 +94,45 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		logger.info("Screenshot Path: " + dest.getAbsolutePath());
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
-		test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
+
+		// Extract line number from the stack trace
+		StackTraceElement[] stackTrace = result.getThrowable().getStackTrace();
+		int lineNumber = -1; // Default value if not found
+
+		for (StackTraceElement element : stackTrace) {
+			String className = element.getClassName();
+			if (className.startsWith("com.JiviewsAutomation.SystemDefination_Test") || className.startsWith("com.AutomationJiviewsPOM")) {
+				lineNumber = element.getLineNumber();
+				break;
+			}
+		}
+		test.log(Status.FAIL, "Test Failed at Line " + lineNumber + " - Check screenshot and error message below:",
 				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		// Log additional failure details to console
 		logger.error("Exception Stack Trace:", result.getThrowable());
 	}
-	/*@Override
-	public void onTestFailure(ITestResult result) {
-	    String testName = result.getName();
-	    String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
 
-	    // Check if running in Azure Pipeline
-	    String artifactStagingDirectory = System.getenv("AGENT_BUILDDIRECTORY");
-	    File dest;
-
-	    if (artifactStagingDirectory != null && !artifactStagingDirectory.isEmpty()) {
-	        // Running in Azure Pipeline
-	        dest = new File(artifactStagingDirectory + "/ScreenShot/" + testName + "_" + timestamp + ".png");
-	    } else {
-	        // Running locally
-	        dest = new File(System.getProperty("user.dir") + "/ScreenShot/" + testName + "_" + timestamp + ".png");
-	    }
-
-	    TakesScreenshot ts = (TakesScreenshot) driver;
-	    File src = ts.getScreenshotAs(OutputType.FILE);
-
-	    logger.info("Screenshot destination path: " + dest.getAbsolutePath());
-
-	    try {
-	        FileUtils.copyFile(src, dest);
-	        logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
-	    } catch (IOException e) {
-	        e.printStackTrace();
-	        logger.error("Error capturing or saving screenshot:", e);
-	    }
-
-	    // Log paths for debugging
-	    logger.info("Working Directory: " + System.getProperty("user.dir"));
-	    logger.info("Screenshot Path: " + dest.getAbsolutePath());
-
-	    // Log additional failure details to console
-	    logger.error("Exception Stack Trace:", result.getThrowable());
-	    test.log(Status.FAIL, "Test Failed - Check screenshot and error message below:",
-	            MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
-	            .fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
-
-	    // Log additional failure details to console
-	    logger.error("Exception Stack Trace:", result.getThrowable());
-	}
-*/
 
 	@Override
 	public void onTestSkipped(ITestResult result) {
-		//		String methodName = result.getMethod().getMethodName();
-		//		setupTest(methodName, result.getTestContext()); 
-		//		// Log test skipped with custom message or additional information
-		//		test.skip("Test skipped - Method: " + methodName);
-		//		// Log the skip status to extent report
-		//		test.log(Status.SKIP, "Test skipped - Method: " + methodName);
+		String methodName = result.getMethod().getMethodName();
+		setupTest(methodName, result.getTestContext());
 
-		 String methodName = result.getMethod().getMethodName();
-		    setupTest(methodName, result.getTestContext());
+		// Log test skipped with custom message or additional information
+		String skipMessage = "Test skipped - Method: " + methodName;
 
-		    // Log test skipped with custom message or additional information
-		    String skipMessage = "Test skipped - Method: " + methodName;
+		// Check if there is a throwable (exception) associated with the skipped test
+		if (result.getThrowable() != null) {
+			skipMessage += " - Reason: " + result.getThrowable().getMessage();
 
-		    // Check if there is a throwable (exception) associated with the skipped test
-		    if (result.getThrowable() != null) {
-		        skipMessage += " - Reason: " + result.getThrowable().getMessage();
-
-		        // Log the exception message within a code block
-		        String codeBlock = MarkupHelper.createCodeBlock(result.getThrowable().getMessage()).getMarkup();
-		        test.log(Status.SKIP, codeBlock);
-		    } else {
-		        // Log the skip status to extent report
-		        test.log(Status.SKIP, skipMessage);
-		    }
+			// Log the exception message within a code block
+			String codeBlock = MarkupHelper.createCodeBlock(result.getThrowable().getMessage()).getMarkup();
+			test.log(Status.SKIP, codeBlock);
+		} else {
+			// Log the skip status to extent report
+			test.log(Status.SKIP, skipMessage);
+		}
 	}
 
 	@Override
@@ -184,7 +147,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
-		
+
 		String buildName = "Build Release v4.22.00.159";
 		String reportName = "Automation Test Report - " + buildName;
 		spark.config().setReportName(reportName);
@@ -196,9 +159,9 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 				ViewName.TEST, 
 				ViewName.CATEGORY, 
 				ViewName.AUTHOR, 
-				ViewName.DEVICE, 
-				ViewName.EXCEPTION, 
-				ViewName.LOG 
+//				ViewName.DEVICE, 
+//				ViewName.EXCEPTION, 
+//				ViewName.LOG 
 		}).apply();
 	}
 
@@ -223,13 +186,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		String suiteName = context.getSuite().getName();
 		String testName = context.getCurrentXmlTest().getName();
 		test.assignCategory(suiteName, testName);
-
-		// Add "Test" tag
-		//	test.assignCategory("Test");
-
-		// Add "Exception" category for better organization
 		test.assignDevice("Web Application");
-
 		test.info("Jivi Automation Test: Verifying user login functionality");
 	}
 

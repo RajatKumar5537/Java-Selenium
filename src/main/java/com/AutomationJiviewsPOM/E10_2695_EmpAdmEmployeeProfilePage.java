@@ -927,7 +927,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 			WebElement checkbox = checkboxes.get(i);
 			if (checkbox.isEnabled()) {
 				clickonBtnEdit();
-//				checkboxFound = true;
+				checkboxFound = true; // Set checkboxFound to true when an enabled checkbox is found
 				break;
 			}
 		}
@@ -1215,7 +1215,6 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 
 	public void createEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickBtnAddEmployee();
-		//		    	clickBasicProfile();
 		enterEmployeeNumber(fakeEmployee.getEmpNumber());
 		enterBadgeNumber(fakeEmployee.getBadgeNumber());
 		enterFirstName(fakeEmployee.getFirstName());
@@ -1253,6 +1252,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		selectPrimaryRoleSearch();
 		selectAvailableListBox();
 		setAvailableSingleSkillMoveToSelectedSkill();
+		
 		clickTabContacts();
 		clickAddNewContact();
 		enterContactName(fakeEmployee.getFirstName());
@@ -1302,7 +1302,6 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		clickNotificationPopup();
 	}
 	public void updateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
-//		clickonBtnEdit();
 		updateRowsWithEnabledCheckbox();
 		enterFirstName(fakeEmployee.getFirstName());
 		enterMiddleName(fakeEmployee.getMiddleName());
@@ -1323,6 +1322,12 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		getaddExcludedSkillSuccessMsg();
 		clickNotificationPopup();
 		
+		clickTabRole();
+		clickPrimaryRole();
+		selectPrimaryRoleSearch();
+		selectAvailableListBox();
+		setAvailableSingleSkillMoveToSelectedSkill();
+		
 		clickonTabDisciplinary();
 		deleteDisciplinaryIfPresentAndClickAddSuspension(driver);
 		enterdtDisciplinaryStart(fakeEmployee.getSkillStartDate());
@@ -1339,7 +1344,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterShareOrgUnitStartDate(fakeEmployee.getSkillStartDate());
 		enterdtShareOrgUnitEndDate(fakeEmployee.getSkillEndDate());
 		cickonBtnSaveEmployeeOU();
-//		clickNotificationPopup();
+		clickNotificationPopup();
 		pressBtnSaveEmployee();
 //		getEmployeeProfilecreatedSuccessfullyMsg();
 //		clickNotificationPopup();

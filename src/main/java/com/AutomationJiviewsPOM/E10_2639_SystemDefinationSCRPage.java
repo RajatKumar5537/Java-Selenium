@@ -475,7 +475,8 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 	public void setDeactivateSCR() throws Exception {
 
 		deleteRowsWithEnabledCheckbox();
-		setBtnYes();
+		setBtnYes(); 
+		
 //		setCheckbox();
 //		Thread.sleep(2000);
 //		setBtnDeletePublicHlday();
