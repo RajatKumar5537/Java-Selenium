@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="13" total="14" passed="1" failed="0" skipped="0">
+<testng-results ignored="13" total="14" passed="0" failed="1" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,42 +8,114 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-23T03:40:49Z" name="Default suite" finished-at="2024-01-23T03:41:39Z" duration-ms="49318">
+  <suite started-at="2024-01-23T14:03:03Z" name="Default suite" finished-at="2024-01-23T14:03:52Z" duration-ms="48853">
     <groups>
     </groups>
-    <test started-at="2024-01-23T03:40:49Z" name="Default test" finished-at="2024-01-23T03:41:39Z" duration-ms="49318">
+    <test started-at="2024-01-23T14:03:03Z" name="Default test" finished-at="2024-01-23T14:03:52Z" duration-ms="48853">
       <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:49Z" name="launchBrowser" finished-at="2024-01-23T03:40:51Z" duration-ms="1621" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:03Z" name="launchBrowser" finished-at="2024-01-23T14:03:04Z" duration-ms="1582" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:51Z" name="beforeTestMethod" finished-at="2024-01-23T03:40:53Z" duration-ms="2251" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:04Z" name="beforeTestMethod" finished-at="2024-01-23T14:03:07Z" duration-ms="2609" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:53Z" name="setup" finished-at="2024-01-23T03:41:00Z" duration-ms="6867" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:07Z" name="setup" finished-at="2024-01-23T14:03:15Z" duration-ms="8469" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3225_Verify_EmployeeKiosk_ApplyForLeave()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:00Z" name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave" finished-at="2024-01-23T03:41:29Z" duration-ms="28607" status="PASS">
+        <test-method signature="E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()[pri:16, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:15Z" name="E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave" finished-at="2024-01-23T14:03:42Z" duration-ms="26506" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
+            <message>
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Leave To has no Shift for you to apply leave,']"}
+  (Session info: chrome=120.0.6099.225)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7daf3b8a86479a44cd09c7327ddbbaa2, findElement {using=xpath, value=//div[text()='Leave To has no Shift for you to apply leave,']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54340}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54340/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7daf3b8a86479a44cd09c7327ddbbaa2]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Leave To has no Shift for you to apply leave,']"}
+  (Session info: chrome=120.0.6099.225)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [7daf3b8a86479a44cd09c7327ddbbaa2, findElement {using=xpath, value=//div[text()='Leave To has no Shift for you to apply leave,']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:54340}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:54340/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 7daf3b8a86479a44cd09c7327ddbbaa2
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy35.getText(Unknown Source)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.getLeaveToHasNoShiftForYouToApplyLeaveMsg(E10_3216_ESSApplyLeavePage.java:765)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave(E10_3216_ESSApplyLeavePage.java:1992)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave(E10_3216_ESSApplyLeaveTest.java:284)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
+at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
+at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3225_Verify_EmployeeKiosk_ApplyForLeave -->
-        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:29Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:41:39Z" duration-ms="9961" status="PASS">
+        </test-method> <!-- E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:42Z" name="logoutAfterTestMethod" finished-at="2024-01-23T14:03:52Z" duration-ms="9662" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutAfterTestMethod -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:39Z" name="afterTestMethod" finished-at="2024-01-23T03:41:39Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:52Z" name="afterTestMethod" finished-at="2024-01-23T14:03:52Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:39Z" name="closeBrowser" finished-at="2024-01-23T03:41:39Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T14:03:52Z" name="closeBrowser" finished-at="2024-01-23T14:03:52Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

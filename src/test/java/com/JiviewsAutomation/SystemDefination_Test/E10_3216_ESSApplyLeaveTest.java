@@ -275,7 +275,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
 	}
 	
-	@Test (priority = 15)
+	@Test (priority = 16)
 	public void E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");

@@ -500,6 +500,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	}
 	public void clickBtnYes() {
+		webUtility.moveToElement(driver, btnYes);
 		btnYes.click();
 	}
 	public void clickNotificationPopup() throws Exception {
@@ -651,7 +652,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickApplyTimeOffOnBehalf() {
 		ApplyTimeOffOnBehalf.click();
 	}
-	
+
 	public void clickApplyforUncontrolledLeave() {
 		ApplyforUncontrolledLeave.click();
 	}
@@ -684,8 +685,16 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 
 	public void getLeaveApplicationSubmittedSuccessfullyMsg() {
-		String actualResult =LeaveApplicationSubmittedSuccessfullyMsg.getText();
+		//		String actualResult =LeaveApplicationSubmittedSuccessfullyMsg.getText();
+		//		Assert.assertTrue(actualResult.contains("Leave Application Submitted Successfully"));
+		//	    int maxWaitSeconds = 10;
+		WebElement leaveApplicationMsg = new WebDriverWait(driver, Duration.ofSeconds(120))
+				.until(ExpectedConditions.visibilityOf(LeaveApplicationSubmittedSuccessfullyMsg));
+		// Get the text after the element is present
+		String actualResult = leaveApplicationMsg.getText();
+		// Assert the text contains the expected message
 		Assert.assertTrue(actualResult.contains("Leave Application Submitted Successfully"));
+
 	}
 
 	public void clickUncontrolledLeave() {
@@ -919,7 +928,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 		clickApplyLeave();
-
+		Thread.sleep(2000);
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
@@ -1315,11 +1324,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unEmp, pwdEmp);
-		 
-	jmMenuItem.clickOnEmployeeSelfService();
+
+		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
-		
+
 		clickApplyOnBehalf();
 		enterSearchEmployee();
 		Thread.sleep(2000);
@@ -1344,7 +1353,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		//	--------------------------------------------------------------------------------------------------------	
 
-		
+
 		driver.navigate().to(homeUrl);		
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
@@ -1375,12 +1384,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		empKiosk.clickEmployeeKiosk();
 
 		clickApplyOnBehalf();
-		
+
 		enterSearchEmployee();
 //		Thread.sleep(2000);
 		clickSearchEmployee();
 		clickApplyforUncontrolledLeave();
-		
+
 		Thread.sleep(2000);
 		clickUCLExceptionType();
 		Thread.sleep(2000);
