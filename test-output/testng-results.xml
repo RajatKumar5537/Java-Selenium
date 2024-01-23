@@ -8,42 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-22T11:53:04Z" name="Default suite" finished-at="2024-01-22T11:54:46Z" duration-ms="101945">
+  <suite started-at="2024-01-23T03:40:49Z" name="Default suite" finished-at="2024-01-23T03:41:39Z" duration-ms="49318">
     <groups>
     </groups>
-    <test started-at="2024-01-22T11:53:04Z" name="Default test" finished-at="2024-01-22T11:54:46Z" duration-ms="101945">
+    <test started-at="2024-01-23T03:40:49Z" name="Default test" finished-at="2024-01-23T03:41:39Z" duration-ms="49318">
       <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:53:04Z" name="launchBrowser" finished-at="2024-01-22T11:53:06Z" duration-ms="1635" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:49Z" name="launchBrowser" finished-at="2024-01-23T03:40:51Z" duration-ms="1621" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:53:06Z" name="beforeTestMethod" finished-at="2024-01-22T11:53:50Z" duration-ms="44615" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:51Z" name="beforeTestMethod" finished-at="2024-01-23T03:40:53Z" duration-ms="2251" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:53:50Z" name="setup" finished-at="2024-01-22T11:54:17Z" duration-ms="26446" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:40:53Z" name="setup" finished-at="2024-01-23T03:41:00Z" duration-ms="6867" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:54:17Z" name="E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails" finished-at="2024-01-22T11:54:35Z" duration-ms="17993" status="PASS">
+        <test-method signature="E10_3225_Verify_EmployeeKiosk_ApplyForLeave()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:00Z" name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave" finished-at="2024-01-23T03:41:29Z" duration-ms="28607" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails -->
-        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:54:35Z" name="logoutAfterTestMethod" finished-at="2024-01-22T11:54:46Z" duration-ms="11238" status="PASS">
+        </test-method> <!-- E10_3225_Verify_EmployeeKiosk_ApplyForLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:29Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:41:39Z" duration-ms="9961" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- logoutAfterTestMethod -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:54:46Z" name="afterTestMethod" finished-at="2024-01-22T11:54:46Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:39Z" name="afterTestMethod" finished-at="2024-01-23T03:41:39Z" duration-ms="1" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-22T11:54:46Z" name="closeBrowser" finished-at="2024-01-22T11:54:46Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-01-23T03:41:39Z" name="closeBrowser" finished-at="2024-01-23T03:41:39Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->

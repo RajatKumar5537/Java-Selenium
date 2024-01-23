@@ -1316,7 +1316,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unEmp, pwdEmp);
 		 
-		/*	jmMenuItem.clickOnEmployeeSelfService();
+	jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 		
@@ -1367,9 +1367,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
-		clickApplyTimeOff();*/
+		clickApplyTimeOff();
 		//		--------------------------------------------------------------------------------------------------------
-//		driver.navigate().to(homeUrl);		
+		/*driver.navigate().to(homeUrl);		
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
@@ -1389,7 +1389,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickUCLDate(fakeEmployee.getTmrwDate());
 		entertxtUCLReferenceNo(fakeEmployee.getReferenceNo());
 		entertxtUCLRemarks(fakeEmployee.getRemarksLeave());
-		clickBtnApplyUCL();
+		clickBtnApplyUCL();*/
 		//		homePage.clickOnBtnLogout();
 	}
 
