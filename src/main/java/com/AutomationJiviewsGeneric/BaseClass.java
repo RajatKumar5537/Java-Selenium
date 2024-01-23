@@ -82,7 +82,7 @@ public class BaseClass {
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
 		logger.info("Close Browser...");
-		driver.quit();
+//		driver.quit();
 	}
 	
 	// Add a boolean variable to track whether the user is logged in

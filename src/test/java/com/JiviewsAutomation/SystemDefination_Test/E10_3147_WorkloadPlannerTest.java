@@ -36,6 +36,7 @@ public class E10_3147_WorkloadPlannerTest extends BaseClass{
 		homePage.setOrgUnit();
 		Thread.sleep(2000);
 		orgUnit.setAutoOu();
+		Thread.sleep(2000);
 		menuItem.clickOnOperationPlanningExecution();
 		workloadPlanning.clickOnWorkloadPlanner();
 	}

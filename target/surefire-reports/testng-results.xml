@@ -1,133 +1,219 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="68" passed="59" failed="9" skipped="0">
+<testng-results ignored="0" total="14" passed="4" failed="5" skipped="5">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
     </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[ShiftBand Name Is Required]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
   </reporter-output>
-  <suite started-at="2024-01-21T13:39:19Z" name="Suite" finished-at="2024-01-21T14:14:05Z" duration-ms="2085231">
+  <suite started-at="2024-01-23T02:58:56Z" name="Suite" finished-at="2024-01-23T03:09:51Z" duration-ms="655419">
     <groups>
     </groups>
-    <test started-at="2024-01-21T13:39:19Z" name="E10_2910_WorkforceEmployeeRosterV2Test" finished-at="2024-01-21T13:59:00Z" duration-ms="1180476">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:39:20Z" name="launchBrowser" finished-at="2024-01-21T13:39:21Z" duration-ms="1918" status="PASS">
+    <test started-at="2024-01-23T02:58:56Z" name="E10_3216_ESSApplyLeaveTest" finished-at="2024-01-23T03:09:51Z" duration-ms="655419">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T02:58:56Z" name="launchBrowser" finished-at="2024-01-23T02:58:59Z" duration-ms="3429" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:39:21Z" name="beforeTestMethod" finished-at="2024-01-21T13:39:24Z" duration-ms="2665" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T02:58:59Z" name="beforeTestMethod" finished-at="2024-01-23T02:59:31Z" duration-ms="32008" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:39:24Z" name="setup" finished-at="2024-01-21T13:39:44Z" duration-ms="19553" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T02:59:31Z" name="setup" finished-at="2024-01-23T02:59:54Z" duration-ms="22642" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2938_VerifySearchEmpRosterByDate()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:39:44Z" name="E10_2938_VerifySearchEmpRosterByDate" finished-at="2024-01-21T13:40:01Z" duration-ms="17705" status="PASS">
+        <test-method signature="E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T02:59:54Z" name="E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails" finished-at="2024-01-23T03:00:08Z" duration-ms="14216" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2938_VerifySearchEmpRosterByDate -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:40:01Z" name="setup" finished-at="2024-01-21T13:40:23Z" duration-ms="21326" status="PASS">
+        </test-method> <!-- E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:00:08Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:00:18Z" duration-ms="9765" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2939_VerifySearchByFilters()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:40:23Z" name="E10_2939_VerifySearchByFilters" finished-at="2024-01-21T13:40:37Z" duration-ms="14513" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2939_VerifySearchByFilters -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:40:37Z" name="setup" finished-at="2024-01-21T13:40:57Z" duration-ms="20139" status="PASS">
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:00:18Z" name="setup" finished-at="2024-01-23T03:00:24Z" duration-ms="6182" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2940_VerifyExpandAndCollapseRows()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:40:57Z" name="E10_2940_VerifyExpandAndCollapseRows" finished-at="2024-01-21T13:41:32Z" duration-ms="34291" status="PASS">
+        <test-method signature="E10_3227_Verify_EmployeeKiosk_LeaveRecords()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:00:24Z" name="E10_3227_Verify_EmployeeKiosk_LeaveRecords" finished-at="2024-01-23T03:00:45Z" duration-ms="20441" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2940_VerifyExpandAndCollapseRows -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:41:32Z" name="setup" finished-at="2024-01-21T13:41:52Z" duration-ms="19937" status="PASS">
+        </test-method> <!-- E10_3227_Verify_EmployeeKiosk_LeaveRecords -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:00:45Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:00:55Z" duration-ms="10165" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2941_VerifyFilterAndResetColumns()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:41:52Z" name="E10_2941_VerifyFilterAndResetColumns" finished-at="2024-01-21T13:42:36Z" duration-ms="44389" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2941_VerifyFilterAndResetColumns -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:42:36Z" name="setup" finished-at="2024-01-21T13:42:54Z" duration-ms="17598" status="PASS">
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:00:55Z" name="setup" finished-at="2024-01-23T03:01:01Z" duration-ms="6029" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2942_VerifyPerformFullScreen()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:42:54Z" name="E10_2942_VerifyPerformFullScreen" finished-at="2024-01-21T13:43:08Z" duration-ms="14164" status="FAIL">
-          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+        <test-method signature="E10_3228_Verify_EmployeeKiosk_MyleaveProfile()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:01:01Z" name="E10_3228_Verify_EmployeeKiosk_MyleaveProfile" finished-at="2024-01-23T03:01:13Z" duration-ms="11701" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3228_Verify_EmployeeKiosk_MyleaveProfile -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:01:13Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:01:22Z" duration-ms="9658" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:01:22Z" name="setup" finished-at="2024-01-23T03:01:28Z" duration-ms="5605" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="E10_3225_Verify_EmployeeKiosk_ApplyForLeave()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:01:28Z" name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave" finished-at="2024-01-23T03:03:12Z" duration-ms="104671" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[element click intercepted: Element <span class="px-1 mr-lg-0 ml-0 ml-lg-0 mr-0" style="font-weight: 300; color: darkcyan; font-size:15px" id="btnExpandText">...</span> is not clickable at point (969, 195). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.8; cursor: wait; position: absolute;"></div>
-  (Session info: chrome=120.0.6099.225)
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, clickElement {id=48B7FD44E8C8014499AB5B39CA414733_element_66372}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f39801a5c3e6f121fadb5b152aa826de)] -> xpath: //span[@id='btnExpandText']]
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="px-1 mr-lg-0 ml-0 ml-lg-0 mr-0" style="font-weight: 300; color: darkcyan; font-size:15px" id="btnExpandText">...</span> is not clickable at point (969, 195). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.8; cursor: wait; position: absolute;"></div>
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.pressBtnNext(E10_3216_ESSApplyLeavePage.java:349)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3225_EmployeeKiosk_ApplyForLeave(E10_3216_ESSApplyLeavePage.java:782)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3225_Verify_EmployeeKiosk_ApplyForLeave(E10_3216_ESSApplyLeaveTest.java:111)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3225_Verify_EmployeeKiosk_ApplyForLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:03:13Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:03:24Z" duration-ms="11261" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:03:24Z" name="setup" finished-at="2024-01-23T03:03:31Z" duration-ms="6531" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="E10_3229_Verify_ApproverKiosk_ApproveLeave()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:03:31Z" name="E10_3229_Verify_ApproverKiosk_ApproveLeave" finished-at="2024-01-23T03:04:05Z" duration-ms="34302" status="FAIL">
+          <exception class="java.lang.IndexOutOfBoundsException">
+            <message>
+              <![CDATA[Index 0 out of bounds for length 0]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[java.lang.IndexOutOfBoundsException: Index 0 out of bounds for length 0
+at java.base/jdk.internal.util.Preconditions.outOfBounds(Preconditions.java:64)
+at java.base/jdk.internal.util.Preconditions.outOfBoundsCheckIndex(Preconditions.java:70)
+at java.base/jdk.internal.util.Preconditions.checkIndex(Preconditions.java:266)
+at java.base/java.util.Objects.checkIndex(Objects.java:361)
+at java.base/java.util.ArrayList.get(ArrayList.java:427)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementListHandler.invoke(LocatingElementListHandler.java:39)
+at jdk.proxy2/jdk.proxy2.$Proxy34.get(Unknown Source)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.pendingForApprovalRowsWithEnabledCheckbox(E10_3216_ESSApplyLeavePage.java:525)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3229_ApproverKiosk_ApproveLeave(E10_3216_ESSApplyLeavePage.java:869)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3229_Verify_ApproverKiosk_ApproveLeave(E10_3216_ESSApplyLeaveTest.java:124)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- java.lang.IndexOutOfBoundsException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3229_Verify_ApproverKiosk_ApproveLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:04:05Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:04:15Z" duration-ms="9917" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:04:15Z" name="setup" finished-at="2024-01-23T03:04:21Z" duration-ms="5495" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="E10_3230_Verify_ApproverKiosk_CancelApproveleave()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:04:21Z" name="E10_3230_Verify_ApproverKiosk_CancelApproveleave" finished-at="2024-01-23T03:04:47Z" duration-ms="26007" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <span class="select2-selection__rendered" id="select2-cmbCancelLeaveEmpNumber-container" role="textbox" aria-readonly="true">...</span> is not clickable at point (533, 182). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.732588; cursor: default; position: absolute;"></div>
   (Session info: chrome=120.0.6099.225)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, clickElement {id=48B7FD44E8C8014499AB5B39CA414733_element_66372}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (f39801a5c3e6f121fadb5b152aa826de)] -> xpath: //span[@id='btnExpandText']]
-Session ID: f39801a5c3e6f121fadb5b152aa826de
+Command: [15af78119a9e47dc2b919d831b120df7, clickElement {id=15FD6C6026F13335F8129E5B605CAC1E_element_1228}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //span[@id='select2-cmbCancelLeaveEmpNumber-container']]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="select2-selection__rendered" id="select2-cmbCancelLeaveEmpNumber-container" role="textbox" aria-readonly="true">...</span> is not clickable at point (533, 182). Other element would receive the click: <div class="blockUI blockOverlay" style="z-index: 1000; border: none; margin: 0px; padding: 0px; width: 100%; height: 100%; top: 0px; left: 0px; background-color: rgb(255, 255, 255); opacity: 0.732588; cursor: default; position: absolute;"></div>
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, clickElement {id=15FD6C6026F13335F8129E5B605CAC1E_element_1228}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //span[@id='select2-cmbCancelLeaveEmpNumber-container']]
+Session ID: 15af78119a9e47dc2b919d831b120df7
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -142,14 +228,14 @@ at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverComman
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
 at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
 at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:77)
-at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at jdk.internal.reflect.GeneratedMethodAccessor1.invoke(Unknown Source)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy32.click(Unknown Source)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.clickBtnExpand(E10_2910_EmployeeRosterV2Page.java:353)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.performFullScreen(E10_2910_EmployeeRosterV2Page.java:736)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2942_VerifyPerformFullScreen(E10_2910_WorkforceEmployeeRosterV2Test.java:92)
+at jdk.proxy2/jdk.proxy2.$Proxy33.click(Unknown Source)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.clickCancelLeaveEmpNumber(E10_3216_ESSApplyLeavePage.java:417)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3230_ApproverKiosk_CancelApproveleave(E10_3216_ESSApplyLeavePage.java:898)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3230_Verify_ApproverKiosk_CancelApproveleave(E10_3216_ESSApplyLeaveTest.java:136)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -184,41 +270,38 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2942_VerifyPerformFullScreen -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:43:08Z" name="setup" finished-at="2024-01-21T13:43:28Z" duration-ms="19877" status="PASS">
+        </test-method> <!-- E10_3230_Verify_ApproverKiosk_CancelApproveleave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:04:47Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:04:59Z" duration-ms="12384" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:04:59Z" name="setup" finished-at="2024-01-23T03:05:08Z" duration-ms="8383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2943_VerifyPerformCreateShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:43:28Z" name="E10_2943_VerifyPerformCreateShift" finished-at="2024-01-21T13:44:30Z" duration-ms="61375" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2943_VerifyPerformCreateShift -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:44:30Z" name="setup" finished-at="2024-01-21T13:45:23Z" duration-ms="53380" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2944_verifyCopySingleCellAndPasteInNewCell()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:45:23Z" name="E10_2944_verifyCopySingleCellAndPasteInNewCell" finished-at="2024-01-21T13:46:13Z" duration-ms="50118" status="FAIL">
+        <test-method signature="E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:05:08Z" name="E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval" finished-at="2024-01-23T03:06:56Z" duration-ms="108859" status="FAIL">
           <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[Expected condition failed: waiting for element to no longer be visible: By.cssSelector: div.blockUI.blockOverlay (tried for 30 second(s) with 500 milliseconds interval)
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to no longer be visible: By.cssSelector: div.blockUI.blockOverlay (tried for 30 second(s) with 500 milliseconds interval)
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7
 at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
 at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.clickBtnExpand(E10_2910_EmployeeRosterV2Page.java:352)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.CopySingleCellAndPasteInNewCell(E10_2910_EmployeeRosterV2Page.java:774)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2944_verifyCopySingleCellAndPasteInNewCell(E10_2910_WorkforceEmployeeRosterV2Test.java:112)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.pressBtnNext(E10_3216_ESSApplyLeavePage.java:349)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(E10_3216_ESSApplyLeavePage.java:934)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval(E10_3216_ESSApplyLeaveTest.java:148)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -253,34 +336,114 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           </exception> <!-- org.openqa.selenium.TimeoutException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2944_verifyCopySingleCellAndPasteInNewCell -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:46:13Z" name="setup" finished-at="2024-01-21T13:46:46Z" duration-ms="32465" status="PASS">
+        </test-method> <!-- E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:06:57Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:07:08Z" duration-ms="11006" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:07:08Z" name="setup" finished-at="2024-01-23T03:07:14Z" duration-ms="6385" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2945_VerifyCopyWithOncallShift()[pri:8, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:46:46Z" name="E10_2945_VerifyCopyWithOncallShift" finished-at="2024-01-21T13:47:46Z" duration-ms="59623" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method signature="E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave()[pri:8, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:07:14Z" name="E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave" finished-at="2024-01-23T03:08:55Z" duration-ms="100725" status="FAIL">
+          <exception class="org.openqa.selenium.TimeoutException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Shift created successfully']"}
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, findElement {using=xpath, value=//div[text()='Shift created successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Shift created successfully']"}
-  (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //button[text()='Next']] (tried for 80 second(s) with 500 milliseconds interval)
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, findElement {using=xpath, value=//div[text()='Shift created successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.pressBtnNext(E10_3216_ESSApplyLeavePage.java:349)
+at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3232_CancelApprovedLeave_ApproverApprovedCancelLeave(E10_3216_ESSApplyLeavePage.java:982)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave(E10_3216_ESSApplyLeaveTest.java:161)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.TimeoutException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:08:55Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:07Z" duration-ms="12652" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:07Z" name="setup" finished-at="2024-01-23T03:09:15Z" duration-ms="7377" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method signature="E10_3218_Verify_ApplyTimeOff()[pri:10, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:15Z" name="E10_3218_Verify_ApplyTimeOff" finished-at="2024-01-23T03:09:38Z" duration-ms="22842" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3218_Verify_ApplyTimeOff -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:38Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:48Z" duration-ms="10157" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:48Z" name="setup" finished-at="2024-01-23T03:09:51Z" duration-ms="3339" status="FAIL">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -293,22 +456,32 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.getShiftCreatedSuccessfullyMsg(E10_2910_EmployeeRosterV2Page.java:421)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.CopyWithOncallShift(E10_2910_EmployeeRosterV2Page.java:857)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2945_VerifyCopyWithOncallShift(E10_2910_WorkforceEmployeeRosterV2Test.java:121)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -334,766 +507,37 @@ at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2945_VerifyCopyWithOncallShift -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:47:46Z" name="setup" finished-at="2024-01-21T13:48:02Z" duration-ms="16722" status="PASS">
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2946_VerifyExportToTextAndExcel()[pri:9, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:48:02Z" name="E10_2946_VerifyExportToTextAndExcel" finished-at="2024-01-21T13:48:35Z" duration-ms="32740" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2946_VerifyExportToTextAndExcel -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:48:35Z" name="setup" finished-at="2024-01-21T13:48:52Z" duration-ms="16640" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2947_VerifyExpandAndCollapseGroup()[pri:10, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:48:52Z" name="E10_2947_VerifyExpandAndCollapseGroup" finished-at="2024-01-21T13:49:21Z" duration-ms="29558" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2947_VerifyExpandAndCollapseGroup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:49:21Z" name="setup" finished-at="2024-01-21T13:49:38Z" duration-ms="16748" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2948_VerifyApplyOnBehalfApplyLeave()[pri:11, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:49:38Z" name="E10_2948_VerifyApplyOnBehalfApplyLeave" finished-at="2024-01-21T13:50:19Z" duration-ms="41215" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2948_VerifyApplyOnBehalfApplyLeave -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:50:19Z" name="setup" finished-at="2024-01-21T13:50:36Z" duration-ms="17092" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2949_VerifyTestCopyAndPasteToExcel()[pri:12, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:50:36Z" name="E10_2949_VerifyTestCopyAndPasteToExcel" finished-at="2024-01-21T13:51:07Z" duration-ms="30335" status="FAIL">
-          <exception class="java.lang.AssertionError">
+        <test-method signature="E10_3213_Verify_ApplyOnBehalf()[pri:11, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="E10_3213_Verify_ApplyOnBehalf" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[Data doesn't match. Expected: [ROLE GROUP : null, 89212114 - Mohammed Turner
-ROLE : RTGO100 2023-11-08T12:47:56.947450800, 32695715 - Odell Carter
-ROLE : QCO 1705835784686, 92457737 - Lilliana Williamson
-ROLE : RTGO100 1701844270281, 90317880 - Lewis Mosciski
-ROLE : RTGO100 1701844270281, 90833312 - Angelo Mueller
-ROLE : RTGO100 1701844270281, 92970163 - Glenna Lynch
-ROLE : RTGO100 1701853905917, ROLE GROUP : RTGO Operator 2024-01-09T10:07:14.855048200, ] expected [true] but found [false]]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.AssertionError: Data doesn't match. Expected: [ROLE GROUP : null, 89212114 - Mohammed Turner
-ROLE : RTGO100 2023-11-08T12:47:56.947450800, 32695715 - Odell Carter
-ROLE : QCO 1705835784686, 92457737 - Lilliana Williamson
-ROLE : RTGO100 1701844270281, 90317880 - Lewis Mosciski
-ROLE : RTGO100 1701844270281, 90833312 - Angelo Mueller
-ROLE : RTGO100 1701844270281, 92970163 - Glenna Lynch
-ROLE : RTGO100 1701853905917, ROLE GROUP : RTGO Operator 2024-01-09T10:07:14.855048200, ] expected [true] but found [false]
-at org.testng.Assert.fail(Assert.java:96)
-at org.testng.Assert.failNotEquals(Assert.java:776)
-at org.testng.Assert.assertTrue(Assert.java:44)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.testCopyAndPasteToExcel(E10_2910_EmployeeRosterV2Page.java:934)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2949_VerifyTestCopyAndPasteToExcel(E10_2910_WorkforceEmployeeRosterV2Test.java:170)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.AssertionError -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2949_VerifyTestCopyAndPasteToExcel -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:51:07Z" name="setup" finished-at="2024-01-21T13:51:38Z" duration-ms="31296" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2950_VerifyOpenNewTabEmployeeProfile()[pri:13, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:51:38Z" name="E10_2950_VerifyOpenNewTabEmployeeProfile" finished-at="2024-01-21T13:52:25Z" duration-ms="47152" status="FAIL">
-          <exception class="org.openqa.selenium.UnhandledAlertException">
-            <message>
-              <![CDATA[unexpected alert open: {Alert text : Failure occured:  Status: error}
-  (Session info: chrome=120.0.6099.225): Failure occured:  Status: error
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.UnhandledAlertException: unexpected alert open: {Alert text : Failure occured:  Status: error}
-  (Session info: chrome=120.0.6099.225): Failure occured:  Status: error
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [f39801a5c3e6f121fadb5b152aa826de, getTitle {}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:130)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:590)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:594)
-at org.openqa.selenium.remote.RemoteWebDriver.getTitle(RemoteWebDriver.java:300)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.getTitleOfNewTab(E10_2910_EmployeeRosterV2Page.java:548)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.clickonEmployeeProfile(E10_2910_EmployeeRosterV2Page.java:959)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2950_VerifyOpenNewTabEmployeeProfile(E10_2910_WorkforceEmployeeRosterV2Test.java:181)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.UnhandledAlertException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2950_VerifyOpenNewTabEmployeeProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:52:25Z" name="setup" finished-at="2024-01-21T13:52:42Z" duration-ms="16716" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2951_VerifyOpenNewTabLeaveProfile()[pri:14, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:52:42Z" name="E10_2951_VerifyOpenNewTabLeaveProfile" finished-at="2024-01-21T13:53:24Z" duration-ms="41864" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.getTitleOfNewTab(E10_2910_EmployeeRosterV2Page.java:530)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.clickonLeaveProfile(E10_2910_EmployeeRosterV2Page.java:977)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2951_VerifyOpenNewTabLeaveProfile(E10_2910_WorkforceEmployeeRosterV2Test.java:196)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2951_VerifyOpenNewTabLeaveProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:53:25Z" name="setup" finished-at="2024-01-21T13:53:43Z" duration-ms="17456" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2952_VerifyOpenNewTabApprovalRoute()[pri:15, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:53:43Z" name="E10_2952_VerifyOpenNewTabApprovalRoute" finished-at="2024-01-21T13:54:32Z" duration-ms="49822" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for number of open windows to be 2 (tried for 10 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:57897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57897/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f39801a5c3e6f121fadb5b152aa826de
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.getTitleOfNewTab(E10_2910_EmployeeRosterV2Page.java:530)
-at com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page.clickonApprovalRoute(E10_2910_EmployeeRosterV2Page.java:995)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test.E10_2952_VerifyOpenNewTabApprovalRoute(E10_2910_WorkforceEmployeeRosterV2Test.java:211)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2952_VerifyOpenNewTabApprovalRoute -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:54:33Z" name="setup" finished-at="2024-01-21T13:54:52Z" duration-ms="19100" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_2954_VerifyClickDifferentTabinSummary()[pri:16, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:54:52Z" name="E10_2954_VerifyClickDifferentTabinSummary" finished-at="2024-01-21T13:55:25Z" duration-ms="33121" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2954_VerifyClickDifferentTabinSummary -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:55:25Z" name="setup" finished-at="2024-01-21T13:55:44Z" duration-ms="19125" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3006_VerifysearchByFiltersShiftBand()[pri:17, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:55:44Z" name="E10_3006_VerifysearchByFiltersShiftBand" finished-at="2024-01-21T13:55:55Z" duration-ms="11527" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3006_VerifysearchByFiltersShiftBand -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:55:55Z" name="setup" finished-at="2024-01-21T13:56:16Z" duration-ms="20444" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3039_VerifyApplyUncontrolledLeave()[pri:18, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:56:16Z" name="E10_3039_VerifyApplyUncontrolledLeave" finished-at="2024-01-21T13:56:57Z" duration-ms="40734" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3039_VerifyApplyUncontrolledLeave -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:56:57Z" name="setup" finished-at="2024-01-21T13:57:22Z" duration-ms="25059" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3040_VerifyApplyExcludeDeployment()[pri:19, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:57:22Z" name="E10_3040_VerifyApplyExcludeDeployment" finished-at="2024-01-21T13:58:02Z" duration-ms="39975" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3040_VerifyApplyExcludeDeployment -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:58:02Z" name="setup" finished-at="2024-01-21T13:58:23Z" duration-ms="20879" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3038_VerifyApplyOnBehalApplyTimeOff()[pri:20, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:58:23Z" name="E10_3038_VerifyApplyOnBehalApplyTimeOff" finished-at="2024-01-21T13:59:00Z" duration-ms="37170" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3038_VerifyApplyOnBehalApplyTimeOff -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:59:00Z" name="closeBrowser" finished-at="2024-01-21T13:59:00Z" duration-ms="261" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@3276732]" started-at="2024-01-21T13:59:00Z" name="afterTestMethod" finished-at="2024-01-21T13:59:00Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
-    </test> <!-- E10_2910_WorkforceEmployeeRosterV2Test -->
-    <test started-at="2024-01-21T13:59:00Z" name="E10_3082_SkillSetUpTest" finished-at="2024-01-21T13:59:52Z" duration-ms="51300">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:00Z" name="launchBrowser" finished-at="2024-01-21T13:59:01Z" duration-ms="892" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:01Z" name="beforeTestMethod" finished-at="2024-01-21T13:59:04Z" duration-ms="2673" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:04Z" name="setUp" finished-at="2024-01-21T13:59:12Z" duration-ms="7737" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3083_VerifyCreateNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:12Z" name="E10_3083_VerifyCreateNewSkill" finished-at="2024-01-21T13:59:14Z" duration-ms="2413" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3083_VerifyCreateNewSkill -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:14Z" name="setUp" finished-at="2024-01-21T13:59:19Z" duration-ms="5212" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3084_VerifyUpdateSkill()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:19Z" name="E10_3084_VerifyUpdateSkill" finished-at="2024-01-21T13:59:25Z" duration-ms="6140" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3084_VerifyUpdateSkill -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:25Z" name="setUp" finished-at="2024-01-21T13:59:34Z" duration-ms="8846" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3085_VerifyDeactivateSkill()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:34Z" name="E10_3085_VerifyDeactivateSkill" finished-at="2024-01-21T13:59:36Z" duration-ms="1645" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3085_VerifyDeactivateSkill -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:36Z" name="setUp" finished-at="2024-01-21T13:59:42Z" duration-ms="5994" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3086_VerifyReactivateSkill()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:42Z" name="E10_3086_VerifyReactivateSkill" finished-at="2024-01-21T13:59:44Z" duration-ms="2552" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3086_VerifyReactivateSkill -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:44Z" name="setUp" finished-at="2024-01-21T13:59:50Z" duration-ms="5994" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3087_VerifySearchColumnsForSkill()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:50Z" name="E10_3087_VerifySearchColumnsForSkill" finished-at="2024-01-21T13:59:51Z" duration-ms="1012" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3087_VerifySearchColumnsForSkill -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:51Z" name="afterTestMethod" finished-at="2024-01-21T13:59:51Z" duration-ms="2" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest@24faea88]" started-at="2024-01-21T13:59:51Z" name="closeBrowser" finished-at="2024-01-21T13:59:52Z" duration-ms="187" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest -->
-    </test> <!-- E10_3082_SkillSetUpTest -->
-    <test started-at="2024-01-21T13:59:52Z" name="E10_3089_RoleSetUpTest" finished-at="2024-01-21T14:02:32Z" duration-ms="160447">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T13:59:52Z" name="launchBrowser" finished-at="2024-01-21T13:59:53Z" duration-ms="831" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T13:59:53Z" name="beforeTestMethod" finished-at="2024-01-21T13:59:55Z" duration-ms="2224" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T13:59:55Z" name="setup" finished-at="2024-01-21T14:00:03Z" duration-ms="8246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3090_VerifyCreateNewRole()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:03Z" name="E10_3090_VerifyCreateNewRole" finished-at="2024-01-21T14:00:09Z" duration-ms="5939" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3090_VerifyCreateNewRole -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:09Z" name="setup" finished-at="2024-01-21T14:00:14Z" duration-ms="4670" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3091_VerifyUpdateRole()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:14Z" name="E10_3091_VerifyUpdateRole" finished-at="2024-01-21T14:00:19Z" duration-ms="5507" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3091_VerifyUpdateRole -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:19Z" name="setup" finished-at="2024-01-21T14:00:25Z" duration-ms="5450" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3092_VerifyDeactiveRole()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:25Z" name="E10_3092_VerifyDeactiveRole" finished-at="2024-01-21T14:00:27Z" duration-ms="2716" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3092_VerifyDeactiveRole -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:27Z" name="setup" finished-at="2024-01-21T14:00:39Z" duration-ms="11830" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3093_VerifyReactiveRole()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:39Z" name="E10_3093_VerifyReactiveRole" finished-at="2024-01-21T14:00:43Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest.E10_3092_VerifyDeactiveRole" duration-ms="3415" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3093_VerifyReactiveRole -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:43Z" name="setup" finished-at="2024-01-21T14:00:50Z" duration-ms="7030" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3094_VerifyCreateRoleWithAllAvailableSkill()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:50Z" name="E10_3094_VerifyCreateRoleWithAllAvailableSkill" finished-at="2024-01-21T14:00:55Z" duration-ms="4875" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3094_VerifyCreateRoleWithAllAvailableSkill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:00:55Z" name="setup" finished-at="2024-01-21T14:01:02Z" duration-ms="7044" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3095_VerifyDisselectAllAvailableSkill()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:02Z" name="E10_3095_VerifyDisselectAllAvailableSkill" finished-at="2024-01-21T14:01:10Z" duration-ms="8856" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3095_VerifyDisselectAllAvailableSkill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:10Z" name="setup" finished-at="2024-01-21T14:01:17Z" duration-ms="6499" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3099_verifySearchColumnsForRole()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:17Z" name="E10_3099_verifySearchColumnsForRole" finished-at="2024-01-21T14:01:18Z" duration-ms="1366" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3099_verifySearchColumnsForRole -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:18Z" name="setup" finished-at="2024-01-21T14:01:25Z" duration-ms="7047" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3100_verifyCreateNewRoleWithoutRoleCode()[pri:8, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:25Z" name="E10_3100_verifyCreateNewRoleWithoutRoleCode" finished-at="2024-01-21T14:01:33Z" duration-ms="7539" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3100_verifyCreateNewRoleWithoutRoleCode -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:33Z" name="setup" finished-at="2024-01-21T14:01:40Z" duration-ms="7064" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3101_VerifyCreateNewRoleWithoutRoleDescription()[pri:9, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:40Z" name="E10_3101_VerifyCreateNewRoleWithoutRoleDescription" finished-at="2024-01-21T14:01:46Z" duration-ms="6306" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3101_VerifyCreateNewRoleWithoutRoleDescription -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:46Z" name="setup" finished-at="2024-01-21T14:01:53Z" duration-ms="6498" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3102_verifyCreateNewRoleWithoutSecondarySkillEmpty()[pri:10, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:53Z" name="E10_3102_verifyCreateNewRoleWithoutSecondarySkillEmpty" finished-at="2024-01-21T14:01:57Z" duration-ms="4005" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3102_verifyCreateNewRoleWithoutSecondarySkillEmpty -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:01:57Z" name="setup" finished-at="2024-01-21T14:02:04Z" duration-ms="6951" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3103_VerifyDisselectSingleSkillFromSelectedSkill()[pri:11, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:02:04Z" name="E10_3103_VerifyDisselectSingleSkillFromSelectedSkill" finished-at="2024-01-21T14:02:16Z" duration-ms="12660" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3103_VerifyDisselectSingleSkillFromSelectedSkill -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:02:16Z" name="setup" finished-at="2024-01-21T14:02:23Z" duration-ms="6888" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3104_VerifyCreateNewRoleWithoutPriarySkill()[pri:12, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:02:23Z" name="E10_3104_VerifyCreateNewRoleWithoutPriarySkill" finished-at="2024-01-21T14:02:32Z" duration-ms="8791" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3104_VerifyCreateNewRoleWithoutPriarySkill -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:02:32Z" name="afterTestMethod" finished-at="2024-01-21T14:02:32Z" duration-ms="1" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest@42b64ab8]" started-at="2024-01-21T14:02:32Z" name="closeBrowser" finished-at="2024-01-21T14:02:32Z" duration-ms="190" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest -->
-    </test> <!-- E10_3089_RoleSetUpTest -->
-    <test started-at="2024-01-21T14:02:32Z" name="E10_2606_ShiftBandTest" finished-at="2024-01-21T14:04:17Z" duration-ms="104540">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:32Z" name="launchBrowser" finished-at="2024-01-21T14:02:33Z" duration-ms="809" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:33Z" name="beforeTestMethod" finished-at="2024-01-21T14:02:36Z" duration-ms="2370" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:36Z" name="setUp" finished-at="2024-01-21T14:02:46Z" duration-ms="10031" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3115_VerifyCreateShiftBand()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:46Z" name="E10_3115_VerifyCreateShiftBand" finished-at="2024-01-21T14:02:51Z" duration-ms="5567" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3115_VerifyCreateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:51Z" name="setUp" finished-at="2024-01-21T14:02:59Z" duration-ms="7530" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3116_VerifyUpdateShiftBand()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:02:59Z" name="E10_3116_VerifyUpdateShiftBand" finished-at="2024-01-21T14:03:04Z" duration-ms="5279" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3116_VerifyUpdateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:04Z" name="setUp" finished-at="2024-01-21T14:03:16Z" duration-ms="11573" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3117_VerifyDeactivateShiftBand()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:16Z" name="E10_3117_VerifyDeactivateShiftBand" finished-at="2024-01-21T14:03:19Z" duration-ms="3134" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3117_VerifyDeactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:19Z" name="setUp" finished-at="2024-01-21T14:03:27Z" duration-ms="8730" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3118_VerifyReactivateShiftBand()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:27Z" name="E10_3118_VerifyReactivateShiftBand" finished-at="2024-01-21T14:03:31Z" duration-ms="3318" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3118_VerifyReactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:31Z" name="setUp" finished-at="2024-01-21T14:03:41Z" duration-ms="9741" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3119_VerifyWithoutShiftBandName()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:41Z" name="E10_3119_VerifyWithoutShiftBandName" finished-at="2024-01-21T14:03:47Z" duration-ms="6040" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[ShiftBand Name Is Required]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- E10_3119_VerifyWithoutShiftBandName -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:47Z" name="setUp" finished-at="2024-01-21T14:03:55Z" duration-ms="8172" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3120_VerifyWithCombinationShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:03:55Z" name="E10_3120_VerifyWithCombinationShift" finished-at="2024-01-21T14:04:03Z" duration-ms="8326" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3120_VerifyWithCombinationShift -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:04:03Z" name="setUp" finished-at="2024-01-21T14:04:12Z" duration-ms="8635" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3121_VerifyWithOvertimeShift()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:04:12Z" name="E10_3121_VerifyWithOvertimeShift" finished-at="2024-01-21T14:04:17Z" duration-ms="5141" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3121_VerifyWithOvertimeShift -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:04:17Z" name="afterTestMethod" finished-at="2024-01-21T14:04:17Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7fcbe147]" started-at="2024-01-21T14:04:17Z" name="closeBrowser" finished-at="2024-01-21T14:04:17Z" duration-ms="127" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
-    </test> <!-- E10_2606_ShiftBandTest -->
-    <test started-at="2024-01-21T14:04:17Z" name="E10_2608_RoasterSetupTest" finished-at="2024-01-21T14:07:48Z" duration-ms="211355">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:04:17Z" name="launchBrowser" finished-at="2024-01-21T14:04:18Z" duration-ms="782" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:04:18Z" name="beforeTestMethod" finished-at="2024-01-21T14:04:20Z" duration-ms="2359" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method signature="E10_2697_VerifyCreateRoasterWithGroup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:04:20Z" name="E10_2697_VerifyCreateRoasterWithGroup" finished-at="2024-01-21T14:05:18Z" duration-ms="58009" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2697_VerifyCreateRoasterWithGroup -->
-        <test-method signature="E10_2698_VerifyCreateRoasterwithEmployee()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:05:18Z" name="E10_2698_VerifyCreateRoasterwithEmployee" finished-at="2024-01-21T14:06:07Z" duration-ms="48450" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2698_VerifyCreateRoasterwithEmployee -->
-        <test-method signature="E10_2738_VerifyUpdateRoaster()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:06:07Z" name="E10_2738_VerifyUpdateRoaster" finished-at="2024-01-21T14:06:22Z" duration-ms="15327" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_2738_VerifyUpdateRoaster -->
-        <test-method signature="E10_3151_VerifyDeactiveRoster()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:06:22Z" name="E10_3151_VerifyDeactiveRoster" finished-at="2024-01-21T14:06:43Z" duration-ms="21043" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3151_VerifyDeactiveRoster -->
-        <test-method signature="E10_3152_verifyReactiveRoster()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:06:43Z" name="E10_3152_verifyReactiveRoster" finished-at="2024-01-21T14:06:52Z" duration-ms="8885" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3152_verifyReactiveRoster -->
-        <test-method signature="E10_3153_VerifyCreateRoasterWithGroupAndEmp()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:06:52Z" name="E10_3153_VerifyCreateRoasterWithGroupAndEmp" finished-at="2024-01-21T14:07:48Z" duration-ms="56309" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3153_VerifyCreateRoasterWithGroupAndEmp -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:07:48Z" name="closeBrowser" finished-at="2024-01-21T14:07:48Z" duration-ms="191" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest@4fad94a7]" started-at="2024-01-21T14:07:48Z" name="afterTestMethod" finished-at="2024-01-21T14:07:48Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest -->
-    </test> <!-- E10_2608_RoasterSetupTest -->
-    <test started-at="2024-01-21T14:07:49Z" name="E10_2639_SCRTest" finished-at="2024-01-21T14:09:06Z" duration-ms="77284">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:07:49Z" name="launchBrowser" finished-at="2024-01-21T14:07:49Z" duration-ms="847" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:07:49Z" name="beforeTestMethod" finished-at="2024-01-21T14:07:52Z" duration-ms="2489" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:07:52Z" name="setup" finished-at="2024-01-21T14:08:05Z" duration-ms="13022" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3131_VerifyCreateSCR()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:05Z" name="E10_3131_VerifyCreateSCR" finished-at="2024-01-21T14:08:17Z" duration-ms="12041" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3131_VerifyCreateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:17Z" name="setup" finished-at="2024-01-21T14:08:31Z" duration-ms="13816" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3132_VerifyUpdateSCR()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:31Z" name="E10_3132_VerifyUpdateSCR" finished-at="2024-01-21T14:08:36Z" duration-ms="4945" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3132_VerifyUpdateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:36Z" name="setup" finished-at="2024-01-21T14:08:48Z" duration-ms="11792" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3133_VerifyDeactivateSCR()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:48Z" name="E10_3133_VerifyDeactivateSCR" finished-at="2024-01-21T14:08:49Z" duration-ms="1429" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3133_VerifyDeactivateSCR -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:08:49Z" name="setup" finished-at="2024-01-21T14:09:01Z" duration-ms="11581" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3134_VerifyReactivateSCR()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:09:01Z" name="E10_3134_VerifyReactivateSCR" finished-at="2024-01-21T14:09:06Z" depends-on-methods="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest.E10_3133_VerifyDeactivateSCR" duration-ms="5195" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3134_VerifyReactivateSCR -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:09:06Z" name="afterTestMethod" finished-at="2024-01-21T14:09:06Z" duration-ms="2" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest@89c10b7]" started-at="2024-01-21T14:09:06Z" name="closeBrowser" finished-at="2024-01-21T14:09:06Z" duration-ms="123" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest -->
-    </test> <!-- E10_2639_SCRTest -->
-    <test started-at="2024-01-21T14:09:06Z" name="E10_2638_PublicHolidayTest" finished-at="2024-01-21T14:10:05Z" duration-ms="59241">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:06Z" name="launchBrowser" finished-at="2024-01-21T14:09:07Z" duration-ms="731" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:07Z" name="beforeTestMethod" finished-at="2024-01-21T14:09:09Z" duration-ms="2428" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:09Z" name="setup" finished-at="2024-01-21T14:09:20Z" duration-ms="10857" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3128_VerifyCreatePublicHoliday()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:20Z" name="E10_3128_VerifyCreatePublicHoliday" finished-at="2024-01-21T14:09:33Z" duration-ms="13034" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Public Holiday created successfully']"}
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b4f6a3aab91029134cda00ea126c4853, findElement {using=xpath, value=//div[text()='Public Holiday created successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58495/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b4f6a3aab91029134cda00ea126c4853]]>
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Public Holiday created successfully']"}
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b4f6a3aab91029134cda00ea126c4853, findElement {using=xpath, value=//div[text()='Public Holiday created successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58495/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b4f6a3aab91029134cda00ea126c4853
-at jdk.internal.reflect.GeneratedConstructorAccessor29.newInstance(Unknown Source)
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -1104,22 +548,32 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
-at com.AutomationJiviewsPOM.E10_2638_SystemDefinationPublicHolidayPage.setCreateNotificationPopup(E10_2638_SystemDefinationPublicHolidayPage.java:115)
-at com.AutomationJiviewsPOM.E10_2638_SystemDefinationPublicHolidayPage.setCreatePublicHoliday(E10_2638_SystemDefinationPublicHolidayPage.java:199)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest.E10_3128_VerifyCreatePublicHoliday(E10_2638_PublicHolidayTest.java:48)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -1145,38 +599,45 @@ at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3128_VerifyCreatePublicHoliday -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:33Z" name="setup" finished-at="2024-01-21T14:09:43Z" duration-ms="9375" status="PASS">
+        </test-method> <!-- E10_3213_Verify_ApplyOnBehalf -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="setup" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3129_VerifyUpdatePublicHoliday()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:43Z" name="E10_3129_VerifyUpdatePublicHoliday" finished-at="2024-01-21T14:09:57Z" duration-ms="14043" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method signature="E10_3219_Verify_ApplyForUncontrolledLeave()[pri:12, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="E10_3219_Verify_ApplyForUncontrolledLeave" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
             <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Public Holiday updated successfully']"}
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b4f6a3aab91029134cda00ea126c4853, findElement {using=xpath, value=//div[text()='Public Holiday updated successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58495/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b4f6a3aab91029134cda00ea126c4853]]>
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//div[text()='Public Holiday updated successfully']"}
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
   (Session info: chrome=120.0.6099.225)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
 System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [b4f6a3aab91029134cda00ea126c4853, findElement {using=xpath, value=//div[text()='Public Holiday updated successfully']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58495}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58495/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: b4f6a3aab91029134cda00ea126c4853
-at jdk.internal.reflect.GeneratedConstructorAccessor29.newInstance(Unknown Source)
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
 at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
 at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
@@ -1187,22 +648,32 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy32.getText(Unknown Source)
-at com.AutomationJiviewsPOM.E10_2638_SystemDefinationPublicHolidayPage.setUpdateNotificationPopup(E10_2638_SystemDefinationPublicHolidayPage.java:121)
-at com.AutomationJiviewsPOM.E10_2638_SystemDefinationPublicHolidayPage.setUpdatePublicHoliday(E10_2638_SystemDefinationPublicHolidayPage.java:211)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest.E10_3129_VerifyUpdatePublicHoliday(E10_2638_PublicHolidayTest.java:58)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
 at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
 at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
 at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
 at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
@@ -1228,144 +699,323 @@ at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 ]]>
             </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3129_VerifyUpdatePublicHoliday -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:09:57Z" name="setup" finished-at="2024-01-21T14:10:04Z" duration-ms="7407" status="PASS">
+        </test-method> <!-- E10_3219_Verify_ApplyForUncontrolledLeave -->
+        <test-method signature="E10_3222_Verify_ApplyLeaveP2()[pri:13, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="E10_3222_Verify_ApplyLeaveP2" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3222_Verify_ApplyLeaveP2 -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="setup" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3130_VerifyDeletePublicHoliday()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:10:04Z" name="E10_3130_VerifyDeletePublicHoliday" finished-at="2024-01-21T14:10:05Z" duration-ms="991" status="PASS">
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3130_VerifyDeletePublicHoliday -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:10:05Z" name="closeBrowser" finished-at="2024-01-21T14:10:05Z" duration-ms="143" status="PASS">
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method signature="E10_3442_Verify_ApplyLeaveOnPublicHoliday()[pri:15, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="E10_3442_Verify_ApplyLeaveOnPublicHoliday" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3442_Verify_ApplyLeaveOnPublicHoliday -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="setup" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="closeBrowser" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest@2f058b8a]" started-at="2024-01-21T14:10:05Z" name="afterTestMethod" finished-at="2024-01-21T14:10:05Z" duration-ms="0" status="PASS">
+        <test-method signature="E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()[pri:15, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <exception class="org.openqa.selenium.WebDriverException">
+            <message>
+              <![CDATA[disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.WebDriverException: disconnected: not connected to DevTools
+  (failed to check if window was closed: disconnected: not connected to DevTools)
+  (Session info: chrome=120.0.6099.225)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [15af78119a9e47dc2b919d831b120df7, isElementDisplayed {id=579F61CF936CC1F1F13BEA37095643C5_element_1920}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 120.0.6099.225, chrome: {chromedriverVersion: 120.0.6099.109 (3419140ab66..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:50203}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:50203/devtoo..., se:cdpVersion: 120.0.6099.225, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (15af78119a9e47dc2b919d831b120df7)] -> xpath: //div[@id='dvOrgUnitDropdown']/a]
+Session ID: 15af78119a9e47dc2b919d831b120df7
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
+at org.openqa.selenium.remote.RemoteWebElement.isDisplayed(RemoteWebElement.java:298)
+at jdk.internal.reflect.GeneratedMethodAccessor2.invoke(Unknown Source)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
+at jdk.proxy2/jdk.proxy2.$Proxy33.isDisplayed(Unknown Source)
+at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
+at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
+at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
+at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
+at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
+at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
+at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:34)
+at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.setup(E10_3216_ESSApplyLeaveTest.java:44)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.MethodInvocationHelper.invokeMethodConsideringTimeout(MethodInvocationHelper.java:59)
+at org.testng.internal.Invoker.invokeConfigurationMethod(Invoker.java:458)
+at org.testng.internal.Invoker.invokeConfigurations(Invoker.java:222)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:523)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.WebDriverException -->
           <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave -->
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="setup" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="afterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest -->
-    </test> <!-- E10_2638_PublicHolidayTest -->
-    <test started-at="2024-01-21T14:10:05Z" name="E10_2695_EmpAdmEmployeeProfileTest" finished-at="2024-01-21T14:14:05Z" duration-ms="239297">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:10:05Z" name="launchBrowser" finished-at="2024-01-21T14:10:06Z" duration-ms="811" status="PASS">
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:10:06Z" name="beforeTestMethod" finished-at="2024-01-21T14:10:09Z" duration-ms="2448" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:10:09Z" name="setup" finished-at="2024-01-21T14:10:18Z" duration-ms="9721" status="PASS">
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@7db82169]" started-at="2024-01-23T03:09:51Z" name="logoutAfterTestMethod" finished-at="2024-01-23T03:09:51Z" duration-ms="0" status="SKIP">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3135_VerifyCreateEmpProfile()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:10:18Z" name="E10_3135_VerifyCreateEmpProfile" finished-at="2024-01-21T14:11:04Z" duration-ms="45656" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3135_VerifyCreateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:11:04Z" name="setup" finished-at="2024-01-21T14:11:14Z" duration-ms="9822" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3136_VerifyUpdateEmpProfile()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:11:14Z" name="E10_3136_VerifyUpdateEmpProfile" finished-at="2024-01-21T14:11:45Z" duration-ms="31048" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3136_VerifyUpdateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:11:45Z" name="setup" finished-at="2024-01-21T14:11:54Z" duration-ms="8690" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3137_VerifyDuplicateEmpProfile()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:11:54Z" name="E10_3137_VerifyDuplicateEmpProfile" finished-at="2024-01-21T14:12:17Z" duration-ms="23412" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3137_VerifyDuplicateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:17Z" name="setup" finished-at="2024-01-21T14:12:22Z" duration-ms="5376" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3138_VerifyDeleteEmpProfile()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:22Z" name="E10_3138_VerifyDeleteEmpProfile" finished-at="2024-01-21T14:12:27Z" duration-ms="4595" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3138_VerifyDeleteEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:27Z" name="setup" finished-at="2024-01-21T14:12:31Z" duration-ms="3985" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3145_VerifyreactivateEmpProfile()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:31Z" name="E10_3145_VerifyreactivateEmpProfile" finished-at="2024-01-21T14:12:48Z" duration-ms="17543" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3145_VerifyreactivateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:48Z" name="setup" finished-at="2024-01-21T14:12:53Z" duration-ms="4984" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3139_VerifySearchEmpProfile()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:53Z" name="E10_3139_VerifySearchEmpProfile" finished-at="2024-01-21T14:12:56Z" duration-ms="2051" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3139_VerifySearchEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:12:56Z" name="setup" finished-at="2024-01-21T14:13:02Z" duration-ms="6177" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3140_VerifysearchRosterGroup()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:02Z" name="E10_3140_VerifysearchRosterGroup" finished-at="2024-01-21T14:13:04Z" duration-ms="2359" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3140_VerifysearchRosterGroup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:04Z" name="setup" finished-at="2024-01-21T14:13:08Z" duration-ms="4006" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3141_VerifysearchRoleGroup()[pri:8, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:08Z" name="E10_3141_VerifysearchRoleGroup" finished-at="2024-01-21T14:13:11Z" duration-ms="2987" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3141_VerifysearchRoleGroup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:11Z" name="setup" finished-at="2024-01-21T14:13:17Z" duration-ms="5601" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3142_VerifysearchEmpStatus()[pri:9, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:17Z" name="E10_3142_VerifysearchEmpStatus" finished-at="2024-01-21T14:13:20Z" duration-ms="3026" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3142_VerifysearchEmpStatus -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:20Z" name="setup" finished-at="2024-01-21T14:13:24Z" duration-ms="4533" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3143_VerifyEmpNoInSearchBar()[pri:10, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:24Z" name="E10_3143_VerifyEmpNoInSearchBar" finished-at="2024-01-21T14:13:25Z" duration-ms="946" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3143_VerifyEmpNoInSearchBar -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:25Z" name="setup" finished-at="2024-01-21T14:13:30Z" duration-ms="5074" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3144_VerifyTerminateEmpProfile()[pri:11, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:13:30Z" name="E10_3144_VerifyTerminateEmpProfile" finished-at="2024-01-21T14:14:04Z" duration-ms="34198" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3144_VerifyTerminateEmpProfile -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:14:04Z" name="afterTestMethod" finished-at="2024-01-21T14:14:04Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@117e0fe5]" started-at="2024-01-21T14:14:04Z" name="closeBrowser" finished-at="2024-01-21T14:14:05Z" duration-ms="246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest -->
-    </test> <!-- E10_2695_EmpAdmEmployeeProfileTest -->
+        </test-method> <!-- logoutAfterTestMethod -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
+    </test> <!-- E10_3216_ESSApplyLeaveTest -->
   </suite> <!-- Suite -->
 </testng-results>

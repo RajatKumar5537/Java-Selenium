@@ -196,6 +196,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	@FindBy(xpath = "//button[@data-original-title='Apply for Uncontrolled Leave']")
 	private WebElement ApplyforUncontrolledLeave;
+	@FindBy(xpath = "//span[@id='select2-cmbUCLExceptionType-container']")
+	private WebElement UCLExceptionType;
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement searchLeaveType;
 	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
@@ -283,6 +285,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	private WebElement publicHolidayCannotBeApplyMsg;
 	@FindBy(xpath = "//div[text()='You have applied more leave than entitled leave']")
 	private WebElement YouHaveAppliedMoreLeaveThanEntitledLeaveMsg;
+	@FindBy(xpath = "//div[text()='Leave To has no Shift for you to apply leave,']")
+	private WebElement LeaveToHasNoShiftForYouToApplyLeaveMsg;
 
 	public E10_3216_ESSApplyLeavePage(WebDriver driver) {
 		super();
@@ -637,6 +641,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		txtSearchEmployee.sendKeys(Keys.ENTER);	
 	}
 	public void clickSearchEmployee() {
+		webUtility.moveToElement(driver, btnSearchEmployee);
 		btnSearchEmployee.click();
 	}
 	public void clickApplyLeaveOnBehalf() {
@@ -646,6 +651,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickApplyTimeOffOnBehalf() {
 		ApplyTimeOffOnBehalf.click();
 	}
+	
 	public void clickApplyforUncontrolledLeave() {
 		ApplyforUncontrolledLeave.click();
 	}
@@ -744,9 +750,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void getYouHaveAppliedMoreLeaveThanEntitledLeaveMsg() {
 		String actualResult =YouHaveAppliedMoreLeaveThanEntitledLeaveMsg.getText();
-	Assert.assertTrue(actualResult.contains("You have applied more leave than entitled leave"));
+		Assert.assertTrue(actualResult.contains("You have applied more leave than entitled leave"));
 	}
-	
+	public void getLeaveToHasNoShiftForYouToApplyLeaveMsg() {
+		String actualResult =LeaveToHasNoShiftForYouToApplyLeaveMsg.getText();
+		Assert.assertTrue(actualResult.contains("Leave To has no Shift for you to apply leave,"));
+	}
 	public void E10_3225_EmployeeKiosk_ApplyForLeave(FakeEmployee fakeEmployee) throws Exception {
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
@@ -1303,13 +1312,14 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void E10_3213_ApplyOnBehalf(FakeEmployee fakeEmployee) throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
-
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unEmp, pwdEmp);
-		jmMenuItem.clickOnEmployeeSelfService();
+		 
+		/*	jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
-
+		
 		clickApplyOnBehalf();
 		enterSearchEmployee();
 		Thread.sleep(2000);
@@ -1334,7 +1344,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		//	--------------------------------------------------------------------------------------------------------	
 
-		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		
 		driver.navigate().to(homeUrl);		
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
@@ -1357,19 +1367,22 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
-		clickApplyTimeOff();
+		clickApplyTimeOff();*/
 		//		--------------------------------------------------------------------------------------------------------
-		driver.navigate().to(homeUrl);		
+//		driver.navigate().to(homeUrl);		
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 
 		clickApplyOnBehalf();
+		
 		enterSearchEmployee();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		clickSearchEmployee();
-
 		clickApplyforUncontrolledLeave();
+		
+		Thread.sleep(2000);
+		clickUCLExceptionType();
 		Thread.sleep(2000);
 		clickSearchLeaveType();
 		clickchooseLeaveType();
@@ -1955,16 +1968,32 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseAnnualLeave();
 		enterLeaveStartDate("26-01-2024");
-		//		Thread.sleep(5000);
-		//		enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
+		//	enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		Thread.sleep(2000);
 		enterLeaveEndDate("26-01-2024");
 		pressBtnNext();
-		getYouHaveAppliedMoreLeaveThanEntitledLeaveMsg();
+
+		// You have applied more leave than entitled leave
+
+		// Leave To has no Shift for you to apply leave,
+
+		// MC,HP,UML,UNREC only can be applied on Public Holiday
+		getLeaveToHasNoShiftForYouToApplyLeaveMsg(); 
 
 		clickNotificationPopup();
+	}
+	public void E10_3444_AnnualLeaveApplicationError() throws Exception{
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+
 	}
 
 }

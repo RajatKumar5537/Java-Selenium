@@ -203,7 +203,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 
 		Thread.sleep(2000);
 		setBtnEdit();
-		setTxtHolidayName(fakeEmployee.getHolidayName()+ "_" + timestamp);
+		setTxtHolidayName(fakeEmployee.getHolidayName()+ "--" + timestamp);
 		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setChkIsPaid();
 		setTxtHolidayNote(fakeEmployee.getHolidayNote());

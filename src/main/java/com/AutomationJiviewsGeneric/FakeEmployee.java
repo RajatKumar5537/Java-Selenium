@@ -585,7 +585,7 @@ public class FakeEmployee {
 		//		LocalDate currentDate = LocalDate.now(); // Get the current date
 		//		setDtPlanning(formatDate(currentDate));
 		LocalDate currentDate = LocalDate.now(); // Get the current date
-		LocalDate tomorrowDate = currentDate.plusDays(3); // Get the date for tomorrow
+		LocalDate tomorrowDate = currentDate.plusDays(5); // Get the date for tomorrow
 		setDtPlanning(formatDate(tomorrowDate)); // Set the date for tomorrow
 
 
@@ -598,7 +598,7 @@ public class FakeEmployee {
 		setTmVesselDeparture("19:00");
 		//		generateTmrwDate();
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd-MM-yyyy");
-		String tmrwDateValue = LocalDate.now().plusDays(10).format(formatter); // Set to 7 days in the future
+		String tmrwDateValue = LocalDate.now().plusDays(1).format(formatter); // Set to 7 days in the future
 
 //		setTmrwDate(tmrwDateValue);
 		setLeaveFromDate(tmrwDateValue);

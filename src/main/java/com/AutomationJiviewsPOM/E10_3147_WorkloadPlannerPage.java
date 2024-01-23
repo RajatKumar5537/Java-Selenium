@@ -129,7 +129,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	@FindBy(xpath = "//div[text()='Vessel Schedule deleted successfully']")
 	private WebElement vesselScheduleDeletedSuccessfullyMsg;
 
-	@FindBy(xpath = "//button[@class='btn btn-info btn-round icon-btn dropdown-toggle hide-arrow']") 
+	@FindBy(xpath = "//div[@id='dvContent']/div[1]/div/div[1]/button") 
 	private WebElement btnChangeButton; 
 	@FindBy(xpath = "//a[@id='btnTimeLineView']")
 	private WebElement btnTimeLineView;
@@ -191,32 +191,17 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	}
 
 	public void enterPlanning(String planning) {
-		//		webUtility.ElementClickable(driver, dtPlanning);
-		//		dtPlanning.clear();
-		//		dtPlanning.sendKeys(planning);
-		//		dtPlanning.sendKeys(Keys.ENTER);
 		try {
-			// Wait for the element to be clickable
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement planningElement = wait.until(ExpectedConditions.elementToBeClickable(dtPlanning));
-
-			// Clear the existing content
 			planningElement.clear();
-
-			// Send keys
 			planningElement.sendKeys(planning);
-
-			// Press Enter (optional)
 			planningElement.sendKeys(Keys.ENTER);
 		} catch (Exception e) {
-			// Handle any exceptions or log the error
 			e.printStackTrace(); 
 		}
 	}
 	public void selectShiftBandType(String bandType) {
-		//		webUtility.ElementClickable(driver, selectShiftBandType);
-		//		selectShiftBandType.sendKeys(bandType);
-		//		selectShiftBandType.sendKeys(Keys.ENTER);
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(selectShiftBandType));
@@ -244,18 +229,14 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 				if (cell.getText().isEmpty()) {
 					// Scroll the empty cell into view using JavaScript
 					((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", cell);
-					// Click the empty cell
 					cell.click();
-					// Perform the right-click using your webUtility method
 					webUtility.rightClickOnElement(driver, cell);
 					break;
 				}
 			}
 		} catch (WebDriverException e) {
-			// Handle WebDriverException, which includes StaleElementReferenceException
 			e.printStackTrace();
 		} catch (Exception e) {
-			// Handle any other unexpected exception based on your needs
 			e.printStackTrace();
 		}
 	}
@@ -271,10 +252,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-		webUtility.ElementClickable(driver, btnAddVesselSchedule);
-		// Wait for the overlay to disappear
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		webUtility.moveToElement(driver, btnAddVesselSchedule);
 		btnAddVesselSchedule.click();
 	}
 
@@ -378,15 +357,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	}
 	public void clickBtnChangeButton() {
 		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		// Wait until the button is clickable
-		//		WebElement changeButton = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
-		//
-		//		// Use Actions class to click
-		//		new Actions(driver).moveToElement(changeButton).click().perform();
-		//		//		btnChangeButton.click();
-
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		webUtility.moveToElement(driver, btnChangeButton);
 		btnChangeButton.click();
 	}
 	public void clickBtnTimeLineView() {
@@ -560,10 +532,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickNotificationPopup();
 	}
 	public void E10_3211_CreateVesselScheduleTableView(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(5000);
+		Thread.sleep(10000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-		//		Thread.sleep(10000);
+		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
@@ -687,7 +659,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(5000);
 		clickEquipmentRequirementMatrixTemplate();
 		chooseEquipmentRequirement();
-		
+
 		pressBtnPerformActivityGenerationTask();
 
 	}
@@ -695,7 +667,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	public void E10_3182_PlanningSignoff(FakeEmployee fakeEmployee) throws InterruptedException{
 		Thread.sleep(5000);
 		pressBtnPlanningSignOff();
-		
+
 		clickActivityGenShiftBand();
 		enterSearchShiftBand();
 		Thread.sleep(2000);
