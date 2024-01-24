@@ -1,9 +1,13 @@
 package com.AutomationJiviewsPOM;
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.WebUtilities;
@@ -65,8 +69,12 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void clickWorkforceScheduling() {
 //		webUtility.ElementClickable(driver, selectWorkforceScheduling);
-		webUtility.moveToElement(driver, selectWorkforceScheduling);
-		selectWorkforceScheduling.click();
+//		webUtility.moveToElement(driver, selectWorkforceScheduling);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selectWorkforceScheduling));
+		element.click();
+
+//		selectWorkforceScheduling.click();
 	}
 	public void clickSelectOperationPlanningExecution() {
 		webUtility.ElementClickable(driver, selectOperationPlanningExecution);
