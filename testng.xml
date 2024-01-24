@@ -4,7 +4,16 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
+	<test
+		name="E10_2910_WorkforceEmployeeRosterV2Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+			/>
+		</classes>
+	</test>
 
+	<!--
 	<test
 		name="E10_3082_SkillSetUpTest">
 		<classes>
@@ -57,21 +66,22 @@
 		name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
 			/>
 		</classes>
 	</test>
 
 	<test
-		name="E10_3216_ESSApplyLeaveTest">
+		name="E10_3216_ESSApplyLeaveTest"> 
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
 	</test>
+	
 
-	<!-- <test
+	 <test
 		name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class

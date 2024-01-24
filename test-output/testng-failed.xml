@@ -8,8 +8,8 @@
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave"/>
           <include name="closeBrowser"/>
+          <include name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave"/>
           <include name="logoutAfterTestMethod"/>
           <include name="setup"/>
         </methods>
