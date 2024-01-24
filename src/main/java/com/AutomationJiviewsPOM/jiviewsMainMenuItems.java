@@ -64,7 +64,7 @@ public class jiviewsMainMenuItems extends BaseClass{
 		selectEmployeeAdministration.click();
 	}
 	public void clickWorkforceScheduling() {
-		webUtility.ElementClickable(driver, selectWorkforceScheduling);
+//		webUtility.ElementClickable(driver, selectWorkforceScheduling);
 		selectWorkforceScheduling.click();
 	}
 	public void clickSelectOperationPlanningExecution() {
@@ -87,7 +87,6 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void setSelectWorkforceScheduling() throws InterruptedException {
 		clickMainMenu();
-//		Thread.sleep(2000);
 		clickWorkforceScheduling();
 	}
 	public void clickOnOperationPlanningExecution() {

@@ -526,7 +526,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 		// Get handles of all open windows
 		Set<String> windowHandles = driver.getWindowHandles();
@@ -1082,7 +1082,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		
 		clickApplyTimeOffOption();
 		
-		enterTimeOffDate(fakeEmployee.getTmrwDate());
+//		enterTimeOffDate(fakeEmployee.getTmrwDate()); not required
 		Thread.sleep(3000);
 		selectTxtTimeOffPeriod();
 		chooseShiftStart();
@@ -1091,7 +1091,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		//	private WebElement btnAddAttachment; ....................Not working button 
 
 		clickApplyTimeOff();
-//		getTimeOffRequestSubmittedSuccessfullyMsg();
+		getTimeOffRequestSubmittedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 
