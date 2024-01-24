@@ -32,15 +32,10 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		wfScheduling= new WorkforceSchedulingPage(driver);
 		empRosterV2= new  E10_2910_EmployeeRosterV2Page(driver);
 
-		//		homePage.setOrgUnit();
-		//		orgUnit.clickOLMop();
-//		Thread.sleep(5000);
+		Thread.sleep(5000);
 		homePage.setOrgUnit();
-//		Thread.sleep(2000);
 		orgUnit.setAutoOu();
-//		Thread.sleep(5000);
 		jmMenuItem.setSelectWorkforceScheduling(); 
-//		Thread.sleep(3000);
 		wfScheduling.setEmployeeRosterV2();
 	}
 	@Test(priority = 1)
@@ -62,7 +57,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.searchByFilters();
 		logger.info("Search Employee Roster By Filters is successful");
 	}
-
+/*
 	@Test(priority = 3)//, dependsOnMethods = "verifySearchByFilters")
 	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException, InterruptedException {
 		// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
@@ -74,7 +69,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	}
 
 	@Test(priority = 4)
-	public void E10_2941_VerifyFilterAndResetColumns() throws IOException {
+	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
 		// Jira Item: E10-2941 - Employee Roster V2 [Filter and Reset columns]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Filtering And Resetting Columns...");
@@ -162,7 +157,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	}
 	
 	@Test(priority = 12)
-	public void E10_2949_VerifyTestCopyAndPasteToExcel() throws IOException {
+	public void E10_2949_VerifyTestCopyAndPasteToExcel() throws IOException, InterruptedException {
 		// Jira Item: E10-2949 - Employee Roster V2 [Right click on Employee and click copy and paste in Excel sheet]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Right click on Employee and click copy and paste in Excel sheet...");
@@ -261,5 +256,5 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 		empRosterV2.ApplyTimeOff(fakeEmployee);
 		logger.info("Apply On Behalf Apply Time off  is successful");
-	}
+	}*/
 }

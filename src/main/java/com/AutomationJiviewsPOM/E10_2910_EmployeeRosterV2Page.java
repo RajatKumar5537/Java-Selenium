@@ -285,7 +285,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		super();
 		PageFactory.initElements(driver, this);
 	}
-	public void clickStartAndEndDate() {
+	public void clickStartAndEndDate() throws InterruptedException {
+		Thread.sleep(4000);
 		webUtility.ElementClickable(driver, dateStartAndEnd);
 		dateStartAndEnd.click();
 	}
@@ -687,7 +688,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
-	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) {
+	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -714,7 +715,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnExpand();
 	}
 	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]
-	public void filterAndResetColumns(FakeEmployee fakeEmployee) {
+	public void filterAndResetColumns(FakeEmployee fakeEmployee) throws InterruptedException {
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -893,7 +894,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 
 	// Jira Item: E10-2949 - Employee Roster V2 [Right click on Employee and click copy and paste in Excel sheet]
-	public void testCopyAndPasteToExcel(FakeEmployee fakeEmployee) {
+	public void testCopyAndPasteToExcel(FakeEmployee fakeEmployee) throws InterruptedException {
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -1149,7 +1150,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnSelectShiftBand();
 		getShiftCreatedSuccessfullyMsg();
 		clickNotificationPopup();
-
+		Thread.sleep(2000);
 		clickShiftCardForCopy();
 		//		performActionsIfConditionsMet();
 		mouseHoverApplyOnBehalfOption();
