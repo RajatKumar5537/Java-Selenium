@@ -65,6 +65,7 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void clickWorkforceScheduling() {
 //		webUtility.ElementClickable(driver, selectWorkforceScheduling);
+		webUtility.moveToElement(driver, selectWorkforceScheduling);
 		selectWorkforceScheduling.click();
 	}
 	public void clickSelectOperationPlanningExecution() {
