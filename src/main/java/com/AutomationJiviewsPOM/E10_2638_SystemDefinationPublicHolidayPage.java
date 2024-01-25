@@ -117,7 +117,6 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 		notificationCreatePopup.click();
 	}
 	public void setUpdateNotificationPopup() {
-		//		webUtility.moveToElement(driver, notificationUpdatePopup);
 		String actualResult = notificationUpdatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday updated successfully"));
 		notificationUpdatePopup.click();
@@ -203,6 +202,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 
 		Thread.sleep(2000);
 		setBtnEdit();
+		Thread.sleep(2000);
 		setTxtHolidayName(fakeEmployee.getHolidayName()+ "--" + timestamp);
 		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setChkIsPaid();
@@ -213,13 +213,6 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 
 	public void setDeactivatePublicHoliday(FakeEmployee fakeEmployee) throws InterruptedException {
 
-		//		setBtnEdit();
-		//		setChkIsPaid();
-		//		setBtnSavePublicHldayDeatils();
-		//		setUpdateNotificationPopup();
-		//		Thread.sleep(5000);
-		//		setCheckbox();
-		//		setBtnDeletePublicHlday();
 		deleteRowsWithEnabledCheckbox();
 		setBtnYes();
 		setDeleteNotificationPopup();

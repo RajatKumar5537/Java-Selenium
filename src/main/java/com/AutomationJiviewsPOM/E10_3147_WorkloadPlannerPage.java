@@ -252,7 +252,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		webUtility.ElementClickable(driver, btnAddVesselSchedule);
 		webUtility.moveToElement(driver, btnAddVesselSchedule);
 		btnAddVesselSchedule.click();
 	}
@@ -359,6 +359,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		webUtility.moveToElement(driver, btnChangeButton);
+		webUtility.ElementClickable(driver, btnChangeButton);
 		btnChangeButton.click();
 	}
 	public void clickBtnTimeLineView() {

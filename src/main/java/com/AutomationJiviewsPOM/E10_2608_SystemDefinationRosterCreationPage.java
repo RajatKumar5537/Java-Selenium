@@ -39,7 +39,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	public String noOfBlocks;
 
 
-	@FindBy(id = "btnAddNewTemplateRoster")
+	@FindBy(xpath = "//button[@id='btnAddNewTemplateRoster']")
 	private WebElement addBtn;
 
 	@FindBy(id = "txtTemplateName")
@@ -493,6 +493,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
+		Thread.sleep(2000);
 		setAddBtn();
 		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());

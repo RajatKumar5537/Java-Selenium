@@ -494,7 +494,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setShiftBandTypeTxt();
-		setSearchBox();
+//		setSearchBox(); not required 
 		setShiftTpSearchCombiShift();
 		setColorTxt(colorCode);
 		setShiftCounterTxt(shiftCounter);

@@ -160,14 +160,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 
 
-	@FindBy(xpath = "//div[text()='ESS Workflow Setup']/..")
-	private WebElement essWorkflowSetup;
-	@FindBy(xpath = "//div[text()='Approval Routing Definition']/..")
-	private WebElement approvalRoutingDefinition;
-	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[7]")
-	private WebElement editBtn;
-	@FindBy(xpath = "//span[text()='Any One To Approve']")
-	private WebElement checkBoxAnyOneToApprove;
+
 
 	@FindBy(xpath = "//input[@id='dtTimeOffDate']")
 	private WebElement dtTimeOffDate;
@@ -287,6 +280,38 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	private WebElement YouHaveAppliedMoreLeaveThanEntitledLeaveMsg;
 	@FindBy(xpath = "//div[text()='Leave To has no Shift for you to apply leave,']")
 	private WebElement LeaveToHasNoShiftForYouToApplyLeaveMsg;
+
+
+	@FindBy(xpath = "//div[text()='Employee Setup']/..")
+	private WebElement empSetup;
+	@FindBy(xpath = "//div[text()='ESS Workflow Setup']/..")
+	private WebElement essWorkflowSetup;
+	@FindBy(xpath = "//div[text()='Approval Routing Definition']/..")
+	private WebElement approvalRoutingDefinition;
+
+	//	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[7]")
+	//	private WebElement editBtn;
+	//	@FindBy(xpath = "//div[text()='ESS Workflow Setup']/..")
+	//	private WebElement ESSWorkflowSetup;
+	//	@FindBy(xpath = "//div[text()='Approval Routing Definition']/..")
+	//	private WebElement ApprovalRoutingDefinition;
+
+	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
+	private WebElement searchBar;
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
+	private WebElement editBtnRoute;
+	@FindBy(xpath = "//span[text()='Any One To Approve']")
+	private WebElement checkBoxAnyOneToApprove;
+	@FindBy(xpath = "(//span[text()='×'])[2]")
+	private WebElement removeApprover;
+	
+	
+	
+	@FindBy(xpath = "//button[@id='btnAddLevel']")
+	private WebElement btnAddLevel;
+	@FindBy(xpath = "//span[@id='select2-cmbLevel2Approver1-container']")
+	private WebElement Level2Approver1;
+
 
 	public E10_3216_ESSApplyLeavePage(WebDriver driver) {
 		super();
@@ -592,19 +617,6 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		}
 	}
 
-	public void clickEssWorkflowSetup() {
-		webUtility.ElementClickable(driver, essWorkflowSetup);
-		essWorkflowSetup.click();
-	}
-	public void clickApprovalRoutingDefinition() {
-		approvalRoutingDefinition.click();
-	}
-	public void clickEditBtn() {
-		editBtn.click();
-	}
-	public void clickCheckBoxAnyOneToApprove() {
-		checkBoxAnyOneToApprove.click();
-	}
 	public void clickOn_OLM() {
 		webUtility.ElementClickable(driver, click_OLM);
 		click_OLM.click();
@@ -765,6 +777,39 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String actualResult =LeaveToHasNoShiftForYouToApplyLeaveMsg.getText();
 		Assert.assertTrue(actualResult.contains("Leave To has no Shift for you to apply leave,"));
 	}
+
+	public void clickempSetup() {
+		webUtility.ElementClickable(driver, empSetup);
+		empSetup.click();
+	}
+	public void clickEssWorkflowSetup() {
+		//		webUtility.scrollAndClick(driver, essWorkflowSetup);
+		webUtility.ElementClickable(driver, essWorkflowSetup);
+		essWorkflowSetup.click();
+	}
+
+	public void clickApprovalRoutingDefinition() {
+		approvalRoutingDefinition.click();
+	}
+	public void enterRouteSearch() {
+		searchBar.clear();
+		searchBar.sendKeys("Route B");
+	}
+	public void clickEditBtn() {
+		editBtnRoute.click();
+	}
+	public void clickCheckBoxAnyOneToApprove() {
+		if (!checkBoxAnyOneToApprove.isEnabled()) {
+			checkBoxAnyOneToApprove.click();
+			System.out.println("Checkbox is enabled and has been clicked.");
+		} else {
+			System.out.println("Checkbox is not enabled.");
+		}
+	}
+
+
+
+
 	public void E10_3225_EmployeeKiosk_ApplyForLeave(FakeEmployee fakeEmployee) throws Exception {
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
@@ -1278,19 +1323,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//	4. All approver should approve the leave when disabled the check box on Any one to approve
 
 	}
-	public void E10_3252_SingleApproverForRejection(FakeEmployee fakeEmployee) throws Exception{
-		//	5. One approver is enough when reject the leave when disabled the check box on Any one to approve
-		String unEmp = configUtility.getCongigPropertyData("unEmp");
-		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unEmp, pwdEmp);
-		jmMenuItem.clickOnSystemDefination();
 
-		clickEssWorkflowSetup();
-		clickApprovalRoutingDefinition();
-		clickEditBtn();
-		clickCheckBoxAnyOneToApprove();
-	}
 
 	public void E10_3218_ApplyTimeOff(FakeEmployee fakeEmployee) throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
@@ -1983,17 +2016,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		enterLeaveEndDate("26-01-2024");
 		pressBtnNext();
-
-		// You have applied more leave than entitled leave
-
-		// Leave To has no Shift for you to apply leave,
-
-		// MC,HP,UML,UNREC only can be applied on Public Holiday
 		getLeaveToHasNoShiftForYouToApplyLeaveMsg(); 
-
 		clickNotificationPopup();
 	}
-	public void E10_3444_AnnualLeaveApplicationError() throws Exception{
+	public void E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift() throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -2002,6 +2028,42 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
+
+		clickApplyLeave();
+		enterLeaveType();
+		chooseAnnualLeave();
+		enterLeaveStartDate("27-01-2024");
+		//	enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate("27-01-2024");
+		pressBtnNext();
+
+		getpublicHolidayCannotBeApplyMsg();
+		clickNotificationPopup();
+	}
+	public void E10_3252_SingleApproverForRejection(FakeEmployee fakeEmployee) throws Exception{
+		//	5. One approver is enough when reject the leave when disabled the check box on Any one to approve
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnSystemDefination();
+
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		clickEditBtn();
+		clickCheckBoxAnyOneToApprove();
+	}
+	public void E10_3448_EnableTheAnyOneCanApprove() {
+
+		clickempSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		clickCheckBoxAnyOneToApprove();
 
 	}
 
