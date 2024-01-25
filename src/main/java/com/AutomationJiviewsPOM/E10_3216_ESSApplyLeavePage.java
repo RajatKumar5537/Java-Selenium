@@ -977,9 +977,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(3000);
 		clickBtnAddAttachment();

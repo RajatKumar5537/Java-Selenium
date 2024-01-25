@@ -3,18 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
         <methods>
-          <include name="setUp"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
+          <include name="E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval"/>
           <include name="closeBrowser"/>
-          <include name="E10_3120_VerifyWithCombinationShift"/>
-          <include name="E10_3119_VerifyWithoutShiftBandName"/>
-          <include name="E10_3121_VerifyWithOvertimeShift"/>
+          <include name="logoutAfterTestMethod"/>
+          <include name="setup"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
