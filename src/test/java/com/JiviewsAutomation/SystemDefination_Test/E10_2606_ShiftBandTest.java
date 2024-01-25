@@ -36,6 +36,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 //		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
+		Thread.sleep(2000);
 		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setCreateRoasterShiftBand();
 

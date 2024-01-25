@@ -2,6 +2,7 @@ package com.AutomationJiviewsPOM;
 
 
 import java.time.Duration;
+import java.time.LocalDateTime;
 import java.util.List;
 
 import org.openqa.selenium.ElementClickInterceptedException;
@@ -53,7 +54,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	private WebElement editBtn;
-	
+
 	@FindBy(xpath = "//table[@id='skill-list']/tbody/tr")
 	private List<WebElement> rows;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
@@ -174,10 +175,10 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		element.click();
 	}
-//	public void checkCheckBox() throws Exception {
-//		webUtility.visibilityOfElement(driver, checkBox);
-//		checkBox.click();
-//	}
+	//	public void checkCheckBox() throws Exception {
+	//		webUtility.visibilityOfElement(driver, checkBox);
+	//		checkBox.click();
+	//	}
 
 
 	public void clickYes() {
@@ -190,8 +191,8 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		searchColumns.sendKeys(searchColumnsData);
 	}
 	public void createNewSkill(FakeEmployee fakeEmployee) throws Exception {
-//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
-//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
+		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
+		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
 		String sequenceData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
 		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
 
@@ -205,20 +206,20 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void updateSkill() throws Exception {
-//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
-//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
-
+		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
+		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
+		String timeStamp = LocalDateTime.now().toString();
 		clickEditBtn();
-		enterSkillCode(fakeEmployee.getSkillCode());
+		enterSkillCode(fakeEmployee.getSkillCode() + " "+ timeStamp);
 		enterSkillDescription(fakeEmployee.getSkillCodeDesc());
 		clickSaveBtn();
 		closeNotificationPopup();
 	}
 
 	public void deactivateSkill() throws Exception {
-//		checkCheckBox();
-//		clickDeleteBtn();
-		
+		//		checkCheckBox();
+		//		clickDeleteBtn();
+
 		deleteRowsWithEnabledCheckbox();
 		clickYes();
 		closeNotificationPopup();
@@ -234,7 +235,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public void setSearchColumns() throws Exception {
 		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
-		
+
 		enterSearchColumns(searchColumnsData);
 	}
 }

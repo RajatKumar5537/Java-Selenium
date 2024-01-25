@@ -3,16 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
         <methods>
-          <include name="setup"/>
+          <include name="setUp"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3211_VerifyCreateVesselScheduleTableView"/>
           <include name="closeBrowser"/>
+          <include name="E10_3120_VerifyWithCombinationShift"/>
+          <include name="E10_3119_VerifyWithoutShiftBandName"/>
+          <include name="E10_3121_VerifyWithOvertimeShift"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

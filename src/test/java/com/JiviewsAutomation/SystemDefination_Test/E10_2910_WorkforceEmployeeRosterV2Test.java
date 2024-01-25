@@ -67,7 +67,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.expandAndCollapseRows(fakeEmployee);
 		logger.info("Expand And Collapse Rows is successful");
 	}
-	/*
+	
 	@Test(priority = 4)
 	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
 		// Jira Item: E10-2941 - Employee Roster V2 [Filter and Reset columns]
@@ -256,5 +256,5 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 		empRosterV2.ApplyTimeOff(fakeEmployee);
 		logger.info("Apply On Behalf Apply Time off  is successful");
-	}*/
+	}
 }
