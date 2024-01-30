@@ -256,4 +256,14 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		applyLeave.E10_3448_EnableTheAnyOneCanApprove(); 
 		logger.info("E10_3448_Verify_EnableTheAnyOneCanApprove is successful");
 	}
+	
+	@Test
+	public void E10_3446_Verify_MultipleApproverApproveTheLeave() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3446_MultipleApproverApproveTheLeave...");
+		
+		jmMenuItem.clickOnSystemDefination();
+		applyLeave.E10_3446_MultipleApproverApproveTheLeave(fakeEmployee);
+		logger.info("E10_3446_MultipleApproverApproveTheLeave is successful");
+	}
 }

@@ -304,9 +304,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	private WebElement checkBoxAnyOneToApprove;
 	@FindBy(xpath = "(//span[text()='×'])[2]")
 	private WebElement removeApprover;
-	
-	
-	
+	@FindBy(xpath = "//button[@id='btnSaveWorkflowRouteDeatils']")
+	private WebElement btnSaveWorkflowRouteDeatils;
+	@FindBy(xpath = "//div[text()='Route updated successfully']")
+	private WebElement RouteUpdatedSuccessfullyMsg;
+
 	@FindBy(xpath = "//button[@id='btnAddLevel']")
 	private WebElement btnAddLevel;
 	@FindBy(xpath = "//span[@id='select2-cmbLevel2Approver1-container']")
@@ -778,7 +780,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Assert.assertTrue(actualResult.contains("Leave To has no Shift for you to apply leave,"));
 	}
 
-	public void clickempSetup() {
+	public void clickEmpSetup() {
 		webUtility.ElementClickable(driver, empSetup);
 		empSetup.click();
 	}
@@ -798,7 +800,15 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickEditBtn() {
 		editBtnRoute.click();
 	}
-	public void clickCheckBoxAnyOneToApprove() {
+	public void verifyCheckBoxAnyOneToApproveIsEnabled() {
+		if (checkBoxAnyOneToApprove.isEnabled()) {
+			checkBoxAnyOneToApprove.click();
+			System.out.println("Checkbox is enabled and has been clicked.");
+		} else {
+			System.out.println("Checkbox is not enabled.");
+		}
+	}
+	public void verifyCheckBoxAnyOneToApproveIsNotEnabled() {
 		if (!checkBoxAnyOneToApprove.isEnabled()) {
 			checkBoxAnyOneToApprove.click();
 			System.out.println("Checkbox is enabled and has been clicked.");
@@ -806,8 +816,14 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 			System.out.println("Checkbox is not enabled.");
 		}
 	}
-
-
+	public void clickBtnSaveWorkflowRouteDeatils() {
+		webUtility.moveToElement(driver, btnSaveWorkflowRouteDeatils);
+		btnSaveWorkflowRouteDeatils.click();
+	} 
+	public void getRouteUpdatedSuccessfullyMsg() {
+		String actualResult =RouteUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Route updated successfully"));
+	}
 
 
 	public void E10_3225_EmployeeKiosk_ApplyForLeave(FakeEmployee fakeEmployee) throws Exception {
@@ -902,11 +918,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3229_ApproverKiosk_ApproveLeave(FakeEmployee fakeEmployee)throws Exception{
-		String un = configUtility.getCongigPropertyData("unApprover");
-		String pwd = configUtility.getCongigPropertyData("pwdApprover");
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
 
 		homePage.clickOnBtnLogout();
-		loginPage.setLogin(un, pwd);
+		loginPage.setLogin(unApr, pwdApr);
 		clickNotificationPopup();
 		Thread.sleep(2000);
 		homePage.setOrgUnit();
@@ -922,11 +938,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		pendingForApprovalRowsWithEnabledCheckbox();
 		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
-		Thread.sleep(2000);
 		clickBtnSaveRemarks();
-		Thread.sleep(2000);
 		clickBtnYes();
-		Thread.sleep(2000);
 		clickNotificationPopup();
 
 
@@ -977,7 +990,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		
+
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		Thread.sleep(2000);
@@ -2047,26 +2060,417 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void E10_3252_SingleApproverForRejection(FakeEmployee fakeEmployee) throws Exception{
 		//	5. One approver is enough when reject the leave when disabled the check box on Any one to approve
-		String unEmp = configUtility.getCongigPropertyData("unEmp");
-		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unEmp, pwdEmp);
-		jmMenuItem.clickOnSystemDefination();
+		//		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		//		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		//		homePage.clickOnBtnLogout();
+		//		loginPage.setLogin(unEmp, pwdEmp);
+		//		jmMenuItem.clickOnSystemDefination();
 
+		clickEmpSetup();
 		clickEssWorkflowSetup();
 		clickApprovalRoutingDefinition();
 		clickEditBtn();
-		clickCheckBoxAnyOneToApprove();
-	}
-	public void E10_3448_EnableTheAnyOneCanApprove() {
+		verifyCheckBoxAnyOneToApproveIsEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
 
-		clickempSetup();
+	}
+	public void E10_3448_EnableTheAnyOneCanApprove() throws Exception{
+
+		clickEmpSetup();
 		clickEssWorkflowSetup();
 		clickApprovalRoutingDefinition();
 		enterRouteSearch();
 		clickEditBtn();
-		clickCheckBoxAnyOneToApprove();
+		verifyCheckBoxAnyOneToApproveIsEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+	}
+	public void E10_3446_MultipleApproverApproveTheLeave(FakeEmployee fakeEmployee) throws Exception{
 
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+
+	}
+	public void E10_3447_RejectLeaveWithOneApprover (FakeEmployee fakeEmployee) throws Exception{
+
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+	}
+	public void E10_3448EnableTheAnyOneCanApprove(FakeEmployee fakeEmployee) throws Exception{
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+	}
+	public void E10_3449_LevelAndLevel2_AllApproverApproveTheLeave(FakeEmployee fakeEmployee) throws Exception{
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+		
+	}
+	public void  E10_3450_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave(FakeEmployee fakeEmployee) throws Exception{
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+		
+	}
+	public void  E10_3451_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission(FakeEmployee fakeEmployee) throws Exception{
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		enterRouteSearch();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsNotEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		clickApplyLeave();
+
+		enterLeaveType();
+		chooseSickLeave();
+		Thread.sleep(2000);
+		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		pressBtnNext();
+		Thread.sleep(5000);
+		clickBtnAddAttachment();
+		selectFileToUpload();
+		clickBtnUpload();
+		pressBtnNext();
+		clickBtnFinish();
+		getLeaveApplicationSubmittedSuccessfullyMsg();
+		clickNotificationPopup();
+
+		String unApr = configUtility.getCongigPropertyData("unApprover");
+		String pwdApr = configUtility.getCongigPropertyData("pwdApprover");
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr, pwdApr);
+		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		//		clickNotificationPopup();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup();
+		
 	}
 
 }
