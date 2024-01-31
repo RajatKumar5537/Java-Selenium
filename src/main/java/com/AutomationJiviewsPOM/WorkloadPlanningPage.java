@@ -13,6 +13,8 @@ public class WorkloadPlanningPage extends BaseClass{
 	private WebElement workloadPlanning;
 	@FindBy(xpath = "//div[text()='Workload Planner']/..")
 	private WebElement workloadPlanner;
+	@FindBy(xpath = "//li[@data-menu-link='Planning/DailyPlanning/RTGPlanning']")
+	private WebElement RTGPlanning;
 	
 	public WorkloadPlanningPage(WebDriver driver) {
 //		super();
@@ -28,14 +30,19 @@ public class WorkloadPlanningPage extends BaseClass{
 		webUtility.moveToElement(driver, workloadPlanner);
 		workloadPlanner.click();
 	}
-	
-	
-	
+	public void clickRTGPlanning() {
+		webUtility.moveToElement(driver, RTGPlanning);
+		RTGPlanning.click();
+	}
 	
 	public void clickOnWorkloadPlanner() throws InterruptedException {
 //		clickWorkloadPlanning();
 //		clickWorkloadPlanner();
 		workloadPlanning.click();
 		workloadPlanner.click();
+	}
+	public void clickOnRTGPlanning() {
+		clickWorkloadPlanning();
+		clickRTGPlanning();
 	}
 }
