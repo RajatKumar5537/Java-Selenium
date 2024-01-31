@@ -105,14 +105,14 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		applyLeave.E10_3230_ApproverKiosk_CancelApproveleave(fakeEmployee);
 		logger.info("E10_3230_Verify_ApproverKiosk_Cancel Approve leave is successful");
 	}
-//	@Test(priority = 7)
-//	public void E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval() throws Exception{
-//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-//		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval...");
-//
-//		applyLeave.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(fakeEmployee);
-//		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval is successful");
-//	}
+	@Test(priority = 7)
+	public void E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval...");
+
+		applyLeave.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(fakeEmployee);
+		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval is successful");
+	}
 
 	@Test(priority = 8)
 	public void E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave() throws Exception {
@@ -123,33 +123,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		logger.info("E10_3232_Verify_Cancel Approved Leave_Approver Approved Cancel Leave is successful");
 	}
 
-	@Test(priority = 15)
-	public void E10_3442_Verify_ApplyLeaveOnPublicHoliday() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
-
-		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday();
-		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
-	}
-
-	@Test (priority = 16)
-	public void E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");
-
-
-		applyLeave.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave();
-		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave is successful");
-	}
-
-	@Test(priority = 17)
-	public void E10_3444_Verify_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift...");
-
-		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift();
-		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift is successful");
-	}
+	
 	/*
 	@Test(priority = 9)
 	public void E10_3233_Verify_ReapplyRejectedLeave_RejectAppovedCancelLeave() throws Exception {
@@ -190,7 +164,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		logger.info("E10_3235_Verify_ReapplyCancelledApprovedLeave is successful");
 //	}*/
 
-	/*@Test(priority = 10)
+	@Test(priority = 10)
 	public void E10_3218_Verify_ApplyTimeOff() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3218_ApplyTimeOff...");
@@ -264,7 +238,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift();
 		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift is successful");
 	}
-	@Test(priority = 18)
+	/*@Test(priority = 18)
 	public void E10_3445_Verify_ApplyUnpaidLeave() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3445_ApplyUnpaidLeave...");

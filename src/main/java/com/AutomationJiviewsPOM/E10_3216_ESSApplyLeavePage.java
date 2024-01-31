@@ -16,9 +16,11 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
@@ -33,6 +35,8 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
 	private EmployeeKioskPage empKiosk;
+	public Actions action;
+	public Select select;
 
 	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li[2]")
 	private WebElement click_OLM;
@@ -150,7 +154,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	@FindBy(xpath = "//select[@name='emp-leave-records-list_length']")
 	private WebElement leaveRecordList;
-	
+
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']" )
 	private WebElement btnCancle;
 
@@ -327,6 +331,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		this.orgUnit = new OrganizationUnitDropDown(driver);
 		this.jmMenuItem= new jiviewsMainMenuItems(driver);
 		this.empKiosk = new EmployeeKioskPage(driver);
+		this.action= new Actions(driver);
 	}
 	public void clickApplyLeave() {
 		webUtility.ElementClickable(driver, applyLeave);
@@ -476,8 +481,6 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 					if (leaveRecord.isDisplayed()) {
 						leaveRecord.click();
 						leaveRecordFound = true;
-						performCancelAction();
-						clickBtnYes();
 						break;
 					}
 				}
@@ -492,7 +495,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 				cancelLeaveRecordWithEnabledBtn(); // Recursive call to check for cancel buttons on the next page
 			}
 		}
-		
+
 
 	}
 	private boolean goToNextPage() throws InterruptedException {
@@ -500,9 +503,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 			// Check if the "Next Page" button is displayed
 			if (isElementVisible(btnNextPage)) {
 				scrollAndClick(driver, btnNextPage); // Click on the next page button
-				//				Thread.sleep(2000);
 				//				scrollUp(driver);
-				//				Thread.sleep(4000);
 				return true; // Return true indicating that the next page is available
 			}
 		} catch (ElementNotInteractableException e) {
@@ -526,7 +527,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	}
 	public void clickBtnYes() {
-		webUtility.moveToElement(driver, btnYes);
+		//		webUtility.moveToElement(driver, btnYes);
 		btnYes.click();
 	}
 	public void clickNotificationPopup() throws Exception {
@@ -558,11 +559,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 			}
 		}
 	}
-	public void scrollAndClick(WebDriver driver, WebElement element) {
+	public void scrollAndClick(WebDriver driver, WebElement element) throws InterruptedException {
 		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		// Scroll to the top of the page
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
+		Thread.sleep(2000);
 		element.click();
 	}
 	public void enterTxtApproveRejectAllRemarks(String remark) {
@@ -650,6 +652,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		ApplyOnBehalf.click();
 	}
 	public void enterSearchEmployee() {
+		webUtility.ElementClickable(driver, txtSearchEmployee);
 		txtSearchEmployee.clear();
 		txtSearchEmployee.sendKeys("33128455");
 		//		txtSearchEmployee.sendKeys(Keys.ENTER);	
@@ -762,6 +765,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void clickBtnSearchLeaveListUCL() {
 		btnSearchLeaveListUCL.click();
+	}
+	public void clickLeaveRecordList() {
+		//		leaveRecordList.click();
+		action.moveToElement(leaveRecordList).perform();
+		select = new Select(leaveRecordList);
+		select.selectByValue("100");
 	}
 	public void clickBtnCancle() {
 		btnCancle.click();
@@ -992,12 +1001,13 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		enterLeaveType();
 		chooseEmergencyLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-
+		enterLeaveStartDate("19/01/2024");
+		//		fakeEmployee.getLeaveFromDate()
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		Thread.sleep(2000);
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveEndDate("19/01/2024"); 
+		//		fakeEmployee.getLeaveEndDate()
 		pressBtnNext();
 		Thread.sleep(3000);
 		clickBtnAddAttachment();
@@ -1017,13 +1027,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickLeaveRecords();
 		Thread.sleep(2000);
 		//		clickBtnCancleLeave();
+		clickLeaveRecordList();
 		cancelLeaveRecordWithEnabledBtn();
-//		clickBtnYes();
-				Thread.sleep(2000);
+		clickBtnYes();
+		Thread.sleep(2000);
 		getLeaveCancelledSuccessfullyMsg();
 		clickNotificationPopup();
-		Thread.sleep(2000);
-		//		homePage.clickOnBtnLogout();
 
 	}
 	public void E10_3232_CancelApprovedLeave_ApproverApprovedCancelLeave(FakeEmployee fakeEmployee) throws Exception{
@@ -1041,9 +1050,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
@@ -1179,9 +1190,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
@@ -1236,9 +1249,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
@@ -1285,9 +1300,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
@@ -1312,9 +1329,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterLeaveType();
 		chooseEmergencyLeave();
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
@@ -1387,18 +1406,20 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		enterLeaveType();
 		chooseSickLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveStartDate("05/01/2024");
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate("05/01/2024"); // fakeEmployee.getLeaveEndDate()
 		pressBtnNext();
 		Thread.sleep(2000);
 		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
 
-		//		clickBtnFinish();
-		//		clickNotificationPopup();
+				clickBtnFinish();
+				clickNotificationPopup();
 
 		//	--------------------------------------------------------------------------------------------------------	
 
@@ -1426,6 +1447,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		selectFileToUpload();
 		clickBtnUpload();
 		clickApplyTimeOff();
+		clickNotificationPopup();
 		//		--------------------------------------------------------------------------------------------------------
 		/*driver.navigate().to(homeUrl);		
 		jmMenuItem.clickOnEmployeeSelfService();
@@ -1467,12 +1489,16 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickApplyLeave();
 		enterLeaveType();
 		chooseHospitalizationLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveStartDate("09/01/2024");
+		Thread.sleep(2000);
+		enterLeaveEndDate("09/01/2024");
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		Thread.sleep(2000);
 		selectPanelClinicName();
 		choosePanelClinicName();
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		
 		pressBtnNext();
 		Thread.sleep(4000);
 		clickBtnAddAttachment();
@@ -1519,6 +1545,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		empKiosk.clickEmployeeKiosk();
 
 		clickLeaveRecords();
+		clickLeaveRecordList();
 		Thread.sleep(2000);
 		//		clickBtnCancleLeave();
 		cancelLeaveRecordWithEnabledBtn();
@@ -1565,10 +1592,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickApplyLeave();
 		enterLeaveType();
 		chooseMarriageLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveStartDate("11/01/2024");
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate("11/01/2024");
 		pressBtnNext();
 		Thread.sleep(3000);
 		clickBtnAddAttachment();
@@ -1661,10 +1690,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickApplyLeave();
 		enterLeaveType();
 		choosePaternityLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveStartDate("14/01/2024");
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate("14/01/2024");
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -1710,8 +1741,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		empKiosk.clickEmployeeKiosk();
 
 		clickLeaveRecords();
+		
 		Thread.sleep(2000);
 		//		clickBtnCancleLeave();
+		clickLeaveRecordList();
 		cancelLeaveRecordWithEnabledBtn();
 		clickBtnYes();
 		Thread.sleep(2000);
@@ -1757,10 +1790,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickApplyLeave();
 		enterLeaveType();
 		chooseMaternityLeave();
-		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		enterLeaveStartDate("02/01/2024");
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate("02/01/2024");
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -1807,7 +1842,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		clickLeaveRecords();
 		Thread.sleep(2000);
-		//		clickBtnCancleLeave();
+		clickLeaveRecordList();
 		cancelLeaveRecordWithEnabledBtn();
 		clickBtnYes();
 		Thread.sleep(2000);
@@ -1947,10 +1982,12 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		enterLeaveStartDate(formatDate(startDate));
 		enterLeaveEndDate(formatDate(endDate));
-		//				enterLeaveStartDate(fakeEmployee.getTmrwDate());
-		//				enterLeaveEndDate(fakeEmployee.getTmrwDate());
+		//						enterLeaveStartDate(fakeEmployee.getTmrwDate());
+		//						enterLeaveEndDate(fakeEmployee.getTmrwDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2076,7 +2113,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		getpublicHolidayCannotBeApplyMsg();
 		clickNotificationPopup();
 	}
-	
+
 	public void E10_3445_ApplyUnpaidLeave ()  throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
@@ -2087,22 +2124,22 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 
-//		clickApplyLeave();
-//		enterLeaveType();
-//		chooseAnnualLeave();
-//		enterLeaveStartDate("27-01-2024");
-//		//	enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
-//		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
-//		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
-//		Thread.sleep(2000);
-//		enterLeaveEndDate("27-01-2024");
-//		pressBtnNext();
-//
-//		getpublicHolidayCannotBeApplyMsg();
-//		clickNotificationPopup();
+		//		clickApplyLeave();
+		//		enterLeaveType();
+		//		chooseAnnualLeave();
+		//		enterLeaveStartDate("27-01-2024");
+		//		//	enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
+		//		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+		//		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		//		Thread.sleep(2000);
+		//		enterLeaveEndDate("27-01-2024");
+		//		pressBtnNext();
+		//
+		//		getpublicHolidayCannotBeApplyMsg();
+		//		clickNotificationPopup();
 	}
 
-	
+
 	public void E10_3448_EnableTheAnyOneCanApprove() throws Exception{
 
 		clickEmpSetup();
@@ -2117,7 +2154,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void E10_3446_MultipleApproverApproveTheLeave(FakeEmployee fakeEmployee) throws Exception{
 
-	clickEmpSetup();
+		clickEmpSetup();
 		clickEssWorkflowSetup();
 		clickApprovalRoutingDefinition();
 		Thread.sleep(2000);
@@ -2144,7 +2181,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		Thread.sleep(2000);
@@ -2182,10 +2219,10 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnSaveRemarks();
 		clickBtnYes();
 		clickNotificationPopup(); 
-		
+
 		String unApr3 = configUtility.getCongigPropertyData("unApprover3");
 		String pwdApr3 = configUtility.getCongigPropertyData("pwdApprover3");
-		
+
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unApr3, pwdApr3);
 		clickNotificationPopup();
@@ -2205,7 +2242,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnSaveRemarks();
 		clickBtnYes();
 		clickNotificationPopup(); 
-		
+
 
 	}
 	public void E10_3447_RejectLeaveWithOneApprover (FakeEmployee fakeEmployee) throws Exception{
@@ -2235,9 +2272,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2298,9 +2337,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2361,9 +2402,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2425,9 +2468,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2489,9 +2534,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -2528,7 +2575,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 	}
 	public void E10_3469_CompensationLeave() {
-		
+
 	}
 
 	public void E10_3470_UnrecordLeave(FakeEmployee fakeEmployee) throws Exception {

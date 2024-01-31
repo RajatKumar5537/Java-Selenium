@@ -9,7 +9,7 @@
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave"/>
+          <include name="E10_3222_Verify_ApplyLeaveP2"/>
           <include name="logoutAfterTestMethod"/>
           <include name="setup"/>
         </methods>
