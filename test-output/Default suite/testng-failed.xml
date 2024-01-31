@@ -9,7 +9,7 @@
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="E10_3446_Verify_MultipleApproverApproveTheLeave"/>
+          <include name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave"/>
           <include name="logoutAfterTestMethod"/>
           <include name="setup"/>
         </methods>

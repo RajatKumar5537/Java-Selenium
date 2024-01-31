@@ -601,8 +601,10 @@ public class FakeEmployee {
 		String tmrwDateValue = LocalDate.now().plusDays(13).format(formatter); 
 
 //		setTmrwDate(tmrwDateValue);
-		setLeaveFromDate(tmrwDateValue);
-		setLeaveEndDate(tmrwDateValue);
+//		setLeaveFromDate(tmrwDateValue);
+		setLeaveFromDate("12/01/2024");
+//		setLeaveEndDate(tmrwDateValue);
+		setLeaveEndDate("12/01/2024");
 		//		setTmrwDate(generateFutureDate());
 
 

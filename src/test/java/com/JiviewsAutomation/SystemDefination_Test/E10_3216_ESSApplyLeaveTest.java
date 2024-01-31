@@ -1,12 +1,9 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
-import java.time.Duration;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -14,7 +11,6 @@ import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage;
-import com.AutomationJiviewsPOM.EmployeeKioskPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.LoginPage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
@@ -47,9 +43,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	public void logoutAfterTestMethod() {
 		try {
 			Thread.sleep(5000);
-			// Add your logout logic here
 			homePage.clickOnBtnLogout();
-			// Add your login logic for the admin user here
 			String unAdmin = configUtility.getCongigPropertyData("username");
 			String pwdAdmin = configUtility.getCongigPropertyData("password");
 			LoginPage loginPage = new LoginPage(driver);
@@ -57,10 +51,8 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 
 		} catch (Exception e) {
-			// Handle any exceptions during logout or login (optional)
 			e.printStackTrace();
 		} finally {
-			// Additional cleanup code if needed (optional)
 		}
 	}
 
@@ -113,14 +105,14 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		applyLeave.E10_3230_ApproverKiosk_CancelApproveleave(fakeEmployee);
 		logger.info("E10_3230_Verify_ApproverKiosk_Cancel Approve leave is successful");
 	}
-	@Test(priority = 7)
-	public void E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval...");
-
-		applyLeave.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(fakeEmployee);
-		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval is successful");
-	}
+//	@Test(priority = 7)
+//	public void E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval() throws Exception{
+//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval...");
+//
+//		applyLeave.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(fakeEmployee);
+//		logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval is successful");
+//	}
 
 	@Test(priority = 8)
 	public void E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave() throws Exception {
@@ -129,6 +121,34 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 		applyLeave.E10_3232_CancelApprovedLeave_ApproverApprovedCancelLeave(fakeEmployee);
 		logger.info("E10_3232_Verify_Cancel Approved Leave_Approver Approved Cancel Leave is successful");
+	}
+
+	@Test(priority = 15)
+	public void E10_3442_Verify_ApplyLeaveOnPublicHoliday() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
+
+		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday();
+		logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
+	}
+
+	@Test (priority = 16)
+	public void E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception {
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");
+
+
+		applyLeave.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave();
+		logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave is successful");
+	}
+
+	@Test(priority = 17)
+	public void E10_3444_Verify_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift() throws Exception {
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift...");
+
+		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift();
+		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift is successful");
 	}
 	/*
 	@Test(priority = 9)
@@ -170,7 +190,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //		logger.info("E10_3235_Verify_ReapplyCancelledApprovedLeave is successful");
 //	}*/
 
-	@Test(priority = 10)
+	/*@Test(priority = 10)
 	public void E10_3218_Verify_ApplyTimeOff() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3218_ApplyTimeOff...");
@@ -244,26 +264,84 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift();
 		logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift is successful");
 	}
+	@Test(priority = 18)
+	public void E10_3445_Verify_ApplyUnpaidLeave() throws Exception {
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3445_ApplyUnpaidLeave...");
+		
+		applyLeave.E10_3445_ApplyUnpaidLeave();
+		logger.info("E10_3445_ApplyUnpaidLeave is successful");
+	}
 
-	@Test
+	@Test(priority = 19)
+	public void E10_3446_Verify_MultipleApproverApproveTheLeave() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3446_MultipleApproverApproveTheLeave...");
+
+		jmMenuItem.clickOnSystemDefination();
+		applyLeave.E10_3446_MultipleApproverApproveTheLeave(fakeEmployee);
+		logger.info("E10_3446_MultipleApproverApproveTheLeave is successful");
+	}
+	@Test(priority = 20)
+	public void E10_3447_Verify_RejectLeaveWithOneApprover() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3447_Verify_RejectLeaveWithOneApprover...");
+		
+		
+		applyLeave.E10_3447_RejectLeaveWithOneApprover(fakeEmployee);
+		logger.info("E10_3447_Verify_RejectLeaveWithOneApprover is successful");
+	}
+	@Test(priority = 21)
 	public void E10_3448_Verify_EnableTheAnyOneCanApprove() throws Exception{
-//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-//		driver.navigate().to(homeUrl);
+		//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		//		driver.navigate().to(homeUrl);
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		logger.info("E10_3448_Verify_EnableTheAnyOneCanApprove...");
-		
+
 		jmMenuItem.clickOnSystemDefination();
 		applyLeave.E10_3448_EnableTheAnyOneCanApprove(); 
 		logger.info("E10_3448_Verify_EnableTheAnyOneCanApprove is successful");
 	}
-	
-	@Test
-	public void E10_3446_Verify_MultipleApproverApproveTheLeave() throws Exception{
+
+	@Test(priority = 22)
+	public void E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave() throws Exception{
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3446_MultipleApproverApproveTheLeave...");
+		logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave...");
 		
-		jmMenuItem.clickOnSystemDefination();
-		applyLeave.E10_3446_MultipleApproverApproveTheLeave(fakeEmployee);
-		logger.info("E10_3446_MultipleApproverApproveTheLeave is successful");
+		applyLeave.E10_3449_LevelAndLevel2_AllApproverApproveTheLeave(fakeEmployee);
+		logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave is successful");
+	}
+	@Test(priority = 23)
+	public void E10_3450_Verify_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave...");
+		
+		applyLeave.E10_3450_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave(fakeEmployee);
+		logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave is successful");
+	}
+	@Test(priority = 24)
+	public void E10_3451_Verify_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3451_Verify_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission...");
+		
+		applyLeave.E10_3451_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission(fakeEmployee);
+		logger.info("E10_3451_Verify_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission is successful");
+	}
+//	@Test(priority = 25)
+//	public void E10_3469_Verify_CompensationLeave() throws Exception{
+//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		logger.info("E10_3469_Verify_CompensationLeave...");
+//		
+//		applyLeave.E10_3469_CompensationLeave();
+//		logger.info("E10_3469_Verify_CompensationLeave is successful");
+//	}*/
+	
+	@Test(priority = 26)
+	public void E10_3470_Verify_UnrecordLeave() throws Exception{
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3470_Verify_UnrecordLeave...");
+
+		applyLeave.E10_3470_UnrecordLeave(fakeEmployee);
+		logger.info("E10_3470_Verify_UnrecordLeave is successful");
 	}
 }

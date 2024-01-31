@@ -1,5 +1,7 @@
 package com.AutomationJiviewsPOM;
 
+import static org.testng.Assert.assertFalse;
+
 import java.io.File;
 import java.time.Duration;
 import java.time.LocalDate;
@@ -146,7 +148,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	@FindBy(xpath = "//li[@id='emp-leave-records-list_next']")
 	private WebElement btnNextPage;
 
-
+	@FindBy(xpath = "//select[@name='emp-leave-records-list_length']")
+	private WebElement leaveRecordList;
+	
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-danger icon-btn mx-1 cancel']" )
 	private WebElement btnCancle;
 
@@ -451,23 +455,17 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickBtnSearchLeaveApplications() {
 		btnSearchLeaveApplications.click();
 	}
-	//		public void clickBtnCancleLeave() {
-	//			webUtility.ElementClickable(driver, btnLeaveRecordsCancle);
-	//			btnCancleLeave.click();
-	//		}
 	public void performCancelAction() throws InterruptedException {
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnLeaveRecordsCancel.get(0)); // Assuming you want to click the first cancel button
 				break;
 			} catch (ElementClickInterceptedException e) {
-				// Handle the exception if necessary
 			}
 		}
 	}
 	public void cancelLeaveRecordWithEnabledBtn() throws InterruptedException {
 		boolean leaveRecordFound = false;
-
 		// Check if there are any leave records
 		if (!leaveRecordsRows.isEmpty() && !btnLeaveRecordsCancel.isEmpty()) {
 			// Iterate through rows
@@ -479,6 +477,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 						leaveRecord.click();
 						leaveRecordFound = true;
 						performCancelAction();
+						clickBtnYes();
 						break;
 					}
 				}
@@ -493,15 +492,17 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 				cancelLeaveRecordWithEnabledBtn(); // Recursive call to check for cancel buttons on the next page
 			}
 		}
+		
+
 	}
 	private boolean goToNextPage() throws InterruptedException {
 		try {
 			// Check if the "Next Page" button is displayed
 			if (isElementVisible(btnNextPage)) {
 				scrollAndClick(driver, btnNextPage); // Click on the next page button
-				Thread.sleep(2000);
-				scrollUp(driver);
-				Thread.sleep(4000);
+				//				Thread.sleep(2000);
+				//				scrollUp(driver);
+				//				Thread.sleep(4000);
 				return true; // Return true indicating that the next page is available
 			}
 		} catch (ElementNotInteractableException e) {
@@ -520,8 +521,6 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	// Method to perform scroll-up action
 	private void scrollUp(WebDriver driver) {
-		//		JavascriptExecutor js = (JavascriptExecutor) driver;
-		//		js.executeScript("window.scrollBy(0, 0)"); // Adjust the scroll distance as needed
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollTo(0, 0)");
 
@@ -679,6 +678,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void clickUCLDate(String UCLDate) {
 		dtUCLDate.clear();
 		dtUCLDate.sendKeys(UCLDate);
+		dtUCLDate.sendKeys(Keys.ENTER);
 	}
 	public void entertxtUCLReferenceNo(String referenceNo) {
 		txtUCLReferenceNo.clear();
@@ -810,6 +810,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void verifyCheckBoxAnyOneToApproveIsNotEnabled() {
 		if (!checkBoxAnyOneToApprove.isEnabled()) {
+			webUtility.ElementClickable(driver, checkBoxAnyOneToApprove);
 			checkBoxAnyOneToApprove.click();
 			System.out.println("Checkbox is enabled and has been clicked.");
 		} else {
@@ -841,9 +842,11 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseEmergencyLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
 		Thread.sleep(5000);
 		clickBtnAddAttachment();
@@ -1014,11 +1017,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickLeaveRecords();
 		Thread.sleep(2000);
 		//		clickBtnCancleLeave();
-		//		cancleLeaveRecordWithEnabledBtn();
 		cancelLeaveRecordWithEnabledBtn();
-		Thread.sleep(2000);
-		clickBtnYes();
-		Thread.sleep(2000);
+//		clickBtnYes();
+				Thread.sleep(2000);
 		getLeaveCancelledSuccessfullyMsg();
 		clickNotificationPopup();
 		Thread.sleep(2000);
@@ -1985,7 +1986,24 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickNotificationPopup();
 
 	}
+	public void E10_3252_SingleApproverForRejection(FakeEmployee fakeEmployee) throws Exception{
+		//	5. One approver is enough when reject the leave when disabled the check box on Any one to approve
+		//		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		//		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+		//		homePage.clickOnBtnLogout();
+		//		loginPage.setLogin(unEmp, pwdEmp);
+		//		jmMenuItem.clickOnSystemDefination();
 
+		clickEmpSetup();
+		clickEssWorkflowSetup();
+		clickApprovalRoutingDefinition();
+		clickEditBtn();
+		verifyCheckBoxAnyOneToApproveIsEnabled();
+		clickBtnSaveWorkflowRouteDeatils();
+		getRouteUpdatedSuccessfullyMsg();
+		clickNotificationPopup();
+
+	}
 	public void E10_3442_ApplyLeaveOnPublicHoliday() throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
@@ -2058,24 +2076,33 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		getpublicHolidayCannotBeApplyMsg();
 		clickNotificationPopup();
 	}
-	public void E10_3252_SingleApproverForRejection(FakeEmployee fakeEmployee) throws Exception{
-		//	5. One approver is enough when reject the leave when disabled the check box on Any one to approve
-		//		String unEmp = configUtility.getCongigPropertyData("unEmp");
-		//		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
-		//		homePage.clickOnBtnLogout();
-		//		loginPage.setLogin(unEmp, pwdEmp);
-		//		jmMenuItem.clickOnSystemDefination();
+	
+	public void E10_3445_ApplyUnpaidLeave ()  throws Exception{
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 
-		clickEmpSetup();
-		clickEssWorkflowSetup();
-		clickApprovalRoutingDefinition();
-		clickEditBtn();
-		verifyCheckBoxAnyOneToApproveIsEnabled();
-		clickBtnSaveWorkflowRouteDeatils();
-		getRouteUpdatedSuccessfullyMsg();
-		clickNotificationPopup();
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
 
+//		clickApplyLeave();
+//		enterLeaveType();
+//		chooseAnnualLeave();
+//		enterLeaveStartDate("27-01-2024");
+//		//	enterLeaveEndDate("22-01-2024"); Not update the End date thatswhy i am entering the end date after remark 
+//		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+//		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+//		Thread.sleep(2000);
+//		enterLeaveEndDate("27-01-2024");
+//		pressBtnNext();
+//
+//		getpublicHolidayCannotBeApplyMsg();
+//		clickNotificationPopup();
 	}
+
+	
 	public void E10_3448_EnableTheAnyOneCanApprove() throws Exception{
 
 		clickEmpSetup();
@@ -2090,11 +2117,13 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 	public void E10_3446_MultipleApproverApproveTheLeave(FakeEmployee fakeEmployee) throws Exception{
 
-		clickEmpSetup();
+	clickEmpSetup();
 		clickEssWorkflowSetup();
 		clickApprovalRoutingDefinition();
+		Thread.sleep(2000);
 		enterRouteSearch();
 		clickEditBtn();
+		Thread.sleep(2000);
 		verifyCheckBoxAnyOneToApproveIsNotEnabled();
 		clickBtnSaveWorkflowRouteDeatils();
 		getRouteUpdatedSuccessfullyMsg();
@@ -2115,11 +2144,13 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		chooseSickLeave();
 		Thread.sleep(2000);
 		enterLeaveStartDate(fakeEmployee.getLeaveFromDate());
-		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+		Thread.sleep(2000);
+		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
@@ -2150,7 +2181,31 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
 		clickBtnSaveRemarks();
 		clickBtnYes();
+		clickNotificationPopup(); 
+		
+		String unApr3 = configUtility.getCongigPropertyData("unApprover3");
+		String pwdApr3 = configUtility.getCongigPropertyData("pwdApprover3");
+		
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unApr3, pwdApr3);
 		clickNotificationPopup();
+		Thread.sleep(2000);
+		homePage.setOrgUnit();
+		clickOn_OLM();
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickApproverKiosk();
+		Thread.sleep(2000);
+
+		clickApproveLeave();
+		Thread.sleep(2000);
+
+		pendingForApprovalRowsWithEnabledCheckbox();
+		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+		clickBtnSaveRemarks();
+		clickBtnYes();
+		clickNotificationPopup(); 
+		
 
 	}
 	public void E10_3447_RejectLeaveWithOneApprover (FakeEmployee fakeEmployee) throws Exception{
@@ -2342,7 +2397,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnSaveRemarks();
 		clickBtnYes();
 		clickNotificationPopup();
-		
+
 	}
 	public void  E10_3450_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave(FakeEmployee fakeEmployee) throws Exception{
 		clickEmpSetup();
@@ -2406,7 +2461,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnSaveRemarks();
 		clickBtnYes();
 		clickNotificationPopup();
-		
+
 	}
 	public void  E10_3451_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission(FakeEmployee fakeEmployee) throws Exception{
 		clickEmpSetup();
@@ -2470,7 +2525,33 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickBtnSaveRemarks();
 		clickBtnYes();
 		clickNotificationPopup();
+
+	}
+	public void E10_3469_CompensationLeave() {
 		
+	}
+
+	public void E10_3470_UnrecordLeave(FakeEmployee fakeEmployee) throws Exception {
+		String unEmp = configUtility.getCongigPropertyData("unEmp");
+		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
+
+
+		homePage.clickOnBtnLogout();
+		loginPage.setLogin(unEmp, pwdEmp);
+		jmMenuItem.clickOnEmployeeSelfService();
+		Thread.sleep(2000);
+		empKiosk.clickEmployeeKiosk();
+		//		clickNotificationPopup();
+		//		Thread.sleep(2000);
+		clickUncontrolledLeave();
+		Thread.sleep(3000);
+		clickUCLExceptionType();
+		chooseLeaveTypeUCL();
+		clickUCLDate("26/01/2024");
+		entertxtUCLReferenceNo(fakeEmployee.getReferenceNo());
+		entertxtUCLRemarks(fakeEmployee.getRemarksLeave());
+		// Verify that the btnApplyUCL is not displayed on the screen
+		assertFalse(btnApplyUCL.isDisplayed());
 	}
 
 }

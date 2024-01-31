@@ -85,14 +85,14 @@
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest" />
 		</classes>
-	</test>
+	</test> 
 
-	<!-- <test
+	<test
 		name="E10_3216_ESSApplyLeaveTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
-	/>
+			/>
 		</classes>
-	</test>-->
+	</test>
 </suite>
