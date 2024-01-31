@@ -103,6 +103,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	}
 
 	public void clickBtnAddRosterGroup() {
+		webUtility.ElementClickable(driver, btnAddRosterGroup);
 		btnAddRosterGroup.click();
 	}
 
@@ -295,6 +296,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	}
 
 	public void createRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
+		Thread.sleep(2000);
 		clickBtnAddRosterGroup();
 		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());

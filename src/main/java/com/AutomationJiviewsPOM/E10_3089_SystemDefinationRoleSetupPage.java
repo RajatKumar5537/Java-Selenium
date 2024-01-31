@@ -90,7 +90,7 @@ public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
-	@FindBy(xpath = "(//button[@type='button'])[5]/i")
+	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	private WebElement editBTN;
 
 	@FindBy(xpath = "//table[@id='roles-list']/tbody/tr")
@@ -144,6 +144,7 @@ public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
 
 
 	public void setAddBtn() {
+		webUtility.ElementClickable(driver, addBtn);
 		addBtn.click();
 	}
 
@@ -343,7 +344,7 @@ public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
 		depreparationTimeData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 10);
 		roleWaightageData = excelUtility.readDataFromExcelFile("EmployeeTest", 6, 11);
 
-		//		Thread.sleep(1000);
+		Thread.sleep(2000);
 		setAddBtn();
 		Thread.sleep(1000);
 		setRoleName(roleNameData+ " " + System.currentTimeMillis());

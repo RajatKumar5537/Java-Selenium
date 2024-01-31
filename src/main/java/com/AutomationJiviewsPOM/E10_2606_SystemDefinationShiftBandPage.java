@@ -197,9 +197,11 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		shiftTypeSearch.click();
 	}
 
-	public void setShiftTpSearchCombiShift() {
+	public void setShiftTpSearchCombiShift() throws InterruptedException {
 		setShiftTpSearchOvertime();
+		Thread.sleep(3000);
 		clearSearch.click();
+		Thread.sleep(3000);
 		action.moveToElement(shiftTpSearchCombiShift).perform();
 		shiftTpSearchCombiShift.click();
 	}
@@ -494,7 +496,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setShiftBandTypeTxt();
-//		setSearchBox(); not required 
+		//		setSearchBox(); not required 
 		setShiftTpSearchCombiShift();
 		setColorTxt(colorCode);
 		setShiftCounterTxt(shiftCounter);
@@ -503,7 +505,8 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		Thread.sleep(1000);
 		setAvailableSingleSkillMoveToSelectedSkill();
 		setBtnSave();
-		//		setNotificationPopup();
+		Thread.sleep(1000);
+		setNotificationPopup();
 	}
 	public void shiftBandTypeOvertimeShift() throws Exception {
 		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);

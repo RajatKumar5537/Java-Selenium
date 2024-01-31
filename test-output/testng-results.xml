@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="19" total="20" passed="1" failed="0" skipped="0">
+<testng-results ignored="10" total="11" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,42 +8,46 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-31T11:23:23Z" name="Default suite" finished-at="2024-01-31T11:24:24Z" duration-ms="60921">
+  <suite started-at="2024-01-31T12:29:54Z" name="Default suite" finished-at="2024-01-31T12:31:08Z" duration-ms="73385">
     <groups>
     </groups>
-    <test started-at="2024-01-31T11:23:23Z" name="Default test" finished-at="2024-01-31T11:24:24Z" duration-ms="60921">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:23:23Z" name="launchBrowser" finished-at="2024-01-31T11:23:25Z" duration-ms="2048" status="PASS">
+    <test started-at="2024-01-31T12:29:54Z" name="Default test" finished-at="2024-01-31T12:31:08Z" duration-ms="73385">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:29:54Z" name="launchBrowser" finished-at="2024-01-31T12:29:56Z" duration-ms="1662" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:23:25Z" name="beforeTestMethod" finished-at="2024-01-31T11:23:40Z" duration-ms="14500" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:29:56Z" name="beforeTestMethod" finished-at="2024-01-31T12:30:07Z" duration-ms="11122" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:23:40Z" name="setup" finished-at="2024-01-31T11:23:54Z" duration-ms="14505" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:30:07Z" name="setup" finished-at="2024-01-31T12:30:20Z" duration-ms="13117" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_2941_VerifyFilterAndResetColumns()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:23:54Z" name="E10_2941_VerifyFilterAndResetColumns" finished-at="2024-01-31T11:24:24Z" duration-ms="29644" status="PASS">
+        <test-method signature="E10_3225_Verify_EmployeeKiosk_ApplyForLeave()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:30:20Z" name="E10_3225_Verify_EmployeeKiosk_ApplyForLeave" finished-at="2024-01-31T12:30:57Z" duration-ms="36789" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_2941_VerifyFilterAndResetColumns -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:24:24Z" name="afterTestMethod" finished-at="2024-01-31T11:24:24Z" duration-ms="0" status="PASS">
+        </test-method> <!-- E10_3225_Verify_EmployeeKiosk_ApplyForLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:30:57Z" name="logoutAfterTestMethod" finished-at="2024-01-31T12:31:08Z" duration-ms="10490" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:31:08Z" name="afterTestMethod" finished-at="2024-01-31T12:31:08Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test@1af05b03]" started-at="2024-01-31T11:24:24Z" name="closeBrowser" finished-at="2024-01-31T11:24:24Z" duration-ms="191" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@282308c3]" started-at="2024-01-31T12:31:08Z" name="closeBrowser" finished-at="2024-01-31T12:31:08Z" duration-ms="189" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

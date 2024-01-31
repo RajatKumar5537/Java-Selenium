@@ -1199,10 +1199,14 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		Assert.assertTrue(actualResult.contains("Attachment created Successfully"));
 	}
 	public void getEmployeeProfilecreatedSuccessfullyMsg() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(employeeProfilecreatedSuccessfullyMsg));
 		String actualResult = employeeProfilecreatedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Employee Profile created successfully"));
 	}
 	public void getaddExcludedSkillSuccessMsg() {
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.visibilityOf(addExcludedSkillSuccessMsg));
 		String actualResult = addExcludedSkillSuccessMsg.getText();
 		Assert.assertTrue(actualResult.contains("Add Excluded Skill - Success"));
 	}
@@ -1337,6 +1341,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		clickonbtnSaveDisciplinaryDetails();
 		getAddDisciplinaryActionSuccessMsg();
 		clickNotificationPopup();
+		
 		clickonTabSecurity();
 		clickonBtnAddEmployeeOU();
 		enterOrganizationName();
@@ -1344,10 +1349,10 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		enterShareOrgUnitStartDate(fakeEmployee.getSkillStartDate());
 		enterdtShareOrgUnitEndDate(fakeEmployee.getSkillEndDate());
 		cickonBtnSaveEmployeeOU();
-		clickNotificationPopup();
+//		clickNotificationPopup(); Not Required 
 		pressBtnSaveEmployee();
 //		getEmployeeProfilecreatedSuccessfullyMsg();
-//		clickNotificationPopup();
+		clickNotificationPopup();
 	}
 	public void duplicateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickBtnDuplicate();

@@ -202,6 +202,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	}
 
 	public void setAddBtn() {
+		webUtility.ElementClickable(driver, addBtn);
 		addBtn.click();
 	}
 
@@ -493,7 +494,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		setAddBtn();
 		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
