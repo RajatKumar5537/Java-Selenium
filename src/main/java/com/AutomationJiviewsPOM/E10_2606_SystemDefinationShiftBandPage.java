@@ -54,7 +54,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 	@FindBy(id = "txtShiftBandCode")
 	private WebElement bandCodeTxt;
 
-	@FindBy(id = "select2-cmbShiftBandId-container")
+	@FindBy(id = "select2-cmbShiftBandId-container") //span[@id='select2-cmbShiftBandId-container']
 	private WebElement shiftBandTypeTxt;
 
 	@FindBy(className  ="select2-search__field")
@@ -199,8 +199,9 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 
 	public void setShiftTpSearchCombiShift() throws InterruptedException {
 		setShiftTpSearchOvertime();
-		Thread.sleep(3000);
-		clearSearch.click();
+		Thread.sleep(2000);
+		setShiftBandTypeTxt();
+//		clearSearch.click();
 		Thread.sleep(3000);
 		action.moveToElement(shiftTpSearchCombiShift).perform();
 		shiftTpSearchCombiShift.click();

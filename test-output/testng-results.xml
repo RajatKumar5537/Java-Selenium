@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="22" total="23" passed="0" failed="1" skipped="0">
+<testng-results ignored="6" total="7" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,122 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-01-31T19:57:05Z" name="Default suite" finished-at="2024-01-31T19:58:26Z" duration-ms="80894">
+  <suite started-at="2024-02-01T03:33:49Z" name="Default suite" finished-at="2024-02-01T03:34:20Z" duration-ms="31396">
     <groups>
     </groups>
-    <test started-at="2024-01-31T19:57:05Z" name="Default test" finished-at="2024-01-31T19:58:26Z" duration-ms="80894">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:57:05Z" name="launchBrowser" finished-at="2024-01-31T19:57:07Z" duration-ms="1620" status="PASS">
+    <test started-at="2024-02-01T03:33:49Z" name="Default test" finished-at="2024-02-01T03:34:20Z" duration-ms="31396">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:33:49Z" name="launchBrowser" finished-at="2024-02-01T03:33:50Z" duration-ms="1730" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:57:07Z" name="beforeTestMethod" finished-at="2024-01-31T19:57:09Z" duration-ms="2382" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:33:50Z" name="beforeTestMethod" finished-at="2024-02-01T03:33:53Z" duration-ms="2686" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:57:09Z" name="setup" finished-at="2024-01-31T19:57:17Z" duration-ms="7677" status="PASS">
+        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:33:53Z" name="setUp" finished-at="2024-02-01T03:34:04Z" duration-ms="11084" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3222_Verify_ApplyLeaveP2()[pri:13, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:57:17Z" name="E10_3222_Verify_ApplyLeaveP2" finished-at="2024-01-31T19:58:21Z" duration-ms="64179" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchWindowException">
-            <message>
-              <![CDATA[no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=121.0.6167.86)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [55889cf69ac24c79ec7e358005947c8d, findElement {using=xpath, value=//li[@id='emp-leave-records-list_next']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49897/devtoo..., se:cdpVersion: 121.0.6167.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 55889cf69ac24c79ec7e358005947c8d]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchWindowException: no such window: target window already closed
-from unknown error: web view not found
-  (Session info: chrome=121.0.6167.86)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [55889cf69ac24c79ec7e358005947c8d, findElement {using=xpath, value=//li[@id='emp-leave-records-list_next']}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 121.0.6167.86, chrome: {chromedriverVersion: 121.0.6167.85 (3f98d690ad7e..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49897}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49897/devtoo..., se:cdpVersion: 121.0.6167.86, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 55889cf69ac24c79ec7e358005947c8d
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy35.click(Unknown Source)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.scrollAndClick(E10_3216_ESSApplyLeavePage.java:568)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.goToNextPage(E10_3216_ESSApplyLeavePage.java:505)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.cancelLeaveRecordWithEnabledBtn(E10_3216_ESSApplyLeavePage.java:492)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.cancelLeaveRecordWithEnabledBtn(E10_3216_ESSApplyLeavePage.java:495)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.cancelLeaveRecordWithEnabledBtn(E10_3216_ESSApplyLeavePage.java:495)
-at com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage.E10_3222_ApplyLeaveP2(E10_3216_ESSApplyLeavePage.java:1748)
-at com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest.E10_3222_Verify_ApplyLeaveP2(E10_3216_ESSApplyLeaveTest.java:198)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)
-at org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)
-at org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchWindowException -->
+        </test-method> <!-- setUp -->
+        <test-method signature="E10_3120_VerifyWithCombinationShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:34:04Z" name="E10_3120_VerifyWithCombinationShift" finished-at="2024-02-01T03:34:20Z" duration-ms="15879" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3222_Verify_ApplyLeaveP2 -->
-        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:58:21Z" name="logoutAfterTestMethod" finished-at="2024-01-31T19:58:26Z" duration-ms="5018" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutAfterTestMethod -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:58:26Z" name="afterTestMethod" finished-at="2024-01-31T19:58:26Z" duration-ms="1" status="PASS">
+        </test-method> <!-- E10_3120_VerifyWithCombinationShift -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:34:20Z" name="afterTestMethod" finished-at="2024-02-01T03:34:20Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@4fdf8f12]" started-at="2024-01-31T19:58:26Z" name="closeBrowser" finished-at="2024-01-31T19:58:26Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@530a8454]" started-at="2024-02-01T03:34:20Z" name="closeBrowser" finished-at="2024-02-01T03:34:20Z" duration-ms="1" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

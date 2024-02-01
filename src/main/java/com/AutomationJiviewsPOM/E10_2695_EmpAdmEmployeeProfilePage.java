@@ -314,7 +314,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	private WebElement btnAddNewExcludedSkills;
 	@FindBy(xpath = "//span[@id='select2-cmbExcludedSkill-container']")
 	private WebElement txtSkillDescription;
-	@FindBy(xpath = "//li[contains(text(),'Auto_Test')]")
+	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement dropDownSkill;
 	@FindBy(xpath = "//input[@id='dtExcludedSkillStartDate']")
 	private WebElement dtExcludedSkillStartDate;
