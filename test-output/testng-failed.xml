@@ -3,16 +3,17 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
+          <include name="E10_3470_Verify_UnrecordLeave"/>
           <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="E10_3136_VerifyUpdateEmpProfile"/>
+          <include name="logoutAfterTestMethod"/>
           <include name="setup"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

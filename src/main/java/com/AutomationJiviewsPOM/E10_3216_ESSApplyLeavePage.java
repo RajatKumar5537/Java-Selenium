@@ -715,6 +715,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	}
 
 	public void clickUncontrolledLeave() {
+		webUtility.ElementClickable(driver, UncontrolledLeave);
 		UncontrolledLeave.click();
 	}
 	public void clickUCLExceptionType() {
@@ -910,7 +911,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String actualTitle = driver.getTitle();
 		System.out.println(actualTitle);
 		String expectedTitle = "Leave Records - JiViews";
-		// Compare the actual title with the expected title
+		Thread.sleep(2000);		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
 		//		clickNotificationPopup();
 		//		homePage.clickOnBtnLogout();
@@ -1056,7 +1057,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
 		pressBtnNext();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
 		clickBtnAddAttachment();
 		selectFileToUpload();
 		clickBtnUpload();
@@ -1891,7 +1892,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 		clickNotificationPopup();
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		clickUncontrolledLeave();
 		Thread.sleep(2000);
 		clickUCLExceptionType();
@@ -2582,16 +2583,16 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 
-
+		Thread.sleep(2000);
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unEmp, pwdEmp);
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 		//		clickNotificationPopup();
-		//		Thread.sleep(2000);
+//				Thread.sleep(2000);
 		clickUncontrolledLeave();
-		Thread.sleep(3000);
+		Thread.sleep(2000);
 		clickUCLExceptionType();
 		chooseLeaveTypeUCL();
 		clickUCLDate("26/01/2024");

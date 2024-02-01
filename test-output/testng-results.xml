@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="11" passed="11" failed="0" skipped="0">
+<testng-results ignored="13" total="14" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,122 +8,46 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-02-01T05:25:44Z" name="Default suite" finished-at="2024-02-01T05:30:16Z" duration-ms="271868">
+  <suite started-at="2024-02-01T08:24:43Z" name="Default suite" finished-at="2024-02-01T08:25:38Z" duration-ms="55706">
     <groups>
     </groups>
-    <test started-at="2024-02-01T05:25:44Z" name="Default test" finished-at="2024-02-01T05:30:16Z" duration-ms="271868">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:25:44Z" name="launchBrowser" finished-at="2024-02-01T05:25:46Z" duration-ms="2079" status="PASS">
+    <test started-at="2024-02-01T08:24:43Z" name="Default test" finished-at="2024-02-01T08:25:38Z" duration-ms="55706">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:43Z" name="launchBrowser" finished-at="2024-02-01T08:24:44Z" duration-ms="1676" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:25:46Z" name="beforeTestMethod" finished-at="2024-02-01T05:25:48Z" duration-ms="2589" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:44Z" name="beforeTestMethod" finished-at="2024-02-01T08:24:47Z" duration-ms="2515" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:25:48Z" name="setup" finished-at="2024-02-01T05:25:58Z" duration-ms="9529" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:47Z" name="setup" finished-at="2024-02-01T08:24:53Z" duration-ms="6336" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3135_VerifyCreateEmpProfile()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:25:58Z" name="E10_3135_VerifyCreateEmpProfile" finished-at="2024-02-01T05:26:54Z" duration-ms="55993" status="PASS">
+        <test-method signature="E10_3470_Verify_UnrecordLeave()[pri:26, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:53Z" name="E10_3470_Verify_UnrecordLeave" finished-at="2024-02-01T08:25:27Z" duration-ms="33755" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3135_VerifyCreateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:26:54Z" name="setup" finished-at="2024-02-01T05:26:59Z" duration-ms="4717" status="PASS">
+        </test-method> <!-- E10_3470_Verify_UnrecordLeave -->
+        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:27Z" name="logoutAfterTestMethod" finished-at="2024-02-01T08:25:38Z" duration-ms="11235" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3136_VerifyUpdateEmpProfile()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:26:59Z" name="E10_3136_VerifyUpdateEmpProfile" finished-at="2024-02-01T05:27:33Z" duration-ms="34776" status="PASS">
+        </test-method> <!-- logoutAfterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:38Z" name="closeBrowser" finished-at="2024-02-01T08:25:38Z" duration-ms="177" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3136_VerifyUpdateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:27:33Z" name="setup" finished-at="2024-02-01T05:27:42Z" duration-ms="8934" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3137_VerifyDuplicateEmpProfile()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:27:42Z" name="E10_3137_VerifyDuplicateEmpProfile" finished-at="2024-02-01T05:28:10Z" duration-ms="27539" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3137_VerifyDuplicateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:10Z" name="setup" finished-at="2024-02-01T05:28:18Z" duration-ms="7977" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3138_VerifyDeleteEmpProfile()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:18Z" name="E10_3138_VerifyDeleteEmpProfile" finished-at="2024-02-01T05:28:25Z" duration-ms="7074" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3138_VerifyDeleteEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:25Z" name="setup" finished-at="2024-02-01T05:28:32Z" duration-ms="6756" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3145_VerifyreactivateEmpProfile()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:32Z" name="E10_3145_VerifyreactivateEmpProfile" finished-at="2024-02-01T05:28:51Z" duration-ms="19276" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3145_VerifyreactivateEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:51Z" name="setup" finished-at="2024-02-01T05:28:58Z" duration-ms="7214" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3139_VerifySearchEmpProfile()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:28:58Z" name="E10_3139_VerifySearchEmpProfile" finished-at="2024-02-01T05:29:00Z" duration-ms="2240" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3139_VerifySearchEmpProfile -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:00Z" name="setup" finished-at="2024-02-01T05:29:07Z" duration-ms="6608" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3140_VerifysearchRosterGroup()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:07Z" name="E10_3140_VerifysearchRosterGroup" finished-at="2024-02-01T05:29:10Z" duration-ms="2626" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3140_VerifysearchRosterGroup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:10Z" name="setup" finished-at="2024-02-01T05:29:16Z" duration-ms="6349" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3141_VerifysearchRoleGroup()[pri:8, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:16Z" name="E10_3141_VerifysearchRoleGroup" finished-at="2024-02-01T05:29:19Z" duration-ms="3399" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3141_VerifysearchRoleGroup -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:19Z" name="setup" finished-at="2024-02-01T05:29:27Z" duration-ms="7300" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3142_VerifysearchEmpStatus()[pri:9, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:27Z" name="E10_3142_VerifysearchEmpStatus" finished-at="2024-02-01T05:29:30Z" duration-ms="3389" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3142_VerifysearchEmpStatus -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:30Z" name="setup" finished-at="2024-02-01T05:29:38Z" duration-ms="7799" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3143_VerifyEmpNoInSearchBar()[pri:10, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:38Z" name="E10_3143_VerifyEmpNoInSearchBar" finished-at="2024-02-01T05:29:39Z" duration-ms="1104" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3143_VerifyEmpNoInSearchBar -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:39Z" name="setup" finished-at="2024-02-01T05:29:53Z" duration-ms="14107" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="E10_3144_VerifyTerminateEmpProfile()[pri:11, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:29:53Z" name="E10_3144_VerifyTerminateEmpProfile" finished-at="2024-02-01T05:30:15Z" duration-ms="22246" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3144_VerifyTerminateEmpProfile -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:30:15Z" name="afterTestMethod" finished-at="2024-02-01T05:30:15Z" duration-ms="0" status="PASS">
+        </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:38Z" name="afterTestMethod" finished-at="2024-02-01T08:25:38Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest@530a8454]" started-at="2024-02-01T05:30:15Z" name="closeBrowser" finished-at="2024-02-01T05:30:16Z" duration-ms="203" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>
