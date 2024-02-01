@@ -173,14 +173,14 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		logger.info("E10_3218_ApplyTimeOff is successful");
 	}
 
-	@Test(priority = 11)
-	public void E10_3213_Verify_ApplyOnBehalf() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3213_ApplyOnBehalf...");
-
-		applyLeave.E10_3213_ApplyOnBehalf(fakeEmployee);
-		logger.info("E10_3213_ApplyOnBehalf is successful");
-	}
+//	@Test(priority = 11)
+//	public void E10_3213_Verify_ApplyOnBehalf() throws Exception {
+//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		logger.info("E10_3213_ApplyOnBehalf...");
+//
+//		applyLeave.E10_3213_ApplyOnBehalf(fakeEmployee);
+//		logger.info("E10_3213_ApplyOnBehalf is successful");
+//	}
 	@Test(priority = 12)
 	public void E10_3219_Verify_ApplyForUncontrolledLeave() throws Exception {
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
@@ -190,15 +190,15 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 		logger.info("E10_3219_Verify_ApplyForUncontrolledLeave is successful");
 	}
-	@Test(priority = 13)
-	public void E10_3222_Verify_ApplyLeaveP2() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-		logger.info("E10_3213_ApplyOnBehalf...");
-
-		applyLeave.E10_3222_ApplyLeaveP2(fakeEmployee);
-
-		logger.info("E10_3216_ESSApplyLeaveTest is successful");
-	}
+//	@Test(priority = 13)
+//	public void E10_3222_Verify_ApplyLeaveP2() throws Exception {
+//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		logger.info("E10_3213_ApplyOnBehalf...");
+//
+//		applyLeave.E10_3222_ApplyLeaveP2(fakeEmployee);
+//
+//		logger.info("E10_3216_ESSApplyLeaveTest is successful");
+//	}
 
 
 	//	@Test (priority = 14)

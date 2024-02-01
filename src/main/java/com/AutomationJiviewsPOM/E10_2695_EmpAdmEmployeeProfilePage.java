@@ -1352,7 +1352,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 //		clickNotificationPopup(); Not Required 
 		pressBtnSaveEmployee();
 //		getEmployeeProfilecreatedSuccessfullyMsg();
-		clickNotificationPopup();
+//		clickNotificationPopup();
 	}
 	public void duplicateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickBtnDuplicate();

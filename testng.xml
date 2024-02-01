@@ -5,22 +5,7 @@
 	</listeners>
 
 
-	<test
-		name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
-	<test
-		name="E10_2695_EmpAdmEmployeeProfileTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
-			/>
-		</classes>
-	</test>
-	<!-- 
+	
 	 <test
 		name="E10_2606_ShiftBandTest">
 		<classes>
@@ -113,7 +98,7 @@
 			/>
 		</classes>
 	</test> 
-	-->
+	
 
 
 </suite>
