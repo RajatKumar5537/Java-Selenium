@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="13" total="14" passed="1" failed="0" skipped="0">
+<testng-results ignored="2" total="3" passed="1" failed="0" skipped="0">
   <reporter-output>
     <line>
       <![CDATA[Login]]>
@@ -8,46 +8,42 @@
       <![CDATA[Logout]]>
     </line>
   </reporter-output>
-  <suite started-at="2024-02-01T08:24:43Z" name="Default suite" finished-at="2024-02-01T08:25:38Z" duration-ms="55706">
+  <suite started-at="2024-02-01T14:52:47Z" name="Default suite" finished-at="2024-02-01T14:53:44Z" duration-ms="57058">
     <groups>
     </groups>
-    <test started-at="2024-02-01T08:24:43Z" name="Default test" finished-at="2024-02-01T08:25:38Z" duration-ms="55706">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:43Z" name="launchBrowser" finished-at="2024-02-01T08:24:44Z" duration-ms="1676" status="PASS">
+    <test started-at="2024-02-01T14:52:47Z" name="Default test" finished-at="2024-02-01T14:53:44Z" duration-ms="57058">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:52:47Z" name="launchBrowser" finished-at="2024-02-01T14:52:49Z" duration-ms="1556" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:44Z" name="beforeTestMethod" finished-at="2024-02-01T08:24:47Z" duration-ms="2515" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:52:49Z" name="beforeTestMethod" finished-at="2024-02-01T14:53:02Z" duration-ms="13761" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Login]]>
             </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:47Z" name="setup" finished-at="2024-02-01T08:24:53Z" duration-ms="6336" status="PASS">
+        <test-method is-config="true" signature="setup()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:53:02Z" name="setup" finished-at="2024-02-01T14:53:16Z" duration-ms="13383" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- setup -->
-        <test-method signature="E10_3470_Verify_UnrecordLeave()[pri:26, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:24:53Z" name="E10_3470_Verify_UnrecordLeave" finished-at="2024-02-01T08:25:27Z" duration-ms="33755" status="PASS">
+        <test-method signature="E10_3174_VerifyDeleteVesselSchedule()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:53:16Z" name="E10_3174_VerifyDeleteVesselSchedule" finished-at="2024-02-01T14:53:44Z" duration-ms="28346" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- E10_3470_Verify_UnrecordLeave -->
-        <test-method is-config="true" signature="logoutAfterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:27Z" name="logoutAfterTestMethod" finished-at="2024-02-01T08:25:38Z" duration-ms="11235" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- logoutAfterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:38Z" name="closeBrowser" finished-at="2024-02-01T08:25:38Z" duration-ms="177" status="PASS">
+        </test-method> <!-- E10_3174_VerifyDeleteVesselSchedule -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:53:44Z" name="closeBrowser" finished-at="2024-02-01T14:53:44Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest@3d9fc57a]" started-at="2024-02-01T08:25:38Z" name="afterTestMethod" finished-at="2024-02-01T08:25:38Z" duration-ms="0" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest@46292372]" started-at="2024-02-01T14:53:44Z" name="afterTestMethod" finished-at="2024-02-01T14:53:44Z" duration-ms="0" status="PASS">
           <reporter-output>
             <line>
               <![CDATA[Logout]]>
             </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->
 </testng-results>

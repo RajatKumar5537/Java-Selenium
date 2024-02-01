@@ -2,6 +2,7 @@ package com.AutomationJiviewsPOM;
 
 import java.time.Duration;
 import java.util.List;
+import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.By;
@@ -26,6 +27,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement dtPlanning;
+	@FindBy(xpath = "(//span[text()='×'])[1]")
+	private WebElement closeBtn;
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement selectShiftBandType;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
@@ -57,7 +60,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	private WebElement btnAddEquipmentType;
 	@FindBy(xpath = "//span[@id='select2-cmbEquipmentType1-container']")
 	private WebElement cmbEquipmentType;
-	@FindBy(xpath = "//li[@class='select2-results__option']")
+	@FindBy(xpath = "//li[text()='RTG']") //li[@class='select2-results__option']
 	private WebElement selectEquipmentType;
 	@FindBy(xpath = "//input[@id='txtRequirement1']")
 	private WebElement txtRequirement;
@@ -201,6 +204,19 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 			e.printStackTrace(); 
 		}
 	}
+	public void sletCloseBtn() {
+	    try {
+	        if (closeBtn.isDisplayed()) {
+	        	webUtility.ElementClickable(driver, closeBtn);
+	            closeBtn.click();
+	        } else {
+	            System.out.println("Close button is not displayed. Skipping the click.");
+	        }
+	    } catch (NoSuchElementException e) {
+	        System.out.println("Close button not found. Skipping the click.");
+	    }
+	}
+
 	public void selectShiftBandType(String bandType) {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -252,8 +268,13 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-		webUtility.ElementClickable(driver, btnAddVesselSchedule);
-		webUtility.moveToElement(driver, btnAddVesselSchedule);
+//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+//		webUtility.moveToElement(driver, btnAddVesselSchedule);
+		
+		 // Wait for the overlay to be invisible before clicking the button
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+
 		btnAddVesselSchedule.click();
 	}
 
@@ -358,8 +379,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	public void clickBtnChangeButton() {
 		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		webUtility.moveToElement(driver, btnChangeButton);
 		webUtility.ElementClickable(driver, btnChangeButton);
+		webUtility.moveToElement(driver, btnChangeButton);
 		btnChangeButton.click();
 	}
 	public void clickBtnTimeLineView() {
@@ -456,9 +477,9 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Crane Schedule deleted successfully"));
 	}
 	public void clickBtnEquipmentsMatrix() {
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		webUtility.ElementClickable(driver, btnEquipmentsMatrix);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnEquipmentsMatrix")));
+		wait.until(ExpectedConditions.elementToBeClickable(btnEquipmentsMatrix));
 		btnEquipmentsMatrix.click();
 	}
 	public void enterActivityGenPlanning(String GenPlanning) {
@@ -538,6 +559,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnTableView();
 		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
+		sletCloseBtn();
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
@@ -596,10 +618,13 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnTableView();
 		Thread.sleep(10000);
 		enterPlanning(fakeEmployee.getDtPlanning());
+		Thread.sleep(4000);
+		sletCloseBtn();
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
-		Thread.sleep(10000);
+		clickSearchDailyPlanning();
+		Thread.sleep(5000);
 		deleteRowsWithEnabledCheckbox();
 		clickBtnYes();
 		clickNotificationPopup();

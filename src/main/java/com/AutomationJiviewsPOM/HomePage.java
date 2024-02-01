@@ -41,7 +41,7 @@ public class HomePage extends BaseClass{
 	}
 
 	public void setLogout() throws InterruptedException {
-		Thread.sleep(1000);
+		Thread.sleep(3000);
 		Logout.click();
 	}
 	

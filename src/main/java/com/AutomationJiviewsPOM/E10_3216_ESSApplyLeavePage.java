@@ -847,7 +847,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 		clickApplyLeave();
-
+		Thread.sleep(2000);
 		enterLeaveType();
 		chooseEmergencyLeave();
 		Thread.sleep(2000);
@@ -913,22 +913,19 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String expectedTitle = "Leave Records - JiViews";
 		Thread.sleep(2000);		// Compare the actual title with the expected title
 		Assert.assertEquals(actualTitle, expectedTitle, "Page title does not match the expected title");
-		//		clickNotificationPopup();
-		//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3228_EmployeeKiosk_MyleaveProfile()throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
-
+		Thread.sleep(2000);
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(un, pwd);
+		clickNotificationPopup();
 		jmMenuItem.clickOnEmployeeSelfService();
 		Thread.sleep(2000);
 		empKiosk.clickEmployeeKiosk();
 
 		clickMyLeaveProfile();
-		clickNotificationPopup();
-		//		homePage.clickOnBtnLogout();
 	}
 	public void E10_3229_ApproverKiosk_ApproveLeave(FakeEmployee fakeEmployee)throws Exception{
 		String unApr = configUtility.getCongigPropertyData("unApprover");
@@ -961,7 +958,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void E10_3230_ApproverKiosk_CancelApproveleave(FakeEmployee fakeEmployee) throws Exception {
 		String un = configUtility.getCongigPropertyData("unApprover");
 		String pwd = configUtility.getCongigPropertyData("pwdApprover");
-
+		Thread.sleep(2000);
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(un, pwd);
 		clickNotificationPopup();
@@ -1040,7 +1037,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
-
+		Thread.sleep(2000);
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(unEmp, pwdEmp);
 		jmMenuItem.clickOnEmployeeSelfService();

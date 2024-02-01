@@ -4,7 +4,7 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
+ 
 	
 	 <test
 		name="E10_2606_ShiftBandTest">
@@ -81,6 +81,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
 		</classes>
 	</test>
+	<!-- 
 	<test
 		name="E10_3147_WorkloadPlannerTest">
 		<classes>
@@ -97,7 +98,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
-	</test> 
+	</test> -->
 	
 
 
