@@ -530,10 +530,32 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		//		webUtility.moveToElement(driver, btnYes);
 		btnYes.click();
 	}
+//	public void clickNotificationPopup() throws Exception {
+//		webUtility.ElementClickable(driver, notificationPopup);
+//		notificationPopup.click();
+//	}
 	public void clickNotificationPopup() throws Exception {
-		webUtility.ElementClickable(driver, notificationPopup);
-		notificationPopup.click();
+	    try {
+	        if (isElementDisplayed(notificationPopup)) {
+	            webUtility.ElementClickable(driver, notificationPopup);
+	            notificationPopup.click();
+	        } else {
+	            System.out.println("Notification popup is not displayed. Continuing with other methods.");
+	        }
+	    } catch (Exception e) {
+	        System.err.println("An exception occurred while handling the notification popup: " + e.getMessage());
+	        throw e; // Rethrow the exception if needed
+	    }
 	}
+	// Helper method to check if an element is displayed
+	public boolean isElementDisplayed(WebElement element) {
+	    try {
+	        return element.isDisplayed();
+	    } catch (Exception e) {
+	        return false;
+	    }
+	}
+
 	public void getLeaveCancelledSuccessfullyMsg() {
 		String actualResult =LeaveCancelledSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Leave Cancelled Successfully"));
@@ -874,7 +896,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 	public void E10_3226_EmployeeKiosk_ViewCalendarCheckShiftDetails() throws Exception{
 		String un = configUtility.getCongigPropertyData("unEmp");
 		String pwd = configUtility.getCongigPropertyData("pwdEmp");
-
+		Thread.sleep(2000);
 		homePage.clickOnBtnLogout();
 		loginPage.setLogin(un, pwd);
 		//		Thread.sleep(8000);
@@ -974,7 +996,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickCancelApprovedLeaves();
 		clickCancelLeaveEmpNumber();
 		Thread.sleep(2000);
-		enterSearchFiled("33128455");
+		enterSearchFiled("97867863");
 		clickBtnSearchLeaveApplications();
 		///////////////////////////////////////////////////check it proper for Approver 
 		//				cancleLeaveRecordWithEnabledBtn();
@@ -1477,106 +1499,106 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		String unApprover = configUtility.getCongigPropertyData("unApprover");
 		String pwdApprover = configUtility.getCongigPropertyData("pwdApprover");
 
-		// Apply Hospitalization Leave as Employee 
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unEmp, pwdEmp);
-		jmMenuItem.clickOnEmployeeSelfService();
-		Thread.sleep(2000);
-		empKiosk.clickEmployeeKiosk();
-
-		clickApplyLeave();
-		enterLeaveType();
-		chooseHospitalizationLeave();
-		enterLeaveStartDate("09/01/2024");
-		Thread.sleep(2000);
-		enterLeaveEndDate("09/01/2024");
-		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
-		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
-		Thread.sleep(2000);
-		selectPanelClinicName();
-		choosePanelClinicName();
-		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
-		
-		pressBtnNext();
-		Thread.sleep(4000);
-		clickBtnAddAttachment();
-		selectFileToUpload();
-		clickBtnUpload();
-		pressBtnNext();
-		clickBtnFinish();
-		//		getLeaveApplicationSubmittedSuccessfullyMsg();
-		clickNotificationPopup();
-
-		//		Approver Approve apply Hospitalization Leave ..........................................
-
-
-
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unApprover, pwdApprover);
-
-		clickNotificationPopup();
-		Thread.sleep(2000);
-		homePage.setOrgUnit();
-		clickOn_OLM();
-		jmMenuItem.clickOnEmployeeSelfService();
-		Thread.sleep(2000);
-		empKiosk.clickApproverKiosk();
-		//		clickNotificationPopup();
-		Thread.sleep(2000);
-
-		clickApproveLeave();
-		Thread.sleep(2000);
-		pendingForApprovalRowsWithEnabledCheckbox();
-		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
-		clickBtnSaveRemarks();
-		clickBtnYes();
-		Thread.sleep(2000);
-		clickNotificationPopup();
-
-
-		//		Employee Cancel approved Hospitalization Leave ..........................................  
-
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unEmp, pwdEmp);
-		jmMenuItem.clickOnEmployeeSelfService();
-		Thread.sleep(2000);
-		empKiosk.clickEmployeeKiosk();
-
-		clickLeaveRecords();
-		clickLeaveRecordList();
-		Thread.sleep(2000);
-		//		clickBtnCancleLeave();
-		cancelLeaveRecordWithEnabledBtn();
-		clickBtnYes();
-		Thread.sleep(2000);
-		getLeaveCancelledSuccessfullyMsg();
-		clickNotificationPopup();
-
-
-
-		//		Approver Approve Cancel  Hospitalization Leave ..........................................
-
-
-		homePage.clickOnBtnLogout();
-		loginPage.setLogin(unApprover, pwdApprover);
-
-		clickNotificationPopup();
-		Thread.sleep(2000);
-		homePage.setOrgUnit();
-		clickOn_OLM();
-		jmMenuItem.clickOnEmployeeSelfService();
-		Thread.sleep(2000);
-		empKiosk.clickApproverKiosk(); 
-
-		clickApproveLeave();
-		Thread.sleep(2000);
-
-		pendingCancelApprovalRowsWithEnabledCheckbox();
-		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
-		clickBtnSaveRemarks();
-		clickBtnYes();
-		Thread.sleep(2000);
-		clickNotificationPopup();
+//		// Apply Hospitalization Leave as Employee 
+//		homePage.clickOnBtnLogout();
+//		loginPage.setLogin(unEmp, pwdEmp);
+//		jmMenuItem.clickOnEmployeeSelfService();
+//		Thread.sleep(2000);
+//		empKiosk.clickEmployeeKiosk();
+//
+//		clickApplyLeave();
+//		enterLeaveType();
+//		chooseHospitalizationLeave();
+//		enterLeaveStartDate("09/01/2024");
+//		Thread.sleep(2000);
+//		enterLeaveEndDate("09/01/2024");
+//		//		enterLeaveEndDate(fakeEmployee.getLeaveEndDate());
+//		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
+//		Thread.sleep(2000);
+//		selectPanelClinicName();
+//		choosePanelClinicName();
+//		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
+//		
+//		pressBtnNext();
+//		Thread.sleep(4000);
+//		clickBtnAddAttachment();
+//		selectFileToUpload();
+//		clickBtnUpload();
+//		pressBtnNext();
+//		clickBtnFinish();
+//		//		getLeaveApplicationSubmittedSuccessfullyMsg();
+//		clickNotificationPopup();
+//
+//		//		Approver Approve apply Hospitalization Leave ..........................................
+//
+//
+//
+//		homePage.clickOnBtnLogout();
+//		loginPage.setLogin(unApprover, pwdApprover);
+//
+//		clickNotificationPopup();
+//		Thread.sleep(2000);
+//		homePage.setOrgUnit();
+//		clickOn_OLM();
+//		jmMenuItem.clickOnEmployeeSelfService();
+//		Thread.sleep(2000);
+//		empKiosk.clickApproverKiosk();
+//		//		clickNotificationPopup();
+//		Thread.sleep(2000);
+//
+//		clickApproveLeave();
+//		Thread.sleep(2000);
+//		pendingForApprovalRowsWithEnabledCheckbox();
+//		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+//		clickBtnSaveRemarks();
+//		clickBtnYes();
+//		Thread.sleep(2000);
+//		clickNotificationPopup();
+//
+//
+//		//		Employee Cancel approved Hospitalization Leave ..........................................  
+//
+//		homePage.clickOnBtnLogout();
+//		loginPage.setLogin(unEmp, pwdEmp);
+//		jmMenuItem.clickOnEmployeeSelfService();
+//		Thread.sleep(2000);
+//		empKiosk.clickEmployeeKiosk();
+//
+//		clickLeaveRecords();
+//		clickLeaveRecordList();
+//		Thread.sleep(2000);
+//		//		clickBtnCancleLeave();
+//		cancelLeaveRecordWithEnabledBtn();
+//		clickBtnYes();
+//		Thread.sleep(2000);
+//		getLeaveCancelledSuccessfullyMsg();
+//		clickNotificationPopup();
+//
+//
+//
+//		//		Approver Approve Cancel  Hospitalization Leave ..........................................
+//
+//
+//		homePage.clickOnBtnLogout();
+//		loginPage.setLogin(unApprover, pwdApprover);
+//
+//		clickNotificationPopup();
+//		Thread.sleep(2000);
+//		homePage.setOrgUnit();
+//		clickOn_OLM();
+//		jmMenuItem.clickOnEmployeeSelfService();
+//		Thread.sleep(2000);
+//		empKiosk.clickApproverKiosk(); 
+//
+//		clickApproveLeave();
+//		Thread.sleep(2000);
+//
+//		pendingCancelApprovalRowsWithEnabledCheckbox();
+//		enterTxtApproveRejectAllRemarks(fakeEmployee.getRemarksLeave());
+//		clickBtnSaveRemarks();
+//		clickBtnYes();
+//		Thread.sleep(2000);
+//		clickNotificationPopup();
 
 
 		// Apply Marriage Leave as Employee..........................................

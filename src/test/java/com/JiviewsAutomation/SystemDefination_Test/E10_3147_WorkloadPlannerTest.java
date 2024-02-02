@@ -43,21 +43,21 @@ public class E10_3147_WorkloadPlannerTest extends BaseClass{
 
 
 	@Test(priority = 1)
-	public void E10_3211_VerifyCreateVesselScheduleTableView() throws InterruptedException, IOException {
+	public void E10_3211_Verify_CreateVesselScheduleTableView() throws InterruptedException, IOException {
 		captureScreenshot(driver, "E10_3211_WorkloadPlannerTest");
 		logger.info("E10_3211 Create Vessel Schedule with Table view...");
 
 		workloadPlanner.E10_3211_CreateVesselScheduleTableView(fakeEmployee);
 		logger.info("E10_3211_Create a Vessel Schedule with Table view is successful");
 	}
-//	@Test(priority = 2)
-//	public void E10_3181_VerifyGenerateEquipments() throws Exception {
-//		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
-//		logger.info("E10_3181 Generate Equipment...");
-//
-//		workloadPlanner.E10_3181_GenerateEquipments(fakeEmployee);	
-//		logger.info("E10_3181 Generate Equipment is successful");
-//	}
+	@Test(priority = 2)
+	public void E10_3181_Verify_GenerateEquipments() throws Exception {
+		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");
+		logger.info("E10_3181 Generate Equipment...");
+
+		workloadPlanner.E10_3181_GenerateEquipments(fakeEmployee);	
+		logger.info("E10_3181 Generate Equipment is successful");
+	}
 	@Test(priority = 3)
 	public void E10_3182_VerifyPlanningSignoff()  throws Exception{
 		captureScreenshot(driver, "E10_3147_WorkloadPlannerTest");

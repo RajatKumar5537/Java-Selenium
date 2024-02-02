@@ -90,6 +90,8 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
+	
+	
 
 	public E10_2749_SystemDefinationRoleGroupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);

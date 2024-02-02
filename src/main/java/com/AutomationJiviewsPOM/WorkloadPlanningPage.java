@@ -43,6 +43,7 @@ public class WorkloadPlanningPage extends BaseClass{
 	}
 	public void clickOnRTGPlanning() {
 		clickWorkloadPlanning();
-		clickRTGPlanning();
+		RTGPlanning.click();
+//		clickRTGPlanning();
 	}
 }

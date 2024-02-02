@@ -1,7 +1,5 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
-
-
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.AfterMethod;
@@ -190,15 +188,15 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 		logger.info("E10_3219_Verify_ApplyForUncontrolledLeave is successful");
 	}
-//	@Test(priority = 13)
-//	public void E10_3222_Verify_ApplyLeaveP2() throws Exception {
-//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
-//		logger.info("E10_3213_ApplyOnBehalf...");
-//
-//		applyLeave.E10_3222_ApplyLeaveP2(fakeEmployee);
-//
-//		logger.info("E10_3216_ESSApplyLeaveTest is successful");
-//	}
+	@Test(priority = 13)
+	public void E10_3222_Verify_ApplyLeaveP2() throws Exception {
+		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		logger.info("E10_3213_ApplyOnBehalf...");
+
+		applyLeave.E10_3222_ApplyLeaveP2(fakeEmployee);
+
+		logger.info("E10_3216_ESSApplyLeaveTest is successful");
+	}
 
 
 	//	@Test (priority = 14)

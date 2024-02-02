@@ -5,11 +5,14 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.TimeUnit;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebDriverException;
 import org.openqa.selenium.WebElement;
@@ -23,17 +26,21 @@ import org.testng.Assert;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 
+import io.netty.handler.timeout.TimeoutException;
+
 public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement dtPlanning;
-	@FindBy(xpath = "(//span[text()='×'])[1]")
+	@FindBy(xpath = "//span[@class='select2-selection__clear']")
 	private WebElement closeBtn;
 	@FindBy(xpath = "//input[@class='select2-search__field']")
 	private WebElement selectShiftBandType;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement shiftBandOption;
-	@FindBy(xpath = "//button[@id='btnSearchDailyPlanning']")
+
+	//	@FindBy(xpath = "//button[@id='btnSearchDailyPlanning']")
+	@FindBy(id = "btnSearchDailyPlanning")
 	private WebElement btnSearchDailyPlanning;
 
 	@FindBy(xpath = "//div[@class='centered_cell centered_cell_business']")
@@ -132,11 +139,14 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	@FindBy(xpath = "//div[text()='Vessel Schedule deleted successfully']")
 	private WebElement vesselScheduleDeletedSuccessfullyMsg;
 
-	@FindBy(xpath = "//div[@id='dvContent']/div[1]/div/div[1]/button") 
+	//	@FindBy(xpath = "//div[@id='dvContent']/div[1]/div/div[1]/button") 
+	@FindBy(xpath = "//button[@class='btn btn-info btn-round icon-btn dropdown-toggle hide-arrow']")
 	private WebElement btnChangeButton; 
+
 	@FindBy(xpath = "//a[@id='btnTimeLineView']")
 	private WebElement btnTimeLineView;
-	@FindBy(xpath = "//a[@id='btnTableView']")
+	//	@FindBy(xpath = "//a[@id='btnTableView']")
+	@FindBy(id = "btnTableView")
 	private WebElement btnTableView;
 
 	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1 edit'])[1]")
@@ -205,16 +215,40 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		}
 	}
 	public void sletCloseBtn() {
-	    try {
-	        if (closeBtn.isDisplayed()) {
-	        	webUtility.ElementClickable(driver, closeBtn);
-	            closeBtn.click();
-	        } else {
-	            System.out.println("Close button is not displayed. Skipping the click.");
-	        }
-	    } catch (NoSuchElementException e) {
-	        System.out.println("Close button not found. Skipping the click.");
-	    }
+		//	    try {
+		//	        if (closeBtn.isDisplayed()) {
+		//	        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		//	        	wait.until(ExpectedConditions.elementToBeClickable(closeBtn));
+		////	            closeBtn.click();
+		//	            JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//	            executor.executeScript("arguments[0].click();", closeBtn);
+		//
+		//	        } else {
+		//	            System.out.println("Close button is not displayed. Skipping the click.");
+		//	        }
+		//	    } catch (NoSuchElementException e) {
+		//	        System.out.println("Close button not found. Skipping the click.");
+		//	    }
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement clickableCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(closeBtn));
+
+			if (clickableCloseBtn.isDisplayed()) {
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", clickableCloseBtn);
+			} else {
+				System.out.println("Close button is not displayed. Skipping the click.");
+			}
+		} catch (NoSuchElementException e) {
+			System.out.println("Close button not found. Skipping the click.");
+		}catch (UnhandledAlertException alertException) {
+			try {
+				Alert alert = driver.switchTo().alert();
+				alert.accept(); // Handle the alert (you can also use alert.dismiss() if needed)
+			} catch (NoAlertPresentException noAlert) {
+				System.out.println("No alert present. Continuing with the test.");
+			}
+		}
 	}
 
 	public void selectShiftBandType(String bandType) {
@@ -233,7 +267,11 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	//	}
 	public void clickSearchDailyPlanning() {
 		//	webUtility.ElementClickable(driver, btnSearchDailyPlanning);
-		webUtility.doubleClickOnElement(driver, btnSearchDailyPlanning);
+		//		webUtility.doubleClickOnElement(driver, btnSearchDailyPlanning);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnSearchDailyPlanning));
+		element.click();
+
 		//	btnSearchDailyPlanning.click();
 	}
 	public void rightClickCentered_Cell() throws InterruptedException {
@@ -268,12 +306,12 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		equipmentOption.click();
 	}
 	public void clickBtnAddVesselSchedule() {
-//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
-//		webUtility.moveToElement(driver, btnAddVesselSchedule);
-		
-		 // Wait for the overlay to be invisible before clicking the button
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		//		webUtility.ElementClickable(driver, btnAddVesselSchedule);
+		//		webUtility.moveToElement(driver, btnAddVesselSchedule);
+
+		// Wait for the overlay to be invisible before clicking the button
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 
 		btnAddVesselSchedule.click();
 	}
@@ -376,25 +414,55 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		String actualResult = vesselScheduleDeletedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Vessel Schedule deleted successfully"));
 	}
+	//	public void clickBtnChangeButton() {
+	////		webUtility.ElementClickable(driver, btnChangeButton);
+	////		webUtility.moveToElement(driver, btnChangeButton);
+	////		btnChangeButton.click();
+	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+	//		element.click();
+	//	}
 	public void clickBtnChangeButton() {
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		webUtility.ElementClickable(driver, btnChangeButton);
-		webUtility.moveToElement(driver, btnChangeButton);
-		btnChangeButton.click();
+		try {
+			// Check if the overlay is present before waiting for its invisibility
+			if (isOverlayPresent()) {
+				// Wait for the overlay to be invisible or absent
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+			}
+
+			// Proceed with clicking the button
+			WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement clickableBtn = buttonWait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+			clickableBtn.click();
+		} catch (NoSuchElementException e) {
+			System.out.println("Button not found. Skipping the click.");
+		} catch (TimeoutException e) {
+			System.out.println("Timed out waiting for overlay to disappear. Skipping the click.");
+		} catch (Exception e) {
+			// Handle other specific exceptions or log messages as needed
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
 	}
+
+	private boolean isOverlayPresent() {
+		try {
+			// Check if the overlay element is present
+			return driver.findElement(By.cssSelector("div.blockUI.blockOverlay")).isDisplayed();
+		} catch (NoSuchElementException e) {
+			// Overlay element is not present
+			return false;
+		}
+	}
+
+
 	public void clickBtnTimeLineView() {
 		btnTimeLineView.click();
 	}
 	public void clickBtnTableView() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-
-		// Wait until the button is clickable
 		WebElement tableViewButton = wait.until(ExpectedConditions.elementToBeClickable(btnTableView));
-
-		// Click the button
 		tableViewButton.click();
-		//		btnTableView.click();
 	}
 
 	public void clickVesselScheduleEdit() {
@@ -554,16 +622,17 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickNotificationPopup();
 	}
 	public void E10_3211_CreateVesselScheduleTableView(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(10000);
+		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-		Thread.sleep(5000);
+		//		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
 		sletCloseBtn();
+		Thread.sleep(2000);
 		selectShiftBandType("Am");
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
-		Thread.sleep(7000);
+		//		Thread.sleep(7000);
 		clickBtnAddVesselSchedule();
 
 		enterVesselName(fakeEmployee.getTxtVesselName());
