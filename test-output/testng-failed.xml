@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="setup"/>
           <include name="closeBrowser"/>
-          <include name="E10_2938_VerifySearchEmpRosterByDate"/>
+          <include name="setup"/>
+          <include name="E10_3544_Verify_EquipmentSummery"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

@@ -1,20 +1,107 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="Failed suite [Suite]" guice-stage="DEVELOPMENT">
-  <listeners>
-    <listener class-name="com.AutomationJiviewsGeneric.ListenerImplimentation"/>
-  </listeners>
   <test thread-count="5" name="Test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.shiftBandTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest">
         <methods>
           <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
           <include name="closeBrowser"/>
-          <include name="login"/>
-          <include name="logout"/>
-          <include name="verifyWithCombinationShift"/>
+          <include name="setup"/>
+          <include name="E10_3131_VerifyCreateSCR"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.shiftBandTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+          <include name="setUp"/>
+          <include name="E10_3083_VerifyCreateNewSkill"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="setup"/>
+          <include name="closeBrowser"/>
+          <include name="E10_2938_VerifySearchEmpRosterByDate"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
+        <methods>
+          <include name="setUp"/>
+          <include name="E10_3115_VerifyCreateShiftBand"/>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="setUp"/>
+          <include name="afterTestMethod"/>
+          <include name="E10_3122_VerifyCreateRoleGroups"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest">
+        <methods>
+          <include name="E10_3128_VerifyCreatePublicHoliday"/>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="setup"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest">
+        <methods>
+          <include name="E10_2697_VerifyCreateRoasterWithGroup"/>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="setup"/>
+          <include name="closeBrowser"/>
+          <include name="E10_2911_VerifyCreateRosterGroupAssignment"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+        <methods>
+          <include name="setup"/>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+          <include name="E10_3211_Verify_CreateVesselScheduleTableView"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+          <include name="setup"/>
+          <include name="E10_3542_Verify_SearchRecord"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest -->
     </classes>
   </test> <!-- Test(failed) -->
 </suite> <!-- Failed suite [Suite] -->
