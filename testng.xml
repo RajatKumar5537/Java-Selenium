@@ -81,4 +81,9 @@
             <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest" />
         </classes>
     </test>
+    <test name="E10_2638_PublicHolidayTest">
+        <classes>
+            <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest" />
+        </classes>
+    </test>
 </suite>
