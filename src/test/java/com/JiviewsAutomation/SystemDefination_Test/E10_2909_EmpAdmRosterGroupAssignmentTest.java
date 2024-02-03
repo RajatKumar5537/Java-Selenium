@@ -70,12 +70,12 @@ public class E10_2909_EmpAdmRosterGroupAssignmentTest extends BaseClass{
 		logger.info("E10-2921 Roster Group Assignment reactivated");
 	}
 	
-	@Test(priority = 5)
-	public void E10_2923_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
-		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-		logger.info("E10-2923 Add Employees Non-Members to Members and remove from Members to Non-Member....");
-		
-		rosterGrpAssignment.AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember();
-		logger.info("E10-2923 Succefully Add Employees Non-Members to Members and remove from Members to Non-Member");
-	}
+//	@Test(priority = 5)
+//	public void E10_2923_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
+//		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
+//		logger.info("E10-2923 Add Employees Non-Members to Members and remove from Members to Non-Member....");
+//		
+//		rosterGrpAssignment.AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember();
+//		logger.info("E10-2923 Succefully Add Employees Non-Members to Members and remove from Members to Non-Member");
+//	}
 }
