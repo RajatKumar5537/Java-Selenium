@@ -50,7 +50,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	}
 
 	@Test(priority = 2)
-	public void E10_2939_VerifySearchByFilters() throws IOException {
+	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Searching Employee Roster By Filters...");
 

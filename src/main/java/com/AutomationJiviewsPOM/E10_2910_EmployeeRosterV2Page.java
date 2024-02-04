@@ -293,15 +293,11 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-		Thread.sleep(2000);
-		 // Locate the input field
-	    WebElement startAndEndDateInput = driver.findElement(By.id("dtStartAndEnd"));
-	    // Wait until the element is clickable
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.elementToBeClickable(startAndEndDateInput));
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(startAndEndDateInput).perform();
-	    startAndEndDateInput.click();
+		Thread.sleep(3000);
+		// Click on dtStartAndEnd
+		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
+		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(30));
+		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
 	}
 	public void enterStartDate(String startDate) {
 		selectStartDate.clear();
@@ -334,7 +330,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement btnFilterDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnFilterDiv")));
 		btnFilterDiv.click();
-//		filterEmployee.click();
+		//		filterEmployee.click();
 	}
 	public void chooseRosterGroup() { 
 		filterRosterGroup.click();
@@ -576,7 +572,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		driver.switchTo().window(originalWindowHandle);
 		return pageTitle;
 	}
-	
+
 	private String getTitleOfNewTabWithAlertPopup(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
@@ -754,10 +750,10 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickbtnSearchEmployeeRoster();
 	}
 	// Jira Item: E10-2939 - Employee Roster V2 [Search by filters]
-	public void searchByFilters() {
+	public void searchByFilters() throws InterruptedException {
+		Thread.sleep(3000);
 		clickBtnFilter();
-		//		chooseRosterGroup();
-		//		chooseRoleGroup();
+
 		chooseShiftBand();
 		clickFilterSeachBtn();
 	}
