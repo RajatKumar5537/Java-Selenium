@@ -293,12 +293,24 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-		Thread.sleep(3000);
+//		Thread.sleep(3000);
+		// Click on dtStartAndEnd
+//		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
+//		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		Thread.sleep(3000);
+//		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
+		
+		// Wait for the page to be in a ready state
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
+
 		// Click on dtStartAndEnd
 		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
+
+		// Use WebDriverWait to wait for the element to be clickable
 		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(30));
-		Thread.sleep(3000);
 		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
+
 	}
 	public void enterStartDate(String startDate) {
 		selectStartDate.clear();
@@ -326,7 +338,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	public void clickBtnFilter() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
+//		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
 		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
 		btnFilterElement.click();
 	}
