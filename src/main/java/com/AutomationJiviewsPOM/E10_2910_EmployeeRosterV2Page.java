@@ -293,17 +293,14 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-//		Thread.sleep(2000);
+		Thread.sleep(2000);
 		 // Locate the input field
 	    WebElement startAndEndDateInput = driver.findElement(By.id("dtStartAndEnd"));
 	    // Wait until the element is clickable
 	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	    wait.until(ExpectedConditions.elementToBeClickable(startAndEndDateInput));
-	    
-	 // Scroll the element into view
 	    Actions actions = new Actions(driver);
 	    actions.moveToElement(startAndEndDateInput).perform();
-	    // Click the input field
 	    startAndEndDateInput.click();
 	}
 	public void enterStartDate(String startDate) {
@@ -334,7 +331,10 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnFilterElement.click();
 	}
 	public void enterEmployeeName() {
-		filterEmployee.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement btnFilterDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnFilterDiv")));
+		btnFilterDiv.click();
+//		filterEmployee.click();
 	}
 	public void chooseRosterGroup() { 
 		filterRosterGroup.click();
