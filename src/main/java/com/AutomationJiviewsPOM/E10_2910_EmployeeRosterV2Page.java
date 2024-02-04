@@ -17,9 +17,11 @@ import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
 
+import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
+import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
@@ -27,6 +29,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedCondition;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
@@ -42,9 +45,9 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public Actions actions = new Actions(driver);
 	ExcelUtilities excelUtilities= new ExcelUtilities();
 
-	@FindBy(xpath = "//input[@id='dtStartAndEnd']")
+	@FindBy(id = "dtStartAndEnd")
 	private WebElement dateStartAndEnd;
-	@FindBy(xpath = "(//input[@name='daterangepicker_start'])[2]")
+	@FindBy(xpath = "//input[@class='input-mini form-control active']")
 	private WebElement selectStartDate;
 	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]")
 	private WebElement selectEndDate;
@@ -290,13 +293,18 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-		//		webUtility.ElementClickable(driver, dateStartAndEnd);
-		//		dateStartAndEnd.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("nav.layout-navbar")));
-		// Click the "Start And End Dates" input field
-		WebElement startDateElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("dtStartAndEnd")));
-		startDateElement.click();
+//		Thread.sleep(2000);
+		 // Locate the input field
+	    WebElement startAndEndDateInput = driver.findElement(By.id("dtStartAndEnd"));
+	    // Wait until the element is clickable
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.elementToBeClickable(startAndEndDateInput));
+	    
+	 // Scroll the element into view
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(startAndEndDateInput).perform();
+	    // Click the input field
+	    startAndEndDateInput.click();
 	}
 	public void enterStartDate(String startDate) {
 		selectStartDate.clear();
@@ -320,10 +328,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnSearchEmployeeRoster.click();
 	}
 	public void clickBtnFilter() {
-		//		webUtility.ElementClickable(driver, btnFilterDiv);
-		//		btnFilterDiv.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("nav.layout-navbar")));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
 		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
 		btnFilterElement.click();
 	}
@@ -360,9 +366,6 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnHide.click();
 	}
 	public void clickBtnExpand() {
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		//		btnExpandDiv.click();
 		try {
 			// Wait for the overlay to disappear
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -546,37 +549,6 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		webUtility.moveToElement(driver, CollapseGroupOption);
 		CollapseGroupOption.click();
 	}
-
-	// Method to get the title of a page opened in a new tab
-	//	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
-	//		actions.contextClick(elementToRightClick).perform();
-	//		optionToClick.click();
-	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	//		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
-	//		// Get handles of all open windows
-	//		Set<String> windowHandles = driver.getWindowHandles();
-	//		String originalWindowHandle = driver.getWindowHandle();
-	//		// Find the handle of the new window
-	//		String newWindowHandle = "";
-	//		for (String windowHandle : windowHandles) {
-	//			if (!windowHandle.equals(originalWindowHandle)) {
-	//				newWindowHandle = windowHandle;
-	//				break;
-	//			}
-	//		}
-	//		// Switch to the new window
-	//		driver.switchTo().window(newWindowHandle);
-	//		// Wait for the title to be non-empty
-	//		wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-	//		Thread.sleep(10000);
-	//		// Get the title of the new window
-	//		String pageTitle = driver.getTitle();
-	//		// Close the new window
-	//		driver.close();
-	//		// Switch back to the original window
-	//		driver.switchTo().window(originalWindowHandle);
-	//		return pageTitle;
-	//	}
 	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
@@ -593,40 +565,51 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 				.filter(handle -> !handle.equals(originalWindowHandle))
 				.findFirst()
 				.orElseThrow(() -> new RuntimeException("New window handle not found"));
-
 		// Switch to the new window
 		driver.switchTo().window(newWindowHandle);
-
-		// Handle unexpected alert
-		try {
-			// Wait for the title to be non-empty
-			wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-			// Get the title of the new window
-			String pageTitle = driver.getTitle();
-			// Close the new window
-			driver.close();
-			// Switch back to the original window
-			driver.switchTo().window(originalWindowHandle);
-			return pageTitle;
-		} catch (UnhandledAlertException e) {
-			// Handle the UnhandledAlertException
-			System.out.println("UnhandledAlertException: " + e.getMessage());
-			// Close the new window
-			driver.close();
-			// Switch back to the original window
-			driver.switchTo().window(originalWindowHandle);
-			return null;  // or handle accordingly based on your test scenario
-		} catch (Exception e) {
-			// Handle other exceptions if needed
-			System.out.println("An unexpected error occurred: " + e.getMessage());
-			// Close the new window
-			driver.close();
-			// Switch back to the original window
-			driver.switchTo().window(originalWindowHandle);
-			return null;  // or handle accordingly based on your test scenario
-		}
+		// Wait for the page title to be non-empty
+		wait.until((ExpectedCondition<Boolean>) webDriver ->
+		!webDriver.getTitle().isEmpty());
+		Thread.sleep(8000);
+		String pageTitle = driver.getTitle();
+		driver.close();
+		driver.switchTo().window(originalWindowHandle);
+		return pageTitle;
 	}
+	
+	private String getTitleOfNewTabWithAlertPopup(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
+		actions.contextClick(elementToRightClick).perform();
+		optionToClick.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		// Wait for the new window to open
+		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
 
+		// Get handles of all open windows
+		Set<String> windowHandles = driver.getWindowHandles();
+		String originalWindowHandle = driver.getWindowHandle();
+		// Find the handle of the new window
+		String newWindowHandle = windowHandles.stream()
+				.filter(handle -> !handle.equals(originalWindowHandle))
+				.findFirst()
+				.orElseThrow(() -> new RuntimeException("New window handle not found"));
+		// Switch to the new window
+		driver.switchTo().window(newWindowHandle);
+		//	    // Check if an alert is present
+		try {
+			Alert alert = wait.until(ExpectedConditions.alertIsPresent());
+			System.out.println("Alert text: " + alert.getText());
+			alert.accept(); // Close the alert
+		} catch (TimeoutException e) {
+		}
+		// Wait for the page title to be non-empty
+		wait.until((ExpectedCondition<Boolean>) webDriver ->
+		!webDriver.getTitle().isEmpty());
+		Thread.sleep(8000);
+		String pageTitle = driver.getTitle();
+		driver.close();
+		driver.switchTo().window(originalWindowHandle);
+		return pageTitle;
+	}
 	public void mouseHoverApplyOnBehalfOption() {
 		webUtility.moveToElement(driver, applyOnBehalfOption);
 	}
@@ -1017,7 +1000,6 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		Clipboard clipboard = Toolkit.getDefaultToolkit().getSystemClipboard();
 		clipboard.setContents(stringSelection, null);
 	}
-
 	// Jira Item: E10-2950 - Employee Roster V2 [Right click -> Employee Profile] 
 	public void clickonEmployeeProfile(FakeEmployee fakeEmploye) throws InterruptedException, IOException {
 		clickStartAndEndDate();
@@ -1031,7 +1013,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickBtnClose();
 		Thread.sleep(2000);
 		// Get the title of the new tab
-		String employeeProfileTitle = getTitleOfNewTab(rightClickEmployee, employeeProfileOption);
+		String employeeProfileTitle = getTitleOfNewTabWithAlertPopup(rightClickEmployee, employeeProfileOption);
 		System.out.println("Actual Title is-: "+ employeeProfileTitle);
 		// Get the expected title from configuration
 		String empProfileTitle = configUtility.getCongigPropertyData("empProfileTitle");
@@ -1164,7 +1146,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		enterTimeOffRemarks(fakeEmployee.getRemarksLeave());
 		//	@FindBy(xpath = "(//button[@id='btnAddAttachment'])[2]")
 		//	private WebElement btnAddAttachment; ....................Not working button 
-
+		Thread.sleep(3000);
 		clickApplyTimeOff();
 		getTimeOffRequestSubmittedSuccessfullyMsg();
 		clickNotificationPopup();

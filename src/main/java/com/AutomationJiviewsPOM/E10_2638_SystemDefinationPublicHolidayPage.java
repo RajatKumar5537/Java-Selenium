@@ -112,17 +112,25 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 		btnEdit.click();
 	}
 	public void setCreateNotificationPopup() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationCreatePopup));
+
 		String actualResult = notificationCreatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday created successfully"));
 		notificationCreatePopup.click();
 	}
 	public void setUpdateNotificationPopup() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationUpdatePopup));
+
 		String actualResult = notificationUpdatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday updated successfully"));
 		notificationUpdatePopup.click();
 	}
 	public void setDeleteNotificationPopup() {
-		//		webUtility.moveToElement(driver, notificationDeletePopup);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationDeletePopup));
+
 		String actualResult = notificationDeletePopup.getText();
 		Assert.assertTrue(actualResult.contains("Deleted Selected Public Holiday Data."));
 		notificationDeletePopup.click();

@@ -124,7 +124,12 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		selectshiftBand.click();
 	}
 	public void searchRTGPlanning() {
-		btnSearchRTGPlanning.click();
+//		btnSearchRTGPlanning.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+	    // Locate and click the search button
+	    WebElement searchButton = driver.findElement(By.id("btnSearchRTGPlanning"));
+	    searchButton.click();
 	}
 	public void performAddRTGPlanning() {
 	    try {
