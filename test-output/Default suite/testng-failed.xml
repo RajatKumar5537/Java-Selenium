@@ -7,8 +7,8 @@
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="E10_2940_VerifyExpandAndCollapseRows"/>
           <include name="afterTestMethod"/>
+          <include name="E10_2939_VerifySearchByFilters"/>
           <include name="setup"/>
           <include name="closeBrowser"/>
         </methods>

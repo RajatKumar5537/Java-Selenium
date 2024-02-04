@@ -297,6 +297,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		// Click on dtStartAndEnd
 		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
 		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(30));
+		Thread.sleep(3000);
 		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
 	}
 	public void enterStartDate(String startDate) {
@@ -310,7 +311,10 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		selectEndDate.sendKeys(Keys.ENTER);
 	}
 	public void clickApply() {
-		clickApply.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    WebElement applyButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()='Apply'])[2]")));
+	    applyButton.click();
+//		clickApply.click();
 	}
 	public void cmbRosterGroupBy() {
 		webUtility.ElementClickable(driver, cmbRosterGroupBy);
@@ -742,6 +746,9 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
+//		clickApply();
+		Thread.sleep(3000);
+		
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
