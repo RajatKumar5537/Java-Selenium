@@ -26,9 +26,9 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 
 	@FindBy(id = "dtPlanning")
 	private WebElement txtPlanning;
+	
 	@FindBy(id = "select2-cmbShiftBand-container")
 	private WebElement txtShiftBand;
-
 	@FindBy(xpath = "(//input[@class='select2-search__field'])[1]")
 	private WebElement txtSearchField;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
@@ -106,14 +106,19 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	}
 	public void clickTxtShiftBand() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
-		WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(txtShiftBand));
-		bandTypeElement.click();
-	}
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
+	    WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
+	    bandTypeElement.click();
+//	    JavascriptExecutor executor = (JavascriptExecutor) driver;
+//	    executor.executeScript("arguments[0].click();", bandTypeElement);
+
+		}
 	public void enterShiftBandName(String name) {
-		txtSearchField.clear();
-		txtSearchField.sendKeys(name);
-		txtSearchField.sendKeys(Keys.ENTER);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtSearchField));
+		bandTypeElement.clear();
+		bandTypeElement.sendKeys(name);
+		bandTypeElement.sendKeys(Keys.ENTER);
 	}
 	public void selectShiftBand() {
 		selectshiftBand.click();

@@ -32,9 +32,11 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement dtPlanning;
-	@FindBy(xpath = "//span[@class='select2-selection__clear']")
+	@FindBy(id = "242")
 	private WebElement closeBtn;
-	@FindBy(xpath = "//input[@class='select2-search__field']")
+
+	//	@FindBy(xpath = "//input[@class='select2-search__field']")
+	@FindBy(className = "select2-search__field")
 	private WebElement selectShiftBandType;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement shiftBandOption;
@@ -214,49 +216,79 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 			e.printStackTrace(); 
 		}
 	}
+	//	public void sletCloseBtn() {
+	//		try {
+	//			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	//			WebElement clickableCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(closeBtn));
+	//
+	//			if (clickableCloseBtn.isDisplayed()) {
+	//				JavascriptExecutor executor = (JavascriptExecutor) driver;
+	//				executor.executeScript("arguments[0].click();", clickableCloseBtn);
+	//			} else {
+	//				System.out.println("Close button is not displayed. Skipping the click.");
+	//			}
+	//		} catch (NoSuchElementException e) {
+	//			System.out.println("Close button not found. Skipping the click.");
+	//		}catch (UnhandledAlertException alertException) {
+	//			try {
+	//				Alert alert = driver.switchTo().alert();
+	//				alert.accept(); // Handle the alert (you can also use alert.dismiss() if needed)
+	//			} catch (NoAlertPresentException noAlert) {
+	//				System.out.println("No alert present. Continuing with the test.");
+	//			}
+	//		}
+	//	}
 	public void sletCloseBtn() {
-		//	    try {
-		//	        if (closeBtn.isDisplayed()) {
-		//	        	WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-		//	        	wait.until(ExpectedConditions.elementToBeClickable(closeBtn));
-		////	            closeBtn.click();
-		//	            JavascriptExecutor executor = (JavascriptExecutor) driver;
-		//	            executor.executeScript("arguments[0].click();", closeBtn);
-		//
-		//	        } else {
-		//	            System.out.println("Close button is not displayed. Skipping the click.");
-		//	        }
-		//	    } catch (NoSuchElementException e) {
-		//	        System.out.println("Close button not found. Skipping the click.");
-		//	    }
 		try {
-			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-			WebElement clickableCloseBtn = wait.until(ExpectedConditions.elementToBeClickable(closeBtn));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20)); // Increased the timeout to 20 seconds
+			WebElement clickableCloseBtn = wait.until(ExpectedConditions.presenceOfElementLocated(By.id("242")));
 
 			if (clickableCloseBtn.isDisplayed()) {
-				JavascriptExecutor executor = (JavascriptExecutor) driver;
-				executor.executeScript("arguments[0].click();", clickableCloseBtn);
+				clickElementWithJavaScript(clickableCloseBtn);
 			} else {
 				System.out.println("Close button is not displayed. Skipping the click.");
 			}
-		} catch (NoSuchElementException e) {
-			System.out.println("Close button not found. Skipping the click.");
-		}catch (UnhandledAlertException alertException) {
-			try {
-				Alert alert = driver.switchTo().alert();
-				alert.accept(); // Handle the alert (you can also use alert.dismiss() if needed)
-			} catch (NoAlertPresentException noAlert) {
-				System.out.println("No alert present. Continuing with the test.");
-			}
+		} catch (TimeoutException e) {
+			System.out.println("Timeout waiting for the close button to be present. Check your element locator or adjust the wait duration.");
+			handleAlert(); // Call handleAlert() method in case of a TimeoutException
+		} catch (StaleElementReferenceException e) {
+			System.out.println("Stale element reference: The element is no longer attached to the DOM.");
+		} catch (Exception e) {
+			System.out.println("An unexpected error occurred: " + e.getMessage());
 		}
 	}
 
-	public void selectShiftBandType(String bandType) {
+	private void clickElementWithJavaScript(WebElement element) {
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement clickableElement = wait.until(ExpectedConditions.elementToBeClickable(element));
+
+			if (clickableElement.isDisplayed()) {
+				JavascriptExecutor executor = (JavascriptExecutor) driver;
+				executor.executeScript("arguments[0].click();", clickableElement);
+			} else {
+				System.out.println("Close button is not clickable. Skipping the click.");
+			}
+		} catch (TimeoutException e) {
+			System.out.println("Timeout waiting for the close button to be clickable. Check your element locator or adjust the wait duration.");
+		}
+	}
+
+	private void handleAlert() {
+		try {
+			Alert alert = driver.switchTo().alert();
+			alert.accept(); // Handle the alert (you can also use alert.dismiss() if needed)
+		} catch (NoAlertPresentException noAlert) {
+			System.out.println("No alert present. Continuing with the test.");
+		}
+	}
+
+	public void selectShiftBandType() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(selectShiftBandType));
-			bandTypeElement.clear();
-			bandTypeElement.sendKeys(bandType);
+			//			bandTypeElement.clear();
+			bandTypeElement.sendKeys("Am");
 			bandTypeElement.sendKeys(Keys.ENTER);
 		} catch (Exception e) {
 			e.printStackTrace(); 
@@ -266,13 +298,12 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	//		shiftBandOption.click();	
 	//	}
 	public void clickSearchDailyPlanning() {
-		//	webUtility.ElementClickable(driver, btnSearchDailyPlanning);
-		//		webUtility.doubleClickOnElement(driver, btnSearchDailyPlanning);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnSearchDailyPlanning));
-		element.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		// Now, the overlay should be gone, and you can click the button
+		WebElement btnSearchDailyPlanning = driver.findElement(By.id("btnSearchDailyPlanning"));
+		btnSearchDailyPlanning.click();
 
-		//	btnSearchDailyPlanning.click();
 	}
 	public void rightClickCentered_Cell() throws InterruptedException {
 		try {
@@ -460,9 +491,24 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		btnTimeLineView.click();
 	}
 	public void clickBtnTableView() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement tableViewButton = wait.until(ExpectedConditions.elementToBeClickable(btnTableView));
-		tableViewButton.click();
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//		WebElement tableViewButton = wait.until(ExpectedConditions.elementToBeClickable(btnTableView));
+		//		tableViewButton.click();
+		try {
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.and(
+					ExpectedConditions.presenceOfElementLocated(By.id("btnTableView")),
+					ExpectedConditions.visibilityOfElementLocated(By.id("btnTableView")),
+					ExpectedConditions.elementToBeClickable(By.id("btnTableView"))
+					));
+			// Once the conditions are met, find the button and click it
+			WebElement btnTableView = driver.findElement(By.id("btnTableView"));
+			btnTableView.click();
+
+		} catch (Exception e) {
+			// Log or handle the exception
+			e.printStackTrace();
+		}
 	}
 
 	public void clickVesselScheduleEdit() {
@@ -570,7 +616,14 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		selectEquipmentRequirement.click();
 	}
 	public void pressBtnPerformActivityGenerationTask() {
-		btnPerformActivityGenerationTask.click();
+//		btnPerformActivityGenerationTask.click();
+		try {
+	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	        WebElement btnGenerate = wait.until(ExpectedConditions.elementToBeClickable(btnPerformActivityGenerationTask));
+	        btnGenerate.click();
+	    } catch (Exception e) {
+	        System.out.println("Error: " + e.getMessage());
+	    }
 	}
 	public void pressBtnPlanningSignOff() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -589,7 +642,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnTimeLineView();
 		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
-		selectShiftBandType("Am");
+		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
 		Thread.sleep(5000);
@@ -625,16 +678,15 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-		//		Thread.sleep(5000);
+
 		enterPlanning(fakeEmployee.getDtPlanning());
+		Thread.sleep(2000);
 		sletCloseBtn();
 		Thread.sleep(2000);
-		selectShiftBandType("Am");
+		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
-		//		Thread.sleep(7000);
 		clickBtnAddVesselSchedule();
-
 		enterVesselName(fakeEmployee.getTxtVesselName());
 		enterVesselVisitId(fakeEmployee.getTxtVesselVisitId());
 		selectBerth();
@@ -673,7 +725,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnTableView();
 		Thread.sleep(10000);
 		enterPlanning(fakeEmployee.getDtPlanning());
-		selectShiftBandType("Am");
+		selectShiftBandType();
 		Thread.sleep(5000);
 		clickVesselScheduleEdit();
 		Thread.sleep(5000);
@@ -685,11 +737,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-		Thread.sleep(10000);
 		enterPlanning(fakeEmployee.getDtPlanning());
-		Thread.sleep(4000);
+//		Thread.sleep(4000);
 		sletCloseBtn();
-		selectShiftBandType("Am");
+		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
 		clickSearchDailyPlanning();
@@ -704,7 +755,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	public void E10_3175_CreateCraneSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
 		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
-		selectShiftBandType("PM");
+		selectShiftBandType();
 		//		chooseShiftBandOption();
 		clickSearchDailyPlanning();
 		Thread.sleep(5000);
@@ -729,7 +780,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnTimeLineView();
 		Thread.sleep(5000);
 		enterPlanning(fakeEmployee.getDtPlanning());
-		selectShiftBandType("Am");
+		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
 		Thread.sleep(5000);

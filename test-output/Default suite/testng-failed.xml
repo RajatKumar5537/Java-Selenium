@@ -8,9 +8,9 @@
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
+          <include name="E10_3543_Verify_AddEqipment"/>
           <include name="closeBrowser"/>
           <include name="setup"/>
-          <include name="E10_3542_Verify_SearchRecord"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest -->
     </classes>
