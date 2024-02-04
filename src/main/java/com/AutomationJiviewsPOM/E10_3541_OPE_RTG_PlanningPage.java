@@ -144,7 +144,7 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	public void selectAvailableShiftBand() {
 		action.scrollToElement(availableRTG).perform();
 		select = new Select(availableRTG);
-		select.selectByIndex(1);
+		select.selectByIndex(0);
 	}
 
 	public void moveSingleAvailableSkillToSelected() {
