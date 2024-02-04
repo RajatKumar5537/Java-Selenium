@@ -18,8 +18,10 @@ import java.util.NoSuchElementException;
 import java.util.Set;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
+import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -33,6 +35,8 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.configUtility;
+
+import io.netty.handler.timeout.TimeoutException;
 
 public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public Actions actions = new Actions(driver);
@@ -231,7 +235,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	private WebElement applyTimeOffOption;
 	@FindBy(xpath = "//input[@id='dtTimeOffDate']")
 	private WebElement dtTimeOffDate;
-	
+
 	@FindBy(xpath = "//span[@id='select2-cmbTimeOffPeriod-container']")
 	private WebElement txtTimeOffPeriod;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
@@ -286,9 +290,13 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-		Thread.sleep(4000);
-		webUtility.ElementClickable(driver, dateStartAndEnd);
-		dateStartAndEnd.click();
+		//		webUtility.ElementClickable(driver, dateStartAndEnd);
+		//		dateStartAndEnd.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("nav.layout-navbar")));
+		// Click the "Start And End Dates" input field
+		WebElement startDateElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("dtStartAndEnd")));
+		startDateElement.click();
 	}
 	public void enterStartDate(String startDate) {
 		selectStartDate.clear();
@@ -312,8 +320,12 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnSearchEmployeeRoster.click();
 	}
 	public void clickBtnFilter() {
-		webUtility.ElementClickable(driver, btnFilterDiv);
-		btnFilterDiv.click();
+		//		webUtility.ElementClickable(driver, btnFilterDiv);
+		//		btnFilterDiv.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("nav.layout-navbar")));
+		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
+		btnFilterElement.click();
 	}
 	public void enterEmployeeName() {
 		filterEmployee.click();
@@ -348,10 +360,22 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnHide.click();
 	}
 	public void clickBtnExpand() {
-		// Wait for the overlay to disappear
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		btnExpandDiv.click();
+		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		//		btnExpandDiv.click();
+		try {
+			// Wait for the overlay to disappear
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+			// Scroll into view and click using JavaScript
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].scrollIntoView(true);", btnExpandDiv);
+			executor.executeScript("arguments[0].click();", btnExpandDiv);
+		} catch (TimeoutException e) {
+			System.out.println("Timeout waiting for the overlay to disappear or click operation. Check your conditions or adjust the wait duration.");
+		} catch (Exception e) {
+			System.out.println("An unexpected error occurred: " + e.getMessage());
+		}
 	}
 	public void selectColumns(String column) {
 		columns.click();
@@ -524,35 +548,85 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 
 	// Method to get the title of a page opened in a new tab
+	//	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
+	//		actions.contextClick(elementToRightClick).perform();
+	//		optionToClick.click();
+	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	//		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+	//		// Get handles of all open windows
+	//		Set<String> windowHandles = driver.getWindowHandles();
+	//		String originalWindowHandle = driver.getWindowHandle();
+	//		// Find the handle of the new window
+	//		String newWindowHandle = "";
+	//		for (String windowHandle : windowHandles) {
+	//			if (!windowHandle.equals(originalWindowHandle)) {
+	//				newWindowHandle = windowHandle;
+	//				break;
+	//			}
+	//		}
+	//		// Switch to the new window
+	//		driver.switchTo().window(newWindowHandle);
+	//		// Wait for the title to be non-empty
+	//		wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
+	//		Thread.sleep(10000);
+	//		// Get the title of the new window
+	//		String pageTitle = driver.getTitle();
+	//		// Close the new window
+	//		driver.close();
+	//		// Switch back to the original window
+	//		driver.switchTo().window(originalWindowHandle);
+	//		return pageTitle;
+	//	}
 	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
+
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.numberOfWindowsToBe(2));
+
 		// Get handles of all open windows
 		Set<String> windowHandles = driver.getWindowHandles();
 		String originalWindowHandle = driver.getWindowHandle();
+
 		// Find the handle of the new window
-		String newWindowHandle = "";
-		for (String windowHandle : windowHandles) {
-			if (!windowHandle.equals(originalWindowHandle)) {
-				newWindowHandle = windowHandle;
-				break;
-			}
-		}
+		String newWindowHandle = windowHandles.stream()
+				.filter(handle -> !handle.equals(originalWindowHandle))
+				.findFirst()
+				.orElseThrow(() -> new RuntimeException("New window handle not found"));
+
 		// Switch to the new window
 		driver.switchTo().window(newWindowHandle);
-		// Wait for the title to be non-empty
-		wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
-		Thread.sleep(10000);
-		// Get the title of the new window
-		String pageTitle = driver.getTitle();
-		// Close the new window
-		driver.close();
-		// Switch back to the original window
-		driver.switchTo().window(originalWindowHandle);
-		return pageTitle;
+
+		// Handle unexpected alert
+		try {
+			// Wait for the title to be non-empty
+			wait.until(ExpectedConditions.not(ExpectedConditions.titleIs("")));
+			// Get the title of the new window
+			String pageTitle = driver.getTitle();
+			// Close the new window
+			driver.close();
+			// Switch back to the original window
+			driver.switchTo().window(originalWindowHandle);
+			return pageTitle;
+		} catch (UnhandledAlertException e) {
+			// Handle the UnhandledAlertException
+			System.out.println("UnhandledAlertException: " + e.getMessage());
+			// Close the new window
+			driver.close();
+			// Switch back to the original window
+			driver.switchTo().window(originalWindowHandle);
+			return null;  // or handle accordingly based on your test scenario
+		} catch (Exception e) {
+			// Handle other exceptions if needed
+			System.out.println("An unexpected error occurred: " + e.getMessage());
+			// Close the new window
+			driver.close();
+			// Switch back to the original window
+			driver.switchTo().window(originalWindowHandle);
+			return null;  // or handle accordingly based on your test scenario
+		}
 	}
+
 	public void mouseHoverApplyOnBehalfOption() {
 		webUtility.moveToElement(driver, applyOnBehalfOption);
 	}
@@ -773,8 +847,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-//		selectColumns("Disable");
-//		clickBtnClose();
+		//		selectColumns("Disable");
+		//		clickBtnClose();
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -856,7 +930,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		Thread.sleep(2000);
 		performCopyPasteAndConfirmForOnCallShift();
 		getShiftCreatedSuccessfullyMsg();
-//		clickNotificationPopup();
+		//		clickNotificationPopup();
 	}
 
 	// Jira Item: E10-2946 - Employee Roster V2 [Right Click -> Export to Text and Excel]
@@ -902,8 +976,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-//		selectColumns("Disable");
-//		clickBtnClose();
+		//		selectColumns("Disable");
+		//		clickBtnClose();
 		// Step 1: Create a list to store the data
 		List<String> allData = new ArrayList<>();
 
@@ -1049,7 +1123,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		enterLeaveReferenceNo(fakeEmployee.getReferenceNo());
 		enterLeaveRemarks(fakeEmployee.getRemarksLeave());
 		webUtility.scrollDown(driver);
-//		clickBtnNext();
+		//		clickBtnNext();
 
 		// Admin does not have the Approver 
 
@@ -1080,10 +1154,10 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		clickShiftCardForCopy();
 		mouseHoverApplyOnBehalfOption();
 
-		
+
 		clickApplyTimeOffOption();
-		
-//		enterTimeOffDate(fakeEmployee.getTmrwDate()); not required
+
+		//		enterTimeOffDate(fakeEmployee.getTmrwDate()); not required
 		Thread.sleep(3000);
 		selectTxtTimeOffPeriod();
 		chooseShiftStart();
@@ -1162,7 +1236,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		enterEDRemarks(fakeEmployee.getRemarksLeave());
 		clickBtnApplyExcludeDeployment();
 		clickBtnYes();
-//		getexcludeDeploymentExceptionCreatedSuccessfullyMsg();
+		//		getexcludeDeploymentExceptionCreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 }

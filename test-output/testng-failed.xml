@@ -3,16 +3,20 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
+          <include name="E10_2952_VerifyOpenNewTabApprovalRoute"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3543_Verify_AddEqipment"/>
-          <include name="closeBrowser"/>
           <include name="setup"/>
+          <include name="closeBrowser"/>
+          <include name="E10_2950_VerifyOpenNewTabEmployeeProfile"/>
+          <include name="E10_2951_VerifyOpenNewTabLeaveProfile"/>
+          <include name="E10_2942_VerifyPerformFullScreen"/>
+          <include name="E10_3006_VerifysearchByFiltersShiftBand"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

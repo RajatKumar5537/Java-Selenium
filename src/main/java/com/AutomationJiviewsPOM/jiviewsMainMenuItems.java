@@ -4,6 +4,7 @@ import java.time.Duration;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -11,6 +12,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.WebUtilities;
+
+import io.netty.handler.timeout.TimeoutException;
 
 public class jiviewsMainMenuItems extends BaseClass{
 
@@ -54,8 +57,11 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 
 	public void  clickMainMenu() {
-		webUtility.ElementClickable(driver, mainMenu);
-		mainMenu.click();
+//		webUtility.ElementClickable(driver, mainMenu);
+//		mainMenu.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(mainMenu));
+        element.click();
 	}
 
 	public void clickSystemDefination() {
@@ -68,13 +74,17 @@ public class jiviewsMainMenuItems extends BaseClass{
 		selectEmployeeAdministration.click();
 	}
 	public void clickWorkforceScheduling() {
-//		webUtility.ElementClickable(driver, selectWorkforceScheduling);
-//		webUtility.moveToElement(driver, selectWorkforceScheduling);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selectWorkforceScheduling));
-		element.click();
+		 try {
+		        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+		        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selectWorkforceScheduling));
 
-//		selectWorkforceScheduling.click();
+		        Actions actions = new Actions(driver);
+		        actions.moveToElement(element).click().perform();
+		    } catch (TimeoutException e) {
+		        System.out.println("Timeout waiting for the element to be clickable.");
+		    } catch (Exception e) {
+		        System.out.println("An unexpected error occurred: " + e.getMessage());
+		    }
 	}
 	public void clickSelectOperationPlanningExecution() {
 		webUtility.ElementClickable(driver, selectOperationPlanningExecution);
@@ -96,7 +106,6 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void setSelectWorkforceScheduling() throws InterruptedException {
 		clickMainMenu();
-		Thread.sleep(2000);
 		clickWorkforceScheduling();
 	}
 	public void clickOnOperationPlanningExecution() {
