@@ -341,9 +341,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		webUtility.moveToElement(driver, btnAddVesselSchedule);
 
 		// Wait for the overlay to be invisible before clicking the button
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-
 		btnAddVesselSchedule.click();
 	}
 
@@ -565,7 +564,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		for (int i = 0; i < rows.size(); i++) {
 			WebElement checkbox = checkboxes.get(i);
 			if (checkbox.isEnabled()) {
-				//					scrollAndClick(driver, checkbox);
 				checkbox.click();
 				performDeleteAction();
 				checkboxFound = true;
