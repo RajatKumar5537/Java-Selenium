@@ -298,11 +298,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 //		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
 		WebElement dtStartAndEnd = driver.findElement(By.xpath("//input[@id='dtStartAndEnd']"));
 	
-		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(60));
+//		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(60));
 //		waitDtStartAndEnd.until(ExpectedConditions.)
 		Thread.sleep(5000);
-		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).clear();
-		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).click();
+		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='dtStartAndEnd']")));
+		element.clear();
+		element.click();
+		
+//		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).clear();
+//		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).click();
 
 	}
 	public void enterStartDate(String startDate) {

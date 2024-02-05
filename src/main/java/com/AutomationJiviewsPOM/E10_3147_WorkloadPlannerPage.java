@@ -845,25 +845,17 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		String actualResult = vesselScheduleDeletedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Vessel Schedule deleted successfully"));
 	}
-	//	public void clickBtnChangeButton() {
-	////		webUtility.ElementClickable(driver, btnChangeButton);
-	////		webUtility.moveToElement(driver, btnChangeButton);
-	////		btnChangeButton.click();
-	//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	//		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
-	//		element.click();
-	//	}
 	public void clickBtnChangeButton() {
 		try {
 			// Check if the overlay is present before waiting for its invisibility
 			if (isOverlayPresent()) {
 				// Wait for the overlay to be invisible or absent
-				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 			}
 
 			// Proceed with clicking the button
-			WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(60));
 			WebElement clickableBtn = buttonWait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
 			clickableBtn.click();
 		} catch (NoSuchElementException e) {
@@ -891,9 +883,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		btnTimeLineView.click();
 	}
 	public void clickBtnTableView() {
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		//		WebElement tableViewButton = wait.until(ExpectedConditions.elementToBeClickable(btnTableView));
-		//		tableViewButton.click();
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 			wait.until(ExpectedConditions.and(
@@ -990,14 +979,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Assert.assertTrue(actualResult.contains("Crane Schedule deleted successfully"));
 	}
 	public void clickBtnEquipmentsMatrix() {
-		//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		//		wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnEquipmentsMatrix")));
-		//		wait.until(ExpectedConditions.elementToBeClickable(btnEquipmentsMatrix));
-		//		btnEquipmentsMatrix.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		WebElement btnEquipmentsMatrix = driver.findElement(By.id("btnEquipmentsMatrix"));
-		btnEquipmentsMatrix.click();
+		wait.until(ExpectedConditions.elementToBeClickable(btnEquipmentsMatrix));
 	}
 	public void enterActivityGenPlanning(String GenPlanning) {
 		dtActivityGenPlanning.clear();
@@ -1019,7 +1004,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		selectEquipmentRequirement.click();
 	}
 	public void pressBtnPerformActivityGenerationTask() {
-		//		btnPerformActivityGenerationTask.click();
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 			WebElement btnGenerate = wait.until(ExpectedConditions.elementToBeClickable(btnPerformActivityGenerationTask));
@@ -1031,7 +1015,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	public void pressBtnPlanningSignOff() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		btnPlanningSignOff.click();
+		wait.until(ExpectedConditions.elementToBeClickable(btnPlanningSignOff));
+//		btnPlanningSignOff.click();
 	}
 	public void getSignOffProcessCompletedSuccessfullyForShiftbandMsg() { 
 		String actualResult = SignOffProcessCompletedSuccessfullyForShiftbandMsg.getText();
