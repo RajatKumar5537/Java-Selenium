@@ -293,23 +293,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-//		Thread.sleep(3000);
-		// Click on dtStartAndEnd
-//		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
-//		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(30));
-//		Thread.sleep(3000);
-//		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
-		
-		// Wait for the page to be in a ready state
+//		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
-
-		// Click on dtStartAndEnd
-		WebElement dtStartAndEnd = driver.findElement(By.id("dtStartAndEnd"));
-
-		// Use WebDriverWait to wait for the element to be clickable
+//		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
+		WebElement dtStartAndEnd = driver.findElement(By.xpath("//input[@id='dtStartAndEnd']"));
+	
 		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(60));
-		waitDtStartAndEnd.until(ExpectedConditions.elementToBeClickable(dtStartAndEnd)).click();
+//		waitDtStartAndEnd.until(ExpectedConditions.)
+		Thread.sleep(5000);
+		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).clear();
+		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).click();
 
 	}
 	public void enterStartDate(String startDate) {
@@ -801,8 +794,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	// Jira Item: E10-2942 - Employee Roster V2 [Expand and minimize full screen]
 	public void performFullScreen(FakeEmployee fakeEmployee) throws InterruptedException {
 		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
 		clickApply();
 		cmbRosterGroupBy();
 		clickbtnSearchEmployeeRoster();
