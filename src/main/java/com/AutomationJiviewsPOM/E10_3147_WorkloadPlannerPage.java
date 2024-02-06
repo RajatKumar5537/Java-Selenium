@@ -35,19 +35,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	String planningDate  = fakeEmployee.getDtPlanning();
 	
-//	LocalDate currentDate = LocalDate.now(); // Get the current date
-//	LocalDate tomorrowDate = currentDate.plusDays(19); // Get the date for tomorrow
-//	setDtPlanning(formatDate(tomorrowDate)); 
-//	
-//	private String formatDate(LocalDate date) {
-//		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
-//	}
-//	private String generateFutureDate() {
-//		Random random = new Random();
-//		int randomDays = random.nextInt(30) + 1; // Generate a random number of days between 1 and 30
-//		LocalDate futureDate = LocalDate.now().plusDays(randomDays);
-//		return formatDate(futureDate);
-//	}
 	
 	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement dtPlanning;
@@ -229,7 +216,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		PageFactory.initElements(driver, this);
 	}
 
-	public void enterPlanning(String planning) {
+	public void enterPlanning() {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 			WebElement planningElement = wait.until(ExpectedConditions.visibilityOf(dtPlanning));
@@ -237,7 +224,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 //			planningElement.sendKeys(planning);
 //			planningElement.sendKeys(Keys.ENTER);
 			planningElement.click();
-			planningElement.clear();
+//			planningElement.clear();
 		} catch (Exception e) {
 			e.printStackTrace(); 
 		}
@@ -631,7 +618,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		clickBtnTableView();
 		clickBtnTimeLineView();
 		Thread.sleep(5000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		enterPlanning();
 		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
@@ -668,19 +655,20 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(5000);
 		clickBtnChangeButton();
 		clickBtnTableView();
-
-
-		Thread.sleep(2000);
-		sletCloseBtn();
-		Thread.sleep(2000);
-		selectShiftBandType();
-		Thread.sleep(1000);
+		
 		planningDate = fakeEmployee.getDtPlanning();
+		Thread.sleep(5000);
+		enterPlanning();
+		enterDate(); 
 		
-		enterPlanning(planningDate);
-		
-		enterDate();
+		sletCloseBtn();
+		selectShiftBandType();
 		clickSearchDailyPlanning();
+		
+		
+		
+		
+		
 		clickBtnAddVesselSchedule();
 		enterVesselName(fakeEmployee.getTxtVesselName());
 		enterVesselVisitId(fakeEmployee.getTxtVesselVisitId());
@@ -719,7 +707,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		clickBtnChangeButton();
 		clickBtnTableView();
 		Thread.sleep(10000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		enterPlanning();
 		selectShiftBandType();
 		Thread.sleep(5000);
 		clickVesselScheduleEdit();
@@ -738,7 +726,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		sletCloseBtn();
 		selectShiftBandType();
 		Thread.sleep(1000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		enterPlanning();
 		clickSearchDailyPlanning();
 		Thread.sleep(5000);
 		deleteRowsWithEnabledCheckbox();
@@ -750,7 +738,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
 	public void E10_3175_CreateCraneSchedule(FakeEmployee fakeEmployee) throws InterruptedException {
 		Thread.sleep(5000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		enterPlanning();
 		selectShiftBandType();
 		//		chooseShiftBandOption();
 		clickSearchDailyPlanning();
@@ -775,7 +763,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		//		clickBtnTableView();
 		clickBtnTimeLineView();
 		Thread.sleep(5000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		enterPlanning();
 		selectShiftBandType();
 		Thread.sleep(1000);
 		clickSearchDailyPlanning();
