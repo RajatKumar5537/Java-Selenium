@@ -47,10 +47,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	@FindBy(id = "dtStartAndEnd")
 	private WebElement dateStartAndEnd;
-	@FindBy(xpath = "//input[@class='input-mini form-control active']")
+//	@FindBy(xpath = "//input[@class='input-mini form-control active']")
+	@FindBy(xpath = "((//table[@class='table-condensed'])[1]/tbody/tr/td)[10]")
 	private WebElement selectStartDate;
-	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]")
+//	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]")
+	@FindBy(xpath = "((//table[@class='table-condensed'])[2]/tbody/tr/td)[29]")
 	private WebElement selectEndDate;
+	
+	
+	
 	@FindBy(xpath = "//span[@id='select2-cmbRosterGroupBy-container']")
 	private WebElement cmbRosterGroupBy;
 	@FindBy(xpath = "//ul[@id='select2-cmbRosterGroupBy-results']/li")
@@ -310,14 +315,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	}
 	public void enterStartDate(String startDate) {
-		selectStartDate.clear();
-		selectStartDate.sendKeys(startDate);
-		selectStartDate.sendKeys(Keys.ENTER);
+//		selectStartDate.clear();
+//		selectStartDate.sendKeys(startDate);
+		selectStartDate.click();
+//		selectStartDate.sendKeys(Keys.ENTER);
 	}
 	public void enterEndDate(String endDate) {
-		selectEndDate.clear();
-		selectEndDate.sendKeys(endDate);
-		selectEndDate.sendKeys(Keys.ENTER);
+//		selectEndDate.clear();
+		selectEndDate.click();
+//		selectEndDate.sendKeys(endDate);
+//		selectEndDate.sendKeys(Keys.ENTER);
 	}
 	public void clickApply() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
