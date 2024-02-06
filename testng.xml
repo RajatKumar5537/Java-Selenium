@@ -5,7 +5,7 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	<!-- 
+
 	<test name="E10_2606_ShiftBandTest">
 		<classes>
 			<class
@@ -38,7 +38,7 @@
 	<test name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
 			/>
 		</classes>
 	</test>
@@ -53,14 +53,14 @@
 	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
 			/>
 		</classes>
 	</test>
-<test name="E10_2910_WorkforceEmployeeRosterV2Test">
+	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
 	</test>
@@ -78,6 +78,15 @@
 		</classes>
 	</test>
 
+
+	<test name="E10_3541_OPE_RTG_PlanningTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
+			/>
+		</classes>
+	</test>
+<!-- 
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class
@@ -85,29 +94,13 @@
 			/>
 		</classes>
 	</test>
-	<test name="E10_3541_OPE_RTG_PlanningTest">
+	<test name="E10_3216_ESSApplyLeaveTest">
 		<classes>
 			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
 	</test>
-	
-	
-	
-	 <test name="E10_3216_ESSApplyLeaveTest">
-        <classes>
-            <class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
-	/>
-        </classes>
-    </test> -->
+-->
 
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-			/>
-		</classes>
-	</test>
 </suite>

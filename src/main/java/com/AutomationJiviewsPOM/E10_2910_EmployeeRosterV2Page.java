@@ -341,8 +341,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnSearchEmployeeRoster.click();
 	}
 	public void clickBtnFilter() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-//		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
+		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
 		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
 		btnFilterElement.click();
 	}
