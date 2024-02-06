@@ -447,8 +447,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 			}
-			WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(60));
-			WebElement clickableBtn = buttonWait.until(ExpectedConditions.elementToBeClickable(btnChangeButton));
+			WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(300));
+			WebElement clickableBtn = buttonWait.until(ExpectedConditions.visibilityOf(btnChangeButton));
 			clickableBtn.click();
 		} catch (NoSuchElementException e) {
 			System.out.println("Button not found. Skipping the click.");

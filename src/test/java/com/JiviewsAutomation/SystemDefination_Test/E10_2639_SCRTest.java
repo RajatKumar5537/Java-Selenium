@@ -36,12 +36,14 @@ public class E10_2639_SCRTest extends BaseClass{
 
 //		homePage.setOrgUnit();
 //		orgUnit.clickOLMop();
+		
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		Thread.sleep(2000);
 		jmMenuItem.clickOnSystemDefination();
 		Thread.sleep(2000);
 		rosterSetup.setScheduleCreationRules();
+	
 	}
 
 	@Test(priority = 1)

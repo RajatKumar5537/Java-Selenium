@@ -34,6 +34,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 		Thread.sleep(2000);
 		homePage.setOrgUnit();
+		
 		orgUnit.setAutoOu();
 //		Thread.sleep(5000);
 		jmMenuItem.setSelectWorkforceScheduling(); 

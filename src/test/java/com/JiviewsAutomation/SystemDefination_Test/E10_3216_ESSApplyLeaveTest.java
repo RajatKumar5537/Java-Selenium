@@ -33,6 +33,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
+		
 		//		jmMenuItem.clickSystemDefination();
 		//		empKiosk.clickOnApplyLeave();
 	}

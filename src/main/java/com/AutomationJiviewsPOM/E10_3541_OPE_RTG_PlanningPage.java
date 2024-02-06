@@ -330,58 +330,5 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		chooseAllocationRule();
 		//		performSave();
 	}
-/*
-	public void E10_3542_SearchRecord () throws InterruptedException{
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		enterPlanningDate("12/02/2024");
-		searchRTGPlanning();
-	}
 
-	public void E10_3543_AddEqipment() throws Exception{
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		enterPlanningDate("12/02/2024");
-		searchRTGPlanning();
-		
-		performAddRTGPlanning();
-		selectAvailableShiftBand();
-		moveSingleAvailableSkillToSelected();
-		performSaveRTGPlanning();
-		getEquipmentsGeneratedForMsg();
-		closeNotificationPopup();
-	}
-	public void E10_3544_VerifyEquipmentSummery () throws InterruptedException{
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		enterPlanningDate("12/02/2024");
-		searchRTGPlanning();
-		
-		clickonEquipmentSummary();
-	}
-	public void E10_3545_VerifySkillSummery () throws InterruptedException{
-//		Thread.sleep(2000);
-		
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		enterPlanningDate("12/02/2024");
-		searchRTGPlanning();
-		
-		clickonSkillSummary();
-	}
-	public void E10_3546_RTGSignOff() throws InterruptedException{
-//		Thread.sleep(2000);
-		
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		enterPlanningDate("12/02/2024");
-		searchRTGPlanning();
-//		Thread.sleep(2000);
-		pressPlanningSignOff();
-		clickonManningRatio();
-		chooseManningRatio();
-		clickonAllocationRule();
-		chooseAllocationRule();
-//		performSave();
-	}*/
 }
