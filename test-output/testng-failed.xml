@@ -3,16 +3,18 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test">
         <methods>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
+          <include name="verifyDeleteBerth"/>
+          <include name="verifyEditBerth"/>
           <include name="afterTestMethod"/>
+          <include name="verifyReActivate"/>
           <include name="closeBrowser"/>
-          <include name="E10_3136_VerifyUpdateEmpProfile"/>
-          <include name="setup"/>
+          <include name="verifyCreateBerth"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->
