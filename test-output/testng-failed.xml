@@ -3,16 +3,16 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
         <methods>
+          <include name="setup"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
-          <include name="E10_2940_VerifyExpandAndCollapseRows"/>
           <include name="afterTestMethod"/>
-          <include name="setup"/>
           <include name="closeBrowser"/>
+          <include name="E10_3211_Verify_CreateVesselScheduleTableView"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

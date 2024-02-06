@@ -1,8 +1,11 @@
 package com.AutomationJiviewsPOM;
 
 import java.time.Duration;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.NoSuchElementException;
+import java.util.Random;
 import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.Alert;
@@ -30,6 +33,22 @@ import io.netty.handler.timeout.TimeoutException;
 
 public class E10_3147_WorkloadPlannerPage extends BaseClass {
 
+	String planningDate  = fakeEmployee.getDtPlanning();
+	
+//	LocalDate currentDate = LocalDate.now(); // Get the current date
+//	LocalDate tomorrowDate = currentDate.plusDays(19); // Get the date for tomorrow
+//	setDtPlanning(formatDate(tomorrowDate)); 
+//	
+//	private String formatDate(LocalDate date) {
+//		return date.format(DateTimeFormatter.ofPattern("dd-MM-yyyy"));
+//	}
+//	private String generateFutureDate() {
+//		Random random = new Random();
+//		int randomDays = random.nextInt(30) + 1; // Generate a random number of days between 1 and 30
+//		LocalDate futureDate = LocalDate.now().plusDays(randomDays);
+//		return formatDate(futureDate);
+//	}
+	
 	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement dtPlanning;
 	@FindBy(xpath = "(//table[@class='table-condensed']/tbody/tr/td)[23]")
@@ -280,16 +299,12 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		try {
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 			WebElement bandTypeElement = wait.until(ExpectedConditions.elementToBeClickable(selectShiftBandType));
-			//			bandTypeElement.clear();
 			bandTypeElement.sendKeys("Am");
 			bandTypeElement.sendKeys(Keys.ENTER);
 		} catch (Exception e) {
 			e.printStackTrace(); 
 		}
 	}
-	//	public void chooseShiftBandOption() {
-	//		shiftBandOption.click();	
-	//	}
 	public void clickSearchDailyPlanning() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
@@ -399,7 +414,7 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		craneOption.click();
 	}
 	public void clickCraneScheduleVesselName() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//span[@id='select2-cmbCraneScheduleVesselName-container']")));
 		element.click();
 	}
@@ -439,9 +454,9 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	}
 	public void clickBtnChangeButton() {
 		try {
-			// Check if the overlay is present before waiting for its invisibility
+//			// Check if the overlay is present before waiting for its invisibility
 			if (isOverlayPresent()) {
-				// Wait for the overlay to be invisible or absent
+//				// Wait for the overlay to be invisible or absent
 				WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(40));
 				wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 			}
@@ -450,11 +465,6 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 			clickableBtn.click();
 		} catch (NoSuchElementException e) {
 			System.out.println("Button not found. Skipping the click.");
-		} catch (TimeoutException e) {
-			System.out.println("Timed out waiting for overlay to disappear. Skipping the click.");
-		} catch (Exception e) {
-			// Handle other specific exceptions or log messages as needed
-			System.out.println("Exception occurred: " + e.getMessage());
 		}
 	}
 
@@ -665,7 +675,10 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 		Thread.sleep(2000);
 		selectShiftBandType();
 		Thread.sleep(1000);
-		enterPlanning(fakeEmployee.getDtPlanning());
+		planningDate = fakeEmployee.getDtPlanning();
+		
+		enterPlanning(planningDate);
+		
 		enterDate();
 		clickSearchDailyPlanning();
 		clickBtnAddVesselSchedule();
