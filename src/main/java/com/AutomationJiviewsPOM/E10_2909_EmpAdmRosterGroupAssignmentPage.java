@@ -85,7 +85,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	@FindBy(xpath = "//span[@id='select2-cmbRosterPattern-container']")
 	private WebElement selectRosterPattern;
 
-	@FindBy(xpath = "//li[contains(text(),'2323')]")
+	@FindBy(xpath = "//li[contains(text(),'2669')]")
 	private WebElement chooseRosterPattern;
 
 	@FindBy(xpath = "//button[@id='btnSubmitChanges']")
@@ -259,7 +259,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	}
 
 	public void enterTxtSearch() {
-		txtSearch.sendKeys("2323");
+		txtSearch.sendKeys("2669");
 	}
 
 	public void clickonSelectRosterPattern() {

@@ -3,18 +3,33 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
+<<<<<<< HEAD
       <class name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test">
+=======
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest">
+>>>>>>> 8dca5ba3977be9931cee3c9a3fc197a0446e31c8
         <methods>
+          <include name="setup"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="verifyDeleteBerth"/>
           <include name="verifyEditBerth"/>
           <include name="afterTestMethod"/>
+<<<<<<< HEAD
           <include name="verifyReActivate"/>
           <include name="closeBrowser"/>
           <include name="verifyCreateBerth"/>
         </methods>
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test -->
+=======
+          <include name="E10_3174_VerifyDeleteVesselSchedule"/>
+          <include name="closeBrowser"/>
+          <include name="E10_3211_Verify_CreateVesselScheduleTableView"/>
+          <include name="E10_3182_VerifyPlanningSignoff"/>
+          <include name="E10_3181_Verify_GenerateEquipments"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest -->
+>>>>>>> 8dca5ba3977be9931cee3c9a3fc197a0446e31c8
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

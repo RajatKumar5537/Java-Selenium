@@ -18,6 +18,7 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.github.javafaker.Faker;
 
 public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	public String timeStamp = LocalDateTime.now().toString();
@@ -27,7 +28,8 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	//	public String holidayName;
 	//	public String holidayDate;
 	//	public String holidayNote;
-
+	Faker fakeData = new Faker();
+	
 	@FindBy(xpath = "//button[@id='btnAddNew']/span")
 	private WebElement btnAddNew;
 
@@ -86,6 +88,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	public void setTxtHolidayName(String holidayName) {
 		txtHolidayName.clear();
 		txtHolidayName.sendKeys(holidayName);
+		System.out.println(holidayName);
 	}
 	public void setTxtHolidayDate(String holidayDate) {
 		txtHolidayDate.clear();
@@ -112,17 +115,25 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 		btnEdit.click();
 	}
 	public void setCreateNotificationPopup() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationCreatePopup));
+
 		String actualResult = notificationCreatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday created successfully"));
 		notificationCreatePopup.click();
 	}
 	public void setUpdateNotificationPopup() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationUpdatePopup));
+
 		String actualResult = notificationUpdatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday updated successfully"));
 		notificationUpdatePopup.click();
 	}
 	public void setDeleteNotificationPopup() {
-		//		webUtility.moveToElement(driver, notificationDeletePopup);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(notificationDeletePopup));
+
 		String actualResult = notificationDeletePopup.getText();
 		Assert.assertTrue(actualResult.contains("Deleted Selected Public Holiday Data."));
 		notificationDeletePopup.click();
@@ -191,7 +202,13 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	public void setCreatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
 		setBtnAddNew();
 		Thread.sleep(2000);
-		setTxtHolidayName(fakeEmployee.getHolidayName());
+//		setTxtHolidayName(fakeEmployee.getHolidayName());
+//		Faker fakeData = new Faker();
+		
+		setTxtHolidayName(fakeData.name().fullName() + "_" + System.currentTimeMillis());
+		
+//		setTxtHolidayDate(generateFutureDate() + "_" + System.currentTimeMillis()); 
+		
 		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setTxtHolidayNote(fakeEmployee.getHolidayNote());
 		setBtnSavePublicHldayDeatils();

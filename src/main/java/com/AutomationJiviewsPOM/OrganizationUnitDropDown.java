@@ -1,13 +1,19 @@
 package com.AutomationJiviewsPOM;
 
 
+import java.time.Duration;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.WebUtilities;
+
+import io.netty.handler.timeout.TimeoutException;
 
 public class OrganizationUnitDropDown extends BaseClass{
 	WebUtilities webUtility;
@@ -38,8 +44,17 @@ public class OrganizationUnitDropDown extends BaseClass{
 		OLMop.click();
 	}
 	public void setAutoOu() throws InterruptedException  {
-		webUtility.ElementClickable(driver, autoOu);
-		autoOu.click();			
+//		webUtility.ElementClickable(driver, autoOu);
+//		autoOu.click();	
+		
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    try {
+	        WebElement clickableAutoOu = wait.until(ExpectedConditions.elementToBeClickable(autoOu));
+	        clickableAutoOu.click();
+	    } catch (TimeoutException e) {
+	        System.out.println("Element 'autoOu' was not clickable within the specified time.");
+	        e.printStackTrace();
+	    }
 	}
 }
 

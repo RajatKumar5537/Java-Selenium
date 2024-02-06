@@ -65,7 +65,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	@FindBy(id = "btnDeleteSkill")
 	private WebElement btnDeleteSkill;
 
-	@FindBy(xpath = "//button[.='Yes']")
+	@FindBy(xpath = "//button[text()='Yes']")
 	private WebElement clickYes;
 
 	@FindBy(xpath =  "(//input[@type='checkbox'])[2]")
@@ -76,8 +76,6 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public E10_3082_SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		//		this.webUtility= new WebUtilities(driver);
-		//		this.excelUtility= new ExcelUtilities();
 	}
 
 	public void clickAddBtn() throws Exception {
@@ -125,7 +123,6 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		editBtn.click();
 	}
 	public void performDeleteAction() throws InterruptedException {
-		//		Thread.sleep(2000);
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnDeleteSkill);
@@ -182,6 +179,8 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 
 	public void clickYes() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.visibilityOf(clickYes));
 		clickYes.click();
 	}
 

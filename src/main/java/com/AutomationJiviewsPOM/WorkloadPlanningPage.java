@@ -42,7 +42,8 @@ public class WorkloadPlanningPage extends BaseClass{
 		workloadPlanner.click();
 	}
 	public void clickOnRTGPlanning() {
-		clickWorkloadPlanning();
-		clickRTGPlanning();
+//		clickWorkloadPlanning();
+		workloadPlanning.click();
+		RTGPlanning.click();
 	}
 }

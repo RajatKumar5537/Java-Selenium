@@ -32,17 +32,16 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		wfScheduling= new WorkforceSchedulingPage(driver);
 		empRosterV2= new  E10_2910_EmployeeRosterV2Page(driver);
 
-		Thread.sleep(5000);
+		Thread.sleep(2000);
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
-		Thread.sleep(5000);
+//		Thread.sleep(5000);
 		jmMenuItem.setSelectWorkforceScheduling(); 
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		wfScheduling.setEmployeeRosterV2();
 	}
 	@Test(priority = 1)
 	public void E10_2938_VerifySearchEmpRosterByDate() throws Exception {
-		// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Searching Employee Roster By Date...");
 
@@ -51,8 +50,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	}
 
 	@Test(priority = 2)
-	public void E10_2939_VerifySearchByFilters() throws IOException {
-		// Jira Item: E10-2939 - Employee Roster V2 [Search by filters]
+	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Searching Employee Roster By Filters...");
 
@@ -62,7 +60,6 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 	@Test(priority = 3)//, dependsOnMethods = "verifySearchByFilters")
 	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException, InterruptedException {
-		// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Expanding And Collapsing Rows...");
 
@@ -72,7 +69,6 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	
 	@Test(priority = 4)
 	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
-		// Jira Item: E10-2941 - Employee Roster V2 [Filter and Reset columns]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Filtering And Resetting Columns...");
 
