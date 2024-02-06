@@ -13,12 +13,14 @@ package com.JiviewsAutomation.SystemDefination_Test;
 		private OrganizationUnitDropDown orgUnit;
 		private jiviewsMainMenuItems jmMenuItem;
 		
+		
 		Maritime_Setup mariTime;
 		
 		@Test(priority = 1)
 		public void setup() throws Exception {
 			
 			homePage = new HomePage(driver);
+			
 			orgUnit = new OrganizationUnitDropDown(driver);
 			jmMenuItem = new jiviewsMainMenuItems(driver);
 			homePage.setOrgUnit();
