@@ -1,6 +1,7 @@
 package com.AutomationJiviewsPOM;
 
 
+
 import static org.testng.Assert.assertEquals;
 
 import java.awt.AWTException;
@@ -50,8 +51,8 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 //	@FindBy(xpath = "//input[@class='input-mini form-control active']")
 	@FindBy(xpath = "((//table[@class='table-condensed'])[1]/tbody/tr/td)[10]")
 	private WebElement selectStartDate;
-//	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]")
-	@FindBy(xpath = "((//table[@class='table-condensed'])[2]/tbody/tr/td)[29]")
+//	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]") or ((//table[@class='table-condensed'])[2]/tbody/tr/td)[29]
+	@FindBy(xpath = "((//table[@class='table-condensed'])[1]/tbody/tr/td)[17]")
 	private WebElement selectEndDate;
 	
 	
@@ -335,7 +336,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	public void clickBtnFilter() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-		wait.until(ExpectedConditions.elementToBeClickable(By.id("layout-navbar")));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
 		btnFilterElement.click();
 	}
@@ -774,7 +775,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 	public void expandAndCollapseRows(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());

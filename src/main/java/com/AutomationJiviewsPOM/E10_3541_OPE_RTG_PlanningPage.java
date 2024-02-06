@@ -1,8 +1,10 @@
 package com.AutomationJiviewsPOM;
 
+
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.StaleElementReferenceException;
@@ -105,11 +107,14 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 
 	public void enterPlanningDate() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		WebElement Planning = wait.until(ExpectedConditions.elementToBeClickable(txtPlanning));
 		Planning.clear();
-		Planning.click();
-		//		Planning.sendKeys(date);
-		//		Planning.sendKeys(Keys.ENTER);
+		try {
+			Planning.click();
+		} catch (ElementClickInterceptedException ex) {
+			System.out.println("Element is still not clickable after clearing: " + ex.getMessage());
+		}
 
 	}
 	public void enterDate() throws InterruptedException {
@@ -271,7 +276,7 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	public void E10_3542_SearchRecord () throws InterruptedException{
 		clickTxtShiftBand();
 		enterShiftBandName("RTG_AM1");
-//		enterPlanningDate("12/02/2024");
+		//		enterPlanningDate("12/02/2024");
 		enterPlanningDate();
 		enterDate();
 		dateRTG =txtPlanning.getText();
