@@ -83,7 +83,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	@FindBy(xpath = "//div[@id='filterShiftBand']")
 	private WebElement filterShiftBand;
-	@FindBy(xpath = "//li[contains(text(),'1st  Shift')]")
+	@FindBy(xpath = "(//ul[@class='select2-results__options']/li)[2]")
 	private WebElement chooseShiftBand;
 
 	@FindBy(xpath = "//ul/span[@class='select2-selection__clear']")
@@ -298,21 +298,12 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 //		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
-		WebElement dtStartAndEnd = driver.findElement(By.xpath("//input[@id='dtStartAndEnd']"));
-	
-//		WebDriverWait waitDtStartAndEnd = new WebDriverWait(driver, Duration.ofSeconds(60));
-//		waitDtStartAndEnd.until(ExpectedConditions.)
-		Thread.sleep(5000);
+		Thread.sleep(20000);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='dtStartAndEnd']")));
 		element.clear();
 		element.click();
-		
-//		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).clear();
-//		waitDtStartAndEnd.until(ExpectedConditions.visibilityOf(dtStartAndEnd)).click();
-
 	}
 	public void enterStartDate(String startDate) {
 //		selectStartDate.clear();
@@ -763,8 +754,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
 //		clickApply();
-		Thread.sleep(3000);
-		
+		Thread.sleep(20000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -774,7 +764,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2939 - Employee Roster V2 [Search by filters]
 	public void searchByFilters() throws InterruptedException {
-		Thread.sleep(3000);
+		Thread.sleep(20000);
 		clickBtnFilter();
 
 		chooseShiftBand();
@@ -782,6 +772,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 	public void expandAndCollapseRows(FakeEmployee fakeEmployee) throws InterruptedException {
+		Thread.sleep(20000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -792,6 +783,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]
 	public void filterAndResetColumns(FakeEmployee fakeEmployee) throws InterruptedException {
+		Thread.sleep(20000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -804,6 +796,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2942 - Employee Roster V2 [Expand and minimize full screen]
 	public void performFullScreen(FakeEmployee fakeEmployee) throws InterruptedException {
+		Thread.sleep(20000);
 		clickStartAndEndDate();
 //		enterStartDate(fakeEmployee.getRosterStartDate());
 //		enterEndDate(fakeEmployee.getRosterEndDate());
