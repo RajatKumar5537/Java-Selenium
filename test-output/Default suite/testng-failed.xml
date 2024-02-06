@@ -3,16 +3,21 @@
 <suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
   <test thread-count="5" name="Default test(failed)">
     <classes>
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
         <methods>
+          <include name="setUp"/>
           <include name="launchBrowser"/>
           <include name="beforeTestMethod"/>
           <include name="afterTestMethod"/>
-          <include name="E10_3543_Verify_AddEqipment"/>
+          <include name="E10_3117_VerifyDeactivateShiftBand"/>
           <include name="closeBrowser"/>
-          <include name="E10_3546_Verify_RTGSignOff"/>
+          <include name="E10_3118_VerifyReactivateShiftBand"/>
+          <include name="E10_3120_VerifyWithCombinationShift"/>
+          <include name="E10_3119_VerifyWithoutShiftBandName"/>
+          <include name="E10_3121_VerifyWithOvertimeShift"/>
+          <include name="E10_3116_VerifyUpdateShiftBand"/>
         </methods>
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
     </classes>
   </test> <!-- Default test(failed) -->
 </suite> <!-- Failed suite [Default suite] -->

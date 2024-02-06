@@ -434,7 +434,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setBtnSave();
-		//		setNotificationPopup();
+				setNotificationPopup();
 	}
 
 	public void deactiveShiftBand() throws Exception {

@@ -70,7 +70,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Expand And Collapse Rows is successful");
 	}
 	
-/*	@Test(priority = 4)
+	@Test(priority = 4)
 	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Filtering And Resetting Columns...");
@@ -89,7 +89,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Perform Expand and minimize full screen is successful");
 	}
 
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void E10_2943_VerifyPerformCreateShift() throws Exception {
 		// Jira Item: E10-2943 - Employee Roster V2 [Double click on tab or right click and select create shift]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");

@@ -5,7 +5,7 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	<!--
+	
 	<test name="E10_2606_ShiftBandTest">
 		<classes>
 			<class
@@ -88,7 +88,7 @@
 			/>
 		</classes>
 	</test>
-
+<!--
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class
@@ -103,20 +103,5 @@
 			/>
 		</classes>
 	</test> -->
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_3541_OPE_RTG_PlanningTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
-			/>
-		</classes>
-	</test>
-
+	
 </suite>
