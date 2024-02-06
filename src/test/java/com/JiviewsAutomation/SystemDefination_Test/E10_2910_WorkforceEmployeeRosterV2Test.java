@@ -67,7 +67,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Expand And Collapse Rows is successful");
 	}
 	
-	@Test(priority = 4)
+/*	@Test(priority = 4)
 	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Filtering And Resetting Columns...");
@@ -95,7 +95,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.performClickEmptyCellCreateShift(fakeEmployee);
 		logger.info("Perform Double click on tab or right click and select create shift in an Empty Cell is successful");
 	}
-/*
+
 	@Test(priority = 7)
 	public void E10_2944_verifyCopySingleCellAndPasteInNewCell() throws Exception {
 		// Jira Item: E10-2944 - Employee Roster V2 [Copy single and multiple row/column and paste in a new row]

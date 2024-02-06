@@ -298,7 +298,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		PageFactory.initElements(driver, this);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
-//		Thread.sleep(5000);
+		Thread.sleep(5000);
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 //		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
 		WebElement dtStartAndEnd = driver.findElement(By.xpath("//input[@id='dtStartAndEnd']"));

@@ -23,10 +23,17 @@ import com.AutomationJiviewsGeneric.BaseClass;
 public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	public Select select;
 	public Actions action;
+	public String dateRTG;
+
 
 	@FindBy(id = "dtPlanning")
 	private WebElement txtPlanning;
-	
+	@FindBy(xpath = "(//table[@class='table-condensed']/tbody/tr/td)[18]")
+	private WebElement calender;
+
+
+
+
 	@FindBy(id = "select2-cmbShiftBand-container")
 	private WebElement txtShiftBand;
 	@FindBy(xpath = "(//input[@class='select2-search__field'])[1]")
@@ -90,29 +97,34 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	private WebElement btnPerformActivityGenerationTask;
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
-	
+
 	public E10_3541_OPE_RTG_PlanningPage (WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.action= new Actions(driver);
 	}
 
-	public void enterPlanningDate(String date) {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+	public void enterPlanningDate() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement Planning = wait.until(ExpectedConditions.elementToBeClickable(txtPlanning));
 		Planning.clear();
-		Planning.sendKeys(date);
-		Planning.sendKeys(Keys.ENTER);
-		
+		Planning.click();
+		//		Planning.sendKeys(date);
+		//		Planning.sendKeys(Keys.ENTER);
+
+	}
+	public void enterDate() throws InterruptedException {
+		webUtility.ElementClickable(driver, calender);
+		calender.click();
 	}
 	public void clickTxtShiftBand() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
-	    WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
-	    bandTypeElement.click();
-//	    JavascriptExecutor executor = (JavascriptExecutor) driver;
-//	    executor.executeScript("arguments[0].click();", bandTypeElement);
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
+		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
+		bandTypeElement.click();
+		//	    JavascriptExecutor executor = (JavascriptExecutor) driver;
+		//	    executor.executeScript("arguments[0].click();", bandTypeElement);
 
-		}
+	}
 	public void enterShiftBandName(String name) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtSearchField));
@@ -124,26 +136,26 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		selectshiftBand.click();
 	}
 	public void searchRTGPlanning() {
-//		btnSearchRTGPlanning.click();
+		//		btnSearchRTGPlanning.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-	    // Locate and click the search button
-	    WebElement searchButton = driver.findElement(By.id("btnSearchRTGPlanning"));
-	    searchButton.click();
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+		// Locate and click the search button
+		WebElement searchButton = driver.findElement(By.id("btnSearchRTGPlanning"));
+		searchButton.click();
 	}
 	public void performAddRTGPlanning() {
-	    try {
-	        // Wait for the overlay to be invisible or absent
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-	        WebElement btnAddRTGPlanning = driver.findElement(By.id("btnAddRTGPlanning"));
-	        // Wait for the "Add" button to be clickable
-//	        WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        wait.until(ExpectedConditions.elementToBeClickable(btnAddRTGPlanning));
-	        btnAddRTGPlanning.click();
-	    } catch (Exception e) {
-	        System.out.println("Exception occurred: " + e.getMessage());
-	    }
+		try {
+			// Wait for the overlay to be invisible or absent
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
+			WebElement btnAddRTGPlanning = driver.findElement(By.id("btnAddRTGPlanning"));
+			// Wait for the "Add" button to be clickable
+			//	        WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.elementToBeClickable(btnAddRTGPlanning));
+			btnAddRTGPlanning.click();
+		} catch (Exception e) {
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
 	}
 
 	public void selectAvailableShiftBand() {
@@ -180,64 +192,64 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		Assert.assertTrue(actualResult.contains(" Equipments Generated For "));
 	}
 	public void clickonEquipmentSummary() {
-//		tabEquipmentSummary.click();
-        try {
-            // Locate the element you want to click
-            WebElement equipmentSummaryLink = driver.findElement(By.xpath("//a[text()='Equipment Summary']"));
-            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("blockUI")));
-            // Click on the element using Actions class to avoid ElementClickInterceptedException
-            Actions actions = new Actions(driver);
-            actions.moveToElement(equipmentSummaryLink).click().perform();
+		//		tabEquipmentSummary.click();
+		try {
+			// Locate the element you want to click
+			WebElement equipmentSummaryLink = driver.findElement(By.xpath("//a[text()='Equipment Summary']"));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("blockUI")));
+			// Click on the element using Actions class to avoid ElementClickInterceptedException
+			Actions actions = new Actions(driver);
+			actions.moveToElement(equipmentSummaryLink).click().perform();
 
-        } catch (Exception e) {
-            // Handle exceptions or log messages as needed
-            System.out.println("Exception occurred: " + e.getMessage());
-        }
+		} catch (Exception e) {
+			// Handle exceptions or log messages as needed
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
 
 	}
 	public void clickonSkillSummary() {
-//		tabSkillSummary.click();
-		  try {
-	            // Locate the element you want to click
-	            WebElement skillSummaryLink = driver.findElement(By.xpath("//a[text()='Skill Summary']"));
-	            WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	            wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("blockUI")));
-	            // Click on the element using Actions class to avoid ElementClickInterceptedException
-	            Actions actions = new Actions(driver);
-	            actions.moveToElement(skillSummaryLink).click().perform();
-	        } catch (Exception e) {
-	            System.out.println("Exception occurred: " + e.getMessage());
-	        }
-	    }
+		//		tabSkillSummary.click();
+		try {
+			// Locate the element you want to click
+			WebElement skillSummaryLink = driver.findElement(By.xpath("//a[text()='Skill Summary']"));
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("blockUI")));
+			// Click on the element using Actions class to avoid ElementClickInterceptedException
+			Actions actions = new Actions(driver);
+			actions.moveToElement(skillSummaryLink).click().perform();
+		} catch (Exception e) {
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
+	}
 
 	public void pressPlanningSignOff() {
-	    try {
-	        // Wait for the "Planning Sign Off" button to be clickable
-	        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	        WebElement planningSignOffButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnPlanningSignOff")));
+		try {
+			// Wait for the "Planning Sign Off" button to be clickable
+			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+			WebElement planningSignOffButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnPlanningSignOff")));
 
-	        // Click the "Planning Sign Off" button using JavaScriptExecutor
-	        JavascriptExecutor executor = (JavascriptExecutor) driver;
-	        executor.executeScript("arguments[0].click();", planningSignOffButton);
+			// Click the "Planning Sign Off" button using JavaScriptExecutor
+			JavascriptExecutor executor = (JavascriptExecutor) driver;
+			executor.executeScript("arguments[0].click();", planningSignOffButton);
 
-	    } catch (Exception e) {
-	        System.out.println("Exception occurred: " + e.getMessage());
-	    }
+		} catch (Exception e) {
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
 	}
 
 	public void clickonManningRatio() {
-		 try {
-		        // Find the element every time before interacting with it
-		        WebElement cmbActivityGenRule = driver.findElement(By.id("select2-cmbActivityGenRule-container"));
-		        cmbActivityGenRule.click();
-		    } catch (StaleElementReferenceException e) {
-		        // If the element is stale, catch the exception and try again
-		        System.out.println("StaleElementReferenceException occurred. Retrying...");
-		        clickonManningRatio(); // Recursive call to try clicking again
-		    } catch (Exception e) {
-		        System.out.println("Exception occurred: " + e.getMessage());
-		    }
+		try {
+			// Find the element every time before interacting with it
+			WebElement cmbActivityGenRule = driver.findElement(By.id("select2-cmbActivityGenRule-container"));
+			cmbActivityGenRule.click();
+		} catch (StaleElementReferenceException e) {
+			// If the element is stale, catch the exception and try again
+			System.out.println("StaleElementReferenceException occurred. Retrying...");
+			clickonManningRatio(); // Recursive call to try clicking again
+		} catch (Exception e) {
+			System.out.println("Exception occurred: " + e.getMessage());
+		}
 	}
 	public void chooseManningRatio() {
 		selectManningRatio.click();
@@ -256,6 +268,69 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		notificationPopup.click();
 	}
 
+	public void E10_3542_SearchRecord () throws InterruptedException{
+		clickTxtShiftBand();
+		enterShiftBandName("RTG_AM1");
+//		enterPlanningDate("12/02/2024");
+		enterPlanningDate();
+		enterDate();
+		dateRTG =txtPlanning.getText();
+		System.out.println(dateRTG);
+		searchRTGPlanning();
+
+	}
+
+	public void E10_3543_AddEqipment() throws Exception{
+		clickTxtShiftBand();
+		enterShiftBandName("RTG_AM1");
+		enterPlanningDate();
+		enterDate();
+		searchRTGPlanning();
+
+		performAddRTGPlanning();
+		selectAvailableShiftBand();
+		moveSingleAvailableSkillToSelected();
+		performSaveRTGPlanning();
+		getEquipmentsGeneratedForMsg();
+		closeNotificationPopup();
+	}
+	public void E10_3544_VerifyEquipmentSummery () throws InterruptedException{
+		clickTxtShiftBand();
+		enterShiftBandName("RTG_AM1");
+		enterPlanningDate();
+		enterDate();
+		searchRTGPlanning();
+
+		clickonEquipmentSummary();
+	}
+	public void E10_3545_VerifySkillSummery () throws InterruptedException{
+		//		Thread.sleep(2000);
+
+		clickTxtShiftBand();
+		enterShiftBandName("RTG_AM1");
+		enterPlanningDate();
+		enterDate();
+		searchRTGPlanning();
+
+		clickonSkillSummary();
+	}
+	public void E10_3546_RTGSignOff() throws InterruptedException{
+		//		Thread.sleep(2000);
+
+		clickTxtShiftBand();
+		enterShiftBandName("RTG_AM1");
+		enterPlanningDate();
+		enterDate();
+		searchRTGPlanning();
+		//		Thread.sleep(2000);
+		pressPlanningSignOff();
+		clickonManningRatio();
+		chooseManningRatio();
+		clickonAllocationRule();
+		chooseAllocationRule();
+		//		performSave();
+	}
+/*
 	public void E10_3542_SearchRecord () throws InterruptedException{
 		clickTxtShiftBand();
 		enterShiftBandName("RTG_AM1");
@@ -308,7 +383,5 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		clickonAllocationRule();
 		chooseAllocationRule();
 //		performSave();
-	}
-
-	
+	}*/
 }
