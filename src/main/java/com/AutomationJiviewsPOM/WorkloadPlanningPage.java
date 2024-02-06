@@ -23,7 +23,7 @@ public class WorkloadPlanningPage extends BaseClass{
 	
 	
 	public void clickWorkloadPlanning() {
-//		webUtility.ElementClickable(driver, workloadPlanning);
+//		web	Utility.ElementClickable(driver, workloadPlanning);
 		workloadPlanning.click();
 	}
 	public void clickWorkloadPlanner() throws InterruptedException {
@@ -36,13 +36,10 @@ public class WorkloadPlanningPage extends BaseClass{
 	}
 	
 	public void clickOnWorkloadPlanner() throws InterruptedException {
-//		clickWorkloadPlanning();
-//		clickWorkloadPlanner();
 		workloadPlanning.click();
 		workloadPlanner.click();
 	}
 	public void clickOnRTGPlanning() {
-//		clickWorkloadPlanning();
 		workloadPlanning.click();
 		RTGPlanning.click();
 	}

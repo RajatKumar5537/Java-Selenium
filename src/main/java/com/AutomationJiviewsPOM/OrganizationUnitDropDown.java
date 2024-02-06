@@ -44,17 +44,17 @@ public class OrganizationUnitDropDown extends BaseClass{
 		OLMop.click();
 	}
 	public void setAutoOu() throws InterruptedException  {
-//		webUtility.ElementClickable(driver, autoOu);
-//		autoOu.click();	
+		webUtility.ElementClickable(driver, autoOu);
+		autoOu.click();	
 		
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    try {
-	        WebElement clickableAutoOu = wait.until(ExpectedConditions.elementToBeClickable(autoOu));
-	        clickableAutoOu.click();
-	    } catch (TimeoutException e) {
-	        System.out.println("Element 'autoOu' was not clickable within the specified time.");
-	        e.printStackTrace();
-	    }
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//	    try {
+//	        WebElement clickableAutoOu = wait.until(ExpectedConditions.elementToBeClickable(autoOu));
+//	        clickableAutoOu.click();
+//	    } catch (TimeoutException e) {
+//	        System.out.println("Element 'autoOu' was not clickable within the specified time.");
+//	        e.printStackTrace();
+//	    }
 	}
 }
 
