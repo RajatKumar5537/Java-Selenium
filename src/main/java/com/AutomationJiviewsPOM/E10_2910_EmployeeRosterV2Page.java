@@ -300,9 +300,11 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public void clickStartAndEndDate() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 //		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='dtStartAndEnd']")));
+		Thread.sleep(5000);
 		element.clear();
+		Thread.sleep(5000);
 		element.click();
 	}
 	public void enterStartDate(String startDate) {
@@ -754,7 +756,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
 //		clickApply();
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -764,7 +766,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2939 - Employee Roster V2 [Search by filters]
 	public void searchByFilters() throws InterruptedException {
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		clickBtnFilter();
 
 		chooseShiftBand();
@@ -772,7 +774,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 	public void expandAndCollapseRows(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -783,7 +785,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]
 	public void filterAndResetColumns(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -796,7 +798,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2942 - Employee Roster V2 [Expand and minimize full screen]
 	public void performFullScreen(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(20000);
+		Thread.sleep(2000);
 		clickStartAndEndDate();
 //		enterStartDate(fakeEmployee.getRosterStartDate());
 //		enterEndDate(fakeEmployee.getRosterEndDate());
