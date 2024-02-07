@@ -46,13 +46,11 @@ package com.JiviewsAutomation.SystemDefination_Test;
 		public void verifyDeleteBerth() throws Exception
 		{
 			mariTime.deleteBerth();
-			System.out.println("this is for testing Purpose");
 		}
 		@Test(priority = 5)
 		public void verifyReActivate()throws Exception
 		{
 			mariTime.reActivate();
-			System.out.println("this is for testing");
 		}
 		
 }
