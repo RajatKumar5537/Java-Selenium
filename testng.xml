@@ -1,4 +1,4 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+
 <suite name="Suite">
 	<listeners>
 		<listener
@@ -6,27 +6,20 @@
 	</listeners>
 
 	<!-- 
+	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
+
+	
 	<test name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
 
-	<test name="E10_2608_RoasterSetupTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
-		</classes>
-	</test>
-
-	<test name="E10_2638_PublicHolidayTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
 			/>
 		</classes>
 	</test>
+
+</suite>
+
 
 	<test name="E10_2639_SCRTest">
 		<classes>
@@ -110,3 +103,4 @@
 		</classes>
 	</test>
 </suite>
+

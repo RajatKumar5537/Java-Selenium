@@ -1,3 +1,35 @@
+<<<<<<< HEAD
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ExcelUtilities.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2639_SystemDefinationSCRPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeAdminstrationPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2638_SystemDefinationPublicHolidayPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeSetupPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3089_SystemDefinationRoleSetupPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ListenerImplimentation.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\RosterSetupPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\jiviewsMainMenuItems.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ExtentReportManager.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2909_EmpAdmRosterGroupAssignmentPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\WebUtilities.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2608_SystemDefinationRosterCreationPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\FileLib.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2606_SystemDefinationShiftBandPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\FakeEmployee.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\WorkforceSchedulingPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3216_ESSApplyLeavePage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2910_EmployeeRosterV2Page.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3082_SystemDefinationSkillSetupPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeKioskPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\configUtility.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2749_SystemDefinationRoleGroupPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\BaseClass.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\WorkloadPlanningPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\LoginPage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2695_EmpAdmEmployeeProfilePage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\OrganizationUnitDropDown.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\HomePage.java
+C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3147_WorkloadPlannerPage.java
+=======
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\FileLib.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3082_SystemDefinationSkillSetupPage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkloadPlanningPage.java
@@ -31,3 +63,4 @@ C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Em
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ListenerImplimentation.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\HomePage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkforceSchedulingPage.java
+>>>>>>> 8dca5ba3977be9931cee3c9a3fc197a0446e31c8
