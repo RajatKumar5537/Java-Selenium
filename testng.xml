@@ -1,4 +1,3 @@
-
 <suite name="Suite">
 	<listeners>
 		<listener
@@ -103,13 +102,21 @@
 			/>
 		</classes>
 	</test> -->
+	<test name="E10_2638_PublicHolidayTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
+			/>
+		</classes>
+	</test>
+
 	<test name="Maritime_Setup_Test">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
 			/>
 		</classes>
-	</test> 
-	
-	
+	</test>
+
+
 </suite>

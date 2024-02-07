@@ -198,14 +198,16 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	}
 
 	String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy"));
-
+	String holidayName = fakeData.name().fullName() + "_" + System.currentTimeMillis();
+	
 	public void setCreatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
 		setBtnAddNew();
 		Thread.sleep(2000);
 //		setTxtHolidayName(fakeEmployee.getHolidayName());
 //		Faker fakeData = new Faker();
 		
-		setTxtHolidayName(fakeData.name().fullName() + "_" + System.currentTimeMillis());
+		
+		setTxtHolidayName(holidayName);
 		
 //		setTxtHolidayDate(generateFutureDate() + "_" + System.currentTimeMillis()); 
 		
@@ -220,7 +222,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 		Thread.sleep(2000);
 		setBtnEdit();
 		Thread.sleep(2000);
-		setTxtHolidayName(fakeEmployee.getHolidayName()+ "--" + timestamp);
+		setTxtHolidayName(holidayName);
 //		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setChkIsPaid();
 		setTxtHolidayNote(fakeEmployee.getHolidayNote());
