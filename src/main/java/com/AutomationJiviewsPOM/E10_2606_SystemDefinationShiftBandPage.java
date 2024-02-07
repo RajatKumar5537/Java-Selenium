@@ -201,7 +201,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		setShiftTpSearchOvertime();
 		Thread.sleep(2000);
 		setShiftBandTypeTxt();
-//		clearSearch.click();
+		//		clearSearch.click();
 		Thread.sleep(3000);
 		action.moveToElement(shiftTpSearchCombiShift).perform();
 		shiftTpSearchCombiShift.click();
@@ -434,7 +434,7 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setBtnSave();
-				setNotificationPopup();
+		setNotificationPopup();
 	}
 
 	public void deactiveShiftBand() throws Exception {
