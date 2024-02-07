@@ -1,17 +1,29 @@
-
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Suite">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 
-	
+	<!--
 	<test name="E10_2606_ShiftBandTest">
-
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
+		</classes>
+	</test>
+
+	<test name="E10_2608_RoasterSetupTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
+		</classes>
+	</test>
+
+	<test name="E10_2638_PublicHolidayTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
 			/>
 		</classes>
 	</test>
@@ -90,12 +102,12 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
-	</test> 
-	<test name="E10_3082_SkillSetUpTest">
+	</test> -->
+	<test name="E10_2638_PublicHolidayTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
+			/>
 		</classes>
 	</test>
 </suite>
-

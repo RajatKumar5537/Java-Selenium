@@ -42,6 +42,7 @@ public class E10_3082_SkillSetUpTest extends BaseClass{
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 		empSetup.setCreateSkill();
+
 	}
 
 	@Test(priority = 1)
