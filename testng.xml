@@ -5,7 +5,7 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	
+	<!-- 
 	<test name="E10_2606_ShiftBandTest">
 		<classes>
 			<class
@@ -88,7 +88,7 @@
 			/>
 		</classes>
 	</test>
-<!--
+
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class
@@ -103,5 +103,10 @@
 			/>
 		</classes>
 	</test> -->
-	
+	<test name="E10_3082_SkillSetUpTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
+		</classes>
+	</test>
 </suite>
