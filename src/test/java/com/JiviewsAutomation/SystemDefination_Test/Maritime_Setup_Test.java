@@ -25,6 +25,7 @@ package com.JiviewsAutomation.SystemDefination_Test;
 			orgUnit.setAutoOu();
 			jmMenuItem.clickOnSystemDefination();
 			
+			
 			mariTime=new Maritime_Setup(driver);
 			mariTime.maritimeSetup();
 			mariTime.birthSetup();
@@ -50,31 +51,7 @@ package com.JiviewsAutomation.SystemDefination_Test;
 		public void verifyReActivate()throws Exception
 		{
 			mariTime.reActivate();
+			System.out.println("this is for testing");
 		}
 		
-		
-		
-		//@Test(priority = 0)
-//		public void clickOnSystemSetup() throws InterruptedException
-//		{
-//			Reporter.log("this is fortest :"+mariTime, 0);
-//			mariTime.systemSetup();
-//		}
-//		@Test(priority = 2)
-//		public void clickOnEnterBerthDescription()
-//		{
-//			mariTime.enterBerthDescription();
-//		}
-//		@Test(priority = 1)
-//		public void clickOnMaritimeSetup() throws InterruptedException
-//		{
-//			mariTime=new Maritime_Setup(driver);
-//			mariTime.maritimeSetup();
-//			mariTime.birthSetup();
-//		}
-		//@Test(priority = 4)
-//		public void clickOnBirthSetup()
-//		{
-//			
-//		}
 }
