@@ -1,13 +1,11 @@
-
 <suite name="Suite">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 
-	
-	<test name="E10_2606_ShiftBandTest">
+
+	<test name="Maritime_Setup_Test">
 
 		<classes>
 			<class
@@ -15,7 +13,7 @@
 			/>
 		</classes>
 	</test>
-
+	<!-- 
 	<test name="E10_2639_SCRTest">
 		<classes>
 			<class
@@ -60,7 +58,7 @@
 		</classes>
 	</test>
 
- 
+
 	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 		<classes>
 			<class
@@ -90,7 +88,14 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
-	</test> 
+	</test>
+	<test name="E10_3082_SkillSetUpTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
+		</classes>
+	</test> -->
+	
 	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
