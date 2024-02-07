@@ -4,8 +4,6 @@
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
-
-	<!-- 
 	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
 
 	
@@ -17,9 +15,6 @@
 			/>
 		</classes>
 	</test>
-
-</suite>
-
 
 	<test name="E10_2639_SCRTest">
 		<classes>
@@ -95,7 +90,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
 			/>
 		</classes>
-	</test> -->
+	</test> 
 	<test name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
