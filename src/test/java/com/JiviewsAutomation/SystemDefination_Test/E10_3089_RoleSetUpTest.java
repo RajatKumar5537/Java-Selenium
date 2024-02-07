@@ -36,6 +36,7 @@ public class E10_3089_RoleSetUpTest extends BaseClass{
 
 		//		homePage.setOrgUnit();
 		//		orgUnit.clickOLMop();
+		
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();

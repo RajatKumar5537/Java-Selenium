@@ -44,6 +44,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 		captureScreenshot(driver, "roasterSetupTest");
 		logger.info("E10-2697 Creating Roaster with Roster Group ...");
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		
 		driver.navigate().to(homeUrl);
 		homePage=new HomePage(driver);
 		orgUnit= new OrganizationUnitDropDown(driver);

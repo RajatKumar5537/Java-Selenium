@@ -44,6 +44,7 @@ C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E1
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExcelUtilities.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\FakeEmployee.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\LoginPage.java
+C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Maritime_Setup.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\OrganizationUnitDropDown.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\WebUtilities.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3541_OPE_RTG_PlanningPage.java
@@ -51,6 +52,7 @@ C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneri
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2639_SystemDefinationSCRPage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3089_SystemDefinationRoleSetupPage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\configUtility.java
+C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3539_OperationPlanningExecutionPage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExtentReportManager.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2909_EmpAdmRosterGroupAssignmentPage.java
 C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2638_SystemDefinationPublicHolidayPage.java

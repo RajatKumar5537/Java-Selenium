@@ -31,6 +31,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentTest extends BaseClass{
 		rosterGrpAssignment= new  E10_2909_EmpAdmRosterGroupAssignmentPage(driver);
 	
 		homePage.setOrgUnit();
+		
 		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();

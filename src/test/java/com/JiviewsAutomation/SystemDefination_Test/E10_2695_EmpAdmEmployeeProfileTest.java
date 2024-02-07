@@ -31,6 +31,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		empProfile= new  E10_2695_EmpAdmEmployeeProfilePage(driver);
 
 //		homePage.setOrgUnit();
+		
 //		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
@@ -44,6 +45,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 		captureScreenshot(driver, "EmpAdmEmployeeProfileTest");
 		logger.info("E10-3135 Creating Employee Profile...");
 
+		
 		empProfile.createEmpProfile(fakeEmployee);
 		logger.info("E10-3135 Employee Profile creation successful");
 	}

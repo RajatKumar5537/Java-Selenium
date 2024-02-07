@@ -481,7 +481,7 @@ public class FakeEmployee {
 	private static final int SKILL_END_MONTHS_MAX = 6;
 	private static final int TERMINATION_MONTHS_AFTER_SKILL_END = 3;
 	private static final int ROSTER_START_DAYS_BEFORE = 7;
-	private static final int ROSTER_END_DAYS_AFTER_START = 20;
+	private static final int ROSTER_END_DAYS_AFTER_START = 12;
 	private String uniqueHolidayDate;
 
 

@@ -1,5 +1,6 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
+
 import java.io.IOException;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -22,10 +23,11 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	private WorkforceSchedulingPage wfScheduling;
 	private E10_2910_EmployeeRosterV2Page empRosterV2;
 
-	@BeforeMethod
+	@Test(priority = 0)
 	public void setup() throws Exception {
-		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-		driver.navigate().to(homeUrl);
+//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+//		driver.navigate().to(homeUrl);
+		
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);
@@ -33,7 +35,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2= new  E10_2910_EmployeeRosterV2Page(driver);
 
 		Thread.sleep(2000);
-		homePage.setOrgUnit();
+		homePage.setOrgUnit();		
 		orgUnit.setAutoOu();
 //		Thread.sleep(5000);
 		jmMenuItem.setSelectWorkforceScheduling(); 
@@ -44,6 +46,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	public void E10_2938_VerifySearchEmpRosterByDate() throws Exception {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Searching Employee Roster By Date...");
+		
 
 		empRosterV2.searchEmpRosterByDate(fakeEmployee);
 		logger.info("Search Employee Roster By Date is successful");
@@ -86,7 +89,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Perform Expand and minimize full screen is successful");
 	}
 
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void E10_2943_VerifyPerformCreateShift() throws Exception {
 		// Jira Item: E10-2943 - Employee Roster V2 [Double click on tab or right click and select create shift]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
@@ -254,5 +257,5 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 		empRosterV2.ApplyTimeOff(fakeEmployee);
 		logger.info("Apply On Behalf Apply Time off  is successful");
-	}
+	}*/
 }

@@ -25,6 +25,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 	public void setUp() throws Exception {
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
+		
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);
@@ -33,9 +34,11 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 //		homePage.setOrgUnit();
 //		orgUnit.clickOLMop();
+		
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		Thread.sleep(2000);
+		
 		jmMenuItem.clickOnSystemDefination();
 		rosterSetup.setCreateRoasterShiftBand();
 
@@ -95,6 +98,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 		logger.info("E10-3120 Verify With Combination Shift...");
 
 		shiftBand.shiftBandTypeCombinationShift();
+		
 		logger.info("E10-3120 Verify With Combination Shift is successful");
 	}
 

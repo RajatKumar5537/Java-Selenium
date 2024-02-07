@@ -31,6 +31,7 @@ public class E10_2749_RoleGroupTest extends BaseClass{
 		empSetup = new EmployeeSetupPage(driver);
 		roleGroup = new E10_2749_SystemDefinationRoleGroupPage(driver);
 
+		
 		//        homePage.setOrgUnit();
 		//		orgUnit.clickOLMop();
 		homePage.setOrgUnit();
@@ -43,7 +44,7 @@ public class E10_2749_RoleGroupTest extends BaseClass{
 	public void E10_3122_VerifyCreateRoleGroups() throws Exception {
 		captureScreenshot(driver, "RoleGroupTest");
 		logger.info("E10-3122 Create Role Group...");
-
+		
 		roleGroup.createRolesGroup();
 		logger.info("E10-3122 Create Role Group is successful");
 	}
