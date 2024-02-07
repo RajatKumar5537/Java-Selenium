@@ -9,15 +9,17 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
 
 import com.AutomationJiviewsGeneric.BaseClass;
-	import com.github.javafaker.Faker;
+import com.AutomationJiviewsGeneric.WebUtilities;
+import com.github.javafaker.Faker;
 
-	public class Maritime_Setup extends BaseClass {
+	public class Maritime_Setup  {
 		
 		public Select select;
-		public Actions action;
+		public Actions action ;
 		public Faker fakeData;
 		public String berthName;
-		
+		WebDriver driver;
+		WebUtilities  webUtility= new WebUtilities(driver);
 		
 		//generic locators which we have to use
 		@FindBy(id="txtBerth")
@@ -104,7 +106,10 @@ import com.AutomationJiviewsGeneric.BaseClass;
 
 	public Maritime_Setup(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
+		
 		this.action= new Actions(driver);
+		this.webUtility= new WebUtilities(driver);
 	}
 	
 	public void selectAvailableShiftBand() {
