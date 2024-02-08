@@ -778,8 +778,13 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
 //		clickApply();
-		Thread.sleep(4000);
-		selectWorkforceScheduling.click();
+//		Thread.sleep(4000);
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selectWorkforceScheduling));
+        Actions actions = new Actions(driver);
+        actions.moveToElement(element).click().perform();
+        
+//		selectWorkforceScheduling.click();
 		Scheduling.isDisplayed();
 		Thread.sleep(4000);
 		EmployeeRosterV2.click();
