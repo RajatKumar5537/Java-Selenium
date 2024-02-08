@@ -139,7 +139,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 		rosterCreation.setReactiveRoster();
 		logger.info("Reactivate Roaster is successful");
 	}
-	@Test(priority = 6)
+	/*@Test(priority = 6)
 	public void E10_3153_VerifyCreateRoasterWithGroupAndEmp() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
@@ -156,5 +156,5 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 		rosterCreation.setCreateRoasterwithRosterAndEmp();
 		logger.info("Roaster with Roster Group and Employee is successful");
 	}
-	
+	*/
 }

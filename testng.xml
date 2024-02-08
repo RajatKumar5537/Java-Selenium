@@ -1,5 +1,5 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Total Test Script">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
@@ -39,6 +39,13 @@
 		</classes>
 	</test>
 
+	<test
+		name="E10_2695_EmpAdmEmployeeProfileTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest" />
+		</classes>
+	</test>
 
 	<test
 		name="E10_2749_RoleGroupTest">
@@ -58,6 +65,14 @@
 	</test>
 
 	<test
+		name="E10_2910_WorkforceEmployeeRosterV2Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+			/>
+		</classes>
+	</test>
+	<test
 		name="E10_3082_SkillSetUpTest">
 		<classes>
 			<class
@@ -72,8 +87,13 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
 		</classes>
 	</test>
-
-
+	<test
+		name="E10_3541_OPE_RTG_PlanningTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest" />
+		</classes>
+	</test>
 	<test
 		name="Maritime_Setup_Test">
 		<classes>
