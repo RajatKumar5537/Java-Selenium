@@ -8,6 +8,8 @@ stages:
 - stage: SetupEnvironment
   jobs:
   - job: SetupChromeDriver
+    timeoutInMinutes: 10
+    cancelTimeoutInMinutes: 5
     steps:
     - task: PowerShell@2
       inputs:
@@ -22,6 +24,8 @@ stages:
 - stage: BuildAndTest
   jobs:
   - job: Build
+    timeoutInMinutes: 180 # Set timeout to 3 hours
+    cancelTimeoutInMinutes: 120  # Set cancel timeout to 2 hours
     steps:
     - checkout: self
     - task: Maven@4
