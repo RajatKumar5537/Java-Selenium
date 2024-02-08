@@ -75,14 +75,6 @@
 
 
 	<test
-		name="E10_3089_RoleSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
-		</classes>
-	</test>
-
-	<test
 		name="Maritime_Setup_Test">
 		<classes>
 			<class
