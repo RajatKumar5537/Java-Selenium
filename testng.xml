@@ -74,13 +74,6 @@
 	</test>
 
 
-	<test name="E10_3082_SkillSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
-		</classes>
-	</test>
-
 	<test
 		name="E10_3089_RoleSetUpTest">
 		<classes>
