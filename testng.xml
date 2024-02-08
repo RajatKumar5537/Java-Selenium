@@ -5,7 +5,7 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
+<!-- 
 	<test
 		name="E10_2606_ShiftBandTest">
 		<classes>
@@ -99,6 +99,15 @@
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
+			/>
+		</classes>
+	</test> -->
+	
+	<test
+		name="E10_2910_WorkforceEmployeeRosterV2Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
 			/>
 		</classes>
 	</test>
