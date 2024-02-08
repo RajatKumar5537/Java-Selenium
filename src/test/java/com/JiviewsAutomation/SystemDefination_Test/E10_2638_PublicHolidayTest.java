@@ -24,10 +24,10 @@ public class E10_2638_PublicHolidayTest extends BaseClass{
 	private RosterSetupPage rosterSetup;
 	private E10_2638_SystemDefinationPublicHolidayPage publicHoliday;
 
-	@Test(priority = 0)
+	@BeforeMethod
 	public void setup() throws Exception {
-//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-//		driver.navigate().to(homeUrl);
+		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+		driver.navigate().to(homeUrl);
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);

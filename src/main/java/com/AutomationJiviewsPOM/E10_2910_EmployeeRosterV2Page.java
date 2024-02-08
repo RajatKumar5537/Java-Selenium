@@ -13,7 +13,6 @@ import java.awt.event.KeyEvent;
 import java.io.IOException;
 import java.time.Duration;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.Set;
@@ -22,9 +21,7 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.NoAlertPresentException;
 import org.openqa.selenium.StaleElementReferenceException;
-import org.openqa.selenium.UnhandledAlertException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -786,7 +783,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
         
 //		selectWorkforceScheduling.click();
 		Scheduling.isDisplayed();
-		Thread.sleep(4000);
+		Thread.sleep(2000);
 		EmployeeRosterV2.click();
 		
 		clickStartAndEndDate();
