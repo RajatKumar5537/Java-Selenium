@@ -32,8 +32,8 @@ public class WorkforceSchedulingPage extends BaseClass{
 	public void setEmployeeRosterV2() throws InterruptedException {
 		//		clickScheduling();
 		//		clickEmployeeRosterV2();
-		//		Scheduling.click();
-		//		EmployeeRosterV2.click();
+		Scheduling.click();
+		EmployeeRosterV2.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 
 		try {

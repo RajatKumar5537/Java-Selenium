@@ -46,6 +46,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public Actions actions = new Actions(driver);
 	ExcelUtilities excelUtilities= new ExcelUtilities();
 
+	@FindBy(xpath = "//span[text()='Workforce Scheduling']/..")
+	private WebElement selectWorkforceScheduling;
+	@FindBy(xpath = "//div[text()='Scheduling']/..")
+	private WebElement Scheduling;
+	@FindBy(xpath = "//div[text()='Employee Roster V2']/..")
+	private WebElement EmployeeRosterV2;
+	
+	
+	
 	@FindBy(id = "dtStartAndEnd")
 	private WebElement dateStartAndEnd;
 //	@FindBy(xpath = "//input[@class='input-mini form-control active']")
@@ -100,7 +109,7 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	@FindBy(xpath = "//span[@id='btnExpandText']")
 	private WebElement btnExpandText;
 
-	@FindBy(xpath = "(//div[@class='navbar-showhidecolumns nav-item dropdown show'])[2]")
+	@FindBy(xpath = "(//div[@class='card-header-elements ml-auto']/div)[2]")
 	private WebElement columns;
 	@FindBy(xpath = "//span[text()='EMPLOYEE']")
 	private WebElement employee;
@@ -324,7 +333,6 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 	    WebElement applyButton = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("(//button[text()='Apply'])[2]")));
 	    applyButton.click();
-//		clickApply.click();
 	}
 	public void cmbRosterGroupBy() {
 		webUtility.ElementClickable(driver, cmbRosterGroupBy);
@@ -337,14 +345,14 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	public void clickBtnFilter() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
-		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnFilterDiv")));
+		WebElement btnFilterElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//li[@id='btnFilterDiv']")));
 		btnFilterElement.click();
 	}
 	public void enterEmployeeName() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement btnFilterDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("btnFilterDiv")));
+		WebElement btnFilterDiv = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='filterEmployee']/div")));
 		btnFilterDiv.click();
-		//		filterEmployee.click();
+//				filterEmployee.click();
 	}
 	public void chooseRosterGroup() { 
 		filterRosterGroup.click();
@@ -391,7 +399,10 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		}
 	}
 	public void selectColumns(String column) {
-		columns.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement dropdownElement = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//div[@class='navbar-showhidecolumns nav-item dropdown']")));
+		dropdownElement.click();
+		
 		switch (column) {
 		case "Disable":
 			//	employee.click();
@@ -417,10 +428,15 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		btnFullScreen.click();
 	}
 	public void doubleClickEmptyCell(WebElement emptyCell) {
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); 
+		    wait.until(ExpectedConditions.elementToBeClickable(emptyCell));
 		webUtility.doubleClickOnElement(driver, emptyCell);
 	}
 	public void rightClickEmptyCell(WebElement emptyCell) {
-		webUtility.rightClickOnElement(driver, emptyCell);
+		 WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30)); 
+		    wait.until(ExpectedConditions.elementToBeClickable(emptyCell));
+		    webUtility.rightClickOnElement(driver, emptyCell);
+//		webUtility.rightClickOnElement(driver, emptyCell);
 	}
 	public void selectCreateShift() {
 		CreateShift.click();
@@ -556,8 +572,13 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 		notificationPopup.click();
 	}
 	public void clickCollapseGroupOption() {
-		webUtility.moveToElement(driver, CollapseGroupOption);
+//		webUtility.moveToElement(driver, CollapseGroupOption);
+//		CollapseGroupOption.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className("blockUI blockOverlay")));
+		wait.until(ExpectedConditions.elementToBeClickable(CollapseGroupOption));
 		CollapseGroupOption.click();
+
 	}
 	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
@@ -757,7 +778,12 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
 	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
 //		clickApply();
-		Thread.sleep(2000);
+		Thread.sleep(4000);
+		selectWorkforceScheduling.click();
+		Scheduling.isDisplayed();
+		Thread.sleep(4000);
+		EmployeeRosterV2.click();
+		
 		clickStartAndEndDate();
 		enterStartDate(fakeEmployee.getRosterStartDate());
 		enterEndDate(fakeEmployee.getRosterEndDate());
@@ -775,55 +801,75 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
 	public void expandAndCollapseRows(FakeEmployee fakeEmployee) throws InterruptedException {
-//		Thread.sleep(2000);
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
+//		
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
 	}
 	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]
 	public void filterAndResetColumns(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(2000);
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
+//		Thread.sleep(2000);
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+		columns.click();
+		actCost.click();
+		dayS1.click();
+		nightS2.click();
+		officeO.click();
+		webUtility.moveToElement(driver, qcDay);
+		qcDay.click();
+//		selectColumns("Disable");
 		clickBtnClose();
 	}
 	// Jira Item: E10-2942 - Employee Roster V2 [Expand and minimize full screen]
 	public void performFullScreen(FakeEmployee fakeEmployee) throws InterruptedException {
-		Thread.sleep(2000);
-		clickStartAndEndDate();
-//		enterStartDate(fakeEmployee.getRosterStartDate());
-//		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		Thread.sleep(2000);
+//		clickStartAndEndDate();
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		columns.click();
+//		actCost.click();
+//		dayS1.click();
+//		nightS2.click();
+//		officeO.click();
+//		webUtility.moveToElement(driver, qcDay);
+//		qcDay.click();
+////		selectColumns("Disable");
+//		clickBtnClose();
 		performBtnFullScreen();
 		Thread.sleep(1000);
 		performBtnFullScreen();
 	}
 	// Jira Item: E10-2943 - Employee Roster V2 [Double click on tab or right click and select create shift]
 	public void performClickEmptyCellCreateShift(FakeEmployee fakeEmployee) throws Exception {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		columns.click();
+//		actCost.click();
+//		dayS1.click();
+//		nightS2.click();
+//		officeO.click();
+//		webUtility.moveToElement(driver, qcDay);
+//		qcDay.click();
+////		selectColumns("Disable");
+//		clickBtnClose();
+		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -838,24 +884,25 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	// Jira Item: E10-2944 - Employee Roster V2 [Copy single Cell and paste in new Cell]
 	public void CopySingleCellAndPasteInNewCell(FakeEmployee fakeEmployee) throws Exception {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
 		//		selectColumns("Disable");
 		//		clickBtnClose();
-		doubleClickEmptyCell(emptyCell);
-		selectRoleName();
-		selectResultsRoleName();
-		selectShiftBandCode();
-		selectResultsShiftBand();
-		enterShiftNotes(fakeEmployee.getDescription());
-		clickBtnSelectShiftBand();
-		getShiftCreatedSuccessfullyMsg();
-		clickNotificationPopup();
+//		doubleClickEmptyCell(emptyCell);
+//		selectRoleName();
+//		selectResultsRoleName();
+//		selectShiftBandCode();
+//		selectResultsShiftBand();
+//		enterShiftNotes(fakeEmployee.getDescription());
+//		clickBtnSelectShiftBand();
+//		getShiftCreatedSuccessfullyMsg();
+//		clickNotificationPopup();
+		
 		clickShiftCardForCopy();
 		performCopy();
 		Thread.sleep(1000);
@@ -907,15 +954,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	// Jira Item: E10-2945 - Employee Roster V2 [Right click ->Copy with Oncall, Remark and OC & Remarks]
 	public void CopyWithOncallShift(FakeEmployee fakeEmployee) throws Exception{
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -933,16 +981,17 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	// Jira Item: E10-2946 - Employee Roster V2 [Right Click -> Export to Text and Excel]
 	public void ExportToTextAndExcel(FakeEmployee fakeEmployee) throws Exception {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		Thread.sleep(8000);
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		Thread.sleep(8000);
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		rightClickEmptyCell(emptyCell);
 		mouseHoverExportOption();
 		clickTextFileOption();
@@ -951,15 +1000,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2947 - Employee Roster V2 [Right click -> Collapse group]
 	public void CollapseRowByGroup(FakeEmployee fakeEmployee) throws InterruptedException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		rightClickEmptyCell(emptyCell);
 		clickCollapseGroupOption();
 	}
@@ -967,21 +1017,19 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	// Jira Item: E10-2949 - Employee Roster V2 [Right click on Employee and click copy and paste in Excel sheet]
 	public void testCopyAndPasteToExcel(FakeEmployee fakeEmployee) throws InterruptedException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+		
 		clickBtnExpand();
-		//		selectColumns("Disable");
-		//		clickBtnClose();
 		// Step 1: Create a list to store the data
 		List<String> allData = new ArrayList<>();
 
 		// Step 2: Loop through each element, copy its text, and add to the list
 		for (WebElement element : columnEmployeeSearch) {
-			// Click on the WebElement to select it (if necessary)
 			element.click();
 
 			// Copy the selected text to the clipboard 
@@ -1017,15 +1065,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2950 - Employee Roster V2 [Right click -> Employee Profile] 
 	public void clickonEmployeeProfile(FakeEmployee fakeEmploye) throws InterruptedException, IOException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		Thread.sleep(2000);
 		// Get the title of the new tab
 		String employeeProfileTitle = getTitleOfNewTabWithAlertPopup(rightClickEmployee, employeeProfileOption);
@@ -1036,15 +1085,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2951 - Employee Roster V2 [Right click -> Leave Profile]
 	public void clickonLeaveProfile(FakeEmployee fakeEmploye) throws InterruptedException, IOException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		Thread.sleep(2000);
 		// Get the title of the new tab
 		String leaveProfileTitle = getTitleOfNewTab(rightClickEmployee, leaveProfileOption);
 		Reporter.log("Actual Title is-: "+ leaveProfileTitle, true);
@@ -1054,15 +1104,17 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2952 - Employee Roster V2 [ Right click -> Approval Route]
 	public void clickonApprovalRoute(FakeEmployee fakeEmploye) throws InterruptedException, IOException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
+		Thread.sleep(2000);
 		// Get the title of the new tab
 		String approvalRouteTitle = getTitleOfNewTab(rightClickEmployee, approvalRouteOption);
 		System.out.println("Actual Title is -: " + approvalRouteTitle);
@@ -1072,15 +1124,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-2954 - Employee Roster V2 [ Click Different tab in Summary]
 	public void clickDifferentTabinSummary(FakeEmployee fakeEmploye) throws InterruptedException {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		webUtility.scrollDown(driver);
 		tabShiftCount();
 		webUtility.scrollDown(driver);
@@ -1097,15 +1150,17 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	//	Jira Item: E10-2948 - Employee Roster V2 [Right click -> apply leave]
 	public void applyOnBehalfApplyLeave(FakeEmployee fakeEmployee) throws Exception {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
+		
 		rightClickEmptyCell(emptyCell);
 		mouseHoverApplyOnBehalfOption();
 		Thread.sleep(2000);
@@ -1129,15 +1184,17 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	// Jira Item: E10-3038 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Time off 
 	public void ApplyTimeOff(FakeEmployee fakeEmployee) throws Exception  {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
+		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -1169,15 +1226,16 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 	//	Jira Item: E10-3039 - Employee Roster V2  [Right Click] [Apply On Behalf] Apply Uncontrolled Leave
 	public void ApplyUncontrolledLeave(FakeEmployee fakeEmployee) throws Exception {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
 		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
@@ -1202,15 +1260,17 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 	}
 	//	Jira Item: E10-3040 - Employee Roster V2 [Right Click] [Apply On Behalf] Apply Exclude Deployment
 	public void applyExcludeDeployment(FakeEmployee fakeEmployee) throws Exception  {
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
-		selectColumns("Disable");
-		clickBtnClose();
+//		clickStartAndEndDate();
+//		enterStartDate(fakeEmployee.getRosterStartDate());
+//		enterEndDate(fakeEmployee.getRosterEndDate());
+//		clickApply();
+//		cmbRosterGroupBy();
+//		clickbtnSearchEmployeeRoster();
+//		clickBtnExpand();
+//		selectColumns("Disable");
+//		clickBtnClose();
+		
+		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
 		selectResultsRoleName();
