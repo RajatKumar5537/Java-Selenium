@@ -20,6 +20,7 @@ public class E10_2695_EmpAdmEmployeeProfileTest extends BaseClass{
 	private EmployeeAdminstrationPage empAdmin;
 	private E10_2695_EmpAdmEmployeeProfilePage empProfile;
 
+	
 	@BeforeMethod
 	public void setup() throws Exception {
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");

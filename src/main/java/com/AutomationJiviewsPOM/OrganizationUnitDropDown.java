@@ -24,7 +24,7 @@ public class OrganizationUnitDropDown extends BaseClass{
 
 
 	// Select OLM
-	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[3]")
+	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
 	private WebElement OLMop;
 
 

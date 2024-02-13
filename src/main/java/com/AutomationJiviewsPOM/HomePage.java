@@ -20,7 +20,8 @@ public class HomePage extends BaseClass{
 	@FindBy(xpath = "//a[@id='btnLogout']")
 	private WebElement Logout;
 
-	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+//	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	@FindBy(xpath = "//div[@id='layout-navbar-collapse']/div/div[@id='dvOrgUnitDropdown']/a")
 	private WebElement OrgUnit;
 
 	public HomePage(WebDriver driver) {

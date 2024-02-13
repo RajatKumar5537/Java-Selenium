@@ -24,7 +24,8 @@ public class E10_2639_SCRTest extends BaseClass{
 	public RosterSetupPage rosterSetup;
 	public E10_2639_SystemDefinationSCRPage scr;
 
-	@BeforeMethod
+//	@BeforeMethod
+	@Test(priority = 0)
 	public void setup() throws Exception {
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);

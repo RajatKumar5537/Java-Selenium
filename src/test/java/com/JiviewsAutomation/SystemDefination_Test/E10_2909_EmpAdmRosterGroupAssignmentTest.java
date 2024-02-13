@@ -21,6 +21,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentTest extends BaseClass{
 	private E10_2909_EmpAdmRosterGroupAssignmentPage rosterGrpAssignment;
 
 	@BeforeMethod
+	
 	public void setup() throws Exception {
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);

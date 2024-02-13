@@ -1,4 +1,3 @@
-<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
 <suite name="Total Test Script">
 	<listeners>
 		<listener
@@ -85,6 +84,13 @@
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
+		</classes>
+	</test> 
+	<test
+		name="E10_3539_OperationPlanningExecutionTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3539_OperationPlanningExecutionTest" />
 		</classes>
 	</test>
 	<test

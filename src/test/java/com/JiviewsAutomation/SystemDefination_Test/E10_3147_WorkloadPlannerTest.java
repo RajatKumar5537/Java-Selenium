@@ -33,7 +33,7 @@ public class E10_3147_WorkloadPlannerTest extends BaseClass{
 		workloadPlanning= new WorkloadPlanningPage(driver);
 		workloadPlanner= new E10_3147_WorkloadPlannerPage(driver);
 
-		
+	
 		homePage.setOrgUnit();
 		Thread.sleep(2000);
 		orgUnit.setAutoOu();

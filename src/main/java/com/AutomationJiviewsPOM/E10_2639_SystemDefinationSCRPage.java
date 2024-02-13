@@ -417,10 +417,10 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 
 		setBtnAddScheduleRule();
 //		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
-		setTxtScheduleRuleName(fakeEmployee.getFirstName());
+		setTxtScheduleRuleName(fakeEmployee.getFirstName()+ System.currentTimeMillis());
 		
 //		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
-		setTxtScheduleRuleDesc(fakeEmployee.getDescription());
+		setTxtScheduleRuleDesc(fakeEmployee.getDescription()+ System.currentTimeMillis());
 		
 		setTxtValidFrom(validFrom);
 		//		setTxtValidTo(validTo);
@@ -463,10 +463,10 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 
 		setBtnEdit();
 //		setTxtScheduleRuleName(ruleName+ " "+ timeStamp);
-		setTxtScheduleRuleName(fakeEmployee.getFirstName());
+		setTxtScheduleRuleName(fakeEmployee.getFirstName()+ " " +System.currentTimeMillis());
 		
 //		setTxtScheduleRuleDesc(ruleDesc+ " "+ timeStamp);
-		setTxtScheduleRuleDesc(fakeEmployee.getDescription());
+		setTxtScheduleRuleDesc(fakeEmployee.getDescription()+ System.currentTimeMillis());
 		Thread.sleep(1000);
 		setBtnSaveScheduleCreationRule();
 		clickNotificationPopup();

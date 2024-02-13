@@ -25,6 +25,7 @@ package com.JiviewsAutomation.SystemDefination_Test;
 			orgUnit.setAutoOu();
 			jmMenuItem.clickOnSystemDefination();
 			
+			
 			mariTime=new Maritime_Setup(driver);
 			mariTime.maritimeSetup();
 			mariTime.birthSetup();

@@ -5,8 +5,10 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
+import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -25,6 +27,12 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	//	public ExcelUtilities excelUtility;
 	//	public WebUtilities webUtility;
 
+	
+	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
+	private WebElement btnExcel;
+	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-pdf buttons-html5 btn-sm mr-1']")
+	private WebElement btnPDF;
+	
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
 
@@ -180,7 +188,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public void clickYes() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.visibilityOf(clickYes));
+	    wait.until(ExpectedConditions.elementToBeClickable(clickYes));
 		clickYes.click();
 	}
 
@@ -202,6 +210,11 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		enterWageLevelCode(wageLevelCodedata);
 		clickSaveBtn();
 		closeNotificationPopup();
+		
+		btnExcel.isEnabled();
+//		btnExcel.click();
+		btnPDF.isSelected();
+//		btnPDF.click();
 	}
 
 	public void updateSkill() throws Exception {
@@ -225,6 +238,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void activateDeactivateSkill() throws Exception {
+		Thread.sleep(2000);
 		clickEditBtn();
 		Thread.sleep(1000);
 		clickIsActiveOption();
