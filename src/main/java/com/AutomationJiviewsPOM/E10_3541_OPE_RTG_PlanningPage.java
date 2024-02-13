@@ -122,14 +122,15 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		calender.click();
 	}
 	public void clickTxtShiftBand() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
-		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
-		bandTypeElement.click();
-		//	    JavascriptExecutor executor = (JavascriptExecutor) driver;
-		//	    executor.executeScript("arguments[0].click();", bandTypeElement);
-
+	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
+	    WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
+	    
+	    Actions actions = new Actions(driver);
+	    actions.moveToElement(bandTypeElement).click().perform();
 	}
+
+
 	public void enterShiftBandName(String name) {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtSearchField));

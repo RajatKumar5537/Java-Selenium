@@ -106,7 +106,7 @@ public class jiviewsMainMenuItems extends BaseClass{
 	}
 	public void setSelectWorkforceScheduling() throws InterruptedException {
 		clickMainMenu();
-		clickWorkforceScheduling();
+//		clickWorkforceScheduling();
 	}
 	public void clickOnOperationPlanningExecution() {
 		clickMainMenu();

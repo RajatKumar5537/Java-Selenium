@@ -23,9 +23,9 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 	@BeforeMethod
 	public void setUp() throws Exception {
+		
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);
-		
 		
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);

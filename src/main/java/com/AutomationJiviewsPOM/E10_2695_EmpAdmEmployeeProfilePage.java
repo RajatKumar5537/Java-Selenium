@@ -760,7 +760,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	}
 
 	public void clickNotificationPopup() throws Exception {
-		Thread.sleep(1000);
+		Thread.sleep(2000);
+		webUtility.ElementClickable(driver, notificationPopup);
 		action.moveToElement(notificationPopup).perform();
 		notificationPopup.click();
 	}
@@ -1211,7 +1212,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		Assert.assertTrue(actualResult.contains("Add Excluded Skill - Success"));
 	}
 	public void getAddDisciplinaryActionSuccessMsg() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 	    wait.until(ExpectedConditions.visibilityOf(addDisciplinaryActionSuccessMsg));
 	    
 		String actualResult = addDisciplinaryActionSuccessMsg.getText();

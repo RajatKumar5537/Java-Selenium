@@ -1,11 +1,13 @@
 package com.AutomationJiviewsPOM;
 
+
 import java.time.Duration;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
 import java.util.List;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -38,7 +40,14 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	public String noOfDay;
 	public String noOfBlocks;
 
-
+	@FindBy(xpath = "//div[text()='Roster Setup']/..")
+	private WebElement RoasterSetup;
+	@FindBy(xpath = "//div[text()='Roster Creation']/..")
+	private WebElement rosterCreation;
+	
+	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
+	private WebElement txtSearch;
+	
 	@FindBy(xpath = "//button[@id='btnAddNewTemplateRoster']")
 	private WebElement addBtn;
 
@@ -202,8 +211,12 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	}
 
 	public void setAddBtn() {
-		webUtility.ElementClickable(driver, addBtn);
-		addBtn.click();
+//		webUtility.ElementClickable(driver, addBtn);
+//		addBtn.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAddNewTemplateRoster")));
+		element.click();
+
 	}
 
 	public void setTemplateNameTxt(String tampName) throws InterruptedException {
@@ -319,9 +332,12 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		btnAddSaveRosterPattern.click();
 	}
 	public void setBtnPublishRosterPattern() throws InterruptedException {
-		action.moveToElement(btnPublishRosterPattern).perform();
-		Thread.sleep(2000);
-		btnPublishRosterPattern.click();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(btnPublishRosterPattern));
+		Actions action = new Actions(driver);
+		action.moveToElement(button).perform();
+		button.click();
+
 	}
 
 	public void setDropDownCalenderRosterUp(String PublishFrom) {
@@ -485,18 +501,34 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		element.click();
 	}
 	
+	public void clickRosterCreation() {
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".blockUI.blockOverlay")));
+		WebElement targetElement = wait.until(ExpectedConditions.elementToBeClickable(rosterCreation));
+		targetElement.click();
+//		rosterCreation.click();
+	}
+	public void enterNameSearch(String TempName) {
+		txtSearch.click();
+		txtSearch.sendKeys(TempName);
+	}
 	
-	
-	
+	String TemplateName ;
 	public void setCreateRoasterwithGroup() throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
 
+		RoasterSetup.click();
+		Thread.sleep(1000);
+//		rosterCreation.click();
+		clickRosterCreation();
+		
 		Thread.sleep(3000);
 		setAddBtn();
-		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
+		TemplateName = tampName+ " "+ System.currentTimeMillis();
+		setTemplateNameTxt(TemplateName);
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
 		setAvailableSkillForSingleRoster();
@@ -525,15 +557,24 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 
 		setBtnPublishRosterPattern() ;
 		performActionsOnCheckboxes();
+		clickNotificationPopup();
 	}
 	public void setCreateRoasterwithEmployee() throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-
+	
+//		RoasterSetup.click();
+		Thread.sleep(1000);
+//		rosterCreation.click();
+		clickRosterCreation();
 		setAddBtn();
 		Thread.sleep(1000);
+		
+		TemplateName = tampName+ " "+ System.currentTimeMillis();
+		setTemplateNameTxt(TemplateName);
+
 		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
 		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
 		setNoOfDayTxt(noOfDay);
@@ -550,6 +591,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		
 		setBtnPublishRosterPattern();
 		performActionsOnCheckboxes();
+		clickNotificationPopup();
 
 	}
 	public void setCreateRoasterwithRosterAndEmp() throws Exception {
@@ -557,7 +599,12 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-
+	
+//		RoasterSetup.click();
+		Thread.sleep(5000);
+//		rosterCreation.click();
+		clickRosterCreation();
+		Thread.sleep(5000);
 		setAddBtn();
 		Thread.sleep(1000);
 		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
@@ -568,6 +615,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		setSaveBtn();
 		//		enterEmptyCell(6,3,7);
 		//	Add Employee
+		clickNotificationPopup();
 		Thread.sleep(2000);
 		setBtnAddEmployee();
 		Thread.sleep(2000);
@@ -592,21 +640,39 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	public void setUpdateRoaster() throws Exception {
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 15, 10);
 		//		Thread.sleep(2000);
+//		RoasterSetup.click();
+		Thread.sleep(1000);
+//		rosterCreation.click();
+		clickRosterCreation();
+		
+//		enterNameSearch(TemplateName);
+		
 		setEditBtn();
 		setBtnPublishRosterPattern() ;
 		performActionsOnCheckboxes();
+		clickNotificationPopup();
 	}
 	public void setDeactiveRoster() throws Exception {
 //		setCheckBoxDeactive();
 //		setBtnDeleteTemplateRoster();
 		
+//		RoasterSetup.click();
+		Thread.sleep(1000);
+//		rosterCreation.click();
+		clickRosterCreation();
 		
+//		enterNameSearch(TemplateName);
 		deleteRowsWithEnabledCheckbox();
 		setBtnYes();
 		clickNotificationPopup();
 	}
 
 	public void setReactiveRoster() throws InterruptedException {
+//		RoasterSetup.click();
+		Thread.sleep(1000);
+//		rosterCreation.click();
+		clickRosterCreation();
+//		enterNameSearch(TemplateName);
 		Thread.sleep(2000);
 		setEditBtn();
 		setCheckBoxActive();
@@ -614,3 +680,5 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	}
 
 }
+
+

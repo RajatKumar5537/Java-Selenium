@@ -25,10 +25,12 @@ public class E10_3082_SkillSetUpTest extends BaseClass{
 	private EmployeeSetupPage empSetup;
 	private E10_3082_SystemDefinationSkillSetupPage skillSetup;
 
-	@BeforeMethod
+//	@BeforeMethod
+	@Test(priority = 0)
 	public void setUp() throws Exception {
-		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-		driver.navigate().to(homeUrl);
+		
+//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
+//		driver.navigate().to(homeUrl);
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);

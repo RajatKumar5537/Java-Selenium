@@ -27,7 +27,6 @@ public class E10_3541_OPE_RTG_PlanningTest extends BaseClass{
 	public void setup() throws Exception {
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
-
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		menuItem = new jiviewsMainMenuItems(driver);

@@ -22,6 +22,7 @@ public class E10_2749_RoleGroupTest extends BaseClass{
 	private E10_2749_SystemDefinationRoleGroupPage roleGroup;
 
 	@BeforeMethod
+	
 	public void setUp() throws Exception {
 		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		driver.navigate().to(homeUrl);

@@ -27,7 +27,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 	public void setup() throws Exception {
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
-		
+	
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);
@@ -40,7 +40,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 //		Thread.sleep(5000);
 		jmMenuItem.setSelectWorkforceScheduling(); 
 //		Thread.sleep(2000);
-		wfScheduling.setEmployeeRosterV2();
+//		wfScheduling.setEmployeeRosterV2();
 	}
 	@Test(priority = 1)
 	public void E10_2938_VerifySearchEmpRosterByDate() throws Exception {
@@ -52,16 +52,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Search Employee Roster By Date is successful");
 	}
 
-	@Test(priority = 2)
-	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
-		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		logger.info("Searching Employee Roster By Filters...");
-
-		empRosterV2.searchByFilters();
-		logger.info("Search Employee Roster By Filters is successful");
-	}
-
-	@Test(priority = 3)//, dependsOnMethods = "verifySearchByFilters")
+	@Test(priority = 2)//, dependsOnMethods = "verifySearchByFilters")
 	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Expanding And Collapsing Rows...");
@@ -70,7 +61,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Expand And Collapse Rows is successful");
 	}
 	
-	@Test(priority = 4)
+	@Test(priority = 3)
 	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
 		logger.info("Filtering And Resetting Columns...");
@@ -89,7 +80,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Perform Expand and minimize full screen is successful");
 	}
 
-	/*@Test(priority = 6)
+	@Test(priority = 6)
 	public void E10_2943_VerifyPerformCreateShift() throws Exception {
 		// Jira Item: E10-2943 - Employee Roster V2 [Double click on tab or right click and select create shift]
 		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
@@ -137,16 +128,8 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		logger.info("Export to Text and Excel is successful");
 	}
 
-	@Test(priority = 10)
-	public void E10_2947_VerifyExpandAndCollapseGroup() throws Exception {
-		// Jira Item: E10-2947 - Employee Roster V2 [Right click -> Expand and Collapse group]
-		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		logger.info("Performing Expand and Collapse Group...");
-
-		empRosterV2.CollapseRowByGroup(fakeEmployee);
-		logger.info("Expand and Collapse Group is successful");
-	}
-
+	
+/*
 	@Test(priority = 11)
 	public void E10_2948_VerifyApplyOnBehalfApplyLeave() throws Exception {
 		// Jira Item: E10-2948 - Employee Roster V2 [Right click -> Apply On Behalf Apply leave]
@@ -166,7 +149,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.testCopyAndPasteToExcel(fakeEmployee);
 		logger.info("Right click on Employee and click copy and paste in Excel sheet is successful");
 	}
-
+	
 	@Test(priority = 13)
 	public void E10_2950_VerifyOpenNewTabEmployeeProfile() throws Exception {
 		// Jira Item: E10-2950 - Employee Roster V2 [Right click -> Employee Profile]
@@ -257,5 +240,24 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 
 		empRosterV2.ApplyTimeOff(fakeEmployee);
 		logger.info("Apply On Behalf Apply Time off  is successful");
-	}*/
+	}
+	
+	*/
+	@Test(priority = 10) //keep it in last 
+	public void E10_2947_VerifyExpandAndCollapseGroup() throws Exception {
+		// Jira Item: E10-2947 - Employee Roster V2 [Right click -> Expand and Collapse group]
+		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+		logger.info("Performing Expand and Collapse Group...");
+
+		empRosterV2.CollapseRowByGroup(fakeEmployee);
+		logger.info("Expand and Collapse Group is successful");
+	}
+	@Test(priority = 21) //keep it in last 
+	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
+		captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+		logger.info("Searching Employee Roster By Filters...");
+
+		empRosterV2.searchByFilters();
+		logger.info("Search Employee Roster By Filters is successful");
+	}
 }

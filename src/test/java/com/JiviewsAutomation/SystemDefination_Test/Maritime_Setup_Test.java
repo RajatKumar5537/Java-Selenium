@@ -53,4 +53,29 @@ package com.JiviewsAutomation.SystemDefination_Test;
 			mariTime.reActivate();
 		}
 		
+		
+		
+		//@Test(priority = 0)
+//		public void clickOnSystemSetup() throws InterruptedException
+//		{
+//			Reporter.log("this is fortest :"+mariTime, 0);
+//			mariTime.systemSetup();
+//		}
+//		@Test(priority = 2)
+//		public void clickOnEnterBerthDescription()
+//		{
+//			mariTime.enterBerthDescription();
+//		}
+//		@Test(priority = 1)
+//		public void clickOnMaritimeSetup() throws InterruptedException
+//		{
+//			mariTime=new Maritime_Setup(driver);
+//			mariTime.maritimeSetup();
+//			mariTime.birthSetup();
+//		}
+		//@Test(priority = 4)
+//		public void clickOnBirthSetup()
+//		{
+//			
+//		}
 }
