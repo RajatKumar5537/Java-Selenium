@@ -11,7 +11,7 @@ import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class E10_2608_RoasterSetupTest extends BaseClass{
-	private static final Logger logger = LogManager.getLogger(E10_2608_RoasterSetupTest.class);
+//	private static final Logger logger = LogManager.getLogger(E10_2608_RoasterSetupTest.class);
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
@@ -61,13 +61,13 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup();
-		logger.info("E10-2697 Create a Roster Pattern with Roster Group is successfull");
+//		logger.info("E10-2697 Create a Roster Pattern with Roster Group is successfull");
 	}
 
 	@Test(priority = 2)
 	public void E10_2698_VerifyCreateRoasterwithEmployee() throws Exception {
 		captureScreenshot(driver, "roasterSetupTest");
-		logger.info("E10-2698 Creating Roaster with Employee...");
+//		logger.info("E10-2698 Creating Roaster with Employee...");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
 //		homePage=new HomePage(driver);
@@ -80,7 +80,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setCreateRoasterwithEmployee();
-		logger.info("E10-2698 Creating Roaster with Employee is successful");
+//		logger.info("E10-2698 Creating Roaster with Employee is successful");
 	}
 
 	@Test(priority = 3)
@@ -100,7 +100,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setUpdateRoaster();
-		logger.info("E10-2738 Update Roaster with Employee is successful");
+//		logger.info("E10-2738 Update Roaster with Employee is successful");
 
 	}
 	@Test(priority = 4)
@@ -118,7 +118,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setDeactiveRoster();
-		logger.info("Deactivate Roaster is successful");
+//		logger.info("Deactivate Roaster is successful");
 	}
 	@Test(priority = 5)
 	public void E10_3152_verifyReactiveRoster() throws Exception {
@@ -135,7 +135,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setReactiveRoster();
-		logger.info("Reactivate Roaster is successful");
+//		logger.info("Reactivate Roaster is successful");
 	}
 	/*@Test(priority = 6)
 	public void E10_3153_VerifyCreateRoasterWithGroupAndEmp() throws Exception {

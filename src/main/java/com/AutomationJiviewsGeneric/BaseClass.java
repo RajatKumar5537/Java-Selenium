@@ -25,18 +25,19 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 
-	private static final Logger logger = LogManager.getLogger(BaseClass.class);
+//	private static final Logger logger = LogManager.getLogger(BaseClass.class);
 	public static WebDriver driver;
 	public static WebUtilities webUtility = new WebUtilities(driver);
-	public static ExcelUtilities excelUtility= new ExcelUtilities();
-	public static configUtility configUtil = new configUtility();
+//	public static ExcelUtilities excelUtility= new ExcelUtilities();
+//	public static configUtility configUtil = new configUtility();
 	public static FakeEmployee fakeEmployee=new FakeEmployee();
 	public static String timeStamp = LocalDateTime.now().toString();
 
 	@BeforeTest
 	public void launchBrowser() throws InterruptedException{
-		logger.info("Open Browser");
+//		logger.info("Open Browser");
 		// Setting up ChromeDriver and ChromeOptions
+		
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option=new ChromeOptions();
 		option.addArguments("--disable-notifications");
@@ -59,7 +60,7 @@ public class BaseClass {
 
 		webUtility.maximizeBrowser(driver);
 		webUtility.pageLoadWait(driver, 10);
-		logger.info("Browser launched successfully");
+//		logger.info("Browser launched successfully");
 
 		/*   WebDriverManager.firefoxdriver().setup();
 	    FirefoxOptions options = new FirefoxOptions();
@@ -81,7 +82,7 @@ public class BaseClass {
 
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
-		logger.info("Close Browser...");
+//		logger.info("Close Browser...");
 		driver.quit();
 	}
 	
@@ -104,7 +105,7 @@ public class BaseClass {
 		// Perform login only if the user is not already logged in
 		if (!isLoggedIn) {
 			Reporter.log("Login", true);
-			logger.info("Login to the Jivi application");
+//			logger.info("Login to the Jivi application");
 
 			String url = configUtility.getCongigPropertyData("url");
 			String un = configUtility.getCongigPropertyData("username");
@@ -118,7 +119,7 @@ public class BaseClass {
 	public void logout() {
 		if (isLoggedIn) {
 			Reporter.log("Logout", true);
-			logger.info("Logout from Jivi application");
+//			logger.info("Logout from Jivi application");
 			//	HomePage hp=new HomePage(driver);
 			//	Thread.sleep(2000);
 			//	hp.setAdmin();

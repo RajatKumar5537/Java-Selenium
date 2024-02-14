@@ -4,13 +4,9 @@ package com.AutomationJiviewsGeneric;
 import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 import org.apache.commons.io.FileUtils;
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
@@ -32,7 +28,7 @@ import com.aventstack.extentreports.reporter.configuration.ViewName;
 
 public class ListenerImplimentation extends BaseClass implements ITestListener{
 
-	private static final Logger logger = LogManager.getLogger(ListenerImplimentation.class);
+//	private static final // logger // logger = LogManager.get// logger(ListenerImplimentation.class);
 	private ExtentReports report;
 	private ExtentTest test;
 
@@ -43,7 +39,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			report.setSystemInfo("OS", System.getProperty("os.name"));
 			report.setSystemInfo("Java Version", System.getProperty("java.version"));
 			report.setSystemInfo("Base Url", configUtility.getCongigPropertyData("url"));
-			logger.info("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
+			// logger.info("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -80,20 +76,20 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 
-		logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+		// logger.info("Screenshot destination path: " + dest.getAbsolutePath());
 
 		try {
 			FileUtils.copyFile(src, dest);
-			logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+			// logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
-			logger.error("Error capturing or saving screenshot:", e);
+			// logger.error("Error capturing or saving screenshot:", e);
 		}
 		// Log paths for debugging
-		logger.info("Working Directory: " + System.getProperty("user.dir"));
-		logger.info("Screenshot Path: " + dest.getAbsolutePath());
+		// logger.info("Working Directory: " + System.getProperty("user.dir"));
+		// logger.info("Screenshot Path: " + dest.getAbsolutePath());
 		// Log additional failure details to console
-		logger.error("Exception Stack Trace:", result.getThrowable());
+		// logger.error("Exception Stack Trace:", result.getThrowable());
 
 		// Extract line number from the stack trace
 		StackTraceElement[] stackTrace = result.getThrowable().getStackTrace();
@@ -110,7 +106,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		// Log additional failure details to console
-		logger.error("Exception Stack Trace:", result.getThrowable());
+		// logger.error("Exception Stack Trace:", result.getThrowable());
 	}
 
 

@@ -16,7 +16,7 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class E10_2638_PublicHolidayTest extends BaseClass{
 
-	private static final Logger logger = LogManager.getLogger(E10_2638_PublicHolidayTest.class);
+//	private static final Logger logger = LogManager.getLogger(E10_2638_PublicHolidayTest.class);
 
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
@@ -46,31 +46,31 @@ public class E10_2638_PublicHolidayTest extends BaseClass{
 	@Test(priority = 1)
 	public void E10_3128_VerifyCreatePublicHoliday() throws Exception {
 		captureScreenshot(driver, "verifyCreatePublicHoliday");
-		logger.info("E10-3128 Creating public holiday");
+//		logger.info("E10-3128 Creating public holiday");
 
 		publicHoliday.setCreatePublicHoliday(fakeEmployee);
 		
 
-		logger.info("E10-3128 Public holiday creation successful");
+//		logger.info("E10-3128 Public holiday creation successful");
 	}
 
 	@Test(priority = 2)//, dependsOnMethods = "verifyCreatePublicHoliday")
 	public void E10_3129_VerifyUpdatePublicHoliday() throws Exception {
 		captureScreenshot(driver, "verifyUpdatePublicHoliday");
-		logger.info("E10-3129 Updating public holiday");
+//		logger.info("E10-3129 Updating public holiday");
 
 		publicHoliday.setUpdatePublicHoliday(fakeEmployee);
 
-		logger.info("E10-3129 Public holiday update successful");
+//		logger.info("E10-3129 Public holiday update successful");
 	}
 
 	@Test(priority = 3)//, dependsOnMethods = "verifyUpdatePublicHoliday")
 	public void E10_3130_VerifyDeletePublicHoliday() throws Exception {
 		captureScreenshot(driver, "verifyDeletePublicHoliday");
-		logger.info("E10-3130 Deleting public holiday");
+//		logger.info("E10-3130 Deleting public holiday");
 
 		publicHoliday.setDeactivatePublicHoliday(fakeEmployee);
 
-		logger.info("E10-3130 Deactivate public holiday successful");
+//		logger.info("E10-3130 Deactivate public holiday successful");
 	}
 }

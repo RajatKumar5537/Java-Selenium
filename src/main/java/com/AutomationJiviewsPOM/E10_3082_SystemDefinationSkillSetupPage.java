@@ -5,10 +5,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,11 +15,12 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 
 
 public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
-
+	public static ExcelUtilities excelUtility ;
 	//	String timeStamp = LocalDateTime.now().toString();
 	public E10_3082_SystemDefinationSkillSetupPage sds;
 	//	public ExcelUtilities excelUtility;
@@ -84,6 +83,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public E10_3082_SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.excelUtility= new ExcelUtilities();
 	}
 
 	public void clickAddBtn() throws Exception {
@@ -122,7 +122,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void closeNotificationPopup() throws Exception {
-		webUtility.visibilityOfElement(driver, notificationPopup);
+		webUtility.ElementClickable(driver, notificationPopup);
 		notificationPopup.click();
 	}
 
@@ -238,7 +238,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void activateDeactivateSkill() throws Exception {
-		Thread.sleep(2000);
+		Thread.sleep(3000);
 		clickEditBtn();
 		Thread.sleep(1000);
 		clickIsActiveOption();
