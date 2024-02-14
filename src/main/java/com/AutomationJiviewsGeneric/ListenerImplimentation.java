@@ -144,7 +144,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
 
-		String buildName = "Build Release-: V 4.24.0.160";
+		String buildName = "Build Release-: V 4.24.00.161";
 		String reportName = "Automation Test Report - " + buildName;
 		spark.config().setReportName(reportName);
 
