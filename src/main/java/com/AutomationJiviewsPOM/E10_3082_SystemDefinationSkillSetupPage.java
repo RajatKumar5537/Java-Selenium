@@ -22,7 +22,6 @@ import com.AutomationJiviewsGeneric.FakeEmployee;
 public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	public static ExcelUtilities excelUtility ;
 	//	String timeStamp = LocalDateTime.now().toString();
-	public E10_3082_SystemDefinationSkillSetupPage sds;
 	//	public ExcelUtilities excelUtility;
 	//	public WebUtilities webUtility;
 
@@ -180,10 +179,6 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		element.click();
 	}
-	//	public void checkCheckBox() throws Exception {
-	//		webUtility.visibilityOfElement(driver, checkBox);
-	//		checkBox.click();
-	//	}
 
 
 	public void clickYes() {
@@ -197,6 +192,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		searchColumns.clear();
 		searchColumns.sendKeys(searchColumnsData);
 	}
+	
 	public void createNewSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);

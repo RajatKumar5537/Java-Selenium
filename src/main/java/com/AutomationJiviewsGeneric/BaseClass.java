@@ -142,31 +142,5 @@ public class BaseClass {
 	    Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
 	    
 	}
-	/*	@BeforeMethod
-	public void login() throws IOException, InterruptedException {
-		logger.info("Login to the Jivi application");
-
-		configUtility congigUtil =new configUtility();
-		String url = congigUtil.getCongigPropertyData("url");
-		String un = congigUtil.getCongigPropertyData("username");
-		String pw = congigUtil.getCongigPropertyData("password");
-		driver.get(url);
-
-		// Perform login using LoginPage methods
-		LoginPage lp=new LoginPage(driver);
-		lp.setLogin(un, pw);
-	}
-
-	@AfterMethod
-	public void logout() throws Exception {
-		logger.info("Logout from Jivi application");
-
-		//		HomePage hp=new HomePage(driver);
-		//		Thread.sleep(2000);
-		//		hp.setAdmin();
-		//		Thread.sleep(2000);
-		//		hp.setLogout();
-	}*/
-
 
 }

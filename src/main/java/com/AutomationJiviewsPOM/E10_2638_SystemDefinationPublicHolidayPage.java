@@ -82,6 +82,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	}
 
 	public void setBtnAddNew() {
+		webUtility.ElementClickable(driver, btnAddNew);
 		btnAddNew.click();
 	}
 

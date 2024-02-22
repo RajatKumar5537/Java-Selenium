@@ -15,9 +15,12 @@ public class WorkloadPlanningPage extends BaseClass{
 	private WebElement workloadPlanner;
 	@FindBy(xpath = "//li[@data-menu-link='Planning/DailyPlanning/RTGPlanning']")
 	private WebElement RTGPlanning;
+	@FindBy(xpath = "//li[@data-menu-link='Planning/DailyPlanning/PrimeMoverPlanning']")
+	private WebElement PrimeMoverPlanning;
+	
+	
 	
 	public WorkloadPlanningPage(WebDriver driver) {
-//		super();
 		PageFactory.initElements(driver, this);
 	}
 	
@@ -42,5 +45,10 @@ public class WorkloadPlanningPage extends BaseClass{
 	public void clickOnRTGPlanning() {
 		workloadPlanning.click();
 		RTGPlanning.click();
+	}
+	
+	public void clickPrimeMoverPlanning() {
+		workloadPlanning.click();
+		PrimeMoverPlanning.click();
 	}
 }
