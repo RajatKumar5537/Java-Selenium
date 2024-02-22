@@ -16,6 +16,7 @@ public class Crane_Setup {
 	public String craneName;
 	WebDriver driver;
 	
+	
 	//generic locators which we have to use
 	@FindBy(id="txtCraneNumber")
 	private WebElement enterCraneName;
@@ -135,6 +136,7 @@ public void craneSetup() throws InterruptedException{
 	Thread.sleep(2000);
 	craneSetup.click();
 }
+
 public void createCrane() throws Exception
 {
 	Thread.sleep(3000);

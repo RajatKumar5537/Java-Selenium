@@ -1,16 +1,15 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Total_Test_Script">
+<suite name="Suite">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
+	
 	<test name="E10_2606_ShiftBandTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest"
-			/>
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
 		</classes>
 	</test>
 
@@ -39,7 +38,7 @@
 	<test name="E10_2695_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
 			/>
 		</classes>
 	</test>
@@ -54,15 +53,7 @@
 	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+	name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
 			/>
 		</classes>
 	</test>
@@ -81,34 +72,36 @@
 		</classes>
 	</test>
 
+ 
+	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
+		<classes>
+			<class
+	name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
+			/>
+		</classes>
+	</test>
 
 	<test name="E10_3541_OPE_RTG_PlanningTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
 			/>
 		</classes>
 	</test>
+<!--
+	<test name="E10_3147_WorkloadPlannerTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest"
+			/>
+		</classes>
+	</test>
+	<test name="E10_3216_ESSApplyLeaveTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
+			/>
+		</classes>
+	</test> -->
 	
-	<test name="Maritime_Setup_Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test" />
-		</classes>
-	</test>
-	
-	<test name="Crane_Setup_Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test" />
-		</classes>
-	</test>
-	<test name="Location_Definitions_Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test" />
-		</classes>
-	</test>
-
-
 </suite>

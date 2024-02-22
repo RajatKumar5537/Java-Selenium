@@ -19,6 +19,7 @@ public class Crane_Setup_Test extends BaseClass{
 	@Test(priority = 1)
 	public void setup() throws Exception {
 		
+		
 		homePage = new HomePage(driver);
 		orgUnit = new OrganizationUnitDropDown(driver);
 		jmMenuItem = new jiviewsMainMenuItems(driver);
