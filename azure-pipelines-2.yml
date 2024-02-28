@@ -5,6 +5,20 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
+- stage: SetupEnvironment
+  jobs:
+  - job: SetupChromeDriver
+    steps:
+    - task: PowerShell@2
+      inputs:
+        targetType: 'inline'
+        script: |
+          # Download and install ChromeDriver
+          Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+          Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
+          Remove-Item 'chromedriver.zip'
+      displayName: 'Install ChromeDriver'
+
 - stage: BuildAndTest
   jobs:
   - job: Build
