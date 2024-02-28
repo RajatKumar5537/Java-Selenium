@@ -6,8 +6,10 @@ pool:
 
 stages:
 - stage: SetupEnvironment
+  displayName: 'Setup Environment'
   jobs:
-  - job: SetupChromeDriver
+  - job: InstallChromeDriver
+    displayName: 'Install ChromeDriver'
     timeoutInMinutes: 10
     cancelTimeoutInMinutes: 5
     steps:
@@ -16,15 +18,18 @@ stages:
         targetType: 'inline'
         script: |
           # Download and install ChromeDriver
-          $chromeDriverUrl = 'https://chromedriver.storage.googleapis.com/94.0.4606.61/chromedriver_win64.zip'
+          $chromeDriverVersion = '94.0.4606.61'
+          $chromeDriverUrl = "https://chromedriver.storage.googleapis.com/$chromeDriverVersion/chromedriver_win64.zip"
           Invoke-WebRequest -Uri $chromeDriverUrl -OutFile 'chromedriver.zip'
           Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
           Remove-Item 'chromedriver.zip'
       displayName: 'Install ChromeDriver'
 
 - stage: BuildAndTest
+  displayName: 'Build and Test'
   jobs:
   - job: Build
+    displayName: 'Build'
     timeoutInMinutes: 180 # Set timeout to 3 hours
     cancelTimeoutInMinutes: 120  # Set cancel timeout to 2 hours
     steps:
