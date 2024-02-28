@@ -3,6 +3,7 @@ package com.JiviewsAutomation.SystemDefination_Test;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.E10_2639_SystemDefinationSCRPage;
 import com.AutomationJiviewsPOM.EmployeeSetupPage;
@@ -50,7 +51,7 @@ public class E10_2639_SCRTest extends BaseClass{
 		captureScreenshot(driver, "SCRTest");
 		// logger.info("E10-3131 Create SCR");
 
-		scr.setCreateSCR();
+		scr.setCreateSCR(fakeEmployee);
 		// logger.info("E10-3131 Create a SCR is successful");
 	}
 
@@ -59,7 +60,7 @@ public class E10_2639_SCRTest extends BaseClass{
 		captureScreenshot(driver, "SCRTest");
 		// logger.info("E10-3132 Update SCR");
 
-		scr.setUpdateSCR();
+		scr.setUpdateSCR(fakeEmployee);
 		// logger.info("E10-3132 Update SCR is successful");
 	}
 

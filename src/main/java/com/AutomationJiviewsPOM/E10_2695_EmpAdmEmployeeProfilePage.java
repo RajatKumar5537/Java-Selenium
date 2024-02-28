@@ -785,7 +785,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		btnAddAttachment.click();
 	}
 	public void selectFileToUpload() {
-		File file= new File(".\\src\\test\\resources\\TestData\\Jiviews Team.jpg");
+		File file= new File("./src/test/resources/TestData/Jiviews Team.jpg");
 		String  absolutePath = file.getAbsolutePath();
 		btnFileToUpload.sendKeys(absolutePath);
 	}

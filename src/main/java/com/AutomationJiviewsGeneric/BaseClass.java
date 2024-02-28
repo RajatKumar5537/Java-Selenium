@@ -24,7 +24,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 
 public class BaseClass {
-
+	
 //	private static final Logger logger = LogManager.getLogger(BaseClass.class);
 	public static WebDriver driver;
 	public static WebUtilities webUtility = new WebUtilities(driver);
@@ -38,8 +38,8 @@ public class BaseClass {
 //		logger.info("Open Browser");
 		// Setting up ChromeDriver and ChromeOptions
 		
-//		WebDriverManager.chromedriver().setup();
-		WebDriverManager.chromedriver().browserVersion("121.0.6167.185").setup();
+		WebDriverManager.chromedriver().setup();
+//		WebDriverManager.chromedriver().browserVersion("121.0.6167.185").setup();
 		ChromeOptions option=new ChromeOptions();
 		option.addArguments("--disable-notifications");
 		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
@@ -143,5 +143,6 @@ public class BaseClass {
 	    Capabilities capabilities = ((RemoteWebDriver) driver).getCapabilities();
 	    
 	}
+
 
 }

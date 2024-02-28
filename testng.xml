@@ -5,27 +5,9 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-	<test name="E10_2639_SCRTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
-		</classes>
-	</test>
-	
-	<!--
-	<test name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
 
-	<test name="E10_2608_RoasterSetupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
-		</classes>
-	</test>
+	
+
 
 	<test name="E10_2638_PublicHolidayTest">
 		<classes>
@@ -35,7 +17,18 @@
 		</classes>
 	</test>
 
-	<test name="E10_2639_SCRTest">
+<!--	
+<test name="E10_2606_ShiftBandTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
+		</classes>
+	</test>
+
+
+
+
+<test name="E10_2639_SCRTest">
 		<classes>
 			<class
 				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
@@ -95,7 +88,7 @@
 			/>
 		</classes>
 	</test>
-
+ 
 	<test name="E10_3147_WorkloadPlannerTest">
 		<classes>
 			<class

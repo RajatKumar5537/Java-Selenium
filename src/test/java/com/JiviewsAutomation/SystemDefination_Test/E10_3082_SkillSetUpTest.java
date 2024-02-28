@@ -6,6 +6,7 @@ import java.util.logging.LogManager;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.E10_3082_SystemDefinationSkillSetupPage;
 import com.AutomationJiviewsPOM.EmployeeSetupPage;
 import com.AutomationJiviewsPOM.HomePage;
@@ -62,7 +63,7 @@ public class E10_3082_SkillSetUpTest extends BaseClass{
 		captureScreenshot(driver, "updateSkill");
 		// logger.info("Update a Skill");
 
-		skillSetup.updateSkill();
+		skillSetup.updateSkill(fakeEmployee);
 		// logger.info("A skill is updated successfully ");
 	}
 

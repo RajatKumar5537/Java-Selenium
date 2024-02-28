@@ -17,13 +17,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 
-public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
-	public static ExcelUtilities excelUtility ;
+public class E10_3082_SystemDefinationSkillSetupPage  {
+	WebDriver driver;
 	//	String timeStamp = LocalDateTime.now().toString();
-	//	public ExcelUtilities excelUtility;
-	//	public WebUtilities webUtility;
+		public ExcelUtilities excelUtility;
+		public WebUtilities webUtility;
 
 	
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
@@ -82,6 +83,8 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public E10_3082_SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver; 
+		this.webUtility= new WebUtilities(driver); 
 		this.excelUtility= new ExcelUtilities();
 	}
 
@@ -213,7 +216,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 //		btnPDF.click();
 	}
 
-	public void updateSkill() throws Exception {
+	public void updateSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
 		String timeStamp = LocalDateTime.now().toString();
@@ -234,7 +237,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void activateDeactivateSkill() throws Exception {
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		clickEditBtn();
 		Thread.sleep(1000);
 		clickIsActiveOption();

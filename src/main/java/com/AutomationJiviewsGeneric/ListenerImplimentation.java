@@ -85,11 +85,6 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 			e.printStackTrace();
 			// logger.error("Error capturing or saving screenshot:", e);
 		}
-		// Log paths for debugging
-		// logger.info("Working Directory: " + System.getProperty("user.dir"));
-		// logger.info("Screenshot Path: " + dest.getAbsolutePath());
-		// Log additional failure details to console
-		// logger.error("Exception Stack Trace:", result.getThrowable());
 
 		// Extract line number from the stack trace
 		StackTraceElement[] stackTrace = result.getThrowable().getStackTrace();
@@ -105,7 +100,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		test.log(Status.FAIL, "Test Failed at Line " + lineNumber + " - Check screenshot and error message below:",
 				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
-		// Log additional failure details to console
+		
 		// logger.error("Exception Stack Trace:", result.getThrowable());
 	}
 
@@ -144,7 +139,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
 
-		String buildName = "Build Release-: V 4.24.00.161";
+		String buildName = "Build Release-: V 4.24.00.162";
 		String reportName = "Automation Test Report - " + buildName;
 		spark.config().setReportName(reportName);
 
