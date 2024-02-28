@@ -6,10 +6,8 @@ pool:
 
 stages:
 - stage: SetupEnvironment
-  displayName: 'Setup Environment'
   jobs:
-  - job: InstallChromeDriver
-    displayName: 'Install ChromeDriver'
+  - job: SetupChromeDriver
     timeoutInMinutes: 10
     cancelTimeoutInMinutes: 5
     steps:
@@ -17,8 +15,9 @@ stages:
       inputs:
         targetType: 'inline'
         script: |
-          # Download and install ChromeDriver
-          $chromeDriverVersion = '94.0.4606.61'
+          # Download and install the latest ChromeDriver
+          Invoke-WebRequest -Uri 'https://chromedriver.storage.googleapis.com/LATEST_RELEASE' -OutFile 'chromedriver_version.txt'
+          $chromeDriverVersion = Get-Content 'chromedriver_version.txt'
           $chromeDriverUrl = "https://chromedriver.storage.googleapis.com/$chromeDriverVersion/chromedriver_win64.zip"
           Invoke-WebRequest -Uri $chromeDriverUrl -OutFile 'chromedriver.zip'
           Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
