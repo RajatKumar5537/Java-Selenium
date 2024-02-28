@@ -42,7 +42,7 @@ public class WebUtilities extends BaseClass{
 	}
     public void scrollUp(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
+		js.executeScript("window.scrollBy(0, 0)"); // Adjust the scroll distance as needed
 	}
 	public void maximizeBrowser(WebDriver driver) {
 
@@ -102,7 +102,7 @@ public class WebUtilities extends BaseClass{
 	}
 	public void moveToElement(WebDriver driver,WebElement element) {
 		Actions action=new Actions(driver);
-		action.moveToElement(element).perform();;
+		action.moveToElement(element).perform();
 
 	}
 	public void doubleClick(WebDriver driver) {
