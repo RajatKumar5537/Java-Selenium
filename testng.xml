@@ -5,101 +5,7 @@
 	</listeners>
 
 
-	<test
-		name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_2608_RoasterSetupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_2638_PublicHolidayTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
-			/>
-		</classes>
-	</test>
-
-	<test
-		name="E10_2639_SCRTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_2695_EmpAdmEmployeeProfileTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_2749_RoleGroupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_2909_EmpAdmRosterGroupAssignmentTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
-			/>
-		</classes>
-	</test>
-
-	<test
-		name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-			/>
-		</classes>
-	</test>
-	<test
-		name="E10_3082_SkillSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
-		</classes>
-	</test>
-
-	<test
-		name="E10_3089_RoleSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
-		</classes>
-	</test> 
-	<test
-		name="E10_3539_OperationPlanningExecutionTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3539_OperationPlanningExecutionTest" />
-		</classes>
-	</test>
-	<test
-		name="E10_3541_OPE_RTG_PlanningTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest" />
-		</classes>
-	</test>
+	
 	<test
 		name="Maritime_Setup_Test">
 		<classes>
@@ -107,7 +13,47 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
 			/>
 		</classes>
-	</test> 
+	</test>  T_And_A_Exception_Code_Test
 	
+	<test
+		name="Crane_Setup_Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test"
+			/>
+		</classes>
+	</test>
+	<test
+		name="Equipment_Setup_Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test"
+			/>
+		</classes>
+	</test>
+	<test
+		name="Location_Definitions_Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test"
+			/>
+		</classes>
+	</test>
+	<test
+		name="ReconciliationParameterGroupTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest"
+			/>
+		</classes>
+	</test>
 	
+	<test
+		name="T_And_A_Exception_Code_Test">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test"
+			/>
+		</classes>
+	</test>  
 </suite>
