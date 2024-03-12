@@ -21,9 +21,10 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
+public class E10_2606_SystemDefinationShiftBandPage  {
 
-	Actions action= new Actions(driver);
+	WebDriver driver ;
+	Actions action;
 	Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
@@ -165,8 +166,10 @@ public class E10_2606_SystemDefinationShiftBandPage  extends BaseClass{
 
 	public E10_2606_SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver ;
 		this.webUtility= new WebUtilities(driver);
 		this.excelUtility= new ExcelUtilities();
+		this.action= new Actions(driver);
 	}
 
 	public void setAddBtn() {

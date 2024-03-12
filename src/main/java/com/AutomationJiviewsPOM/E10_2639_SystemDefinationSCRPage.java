@@ -18,10 +18,12 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2639_SystemDefinationSCRPage extends BaseClass{
+public class E10_2639_SystemDefinationSCRPage {
 
+	WebDriver driver; 
 	public String timeStamp = LocalDateTime.now().toString();
 	public Actions action;
 	public Select select;
@@ -165,6 +167,7 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 
 	public E10_2639_SystemDefinationSCRPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver;
 		this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
 		this.webUtility= new WebUtilities(driver);
@@ -385,10 +388,10 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 		btnYes.click();
 	}
 	public void clickNotificationPopup() throws Exception {
-		webUtility.moveToElement(driver, notificationPopup);
+		webUtility.ElementClickable(driver, notificationPopup);
 		notificationPopup.click();
 	}
-	public void setCreateSCR() throws Exception {
+	public void setCreateSCR(FakeEmployee fakeEmployee) throws Exception {
 		timeStamp = LocalDateTime.now().toString();
 
 //		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 7);
@@ -440,6 +443,7 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 		setChkIsActive2();
 		//Next button 
 		setBtnAddScheduleRuleShiftBands();
+		Thread.sleep(2000);
 		setTxtContDaysOnMin(countDayMin);
 		setTxtContDaysOnMax(countDayMax);
 		setTxtContDaysOffMin(countOffMin);
@@ -456,7 +460,7 @@ public class E10_2639_SystemDefinationSCRPage extends BaseClass{
 		clickNotificationPopup();
 	}
 
-	public void setUpdateSCR() throws Exception {
+	public void setUpdateSCR(FakeEmployee fakeEmployee) throws Exception {
 //		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 7);
 //		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 21, 8);
 

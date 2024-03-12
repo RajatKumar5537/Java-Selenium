@@ -28,12 +28,20 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 import io.netty.handler.timeout.TimeoutException;
 
-public class E10_3147_WorkloadPlannerPage extends BaseClass {
+public class E10_3147_WorkloadPlannerPage  {
 
+	FakeEmployee fakeEmployee;
 	String planningDate  = fakeEmployee.getDtPlanning();
+	
+	WebDriver driver ;
+	WebUtilities webUtility;
+	
+	
+	
 	
 	
 	@FindBy(xpath = "//input[@id='dtPlanning']")
@@ -212,8 +220,8 @@ public class E10_3147_WorkloadPlannerPage extends BaseClass {
 	private WebElement SignOffProcessCompletedSuccessfullyForShiftbandMsg;
 
 	public E10_3147_WorkloadPlannerPage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver = driver ;
 	}
 
 	public void enterPlanning() {

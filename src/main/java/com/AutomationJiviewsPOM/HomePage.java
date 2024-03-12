@@ -10,7 +10,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class HomePage extends BaseClass{
+public class HomePage {
+	WebDriver driver ;
 	Actions action;
 	WebUtilities webUtility;
 
@@ -26,6 +27,7 @@ public class HomePage extends BaseClass{
 
 	public HomePage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver= driver ;
 		this.webUtility= new WebUtilities(driver);
 	}
 

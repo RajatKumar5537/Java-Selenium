@@ -10,7 +10,7 @@ import org.openqa.selenium.support.ui.Select;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.github.javafaker.Faker;
 
-public class Location_Definitions extends BaseClass {
+public class Location_Definitions extends BaseClass{
 	public Select select;
 	public Actions action;
 	public Faker fakeData;
@@ -108,9 +108,20 @@ private WebElement isActiveCheckBox;
 
 public Location_Definitions(WebDriver driver) {
 	PageFactory.initElements(driver, this);
+	this.driver= driver;
 	this.action= new Actions(driver);
 }
 
+public void selectAvailableShiftBand() {
+	action.scrollToElement(availableCrane).perform();
+	select = new Select(availableCrane);
+	select.selectByIndex(0);
+}
+
+public void moveSingleAvailableSkillToSelected() {
+	action.moveToElement(selectMoveSingle).perform();
+	selectMoveSingle.click();
+}
 public void closeNotificationPopup() throws Exception {
 	webUtility.visibilityOfElement(driver, notificationPopup);
 	notificationPopup.click();
@@ -119,7 +130,9 @@ public void closeNotificationPopup() throws Exception {
 public void systemSetup() throws InterruptedException{
 	systemSetup.click();
 }
-
+//public void enterBerthDescription(){
+//	enterBerthDescription.click();
+//}
 public void maritimeSetup() throws InterruptedException{
 	webUtility.ElementClickable(driver, maritimeSetup);
 	maritimeSetup.click();

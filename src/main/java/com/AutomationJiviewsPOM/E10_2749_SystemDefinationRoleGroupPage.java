@@ -23,8 +23,9 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
+public class E10_2749_SystemDefinationRoleGroupPage {
 
+	WebDriver driver ;
 	public String timeStamp = LocalDateTime.now().toString();
 	public Actions action;
 	public Select select;
@@ -95,6 +96,7 @@ public class E10_2749_SystemDefinationRoleGroupPage extends BaseClass{
 
 	public E10_2749_SystemDefinationRoleGroupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver= driver;
 		this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
 		this.webUtility= new WebUtilities(driver);

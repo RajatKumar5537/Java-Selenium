@@ -8,15 +8,13 @@ stages:
 - stage: SetupEnvironment
   jobs:
   - job: SetupChromeDriver
-    timeoutInMinutes: 10
-    cancelTimeoutInMinutes: 5
     steps:
     - task: PowerShell@2
       inputs:
         targetType: 'inline'
         script: |
           # Download and install ChromeDriver
-          Invoke-WebRequest -Uri 'https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/118.0.5993.70/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
+          Invoke-WebRequest -Uri 'https://storage.googleapis.com/chrome-for-testing-public/122.0.6261.94/win64/chromedriver-win64.zip' -OutFile 'chromedriver.zip'
           Expand-Archive -Path 'chromedriver.zip' -DestinationPath '$(Agent.ToolsDirectory)\chromedriver'
           Remove-Item 'chromedriver.zip'
       displayName: 'Install ChromeDriver'
@@ -24,8 +22,6 @@ stages:
 - stage: BuildAndTest
   jobs:
   - job: Build
-    timeoutInMinutes: 180 # Set timeout to 3 hours
-    cancelTimeoutInMinutes: 120  # Set cancel timeout to 2 hours
     steps:
     - checkout: self
     - task: Maven@4
@@ -57,17 +53,8 @@ stages:
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
 
-    - task: ArchiveFiles@2
-      displayName: 'Archive ExtentReport and ScreenShot'
-      inputs:
-        rootFolderOrFile: '$(build.artifactstagingdirectory)'
-        includeRootFolder: false
-        archiveType: 'zip'
-        archiveFile: '$(Build.ArtifactStagingDirectory)/MyArtifacts.zip'
-      condition: succeededOrFailed()
-
     - task: PublishBuildArtifacts@1
-      displayName: 'Publish Artifact: MyArtifacts'
+      displayName: 'Publish Artifact: drop'
       inputs:
-        PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+        PathtoPublish: '$(build.artifactstagingdirectory)'
       condition: succeededOrFailed()

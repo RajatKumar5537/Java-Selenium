@@ -22,9 +22,13 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
+public class E10_2695_EmpAdmEmployeeProfilePage {
+	
+	WebDriver driver ;
 	private static final Logger logger = LogManager.getLogger(E10_2695_EmpAdmEmployeeProfilePage.class);
+	WebUtilities webUtility;
 	Select select;
 	public Actions action;
 
@@ -422,7 +426,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 	public E10_2695_EmpAdmEmployeeProfilePage(WebDriver driver) {
 		super();
 		PageFactory.initElements(driver, this);
+		this.driver = driver ;
 		this.action= new Actions(driver);
+		this.webUtility= new WebUtilities(driver);
 	}
 	public void scrollAndClick(WebDriver driver, WebElement element) {
 		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
@@ -785,7 +791,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage extends BaseClass{
 		btnAddAttachment.click();
 	}
 	public void selectFileToUpload() {
-		File file= new File(".\\src\\test\\resources\\TestData\\Jiviews Team.jpg");
+		File file= new File("./src/test/resources/TestData/Jiviews Team.jpg");
 		String  absolutePath = file.getAbsolutePath();
 		btnFileToUpload.sendKeys(absolutePath);
 	}

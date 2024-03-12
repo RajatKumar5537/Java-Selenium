@@ -18,10 +18,14 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
-public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
+public class E10_2638_SystemDefinationPublicHolidayPage {
+	WebDriver driver ;
+	
 	public String timeStamp = LocalDateTime.now().toString();
+	public WebUtilities webUtility;
 	public Actions action;
 	public Select select;
 	//	public E10_2638_SystemDefinationPublicHolidayPage sdph;
@@ -30,7 +34,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	//	public String holidayNote;
 	Faker fakeData = new Faker();
 	
-	@FindBy(xpath = "//button[@id='btnAddNew']/span")
+	@FindBy(xpath = "//button[@id='btnAddNew']")
 	private WebElement btnAddNew;
 
 	@FindBy(id = "txtHolidayName")
@@ -78,10 +82,13 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 
 	public E10_2638_SystemDefinationPublicHolidayPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver=driver ;
+		this.webUtility= new WebUtilities(driver);
 		this.action= new Actions(driver);
 	}
 
 	public void setBtnAddNew() {
+		webUtility.ElementClickable(driver, btnAddNew);
 		btnAddNew.click();
 	}
 
@@ -200,6 +207,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage extends BaseClass{
 	String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy"));
 
 	public void setCreatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
+		Thread.sleep(2000);
 		setBtnAddNew();
 		Thread.sleep(2000);
 //		setTxtHolidayName(fakeEmployee.getHolidayName());

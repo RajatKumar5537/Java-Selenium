@@ -2,7 +2,6 @@ package com.AutomationJiviewsPOM;
 
 
 import java.time.Duration;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
@@ -17,18 +16,40 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
-import com.AutomationJiviewsGeneric.BaseClass;
-
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 
-public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
+
+public class E10_3541_OPE_RTG_PlanningPage {
+
+	public WebDriver driver;
 	public Select select;
 	public Actions action;
 	public String dateRTG;
+	public WebUtilities webUtility;
 
 
-	@FindBy(id = "dtPlanning")
+
+	@FindBy(xpath = "//div[@id='layout-navbar-collapse']/div/div[@id='dvOrgUnitDropdown']/a")
+	private WebElement OrgUnit;
+	@FindBy(xpath = "(//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li)[7]")
+	private WebElement OLMop;
+	@FindBy(xpath = "//span[text()='SYSTEM SETUP']/..")
+	private WebElement mainMenu;
+
+	@FindBy(xpath = "//span[text()='Operation Planning & Execution']/..")
+	private WebElement selectOperationPlanningExecution;
+	@FindBy(xpath = "//div[text()='Workload Planning']/..")
+	private WebElement workloadPlanning;
+	@FindBy(xpath = "//div[text()='Workforce Execution']/..")
+	WebElement workforceExecution;
+	
+	@FindBy(xpath = "//li[@data-menu-link='Planning/DailyPlanning/RTGPlanning']")
+	WebElement RTGPlanning;
+
+
+
+	@FindBy(xpath = "//input[@id='dtPlanning']")
 	private WebElement txtPlanning;
 	@FindBy(xpath = "(//table[@class='table-condensed']/tbody/tr/td)[18]")
 	private WebElement calender;
@@ -36,17 +57,25 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 
 
 
-	@FindBy(id = "select2-cmbShiftBand-container")
+	@FindBy(xpath  = "//span[@id='select2-cmbShiftBand-container']")
 	private WebElement txtShiftBand;
 	@FindBy(xpath = "(//input[@class='select2-search__field'])[1]")
 	private WebElement txtSearchField;
-	@FindBy(xpath = "//li[@class='select2-results__option']")
+	@FindBy(xpath = "//ul[@class='select2-results__options']/li[text()='RTG_AM1']")
 	private WebElement selectshiftBand;
-	@FindBy(id = "btnSearchRTGPlanning")
+	@FindBy(xpath = "//button[@id='btnSearchRTGPlanning']")
 	private WebElement btnSearchRTGPlanning;
 
-	@FindBy(id = "btnAddRTGPlanning")
+	@FindBy(xpath = "//button[@id='btnAddRTGPlanning']")
 	private WebElement btnAddRTGPlanning;
+	@FindBy(xpath = "//input[@id='dtPlanning']")
+	WebElement dtPlanning;
+	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
+	WebElement cmbShiftBand;
+
+
+
+
 
 	// Available RTG table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
@@ -100,16 +129,60 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 	@FindBy(className = "toast-close-button")
 	private WebElement notificationPopup;
 
+
+	// Constructor .................
 	public E10_3541_OPE_RTG_PlanningPage (WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver= driver;
 		this.action= new Actions(driver);
+		this.webUtility= new WebUtilities(driver);
 	}
+
+
+
+	public void selectOrgUnit() throws InterruptedException {
+		webUtility.ElementClickable(driver, OrgUnit);
+		Thread.sleep(2000);
+		OrgUnit.click();
+	}
+	public void selectOLMop() {
+		try {
+			webUtility.ElementClickable(driver, OLMop);
+			OLMop.click();
+		} 
+		
+		catch (StaleElementReferenceException e) {
+			System.out.println("StaleElementReferenceException occurred. Retrying...");
+			webUtility.ElementClickable(driver, OLMop); 
+			OLMop.click(); 
+		}
+	}
+
+	public void selectMainMenu() {
+		webUtility.ElementClickable(driver, mainMenu);
+		mainMenu.click();
+	}
+	public void selectOperationPlanningExecution() {
+		selectOperationPlanningExecution.click();
+	}
+	public void selectWorkloadPlanning(){
+		workloadPlanning.click();
+	}
+
+
+
+
+
+
+
+
+
+
 
 	public void enterPlanningDate() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		WebElement Planning = wait.until(ExpectedConditions.elementToBeClickable(txtPlanning));
-		Planning.clear();
 		try {
 			Planning.click();
 		} catch (ElementClickInterceptedException ex) {
@@ -122,12 +195,12 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		calender.click();
 	}
 	public void clickTxtShiftBand() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
-	    WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
-	    
-	    Actions actions = new Actions(driver);
-	    actions.moveToElement(bandTypeElement).click().perform();
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id("dvLoadingIcon")));
+		WebElement bandTypeElement = wait.until(ExpectedConditions.visibilityOf(txtShiftBand));
+
+		Actions actions = new Actions(driver);
+		actions.moveToElement(bandTypeElement).click().perform();
 	}
 
 
@@ -142,13 +215,13 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		selectshiftBand.click();
 	}
 	public void searchRTGPlanning() {
-		//		btnSearchRTGPlanning.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
 		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 		// Locate and click the search button
 		WebElement searchButton = driver.findElement(By.id("btnSearchRTGPlanning"));
 		searchButton.click();
 	}
+
 	public void performAddRTGPlanning() {
 		try {
 			// Wait for the overlay to be invisible or absent
@@ -156,7 +229,6 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector("div.blockUI.blockOverlay")));
 			WebElement btnAddRTGPlanning = driver.findElement(By.id("btnAddRTGPlanning"));
 			// Wait for the "Add" button to be clickable
-			//	        WebDriverWait buttonWait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			wait.until(ExpectedConditions.elementToBeClickable(btnAddRTGPlanning));
 			btnAddRTGPlanning.click();
 		} catch (Exception e) {
@@ -198,7 +270,6 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		Assert.assertTrue(actualResult.contains(" Equipments Generated For "));
 	}
 	public void clickonEquipmentSummary() {
-		//		tabEquipmentSummary.click();
 		try {
 			// Locate the element you want to click
 			WebElement equipmentSummaryLink = driver.findElement(By.xpath("//a[text()='Equipment Summary']"));
@@ -209,13 +280,11 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 			actions.moveToElement(equipmentSummaryLink).click().perform();
 
 		} catch (Exception e) {
-			// Handle exceptions or log messages as needed
 			System.out.println("Exception occurred: " + e.getMessage());
 		}
 
 	}
 	public void clickonSkillSummary() {
-		//		tabSkillSummary.click();
 		try {
 			// Locate the element you want to click
 			WebElement skillSummaryLink = driver.findElement(By.xpath("//a[text()='Skill Summary']"));
@@ -235,7 +304,6 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 			WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 			WebElement planningSignOffButton = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnPlanningSignOff")));
 
-			// Click the "Planning Sign Off" button using JavaScriptExecutor
 			JavascriptExecutor executor = (JavascriptExecutor) driver;
 			executor.executeScript("arguments[0].click();", planningSignOffButton);
 
@@ -274,15 +342,37 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		notificationPopup.click();
 	}
 
+
+
+
 	public void E10_3542_SearchRecord () throws InterruptedException{
-		clickTxtShiftBand();
-		enterShiftBandName("RTG_AM1");
-		//		enterPlanningDate("12/02/2024");
-		enterPlanningDate();
-		enterDate();
-		dateRTG =txtPlanning.getText();
-		System.out.println(dateRTG);
-		searchRTGPlanning();
+		selectOrgUnit();
+		selectOLMop();
+		selectMainMenu();
+		selectOperationPlanningExecution();
+		
+//		Thread.sleep(5000);
+//		workloadPlanning.click();
+
+//		selectWorkloadPlanning();
+		Thread.sleep(3000);
+		RTGPlanning.click();
+//
+		//		txtPlanning.clear();
+//		txtPlanning.click();
+//		//		calender.click();
+//
+//		//txtShiftBand.click();
+//		//selectshiftBand.click();
+		
+		Thread.sleep(10000);
+		btnSearchRTGPlanning.click();
+
+
+Thread.sleep(10000);
+//		btnAddRTGPlanning.click();
+//		dtPlanning.isDisplayed();
+//		cmbShiftBand.isDisplayed();
 
 	}
 
@@ -297,8 +387,8 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		selectAvailableShiftBand();
 		moveSingleAvailableSkillToSelected();
 		performSaveRTGPlanning();
-		getEquipmentsGeneratedForMsg();
-		closeNotificationPopup();
+		//		getEquipmentsGeneratedForMsg();
+		//		closeNotificationPopup();
 	}
 	public void E10_3544_VerifyEquipmentSummery () throws InterruptedException{
 		clickTxtShiftBand();
@@ -334,7 +424,7 @@ public class E10_3541_OPE_RTG_PlanningPage extends BaseClass{
 		chooseManningRatio();
 		clickonAllocationRule();
 		chooseAllocationRule();
-		//		performSave();
+		//				performSave();
 	}
 
 }

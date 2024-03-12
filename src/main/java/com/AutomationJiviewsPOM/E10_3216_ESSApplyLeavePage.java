@@ -26,10 +26,15 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 import com.AutomationJiviewsGeneric.configUtility;
 
-public class E10_3216_ESSApplyLeavePage extends BaseClass{
+public class E10_3216_ESSApplyLeavePage {
 
+	WebDriver driver;
+	WebUtilities webUtility;
+	
+	
 	private HomePage homePage;
 	private LoginPage loginPage;
 	private OrganizationUnitDropDown orgUnit;
@@ -324,8 +329,9 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 
 	public E10_3216_ESSApplyLeavePage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver= driver ;
+		this.webUtility = new WebUtilities(driver);
 		this.homePage=  new HomePage(driver);
 		this.loginPage = new LoginPage(driver);
 		this.orgUnit = new OrganizationUnitDropDown(driver);
@@ -2061,7 +2067,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		clickNotificationPopup();
 
 	}
-	public void E10_3442_ApplyLeaveOnPublicHoliday() throws Exception{
+	public void E10_3442_ApplyLeaveOnPublicHoliday(FakeEmployee fakeEmployee) throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -2086,7 +2092,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 
 		clickNotificationPopup();
 	}
-	public void E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception{
+	public void E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave(FakeEmployee fakeEmployee)throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 
@@ -2109,7 +2115,7 @@ public class E10_3216_ESSApplyLeavePage extends BaseClass{
 		getLeaveToHasNoShiftForYouToApplyLeaveMsg(); 
 		clickNotificationPopup();
 	}
-	public void E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift() throws Exception{
+	public void E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift(FakeEmployee fakeEmployee) throws Exception{
 		String unEmp = configUtility.getCongigPropertyData("unEmp");
 		String pwdEmp = configUtility.getCongigPropertyData("pwdEmp");
 

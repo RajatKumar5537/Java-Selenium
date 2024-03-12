@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
 public class Crane_Setup {
@@ -16,7 +15,7 @@ public class Crane_Setup {
 	public Faker fakeData;
 	public String craneName;
 	WebDriver driver;
-	WebUtilities  webUtility= new WebUtilities(driver);
+	
 	
 	//generic locators which we have to use
 	@FindBy(id="txtCraneNumber")
@@ -117,26 +116,27 @@ public Crane_Setup(WebDriver driver) {
 	this.driver = driver;
 	
 	this.action= new Actions(driver);
-	this.webUtility= new WebUtilities(driver);
 }
 public void closeNotificationPopup() throws Exception {
-	webUtility.visibilityOfElement(driver, notificationPopup);
+	Thread.sleep(2000);
 	notificationPopup.click();
 }
 
 public void systemSetup() throws InterruptedException{
+	Thread.sleep(2000);
 	systemSetup.click();
 }
 
 public void maritimeSetup() throws InterruptedException{
-	webUtility.ElementClickable(driver, maritimeSetup);
+	Thread.sleep(2000);
 	maritimeSetup.click();
 }
 
 public void craneSetup() throws InterruptedException{
-	webUtility.ElementClickable(driver, craneSetup);
+	Thread.sleep(2000);
 	craneSetup.click();
 }
+
 public void createCrane() throws Exception
 {
 	Thread.sleep(3000);

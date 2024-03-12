@@ -1,9 +1,6 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
-
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -14,9 +11,11 @@ import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.RosterSetupPage;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
+import freemarker.log.Logger;
+
 public class E10_2638_PublicHolidayTest extends BaseClass{
 
-	private static final Logger logger = LogManager.getLogger(E10_2638_PublicHolidayTest.class);
+	private static final Logger logger = Logger.getLogger(E10_2638_PublicHolidayTest.class.getName());
 
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;

@@ -19,14 +19,17 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.FileLib;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
+public class E10_3089_SystemDefinationRoleSetupPage {
+	
+	
+	WebDriver driver ;
 	public Actions action;
 	public Select select;
 	public ExcelUtilities excelUtility;
+	WebUtilities webUtility;
 	public static String timeStamp ;
-	public static E10_3089_SystemDefinationRoleSetupPage sdrs;
 	public String roleNameData;
 	public String roleDescriptionData;
 	public String preparationTimeData;
@@ -136,9 +139,10 @@ public class E10_3089_SystemDefinationRoleSetupPage extends BaseClass{
 	private WebElement roleDescriptionErrorMsg;
 
 	public E10_3089_SystemDefinationRoleSetupPage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver= driver ;
 		this.excelUtility= new ExcelUtilities();
+		this.webUtility= new WebUtilities(driver);
 		this.action=new Actions(driver);
 	}
 

@@ -1,7 +1,5 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
@@ -13,7 +11,7 @@ import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class E10_2909_EmpAdmRosterGroupAssignmentTest extends BaseClass{
-	private static final Logger logger = LogManager.getLogger(E10_2909_EmpAdmRosterGroupAssignmentTest.class);
+//	private static final // logger // logger = LogManager.get// logger(E10_2909_EmpAdmRosterGroupAssignmentTest.class);
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
@@ -42,42 +40,42 @@ public class E10_2909_EmpAdmRosterGroupAssignmentTest extends BaseClass{
 	@Test(priority = 1)
 	public void E10_2911_VerifyCreateRosterGroupAssignment() throws Exception {
 		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-		logger.info("E10-2911 Creating Roster Group Assignment...");
+		// logger.info("E10-2911 Creating Roster Group Assignment...");
 
 		rosterGrpAssignment.createRosterGroupAssignment(fakeEmployee);
-		logger.info("E10-2911 Roster Group Assignment creation is successful");
+		// logger.info("E10-2911 Roster Group Assignment creation is successful");
 	}
 	@Test(priority = 2)
 	public void E10_2912_VerifyUpdateRosterGroupAssignment() throws Exception {
 		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-		logger.info("E10-2912 Updating Roster Group Assignment...");
+		// logger.info("E10-2912 Updating Roster Group Assignment...");
 
 		rosterGrpAssignment.updateRosterGroupAssignment(fakeEmployee);
-		logger.info("E10-2912 Roster Group Assignment successful updated");
+		// logger.info("E10-2912 Roster Group Assignment successful updated");
 	}
 	@Test(priority = 3)
 	public void E10_2913_VerifyDeleteRosterGroupAssignment() throws Exception {
 		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-		logger.info("E10-2913 Deleting Roster Group Assignment...");
+		// logger.info("E10-2913 Deleting Roster Group Assignment...");
 
 		rosterGrpAssignment.deleteRosterGroupAssignment();
-		logger.info("E10-2913 Roster Group Assignment deleted");
+		// logger.info("E10-2913 Roster Group Assignment deleted");
 	}
 	@Test(priority = 4)
 	public void E10_2921_VerifyReactivateRosterGroupAssignment() throws Exception {
 		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-		logger.info("E10-2921 Deleting Roster Group Assignment...");
+		// logger.info("E10-2921 Deleting Roster Group Assignment...");
 		
 		rosterGrpAssignment.reactivateRosterGroupAssignmentx();
-		logger.info("E10-2921 Roster Group Assignment reactivated");
+		// logger.info("E10-2921 Roster Group Assignment reactivated");
 	}
 	
 //	@Test(priority = 5)
 //	public void E10_2923_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
 //		captureScreenshot(driver, "EmpAdmRosterGroupAssignmentTest");
-//		logger.info("E10-2923 Add Employees Non-Members to Members and remove from Members to Non-Member....");
+//		// logger.info("E10-2923 Add Employees Non-Members to Members and remove from Members to Non-Member....");
 //		
 //		rosterGrpAssignment.AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember();
-//		logger.info("E10-2923 Succefully Add Employees Non-Members to Members and remove from Members to Non-Member");
+//		// logger.info("E10-2923 Succefully Add Employees Non-Members to Members and remove from Members to Non-Member");
 //	}
 }

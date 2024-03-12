@@ -1,6 +1,7 @@
 -------------------------------------------------------------------------------
 Test set: TestSuite
 -------------------------------------------------------------------------------
+<<<<<<< HEAD
 Tests run: 27, Failures: 8, Errors: 0, Skipped: 0, Time elapsed: 341.6 s <<< FAILURE! -- in TestSuite
 com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.setup -- Time elapsed: 92.80 s <<< FAILURE!
 org.openqa.selenium.TimeoutException: 
@@ -210,28 +211,39 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
 	at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.editAction(ReconciliationParameterGroupPage.java:324)
 	at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyEdit(ReconciliationParameterGroupTest.java:41)
+=======
+Tests run: 7, Failures: 3, Errors: 0, Skipped: 0, Time elapsed: 121.1 s <<< FAILURE! -- in TestSuite
+com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3115_VerifyCreateShiftBand -- Time elapsed: 4.110 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.createShiftBand(E10_2606_SystemDefinationShiftBandPage.java:420)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3115_VerifyCreateShiftBand(E10_2606_ShiftBandTest.java:56)
+>>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-	at org.testng.TestRunner.privateRun(TestRunner.java:648)
-	at org.testng.TestRunner.run(TestRunner.java:505)
-	at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-	at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
 	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-	at org.testng.TestNG.runSuites(TestNG.java:1049)
-	at org.testng.TestNG.run(TestNG.java:1017)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
 	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
 	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
 	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
@@ -240,6 +252,7 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
+<<<<<<< HEAD
 com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyDelete -- Time elapsed: 13.51 s <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"//table/tbody/tr/td/input[@type='checkbox'][1]"}
@@ -272,10 +285,18 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
 	at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.deleteAction(ReconciliationParameterGroupPage.java:333)
 	at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyDelete(ReconciliationParameterGroupTest.java:46)
+=======
+com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3119_VerifyWithoutShiftBandName -- Time elapsed: 3.924 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.withoutShiftBandName(E10_2606_SystemDefinationShiftBandPage.java:478)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3119_VerifyWithoutShiftBandName(E10_2606_ShiftBandTest.java:90)
+>>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+<<<<<<< HEAD
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
@@ -294,6 +315,29 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 	at org.testng.TestNG.runSuites(TestNG.java:1049)
 	at org.testng.TestNG.run(TestNG.java:1017)
+=======
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+>>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
 	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
 	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
@@ -302,6 +346,7 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
 	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
 
+<<<<<<< HEAD
 com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyReActivate -- Time elapsed: 13.41 s <<< FAILURE!
 org.openqa.selenium.NoSuchElementException: 
 no such element: Unable to locate element: {"method":"xpath","selector":"(//table/tbody/tr/td/button)[1]"}
@@ -334,10 +379,18 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
 	at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.reActivate(ReconciliationParameterGroupPage.java:344)
 	at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyReActivate(ReconciliationParameterGroupTest.java:51)
+=======
+com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3121_VerifyWithOvertimeShift -- Time elapsed: 3.559 s <<< FAILURE!
+java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.shiftBandTypeOvertimeShift(E10_2606_SystemDefinationShiftBandPage.java:538)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3121_VerifyWithOvertimeShift(E10_2606_ShiftBandTest.java:109)
+>>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:568)
+<<<<<<< HEAD
 	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
 	at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
 	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
@@ -356,6 +409,29 @@ Session ID: 3cb5a4f408862709f9af130166ea5dea
 	at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
 	at org.testng.TestNG.runSuites(TestNG.java:1049)
 	at org.testng.TestNG.run(TestNG.java:1017)
+=======
+	at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
+	at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
+	at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
+	at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
+	at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
+	at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
+	at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+	at org.testng.TestRunner.privateRun(TestRunner.java:848)
+	at org.testng.TestRunner.run(TestRunner.java:621)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:336)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
+	at org.testng.TestNG.runSuites(TestNG.java:1114)
+	at org.testng.TestNG.run(TestNG.java:1082)
+>>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
 	at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
 	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)

@@ -5,10 +5,8 @@ import java.time.Duration;
 import java.time.LocalDateTime;
 import java.util.List;
 
-import org.openqa.selenium.By;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
-import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -17,22 +15,23 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
 
-public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
-
+public class E10_3082_SystemDefinationSkillSetupPage  {
+	WebDriver driver;
 	//	String timeStamp = LocalDateTime.now().toString();
-	public E10_3082_SystemDefinationSkillSetupPage sds;
-	//	public ExcelUtilities excelUtility;
-	//	public WebUtilities webUtility;
+	public ExcelUtilities excelUtility;
+	public WebUtilities webUtility;
 
-	
+
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
 	private WebElement btnExcel;
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-pdf buttons-html5 btn-sm mr-1']")
 	private WebElement btnPDF;
-	
+
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
 
@@ -84,6 +83,9 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 
 	public E10_3082_SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver; 
+		this.webUtility= new WebUtilities(driver); 
+		this.excelUtility= new ExcelUtilities();
 	}
 
 	public void clickAddBtn() throws Exception {
@@ -122,7 +124,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	}
 
 	public void closeNotificationPopup() throws Exception {
-		webUtility.visibilityOfElement(driver, notificationPopup);
+		webUtility.ElementClickable(driver, notificationPopup);
 		notificationPopup.click();
 	}
 
@@ -180,15 +182,11 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
 		element.click();
 	}
-	//	public void checkCheckBox() throws Exception {
-	//		webUtility.visibilityOfElement(driver, checkBox);
-	//		checkBox.click();
-	//	}
 
 
 	public void clickYes() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.elementToBeClickable(clickYes));
+		wait.until(ExpectedConditions.elementToBeClickable(clickYes));
 		clickYes.click();
 	}
 
@@ -197,6 +195,7 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		searchColumns.clear();
 		searchColumns.sendKeys(searchColumnsData);
 	}
+
 	public void createNewSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
@@ -210,14 +209,14 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 		enterWageLevelCode(wageLevelCodedata);
 		clickSaveBtn();
 		closeNotificationPopup();
-		
+
 		btnExcel.isEnabled();
-//		btnExcel.click();
+		//		btnExcel.click();
 		btnPDF.isSelected();
-//		btnPDF.click();
+		//		btnPDF.click();
 	}
 
-	public void updateSkill() throws Exception {
+	public void updateSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
 		String timeStamp = LocalDateTime.now().toString();
@@ -231,14 +230,14 @@ public class E10_3082_SystemDefinationSkillSetupPage extends BaseClass {
 	public void deactivateSkill() throws Exception {
 		//		checkCheckBox();
 		//		clickDeleteBtn();
-
+		Thread.sleep(2000);
 		deleteRowsWithEnabledCheckbox();
 		clickYes();
 		closeNotificationPopup();
 	}
 
 	public void activateDeactivateSkill() throws Exception {
-		Thread.sleep(2000);
+		Thread.sleep(5000);
 		clickEditBtn();
 		Thread.sleep(1000);
 		clickIsActiveOption();
