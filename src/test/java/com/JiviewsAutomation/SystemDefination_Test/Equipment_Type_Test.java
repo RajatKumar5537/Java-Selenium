@@ -1,19 +1,20 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
+import org.testng.annotations.Test;
+
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsPOM.Equipment_Type;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.Location_Definitions;
-
-import org.testng.annotations.Test;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
-public class Location_Definitions_Test extends BaseClass{
+public class Equipment_Type_Test extends BaseClass {
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
 
-	Location_Definitions location;
+	Equipment_Type equipment;
 
 	@Test(priority = 1)
 	public void setup() throws Exception {
@@ -25,28 +26,29 @@ public class Location_Definitions_Test extends BaseClass{
 		orgUnit.setAutoOu();
 		jmMenuItem.clickOnSystemDefination();
 
-		location = new Location_Definitions(driver);
-		location.maritimeSetup();
-		location.locationDefinitions();
+		equipment = new Equipment_Type(driver);
+		equipment.maritimeSetup();
+		equipment.clickOnEquipment();
 	}
 
 	@Test(priority = 2)
 	public void verifyCreateLocation() throws Exception {
-		location.createLocation();
+		equipment.createEquipment();
 	}
 
 	@Test(priority = 3)
 	public void verifyEditLocation() throws Exception {
-		location.editLocation();
+		equipment.editEquipment();
 	}
 
 	@Test(priority = 4)
 	public void verifyDeleteLocation() throws Exception {
-		location.deleteLocation();
+		equipment.deleteEquipment();
 	}
 
 	@Test(priority = 5)
 	public void verifyReActivate() throws Exception {
-		location.reActivate();
+		equipment.reActivate();
 	}
+
 }

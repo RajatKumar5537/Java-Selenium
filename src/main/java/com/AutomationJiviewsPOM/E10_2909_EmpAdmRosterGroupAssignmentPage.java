@@ -197,7 +197,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 			webUtility.scrollAndClick(driver, nextPage);
 			// scrollAndClick(driver, nextPage);
 			webUtility.scrollUp(driver);
-			// scrollUp(driver);
+//			 scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
