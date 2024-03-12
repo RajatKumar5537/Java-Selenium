@@ -25,7 +25,7 @@ public class E10_3541_OPE_RTG_PlanningTest extends BaseClass{
 	    logger.info("Test E10_3542_Verify_SearchRecord executed successfully.");
 	}
 
-	/*@Test (priority = 2)
+	@Test (priority = 2)
 	public void E10_3543_Verify_AddEquipment() throws Exception {
 	    captureScreenshot(driver, "E10_3211_WorkloadPlannerTest");
 	    logger.info("Starting test: E10_3543_Verify_AddEquipment...");
@@ -64,7 +64,7 @@ public class E10_3541_OPE_RTG_PlanningTest extends BaseClass{
 	    
 	    logger.info("Test E10_3546_Verify_RTGSignOff executed successfully.");
 	}
-*/
+
 
 
 }

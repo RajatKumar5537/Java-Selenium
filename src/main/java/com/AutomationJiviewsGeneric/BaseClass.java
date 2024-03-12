@@ -43,31 +43,31 @@ public class BaseClass {
 //		logger.info("Open Browser");
 		// Setting up ChromeDriver and ChromeOptions
 		
-//		WebDriverManager.chromedriver().setup();
-//		ChromeOptions option=new ChromeOptions();
-//		option.addArguments("--disable-notifications");
-//		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
-//		option.addArguments("start-maximized"); // open Browser in maximized mode
-//		option.addArguments("disable-infobars"); // disabling infobars
-//		option.addArguments("--disable-extensions"); // disabling extensions
-//		option.addArguments("--disable-gpu"); // applicable to windows os only
-//		option.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-//		option.addArguments("--no-sandbox"); // Bypass OS security model
-//		// Check the execution environment (e.g., using an environment variable)
-//		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-//		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
-//			// Running in Azure, enable headless mode
-//			option.addArguments("--headless");
-//		}
-//		// Launch ChromeDriver with the configured ChromeOptions
-//		driver= new ChromeDriver();
-//		
-//
-//		webUtility.maximizeBrowser(driver);
-//		webUtility.pageLoadWait(driver, 10);
-//		logger.info("Browser launched successfully");
+		WebDriverManager.chromedriver().setup();
+		ChromeOptions option=new ChromeOptions();
+		option.addArguments("--disable-notifications");
+		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
+		option.addArguments("start-maximized"); // open Browser in maximized mode
+		option.addArguments("disable-infobars"); // disabling infobars
+		option.addArguments("--disable-extensions"); // disabling extensions
+		option.addArguments("--disable-gpu"); // applicable to windows os only
+		option.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+		option.addArguments("--no-sandbox"); // Bypass OS security model
+		// Check the execution environment (e.g., using an environment variable)
+		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+			// Running in Azure, enable headless mode
+			option.addArguments("--headless");
+		}
+		// Launch ChromeDriver with the configured ChromeOptions
+		driver= new ChromeDriver();
+		
 
-		  WebDriverManager.firefoxdriver().setup();
+		webUtility.maximizeBrowser(driver);
+		webUtility.pageLoadWait(driver, 10);
+		logger.info("Browser launched successfully");
+
+		 /* WebDriverManager.firefoxdriver().setup();
 	    FirefoxOptions options = new FirefoxOptions();
 	    driver = new FirefoxDriver(options);
 	    String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
@@ -79,7 +79,7 @@ public class BaseClass {
 	    }
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
-	    logger.info("Firefox Browser launched successfully");
+	    logger.info("Firefox Browser launched successfully");*/
 		
 	    
 //	    WebDriverManager.edgedriver().setup();

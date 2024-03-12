@@ -43,7 +43,7 @@ public class E10_3541_OPE_RTG_PlanningPage {
 	private WebElement workloadPlanning;
 	@FindBy(xpath = "//div[text()='Workforce Execution']/..")
 	WebElement workforceExecution;
-	
+
 	@FindBy(xpath = "//li[@data-menu-link='Planning/DailyPlanning/RTGPlanning']")
 	WebElement RTGPlanning;
 
@@ -150,7 +150,7 @@ public class E10_3541_OPE_RTG_PlanningPage {
 			webUtility.ElementClickable(driver, OLMop);
 			OLMop.click();
 		} 
-		
+
 		catch (StaleElementReferenceException e) {
 			System.out.println("StaleElementReferenceException occurred. Retrying...");
 			webUtility.ElementClickable(driver, OLMop); 
@@ -350,29 +350,30 @@ public class E10_3541_OPE_RTG_PlanningPage {
 		selectOLMop();
 		selectMainMenu();
 		selectOperationPlanningExecution();
-		
-//		Thread.sleep(5000);
-//		workloadPlanning.click();
 
-//		selectWorkloadPlanning();
+		//		Thread.sleep(5000);
+		//		workloadPlanning.click();
+
+		//		selectWorkloadPlanning();
 		Thread.sleep(3000);
 		RTGPlanning.click();
-//
-		//		txtPlanning.clear();
-//		txtPlanning.click();
-//		//		calender.click();
-//
-//		//txtShiftBand.click();
-//		//selectshiftBand.click();
 		
+		Thread.sleep(3000);
+		txtPlanning.clear();
+		txtPlanning.click();
+		calender.click();
+		//
+		txtShiftBand.click();
+		selectshiftBand.click();
+
 		Thread.sleep(10000);
 		btnSearchRTGPlanning.click();
 
 
-Thread.sleep(10000);
-//		btnAddRTGPlanning.click();
-//		dtPlanning.isDisplayed();
-//		cmbShiftBand.isDisplayed();
+		Thread.sleep(10000);
+		//		btnAddRTGPlanning.click();
+		//		dtPlanning.isDisplayed();
+		//		cmbShiftBand.isDisplayed();
 
 	}
 
