@@ -15,8 +15,9 @@ import com.AutomationJiviewsGeneric.WebUtilities;
 
 import io.netty.handler.timeout.TimeoutException;
 
-public class jiviewsMainMenuItems extends BaseClass{
+public class jiviewsMainMenuItems {
 
+	WebDriver driver ;
 	WebUtilities webUtility;
 
 	@FindBy(xpath = "//span[text()='SYSTEM SETUP']/..")
@@ -51,8 +52,8 @@ public class jiviewsMainMenuItems extends BaseClass{
 
 
 	public jiviewsMainMenuItems(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver= driver;
 		this.webUtility= new WebUtilities(driver);
 	}
 

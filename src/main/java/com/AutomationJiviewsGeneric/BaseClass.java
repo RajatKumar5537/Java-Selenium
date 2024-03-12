@@ -2,6 +2,7 @@ package com.AutomationJiviewsGeneric;
 
 import java.io.File;
 import java.io.IOException;
+import java.time.Duration;
 import java.time.LocalDateTime;
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.LogManager;
@@ -12,6 +13,10 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.edge.EdgeOptions;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.Reporter;
 import org.testng.annotations.AfterClass;
@@ -25,7 +30,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 
 public class BaseClass {
 	
-//	private static final Logger logger = LogManager.getLogger(BaseClass.class);
+	private static final Logger logger = LogManager.getLogger(BaseClass.class);
 	public static WebDriver driver;
 	public static WebUtilities webUtility = new WebUtilities(driver);
 //	public static ExcelUtilities excelUtility= new ExcelUtilities();
@@ -38,32 +43,31 @@ public class BaseClass {
 //		logger.info("Open Browser");
 		// Setting up ChromeDriver and ChromeOptions
 		
-		WebDriverManager.chromedriver().setup();
-//		WebDriverManager.chromedriver().browserVersion("121.0.6167.185").setup();
-		ChromeOptions option=new ChromeOptions();
-		option.addArguments("--disable-notifications");
-		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
-		option.addArguments("start-maximized"); // open Browser in maximized mode
-		option.addArguments("disable-infobars"); // disabling infobars
-		option.addArguments("--disable-extensions"); // disabling extensions
-		option.addArguments("--disable-gpu"); // applicable to windows os only
-		option.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
-		option.addArguments("--no-sandbox"); // Bypass OS security model
-		// Check the execution environment (e.g., using an environment variable)
-		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
-			// Running in Azure, enable headless mode
-			option.addArguments("--headless");
-		}
-		// Launch ChromeDriver with the configured ChromeOptions
-		driver= new ChromeDriver();
-		
-
-		webUtility.maximizeBrowser(driver);
-		webUtility.pageLoadWait(driver, 10);
+//		WebDriverManager.chromedriver().setup();
+//		ChromeOptions option=new ChromeOptions();
+//		option.addArguments("--disable-notifications");
+//		option.addArguments("--remote-allow-origins=*"); // allowing to open chrome in Azure
+//		option.addArguments("start-maximized"); // open Browser in maximized mode
+//		option.addArguments("disable-infobars"); // disabling infobars
+//		option.addArguments("--disable-extensions"); // disabling extensions
+//		option.addArguments("--disable-gpu"); // applicable to windows os only
+//		option.addArguments("--disable-dev-shm-usage"); // overcome limited resource problems
+//		option.addArguments("--no-sandbox"); // Bypass OS security model
+//		// Check the execution environment (e.g., using an environment variable)
+//		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
+//		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+//			// Running in Azure, enable headless mode
+//			option.addArguments("--headless");
+//		}
+//		// Launch ChromeDriver with the configured ChromeOptions
+//		driver= new ChromeDriver();
+//		
+//
+//		webUtility.maximizeBrowser(driver);
+//		webUtility.pageLoadWait(driver, 10);
 //		logger.info("Browser launched successfully");
 
-		/*   WebDriverManager.firefoxdriver().setup();
+		  WebDriverManager.firefoxdriver().setup();
 	    FirefoxOptions options = new FirefoxOptions();
 	    driver = new FirefoxDriver(options);
 	    String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
@@ -76,14 +80,23 @@ public class BaseClass {
 	    driver.manage().window().maximize();
 	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	    logger.info("Firefox Browser launched successfully");
-		 */
+		
+	    
+//	    WebDriverManager.edgedriver().setup();
+//	    EdgeOptions options = new EdgeOptions();
+//	    driver = new EdgeDriver(options);
+//
+//	    driver.manage().window().maximize();
+//	    driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
+//	    logger.info("Firefox Browser launched successfully");
+//	    
 		fakeEmployee.generateFakeEmployeeData();
 
 	}
 
 	@AfterTest
 	public void closeBrowser() throws InterruptedException {
-//		logger.info("Close Browser...");
+		logger.info("Close Browser...");
 		driver.quit();
 	}
 	
@@ -106,7 +119,7 @@ public class BaseClass {
 		// Perform login only if the user is not already logged in
 		if (!isLoggedIn) {
 			Reporter.log("Login", true);
-//			logger.info("Login to the Jivi application");
+			logger.info("Login to the Jivi application");
 
 			String url = configUtility.getCongigPropertyData("url");
 			String un = configUtility.getCongigPropertyData("username");
@@ -120,7 +133,7 @@ public class BaseClass {
 	public void logout() {
 		if (isLoggedIn) {
 			Reporter.log("Logout", true);
-//			logger.info("Logout from Jivi application");
+			logger.info("Logout from Jivi application");
 			//	HomePage hp=new HomePage(driver);
 			//	Thread.sleep(2000);
 			//	hp.setAdmin();
@@ -135,7 +148,7 @@ public class BaseClass {
 		File src = screenshot.getScreenshotAs(OutputType.FILE);
 		File dest = new File("./ScreenShot/" + res + ".png");
 		FileUtils.copyFile(src, dest);
-//		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
+		logger.info("Screenshot captured for test failure. View it at: " + dest.getAbsolutePath());
 
 	}
 	

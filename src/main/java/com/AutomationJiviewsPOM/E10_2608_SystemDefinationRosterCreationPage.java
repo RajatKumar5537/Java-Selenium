@@ -22,10 +22,12 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 
-public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
+public class E10_2608_SystemDefinationRosterCreationPage{
+	WebDriver driver; 
 
 	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
 	Actions action= new Actions(driver);
@@ -204,6 +206,8 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 
 	public E10_2608_SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver = driver ;
+				
 		this.excelUtility= new ExcelUtilities();
 		this.webUtility= new WebUtilities(driver);
 	}
@@ -408,7 +412,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		}
 	}
 
-	public void performActionsOnCheckboxes() {
+	public void performActionsOnCheckboxes(FakeEmployee fakeEmployee) {
 		// Check if the first checkbox is enabled
 		if (checkBoxPublishRosterMulti.size() > 0 && isElementEnabled(checkBoxPublishRosterMulti.get(0))) {
 			// Check the first checkbox if it's not already checked
@@ -512,7 +516,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 	}
 	
 	String TemplateName ;
-	public void setCreateRoasterwithGroup() throws Exception {
+	public void setCreateRoasterwithGroup(FakeEmployee fakeEmployee) throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
@@ -554,10 +558,10 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		//				setBtnSaveRosterTemplateRosterGroups();
 
 		setBtnPublishRosterPattern() ;
-		performActionsOnCheckboxes();
+		performActionsOnCheckboxes(fakeEmployee);
 		clickNotificationPopup();
 	}
-	public void setCreateRoasterwithEmployee() throws Exception {
+	public void setCreateRoasterwithEmployee(FakeEmployee fakeEmployee) throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
@@ -588,11 +592,11 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		clickNotificationPopup();
 		
 		setBtnPublishRosterPattern();
-		performActionsOnCheckboxes();
+		performActionsOnCheckboxes(fakeEmployee);
 		clickNotificationPopup();
 
 	}
-	public void setCreateRoasterwithRosterAndEmp() throws Exception {
+	public void setCreateRoasterwithRosterAndEmp(FakeEmployee fakeEmployee) throws Exception {
 		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
 		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
 		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
@@ -628,14 +632,14 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		clickNotificationPopup();
 		
 		setBtnPublishRosterPattern();
-		performActionsOnCheckboxes();
+		performActionsOnCheckboxes(fakeEmployee);
 		getShiftExtractionProcessCompletedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 
 
 
-	public void setUpdateRoaster() throws Exception {
+	public void setUpdateRoaster(FakeEmployee fakeEmployee) throws Exception {
 		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 15, 10);
 		//		Thread.sleep(2000);
 //		RoasterSetup.click();
@@ -647,7 +651,7 @@ public class E10_2608_SystemDefinationRosterCreationPage extends BaseClass{
 		
 		setEditBtn();
 		setBtnPublishRosterPattern() ;
-		performActionsOnCheckboxes();
+		performActionsOnCheckboxes(fakeEmployee);
 		clickNotificationPopup();
 	}
 	public void setDeactiveRoster() throws Exception {

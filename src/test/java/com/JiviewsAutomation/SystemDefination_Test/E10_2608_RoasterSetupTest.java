@@ -60,7 +60,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		Thread.sleep(2000);
-		rosterCreation.setCreateRoasterwithGroup();
+		rosterCreation.setCreateRoasterwithGroup(fakeEmployee);
 //		logger.info("E10-2697 Create a Roster Pattern with Roster Group is successfull");
 	}
 
@@ -79,7 +79,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		jmMenuItem.clickOnSystemDefination();
 //		rosterSetup.setRosterCreation();
 
-		rosterCreation.setCreateRoasterwithEmployee();
+		rosterCreation.setCreateRoasterwithEmployee(fakeEmployee);
 //		logger.info("E10-2698 Creating Roaster with Employee is successful");
 	}
 
@@ -99,7 +99,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		jmMenuItem.clickOnSystemDefination();
 //		rosterSetup.setRosterCreation();
 
-		rosterCreation.setUpdateRoaster();
+		rosterCreation.setUpdateRoaster(fakeEmployee);
 //		logger.info("E10-2738 Update Roaster with Employee is successful");
 
 	}

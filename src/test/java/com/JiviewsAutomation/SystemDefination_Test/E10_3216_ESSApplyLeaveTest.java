@@ -212,7 +212,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
 
-		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday();
+		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday(fakeEmployee);
 		// logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday is successful");
 	}
 
@@ -222,7 +222,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		// logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");
 
 
-		applyLeave.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave();
+		applyLeave.E10_3443_ShiftlessEmployeeApplyPublicHolidayLeave(fakeEmployee);
 		// logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave is successful");
 	}
 
@@ -231,7 +231,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift...");
 
-		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift();
+		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift(fakeEmployee);
 		// logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift is successful");
 	}
 	/*@Test(priority = 18)

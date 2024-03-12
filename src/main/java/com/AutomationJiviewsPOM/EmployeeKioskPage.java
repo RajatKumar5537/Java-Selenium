@@ -4,11 +4,14 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-import com.AutomationJiviewsGeneric.BaseClass;
+public class EmployeeKioskPage {
 
-public class EmployeeKioskPage extends BaseClass{
-
+	WebDriver driver ;
+	WebUtilities webUtility;
+	
+	
 	@FindBy(xpath = "//div[text()='Employee Kiosk']/..")
 	private WebElement employeeKiosk;
 	
@@ -20,8 +23,9 @@ public class EmployeeKioskPage extends BaseClass{
 	
 	
 	public EmployeeKioskPage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver= driver ;
+		this.webUtility = new WebUtilities(driver);
 	}
 	
 	public void clickEmployeeKiosk() {

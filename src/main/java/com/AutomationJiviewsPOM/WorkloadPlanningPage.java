@@ -6,8 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class WorkloadPlanningPage extends BaseClass{
+public class WorkloadPlanningPage {
+	
+	WebDriver driver; 
+	WebUtilities webUtility;
 
 	@FindBy(xpath = "//div[text()='Workload Planning']/..")
 	private WebElement workloadPlanning;
@@ -22,6 +26,8 @@ public class WorkloadPlanningPage extends BaseClass{
 	
 	public WorkloadPlanningPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver= driver;
+		this.webUtility= new WebUtilities(driver);
 	}
 	
 	

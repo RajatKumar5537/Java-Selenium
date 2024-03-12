@@ -5,8 +5,9 @@
   <meta charset='utf-8'>
   <title>TestNG reports</title>
 
-    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
-    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <link type="text/css" href="testng-reports1.css" rel="stylesheet" id="ultra" />
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" id="retro" disabled="false"/>
+    <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
     <script type="text/javascript" src="testng-reports.js"></script>
     <script type="text/javascript" src="https://www.google.com/jsapi"></script>
     <script type='text/javascript'>
@@ -20,11 +21,11 @@
      -->
   </head>
 
-  <body>
-    <div class="top-banner-root">
+  <body>    <div class="top-banner-root">
       <span class="top-banner-title-font">Test results</span>
+      <button id="button" class="button">Switch Retro Theme</button> <!-- button -->
       <br/>
-      <span class="top-banner-font-1">1 suite</span>
+      <span class="top-banner-font-1">1 suite, 3 failed tests</span>
     </div> <!-- top-banner-root -->
     <div class="navigator-root">
       <div class="navigator-suite-header">
@@ -38,7 +39,7 @@
         <div class="rounded-window">
           <div class="suite-header light-rounded-window-top">
             <a href="#" panel-name="suite-Suite" class="navigator-link">
-              <span class="suite-name border-skipped">Suite</span>
+              <span class="suite-name border-failed">Suite</span>
             </a> <!-- navigator-link -->
           </div> <!-- suite-header light-rounded-window-top -->
           <div class="navigator-suite-content">
@@ -91,31 +92,60 @@
               <div class="suite-section-content">
                 <ul>
                   <li>
-                    <span class="method-stats">3 methods,  3 skipped,  </span>
+                    <span class="method-stats">7 methods, 3 failed,   4 passed</span>
                   </li>
                   <li>
-                    <span class="method-list-title skipped">Skipped methods</span>
-                    <span class="show-or-hide-methods skipped">
-                      <a href="#" panel-name="suite-Suite" class="hide-methods skipped suite-Suite"> (hide)</a> <!-- hide-methods skipped suite-Suite -->
-                      <a href="#" panel-name="suite-Suite" class="show-methods skipped suite-Suite"> (show)</a> <!-- show-methods skipped suite-Suite -->
+                    <span class="method-list-title failed">Failed methods</span>
+                    <span class="show-or-hide-methods failed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods failed suite-Suite"> (hide)</a> <!-- hide-methods failed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods failed suite-Suite"> (show)</a> <!-- show-methods failed suite-Suite -->
                     </span>
-                    <div class="method-list-content skipped suite-Suite">
+                    <div class="method-list-content failed suite-Suite">
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest" class="method navigator-link" hash-for-method="E10_3128_VerifyCreatePublicHoliday">E10_3128_VerifyCreatePublicHoliday</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3115_VerifyCreateShiftBand">E10_3115_VerifyCreateShiftBand</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest" class="method navigator-link" hash-for-method="E10_3129_VerifyUpdatePublicHoliday">E10_3129_VerifyUpdatePublicHoliday</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3119_VerifyWithoutShiftBandName">E10_3119_VerifyWithoutShiftBandName</a> <!-- method navigator-link -->
                       </span>
                       <br/>
                       <span>
-                        <img src="skipped.png" width="3%"/>
-                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest" class="method navigator-link" hash-for-method="E10_3130_VerifyDeletePublicHoliday">E10_3130_VerifyDeletePublicHoliday</a> <!-- method navigator-link -->
+                        <img src="failed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3121_VerifyWithOvertimeShift">E10_3121_VerifyWithOvertimeShift</a> <!-- method navigator-link -->
                       </span>
                       <br/>
-                    </div> <!-- method-list-content skipped suite-Suite -->
+                    </div> <!-- method-list-content failed suite-Suite -->
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Suite" class="hide-methods passed suite-Suite"> (hide)</a> <!-- hide-methods passed suite-Suite -->
+                      <a href="#" panel-name="suite-Suite" class="show-methods passed suite-Suite"> (show)</a> <!-- show-methods passed suite-Suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Suite">
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3116_VerifyUpdateShiftBand">E10_3116_VerifyUpdateShiftBand</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3117_VerifyDeactivateShiftBand">E10_3117_VerifyDeactivateShiftBand</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3118_VerifyReactivateShiftBand">E10_3118_VerifyReactivateShiftBand</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img src="passed.png" width="3%"/>
+                        <a href="#" panel-name="suite-Suite" title="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" class="method navigator-link" hash-for-method="E10_3120_VerifyWithCombinationShift">E10_3120_VerifyWithCombinationShift</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Suite -->
                   </li>
                 </ul>
               </div> <!-- suite-section-content -->
@@ -127,152 +157,92 @@
     <div class="wrapper">
       <div class="main-panel-root">
         <div panel-name="suite-Suite" class="panel Suite">
-          <div class="suite-Suite-class-skipped">
+          <div class="suite-Suite-class-failed">
             <div class="main-panel-header rounded-window-top">
-              <img src="skipped.png"/>
-              <span class="class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest</span>
+              <img src="failed.png"/>
+              <span class="class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest</span>
             </div> <!-- main-panel-header rounded-window-top -->
             <div class="main-panel-content rounded-window-bottom">
               <div class="method">
                 <div class="method-content">
-                  <a name="E10_3128_VerifyCreatePublicHoliday">
-                  </a> <!-- E10_3128_VerifyCreatePublicHoliday -->
-                  <span class="method-name">E10_3128_VerifyCreatePublicHoliday</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&apos; (tried for 80 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
-	at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:35)
-	at com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest.setup(E10_2638_PublicHolidayTest.java:40)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&quot;}
-  (Session info: chrome=122.0.6261.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [09d20d1f8481750e17237ad524b27449, findElement {using=xpath, value=//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.70, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62886}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62886/devtoo..., se:cdpVersion: 122.0.6261.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 09d20d1f8481750e17237ad524b27449
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 35 more
-... Removed 37 stack frames
+                  <a name="E10_3115_VerifyCreateShiftBand">
+                  </a> <!-- E10_3115_VerifyCreateShiftBand -->
+                  <span class="method-name">E10_3115_VerifyCreateShiftBand</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])&quot; because &quot;this.js&quot; is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.createShiftBand(E10_2606_SystemDefinationShiftBandPage.java:420)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3115_VerifyCreateShiftBand(E10_2606_ShiftBandTest.java:56)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="E10_3129_VerifyUpdatePublicHoliday">
-                  </a> <!-- E10_3129_VerifyUpdatePublicHoliday -->
-                  <span class="method-name">E10_3129_VerifyUpdatePublicHoliday</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&apos; (tried for 80 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
-	at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:35)
-	at com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest.setup(E10_2638_PublicHolidayTest.java:40)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&quot;}
-  (Session info: chrome=122.0.6261.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [09d20d1f8481750e17237ad524b27449, findElement {using=xpath, value=//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.70, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62886}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62886/devtoo..., se:cdpVersion: 122.0.6261.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 09d20d1f8481750e17237ad524b27449
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 35 more
-... Removed 37 stack frames
+                  <a name="E10_3119_VerifyWithoutShiftBandName">
+                  </a> <!-- E10_3119_VerifyWithoutShiftBandName -->
+                  <span class="method-name">E10_3119_VerifyWithoutShiftBandName</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])&quot; because &quot;this.js&quot; is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.withoutShiftBandName(E10_2606_SystemDefinationShiftBandPage.java:478)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3119_VerifyWithoutShiftBandName(E10_2606_ShiftBandTest.java:90)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
               <div class="method">
                 <div class="method-content">
-                  <a name="E10_3130_VerifyDeletePublicHoliday">
-                  </a> <!-- E10_3130_VerifyDeletePublicHoliday -->
-                  <span class="method-name">E10_3130_VerifyDeletePublicHoliday</span>
-                  <div class="stack-trace">org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: Proxy element for: DefaultElementLocator &apos;By.xpath: //div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&apos; (tried for 80 second(s) with 500 milliseconds interval)
-	at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-	at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
-	at com.AutomationJiviewsPOM.HomePage.setOrgUnit(HomePage.java:35)
-	at com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest.setup(E10_2638_PublicHolidayTest.java:40)
-Caused by: org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {&quot;method&quot;:&quot;xpath&quot;,&quot;selector&quot;:&quot;//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a&quot;}
-  (Session info: chrome=122.0.6261.70)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: &apos;4.10.0&apos;, revision: &apos;c14d967899&apos;
-System info: os.name: &apos;Windows 11&apos;, os.arch: &apos;amd64&apos;, os.version: &apos;10.0&apos;, java.version: &apos;17.0.8.1&apos;
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [09d20d1f8481750e17237ad524b27449, findElement {using=xpath, value=//div[@id=&apos;layout-navbar-collapse&apos;]/div/div[@id=&apos;dvOrgUnitDropdown&apos;]/a}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.70, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:62886}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:62886/devtoo..., se:cdpVersion: 122.0.6261.70, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 09d20d1f8481750e17237ad524b27449
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-	at jdk.proxy2/jdk.proxy2.$Proxy17.isDisplayed(Unknown Source)
-	at org.openqa.selenium.support.ui.ExpectedConditions.elementIfVisible(ExpectedConditions.java:304)
-	at org.openqa.selenium.support.ui.ExpectedConditions.access$000(ExpectedConditions.java:37)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:290)
-	at org.openqa.selenium.support.ui.ExpectedConditions$10.apply(ExpectedConditions.java:287)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:656)
-	at org.openqa.selenium.support.ui.ExpectedConditions$23.apply(ExpectedConditions.java:652)
-	at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:205)
-	... 35 more
-... Removed 37 stack frames
+                  <a name="E10_3121_VerifyWithOvertimeShift">
+                  </a> <!-- E10_3121_VerifyWithOvertimeShift -->
+                  <span class="method-name">E10_3121_VerifyWithOvertimeShift</span>
+                  <div class="stack-trace">java.lang.NullPointerException: Cannot invoke &quot;org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])&quot; because &quot;this.js&quot; is null
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
+	at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.shiftBandTypeOvertimeShift(E10_2606_SystemDefinationShiftBandPage.java:538)
+	at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3121_VerifyWithOvertimeShift(E10_2606_ShiftBandTest.java:109)
+	at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
+... Removed 31 stack frames
 </div> <!-- stack-trace -->
                 </div> <!-- method-content -->
               </div> <!-- method -->
             </div> <!-- main-panel-content rounded-window-bottom -->
-          </div> <!-- suite-Suite-class-skipped -->
+          </div> <!-- suite-Suite-class-failed -->
+          <div class="suite-Suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="E10_3116_VerifyUpdateShiftBand">
+                  </a> <!-- E10_3116_VerifyUpdateShiftBand -->
+                  <span class="method-name">E10_3116_VerifyUpdateShiftBand</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="E10_3117_VerifyDeactivateShiftBand">
+                  </a> <!-- E10_3117_VerifyDeactivateShiftBand -->
+                  <span class="method-name">E10_3117_VerifyDeactivateShiftBand</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="E10_3118_VerifyReactivateShiftBand">
+                  </a> <!-- E10_3118_VerifyReactivateShiftBand -->
+                  <span class="method-name">E10_3118_VerifyReactivateShiftBand</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="E10_3120_VerifyWithCombinationShift">
+                  </a> <!-- E10_3120_VerifyWithCombinationShift -->
+                  <span class="method-name">E10_3120_VerifyWithCombinationShift</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Suite-class-passed -->
         </div> <!-- panel Suite -->
         <div panel-name="test-xml-Suite" class="panel">
           <div class="main-panel-header rounded-window-top">
@@ -281,16 +251,16 @@ Session ID: 09d20d1f8481750e17237ad524b27449
           <div class="main-panel-content rounded-window-bottom">
             <pre>
 &lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
-&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;https://testng.org/testng-1.0.dtd&quot;&gt;
 &lt;suite name=&quot;Suite&quot; guice-stage=&quot;DEVELOPMENT&quot; verbose=&quot;0&quot;&gt;
   &lt;listeners&gt;
     &lt;listener class-name=&quot;com.AutomationJiviewsGeneric.ListenerImplimentation&quot;/&gt;
   &lt;/listeners&gt;
-  &lt;test thread-count=&quot;5&quot; name=&quot;E10_2638_PublicHolidayTest&quot; verbose=&quot;0&quot;&gt;
+  &lt;test thread-count=&quot;5&quot; name=&quot;E10_2606_ShiftBandTest&quot; verbose=&quot;0&quot;&gt;
     &lt;classes&gt;
-      &lt;class name=&quot;com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest&quot;/&gt;
+      &lt;class name=&quot;com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest&quot;/&gt;
     &lt;/classes&gt;
-  &lt;/test&gt; &lt;!-- E10_2638_PublicHolidayTest --&gt;
+  &lt;/test&gt; &lt;!-- E10_2606_ShiftBandTest --&gt;
 &lt;/suite&gt; &lt;!-- Suite --&gt;
             </pre>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -302,7 +272,7 @@ Session ID: 09d20d1f8481750e17237ad524b27449
           <div class="main-panel-content rounded-window-bottom">
             <ul>
               <li>
-                <span class="test-name">E10_2638_PublicHolidayTest (1 class)</span>
+                <span class="test-name">E10_2606_ShiftBandTest (1 class)</span>
               </li>
             </ul>
           </div> <!-- main-panel-content rounded-window-bottom -->
@@ -328,24 +298,40 @@ data.addColumn('number', 'Number');
 data.addColumn('string', 'Method');
 data.addColumn('string', 'Class');
 data.addColumn('number', 'Time (ms)');
-data.addRows(3);
+data.addRows(7);
 data.setCell(0, 0, 0)
-data.setCell(0, 1, 'E10_3128_VerifyCreatePublicHoliday')
-data.setCell(0, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest')
-data.setCell(0, 3, 0);
+data.setCell(0, 1, 'E10_3120_VerifyWithCombinationShift')
+data.setCell(0, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(0, 3, 15069);
 data.setCell(1, 0, 1)
-data.setCell(1, 1, 'E10_3129_VerifyUpdatePublicHoliday')
-data.setCell(1, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest')
-data.setCell(1, 3, 0);
+data.setCell(1, 1, 'E10_3116_VerifyUpdateShiftBand')
+data.setCell(1, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(1, 3, 4032);
 data.setCell(2, 0, 2)
-data.setCell(2, 1, 'E10_3130_VerifyDeletePublicHoliday')
-data.setCell(2, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest')
-data.setCell(2, 3, 0);
+data.setCell(2, 1, 'E10_3119_VerifyWithoutShiftBandName')
+data.setCell(2, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(2, 3, 3703);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'E10_3115_VerifyCreateShiftBand')
+data.setCell(3, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(3, 3, 3642);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'E10_3121_VerifyWithOvertimeShift')
+data.setCell(4, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(4, 3, 3391);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'E10_3117_VerifyDeactivateShiftBand')
+data.setCell(5, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(5, 3, 2769);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'E10_3118_VerifyReactivateShiftBand')
+data.setCell(6, 2, 'com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest')
+data.setCell(6, 3, 2039);
 window.suiteTableData['Suite']= { tableData: data, tableDiv: 'times-div-Suite'}
 return data;
 }
               </script>
-              <span class="suite-total-time">Total running time: 0 ms</span>
+              <span class="suite-total-time">Total running time: 34 seconds</span>
               <div id="times-div-Suite">
               </div> <!-- times-div-Suite -->
             </div> <!-- times-div -->
@@ -371,36 +357,89 @@ return data;
           </div> <!-- main-panel-header rounded-window-top -->
           <div class="main-panel-content rounded-window-bottom">
             <div class="chronological-class">
-              <div class="chronological-class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest</div> <!-- chronological-class-name -->
+              <div class="chronological-class-name">com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest</div> <!-- chronological-class-name -->
               <div class="configuration-test before">
                 <span class="method-name">launchBrowser</span>
                 <span class="method-start">0 ms</span>
               </div> <!-- configuration-test before -->
               <div class="configuration-class before">
                 <span class="method-name">beforeTestMethod</span>
-                <span class="method-start">3322 ms</span>
+                <span class="method-start">2819 ms</span>
               </div> <!-- configuration-class before -->
               <div class="configuration-method before">
-                <img src="failed.png">
-                </img>
-                <span class="method-name">setup</span>
-                <span class="method-start">33148 ms</span>
+                <span class="method-name">setUp</span>
+                <span class="method-start">4972 ms</span>
               </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">E10_3128_VerifyCreatePublicHoliday</span>
-                <span class="method-start">-1709122147597 ms</span>
+                <img src="failed.png">
+                </img>
+                <span class="method-name">E10_3115_VerifyCreateShiftBand</span>
+                <span class="method-start">18002 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">22132 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">E10_3129_VerifyUpdatePublicHoliday</span>
-                <span class="method-start">-1709122147597 ms</span>
+                <span class="method-name">E10_3116_VerifyUpdateShiftBand</span>
+                <span class="method-start">33296 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">37342 ms</span>
+              </div> <!-- configuration-method before -->
               <div class="test-method">
-                <span class="method-name">E10_3130_VerifyDeletePublicHoliday</span>
-                <span class="method-start">-1709122147597 ms</span>
+                <span class="method-name">E10_3117_VerifyDeactivateShiftBand</span>
+                <span class="method-start">49000 ms</span>
               </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">51776 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">E10_3118_VerifyReactivateShiftBand</span>
+                <span class="method-start">61942 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">63981 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">E10_3119_VerifyWithoutShiftBandName</span>
+                <span class="method-start">74565 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">78491 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <span class="method-name">E10_3120_VerifyWithCombinationShift</span>
+                <span class="method-start">89346 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-method before">
+                <span class="method-name">setUp</span>
+                <span class="method-start">104421 ms</span>
+              </div> <!-- configuration-method before -->
+              <div class="test-method">
+                <img src="failed.png">
+                </img>
+                <span class="method-name">E10_3121_VerifyWithOvertimeShift</span>
+                <span class="method-start">115238 ms</span>
+              </div> <!-- test-method -->
+              <div class="configuration-class after">
+                <span class="method-name">afterTestMethod</span>
+                <span class="method-start">118797 ms</span>
+              </div> <!-- configuration-class after -->
+              <div class="configuration-test after">
+                <span class="method-name">closeBrowser</span>
+                <span class="method-start">118799 ms</span>
+              </div> <!-- configuration-test after -->
           </div> <!-- main-panel-content rounded-window-bottom -->
         </div> <!-- panel -->
       </div> <!-- main-panel-root -->
     </div> <!-- wrapper -->
   </body>
+<script type="text/javascript" src="testng-reports2.js"></script>
 </html>

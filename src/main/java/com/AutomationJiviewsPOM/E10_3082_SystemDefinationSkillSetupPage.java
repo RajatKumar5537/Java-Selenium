@@ -23,15 +23,15 @@ import com.AutomationJiviewsGeneric.WebUtilities;
 public class E10_3082_SystemDefinationSkillSetupPage  {
 	WebDriver driver;
 	//	String timeStamp = LocalDateTime.now().toString();
-		public ExcelUtilities excelUtility;
-		public WebUtilities webUtility;
+	public ExcelUtilities excelUtility;
+	public WebUtilities webUtility;
 
-	
+
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
 	private WebElement btnExcel;
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-pdf buttons-html5 btn-sm mr-1']")
 	private WebElement btnPDF;
-	
+
 	@FindBy(xpath = "//button[@id='btnAddSkill']")
 	private WebElement addBtn;
 
@@ -186,7 +186,7 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 
 	public void clickYes() {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.elementToBeClickable(clickYes));
+		wait.until(ExpectedConditions.elementToBeClickable(clickYes));
 		clickYes.click();
 	}
 
@@ -195,7 +195,7 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 		searchColumns.clear();
 		searchColumns.sendKeys(searchColumnsData);
 	}
-	
+
 	public void createNewSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
@@ -209,11 +209,11 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 		enterWageLevelCode(wageLevelCodedata);
 		clickSaveBtn();
 		closeNotificationPopup();
-		
+
 		btnExcel.isEnabled();
-//		btnExcel.click();
+		//		btnExcel.click();
 		btnPDF.isSelected();
-//		btnPDF.click();
+		//		btnPDF.click();
 	}
 
 	public void updateSkill(FakeEmployee fakeEmployee) throws Exception {
@@ -230,7 +230,7 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 	public void deactivateSkill() throws Exception {
 		//		checkCheckBox();
 		//		clickDeleteBtn();
-
+		Thread.sleep(2000);
 		deleteRowsWithEnabledCheckbox();
 		clickYes();
 		closeNotificationPopup();

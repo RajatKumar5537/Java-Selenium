@@ -6,9 +6,14 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class EmployeeAdminstrationPage extends BaseClass{
+public class EmployeeAdminstrationPage {
 
+	WebDriver driver ;
+	WebUtilities webUtility;
+	
+	
 	@FindBy(xpath = "//div[text()='Employee']/..")
 	private WebElement employee;
 	
@@ -20,9 +25,9 @@ public class EmployeeAdminstrationPage extends BaseClass{
 	
 	
 	public EmployeeAdminstrationPage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
-		
+		this.driver = driver;
+		this.webUtility= new WebUtilities(driver);
 	}
 	
 	public void clickEmployee() {

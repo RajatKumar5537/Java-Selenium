@@ -7,10 +7,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class EmployeeSetupPage extends BaseClass{
+public class EmployeeSetupPage {
 
-	public EmployeeSetupPage empSetPage;
+	WebDriver driver ;
+	WebUtilities webUtility;
 
 	@FindBy(xpath = "//div[text()='Employee Setup']/..")
 	private WebElement empSetup;
@@ -29,6 +31,8 @@ public class EmployeeSetupPage extends BaseClass{
 
 	public EmployeeSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.driver= driver;
+		this.webUtility= new WebUtilities(driver);
 	}
 
 	public void setEmpSetup() {
@@ -50,7 +54,7 @@ public class EmployeeSetupPage extends BaseClass{
 
 	// it will create a new skill 
 	public void setCreateSkill() throws InterruptedException {
-//		empSetPage= new EmployeeSetupPage(driver);
+		//		empSetPage= new EmployeeSetupPage(driver);
 
 		setEmpSetup();
 		setSkill();
@@ -58,19 +62,19 @@ public class EmployeeSetupPage extends BaseClass{
 	}
 
 	public void setCreateRole() {
-//		empSetPage= new EmployeeSetupPage(driver);
+		//		empSetPage= new EmployeeSetupPage(driver);
 		setEmpSetup();
 		setRole();
 	}
 
 	public void setCreateRoleGroups() {
-//		empSetPage= new EmployeeSetupPage(driver);
-		
+		//		empSetPage= new EmployeeSetupPage(driver);
+
 		setEmpSetup();
 		setRolesGroup();
 	}
 	public void setCreatePercentageConfiguration() {
-//		empSetPage= new EmployeeSetupPage(driver);
+		//		empSetPage= new EmployeeSetupPage(driver);
 		setEmpSetup();
 		setPercentageConfiguration();
 	}

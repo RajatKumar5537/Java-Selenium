@@ -15,10 +15,16 @@ import org.testng.Reporter;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
+public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
+	
+	WebDriver driver ;
 	Select select;
 	public Actions action;
+	
+	WebUtilities webUtility ;
+	
 	HomePage homePage = new HomePage(driver);
 	OrganizationUnitDropDown orgUnit = new OrganizationUnitDropDown(driver);
 	jiviewsMainMenuItems jmMenuItem = new jiviewsMainMenuItems(driver);
@@ -97,9 +103,10 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 	private WebElement txtSearch;
 
 	public E10_2909_EmpAdmRosterGroupAssignmentPage(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver= driver ;
 		this.action = new Actions(driver);
+		this.webUtility = new WebUtilities(driver);
 	}
 
 	public void clickBtnAddRosterGroup() {
@@ -340,32 +347,8 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage extends BaseClass {
 		// clickonBtnSaveRosterGroup();
 	}
 
-	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception {
-		/*
-		 * create a new Roster Group and save 
-		 * 
-		 * clickBtnAddRosterGroup();
-		 * enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
-		 * enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
-		 * enterTxtRemarks(fakeEmployee.getDescription()); // Scroll down to make sure
-		 * the checkbox is in view webUtility.scrollDown(driver); //
-		 * performAvailableEmpListDataTable(); enableCheckboxesMember(2);
-		 * webUtility.scrollUp(driver); clickonAlignMiddleSelect();
-		 * clickonAddSelectedItem(); // Scroll down before clicking on Save Roster Group
-		 * webUtility.scrollDown(driver); clickonBtnSaveRosterGroup();
-		 * clickNotificationPopup();
-		 * 
-		 * set the Roster pattern for newly created Roster group 
-		 * 
-		 * driver.navigate().refresh(); homePage.setOrgUnit(); orgUnit.clickOLMop();
-		 * homePage.setOrgUnit(); orgUnit.setAutoOu();
-		 * jmMenuItem.clickOnSystemDefination(); rosterSetup.setRosterCreation();
-		 * rosterCreation.setCreateRoasterwithGroup(); clickNotificationPopup();
-		 * driver.navigate().refresh(); homePage.setOrgUnit(); orgUnit.clickOLMop();
-		 * homePage.setOrgUnit(); orgUnit.setAutoOu();
-		 * jmMenuItem.setEmployeeAdministration(); empAdmin.setRosterGroupAssignment();
-		 */
-
+	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember(FakeEmployee fakeEmployee) throws Exception {
+	
 		enterTxtSearch();
 		clickBtnEdit();
 		// enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());

@@ -11,8 +11,10 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 
-public class WorkforceSchedulingPage extends BaseClass{
+public class WorkforceSchedulingPage {
 
+	
+	WebDriver driver ; 
 	@FindBy(xpath = "//div[text()='Scheduling']/..")
 	private WebElement Scheduling;
 	@FindBy(xpath = "//div[text()='Employee Roster V2']/..")
@@ -20,6 +22,7 @@ public class WorkforceSchedulingPage extends BaseClass{
 
 	public WorkforceSchedulingPage(WebDriver driver) {
 		PageFactory.initElements(driver,this);
+		this.driver= driver;
 	}
 	public void clickScheduling() {
 		Scheduling.click();

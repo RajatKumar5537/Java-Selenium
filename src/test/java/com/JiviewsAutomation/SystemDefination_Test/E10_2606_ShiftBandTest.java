@@ -33,7 +33,7 @@ public class E10_2606_ShiftBandTest extends BaseClass{
 
 //		homePage.setOrgUnit();
 //		orgUnit.clickOLMop();
-		
+		Thread.sleep(2000);
 		homePage.setOrgUnit();
 		orgUnit.setAutoOu();
 		Thread.sleep(2000);

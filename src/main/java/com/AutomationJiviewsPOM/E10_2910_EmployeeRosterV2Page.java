@@ -35,13 +35,17 @@ import org.testng.Reporter;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.WebUtilities;
 import com.AutomationJiviewsGeneric.configUtility;
 
 import io.netty.handler.timeout.TimeoutException;
 
-public class E10_2910_EmployeeRosterV2Page extends BaseClass{
-	public Actions actions = new Actions(driver);
-	ExcelUtilities excelUtilities= new ExcelUtilities();
+public class E10_2910_EmployeeRosterV2Page {
+	WebDriver driver ;
+	
+	public Actions actions;
+	WebUtilities webUtility;
+	ExcelUtilities excelUtilities ;
 
 	@FindBy(xpath = "//span[text()='Workforce Scheduling']/..")
 	private WebElement selectWorkforceScheduling;
@@ -301,8 +305,11 @@ public class E10_2910_EmployeeRosterV2Page extends BaseClass{
 
 
 	public E10_2910_EmployeeRosterV2Page(WebDriver driver) {
-		super();
 		PageFactory.initElements(driver, this);
+		this.driver = driver; 
+		this.webUtility= new WebUtilities(driver);
+		this.excelUtilities= new ExcelUtilities();
+		this.actions = new Actions(driver);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
