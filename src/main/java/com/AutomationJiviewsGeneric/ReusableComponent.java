@@ -67,7 +67,7 @@ public class ReusableComponent {
 
 	//************Handling Multiple Elements************
 	public void handleMultipleElements(WebElement locator,List<WebElement> locator1,String text,String errorMessage) throws InterruptedException{
-		Thread.sleep(5000);
+		Thread.sleep(3000);
 		locator.click();
 		Thread.sleep(3000);
 		List<WebElement> multipleElement=locator1;
@@ -225,6 +225,10 @@ public class ReusableComponent {
             workbook.close();
     	
     }
+
+
+		
+	}
     
 
-}
+
