@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
@@ -17,7 +16,6 @@ public class T_And_A_Exception_Code {
 	public Faker fakeData;
 	public String equipmentName;
 	WebDriver driver;
-	ReusableComponent Rc;
 	WebUtilities  webUtility= new WebUtilities(driver);
 	
 	
@@ -47,6 +45,10 @@ private WebElement excel;
 private WebElement pdf;
 
 
+
+
+//=============================================================================================
+
 // Available Crane table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
 	private WebElement availableCrane;
@@ -68,7 +70,7 @@ private WebElement pdf;
 public T_And_A_Exception_Code(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 	this.driver = driver;
-	this.Rc= new ReusableComponent(driver);
+	
 	this.action= new Actions(driver);
 	this.webUtility= new WebUtilities(driver);
 }
@@ -93,7 +95,7 @@ public void clicktAndAExceptionCodes(){
 }
 public void validationTAndA() throws Exception
 {
-	Rc.explicitWait(shawEntries,"visible");
+	Thread.sleep(3000);
 	shawEntries.isDisplayed();
 	searchRecords.isDisplayed();
 	excel.isDisplayed();

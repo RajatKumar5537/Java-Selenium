@@ -1,677 +1,159 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<<<<<<< HEAD
-<testng-results ignored="0" total="27" passed="19" failed="8" skipped="0">
-=======
-<testng-results ignored="0" total="7" passed="4" failed="3" skipped="0">
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
+<testng-results ignored="0" total="25" passed="23" failed="2" skipped="0">
   <reporter-output>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-<<<<<<< HEAD
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
-    <line>
-      <![CDATA[Login]]>
-=======
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-    </line>
-    <line>
-      <![CDATA[Logout]]>
-    </line>
   </reporter-output>
-<<<<<<< HEAD
-  <suite started-at="2024-02-28T12:17:46Z" name="Total Test Script" finished-at="2024-02-28T12:23:27Z" duration-ms="340784">
+  <suite started-at="2024-03-19T10:08:46Z" name="Suite" finished-at="2024-03-19T10:13:47Z" duration-ms="300664">
     <groups>
     </groups>
-    <test started-at="2024-02-28T12:17:46Z" name="Maritime_Setup_Test" finished-at="2024-02-28T12:18:30Z" duration-ms="43978">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:17:47Z" name="launchBrowser" finished-at="2024-02-28T12:17:49Z" duration-ms="2020" status="PASS">
+    <test started-at="2024-03-19T10:08:46Z" name="Berth_Setup_Test" finished-at="2024-03-19T10:09:32Z" duration-ms="45488">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:08:46Z" name="launchBrowser" finished-at="2024-03-19T10:08:48Z" duration-ms="1611" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:17:49Z" name="beforeTestMethod" finished-at="2024-02-28T12:17:54Z" duration-ms="5869" status="PASS">
-=======
-  <suite started-at="2024-03-10T10:10:50 IST" name="Suite" finished-at="2024-03-10T10:12:50 IST" duration-ms="119171">
-    <groups>
-    </groups>
-    <test started-at="2024-03-10T10:10:50 IST" name="E10_2606_ShiftBandTest" finished-at="2024-03-10T10:12:50 IST" duration-ms="119171">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:10:51 IST" name="launchBrowser" finished-at="2024-03-10T10:10:53 IST" duration-ms="2799" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:08:48Z" name="beforeTestMethod" finished-at="2024-03-19T10:08:50Z" duration-ms="2421" status="PASS">
           <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:10:53 IST" name="beforeTestMethod" finished-at="2024-03-10T10:10:55 IST" duration-ms="2144" status="PASS">
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-<<<<<<< HEAD
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:17:54Z" name="setup" finished-at="2024-02-28T12:18:08Z" duration-ms="13746" status="PASS">
+        <test-method signature="System_Defination_VerifyCreateBerth()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:08:50Z" name="System_Defination_VerifyCreateBerth" finished-at="2024-03-19T10:09:15Z" duration-ms="25008" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyCreateBerth()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:08Z" name="verifyCreateBerth" finished-at="2024-02-28T12:18:15Z" duration-ms="6760" status="PASS">
+        </test-method> <!-- System_Defination_VerifyCreateBerth -->
+        <test-method signature="System_Defination_VerifyEditBerth()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:09:15Z" name="System_Defination_VerifyEditBerth" finished-at="2024-03-19T10:09:17Z" duration-ms="2271" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreateBerth -->
-        <test-method signature="verifyEditBerth()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:15Z" name="verifyEditBerth" finished-at="2024-02-28T12:18:20Z" duration-ms="4846" status="PASS">
+        </test-method> <!-- System_Defination_VerifyEditBerth -->
+        <test-method signature="System_Defination_VerifyDeleteBerth()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:09:17Z" name="System_Defination_VerifyDeleteBerth" finished-at="2024-03-19T10:09:24Z" duration-ms="6905" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEditBerth -->
-        <test-method signature="verifyDeleteBerth()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:20Z" name="verifyDeleteBerth" finished-at="2024-02-28T12:18:24Z" duration-ms="3715" status="PASS">
+        </test-method> <!-- System_Defination_VerifyDeleteBerth -->
+        <test-method signature="System_Defination_VerifyReActivate()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:09:24Z" name="System_Defination_VerifyReActivate" finished-at="2024-03-19T10:09:31Z" duration-ms="6948" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDeleteBerth -->
-        <test-method signature="verifyReActivate()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:24Z" name="verifyReActivate" finished-at="2024-02-28T12:18:30Z" duration-ms="6505" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReActivate -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:30Z" name="afterTestMethod" finished-at="2024-02-28T12:18:30Z" duration-ms="1" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test@43c1b556]" started-at="2024-02-28T12:18:30Z" name="closeBrowser" finished-at="2024-02-28T12:18:30Z" duration-ms="384" status="PASS">
+        </test-method> <!-- System_Defination_VerifyReActivate -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:09:31Z" name="closeBrowser" finished-at="2024-03-19T10:09:32Z" duration-ms="211" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test -->
-    </test> <!-- Maritime_Setup_Test -->
-    <test started-at="2024-02-28T12:18:31Z" name="Crane_Setup_Test" finished-at="2024-02-28T12:19:19Z" duration-ms="47523">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test@5b619d14]" started-at="2024-03-19T10:09:31Z" name="afterTestMethod" finished-at="2024-03-19T10:09:31Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test -->
+    </test> <!-- Berth_Setup_Test -->
+    <test started-at="2024-03-19T10:09:32Z" name="Crane_Setup_Test" finished-at="2024-03-19T10:10:18Z" duration-ms="46035">
       <class name="com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:18:31Z" name="launchBrowser" finished-at="2024-02-28T12:18:33Z" duration-ms="1342" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:09:32Z" name="launchBrowser" finished-at="2024-03-19T10:09:33Z" duration-ms="763" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:18:33Z" name="beforeTestMethod" finished-at="2024-02-28T12:18:38Z" duration-ms="5791" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:09:33Z" name="beforeTestMethod" finished-at="2024-03-19T10:09:35Z" duration-ms="2079" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:18:38Z" name="setup" finished-at="2024-02-28T12:18:51Z" duration-ms="12895" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyCreateLocation()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:18:51Z" name="verifyCreateLocation" finished-at="2024-02-28T12:19:03Z" duration-ms="11292" status="PASS">
+        <test-method signature="verifyCreateLocation()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:09:35Z" name="verifyCreateLocation" finished-at="2024-03-19T10:10:02Z" duration-ms="27681" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyCreateLocation -->
-        <test-method signature="verifyEditLocation()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:19:03Z" name="verifyEditLocation" finished-at="2024-02-28T12:19:08Z" duration-ms="4997" status="PASS">
+        <test-method signature="verifyEditLocation()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:10:02Z" name="verifyEditLocation" finished-at="2024-03-19T10:10:07Z" duration-ms="4676" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyEditLocation -->
-        <test-method signature="verifyDeleteLocation()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:19:08Z" name="verifyDeleteLocation" finished-at="2024-02-28T12:19:12Z" duration-ms="4245" status="PASS">
+        <test-method signature="verifyDeleteLocation()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:10:07Z" name="verifyDeleteLocation" finished-at="2024-03-19T10:10:11Z" duration-ms="3727" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDeleteLocation -->
-        <test-method signature="verifyReActivate()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:19:12Z" name="verifyReActivate" finished-at="2024-02-28T12:19:18Z" duration-ms="6595" status="PASS">
+        <test-method signature="verifyReActivate()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:10:11Z" name="verifyReActivate" finished-at="2024-03-19T10:10:18Z" duration-ms="6950" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyReActivate -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:19:18Z" name="afterTestMethod" finished-at="2024-02-28T12:19:18Z" duration-ms="1" status="PASS">
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:10:18Z" name="afterTestMethod" finished-at="2024-03-19T10:10:18Z" duration-ms="0" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@6ab778a]" started-at="2024-02-28T12:19:18Z" name="closeBrowser" finished-at="2024-02-28T12:19:19Z" duration-ms="358" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test@67c2e933]" started-at="2024-03-19T10:10:18Z" name="closeBrowser" finished-at="2024-03-19T10:10:18Z" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Crane_Setup_Test -->
     </test> <!-- Crane_Setup_Test -->
-    <test started-at="2024-02-28T12:19:19Z" name="Equipment_Setup_Test" finished-at="2024-02-28T12:20:02Z" duration-ms="43285">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:19Z" name="launchBrowser" finished-at="2024-02-28T12:19:20Z" duration-ms="1129" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:20Z" name="beforeTestMethod" finished-at="2024-02-28T12:19:26Z" duration-ms="5247" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- beforeTestMethod -->
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:26Z" name="setup" finished-at="2024-02-28T12:19:41Z" duration-ms="15279" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyCreateLocation()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:41Z" name="verifyCreateLocation" finished-at="2024-02-28T12:19:47Z" duration-ms="6237" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyCreateLocation -->
-        <test-method signature="verifyEditLocation()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:47Z" name="verifyEditLocation" finished-at="2024-02-28T12:19:51Z" duration-ms="4290" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyEditLocation -->
-        <test-method signature="verifyDeleteLocation()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:51Z" name="verifyDeleteLocation" finished-at="2024-02-28T12:19:56Z" duration-ms="4188" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyDeleteLocation -->
-        <test-method signature="verifyReActivate()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:19:56Z" name="verifyReActivate" finished-at="2024-02-28T12:20:02Z" duration-ms="6533" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReActivate -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:20:02Z" name="afterTestMethod" finished-at="2024-02-28T12:20:02Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test@38e79ae3]" started-at="2024-02-28T12:20:02Z" name="closeBrowser" finished-at="2024-02-28T12:20:02Z" duration-ms="375" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test -->
-    </test> <!-- Equipment_Setup_Test -->
-    <test started-at="2024-02-28T12:20:03Z" name="Location_Definitions_Test" finished-at="2024-02-28T12:21:44Z" duration-ms="100791">
+    <test started-at="2024-03-19T10:10:18Z" name="Location_Definitions_Test" finished-at="2024-03-19T10:11:01Z" duration-ms="43264">
       <class name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:20:03Z" name="launchBrowser" finished-at="2024-02-28T12:20:04Z" duration-ms="1184" status="PASS">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:18Z" name="launchBrowser" finished-at="2024-03-19T10:10:19Z" duration-ms="791" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:20:04Z" name="beforeTestMethod" finished-at="2024-02-28T12:20:10Z" duration-ms="5391" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:19Z" name="beforeTestMethod" finished-at="2024-03-19T10:10:21Z" duration-ms="2326" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:20:10Z" name="setup" finished-at="2024-02-28T12:21:42Z" duration-ms="92788" status="FAIL">
-          <exception class="org.openqa.selenium.TimeoutException">
-            <message>
-              <![CDATA[Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (f616012451174de503f51dbea0582c16)] -> xpath: //span[text()='System Definitions']/..] (tried for 80 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53093}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53093/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f616012451174de503f51dbea0582c16]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.TimeoutException: Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (f616012451174de503f51dbea0582c16)] -> xpath: //span[text()='System Definitions']/..] (tried for 80 second(s) with 500 milliseconds interval)
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53093}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53093/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: f616012451174de503f51dbea0582c16
-at org.openqa.selenium.support.ui.WebDriverWait.timeoutException(WebDriverWait.java:84)
-at org.openqa.selenium.support.ui.FluentWait.until(FluentWait.java:230)
-at com.AutomationJiviewsGeneric.WebUtilities.ElementClickable(WebUtilities.java:58)
-at com.AutomationJiviewsPOM.jiviewsMainMenuItems.clickSystemDefination(jiviewsMainMenuItems.java:68)
-at com.AutomationJiviewsPOM.jiviewsMainMenuItems.clickOnSystemDefination(jiviewsMainMenuItems.java:101)
-at com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.setup(Location_Definitions_Test.java:25)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.TimeoutException -->
+        <test-method signature="verifyCreateLocation()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:21Z" name="verifyCreateLocation" finished-at="2024-03-19T10:10:46Z" duration-ms="25201" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyCreateLocation()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="verifyCreateLocation" finished-at="2024-02-28T12:21:43Z" duration-ms="0" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.createLocation()" because "this.location" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.createLocation()" because "this.location" is null
-at com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.verifyCreateLocation(Location_Definitions_Test.java:34)
-=======
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:10:56 IST" name="setUp" finished-at="2024-03-10T10:11:08 IST" duration-ms="12897" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3115_VerifyCreateShiftBand()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:09 IST" name="E10_3115_VerifyCreateShiftBand" finished-at="2024-03-10T10:11:12 IST" duration-ms="3642" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.createShiftBand(E10_2606_SystemDefinationShiftBandPage.java:420)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3115_VerifyCreateShiftBand(E10_2606_ShiftBandTest.java:56)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3115_VerifyCreateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:13 IST" name="setUp" finished-at="2024-03-10T10:11:24 IST" duration-ms="11160" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3116_VerifyUpdateShiftBand()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:24 IST" name="E10_3116_VerifyUpdateShiftBand" finished-at="2024-03-10T10:11:28 IST" duration-ms="4032" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3116_VerifyUpdateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:28 IST" name="setUp" finished-at="2024-03-10T10:11:40 IST" duration-ms="11657" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3117_VerifyDeactivateShiftBand()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:40 IST" name="E10_3117_VerifyDeactivateShiftBand" finished-at="2024-03-10T10:11:42 IST" duration-ms="2769" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3117_VerifyDeactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:42 IST" name="setUp" finished-at="2024-03-10T10:11:52 IST" duration-ms="10166" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3118_VerifyReactivateShiftBand()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:52 IST" name="E10_3118_VerifyReactivateShiftBand" finished-at="2024-03-10T10:11:55 IST" duration-ms="2039" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3118_VerifyReactivateShiftBand -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:11:55 IST" name="setUp" finished-at="2024-03-10T10:12:05 IST" duration-ms="10570" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3119_VerifyWithoutShiftBandName()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:05 IST" name="E10_3119_VerifyWithoutShiftBandName" finished-at="2024-03-10T10:12:09 IST" duration-ms="3703" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.withoutShiftBandName(E10_2606_SystemDefinationShiftBandPage.java:478)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3119_VerifyWithoutShiftBandName(E10_2606_ShiftBandTest.java:90)
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-<<<<<<< HEAD
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-=======
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- verifyCreateLocation -->
-        <test-method signature="verifyEditLocation()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="verifyEditLocation" finished-at="2024-02-28T12:21:43Z" duration-ms="0" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.editLocation()" because "this.location" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.editLocation()" because "this.location" is null
-at com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.verifyEditLocation(Location_Definitions_Test.java:39)
-=======
-        </test-method> <!-- E10_3119_VerifyWithoutShiftBandName -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:09 IST" name="setUp" finished-at="2024-03-10T10:12:20 IST" duration-ms="10855" status="PASS">
+        <test-method signature="verifyEditLocation()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:46Z" name="verifyEditLocation" finished-at="2024-03-19T10:10:50Z" duration-ms="4062" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3120_VerifyWithCombinationShift()[pri:6, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:20 IST" name="E10_3120_VerifyWithCombinationShift" finished-at="2024-03-10T10:12:35 IST" duration-ms="15069" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- E10_3120_VerifyWithCombinationShift -->
-        <test-method is-config="true" signature="setUp()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:35 IST" name="setUp" finished-at="2024-03-10T10:12:46 IST" duration-ms="10817" status="PASS">
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- setUp -->
-        <test-method signature="E10_3121_VerifyWithOvertimeShift()[pri:7, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:46 IST" name="E10_3121_VerifyWithOvertimeShift" finished-at="2024-03-10T10:12:49 IST" duration-ms="3391" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])" because "this.js" is null
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.setSelectStartTime(E10_2606_SystemDefinationShiftBandPage.java:250)
-at com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage.shiftBandTypeOvertimeShift(E10_2606_SystemDefinationShiftBandPage.java:538)
-at com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest.E10_3121_VerifyWithOvertimeShift(E10_2606_ShiftBandTest.java:109)
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-<<<<<<< HEAD
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-=======
-at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:139)
-at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:664)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:227)
-at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:50)
-at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:957)
-at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:200)
-at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:148)
-at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:128)
-at java.base/java.util.ArrayList.forEach(ArrayList.java:1511)
-at org.testng.TestRunner.privateRun(TestRunner.java:848)
-at org.testng.TestRunner.run(TestRunner.java:621)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:443)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:437)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:397)
-at org.testng.SuiteRunner.run(SuiteRunner.java:336)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:95)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1280)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1200)
-at org.testng.TestNG.runSuites(TestNG.java:1114)
-at org.testng.TestNG.run(TestNG.java:1082)
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
-          <reporter-output>
-          </reporter-output>
-<<<<<<< HEAD
         </test-method> <!-- verifyEditLocation -->
-        <test-method signature="verifyDeleteLocation()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="verifyDeleteLocation" finished-at="2024-02-28T12:21:43Z" duration-ms="0" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.deleteLocation()" because "this.location" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.deleteLocation()" because "this.location" is null
-at com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.verifyDeleteLocation(Location_Definitions_Test.java:44)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="verifyDeleteLocation()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:50Z" name="verifyDeleteLocation" finished-at="2024-03-19T10:10:54Z" duration-ms="3755" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyDeleteLocation -->
-        <test-method signature="verifyReActivate()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="verifyReActivate" finished-at="2024-02-28T12:21:43Z" duration-ms="0" status="FAIL">
-          <exception class="java.lang.NullPointerException">
-            <message>
-              <![CDATA[Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.reActivate()" because "this.location" is null]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[java.lang.NullPointerException: Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.reActivate()" because "this.location" is null
-at com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test.verifyReActivate(Location_Definitions_Test.java:49)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- java.lang.NullPointerException -->
+        <test-method signature="verifyReActivate()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:10:54Z" name="verifyReActivate" finished-at="2024-03-19T10:11:01Z" duration-ms="6973" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- verifyReActivate -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="afterTestMethod" finished-at="2024-02-28T12:21:43Z" duration-ms="0" status="PASS">
-=======
-        </test-method> <!-- E10_3121_VerifyWithOvertimeShift -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:49 IST" name="afterTestMethod" finished-at="2024-03-10T10:12:49 IST" duration-ms="2" status="PASS">
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-<<<<<<< HEAD
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@424e1977]" started-at="2024-02-28T12:21:43Z" name="closeBrowser" finished-at="2024-02-28T12:21:44Z" duration-ms="459" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:11:01Z" name="closeBrowser" finished-at="2024-03-19T10:11:01Z" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test@6ebf0f36]" started-at="2024-03-19T10:11:01Z" name="afterTestMethod" finished-at="2024-03-19T10:11:01Z" duration-ms="0" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
       </class> <!-- com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test -->
     </test> <!-- Location_Definitions_Test -->
-    <test started-at="2024-02-28T12:21:44Z" name="ReconciliationParameterGroupTest" finished-at="2024-02-28T12:23:00Z" duration-ms="75687">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:21:44Z" name="launchBrowser" finished-at="2024-02-28T12:21:46Z" duration-ms="1535" status="PASS">
+    <test started-at="2024-03-19T10:11:01Z" name="SystemDefination_RoleGroupPageTest" finished-at="2024-03-19T10:12:44Z" duration-ms="102245">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:11:01Z" name="launchBrowser" finished-at="2024-03-19T10:11:02Z" duration-ms="762" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:21:46Z" name="beforeTestMethod" finished-at="2024-02-28T12:21:50Z" duration-ms="4537" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:11:02Z" name="beforeTestMethod" finished-at="2024-03-19T10:11:27Z" duration-ms="25068" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:21:50Z" name="setup" finished-at="2024-02-28T12:22:02Z" duration-ms="11666" status="PASS">
+        <test-method signature="E10_3122_VerifyCreateRoleGroups()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:11:27Z" name="E10_3122_VerifyCreateRoleGroups" finished-at="2024-03-19T10:11:52Z" duration-ms="24387" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyCreate()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:22:02Z" name="verifyCreate" finished-at="2024-02-28T12:22:18Z" duration-ms="16363" status="PASS">
+        </test-method> <!-- E10_3122_VerifyCreateRoleGroups -->
+        <test-method signature="E10_3123_VerifyUpdateRoleGroups()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:11:52Z" name="E10_3123_VerifyUpdateRoleGroups" finished-at="2024-03-19T10:12:10Z" duration-ms="17865" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyCreate -->
-        <test-method signature="verifyEdit()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:22:18Z" name="verifyEdit" finished-at="2024-02-28T12:22:32Z" duration-ms="13497" status="FAIL">
-          <exception class="org.openqa.selenium.ElementNotInteractableException">
+        </test-method> <!-- E10_3123_VerifyUpdateRoleGroups -->
+        <test-method signature="E10_3124_VerifyDeactivateRoleGroups()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:12:10Z" name="E10_3124_VerifyDeactivateRoleGroups" finished-at="2024-03-19T10:12:40Z" duration-ms="30354" status="FAIL">
+          <exception class="org.openqa.selenium.NoSuchElementException">
             <message>
-              <![CDATA[element not interactable
-  (Session info: chrome=122.0.6261.69)
+              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Yes']"}
+  (Session info: chrome=122.0.6261.129)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, sendKeysToElement {id=f.2618CA587D4EE81A01403FF871EA671A.d.61510721D4D3ECAC1DD88604E5776C75.e.273, value=[Ljava.lang.CharSequence;@4057fa5f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (3cb5a4f408862709f9af130166ea5dea)] -> xpath: //input[@id='txtRPGName']]
-Session ID: 3cb5a4f408862709f9af130166ea5dea]]>
+Command: [86a893a98a44b6af6dd219138486f3fa, findElement {using=xpath, value=//button[text()='Yes']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58516}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58516/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86a893a98a44b6af6dd219138486f3fa]]>
             </message>
             <full-stacktrace>
-              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable
-  (Session info: chrome=122.0.6261.69)
+              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//button[text()='Yes']"}
+  (Session info: chrome=122.0.6261.129)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
 Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
 Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, sendKeysToElement {id=f.2618CA587D4EE81A01403FF871EA671A.d.61510721D4D3ECAC1DD88604E5776C75.e.273, value=[Ljava.lang.CharSequence;@4057fa5f}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Element: [[ChromeDriver: chrome on windows (3cb5a4f408862709f9af130166ea5dea)] -> xpath: //input[@id='txtRPGName']]
-Session ID: 3cb5a4f408862709f9af130166ea5dea
+Command: [86a893a98a44b6af6dd219138486f3fa, findElement {using=xpath, value=//button[text()='Yes']}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58516}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58516/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86a893a98a44b6af6dd219138486f3fa
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
 at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
@@ -684,15 +166,93 @@ at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.ja
 at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
 at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
 at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:242)
-at org.openqa.selenium.remote.RemoteWebElement.sendKeys(RemoteWebElement.java:111)
-at jdk.internal.reflect.GeneratedMethodAccessor14.invoke(Unknown Source)
+at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
+at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
+at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
+at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
+at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
+at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.deactivateRoleGroup(E10_2749_SystemDefinationRoleGroupPage.java:334)
+at com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest.E10_3124_VerifyDeactivateRoleGroups(SystemDefination_RoleGroupPageTest.java:29)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
 at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:51)
-at jdk.proxy2/jdk.proxy2.$Proxy16.sendKeys(Unknown Source)
-at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.editAction(ReconciliationParameterGroupPage.java:324)
-at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyEdit(ReconciliationParameterGroupTest.java:41)
+at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
+at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
+at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
+at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
+at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
+at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+at org.testng.TestRunner.privateRun(TestRunner.java:648)
+at org.testng.TestRunner.run(TestRunner.java:505)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
+at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
+at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
+at org.testng.SuiteRunner.run(SuiteRunner.java:364)
+at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
+at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
+at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
+at org.testng.TestNG.runSuites(TestNG.java:1049)
+at org.testng.TestNG.run(TestNG.java:1017)
+at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
+at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
+at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
+at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
+at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
+at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
+at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3124_VerifyDeactivateRoleGroups -->
+        <test-method signature="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:12:40Z" name="E10_3125_VerifyCreateRoleGrpWithoutAvailableRole" finished-at="2024-03-19T10:12:43Z" duration-ms="2822" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- E10_3125_VerifyCreateRoleGrpWithoutAvailableRole -->
+        <test-method signature="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:12:43Z" name="E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName" finished-at="2024-03-19T10:12:43Z" duration-ms="378" status="FAIL">
+          <exception class="org.openqa.selenium.ElementNotInteractableException">
+            <message>
+              <![CDATA[element not interactable: [object HTMLSelectElement] has no size and location
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [86a893a98a44b6af6dd219138486f3fa, actions {actions=[org.openqa.selenium.interactions.Sequence@5e397a71]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58516}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58516/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86a893a98a44b6af6dd219138486f3fa]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLSelectElement] has no size and location
+  (Session info: chrome=122.0.6261.129)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.8.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [86a893a98a44b6af6dd219138486f3fa, actions {actions=[org.openqa.selenium.interactions.Sequence@5e397a71]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.129, chrome: {chromedriverVersion: 122.0.6261.128 (f18a44fedeb..., userDataDir: C:\Users\kumar\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:58516}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:58516/devtoo..., se:cdpVersion: 122.0.6261.129, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 86a893a98a44b6af6dd219138486f3fa
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
+at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:603)
+at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:585)
+at org.openqa.selenium.interactions.Actions.perform(Actions.java:554)
+at com.AutomationJiviewsGeneric.ReusableComponent.scrollToElement(ReusableComponent.java:150)
+at com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage.createRoleGrpWithoutRoleGrpName(E10_2749_SystemDefinationRoleGroupPage.java:381)
+at com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest.E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName(SystemDefination_RoleGroupPageTest.java:42)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
 at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
 at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
@@ -727,220 +287,88 @@ at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
           </exception> <!-- org.openqa.selenium.ElementNotInteractableException -->
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyEdit -->
-        <test-method signature="verifyDelete()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:22:32Z" name="verifyDelete" finished-at="2024-02-28T12:22:46Z" duration-ms="13502" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"//table/tbody/tr/td/input[@type='checkbox'][1]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=//table/tbody/tr/td/input[@type='checkbox'][1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3cb5a4f408862709f9af130166ea5dea]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"//table/tbody/tr/td/input[@type='checkbox'][1]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=//table/tbody/tr/td/input[@type='checkbox'][1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3cb5a4f408862709f9af130166ea5dea
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.deleteAction(ReconciliationParameterGroupPage.java:333)
-at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyDelete(ReconciliationParameterGroupTest.java:46)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
+        </test-method> <!-- E10_3127_VerifyCreateRoleGrpWithoutRoleGrpName -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:12:44Z" name="afterTestMethod" finished-at="2024-03-19T10:12:44Z" duration-ms="0" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyDelete -->
-        <test-method signature="verifyReActivate()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:22:46Z" name="verifyReActivate" finished-at="2024-02-28T12:22:59Z" duration-ms="13432" status="FAIL">
-          <exception class="org.openqa.selenium.NoSuchElementException">
-            <message>
-              <![CDATA[no such element: Unable to locate element: {"method":"xpath","selector":"(//table/tbody/tr/td/button)[1]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=(//table/tbody/tr/td/button)[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3cb5a4f408862709f9af130166ea5dea]]>
-            </message>
-            <full-stacktrace>
-              <![CDATA[org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//table/tbody/tr/td/button)[1]"}
-  (Session info: chrome=122.0.6261.69)
-For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
-Build info: version: '4.10.0', revision: 'c14d967899'
-System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
-Driver info: org.openqa.selenium.chrome.ChromeDriver
-Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=(//table/tbody/tr/td/button)[1]}]
-Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
-Session ID: 3cb5a4f408862709f9af130166ea5dea
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
-at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
-at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
-at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:199)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:132)
-at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:51)
-at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:191)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:196)
-at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:171)
-at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:531)
-at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:165)
-at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:59)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:350)
-at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
-at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:68)
-at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:38)
-at jdk.proxy2/jdk.proxy2.$Proxy16.click(Unknown Source)
-at com.AutomationJiviewsPOM.ReconciliationParameterGroupPage.reActivate(ReconciliationParameterGroupPage.java:344)
-at com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest.verifyReActivate(ReconciliationParameterGroupTest.java:51)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
-at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)
-at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
-at java.base/java.lang.reflect.Method.invoke(Method.java:568)
-at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:124)
-at org.testng.internal.Invoker.invokeMethod(Invoker.java:583)
-at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:719)
-at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:989)
-at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:125)
-at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
-at org.testng.TestRunner.privateRun(TestRunner.java:648)
-at org.testng.TestRunner.run(TestRunner.java:505)
-at org.testng.SuiteRunner.runTest(SuiteRunner.java:455)
-at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:450)
-at org.testng.SuiteRunner.privateRun(SuiteRunner.java:415)
-at org.testng.SuiteRunner.run(SuiteRunner.java:364)
-at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
-at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:84)
-at org.testng.TestNG.runSuitesSequentially(TestNG.java:1208)
-at org.testng.TestNG.runSuitesLocally(TestNG.java:1137)
-at org.testng.TestNG.runSuites(TestNG.java:1049)
-at org.testng.TestNG.run(TestNG.java:1017)
-at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:308)
-at org.apache.maven.surefire.testng.TestNGXmlTestSuite.execute(TestNGXmlTestSuite.java:71)
-at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:113)
-at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:385)
-at org.apache.maven.surefire.booter.ForkedBooter.execute(ForkedBooter.java:162)
-at org.apache.maven.surefire.booter.ForkedBooter.run(ForkedBooter.java:507)
-at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:495)
-]]>
-            </full-stacktrace>
-          </exception> <!-- org.openqa.selenium.NoSuchElementException -->
-          <reporter-output>
-          </reporter-output>
-        </test-method> <!-- verifyReActivate -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:23:00Z" name="closeBrowser" finished-at="2024-02-28T12:23:00Z" duration-ms="435" status="PASS">
+        </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest@2002348]" started-at="2024-03-19T10:12:44Z" name="closeBrowser" finished-at="2024-03-19T10:12:44Z" duration-ms="153" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest@d21a74c]" started-at="2024-02-28T12:23:00Z" name="afterTestMethod" finished-at="2024-02-28T12:23:00Z" duration-ms="0" status="PASS">
-          <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
-          </reporter-output>
-        </test-method> <!-- afterTestMethod -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest -->
-    </test> <!-- ReconciliationParameterGroupTest -->
-    <test started-at="2024-02-28T12:23:01Z" name="T_And_A_Exception_Code_Test" finished-at="2024-02-28T12:23:27Z" duration-ms="26596">
-      <class name="com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test">
-        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:01Z" name="launchBrowser" finished-at="2024-02-28T12:23:02Z" duration-ms="972" status="PASS">
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest -->
+    </test> <!-- SystemDefination_RoleGroupPageTest -->
+    <test started-at="2024-03-19T10:12:44Z" name="SystemDefination_SkillPageTest" finished-at="2024-03-19T10:13:16Z" duration-ms="32400">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:12:44Z" name="launchBrowser" finished-at="2024-03-19T10:12:45Z" duration-ms="755" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- launchBrowser -->
-        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:02Z" name="beforeTestMethod" finished-at="2024-02-28T12:23:09Z" duration-ms="7200" status="PASS">
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:12:45Z" name="beforeTestMethod" finished-at="2024-03-19T10:12:47Z" duration-ms="2243" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Login]]>
-            </line>
           </reporter-output>
         </test-method> <!-- beforeTestMethod -->
-        <test-method signature="setup()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:09Z" name="setup" finished-at="2024-02-28T12:23:24Z" duration-ms="14936" status="PASS">
+        <test-method signature="System_Defination_VerifyCreateNewSkill()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:12:47Z" name="System_Defination_VerifyCreateNewSkill" finished-at="2024-03-19T10:13:09Z" duration-ms="22327" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- setup -->
-        <test-method signature="verifyValidations()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:24Z" name="verifyValidations" finished-at="2024-02-28T12:23:27Z" duration-ms="3086" status="PASS">
+        </test-method> <!-- System_Defination_VerifyCreateNewSkill -->
+        <test-method signature="System_Defination_VerifyUpdateSkill()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:09Z" name="System_Defination_VerifyUpdateSkill" finished-at="2024-03-19T10:13:11Z" duration-ms="1951" status="PASS">
           <reporter-output>
           </reporter-output>
-        </test-method> <!-- verifyValidations -->
-        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:27Z" name="afterTestMethod" finished-at="2024-02-28T12:23:27Z" duration-ms="0" status="PASS">
+        </test-method> <!-- System_Defination_VerifyUpdateSkill -->
+        <test-method signature="System_Defination_VerifyDeactivateSkill()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:11Z" name="System_Defination_VerifyDeactivateSkill" finished-at="2024-03-19T10:13:13Z" duration-ms="1439" status="PASS">
           <reporter-output>
-            <line>
-              <![CDATA[Logout]]>
-            </line>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifyDeactivateSkill -->
+        <test-method signature="System_Defination_VerifyReactivateSkill()[pri:4, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:13Z" name="System_Defination_VerifyReactivateSkill" finished-at="2024-03-19T10:13:16Z" duration-ms="3371" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifyReactivateSkill -->
+        <test-method signature="System_Defination_VerifySearchColumnsForSkill()[pri:5, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:16Z" name="System_Defination_VerifySearchColumnsForSkill" finished-at="2024-03-19T10:13:16Z" duration-ms="159" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifySearchColumnsForSkill -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:16Z" name="afterTestMethod" finished-at="2024-03-19T10:13:16Z" duration-ms="0" status="PASS">
+          <reporter-output>
           </reporter-output>
         </test-method> <!-- afterTestMethod -->
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test@313b2ea6]" started-at="2024-02-28T12:23:27Z" name="closeBrowser" finished-at="2024-02-28T12:23:27Z" duration-ms="397" status="PASS">
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest@2dd80673]" started-at="2024-03-19T10:13:16Z" name="closeBrowser" finished-at="2024-03-19T10:13:16Z" duration-ms="154" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test -->
-    </test> <!-- T_And_A_Exception_Code_Test -->
-  </suite> <!-- Total Test Script -->
-=======
-        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest@7718a40f]" started-at="2024-03-10T10:12:49 IST" name="closeBrowser" finished-at="2024-03-10T10:12:50 IST" duration-ms="191" status="PASS">
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest -->
+    </test> <!-- SystemDefination_SkillPageTest -->
+    <test started-at="2024-03-19T10:13:16Z" name="SystemDefination_PublicHolidayPageTest" finished-at="2024-03-19T10:13:47Z" duration-ms="30279">
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest">
+        <test-method is-config="true" signature="launchBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:16Z" name="launchBrowser" finished-at="2024-03-19T10:13:17Z" duration-ms="802" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- launchBrowser -->
+        <test-method is-config="true" signature="beforeTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:17Z" name="beforeTestMethod" finished-at="2024-03-19T10:13:19Z" duration-ms="2086" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- beforeTestMethod -->
+        <test-method signature="System_Defination_VerifyCreatePublicHoliday()[pri:1, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:19Z" name="System_Defination_VerifyCreatePublicHoliday" finished-at="2024-03-19T10:13:43Z" duration-ms="23824" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifyCreatePublicHoliday -->
+        <test-method signature="System_Defination_VerifyUpdatePublicHoliday()[pri:2, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:43Z" name="System_Defination_VerifyUpdatePublicHoliday" finished-at="2024-03-19T10:13:45Z" duration-ms="1823" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifyUpdatePublicHoliday -->
+        <test-method signature="System_Defination_VerifyDeletePublicHoliday()[pri:3, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:45Z" name="System_Defination_VerifyDeletePublicHoliday" finished-at="2024-03-19T10:13:47Z" duration-ms="1638" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- System_Defination_VerifyDeletePublicHoliday -->
+        <test-method is-config="true" signature="afterTestMethod()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:47Z" name="afterTestMethod" finished-at="2024-03-19T10:13:47Z" duration-ms="1" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- afterTestMethod -->
+        <test-method is-config="true" signature="closeBrowser()[pri:0, instance:com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest@50ecde95]" started-at="2024-03-19T10:13:47Z" name="closeBrowser" finished-at="2024-03-19T10:13:47Z" duration-ms="103" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- closeBrowser -->
-      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest -->
-    </test> <!-- E10_2606_ShiftBandTest -->
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest -->
+    </test> <!-- SystemDefination_PublicHolidayPageTest -->
   </suite> <!-- Suite -->
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
 </testng-results>

@@ -35,7 +35,8 @@ import io.netty.handler.timeout.TimeoutException;
 public class E10_3147_WorkloadPlannerPage  {
 
 	FakeEmployee fakeEmployee;
-	String planningDate  = fakeEmployee.getDtPlanning();
+	
+	String planningDate ;
 	
 	WebDriver driver ;
 	WebUtilities webUtility;
@@ -222,6 +223,8 @@ public class E10_3147_WorkloadPlannerPage  {
 	public E10_3147_WorkloadPlannerPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver ;
+		
+		this.fakeEmployee = new FakeEmployee();
 	}
 
 	public void enterPlanning() {

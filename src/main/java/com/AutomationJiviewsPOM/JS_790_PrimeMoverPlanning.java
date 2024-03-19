@@ -23,7 +23,7 @@ public class JS_790_PrimeMoverPlanning {
 	WebElement calenderTable;
 	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
 	WebElement cmbShiftBand;
-	@FindBy(xpath = "//ul[@class='select2-results__options']")
+	@FindBy(xpath = "//ul[@class='select2-results__options']/li[text()='1st Shift']")
 	WebElement resultShiftBand;
 	
 	@FindBy(xpath = "//button[@id='btnSearchPMPlanning']")
@@ -50,7 +50,7 @@ public class JS_790_PrimeMoverPlanning {
 	
 	@FindBy(xpath = "//span[@id='select2-cmbPrimeMoverSkill1-container']")
 	WebElement cmbPrimeMoverSkill1;
-	@FindBy(xpath = "//ul[@class='select2-results__options']/li")
+	@FindBy(xpath = "//ul[@class='select2-results__options']/li[text()='PM']")
 	WebElement resultPrimeMoverSkill1;
 	
 	@FindBy(xpath = "//input[@id='txtPrimeMoverRequirement1']")
@@ -99,7 +99,8 @@ public class JS_790_PrimeMoverPlanning {
 			webUtility.visibilityOfElement(driver, dtPlanning);
 			Thread.sleep(5000);
 			dtPlanning.clear();
-			dtPlanning.click();
+			dtPlanning.sendKeys("10/03/2024");
+//			dtPlanning.click();
 		}
 		
 		public void selectAvailableShiftBand() {
@@ -130,7 +131,7 @@ public class JS_790_PrimeMoverPlanning {
 		public void JS_915_SearchRecord () throws Exception {
 			Thread.sleep(5000);
 			enterPlanning();
-			calenderTable.click();
+//			calenderTable.click();
 			
 			cmbShiftBand.click();
 			resultShiftBand.click();
@@ -144,9 +145,9 @@ public class JS_790_PrimeMoverPlanning {
 			btnAddPrimeMoverPlanning.click();
 			
 			Thread.sleep(2000);
-			dtPlanning.clear();
-			dtPlanning.click();
-			calenderTable.click();
+//			dtPlanning.clear();
+//			dtPlanning.sendKeys("10/03/2024");
+//			calenderTable.click();
 			
 			Thread.sleep(5000);
 			cmbShiftBand.click();
@@ -161,8 +162,8 @@ public class JS_790_PrimeMoverPlanning {
 			resultsAllocationRule.click();
 			
 			Thread.sleep(3000);
-			webUtility.visibilityOfElement(driver, btnAddPrimeMoverSkill);
-			btnAddPrimeMoverSkill.click();
+//			webUtility.visibilityOfElement(driver, btnAddPrimeMoverSkill);
+//			btnAddPrimeMoverSkill.click();
 			
 			Thread.sleep(3000);
 			cmbPrimeMoverSkill1.click();
@@ -184,15 +185,16 @@ public class JS_790_PrimeMoverPlanning {
 			closeNotificationPopup();
 		}
 		
-		public void JS_917_VerifyEquipmentSummery() {
-			
+		public void JS_917_VerifyEquipmentSummery() throws InterruptedException {
+			Thread.sleep(3000);
 			EquipmentSummary.click();
 			
 		}
 		
-		public void JS_918_VerifySkillSummery() {
-			
+		public void JS_918_VerifySkillSummery() throws InterruptedException {
+			Thread.sleep(3000);
 			SkillSummary.click();
+			Thread.sleep(5000);
 			manningRatio.click();
 			chooseManningRatio.click();
 		}

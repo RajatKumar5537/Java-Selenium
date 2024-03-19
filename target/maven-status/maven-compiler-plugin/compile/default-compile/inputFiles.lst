@@ -1,85 +1,43 @@
-<<<<<<< HEAD
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Maritime_Setup.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ExcelUtilities.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2639_SystemDefinationSCRPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeAdminstrationPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2638_SystemDefinationPublicHolidayPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeSetupPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3089_SystemDefinationRoleSetupPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3539_OperationPlanningExecutionPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ListenerImplimentation.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\RosterSetupPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Location_Definitions.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\T_And_A_Exception_Code.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\jiviewsMainMenuItems.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\ExtentReportManager.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2909_EmpAdmRosterGroupAssignmentPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\WebUtilities.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2608_SystemDefinationRosterCreationPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Equipment_Type.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\FileLib.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Crane_Setup.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2606_SystemDefinationShiftBandPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\FakeEmployee.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\WorkforceSchedulingPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3216_ESSApplyLeavePage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2910_EmployeeRosterV2Page.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3082_SystemDefinationSkillSetupPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\EmployeeKioskPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\configUtility.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Overtime_Definitions.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2749_SystemDefinationRoleGroupPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsGeneric\BaseClass.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\WorkloadPlanningPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\LoginPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\Equipment_Setup.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_2695_EmpAdmEmployeeProfilePage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\OrganizationUnitDropDown.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\HomePage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3147_WorkloadPlannerPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\E10_3541_OPE_RTG_PlanningPage.java
-C:\JiViewsRPAv2\src\main\java\com\AutomationJiviewsPOM\ReconciliationParameterGroupPage.java
-=======
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3082_SystemDefinationSkillSetupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkloadPlanningPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\RosterSetupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3216_ESSApplyLeavePage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Equipment_Type.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2695_EmpAdmEmployeeProfilePage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2749_SystemDefinationRoleGroupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\jiviewsMainMenuItems.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2606_SystemDefinationShiftBandPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\ReconciliationParameterGroupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3147_WorkloadPlannerPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2608_SystemDefinationRosterCreationPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExcelUtilities.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Equipment_Setup.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\FakeEmployee.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_763_PMFinalBookingReportPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\LoginPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_980_StackersPlanningPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Maritime_Setup.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\OrganizationUnitDropDown.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\WebUtilities.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3541_OPE_RTG_PlanningPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Crane_Setup.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_790_PrimeMoverPlanning.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\T_And_A_Exception_Code.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\BaseClass.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2639_SystemDefinationSCRPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3089_SystemDefinationRoleSetupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\configUtility.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3539_OperationPlanningExecutionPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExtentReportManager.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2909_EmpAdmRosterGroupAssignmentPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2638_SystemDefinationPublicHolidayPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeAdminstrationPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeSetupPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2910_EmployeeRosterV2Page.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Overtime_Definitions.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeKioskPage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Location_Definitions.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ListenerImplimentation.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\HomePage.java
-C:\Development\Automation\Jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkforceSchedulingPage.java
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\SystemDefination_RolePage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Crane_Setup.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExtentReportManager.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3541_OPE_RTG_PlanningPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3147_WorkloadPlannerPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\LoginPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeAdminstrationPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\ReconciliationParameterGroupPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2608_SystemDefinationRosterCreationPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ExcelUtilities.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\HomePage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3216_ESSApplyLeavePage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Location_Definitions.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\WebUtilities.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\jiviewsMainMenuItems.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\T_And_A_Exception_Code.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ListenerImplimentation.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2910_EmployeeRosterV2Page.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Equipment_Setup.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkforceSchedulingPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2606_SystemDefinationShiftBandPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_790_PrimeMoverPlanning.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\RosterSetupPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\BaseClass.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\FakeEmployee.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2695_EmpAdmEmployeeProfilePage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\configUtility.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Equipment_Type.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Berth_Setup.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\Overtime_Definitions.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2639_SystemDefinationSCRPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\SystemDefination_SkillPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2909_EmpAdmRosterGroupAssignmentPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\WorkloadPlanningPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_2749_SystemDefinationRoleGroupPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\E10_3539_RTG_FinalBookingPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeKioskPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsGeneric\ReusableComponent.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_763_PMFinalBookingReportPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\OrganizationUnitDropDown.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\SystemDefination_PublicHolidayPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\JS_980_StackersPlanningPage.java
+D:\New Framework\jiviewsrpav2\src\main\java\com\AutomationJiviewsPOM\EmployeeSetupPage.java

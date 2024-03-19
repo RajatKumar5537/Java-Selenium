@@ -5,19 +5,21 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsPOM.E10_2608_SystemDefinationRosterCreationPage;
 import com.AutomationJiviewsPOM.HomePage;
 import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
 import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
 public class E10_2608_RoasterSetupTest extends BaseClass{
-//	private static final Logger logger = LogManager.getLogger(E10_2608_RoasterSetupTest.class);
+	private static final Logger logger = LogManager.getLogger(E10_2608_RoasterSetupTest.class.getName());
 	private HomePage homePage;
 	private OrganizationUnitDropDown orgUnit;
 	private jiviewsMainMenuItems jmMenuItem;
 //	private RosterSetupPage rosterSetup;
 	private E10_2608_SystemDefinationRosterCreationPage rosterCreation;
 
+	FakeEmployee fakeEmployee;
 
 //	@BeforeMethod
 	
@@ -41,8 +43,8 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 	}
 	@Test(priority = 1)
 	public void E10_2697_VerifyCreateRoasterWithGroup() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
-//		logger.info("E10-2697 Creating Roaster with Roster Group ...");
+		//captureScreenshot(driver, "roasterSetupTest");
+		logger.info("E10-2697 Creating Roaster with Roster Group ...");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		
 //		driver.navigate().to(homeUrl);
@@ -58,16 +60,16 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		orgUnit.setAutoOu();
 //		jmMenuItem.clickOnSystemDefination();
 //		rosterSetup.setRosterCreation();
-
+		rosterCreation= new E10_2608_SystemDefinationRosterCreationPage(driver);
 		Thread.sleep(2000);
 		rosterCreation.setCreateRoasterwithGroup(fakeEmployee);
-//		logger.info("E10-2697 Create a Roster Pattern with Roster Group is successfull");
+		logger.info("E10-2697 Create a Roster Pattern with Roster Group is successfull");
 	}
 
 	@Test(priority = 2)
 	public void E10_2698_VerifyCreateRoasterwithEmployee() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
-//		logger.info("E10-2698 Creating Roaster with Employee...");
+		//captureScreenshot(driver, "roasterSetupTest");
+		logger.info("E10-2698 Creating Roaster with Employee...");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
 //		homePage=new HomePage(driver);
@@ -80,12 +82,12 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setCreateRoasterwithEmployee(fakeEmployee);
-//		logger.info("E10-2698 Creating Roaster with Employee is successful");
+		logger.info("E10-2698 Creating Roaster with Employee is successful");
 	}
 
 	@Test(priority = 3)
 	public void E10_2738_VerifyUpdateRoaster() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
+		//captureScreenshot(driver, "roasterSetupTest");
 //		logger.info("E10-2738 Update Roaster with Employee...");
 //
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
@@ -105,7 +107,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 	}
 	@Test(priority = 4)
 	public void E10_3151_VerifyDeactiveRoster() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
+		//captureScreenshot(driver, "roasterSetupTest");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
 //		homePage=new HomePage(driver);
@@ -122,7 +124,7 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 	}
 	@Test(priority = 5)
 	public void E10_3152_verifyReactiveRoster() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
+		//captureScreenshot(driver, "roasterSetupTest");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
 //		homePage=new HomePage(driver);
@@ -135,11 +137,11 @@ public class E10_2608_RoasterSetupTest extends BaseClass{
 //		rosterSetup.setRosterCreation();
 
 		rosterCreation.setReactiveRoster();
-//		logger.info("Reactivate Roaster is successful");
+		logger.info("Reactivate Roaster is successful");
 	}
 	/*@Test(priority = 6)
 	public void E10_3153_VerifyCreateRoasterWithGroupAndEmp() throws Exception {
-		captureScreenshot(driver, "roasterSetupTest");
+		//captureScreenshot(driver, "roasterSetupTest");
 //		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 //		driver.navigate().to(homeUrl);
 //		homePage=new HomePage(driver);

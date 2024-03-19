@@ -50,6 +50,7 @@ public class ReusableComponent {
 	//************Faker Data************
 	Faker faker=new Faker();
 	public String name = faker.name().fullName();
+	public String description= faker.lorem().sentence();
 	public String firstName = faker.name().firstName();
 	public String lastName = faker.name().lastName();
 	public String email = faker.internet().emailAddress();
@@ -57,6 +58,7 @@ public class ReusableComponent {
 	public String address = faker.address().fullAddress();
 	public String dateOfBirth = faker.date().birthday().toString();
 	public String randomDate = faker.date().birthday().toString();
+	public String randomInt= ""+ faker.number().numberBetween(0, 9);
 	
 	//************Constructor************
 	public ReusableComponent(WebDriver driver) {
@@ -142,6 +144,10 @@ public class ReusableComponent {
 	public static void rightClick(WebElement element) {
 		Actions actions = new Actions(driver);
 		actions.contextClick(element).perform();
+	}
+	public void scrollToElement(WebElement element) {
+		Actions actions = new Actions(driver);
+		actions.scrollToElement(element).perform();
 	}
 	
 	//************Alert Popup************

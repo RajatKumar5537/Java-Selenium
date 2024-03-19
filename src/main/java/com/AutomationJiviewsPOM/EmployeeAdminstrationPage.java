@@ -35,6 +35,7 @@ public class EmployeeAdminstrationPage {
 		employee.click();
 	}
 	public void clickEmployeeProfile() {
+		webUtility.ElementClickable(driver, employeeProfile);
 		employeeProfile.click();
 	}
 	public void clickonRosterGroupAssignment() {
@@ -43,7 +44,7 @@ public class EmployeeAdminstrationPage {
 	
 	
 	public void setEmployeeProfile() {
-		clickEmployee();
+//		clickEmployee();
 		clickEmployeeProfile();
 	}
 	public void setRosterGroupAssignment() {

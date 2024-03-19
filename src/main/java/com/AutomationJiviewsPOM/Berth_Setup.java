@@ -168,6 +168,7 @@ public class Berth_Setup {
 	public void deleteBerth() throws Exception
 	{
 		Rc.explicitWait(search, "visible");
+		Thread.sleep(3000);
 		search.clear();
 		search.clear();
 		search.sendKeys(berthName);

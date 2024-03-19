@@ -20,6 +20,7 @@ import org.testng.Reporter;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.WebUtilities;
+import com.github.javafaker.Faker;
 
 public class E10_2606_SystemDefinationShiftBandPage  {
 
@@ -28,7 +29,7 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 	Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
-	public String shiftBandName;
+
 	public String description ;
 	public String bandCode;
 	public String colorCode;
@@ -163,6 +164,9 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 
 	@FindBy(xpath = "//input[@id='txtOverTimeEnd']")
 	private WebElement overTimeEndTxt;
+	
+	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
+	WebElement searchBar;
 
 	public E10_2606_SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
@@ -176,10 +180,10 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		addBtn.click();
 	}
 
-	public void setShiftBandName(String shiftBandName, String timeStamp) throws Exception {
+	public void setShiftBandName(String shiftBandName) throws Exception {
 		webUtility.visibilityOfElement(driver,shiftBandNameTxt);
 		shiftBandNameTxt.clear();
-		shiftBandNameTxt.sendKeys(shiftBandName+ " " + timeStamp);
+		shiftBandNameTxt.sendKeys(shiftBandName+ " "+ System.currentTimeMillis());
 	}
 	public void setDescriptionTxt(String description, String timeStamp) {
 		descriptionTxt.clear();
@@ -204,7 +208,7 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		setShiftTpSearchOvertime();
 		Thread.sleep(2000);
 		setShiftBandTypeTxt();
-//		clearSearch.click();
+		//		clearSearch.click();
 		Thread.sleep(3000);
 		action.moveToElement(shiftTpSearchCombiShift).perform();
 		shiftTpSearchCombiShift.click();
@@ -246,8 +250,8 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 	}
 
 	public void setSelectStartTime() {
-
-		js.executeScript("arguments[0].scrollIntoView(true);",selectStartTime);
+		action.moveToElement(selectStartTime).perform();
+		//		js.executeScript("arguments[0].scrollIntoView(true);",selectStartTime);
 		selectStartTime.click();
 	}
 
@@ -257,7 +261,8 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 	}
 
 	public void setSelectEndTime() {
-		js.executeScript("arguments[0].scrollIntoView(true);",selectEndTime);
+		action.moveToElement(selectEndTime).perform();
+		//		js.executeScript("arguments[0].scrollIntoView(true);",selectEndTime);
 		selectEndTime.click();
 	}
 
@@ -396,8 +401,11 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		errorPopup.click();
 	}
 
+	Faker faker = new Faker();
+	public String shiftBandName = faker.bool().bool() ? "Day Shift" : "Night Shift";
+
 	public void createShiftBand() throws Exception {
-		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
+		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
 		description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
 		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
 		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
@@ -408,7 +416,8 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
 
 		setAddBtn();
-		setShiftBandName(shiftBandName, timeStamp);
+		setShiftBandName(shiftBandName );
+		System.out.println(shiftBandName);
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setShiftBandTypeTxt();
@@ -432,23 +441,24 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		description = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 8);
 		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 9);
 
+//		searchBar.sendKeys(shiftBandName);
 		setEditBtn();
-		setShiftBandName(shiftBandName, timeStamp);
+		setShiftBandName(shiftBandName);
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setBtnSave();
-				setNotificationPopup();
+		setNotificationPopup();
 	}
 
 	public void deactiveShiftBand() throws Exception {
-
+//		searchBar.sendKeys(shiftBandName);
 		deleteRowsWithEnabledCheckbox();
 		setClickYes();
 		setNotificationPopup();
 	}
 
 	public void reactivateShiftBand() throws Exception {
-
+//		searchBar.sendKeys(shiftBandName);
 		setEditBtn();
 		clickonIsActive();
 		setBtnSave();
@@ -489,14 +499,14 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 
 	}
 	public void shiftBandTypeCombinationShift() throws Exception {
-		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 7);
+		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 7);
 		description = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 8);
 		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 9);
 		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 10);
 		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 11);
 
 		setAddBtn();
-		setShiftBandName(shiftBandName, timeStamp);
+		setShiftBandName(shiftBandName);
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setShiftBandTypeTxt();
@@ -513,7 +523,7 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		setNotificationPopup();
 	}
 	public void shiftBandTypeOvertimeShift() throws Exception {
-		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);
+		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);
 		description = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 8);
 		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 9);
 		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 10);
@@ -526,7 +536,7 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 		otEnd = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 19);
 
 		setAddBtn();
-		setShiftBandName(shiftBandName, timeStamp);
+		setShiftBandName(shiftBandName);
 		setDescriptionTxt(description, timeStamp);
 		setBandCodeTxt(bandCode, timeStamp);
 		setShiftBandTypeTxt();

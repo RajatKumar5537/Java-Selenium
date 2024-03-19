@@ -5,14 +5,13 @@ import java.io.File;
 import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-
+import java.util.logging.Logger;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
 import org.testng.ITestResult;
-
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.MediaEntityBuilder;
@@ -27,19 +26,17 @@ import com.aventstack.extentreports.reporter.configuration.ViewName;
 
 
 public class ListenerImplimentation extends BaseClass implements ITestListener{
-
-//	private static final // logger // logger = LogManager.get// logger(ListenerImplimentation.class);
-	private ExtentReports report;
-	private ExtentTest test;
+	static final Logger logger = Logger.getLogger(ListenerImplimentation.class.getName());
+	ExtentReports report;
+	ExtentTest test;
 
 	public ListenerImplimentation() {
-		new configUtility();
+//		new configUtility();
 		try {
-			report = ExtentReportManager.getInstance(); // Use the singleton instance
+			report = ExtentReportManager.getInstance(); // Use the singleton , for single single report 
 			report.setSystemInfo("OS", System.getProperty("os.name"));
 			report.setSystemInfo("Java Version", System.getProperty("java.version"));
 			report.setSystemInfo("Base Url", configUtility.getCongigPropertyData("url"));
-			// logger.info("Extent Report Output Path: " + System.getProperty("extent.reporter.html.output"));
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -76,14 +73,13 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		TakesScreenshot ts = (TakesScreenshot) driver;
 		File src = ts.getScreenshotAs(OutputType.FILE);
 
-		// logger.info("Screenshot destination path: " + dest.getAbsolutePath());
+		 logger.info("Screenshot destination path: " + dest.getAbsolutePath());
 
 		try {
 			FileUtils.copyFile(src, dest);
-			// logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
+			 logger.info("Screenshot captured and saved to: " + dest.getAbsolutePath());
 		} catch (IOException e) {
 			e.printStackTrace();
-			// logger.error("Error capturing or saving screenshot:", e);
 		}
 
 		// Extract line number from the stack trace
@@ -101,7 +97,6 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 				MediaEntityBuilder.createScreenCaptureFromPath(dest.getAbsolutePath()).build())
 		.fail(MarkupHelper.createCodeBlock(result.getThrowable().getMessage()));
 		
-		// logger.error("Exception Stack Trace:", result.getThrowable());
 	}
 
 
@@ -139,7 +134,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener{
 		spark.config().setTheme(Theme.DARK);
 		spark.config().setDocumentTitle("Automation Test Report - Suite: " + suiteName + ", Test: " + testName);
 
-		String buildName = "Build Release-: V 4.24.00.162";
+		String buildName = "Build Release-: V 4.24.00.163";
 		String reportName = "Automation Test Report - " + buildName;
 		spark.config().setReportName(reportName);
 

@@ -7,7 +7,6 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
-import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
@@ -17,7 +16,6 @@ public class Equipment_Setup {
 	public Faker fakeData;
 	public String equipmentSetupName;
 	WebDriver driver;
-	ReusableComponent Rc;
 	WebUtilities  webUtility= new WebUtilities(driver);
 	
 	
@@ -55,7 +53,7 @@ private WebElement clickOnLocation;
 @FindBy(xpath="//ul[@id='select2-cmbLocationId-results']/li[1]")
 private WebElement selectLocation;
 
-
+//==============================================================================
 
 
 @FindBy(xpath="(//button[@class='btn btn-secondary btn-round icon-btn'])[1]")
@@ -98,10 +96,10 @@ private WebElement validateSuccessfullyDeletedMessage;
 
 @FindBy(xpath="//span[@class='custom-control-label']")
 private WebElement isActiveCheckBox;
+//=============================================================================================
 
-
-@FindBy(className = "toast-close-button")
-private WebElement notificationPopup;
+	@FindBy(className = "toast-close-button")
+	private WebElement notificationPopup;
 //perform action on elements
 	
 	
@@ -109,7 +107,7 @@ private WebElement notificationPopup;
 public Equipment_Setup(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 	this.driver = driver;
-	this.Rc= new ReusableComponent(driver);
+	
 	this.action= new Actions(driver);
 	this.webUtility= new WebUtilities(driver);
 }
@@ -134,24 +132,26 @@ public void clickOnEquipment(){
 }
 public void createEquipmentSetup() throws Exception
 {
-	Rc.explicitWait(addButton, "clickble");
+	Thread.sleep(3000);
 	addButton.click();
 	fakeData=new Faker();
 	equipmentSetupName=fakeData.name().fullName();
-	Rc.explicitWait(clickEquipmentSetup,"clickble");
+	Thread.sleep(2000);
 	clickEquipmentSetup.click();
 	selectEquipmentSetup.click();
 	equipmentName.sendKeys(equipmentSetupName);
 	enterEquipmentDescription.sendKeys("jiviTesting");
 	clickOnLocation.click();
 	selectLocation.click();
+	
+	
 	cancel.isDisplayed();
 	saveEquipmentSetupDetails.click();
 	closeNotificationPopup();
 	}
 public void editEquipmentSetup() throws Exception
 {
-	Rc.explicitWait(search,"clicklble");
+	Thread.sleep(3000);
 	search.sendKeys(equipmentSetupName);
 	clickOnEdit.click();
 	equipmentSetupName=equipmentSetupName+"JIVI";
@@ -161,7 +161,7 @@ public void editEquipmentSetup() throws Exception
 	}
 public void deleteEquipmentSetup() throws Exception
 {
-	Rc.explicitWait(search, "visible");
+	Thread.sleep(3000);
 	search.clear();
 	search.sendKeys(equipmentSetupName);
 	clickOnCheckBox.click();
@@ -172,11 +172,11 @@ public void deleteEquipmentSetup() throws Exception
 	}
 public void reActivate() throws InterruptedException
 {
-	Rc.explicitWait(search, "visible");
+	Thread.sleep(3000);
 	search.clear();
 	search.sendKeys(equipmentSetupName);
 	clickOnEdit.click();
-	Rc.explicitWait(isActiveCheckBox, "clickble");
+	Thread.sleep(3000);
 	isActiveCheckBox.click();
 	saveEquipmentSetupDetails.click();
 	}

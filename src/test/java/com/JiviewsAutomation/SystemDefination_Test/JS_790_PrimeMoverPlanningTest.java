@@ -41,7 +41,7 @@ public class JS_790_PrimeMoverPlanningTest extends BaseClass{
 
 	@Test(priority = 1)
 	public void JS_915_VerifySearchRecord() throws Exception {
-		captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
+		//captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
 		logger.info("Starting test: createPrimeMoverPlanning...");
 
 		workloadPlanning.clickPrimeMoverPlanning();
@@ -52,7 +52,7 @@ public class JS_790_PrimeMoverPlanningTest extends BaseClass{
 
 	@Test(priority = 2)
 	public void JS_916_VerifyAddLocation() throws Exception {
-		captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
+		//captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
 		logger.info("Starting test: JS_916_VerifyAddLocation...");
 
 
@@ -61,16 +61,16 @@ public class JS_790_PrimeMoverPlanningTest extends BaseClass{
 		logger.info("Test createPrimeMoverPlanning executed successfully.");
 	}
 	@Test(priority = 3)
-	public void JS_917_VerifyEquipmentSummery() throws IOException {
-		captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
+	public void JS_917_VerifyEquipmentSummery() throws IOException, InterruptedException {
+		//captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
 		logger.info("Starting test: JS_917_VerifyEquipmentSummery...");
 
 		PMPLanning.JS_917_VerifyEquipmentSummery();
 	}
 
 	@Test(priority = 4)
-	public void JS_918_VerifySkillSummery() throws IOException {
-		captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
+	public void JS_918_VerifySkillSummery() throws IOException, InterruptedException {
+		//captureScreenshot(driver, "JS_790_PrimeMoverPlanningTest");
 		logger.info("Starting test: JS_918_VerifySkillSummery...");
 
 		PMPLanning.JS_918_VerifySkillSummery();

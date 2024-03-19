@@ -22,15 +22,17 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class E10_2695_EmpAdmEmployeeProfilePage {
-	
+
 	WebDriver driver ;
-	private static final Logger logger = LogManager.getLogger(E10_2695_EmpAdmEmployeeProfilePage.class);
 	WebUtilities webUtility;
 	Select select;
 	public Actions action;
+	String EmployeeNumber;
+	ReusableComponent Rc ;
 
 	@FindBy(xpath = "//button[@id='btnAddEmployee']")
 	private WebElement btnAddEmployee;
@@ -171,7 +173,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	private WebElement cmbPrimaryRoleSearch;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
 	private WebElement selectSkill;
-	
+
 	@FindBy(xpath = "//select[@id='bootstrap-duallistbox-nonselected-list_']")
 	private WebElement availableListBox;
 
@@ -429,9 +431,12 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		this.driver = driver ;
 		this.action= new Actions(driver);
 		this.webUtility= new WebUtilities(driver);
+		this.Rc= new ReusableComponent(driver);
 	}
+
+
 	public void scrollAndClick(WebDriver driver, WebElement element) {
-		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
+		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(20)).until(ExpectedConditions.elementToBeClickable(element));
 		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
 		// Scroll to the top of the page
 		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
@@ -447,7 +452,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	}
 
 	public void enterEmployeeNumber(String empNumber) throws InterruptedException {
-		Thread.sleep(5000);
+		//		Thread.sleep(5000);
+		Rc.explicitWait(txtEmployeeNumber, "clickable");
+		//		webUtility.ElementClickable(driver, txtEmployeeNumber);
 		txtEmployeeNumber.clear();
 		txtEmployeeNumber.sendKeys(empNumber);
 	}
@@ -480,7 +487,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	}
 
 	public void chooseEmploymentBasis() throws InterruptedException {
-		Thread.sleep(2000);
+				Thread.sleep(2000);
+		Rc.explicitWait(employmentBasis, "clickable");
 		webUtility.moveToElement(driver, employmentBasis);
 		employmentBasis.click();
 	}
@@ -504,25 +512,18 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		txtGender.click();
 		switch (gender.toLowerCase()) {
 		case "male":
-			logger.info("Choosing Male gender...");
 			webUtility.moveToElement(driver, selectMale);
 			selectMale.click();
-			logger.info("Male gender selected.");
 			break;
 		case "female":
-			logger.info("Choosing Female gender...");
 			webUtility.moveToElement(driver, selectFemale);
 			selectFemale.click();
-			logger.info("Female gender selected.");
 			break;
 		case "others":
-			logger.info("Choosing Others gender...");
 			webUtility.moveToElement(driver, selectOthers);
 			selectOthers.click();
-			logger.info("Others gender selected.");
 			break;
 		default:
-			logger.error("Invalid gender provided: " + gender);
 			throw new IllegalArgumentException("Invalid gender: " + gender);
 		}
 
@@ -668,12 +669,15 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		cmbPrimaryRole.click();
 	}
 	public void selectPrimaryRoleSearch() throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		Rc.explicitWait(cmbPrimaryRoleSearch, "clickable");
 		webUtility.moveToElement(driver, cmbPrimaryRoleSearch);
 		cmbPrimaryRoleSearch.click();
 	}
 	public void selectAvailableListBox() throws InterruptedException {
 		Thread.sleep(2000);
+		Rc.explicitWait(availableListBox, "clickable");
+		
 		action.moveToElement(availableListBox).perform();
 		select = new Select(availableListBox);
 		select.selectByIndex(0);               
@@ -688,12 +692,14 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		tabContacts.click();
 	}
 	public void clickAddNewContact() throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		Rc.explicitWait(btnAddNewContact, "clickable");
 		webUtility.moveToElement(driver, btnAddNewContact);
 		btnAddNewContact.click();
 	}
 	public void enterContactName(String contactName) throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		Rc.explicitWait(txtContactName, "clickable");
 		txtContactName.clear();
 		txtContactName.sendKeys(contactName);
 	}
@@ -728,6 +734,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		txtContactPostCode.sendKeys(postCode);
 	}
 	public void enterContactCity(String city) {
+		webUtility.moveToElement(driver, txtContactCity);
 		txtContactCity.clear();
 		txtContactCity.sendKeys(city);
 	}
@@ -766,8 +773,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	}
 
 	public void clickNotificationPopup() throws Exception {
-		Thread.sleep(2000);
-		webUtility.ElementClickable(driver, notificationPopup);
+//		Thread.sleep(2000);
+		Rc.explicitWait(notificationPopup, "clickable");
+//		webUtility.ElementClickable(driver, notificationPopup);
 		action.moveToElement(notificationPopup).perform();
 		notificationPopup.click();
 	}
@@ -776,7 +784,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		tabAttachments.click();	
 	}
 	public void clickBtnAddEmployeeAttachment() throws InterruptedException {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		Rc.explicitWait(btnAddEmployeeAttachment, "clickable");
 		webUtility.moveToElement(driver, btnAddEmployeeAttachment);
 		btnAddEmployeeAttachment.click();
 	}
@@ -791,7 +800,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		btnAddAttachment.click();
 	}
 	public void selectFileToUpload() {
-		File file= new File("./src/test/resources/TestData/Jiviews Team.jpg");
+		File file= new File(".\\src\\test\\resources\\TestData\\Jiviews Team.jpg");
 		String  absolutePath = file.getAbsolutePath();
 		btnFileToUpload.sendKeys(absolutePath);
 	}
@@ -813,12 +822,14 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		tabESS.click();
 	}
 	public void clickBtnAddLeaveProfile() throws InterruptedException {
-		Thread.sleep(1000);
+		//		Thread.sleep(1000);
+		Rc.explicitWait(btnAddLeaveProfile, "clickable");
+//		webUtility.ElementClickable(driver, btnAddLeaveProfile);
 		webUtility.moveToElement(driver, btnAddLeaveProfile);
 		btnAddLeaveProfile.click();
 	}
 	public void chooseEmpLeaveProfileName() throws InterruptedException {
-		Thread.sleep(1000);
+		//		Thread.sleep(1000);
 		webUtility.moveToElement(driver, cmbEmpLeaveProfileName);
 		cmbEmpLeaveProfileName.click();
 	}
@@ -846,27 +857,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		//			webUtility.moveToElement(driver, selectHajLeave);
 		//			selectHajLeave.click();
 		//			break;
-		//		case "Leave":
-		//			selectLeave.click();
-		//			break;
-		//		case"RequestLeave":
-		//			selectRequestLeave.click();
-		//			break;
-		//		case"SpecialLeave":
-		//			selectSpecialLeave.click();
-		//			break;
-		//		case"TimeAttendance":
-		//			selectTimeAttendance.click();
-		//			break;
-		//		case"TimeOff":
-		//			selectTimeOff.click();
-		//			break;
-		//		case"UnControlledLeave":
-		//			selectUnControlledLeave.click();
-		//			break;
-		//		case"UnpaidLeave":
-		//			selectUnpaidLeave.click();
-		//			break;
+		
 		//		}
 	}
 	public void selectHajLeave() {
@@ -891,6 +882,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		selectLeaveRoute.click();
 	}
 	public void enterWorkFlowStartDate(String workFlowStartDate) {
+		Rc.explicitWait(dtWorkFlowStartDate, "clickable");
 		dtWorkFlowStartDate.clear();
 		dtWorkFlowStartDate.sendKeys(workFlowStartDate);
 		dtWorkFlowStartDate.sendKeys(Keys.ENTER);
@@ -907,7 +899,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	public void pressBtnSaveEmployee() throws InterruptedException {
 		//		webUtility.moveToElement(driver, btnSaveEmployee);
 		//		btnSaveEmployee.click();
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		Rc.explicitWait(btnSaveEmployee, "clickable");
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnSaveEmployee);
@@ -918,14 +911,15 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	}
 	public void clickonBtnEdit() {
 		btnEdit.click();
-		
+
 	}
 	public void enableCheckBoxIsActive() throws InterruptedException{
-//		scrollAndClick(driver, checkBoxIsActive);
+		//		scrollAndClick(driver, checkBoxIsActive);
+		Thread.sleep(10000);
+		Rc.explicitWait(checkBoxIsActive, "clickable");
 		webUtility.moveToElement(driver, checkBoxIsActive);
-		Thread.sleep(5000);
 		checkBoxIsActive.click();
-		
+
 	}
 	public void updateRowsWithEnabledCheckbox() throws InterruptedException {
 		boolean checkboxFound = false;
@@ -962,15 +956,15 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 			if (!checkbox.isEnabled()) {
 				clickonBtnEdit();
 				enableCheckBoxIsActive();
-//				checkboxFound = true;
+				//				checkboxFound = true;
 				break;
 			}
 		}
 
 		// If no enabled checkbox found on the current page, go to the next page and try again
-//		if (!checkboxFound) {
-//			goToNextPageAndReactivate();
-//		}
+		//		if (!checkboxFound) {
+		//			goToNextPageAndReactivate();
+		//		}
 	}
 	private void goToNextPageAndReactivate() throws InterruptedException {
 		try {
@@ -987,17 +981,22 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	}
 	public void clickonTabExcludedSkills() throws Exception {
 		Thread.sleep(5000);
+		Rc.explicitWait(tabExcludedSkills, "clickable");
+//		webUtility.ElementClickable(driver, tabExcludedSkills);
 		webUtility.moveToElement(driver, tabExcludedSkills);
 		tabExcludedSkills.click();
 	}
 	public void clickonBtnAddNewExcludedSkills() throws InterruptedException {
-		Thread.sleep(1000);
+		//		Thread.sleep(1000);
+//		webUtility.ElementClickable(driver, btnAddNewExcludedSkills);
+		Rc.explicitWait(btnAddNewExcludedSkills, "clickable");
 		webUtility.moveToElement(driver, btnAddNewExcludedSkills);
 		btnAddNewExcludedSkills.click();	
 	}
 	public void selecttxtSkillDescription() throws InterruptedException {
-		Thread.sleep(1000);
-		//		webUtility.moveToElement(driver, txtSkillDescription);
+		//		Thread.sleep(1000);
+//		webUtility.ElementClickable(driver, txtSkillDescription);
+		Rc.explicitWait(txtSkillDescription, "clickable");
 		txtSkillDescription.click();
 	}
 	public void chooseSkill() {
@@ -1020,13 +1019,14 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		btnSaveExcludedSkill.click();
 	}
 	public void clickonTabDisciplinary() {
-		webUtility.ElementClickable(driver, tabDisciplinary);
+		Rc.explicitWait(tabDisciplinary, "clickable");
+//		webUtility.ElementClickable(driver, tabDisciplinary);
 		webUtility.moveToElement(driver, tabDisciplinary);
 		tabDisciplinary.click();
 	}
 	public void deleteDisciplinaryIfPresentAndClickAddSuspension(WebDriver driver) throws InterruptedException {
 		try {
-//			webUtility.ElementClickable(driver, btnDeleteDisciplinary);
+			//			webUtility.ElementClickable(driver, btnDeleteDisciplinary);
 			btnDeleteDisciplinary.click();
 		} catch (Exception e) {
 			// If btnDeleteDisciplinary is not present or not clickable, do nothing
@@ -1034,7 +1034,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		btnAddSuspension.click();
 	}
 	public void enterdtDisciplinaryStart(String disciplinaryStartDate) throws InterruptedException {
-		Thread.sleep(1000);
+		//		Thread.sleep(1000);
+		Rc.explicitWait(dtDisciplinaryStart, "clickable");
+//		webUtility.ElementClickable(driver, dtDisciplinaryStart);
 		dtDisciplinaryStart.clear();
 		dtDisciplinaryStart.sendKeys(disciplinaryStartDate);
 		dtDisciplinaryStart.sendKeys(Keys.ENTER);
@@ -1045,7 +1047,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		dtDisciplinaryEnd.sendKeys(Keys.ENTER);
 	}
 	public void clickonExcludeAccrualProcess() throws InterruptedException {
-		Thread.sleep(1000);
+		//		Thread.sleep(1000);
+//		webUtility.ElementClickable(driver, chkExcludeAccrualProcess);
+		Rc.explicitWait(chkExcludeAccrualProcess, "clickable");
 		chkExcludeAccrualProcess.click();
 	}
 	public void entertxtDisciplinaryRemarks(String remark) {
@@ -1054,14 +1058,18 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	public void clickonbtnSaveDisciplinaryDetails() {
 		btnSaveDisciplinaryDetails.click();
 	}
-	
+
 	public void clickonIsEmployeeTerminated() throws InterruptedException {
-		webUtility.ElementClickable(driver, chkIsEmployeeTerminated);
+
+		Rc.explicitWait(chkIsEmployeeTerminated, "clickable");
+
+		//		webUtility.ElementClickable(driver, chkIsEmployeeTerminated);
 		webUtility.moveToElement(driver, chkIsEmployeeTerminated);
 		chkIsEmployeeTerminated.click();
 	}
 	public void clickonBtnYes() throws InterruptedException {
-		webUtility.ElementClickable(driver, btnYes);
+//		webUtility.ElementClickable(driver, btnYes);
+		Rc.explicitWait(btnYes, "clickable");
 		webUtility.moveToElement(driver, btnYes);
 		btnYes.click();
 	}
@@ -1125,9 +1133,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	private void goToNextPageAndDelete() throws InterruptedException {
 		try {
 			webUtility.scrollAndClick(driver, nextPage);
-//			scrollAndClick(driver, nextPage); 
+			//			scrollAndClick(driver, nextPage); 
 			webUtility.scrollUp(driver);
-//			scrollUp(driver);
+			//			scrollUp(driver);
 			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
 
 		} catch (ElementClickInterceptedException e) {
@@ -1143,7 +1151,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		btnSaveEmployeeOU.click();
 	}
 	public void chooseEmpBasis(String empBasis) throws InterruptedException {
-		//		Thread.sleep(5000);
+				Thread.sleep(5000);
+		Rc.explicitWait(chooseEmpBasis, "visibility");
 		webUtility.moveToElement(driver, chooseEmpBasis);
 		chooseEmpBasis.click();
 		switch (empBasis) {
@@ -1194,33 +1203,41 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		btnSearchEmployeeProfile.click();
 	}
 	public void performSearchBar(String empNo){
+
 		txtSearchBar.sendKeys(empNo);	
 		txtSearchBar.sendKeys(Keys.ENTER);
 	}
 	public void getAddNewContactSuccessMsg() {
+		Rc.explicitWait(addNewContactSuccessMsg, "visibility");
 		String actualResult =addNewContactSuccessMsg.getText();
 		Assert.assertTrue(actualResult.contains("Add New Contact - Success"));
 	}
 	public void getAttachmentcreatedSuccessfullyMsg() {
+		Rc.explicitWait(attachmentcreatedSuccessfullyMsg, "visibility");
 		String actualResult = attachmentcreatedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Attachment created Successfully"));
 	}
 	public void getEmployeeProfilecreatedSuccessfullyMsg() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-	    wait.until(ExpectedConditions.visibilityOf(employeeProfilecreatedSuccessfullyMsg));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+//		wait.until(ExpectedConditions.visibilityOf(employeeProfilecreatedSuccessfullyMsg));
+		
+		Rc.explicitWait(employeeProfilecreatedSuccessfullyMsg, "visibility");
 		String actualResult = employeeProfilecreatedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Employee Profile created successfully"));
 	}
 	public void getaddExcludedSkillSuccessMsg() {
-	    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-	    wait.until(ExpectedConditions.visibilityOf(addExcludedSkillSuccessMsg));
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+//		wait.until(ExpectedConditions.visibilityOf(addExcludedSkillSuccessMsg));
+		
+		Rc.explicitWait(addExcludedSkillSuccessMsg, "visibility");
 		String actualResult = addExcludedSkillSuccessMsg.getText();
 		Assert.assertTrue(actualResult.contains("Add Excluded Skill - Success"));
 	}
 	public void getAddDisciplinaryActionSuccessMsg() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-	    wait.until(ExpectedConditions.visibilityOf(addDisciplinaryActionSuccessMsg));
-	    
+//		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+//		wait.until(ExpectedConditions.visibilityOf(addDisciplinaryActionSuccessMsg));
+
+		Rc.explicitWait(addDisciplinaryActionSuccessMsg, "visibility");
 		String actualResult = addDisciplinaryActionSuccessMsg.getText();
 		Assert.assertTrue(actualResult.contains("Add Disciplinary Action - Success"));
 	}
@@ -1228,8 +1245,10 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 	//-------------------------------------------------#############**********####################------------------------------------------//
 
 	public void createEmpProfile(FakeEmployee fakeEmployee) throws Exception {
+		EmployeeNumber = fakeEmployee.getEmpNumber();
+
 		clickBtnAddEmployee();
-		enterEmployeeNumber(fakeEmployee.getEmpNumber());
+		enterEmployeeNumber(EmployeeNumber);
 		enterBadgeNumber(fakeEmployee.getBadgeNumber());
 		enterFirstName(fakeEmployee.getFirstName());
 		enterMiddleName(fakeEmployee.getMiddleName());
@@ -1252,7 +1271,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterEmailAddress(fakeEmployee.getEmail());
 		enterHireDate(fakeEmployee.getHireDate());
-//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
+		//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
 		choosePosition("echo");
 		chooseScheduleRule();
 		selectScheduleRule();
@@ -1260,13 +1279,13 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		selectPayGroup();
 		chooseOvertimeSetting();
 		selectOtSetting();
-		
+
 		clickTabRole();
 		clickPrimaryRole();
 		selectPrimaryRoleSearch();
 		selectAvailableListBox();
 		setAvailableSingleSkillMoveToSelectedSkill();
-		
+
 		clickTabContacts();
 		clickAddNewContact();
 		enterContactName(fakeEmployee.getFirstName());
@@ -1285,8 +1304,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		getAddNewContactSuccessMsg();
 		clickNotificationPopup();
 		clickTabMiscellaneous();
-//		activeCheckBoxShiftEmp();
-		
+		//		activeCheckBoxShiftEmp();
+
 		clickTabESS();
 		clickBtnAddLeaveProfile();
 		chooseEmpLeaveProfileName();
@@ -1301,6 +1320,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		enterWorkFlowStartDate(fakeEmployee.getWorkFlowStartDate());
 		enterWorkFlowEndDate(fakeEmployee.getWorkFlowEndDate());
 		clickBtnSaveEmpWorkflowRoute();
+
 		clickTabAttachments();
 		clickBtnAddEmployeeAttachment();
 		enterTxtDocumentName(fakeEmployee.getDocumentName()); 
@@ -1316,7 +1336,16 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		clickNotificationPopup();
 	}
 	public void updateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
+		//		performSearchBar(EmployeeNumber);
+
+		//		txtSearchBar.sendKeys(EmployeeNumber);	
+		//		btnEdit.click();
+
+
 		updateRowsWithEnabledCheckbox();
+
+		//		enterEmployeeNumber(fakeEmployee.getEmpNumber());
+		//		enterBadgeNumber(fakeEmployee.getBadgeNumber());
 		enterFirstName(fakeEmployee.getFirstName());
 		enterMiddleName(fakeEmployee.getMiddleName());
 		enterLastName(fakeEmployee.getLastName());
@@ -1335,13 +1364,13 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		clickonBtnSaveExcludedSkill();
 		getaddExcludedSkillSuccessMsg();
 		clickNotificationPopup();
-		
+
 		clickTabRole();
 		clickPrimaryRole();
 		selectPrimaryRoleSearch();
 		selectAvailableListBox();
 		setAvailableSingleSkillMoveToSelectedSkill();
-		
+
 		clickonTabDisciplinary();
 		deleteDisciplinaryIfPresentAndClickAddSuspension(driver);
 		enterdtDisciplinaryStart(fakeEmployee.getSkillStartDate());
@@ -1351,7 +1380,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		clickonbtnSaveDisciplinaryDetails();
 		getAddDisciplinaryActionSuccessMsg();
 		clickNotificationPopup();
-		
+
 		clickonTabSecurity();
 		clickonBtnAddEmployeeOU();
 		enterOrganizationName();
@@ -1359,12 +1388,16 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		enterShareOrgUnitStartDate(fakeEmployee.getSkillStartDate());
 		enterdtShareOrgUnitEndDate(fakeEmployee.getSkillEndDate());
 		cickonBtnSaveEmployeeOU();
-//		clickNotificationPopup(); Not Required 
+		//		clickNotificationPopup(); Not Required 
 		pressBtnSaveEmployee();
-//		getEmployeeProfilecreatedSuccessfullyMsg();
 //		clickNotificationPopup();
 	}
 	public void duplicateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
+		//		webUtility.ElementClickable(driver, txtSearchBar);
+		//		txtSearchBar.sendKeys(EmployeeNumber);	
+
+		//		btnDuplicate.click();
+
 		clickBtnDuplicate();
 		enterEmployeeNumber(fakeEmployee.getEmpNumber());
 		enterBadgeNumber(fakeEmployee.getBadgeNumber());
@@ -1389,16 +1422,16 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		enterHomePhoneNumber(fakeEmployee.getPhoneNumber());
 		enterEmailAddress(fakeEmployee.getEmail());
 		enterHireDate(fakeEmployee.getHireDate());
-		
-//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
-//		choosePosition("echo");
-//		chooseScheduleRule();
-//		selectScheduleRule();
-//		choosetxtPayGroup();
-//		selectPayGroup();
-//		chooseOvertimeSetting();
-//		selectOtSetting();
-		
+
+		//		enterProbationExpiryDate(fakeEmployee.getProbationExpirydate());
+		//		choosePosition("echo");
+		//		chooseScheduleRule();
+		//		selectScheduleRule();
+		//		choosetxtPayGroup();
+		//		selectPayGroup();
+		//		chooseOvertimeSetting();
+		//		selectOtSetting();
+
 		//		Thread.sleep(3000);
 		//		clickTabMiscellaneous();
 		//		activeCheckBoxShiftEmp();
@@ -1408,35 +1441,40 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		selectAvailableListBox();
 		setAvailableSingleSkillMoveToSelectedSkill();
 		pressBtnSaveEmployee();
-//		getEmployeeProfilecreatedSuccessfullyMsg();
+		//		getEmployeeProfilecreatedSuccessfullyMsg();
 		clickNotificationPopup();
 	}
 	public void terminateEmpProfile(FakeEmployee fakeEmployee) throws Exception {
 		clickonBtnEdit();
 		Thread.sleep(15000);
 		clickonTabDisciplinary();
-		
-		 if (chkIsEmployeeTerminated.isEnabled()) {
-		        // Checkbox is enabled, proceed with termination
-		        clickonIsEmployeeTerminated();
-		        clickonBtnYes();
-		        enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
-		        entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
-		        pressBtnSaveEmployee();
-		        // clickNotificationPopup();
-		    } else {
-		        System.out.println("Employee is already terminated.");
-		    }
-		
+
+		if (chkIsEmployeeTerminated.isEnabled()) {
+			// Checkbox is enabled, proceed with termination
+			clickonIsEmployeeTerminated();
+			clickonBtnYes();
+			enterEmployeeTerminatedDate(fakeEmployee.getTerminatedDate());
+			entertxtEmployeeTerminationRemarks(fakeEmployee.getDescription());
+			pressBtnSaveEmployee();
+			// clickNotificationPopup();
+		} else {
+			System.out.println("Employee is already terminated.");
+		}
+
 	}
 	public void deleteEmpProfile() throws Exception {
+		//		webUtility.ElementClickable(driver, txtSearchBar);
+		//		txtSearchBar.sendKeys(EmployeeNumber);	
+
 		deleteRowsWithEnabledCheckbox();
 		clickonBtnYes();
 		clickNotificationPopup();
 	}
 	public void reactivateEmpProfile() throws InterruptedException {
+		//		webUtility.ElementClickable(driver, txtSearchBar);
+		//		txtSearchBar.sendKeys(EmployeeNumber);	
 		reactivateRowsWithEnabledCheckbox();
-		
+
 		clickTabRole();
 		clickPrimaryRole();
 		selectPrimaryRoleSearch();
@@ -1462,6 +1500,9 @@ public class E10_2695_EmpAdmEmployeeProfilePage {
 		performSearchEmployeeProfile();
 	}
 	public void enterEmpNoInSearchBar() {
-		performSearchBar("00418009");
+		//		txtSearchBar.sendKeys(EmployeeNumber);	
+		//		txtSearchBar.sendKeys(Keys.ENTER);
+
+		performSearchBar("000091 Henry Billiord");
 	}
 }

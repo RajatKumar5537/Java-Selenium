@@ -3,9 +3,9 @@ package com.AutomationJiviewsGeneric;
 import com.aventstack.extentreports.ExtentReports;
 
 public class ExtentReportManager {
-	private static ExtentReports extent;
+	public static ExtentReports extent;
 
-	private ExtentReportManager() {
+	ExtentReportManager() {
 		// private constructor to prevent instantiation
 	}
 

@@ -164,6 +164,7 @@ public void createLocation() throws Exception
 	}
 public void editLocation() throws Exception
 {
+	Thread.sleep(3000);
 	Rc.explicitWait(search, "visible");
 	search.sendKeys(locationName);
 	Thread.sleep(3000);
@@ -176,6 +177,7 @@ public void editLocation() throws Exception
 	}
 public void deleteLocation() throws Exception
 {
+	Thread.sleep(3000);
 	Rc.explicitWait(search,"visible" );
 	search.clear();
 	search.clear();

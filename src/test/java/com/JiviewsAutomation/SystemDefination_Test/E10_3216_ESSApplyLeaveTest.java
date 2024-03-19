@@ -4,6 +4,7 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.configUtility;
 import com.AutomationJiviewsPOM.E10_3216_ESSApplyLeavePage;
 import com.AutomationJiviewsPOM.HomePage;
@@ -20,6 +21,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	private jiviewsMainMenuItems jmMenuItem;
 	//	private EmployeeKioskPage empKiosk;
 	private E10_3216_ESSApplyLeavePage applyLeave;
+	FakeEmployee fakeEmployee;
 	@BeforeMethod
 	public void setup() throws Exception {
 
@@ -54,7 +56,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 1)
 	public void E10_3226_Verify_EmployeeKiosk_ViewCalendarCheckShiftDetails() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3226_Verify_EmployeeKiosk_View Calendar Check Shift Details...");
 
 		applyLeave.E10_3226_EmployeeKiosk_ViewCalendarCheckShiftDetails();
@@ -62,7 +64,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 2)
 	public void E10_3227_Verify_EmployeeKiosk_LeaveRecords() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3227_Verify_EmployeeKiosk_Leave Records...");
 
 		applyLeave.E10_3227_EmployeeKiosk_LeaveRecords();
@@ -70,7 +72,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 3)
 	public void E10_3228_Verify_EmployeeKiosk_MyleaveProfile() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3228_Verify_EmployeeKiosk_My leave Profile...");
 
 		applyLeave.E10_3228_EmployeeKiosk_MyleaveProfile();	
@@ -78,7 +80,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 4)
 	public void E10_3225_Verify_EmployeeKiosk_ApplyForLeave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3225 EmployeeKiosk_Apply For Leave...");
 
 		applyLeave.E10_3225_EmployeeKiosk_ApplyForLeave(fakeEmployee);	
@@ -87,7 +89,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 5) //, dependsOnMethods = "E10_3225_Verify_EmployeeKiosk_ApplyForLeave")
 	public void E10_3229_Verify_ApproverKiosk_ApproveLeave() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3229_Verify_ApproverKiosk_Approve Leave...");
 
 		applyLeave.E10_3229_ApproverKiosk_ApproveLeave(fakeEmployee);
@@ -95,7 +97,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 6)
 	public void E10_3230_Verify_ApproverKiosk_CancelApproveleave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3230_Verify_ApproverKiosk_Cancel Approve leave...");
 
 		applyLeave.E10_3230_ApproverKiosk_CancelApproveleave(fakeEmployee);
@@ -103,7 +105,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 7)
 	public void E10_3231_Verify_ApplyLeaveAndCancleTheLeaveBeforeApproval() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3231_Apply Leave And Cancle The Leave Before Approval...");
 
 		applyLeave.E10_3231_ApplyLeaveAndCancleTheLeaveBeforeApproval(fakeEmployee);
@@ -112,7 +114,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 8)
 	public void E10_3232_Verify_CancelApprovedLeave_ApproverApprovedCancelLeave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3232_Verify_Cancel Approved Leave_Approver Approved Cancel Leave...");
 
 		applyLeave.E10_3232_CancelApprovedLeave_ApproverApprovedCancelLeave(fakeEmployee);
@@ -123,7 +125,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	/*
 	@Test(priority = 9)
 	public void E10_3233_Verify_ReapplyRejectedLeave_RejectAppovedCancelLeave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3233_Verify_ReapplyRejectedLeave_RejectAppovedCancelLeave...");
 
 		applyLeave.E10_3233_ReapplyRejectedLeave_RejectAppovedCancelLeave(fakeEmployee);
@@ -136,7 +138,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 
 //	public void E10_3234_Verify_ReapplyCancelledLeave_CancelApprovedLeave() throws Exception {
-//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 //		// logger.info("E10_3233_Verify_ReapplyRejectedLeave_RejectAppovedCancelLeave...");
 //
 //		applyLeave.E10_3234_ReapplyCancelledLeave_CancelApprovedLeave(fakeEmployee);
@@ -148,7 +150,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 //	}
 
 //	public void E10_3235_Verify_ReapplyCancelledApprovedLeave()throws Exception  {
-//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 //		// logger.info("E10_3235_Verify_ReapplyCancelledApprovedLeave...");
 //
 //
@@ -162,7 +164,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 10)
 	public void E10_3218_Verify_ApplyTimeOff() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3218_ApplyTimeOff...");
 
 		applyLeave.E10_3218_ApplyTimeOff(fakeEmployee);
@@ -171,7 +173,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 11)
 	public void E10_3213_Verify_ApplyOnBehalf() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3213_ApplyOnBehalf...");
 
 		applyLeave.E10_3213_ApplyOnBehalf(fakeEmployee);
@@ -179,7 +181,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 12)
 	public void E10_3219_Verify_ApplyForUncontrolledLeave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3219_Verify_ApplyForUncontrolledLeave...");
 
 		applyLeave.E10_3219_ApplyForUncontrolledLeave(fakeEmployee);
@@ -188,7 +190,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 13)
 	public void E10_3222_Verify_ApplyLeaveP2() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3213_ApplyOnBehalf...");
 
 		applyLeave.E10_3222_ApplyLeaveP2(fakeEmployee);
@@ -199,7 +201,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	//	@Test (priority = 14)
 	//	public void E10_3223_Verify_RescheduleLeave() throws Exception {
-	//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+	//		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 	//		// logger.info("E10_3223_Verify_RescheduleLeave...");
 	//
 	//		applyLeave.E10_3223_RescheduleLeave(fakeEmployee);
@@ -209,7 +211,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 15)
 	public void E10_3442_Verify_ApplyLeaveOnPublicHoliday() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3442_Verify_ApplyLeaveOnPublicHoliday...");
 
 		applyLeave.E10_3442_ApplyLeaveOnPublicHoliday(fakeEmployee);
@@ -218,7 +220,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test (priority = 16)
 	public void E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave()throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3443_Verify_ShiftlessEmployeeApplyPublicHolidayLeave...");
 
 
@@ -228,7 +230,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 17)
 	public void E10_3444_Verify_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift...");
 
 		applyLeave.E10_3444_NoPublicHolidayLeaveOnTheFollowingDayWithAssignedShift(fakeEmployee);
@@ -236,7 +238,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	/*@Test(priority = 18)
 	public void E10_3445_Verify_ApplyUnpaidLeave() throws Exception {
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3445_ApplyUnpaidLeave...");
 		
 		applyLeave.E10_3445_ApplyUnpaidLeave();
@@ -245,7 +247,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 19)
 	public void E10_3446_Verify_MultipleApproverApproveTheLeave() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3446_MultipleApproverApproveTheLeave...");
 
 		jmMenuItem.clickOnSystemDefination();
@@ -254,7 +256,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 20)
 	public void E10_3447_Verify_RejectLeaveWithOneApprover() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3447_Verify_RejectLeaveWithOneApprover...");
 		
 		
@@ -265,7 +267,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	public void E10_3448_Verify_EnableTheAnyOneCanApprove() throws Exception{
 		//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
 		//		driver.navigate().to(homeUrl);
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3448_Verify_EnableTheAnyOneCanApprove...");
 
 		jmMenuItem.clickOnSystemDefination();
@@ -275,7 +277,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 
 	@Test(priority = 22)
 	public void E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave...");
 		
 		applyLeave.E10_3449_LevelAndLevel2_AllApproverApproveTheLeave(fakeEmployee);
@@ -283,7 +285,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 23)
 	public void E10_3450_Verify_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3449_Verify_LevelAndLevel2_AllApproverApproveTheLeave...");
 		
 		applyLeave.E10_3450_Level1ApproveAndLevel2_AnyOneOfApproverRejectTheLeave(fakeEmployee);
@@ -291,7 +293,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 	@Test(priority = 24)
 	public void E10_3451_Verify_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3451_Verify_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission...");
 		
 		applyLeave.E10_3451_Level1ApproveRejectTheLeaveSystemShouldNotAskForLevel2Permission(fakeEmployee);
@@ -299,7 +301,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	}
 //	@Test(priority = 25)
 //	public void E10_3469_Verify_CompensationLeave() throws Exception{
-//		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+//		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 //		// logger.info("E10_3469_Verify_CompensationLeave...");
 //		
 //		applyLeave.E10_3469_CompensationLeave();
@@ -308,7 +310,7 @@ public class E10_3216_ESSApplyLeaveTest extends BaseClass{
 	
 	@Test(priority = 26)
 	public void E10_3470_Verify_UnrecordLeave() throws Exception{
-		captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
+		//captureScreenshot(driver, "E10_3216_ESSApplyLeaveTest");
 		// logger.info("E10_3470_Verify_UnrecordLeave...");
 
 		applyLeave.E10_3470_UnrecordLeave(fakeEmployee);

@@ -5,18 +5,16 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-<<<<<<< HEAD
 
-	
 	<test
-		name="Maritime_Setup_Test">
+		name="Berth_Setup_Test">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Maritime_Setup_Test"
+				name="com.JiviewsAutomation.SystemDefination_Test.Berth_Setup_Test"
 			/>
 		</classes>
-	</test>  T_And_A_Exception_Code_Test
-	
+	</test>
+
 	<test
 		name="Crane_Setup_Test">
 		<classes>
@@ -25,14 +23,7 @@
 			/>
 		</classes>
 	</test>
-	<test
-		name="Equipment_Setup_Test">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Equipment_Setup_Test"
-			/>
-		</classes>
-	</test>
+
 	<test
 		name="Location_Definitions_Test">
 		<classes>
@@ -41,121 +32,32 @@
 			/>
 		</classes>
 	</test>
+
 	<test
-		name="ReconciliationParameterGroupTest">
+		name="SystemDefination_RoleGroupPageTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.ReconciliationParameterGroupTest"
-			/>
-		</classes>
-	</test>
-=======
-	
-	<test name="E10_2606_ShiftBandTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2606_ShiftBandTest" />
-		</classes>
-	</test>
-<!--
-	<test name="E10_2608_RoasterSetupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2608_RoasterSetupTest" />
-		</classes>
-	</test>
-
-	<test name="E10_2638_PublicHolidayTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2638_PublicHolidayTest"
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest"
 			/>
 		</classes>
 	</test>
 
-	<test name="E10_2639_SCRTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2639_SCRTest" />
-		</classes>
-	</test>
-
-	<test name="E10_2695_EmpAdmEmployeeProfileTest">
-		<classes>
-			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_2749_RoleGroupTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2749_RoleGroupTest" />
-		</classes>
-	</test>
-
-	<test name="E10_2909_EmpAdmRosterGroupAssignmentTest">
-		<classes>
-			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2909_EmpAdmRosterGroupAssignmentTest"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_3082_SkillSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3082_SkillSetUpTest" />
-		</classes>
-	</test>
-
-	<test name="E10_3089_RoleSetUpTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3089_RoleSetUpTest" />
-		</classes>
-	</test>
-
- 
-	<test name="E10_2910_WorkforceEmployeeRosterV2Test">
-		<classes>
-			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_2910_WorkforceEmployeeRosterV2Test"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_3541_OPE_RTG_PlanningTest">
-		<classes>
-			<class
-	name="com.JiviewsAutomation.SystemDefination_Test.E10_3541_OPE_RTG_PlanningTest"
-			/>
-		</classes>
-	</test>
-
-	<test name="E10_3147_WorkloadPlannerTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3147_WorkloadPlannerTest"
-			/>
-		</classes>
-	</test>
-	<test name="E10_3216_ESSApplyLeaveTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_3216_ESSApplyLeaveTest"
-			/>
-		</classes>
-	</test> -->
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
-	
 	<test
-		name="T_And_A_Exception_Code_Test">
+		name="SystemDefination_SkillPageTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.T_And_A_Exception_Code_Test"
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest"
 			/>
 		</classes>
-	</test>  
+	</test>
+
+	<test
+		name="SystemDefination_PublicHolidayPageTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest"
+			/>
+		</classes>
+	</test>
+
 </suite>

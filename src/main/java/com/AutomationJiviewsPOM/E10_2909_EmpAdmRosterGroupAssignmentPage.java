@@ -1,7 +1,5 @@
 package com.AutomationJiviewsPOM;
 
-import java.sql.Date;
-import java.text.SimpleDateFormat;
 import java.util.List;
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
@@ -12,8 +10,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.Reporter;
-
-import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
@@ -22,15 +18,9 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 	WebDriver driver ;
 	Select select;
 	public Actions action;
-	
 	WebUtilities webUtility ;
+	String RosterGroupname;
 	
-	HomePage homePage = new HomePage(driver);
-	OrganizationUnitDropDown orgUnit = new OrganizationUnitDropDown(driver);
-	jiviewsMainMenuItems jmMenuItem = new jiviewsMainMenuItems(driver);
-	RosterSetupPage rosterSetup = new RosterSetupPage(driver);;
-	E10_2608_SystemDefinationRosterCreationPage rosterCreation = new E10_2608_SystemDefinationRosterCreationPage(driver);
-	EmployeeAdminstrationPage empAdmin = new EmployeeAdminstrationPage(driver);
 
 	@FindBy(xpath = "//button[@id='btnAddRosterGroup']")
 	private WebElement btnAddRosterGroup;
@@ -137,18 +127,23 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 	}
 
 	public void enableCheckboxesMember(int count) {
+		// The logic for selecting the required number of employees has to be move.
+		
 		for (int i = 0; i < count && i < checkboxesMembers.size(); i++) {
 			checkboxesMembers.get(i).click();
 		}
 	}
 
 	public void enableCheckboxNonMembers(int count) {
+		// The logic for selecting the required number of employees has to be move.
 		for (int i = 0; i < count && i < checkboxNonMembers.size(); i++) {
 			checkboxNonMembers.get(i).click();
 		}
 	}
 
 	public void clickonAlignMiddleSelect() {
+		
+		webUtility.moveToElement(driver, clickonAlignMiddle);
 		clickonAlignMiddle.click();
 	}
 
@@ -165,7 +160,9 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 	}
 
 	public void clickonBtnSaveRosterGroup() {
-		webUtility.scrollAndClick(driver, btnSaveRosterGroup);
+		webUtility.moveToElement(driver, btnSaveRosterGroup);
+		btnSaveRosterGroup.click();
+//		webUtility.scrollAndClick(driver, btnSaveRosterGroup);
 	}
 
 	public void clickBtnEdit() {
@@ -303,18 +300,24 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 	}
 
 	public void createRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
-		Thread.sleep(2000);
+//		Thread.sleep(2000);
+		RosterGroupname = fakeEmployee.getRosterGroupName();
+		
 		clickBtnAddRosterGroup();
 		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
 		enterTxtRemarks(fakeEmployee.getDescription());
+		
+//		Thread.sleep(3000);
 		// Scroll down to make sure the checkbox is in view
 		webUtility.scrollDown(driver);
-
-		// performAvailableEmpListDataTable();
+//		Thread.sleep(5000);
 		enableCheckboxesMember(2);
+		
 		webUtility.scrollUp(driver);
 		clickonAlignMiddleSelect();
+		
+//		Thread.sleep(3000);
 		clickonAddSelectedItem();
 		// Scroll down before clicking on Save Roster Group
 		webUtility.scrollDown(driver);
@@ -323,13 +326,16 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 		clickNotificationPopup();
 	}
 
-	String timestamp = new SimpleDateFormat("HHmmss").format(new Date(0));
 
 	public void updateRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		
 		clickBtnEdit();
-		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName() + timestamp);
+		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName() + System.currentTimeMillis());
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
 		enterTxtRemarks(fakeEmployee.getDescription());
+		Thread.sleep(5000);
 		clickonBtnSaveRosterGroup();
 		checkRosterGroupUpdatedSuccessFullyMsg();
 		clickNotificationPopup();
@@ -349,7 +355,11 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
 
 	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember(FakeEmployee fakeEmployee) throws Exception {
 	
-		enterTxtSearch();
+		
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		
+//		enterTxtSearch();
 		clickBtnEdit();
 		// enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
 		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());

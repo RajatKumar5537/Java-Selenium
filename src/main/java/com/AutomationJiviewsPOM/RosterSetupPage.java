@@ -6,9 +6,12 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class RosterSetupPage extends BaseClass{
+public class RosterSetupPage {
 	
+	WebDriver driver ;
+	WebUtilities webUtility;
 //	RosterSetupPage rsp= new RosterSetupPage(driver);
 
 	@FindBy(xpath = "//div[text()='Roster Setup']/..")
@@ -29,6 +32,7 @@ public class RosterSetupPage extends BaseClass{
 	
 	public RosterSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
+		this.webUtility= new WebUtilities(driver);
 	}
 	
 	
@@ -43,6 +47,7 @@ public class RosterSetupPage extends BaseClass{
 	}
 	
 	public void setCreateRoasterShiftBand() throws InterruptedException {
+		Thread.sleep(2000);
 		RoasterSetup.click();
 		Thread.sleep(2000);
 		shiftBandDefination.click();
@@ -55,6 +60,7 @@ public class RosterSetupPage extends BaseClass{
 	}
 	
 	public void setPubicHoliday() throws InterruptedException {
+		Thread.sleep(2000);
 		RoasterSetup.click();
 		Thread.sleep(2000);
 		pubicHoliday.click();

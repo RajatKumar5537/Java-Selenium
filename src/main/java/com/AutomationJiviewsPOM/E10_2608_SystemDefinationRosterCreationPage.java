@@ -20,18 +20,18 @@ import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 
-import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 
 public class E10_2608_SystemDefinationRosterCreationPage{
-	WebDriver driver; 
+	public WebDriver driver; 
 
 	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
-	Actions action= new Actions(driver);
-	Select select;
+
+	public Actions action ;
+	public Select select;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
 	public E10_2608_SystemDefinationRosterCreationPage sdrs;
@@ -207,7 +207,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 	public E10_2608_SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver ;
-				
+				this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
 		this.webUtility= new WebUtilities(driver);
 	}

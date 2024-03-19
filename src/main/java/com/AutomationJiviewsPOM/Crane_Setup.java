@@ -161,6 +161,7 @@ public void createCrane() throws Exception
 	}
 public void editCrane() throws Exception
 {
+	Thread.sleep(3000);
 	Rc.explicitWait(search, "visible");
 	search.sendKeys(craneName);
 	Thread.sleep(3000);
@@ -173,6 +174,7 @@ public void editCrane() throws Exception
 	}
 public void deleteCrane() throws Exception
 {
+	Thread.sleep(3000);
 	Rc.explicitWait(search,"visible" );
 	search.clear();
 	search.clear();

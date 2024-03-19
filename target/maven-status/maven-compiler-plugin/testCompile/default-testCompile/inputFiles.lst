@@ -1,48 +1,25 @@
-<<<<<<< HEAD
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2910_WorkforceEmployeeRosterV2Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3539_OperationPlanningExecutionTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Location_Definitions_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2695_EmpAdmEmployeeProfileTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2749_RoleGroupTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Crane_Setup_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2608_RoasterSetupTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Type_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3082_SkillSetUpTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2606_ShiftBandTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3147_WorkloadPlannerTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2639_SCRTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3541_OPE_RTG_PlanningTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Setup_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2909_EmpAdmRosterGroupAssignmentTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\ReconciliationParameterGroupTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3216_ESSApplyLeaveTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Overtime_Definitions_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2638_PublicHolidayTest.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\T_And_A_Exception_Code_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Maritime_Setup_Test.java
-C:\JiViewsRPAv2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3089_RoleSetUpTest.java
-=======
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3082_SkillSetUpTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Maritime_Setup_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Location_Definitions_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Setup_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Type_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3147_WorkloadPlannerTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3089_RoleSetUpTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2638_PublicHolidayTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\JS_790_PrimeMoverPlanningTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Overtime_Definitions_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2749_RoleGroupTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2695_EmpAdmEmployeeProfileTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2639_SCRTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2909_EmpAdmRosterGroupAssignmentTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3539_OperationPlanningExecutionTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2606_ShiftBandTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3216_ESSApplyLeaveTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3541_OPE_RTG_PlanningTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Crane_Setup_Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2910_WorkforceEmployeeRosterV2Test.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\ReconciliationParameterGroupTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2608_RoasterSetupTest.java
-C:\Development\Automation\Jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\T_And_A_Exception_Code_Test.java
->>>>>>> 1e6bdeaac1fd03adef5386a9094bd2d9150de339
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3541_OPE_RTG_PlanningTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\JS_980_StackersPlanningTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2909_EmpAdmRosterGroupAssignmentTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\System_Defination_RolePageTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Overtime_Definitions_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3147_WorkloadPlannerTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2910_WorkforceEmployeeRosterV2Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Location_Definitions_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2695_EmpAdmEmployeeProfileTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\T_And_A_Exception_Code_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Berth_Setup_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3216_ESSApplyLeaveTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\JS_763_PMFinalBookingReportTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2608_RoasterSetupTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Setup_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Equipment_Type_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2606_ShiftBandTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_2639_SCRTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\SystemDefination_PublicHolidayPageTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\ReconciliationParameterGroupTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\JS_790_PrimeMoverPlanningTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\E10_3539_RTG_FinalBookingExecutionTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\SystemDefination_SkillPageTest.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\Crane_Setup_Test.java
+D:\New Framework\jiviewsrpav2\src\test\java\com\JiviewsAutomation\SystemDefination_Test\SystemDefination_RoleGroupPageTest.java

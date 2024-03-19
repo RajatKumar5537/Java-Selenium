@@ -14,7 +14,7 @@ public class JS_980_StackersPlanningTest extends BaseClass{
 
 	@Test(priority = 1)
 	public void JS_981_VerifySearch() throws Exception {
-		captureScreenshot(driver, "JS_980_StackersPlanningTest");
+		//captureScreenshot(driver, "JS_980_StackersPlanningTest");
 		logger.info("Starting test: JS_981_VerifySearch");
 
 		stackerPlanning = new JS_980_StackersPlanningPage(driver);
@@ -24,10 +24,11 @@ public class JS_980_StackersPlanningTest extends BaseClass{
 		logger.info("Test JS_981_VerifySearch is successful");
 	}
 	
-	
 	@Test(priority = 2)
-	public void JS_982_AddStackers() throws InterruptedException {
 	
+	public void JS_982_AddStackers() throws InterruptedException{
+		
+		
 		stackerPlanning.JS_982_AddStackers();
 	}
 }

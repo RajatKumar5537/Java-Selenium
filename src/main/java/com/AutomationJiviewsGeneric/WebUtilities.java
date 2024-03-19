@@ -42,7 +42,7 @@ public class WebUtilities extends BaseClass{
 	}
     public void scrollUp(WebDriver driver) {
 		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, 0)"); // Adjust the scroll distance as needed
+		js.executeScript("window.scrollBy(0, -150)"); //  scroll to little  top  of the page 
 	}
 	public void maximizeBrowser(WebDriver driver) {
 
@@ -54,11 +54,12 @@ public class WebUtilities extends BaseClass{
 	}
 
 	public void ElementClickable(WebDriver driver,WebElement element) {
-		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(80));		
+		WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(1000));		
 		 wait.until(ExpectedConditions.elementToBeClickable(element));
 	}
+	
 	public void visibilityOfElement(WebDriver driver,WebElement element) throws Exception {
-		Duration waitTime = Duration.ofSeconds(10);
+		Duration waitTime = Duration.ofSeconds(20);
 		
 		int a=0;
 		while(a<100)

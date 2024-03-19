@@ -87,7 +87,7 @@ public class E10_3539_RTG_FinalBookingPage {
 	private WebElement selectShiftBand;
 	@FindBy(id = "select2-cmbAllocationRule-container")
 	private WebElement cmbAllocationRule;
-	@FindBy(xpath = "//ul[@class='select2-results__options']/li")
+	@FindBy(xpath = "//ul[@class='select2-results__options']/li[text()='RTG Deployment - RTG Deployment']")
 	private WebElement selectAllocationRule;
 	@FindBy(xpath="//button[@class='btn btn-secondary btn-round icon-btn']")
 	private WebElement btnCancel;
