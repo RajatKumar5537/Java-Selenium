@@ -6,6 +6,8 @@ import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
+
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
@@ -16,6 +18,7 @@ public class ReconciliationParameterGroupPage {
 	public Faker fakeData;
 	public String name;
 	WebDriver driver;
+	ReusableComponent Rc;
 	WebUtilities  webUtility= new WebUtilities(driver);
 	
 	
@@ -139,10 +142,6 @@ private WebElement editSelectAvilableRool;
 private WebElement moveSelectedButton;
 
 
-
-//==============================================================================
-
-
 @FindBy(xpath="(//button[@class='btn btn-secondary btn-round icon-btn'])[1]")
 private WebElement cancelButton;
 
@@ -183,11 +182,9 @@ private WebElement validateSuccessfullyDeletedMessage;
 
 @FindBy(xpath="//span[@class='custom-control-label']")
 private WebElement isActiveCheckBox;
-//=============================================================================================
 
 
 //pdf and excel
-
 @FindBy(xpath="//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
 private WebElement excel;
 
@@ -195,9 +192,6 @@ private WebElement excel;
 private WebElement pdf;
 
 
-
-
-//=============================================================================================
 
 // Available Crane table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
@@ -207,7 +201,7 @@ private WebElement pdf;
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
 	private WebElement selectMoveSingle; 
 
-	//		select for move multiple RTG from available RTG table to Selected RTG table 
+	//select for move multiple RTG from available RTG table to Selected RTG table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
 	private WebElement selectMoveAll;
 
@@ -220,7 +214,7 @@ private WebElement pdf;
 public ReconciliationParameterGroupPage(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 	this.driver = driver;
-	
+	this.Rc= new ReusableComponent(driver);
 	this.action= new Actions(driver);
 	this.webUtility= new WebUtilities(driver);
 }
@@ -275,7 +269,8 @@ public void createAction() throws Exception
 	clickOnRecognitionBoundary_LateOut.clear();
 	clickOnRecognitionBoundary_LateOut.sendKeys("22:00");
 	
-	   //=============================
+
+
 	webUtility.moveToElement(driver,clickOnReconciliationGranularity_EarlyIn );
 	clickOnReconciliationGranularity_EarlyIn.clear();
 	clickOnReconciliationGranularity_EarlyIn.sendKeys("07:00");
@@ -289,7 +284,7 @@ public void createAction() throws Exception
 	
 	clickOnReconciliationGranularity_LateOut.clear();
 	clickOnReconciliationGranularity_LateOut.sendKeys("21:00");
-	   //============================
+	  
 	
 	webUtility.moveToElement(driver,clickOnReconcileToPlanned_EarlyIn );
 	clickOnReconcileToPlanned_EarlyIn.clear();
@@ -320,13 +315,14 @@ public void createAction() throws Exception
 	saveButton.click();
 	closeNotificationPopup();
 	}
+
 public void editAction() throws Exception
 {
-	Thread.sleep(3000);
-	search.sendKeys(name);
+	Rc.explicitWait(search,"visible");
+    search.sendKeys(name);
 	clickOnEdit.click();
-	//name=name+"JIVI";
-	Thread.sleep(3000);
+	name=name+"JIVI";
+	Rc.explicitWait(editSelectAvilableRool,"clickble");
 	editSelectAvilableRool.click();
 	moveSelectedButton.click();
 	
@@ -334,10 +330,10 @@ public void editAction() throws Exception
     saveButton.click();
 	closeNotificationPopup();
 	}
+
 public void deleteAction() throws Exception
 {
-	
-	Thread.sleep(3000);
+	Rc.explicitWait(search, "visible");
 	search.clear();
 	search.sendKeys(name);
 	clickOnCheckBox.click();
@@ -348,11 +344,11 @@ public void deleteAction() throws Exception
 	}
 public void reActivate() throws InterruptedException
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(search,"visible");
 	search.clear();
 	search.sendKeys(name);
 	clickOnEdit.click();
-	Thread.sleep(3000);
+	Rc.explicitWait(isActiveCheckBox,"clickble");
 	isActiveCheckBox.click();
 	saveButton.click();
 	}

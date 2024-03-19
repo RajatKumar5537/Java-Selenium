@@ -62,9 +62,9 @@ public class BaseClass {
 		// Launch ChromeDriver with the configured ChromeOptions
 		driver= new ChromeDriver();
 		
-
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		webUtility.maximizeBrowser(driver);
-		webUtility.pageLoadWait(driver, 10);
+		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 		logger.info("Browser launched successfully");
 
 		 /* WebDriverManager.firefoxdriver().setup();

@@ -7,6 +7,7 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
@@ -16,6 +17,7 @@ public class Equipment_Type {
 	public Faker fakeData;
 	public String equipmentName;
 	WebDriver driver;
+	ReusableComponent Rc;
 	WebUtilities  webUtility= new WebUtilities(driver);
 	
 	
@@ -105,17 +107,16 @@ private WebElement validateSuccessfullyDeletedMessage;
 
 @FindBy(xpath="//span[@class='custom-control-label']")
 private WebElement isActiveCheckBox;
-//=============================================================================================
 
 // Available Crane table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
 	private WebElement availableCrane;
 
-	// select for single Arrow -> move RTG from available RTG table to Selected RTG table 
+	//select for single Arrow -> move RTG from available RTG table to Selected RTG table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
 	private WebElement selectMoveSingle; 
 
-	//		select for move multiple RTG from available RTG table to Selected RTG table 
+	//select for move multiple RTG from available RTG table to Selected RTG table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
 	private WebElement selectMoveAll;
 
@@ -128,7 +129,7 @@ private WebElement isActiveCheckBox;
 public Equipment_Type(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 	this.driver = driver;
-	
+	this.Rc= new ReusableComponent(driver);
 	this.action= new Actions(driver);
 	this.webUtility= new WebUtilities(driver);
 }
@@ -153,11 +154,11 @@ public void clickOnEquipment(){
 }
 public void createEquipment() throws Exception
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(addButton,"clickable" );
 	addButton.click();
 	fakeData=new Faker();
 	equipmentName=fakeData.name().fullName();
-	Thread.sleep(2000);
+	Rc.explicitWait(enterEquipmentType, "visible");
 	enterEquipmentType.sendKeys(equipmentName);
 	enterEquipmentDescription.sendKeys("this is For Testing");
 
@@ -169,14 +170,13 @@ public void createEquipment() throws Exception
 	saveSkill.click();
 	editSkillButton.isDisplayed();
 	deleteSkillButton.isDisplayed();
-	
 	cancel.isDisplayed();
 	saveEquipmentDetails.click();
 	closeNotificationPopup();
 	}
 public void editEquipment() throws Exception
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(search,"visible");
 	search.sendKeys(equipmentName);
 	clickOnEdit.click();
     enterEquipmentType.clear();
@@ -187,7 +187,7 @@ public void editEquipment() throws Exception
 	}
 public void deleteEquipment() throws Exception
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(search,"visible");
 	search.clear();
 	search.sendKeys(equipmentName);
 	clickOnCheckBox.click();
@@ -198,7 +198,7 @@ public void deleteEquipment() throws Exception
 	}
 public void reActivate() throws InterruptedException
 {
-	Thread.sleep(3000);
+Rc.explicitWait(search, "visible");
 	search.clear();
 	search.sendKeys(equipmentName);
 	clickOnEdit.click();

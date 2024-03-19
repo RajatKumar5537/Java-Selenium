@@ -2,9 +2,7 @@ package com.AutomationJiviewsPOM;
 
 
 import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
-
 import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
@@ -13,18 +11,18 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 
 public class E10_3082_SystemDefinationSkillSetupPage  {
 	WebDriver driver;
-	//	String timeStamp = LocalDateTime.now().toString();
+	public ReusableComponent Rc;
 	public ExcelUtilities excelUtility;
 	public WebUtilities webUtility;
+	String skillCodeData;
 
 
 	@FindBy(xpath = "//button[@class='btn btn-secondary buttons-excel buttons-html5 btn-sm mr-1']")
@@ -83,8 +81,9 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 
 	public E10_3082_SystemDefinationSkillSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
-		this.driver = driver; 
-		this.webUtility= new WebUtilities(driver); 
+		this.driver = driver;
+		this.Rc=new ReusableComponent(driver);
+		this.webUtility= new WebUtilities(driver);
 		this.excelUtility= new ExcelUtilities();
 	}
 
@@ -115,6 +114,7 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 	}
 
 	public void clickIsActiveOption() {
+		webUtility.ElementClickable(driver, isActiveOption);
 		isActiveOption.click();
 	}
 
@@ -136,7 +136,7 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 		for (int i = 0; i < 3; i++) {
 			try {
 				scrollAndClick(driver, btnDeleteSkill);
-				break; 
+				break;
 			} catch (ElementClickInterceptedException e) {
 			}
 		}
@@ -197,13 +197,13 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 	}
 
 	public void createNewSkill(FakeEmployee fakeEmployee) throws Exception {
-		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
-		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 8);
 		String sequenceData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 9);
 		String wageLevelCodedata = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 11);
 
+		skillCodeData= fakeEmployee.getSkillCode();
+
 		clickAddBtn();
-		enterSkillCode(fakeEmployee.getSkillCode());
+		enterSkillCode(skillCodeData);
 		enterSkillDescription(fakeEmployee.getSkillCodeDesc());
 		enterSequence(sequenceData);
 		enterWageLevelCode(wageLevelCodedata);
@@ -219,35 +219,41 @@ public class E10_3082_SystemDefinationSkillSetupPage  {
 	public void updateSkill(FakeEmployee fakeEmployee) throws Exception {
 		//		String skillCodeData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 7);
 		//		String skillDescriptionData = excelUtility.readDataFromExcelFile("EmployeeTest", 4, 8);
-		String timeStamp = LocalDateTime.now().toString();
+		Rc.explicitWait(searchColumns, "visibility");
+		searchColumns.clear();
+		searchColumns.sendKeys(skillCodeData);
+
 		clickEditBtn();
-		enterSkillCode(fakeEmployee.getSkillCode() + " "+ timeStamp);
+
+		enterSkillCode(skillCodeData +" "+ System.currentTimeMillis());
 		enterSkillDescription(fakeEmployee.getSkillCodeDesc());
 		clickSaveBtn();
 		closeNotificationPopup();
 	}
 
 	public void deactivateSkill() throws Exception {
-		//		checkCheckBox();
-		//		clickDeleteBtn();
-		Thread.sleep(2000);
+		Rc.explicitWait(searchColumns, "visibility");
+		searchColumns.clear();
+		searchColumns.sendKeys(skillCodeData);
+
 		deleteRowsWithEnabledCheckbox();
 		clickYes();
 		closeNotificationPopup();
 	}
 
 	public void activateDeactivateSkill() throws Exception {
-		Thread.sleep(5000);
+		
+
+		Rc.explicitWait(searchColumns, "visibility");
+		searchColumns.clear();
+		searchColumns.sendKeys(skillCodeData);
 		clickEditBtn();
-		Thread.sleep(1000);
 		clickIsActiveOption();
 		clickSaveBtn();
 		closeNotificationPopup();
 	}
 
 	public void setSearchColumns() throws Exception {
-		String searchColumnsData = excelUtility.readDataFromExcelFile("EmployeeTest", 3, 7);
-
-		enterSearchColumns(searchColumnsData);
+		enterSearchColumns(skillCodeData);
 	}
 }

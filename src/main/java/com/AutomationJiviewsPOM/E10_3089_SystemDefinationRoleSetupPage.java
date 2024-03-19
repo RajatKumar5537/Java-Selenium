@@ -19,12 +19,14 @@ import org.testng.Assert;
 
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 
 public class E10_3089_SystemDefinationRoleSetupPage {
 	
 	
 	WebDriver driver ;
+	ReusableComponent Rc;
 	public Actions action;
 	public Select select;
 	public ExcelUtilities excelUtility;
@@ -141,6 +143,7 @@ public class E10_3089_SystemDefinationRoleSetupPage {
 	public E10_3089_SystemDefinationRoleSetupPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver= driver ;
+		this.Rc=new ReusableComponent(driver);
 		this.excelUtility= new ExcelUtilities();
 		this.webUtility= new WebUtilities(driver);
 		this.action=new Actions(driver);

@@ -1,5 +1,7 @@
 package com.AutomationJiviewsPOM;
 
+import java.util.List;
+
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -8,15 +10,36 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.Select;
 
 import com.AutomationJiviewsGeneric.BaseClass;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.github.javafaker.Faker;
 
 public class Location_Definitions extends BaseClass{
-	public Select select;
-	public Actions action;
-	public Faker fakeData;
+	
 	public String locationName;
+	WebDriver driver;
+	public ReusableComponent Rc;
 	
 	
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement clickOu;
+	
+ 
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+ 
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+ 
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // System Definitions
+ 
+	@FindBy(xpath = "(//ul[@id='ulApplicationMenu']/li)[5]")
+	WebElement ulApplicationMenu; // Maritime Setup	
+ 
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[5]/li")
+	List<WebElement> sideNavMenu; // Berth Setup
+	
+	//========================================================
 	//generic locators which we have to use
 	@FindBy(xpath="//input[@id='txtLocationName']")
 	private WebElement locationNames;
@@ -59,7 +82,7 @@ private WebElement validateSuccessfullyCreatedMessage;
 
 //this is for edit Location
 
-@FindBy(xpath="//input[@type='search']")
+@FindBy(xpath="//input[@class='form-control form-control-sm']")
 private WebElement search;
 
 @FindBy(xpath="(//table/tbody/tr/td/button)[1]")
@@ -109,84 +132,74 @@ private WebElement isActiveCheckBox;
 public Location_Definitions(WebDriver driver) {
 	PageFactory.initElements(driver, this);
 	this.driver= driver;
-	this.action= new Actions(driver);
+	this.Rc=new ReusableComponent(driver);
 }
 
-public void selectAvailableShiftBand() {
-	action.scrollToElement(availableCrane).perform();
-	select = new Select(availableCrane);
-	select.selectByIndex(0);
-}
 
-public void moveSingleAvailableSkillToSelected() {
-	action.moveToElement(selectMoveSingle).perform();
-	selectMoveSingle.click();
-}
-public void closeNotificationPopup() throws Exception {
-	webUtility.visibilityOfElement(driver, notificationPopup);
-	notificationPopup.click();
-}
-
-public void systemSetup() throws InterruptedException{
-	systemSetup.click();
-}
-//public void enterBerthDescription(){
-//	enterBerthDescription.click();
-//}
-public void maritimeSetup() throws InterruptedException{
-	webUtility.ElementClickable(driver, maritimeSetup);
-	maritimeSetup.click();
-}
-public void locationDefinitions(){
-	
-	locationDefinitions.click();
-}
 public void createLocation() throws Exception
 {
-	Thread.sleep(3000);
+	
+
+	Rc.explicitWait(clickOu, "clickable");
+	Rc.handleMultipleElements(clickOu, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+	Rc.explicitWait(dvApplicationMenuItems, "clickable");
+	Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+	Rc.explicitWait(ulApplicationMenu, "clickable");
+	Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Location Definitions", "Location Definitions  is not clicked");
+	
+	Rc.explicitWait(addButton, "clickable");
 	addButton.click();
-	fakeData=new Faker();
-	locationName=fakeData.name().fullName();
-	Thread.sleep(2000);
+	
+	locationName=Rc.name;
+	Rc.explicitWait(locationNames, "visible");
 	locationNames.sendKeys(locationName);
+	Rc.explicitWait(locationType, "clickable");
 	locationType.click();
 	selectLocationType.click();
 	locationDescription.sendKeys("this is For Testing");
 
-	
 	cancel.isDisplayed();
 	saveLocationDetails.click();
-	closeNotificationPopup();
+	notificationPopup.click();
 	}
 public void editLocation() throws Exception
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(search, "visible");
 	search.sendKeys(locationName);
+	Thread.sleep(3000);
 	clickOnEdit.click();
     locationNames.clear();
     locationName=locationName+"JIVI";
     locationNames.sendKeys(locationName);
     saveLocationDetails.click();
-	closeNotificationPopup();
+    notificationPopup.click();
 	}
 public void deleteLocation() throws Exception
 {
-	Thread.sleep(3000);
+	Rc.explicitWait(search,"visible" );
 	search.clear();
+	search.clear();
+	Rc.explicitWait(search,"visible" );
 	search.sendKeys(locationName);
+	Thread.sleep(3000);
 	clickOnCheckBox.click();
+	Rc.explicitWait(deleteLocationButton, "clickable");
 	deleteLocationButton.click();
 	validateNoButton.isDisplayed();
 	clickOnYesButton.click();
-	closeNotificationPopup();
+	notificationPopup.click();
 	}
 public void reActivate() throws InterruptedException
 {
 	Thread.sleep(3000);
+	Rc.explicitWait(search,"visible" );
 	search.clear();
+	search.clear();
+	Rc.explicitWait(search,"visible" );
 	search.sendKeys(locationName);
-	clickOnEdit.click();
 	Thread.sleep(3000);
+	clickOnEdit.click();
+	Rc.explicitWait(isActiveCheckBox,"clickable" );
 	isActiveCheckBox.click();
 	saveLocationDetails.click();
 	}

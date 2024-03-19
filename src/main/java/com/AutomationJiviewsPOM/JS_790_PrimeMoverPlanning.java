@@ -170,7 +170,7 @@ public class JS_790_PrimeMoverPlanning {
 			
 			Thread.sleep(3000);
 			txtPrimeMoverRequirement1.clear();
-			txtPrimeMoverRequirement1.click();
+			txtPrimeMoverRequirement1.sendKeys("1");
 			
 			Thread.sleep(3000);
 			selectAvailableShiftBand();

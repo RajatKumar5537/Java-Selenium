@@ -18,11 +18,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.github.javafaker.Faker;
 
 public class E10_2638_SystemDefinationPublicHolidayPage {
 	WebDriver driver ;
+	ReusableComponent Rc;
 	
 	public String timeStamp = LocalDateTime.now().toString();
 	public WebUtilities webUtility;
@@ -83,6 +85,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage {
 	public E10_2638_SystemDefinationPublicHolidayPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver=driver ;
+		this.Rc=new ReusableComponent(driver);
 		this.webUtility= new WebUtilities(driver);
 		this.action= new Actions(driver);
 	}
@@ -93,6 +96,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage {
 	}
 
 	public void setTxtHolidayName(String holidayName) {
+		Rc.explicitWait(txtHolidayName,"clickable" );
 		txtHolidayName.clear();
 		txtHolidayName.sendKeys(holidayName);
 		System.out.println(holidayName);
@@ -104,7 +108,7 @@ public class E10_2638_SystemDefinationPublicHolidayPage {
 	}
 
 	public void setChkIsPaid() throws InterruptedException {
-		Thread.sleep(500);
+		Rc.explicitWait(chkIsPaid, "clickable");
 		chkIsPaid.click();
 	}
 
@@ -207,9 +211,11 @@ public class E10_2638_SystemDefinationPublicHolidayPage {
 	String timestamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("ddMMyyyy"));
 
 	public void setCreatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
-		Thread.sleep(2000);
-		setBtnAddNew();
-		Thread.sleep(2000);
+		
+		Rc.explicitWait(btnAddNew,"clickable" );
+		btnAddNew.click();
+//		setBtnAddNew();
+		//Thread.sleep(2000);
 //		setTxtHolidayName(fakeEmployee.getHolidayName());
 //		Faker fakeData = new Faker();
 		
@@ -225,9 +231,9 @@ public class E10_2638_SystemDefinationPublicHolidayPage {
 
 	public void setUpdatePublicHoliday(FakeEmployee fakeEmployee) throws Exception {
 
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		setBtnEdit();
-		Thread.sleep(2000);
+		//Thread.sleep(2000);
 		setTxtHolidayName(fakeEmployee.getHolidayName()+ "--" + timestamp);
 //		setTxtHolidayDate(fakeEmployee.getHolidayDate());
 		setChkIsPaid();

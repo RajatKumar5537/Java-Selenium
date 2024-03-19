@@ -107,11 +107,11 @@ public class ReusableComponent {
 			wait.until(ExpectedConditions.elementToBeClickable(locator));
 			break;
 
-		case "visibility":
+		case "visible":
 			wait.until(ExpectedConditions.visibilityOf(locator));
 			break;
 
-		case "invisibility":
+		case "invisible":
 			wait.until(ExpectedConditions.invisibilityOf(locator));
 			break;
 		}
@@ -123,13 +123,13 @@ public class ReusableComponent {
 		select.selectByValue(value);
 	}
 
-	public static void selectByIndex(WebElement element, int index) {
+	public void selectByIndex(WebElement element, int index) {
 		Select select = new Select(element);
 		select.selectByIndex(index);
 	}
 	
 	//************Action Class Methods************
-	public static void moveToElement(WebElement element) {
+	public void moveToElement(WebElement element) {
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
 	}

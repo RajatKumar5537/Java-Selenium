@@ -24,17 +24,10 @@ public class JS_980_StackersPlanningTest extends BaseClass{
 		logger.info("Test JS_981_VerifySearch is successful");
 	}
 	
-<<<<<<< HEAD
 	
 	@Test(priority = 2)
 	public void JS_982_AddStackers() throws InterruptedException {
-=======
-	@Test(priority = 2)
 	
-	public void JS_982_AddStackers(){
-		
->>>>>>> 3b832536dba7a98e260f532249f5242e31160e19
-		
 		stackerPlanning.JS_982_AddStackers();
 	}
 }

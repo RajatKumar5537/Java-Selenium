@@ -1,0 +1,2893 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Test Report - Suite: Total Test Script, Test: Equipment_Setup_Test</title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Automation Test Report - Build Release-: V 4.24.0.160</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Feb 28, 2024 05:47:46 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('author-view')">
+<a id="nav-author" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-user"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Feb 28, 2024 05:47:46 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Feb 28, 2024 05:53:27 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>19</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>8</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='70%'>
+<b>19</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='29%'><b>8</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='21%'><b>19</b> events passed</small></div>
+<div>
+<small data-tooltip='17%'><b>16</b> events failed,
+<b data-tooltip='%'>54</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"setup":13.715,"verifyCreateBerth":6.76,"verifyEditBerth":4.846,"verifyDeleteBerth":3.715,"verifyReActivate":6.505,"setup":12.895,"verifyCreateLocation":11.292,"verifyEditLocation":4.982,"verifyDeleteLocation":4.245,"verifyReActivate":6.598,"setup":15.279,"verifyCreateLocation":6.237,"verifyEditLocation":4.296,"verifyDeleteLocation":4.188,"verifyReActivate":6.533,"setup":93.04,"verifyCreateLocation":0.168,"verifyEditLocation":0.221,"verifyDeleteLocation":0.162,"verifyReActivate":0.15,"setup":11.666,"verifyCreate":16.361,"verifyEdit":13.742,"verifyDelete":13.741,"verifyReActivate":13.666,"setup":14.936,"verifyValidations":3.086
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 author-container">
+<div class="card">
+<div class="card-header"><p>Author</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>Rajath</td>
+<td>19</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>70.37%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>T_And_A_Exception_Code_Test</td>
+<td>2</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Crane_Setup_Test</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Maritime_Setup_Test</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Equipment_Setup_Test</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>TotalTestScript</td>
+<td>19</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>70.37%</td>
+</tr>
+<tr>
+<td>Location_Definitions_Test</td>
+<td>0</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
+</tr>
+<tr>
+<td>ReconciliationParameterGroupTest</td>
+<td>2</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>40%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 device-container">
+<div class="card">
+<div class="card-header"><p>Device</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>WebApplication</td>
+<td>19</td>
+<td>8</td>
+<td>0</td>
+<td>0</td>
+<td>70.37%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>17.0.5</td>
+</tr>
+<tr>
+<td>Base Url</td>
+<td>https://www.jiviews.com/DEMO</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 19,
+failParent: 8,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 19,
+failEvents: 16,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 54
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<a class="dropdown-item" status="fail" href="#"><span>Fail</span><span class="status danger"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Rajath</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">T_And_A_Exception_Code_Test</a><a class="dropdown-item" href="#">Crane_Setup_Test</a><a class="dropdown-item" href="#">Maritime_Setup_Test</a><a class="dropdown-item" href="#">Equipment_Setup_Test</a><a class="dropdown-item" href="#">TotalTestScript</a><a class="dropdown-item" href="#">Location_Definitions_Test</a><a class="dropdown-item" href="#">ReconciliationParameterGroupTest</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tablet"></i></a>
+<ul id="device-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">WebApplication</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author="Rajath"
+          tag="Maritime_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:47:54 pm</span> / <span>00:00:13:715</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:47:54 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:08 pm</span>
+<span class='badge badge-default'>00:00:13:715</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Maritime_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:54 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:47:55 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:08 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author="Rajath"
+          tag="Maritime_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateBerth</p>
+            <p class="text-sm">
+              <span>5:48:08 pm</span> / <span>00:00:06:760</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreateBerth</h5>
+<span class='badge badge-success'>02.28.2024 5:48:08 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:15 pm</span>
+<span class='badge badge-default'>00:00:06:760</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Maritime_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:08 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:08 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyCreateBerth</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:15 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author="Rajath"
+          tag="Maritime_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditBerth</p>
+            <p class="text-sm">
+              <span>5:48:15 pm</span> / <span>00:00:04:846</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEditBerth</h5>
+<span class='badge badge-success'>02.28.2024 5:48:15 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:20 pm</span>
+<span class='badge badge-default'>00:00:04:846</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Maritime_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:15 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:15 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyEditBerth</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:20 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author="Rajath"
+          tag="Maritime_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteBerth</p>
+            <p class="text-sm">
+              <span>5:48:20 pm</span> / <span>00:00:03:715</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeleteBerth</h5>
+<span class='badge badge-success'>02.28.2024 5:48:20 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:24 pm</span>
+<span class='badge badge-default'>00:00:03:715</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Maritime_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:20 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:20 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyDeleteBerth</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:24 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author="Rajath"
+          tag="Maritime_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>5:48:24 pm</span> / <span>00:00:06:505</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyReActivate</h5>
+<span class='badge badge-success'>02.28.2024 5:48:24 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:30 pm</span>
+<span class='badge badge-default'>00:00:06:505</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Maritime_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:24 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:24 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyReActivate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:30 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:48:38 pm</span> / <span>00:00:12:895</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:48:38 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:48:51 pm</span>
+<span class='badge badge-default'>00:00:12:895</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:38 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:38 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:48:51 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateLocation</p>
+            <p class="text-sm">
+              <span>5:48:51 pm</span> / <span>00:00:11:292</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreateLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:48:51 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:03 pm</span>
+<span class='badge badge-default'>00:00:11:292</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:51 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:48:51 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyCreateLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:03 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditLocation</p>
+            <p class="text-sm">
+              <span>5:49:03 pm</span> / <span>00:00:04:982</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEditLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:49:03 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:08 pm</span>
+<span class='badge badge-default'>00:00:04:982</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:03 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:03 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyEditLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:08 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteLocation</p>
+            <p class="text-sm">
+              <span>5:49:08 pm</span> / <span>00:00:04:245</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeleteLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:49:08 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:12 pm</span>
+<span class='badge badge-default'>00:00:04:245</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:08 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:08 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyDeleteLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:12 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>5:49:12 pm</span> / <span>00:00:06:598</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyReActivate</h5>
+<span class='badge badge-success'>02.28.2024 5:49:12 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:18 pm</span>
+<span class='badge badge-default'>00:00:06:598</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:12 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:12 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyReActivate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:18 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author="Rajath"
+          tag="Equipment_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:49:26 pm</span> / <span>00:00:15:279</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:49:26 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:41 pm</span>
+<span class='badge badge-default'>00:00:15:279</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Equipment_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:26 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:26 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:41 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author="Rajath"
+          tag="Equipment_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateLocation</p>
+            <p class="text-sm">
+              <span>5:49:41 pm</span> / <span>00:00:06:237</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreateLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:49:41 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:47 pm</span>
+<span class='badge badge-default'>00:00:06:237</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Equipment_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:41 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:41 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyCreateLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:47 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author="Rajath"
+          tag="Equipment_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditLocation</p>
+            <p class="text-sm">
+              <span>5:49:47 pm</span> / <span>00:00:04:296</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEditLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:49:47 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:51 pm</span>
+<span class='badge badge-default'>00:00:04:296</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Equipment_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:47 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:47 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyEditLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:51 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author="Rajath"
+          tag="Equipment_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteLocation</p>
+            <p class="text-sm">
+              <span>5:49:51 pm</span> / <span>00:00:04:188</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeleteLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:49:51 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:49:56 pm</span>
+<span class='badge badge-default'>00:00:04:188</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Equipment_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:51 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:51 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyDeleteLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:49:56 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author="Rajath"
+          tag="Equipment_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>5:49:56 pm</span> / <span>00:00:06:533</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyReActivate</h5>
+<span class='badge badge-success'>02.28.2024 5:49:56 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:50:02 pm</span>
+<span class='badge badge-default'>00:00:06:533</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Equipment_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:56 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:49:56 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyReActivate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:50:02 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="16"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:50:10 pm</span> / <span>00:01:33:040</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:50:10 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-default'>00:01:33:040</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:50:10 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:50:10 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Test Failed at Line 68 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\setup_20240228_175142.png' src="C:\JiViewsRPAv2\ScreenShot\setup_20240228_175142.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>Expected condition failed: waiting for element to be clickable: [[ChromeDriver: chrome on windows (f616012451174de503f51dbea0582c16)] -> xpath: //span[text()='System Definitions']/..] (tried for 80 second(s) with 500 milliseconds interval)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53093}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53093/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: f616012451174de503f51dbea0582c16</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="17"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateLocation</p>
+            <p class="text-sm">
+              <span>5:51:43 pm</span> / <span>00:00:00:168</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyCreateLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-default'>00:00:00:168</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyCreateLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Test Failed at Line 34 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyCreateLocation_20240228_175143.png' src="C:\JiViewsRPAv2\ScreenShot\verifyCreateLocation_20240228_175143.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.createLocation()" because "this.location" is null</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="18"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditLocation</p>
+            <p class="text-sm">
+              <span>5:51:43 pm</span> / <span>00:00:00:221</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyEditLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-default'>00:00:00:221</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyEditLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Test Failed at Line 39 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyEditLocation_20240228_175143.png' src="C:\JiViewsRPAv2\ScreenShot\verifyEditLocation_20240228_175143.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.editLocation()" because "this.location" is null</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="19"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteLocation</p>
+            <p class="text-sm">
+              <span>5:51:43 pm</span> / <span>00:00:00:162</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyDeleteLocation</h5>
+<span class='badge badge-success'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-default'>00:00:00:162</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyDeleteLocation</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Test Failed at Line 44 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyDeleteLocation_20240228_175143.png' src="C:\JiViewsRPAv2\ScreenShot\verifyDeleteLocation_20240228_175143.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.deleteLocation()" because "this.location" is null</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="20"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>5:51:43 pm</span> / <span>00:00:00:150</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyReActivate</h5>
+<span class='badge badge-success'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:51:43 pm</span>
+<span class='badge badge-default'>00:00:00:150</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyReActivate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          Test Failed at Line 49 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyReActivate_20240228_175143.png' src="C:\JiViewsRPAv2\ScreenShot\verifyReActivate_20240228_175143.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:51:43 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>Cannot invoke "com.AutomationJiviewsPOM.Location_Definitions.reActivate()" because "this.location" is null</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author="Rajath"
+          tag="ReconciliationParameterGroupTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:51:50 pm</span> / <span>00:00:11:666</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:51:50 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:52:02 pm</span>
+<span class='badge badge-default'>00:00:11:666</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">ReconciliationParameterGroupTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:50 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:51:50 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:02 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author="Rajath"
+          tag="ReconciliationParameterGroupTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreate</p>
+            <p class="text-sm">
+              <span>5:52:02 pm</span> / <span>00:00:16:361</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreate</h5>
+<span class='badge badge-success'>02.28.2024 5:52:02 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:52:18 pm</span>
+<span class='badge badge-default'>00:00:16:361</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">ReconciliationParameterGroupTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:02 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:02 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyCreate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:52:18 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="23"
+          author="Rajath"
+          tag="ReconciliationParameterGroupTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEdit</p>
+            <p class="text-sm">
+              <span>5:52:18 pm</span> / <span>00:00:13:742</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyEdit</h5>
+<span class='badge badge-success'>02.28.2024 5:52:18 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:52:32 pm</span>
+<span class='badge badge-default'>00:00:13:742</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">ReconciliationParameterGroupTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:18 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:18 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyEdit</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:52:32 pm</td>
+        <td>
+          Test Failed at Line 324 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyEdit_20240228_175232.png' src="C:\JiViewsRPAv2\ScreenShot\verifyEdit_20240228_175232.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:52:32 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>element not interactable
+  (Session info: chrome=122.0.6261.69)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3cb5a4f408862709f9af130166ea5dea, sendKeysToElement {id=f.2618CA587D4EE81A01403FF871EA671A.d.61510721D4D3ECAC1DD88604E5776C75.e.273, value=[Ljava.lang.CharSequence;@4057fa5f}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3cb5a4f408862709f9af130166ea5dea)] -> xpath: //input[@id='txtRPGName']]
+Session ID: 3cb5a4f408862709f9af130166ea5dea</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="24"
+          author="Rajath"
+          tag="ReconciliationParameterGroupTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDelete</p>
+            <p class="text-sm">
+              <span>5:52:32 pm</span> / <span>00:00:13:741</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyDelete</h5>
+<span class='badge badge-success'>02.28.2024 5:52:32 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:52:46 pm</span>
+<span class='badge badge-default'>00:00:13:741</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">ReconciliationParameterGroupTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:32 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:32 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyDelete</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:52:46 pm</td>
+        <td>
+          Test Failed at Line 333 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyDelete_20240228_175246.png' src="C:\JiViewsRPAv2\ScreenShot\verifyDelete_20240228_175246.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:52:46 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>no such element: Unable to locate element: {"method":"xpath","selector":"//table/tbody/tr/td/input[@type='checkbox'][1]"}
+  (Session info: chrome=122.0.6261.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=//table/tbody/tr/td/input[@type='checkbox'][1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3cb5a4f408862709f9af130166ea5dea</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="fail" test-id="25"
+          author="Rajath"
+          tag="ReconciliationParameterGroupTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>5:52:46 pm</span> / <span>00:00:13:666</span>
+              <span class="badge fail-bg log float-right">Fail</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-fail">verifyReActivate</h5>
+<span class='badge badge-success'>02.28.2024 5:52:46 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:53:00 pm</span>
+<span class='badge badge-default'>00:00:13:666</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">ReconciliationParameterGroupTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:46 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:52:46 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyReActivate</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:53:00 pm</td>
+        <td>
+          Test Failed at Line 344 - Check screenshot and error message below:
+    <div class="row mb-3"><div class="col-md-3">
+<img data-featherlight='C:\JiViewsRPAv2\ScreenShot\verifyReActivate_20240228_175259.png' src="C:\JiViewsRPAv2\ScreenShot\verifyReActivate_20240228_175259.png">
+    
+    </div></div>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log fail-bg">Fail</span></td>
+        <td>5:53:00 pm</td>
+        <td>
+          <div class='row'>
+ <div class='col-md-12'>
+  <textarea readonly class='code-block'>no such element: Unable to locate element: {"method":"xpath","selector":"(//table/tbody/tr/td/button)[1]"}
+  (Session info: chrome=122.0.6261.69)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.5'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3cb5a4f408862709f9af130166ea5dea, findElement {using=xpath, value=(//table/tbody/tr/td/button)[1]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 122.0.6261.69, chrome: {chromedriverVersion: 122.0.6261.94 (880dbf29479c..., userDataDir: C:\Users\jivis\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:53155}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:53155/devtoo..., se:cdpVersion: 122.0.6261.69, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3cb5a4f408862709f9af130166ea5dea</textarea>
+ </div>
+</div>
+
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author="Rajath"
+          tag="T_And_A_Exception_Code_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">setup</p>
+            <p class="text-sm">
+              <span>5:53:09 pm</span> / <span>00:00:14:936</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">setup</h5>
+<span class='badge badge-success'>02.28.2024 5:53:09 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:53:24 pm</span>
+<span class='badge badge-default'>00:00:14:936</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">T_And_A_Exception_Code_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:53:09 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:53:09 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: setup</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:24 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author="Rajath"
+          tag="T_And_A_Exception_Code_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyValidations</p>
+            <p class="text-sm">
+              <span>5:53:24 pm</span> / <span>00:00:03:086</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyValidations</h5>
+<span class='badge badge-success'>02.28.2024 5:53:24 pm</span>
+<span class='badge badge-danger'>02.28.2024 5:53:27 pm</span>
+<span class='badge badge-default'>00:00:03:086</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">T_And_A_Exception_Code_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:53:24 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>5:53:24 pm</td>
+        <td>
+          <span class='badge white-text blue'>Test Start: Starting test: verifyValidations</span>
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>5:53:27 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">7</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+</span>
+<p class="name">T_And_A_Exception_Code_Test</p>
+<p class="duration text-sm">2 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>T_And_A_Exception_Code_Test</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>verifyValidations</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">Crane_Setup_Test</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Crane_Setup_Test</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">Maritime_Setup_Test</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Maritime_Setup_Test</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:47:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">Equipment_Setup_Test</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Equipment_Setup_Test</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>19</span>
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">TotalTestScript</p>
+<p class="duration text-sm">27 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>TotalTestScript</h4>
+<span status="pass" class='badge log pass-bg'>19 passed</span>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:47:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:50:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:52:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyCreate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>verifyEdit</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyDelete</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>verifyValidations</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>5</span>
+</span>
+<p class="name">Location_Definitions_Test</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Location_Definitions_Test</h4>
+<span status="fail" class='badge log badge-danger'>5 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:50:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>2</span>
+<span class='badge log badge-danger'>3</span>
+</span>
+<p class="name">ReconciliationParameterGroupTest</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>ReconciliationParameterGroupTest</h4>
+<span status="pass" class='badge log pass-bg'>2 passed</span>
+<span status="fail" class='badge log badge-danger'>3 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:52:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyCreate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>verifyEdit</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyDelete</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view author-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Author</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>19</span>
+<span class='badge log badge-danger'>8</span>
+</span>
+<p class="name">Rajath</p>
+<p class="duration text-sm">27 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Rajath</h4>
+<span status="pass" class='badge log pass-bg'>19 passed</span>
+<span status="fail" class='badge log badge-danger'>8 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:47:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>verifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>verifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>verifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:48:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:12 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:26 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:41 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:49:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:50:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:51:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:52:02 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>verifyCreate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>verifyEdit</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>verifyDelete</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>17:52:46 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>setup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>17:53:24 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>verifyValidations</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>
