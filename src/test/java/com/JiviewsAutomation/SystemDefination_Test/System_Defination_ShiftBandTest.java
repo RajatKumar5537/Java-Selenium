@@ -8,7 +8,7 @@ import com.AutomationJiviewsPOM.E10_2606_SystemDefinationShiftBandPage;
 
 public class System_Defination_ShiftBandTest extends BaseClass
 {
-	E10_2606_SystemDefinationShiftBandPage shiftBand;
+	public E10_2606_SystemDefinationShiftBandPage shiftBand;
 
 	@Test(priority = 1)
 	public void E10_3115_VerifyCreateShiftBand() throws Exception 

@@ -9,7 +9,7 @@ import com.AutomationJiviewsPOM.SystemDefination_RolePage;
 public class System_Defination_RolePageTest extends BaseClass
 {
 
-	SystemDefination_RolePage roleSetup;
+	public SystemDefination_RolePage roleSetup;
 
 	@Test(priority = 1)
 	public void System_Defination_VerifyCreateNewRole() throws Exception 

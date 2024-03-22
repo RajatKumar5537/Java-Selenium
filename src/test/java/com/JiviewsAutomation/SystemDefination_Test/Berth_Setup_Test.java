@@ -11,7 +11,7 @@ import com.AutomationJiviewsPOM.HomePage;
 	public class Berth_Setup_Test extends BaseClass {
 		
 		
-		Berth_Setup bt;
+		public Berth_Setup bt;
 		 
 		@Test(priority = 1)
 		public void System_Defination_VerifyCreateBerth() throws Exception

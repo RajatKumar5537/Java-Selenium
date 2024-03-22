@@ -9,7 +9,7 @@ import com.AutomationJiviewsPOM.SystemDefination_SkillPage;
 
 public class SystemDefination_SkillPageTest extends BaseClass{
 	
-	SystemDefination_SkillPage skillPage;
+	public SystemDefination_SkillPage skillPage;
 	
 	@Test(priority = 1)
 	public void System_Defination_VerifyCreateNewSkill() throws Exception 

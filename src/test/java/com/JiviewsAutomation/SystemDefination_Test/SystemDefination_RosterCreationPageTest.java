@@ -7,7 +7,7 @@ import com.AutomationJiviewsPOM.E10_2608_SystemDefinationRosterCreationPage;
 
 public class SystemDefination_RosterCreationPageTest extends BaseClass
 {
-	E10_2608_SystemDefinationRosterCreationPage rosterCreation;
+	public E10_2608_SystemDefinationRosterCreationPage rosterCreation;
 
 
 

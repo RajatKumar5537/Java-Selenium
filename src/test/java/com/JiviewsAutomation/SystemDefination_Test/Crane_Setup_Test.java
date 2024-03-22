@@ -12,7 +12,7 @@ import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 public class Crane_Setup_Test extends BaseClass {
 	
 	
-	Crane_Setup crane;
+	public Crane_Setup crane;
 	
 
 	@Test(priority = 1)

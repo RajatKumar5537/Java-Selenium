@@ -7,7 +7,7 @@ import com.AutomationJiviewsPOM.E10_2749_SystemDefinationRoleGroupPage;
 public class SystemDefination_RoleGroupPageTest extends BaseClass
 {
 
-	E10_2749_SystemDefinationRoleGroupPage roleGroup;
+	public E10_2749_SystemDefinationRoleGroupPage roleGroup;
 	
 	@Test(priority = 1)
 	public void E10_3122_VerifyCreateRoleGroups() throws Exception 

@@ -9,7 +9,7 @@ import com.AutomationJiviewsPOM.SystemDefination_PublicHolidayPage;
 public class SystemDefination_PublicHolidayPageTest extends BaseClass
 {
 
-	SystemDefination_PublicHolidayPage publicHoliday;
+	public SystemDefination_PublicHolidayPage publicHoliday;
 	
 	
 	@Test(priority = 1)

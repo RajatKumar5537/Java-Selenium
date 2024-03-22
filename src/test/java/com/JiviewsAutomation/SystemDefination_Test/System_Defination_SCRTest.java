@@ -7,7 +7,7 @@ import com.AutomationJiviewsPOM.E10_2639_SystemDefinationSCRPage;
 public class System_Defination_SCRTest extends BaseClass
 {
 
-	E10_2639_SystemDefinationSCRPage scr;
+	public E10_2639_SystemDefinationSCRPage scr;
 
 	@Test(priority = 1)
 	public void E10_3131_VerifyCreateSCR() throws Exception 
