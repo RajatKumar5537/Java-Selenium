@@ -1,127 +1,128 @@
 package com.AutomationJiviewsPOM;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
-
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.testng.Reporter;
+import org.testng.Assert;
 
-import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.WebUtilities;
-import com.github.javafaker.Faker;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 
-public class E10_2606_SystemDefinationShiftBandPage  {
+public class E10_2606_SystemDefinationShiftBandPage  
+{
 
 	WebDriver driver ;
-	Actions action;
-	Select select;
+	ReusableComponent Rc;
+	String shiftBandName ;
+	String colorCode;
+	String bandCode;
+	String otStart;
+	String otEnd;
 	public ExcelUtilities excelUtility;
-	public WebUtilities webUtility;
+	
+	
+	
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement dvOrgUnitDropdown;
 
-	public String description ;
-	public String bandCode;
-	public String colorCode;
-	public String shiftCounter;
-	public String startRangeBeginT;
-	public String startRangeEndT;
-	public String endRangeBeginT;
-	public String endRangeEndT;
-	public String otStart;
-	public String otEnd;
-	public String timeStamp = LocalDateTime.now().toString();
-	JavascriptExecutor js = (JavascriptExecutor) driver;
-	E10_2606_SystemDefinationShiftBandPage sb;
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // System Definitions
+
+	@FindBy(xpath = "(//ul[@id='ulApplicationMenu']/li)[2]")
+	WebElement ulApplicationMenu; // Roster Setup 
+
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[2]/li")
+	List<WebElement> sideNavMenu; // Shift Band Definition
 
 	@FindBy(id = "btnAddNew")
-	private WebElement addBtn;
+	WebElement addBtn;
 
 	@FindBy(id = "txtShtBandName")
-	private WebElement shiftBandNameTxt;
+	WebElement shiftBandNameTxt;
 
 	@FindBy (id = "txtShiftbandDesc")
-	private WebElement descriptionTxt;
+	WebElement descriptionTxt;
 
 	@FindBy(id = "txtShiftBandCode")
-	private WebElement bandCodeTxt;
+	WebElement bandCodeTxt;
 
 	@FindBy(id = "select2-cmbShiftBandId-container") //span[@id='select2-cmbShiftBandId-container']
-	private WebElement shiftBandTypeTxt;
+	WebElement shiftBandTypeTxt;
 
 	@FindBy(className  ="select2-search__field")
-	private WebElement searchTxt;
+	WebElement searchTxt;
 
 	@FindBy(xpath = "//li[text()='Normal Shift']")
-	private WebElement shiftType;
+	WebElement shiftType;
 
 	@FindBy(className = "select2-search__field")
-	private WebElement searchBox;
+	WebElement searchBox;
 
 	// inside searchbox we have to select one shift type
 	@FindBy(xpath = "//li[text()='Normal Shift']") 
-	private WebElement shiftTypeSearch;
+	WebElement shiftTypeSearch;
 
 	@FindBy(xpath = "//span[text()='×']")
-	private WebElement clearSearch;
+	WebElement clearSearch;
 	@FindBy(xpath = "//li[text()='Combination Shift']")
-	private WebElement shiftTpSearchCombiShift;
+	WebElement shiftTpSearchCombiShift;
 
 	@FindBy(xpath = "//li[text()='Overtime Shift']")
-	private WebElement shiftTpSearchOvertime;
+	WebElement shiftTpSearchOvertime;
 
 	@FindBy(id = "txtColorCode")
-	private WebElement colorTxt;
+	WebElement colorTxt;
 
 	@FindBy(xpath = "//input[@id='txtShiftCounter']")
-	private WebElement shiftCounterTxt;
+	WebElement shiftCounterTxt;
 
 	//  Using for select from Available Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
-	private WebElement availableSkill;
+	WebElement availableSkill;
 
 	// select for single Arrow -> move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
-	private WebElement selectMoveSingle;
+	WebElement selectMoveSingle;
 
 	@FindBy(xpath = "//input[@id='txtStartTime']")
-	private WebElement startTime;
-
+	WebElement startTime;
 	@FindBy(xpath = "//li[text()='07:00']")
-	private WebElement selectStartTime;
+	WebElement selectStartTime;
 
 	@FindBy(xpath = "//input[@id='txtEndTime']")
-	private WebElement endTime;
-
+	WebElement endTime;
 	@FindBy(xpath = "(//li[text()='19:00'])[2]")
-	private WebElement selectEndTime;
+	WebElement selectEndTime;
 
 
 	@FindBy(xpath = "//input[@id='txtStartRangeBegin']")
-	private WebElement startRangeBegin;
+	WebElement startRangeBegin;
+	@FindBy(xpath = "(//li[text()='06:59'])[3]")
+	WebElement startRangeBeginTime;
 
 	@FindBy(xpath = "//input[@id='txtStartRangeEnd']")
-	private WebElement startRangeEnd;	
+	WebElement startRangeEnd;	
 
 
 	@FindBy(xpath = "//input[@name='endRangeBegin']")
-	private WebElement endRangeBegin;
+	WebElement endRangeBegin;
+	@FindBy(xpath = "(//li[text()='19:01'])[5]")
+	WebElement endRangeBeginTime;
 
 	@FindBy(xpath = "//input[@name='endRangeEnd']")
-	private WebElement endRangeEnd;
+	WebElement endRangeEnd;
 
 	@FindBy(className = "toast-close-button")
-	private WebElement notificationPopup;
+	WebElement notificationPopup;
 
 	@FindBy(xpath = "//button[@id='btnSaveshiftbandDtls']") 
 	WebElement btnSaveshiftbandDtls;
@@ -129,431 +130,335 @@ public class E10_2606_SystemDefinationShiftBandPage  {
 	// Edit ........................................................
 
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
-	private WebElement editBtn;
+	WebElement editBtn;
 	@FindBy(xpath = "//span[text()='IsActive?']")
-	private WebElement checkIsActive;
+	WebElement checkIsActive;
 
 	@FindBy(xpath = "//table[@id='shftband-list']/tbody/tr")
-	private List<WebElement> rows;
+	List<WebElement> rows;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
-	private List<WebElement> checkboxes;
+	WebElement checkBox;
 	@FindBy(xpath = "//li[@id='shftband-list_next']")
-	private WebElement nextPage;
+	WebElement nextPage;
 
 
 	@FindBy(xpath = "//button[@id='btnDeleteshftband']")
-	private WebElement btnDeleteshftband;
+	WebElement btnDeleteshftband;
 
 	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement clickYes;
+	WebElement clickYes;
 
 	@FindBy(id = "txtShtBandName-error")
-	private WebElement errorShiftBandTxt;
+	WebElement errorShiftBandTxt;
 
 	@FindBy(xpath = "//button[@class='toast-close-button']")
-	private WebElement errorPopup;
+	WebElement errorPopup;
 
 	@FindBy(xpath = "//span[@id='select2-cmbOverTimeType-container']")
-	private WebElement overTimeType;
+	WebElement overTimeType;
 
 	@FindBy(xpath = "//li[text()='Both']")
-	private WebElement selectBoth;
+	WebElement selectBoth;
 
 	@FindBy(xpath = "//input[@id='txtOverTimeStart']")
-	private WebElement overTimeStartTxt;
+	WebElement overTimeStartTxt;
+	@FindBy(xpath = "//li[text()='20:00']")
+	WebElement overTimeStart;
 
 	@FindBy(xpath = "//input[@id='txtOverTimeEnd']")
-	private WebElement overTimeEndTxt;
-	
+	WebElement overTimeEndTxt;
+	@FindBy(xpath = "(//li[text()='05:00'])[2]")
+	WebElement overTimeEnd;
+
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
 	WebElement searchBar;
+
+	@FindBy(xpath = "//div[text()='Shift Band created successfully']")
+	WebElement shiftBandCreatedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='Shift Band updated successfully']")
+	WebElement shiftBandUpdatedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='ShiftBand deleted successfully.']")
+	WebElement shiftBandDeletedSuccessfullyMsg;
+
+
+	@FindBy(xpath = "//label[@id='txtShtBandName-error']")
+	WebElement shiftBandNameError;
+
+	@FindBy(xpath = "//button[@data-original-title='Cancel']")
+	WebElement btnCancle;
+
 
 	public E10_2606_SystemDefinationShiftBandPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver ;
-		this.webUtility= new WebUtilities(driver);
+		this.Rc= new ReusableComponent(driver);
 		this.excelUtility= new ExcelUtilities();
-		this.action= new Actions(driver);
+
 	}
 
-	public void setAddBtn() {
-		addBtn.click();
-	}
 
-	public void setShiftBandName(String shiftBandName) throws Exception {
-		webUtility.visibilityOfElement(driver,shiftBandNameTxt);
-		shiftBandNameTxt.clear();
-		shiftBandNameTxt.sendKeys(shiftBandName+ " "+ System.currentTimeMillis());
-	}
-	public void setDescriptionTxt(String description, String timeStamp) {
-		descriptionTxt.clear();
-		descriptionTxt.sendKeys(description+ " " + timeStamp);
-	}
-	public void setBandCodeTxt(String bandCode, String timeStamp) {
-		bandCodeTxt.clear();
-		bandCodeTxt.sendKeys(bandCode+  " " + timeStamp);
-	}
-	public void setShiftBandTypeTxt() {
-		shiftBandTypeTxt.click();
-	}
-	public void setSearchBox() {
-		action.moveToElement(searchBox).perform();
-	}
-	public void setShiftTypeSearch() {
-		action.moveToElement(shiftTypeSearch).perform();
-		shiftTypeSearch.click();
-	}
+	public void createShiftBand() throws Exception 
+	{
 
-	public void setShiftTpSearchCombiShift() throws InterruptedException {
-		setShiftTpSearchOvertime();
+		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
+		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
 		Thread.sleep(2000);
-		setShiftBandTypeTxt();
-		//		clearSearch.click();
-		Thread.sleep(3000);
-		action.moveToElement(shiftTpSearchCombiShift).perform();
-		shiftTpSearchCombiShift.click();
-	}
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
+		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
+		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
+		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Shift Band Definition", "Shift Band Definition is not clicked");
 
-	public void setShiftTpSearchOvertime() {
-		action.moveToElement(shiftTpSearchOvertime).perform();
-		shiftTpSearchOvertime.click();
-	}
 
-	public void setColorTxt(String colorCode) {
+		shiftBandName = Rc.name;
+
+		addBtn.click();
+
+		Rc.explicitWait(shiftBandNameTxt, "visible");	
+		shiftBandNameTxt.clear();
+		shiftBandNameTxt.sendKeys(Rc.name);
+		descriptionTxt.clear();
+		descriptionTxt.sendKeys(Rc.description);
+		bandCodeTxt.clear();
+		bandCodeTxt.sendKeys(bandCode +System.currentTimeMillis());
+		shiftBandTypeTxt.click();
+		Rc.moveToElement(searchBox);
+		Rc.explicitWait(shiftTypeSearch, "clickable");
+		Rc.moveToElement(shiftTypeSearch);
+		shiftTypeSearch.click();
 		colorTxt.clear();
 		colorTxt.sendKeys(colorCode);
 		colorTxt.sendKeys(Keys.ENTER);
-	}
-
-	public void setShiftCounterTxt(String shiftCounter) throws Exception {
-		webUtility.visibilityOfElement(driver,shiftCounterTxt);
+		Rc.explicitWait(shiftCounterTxt, "visible");
 		shiftCounterTxt.clear();
-		shiftCounterTxt.sendKeys(shiftCounter);
-	}
-
-	// scroll down the page and select single skill from  availble skill
-	public void setAvailableSkillForSingleSkill() throws InterruptedException {
-		Thread.sleep(2000);
-		action.moveToElement(availableSkill).perform();
-		select = new Select(availableSkill);
-		select.selectByIndex(0);
-	}
-	//	move skill from available skills to selected skill for single role  
-	public void setAvailableSingleSkillMoveToSelectedSkill() {
-		webUtility.moveToElement(driver, selectMoveSingle);
-		selectMoveSingle.click();
-	}
-
-	public void setStartTime() {
-		action.moveToElement(startTime).perform();
+		shiftCounterTxt.sendKeys(Rc.randomInt);
+		Rc.moveToElement(startTime);
 		startTime.clear();
-	}
-
-	public void setSelectStartTime() {
-		action.moveToElement(selectStartTime).perform();
-		//		js.executeScript("arguments[0].scrollIntoView(true);",selectStartTime);
+		Rc.moveToElement(selectStartTime);
 		selectStartTime.click();
-	}
-
-	public void setEndTime() {
-		action.moveToElement(endTime).perform();
-		endTime.clear();
-	}
-
-	public void setSelectEndTime() {
-		action.moveToElement(selectEndTime).perform();
-		//		js.executeScript("arguments[0].scrollIntoView(true);",selectEndTime);
+		endTime.click();
 		selectEndTime.click();
-	}
-
-	public void setStartRangeBegin(String startRangeBeginT) {
-		action.moveToElement(startRangeBegin).perform();
-		startRangeBegin.clear();
-		startRangeBegin.sendKeys(startRangeBeginT);
-		startRangeBegin.sendKeys(Keys.ENTER);
-	}
-	public void setStartRangeEnd(String startRangeEndT) {
-		action.moveToElement(startRangeEnd).perform();
-		startRangeEnd.clear();
-		startRangeEnd.sendKeys(startRangeEndT);
-		startRangeEnd.sendKeys(Keys.ENTER);
-	}
-
-	public void setEndRangeBegin(String endRangeBeginT) {
-		action.moveToElement(endRangeBegin).perform();
-		endRangeBegin.clear();
-		endRangeBegin.sendKeys(endRangeBeginT);
-		endRangeBegin.sendKeys(Keys.ENTER);
-	}
-	public void setEndRangeEnd(String endRangeEndT) {
-		action.moveToElement(endRangeEnd).perform();
-		endRangeEnd.clear();
-		endRangeEnd.sendKeys(endRangeEndT);
-		endRangeEnd.sendKeys(Keys.ENTER);
-	}
-
-	public void setOverTimeType() {
-		action.moveToElement(overTimeType).perform();
-		overTimeType.click();
-	}
-
-	public void setSelectBoth() {
-		action.moveToElement(selectBoth).perform();
-		selectBoth.click();
-	}
-
-	public void setOverTimeStartTxt(String otStart) {
-		overTimeStartTxt.clear();
-		overTimeStartTxt.sendKeys(otStart);
-		overTimeStartTxt.sendKeys(Keys.ENTER);
-	}
-	public void setOverTimeEndTxt(String otEnd) {
-		overTimeEndTxt.clear();
-		overTimeEndTxt.sendKeys(otEnd);
-		overTimeEndTxt.sendKeys(Keys.ENTER);
-	}
-	public void setBtnSave() {
+		Rc.moveToElement(startRangeBegin);
+		startRangeBegin.click();
+		startRangeBeginTime.click();
+		startRangeEnd.isDisplayed();
+		Rc.moveToElement(endRangeBegin);
+		endRangeBegin.isDisplayed();
+		endRangeEnd.isDisplayed();
+		Rc.moveToElement(btnSaveshiftbandDtls);
 		btnSaveshiftbandDtls.click();
+		Rc.explicitWait(shiftBandCreatedSuccessfullyMsg, "visible");
+		String actualResult = shiftBandCreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Shift Band created successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+
+	}
+	public void updateShiftBand() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(searchBar, "visible");
+		searchBar.sendKeys(shiftBandName);
+		Rc.explicitWait(editBtn, "clickable");
+		editBtn.click();
+		Rc.explicitWait(shiftBandNameTxt, "visible");	
+		shiftBandNameTxt.clear();
+		shiftBandNameTxt.sendKeys(Rc.name);
+		descriptionTxt.clear();
+		descriptionTxt.sendKeys(Rc.description);
+		bandCodeTxt.clear();
+		bandCodeTxt.sendKeys(bandCode +System.currentTimeMillis());
+		shiftBandTypeTxt.click();
+		Rc.moveToElement(searchBox);
+		Rc.explicitWait(shiftTypeSearch, "clickable");
+		Rc.moveToElement(shiftTypeSearch);
+		shiftTypeSearch.click();
+		colorTxt.clear();
+		colorTxt.sendKeys(colorCode);
+		colorTxt.sendKeys(Keys.ENTER);
+		Rc.explicitWait(shiftCounterTxt, "visible");
+		shiftCounterTxt.clear();
+		shiftCounterTxt.sendKeys(Rc.randomInt);
+		Rc.moveToElement(startTime);
+		startTime.clear();
+		Rc.moveToElement(selectStartTime);
+		selectStartTime.click();
+		endTime.click();
+		selectEndTime.click();
+		Rc.moveToElement(startRangeBegin);
+		startRangeBegin.click();
+		startRangeBeginTime.click();
+		startRangeEnd.isDisplayed();
+		Rc.moveToElement(endRangeBegin);
+		endRangeBegin.isDisplayed();
+		endRangeEnd.isDisplayed();
+		Rc.moveToElement(btnSaveshiftbandDtls);
+		btnSaveshiftbandDtls.click(); 
+		Rc.explicitWait(shiftBandUpdatedSuccessfullyMsg, "visible");
+		String actualResult = shiftBandUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Shift Band updated successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+
 	}
 
-	public void setNotificationPopup() throws Exception {
-		webUtility.visibilityOfElement(driver, notificationPopup);
+	public void deactiveShiftBand() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(editBtn, "visible");
+		searchBar.clear();
+		searchBar.sendKeys(shiftBandName);
+		checkBox.click();
+		Rc.explicitWait(btnDeleteshftband, "clickable");
+		btnDeleteshftband.click();
+		Rc.explicitWait(clickYes, "clickable");
+		clickYes.click();
+		Rc.explicitWait(shiftBandDeletedSuccessfullyMsg, "visible");
+		String actualResult = shiftBandDeletedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("ShiftBand deleted successfully."));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+
+	}
+
+	public void reactivateShiftBand() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(editBtn, "visible");
+		searchBar.clear();
+		searchBar.sendKeys(shiftBandName);
+		Rc.explicitWait(editBtn, "clickable");
+		editBtn.click();
+		Rc.explicitWait(checkIsActive, "clickable");
+		checkIsActive.click();	
+		Rc.explicitWait(btnSaveshiftbandDtls, "clickable");
+		btnSaveshiftbandDtls.click();
+		Rc.explicitWait(shiftBandUpdatedSuccessfullyMsg, "visible");
+		String actualResult = shiftBandUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Shift Band updated successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
 		notificationPopup.click();
 	}
 
-	public void setEditBtn() throws Exception {
-		webUtility.visibilityOfElement(driver, editBtn);
-		editBtn.click();
-	}
-	public void performDeleteAction() throws InterruptedException {
-		//		Thread.sleep(2000);
-		for (int i = 0; i < 3; i++) {
-			try {
-				scrollAndClick(driver, btnDeleteshftband);
-				break; 
-			} catch (ElementClickInterceptedException e) {
-			}
-		}
-	}
-	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
-		boolean checkboxFound = false;
-
-		// Iterate through rows
-		for (int i = 0; i < rows.size(); i++) {
-			WebElement checkbox = checkboxes.get(i);
-			if (checkbox.isEnabled()) {
-				//				scrollAndClick(driver, checkbox);
-				checkbox.click();
-				performDeleteAction();
-				checkboxFound = true;
-				break;
-			}
-		}
-
-		// If no enabled checkbox found on the current page, go to the next page and try again
-		if (!checkboxFound) {
-			goToNextPageAndDelete();
-		}
-	}
-
-	private void goToNextPageAndDelete() throws InterruptedException {
-		try {
-			scrollAndClick(driver, nextPage); // Click on the next page button
-			scrollUp(driver);
-			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-
-		} catch (ElementClickInterceptedException e) {
-			// Handle the exception if necessary
-		}
-	}
-	// Method to perform scroll-up action
-	private void scrollUp(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
-	}
-	public void scrollAndClick(WebDriver driver, WebElement element) {
-		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		// Scroll to the top of the page
-		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
-		element.click();
-	}
-
-	//	public void setcheckBox() throws Exception  {
-	//		webUtility.visibilityOfElement(driver, checkBox);
-	//		checkBox.click();
-	//	}
-	public void setDeleteBtn() {
-		btnDeleteshftband.click();
-	}
-	public void setClickYes() {
-		clickYes.click();
-	}
-	public void clickonIsActive() {
-		checkIsActive.click();	
-	}
-	public void setErrorShiftBandTxt() {
-
-		String errorMsg = errorShiftBandTxt.getText();
-		Reporter.log(errorMsg);
-	}
-	public void setErrorPopup() {
-		errorPopup.click();
-	}
-
-	Faker faker = new Faker();
-	public String shiftBandName = faker.bool().bool() ? "Day Shift" : "Night Shift";
-
-	public void createShiftBand() throws Exception {
-		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
-		description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
-		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
-		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
-		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
-		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
-		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
-		endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
-		endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
-
-		setAddBtn();
-		setShiftBandName(shiftBandName );
-		System.out.println(shiftBandName);
-		setDescriptionTxt(description, timeStamp);
-		setBandCodeTxt(bandCode, timeStamp);
-		setShiftBandTypeTxt();
-		setSearchBox();
-		setShiftTypeSearch();
-		setColorTxt(colorCode);
-		setShiftCounterTxt(shiftCounter);
-		setStartTime();
-		setSelectStartTime();
-		setEndTime();
-		setSelectEndTime();
-		setStartRangeBegin(startRangeBeginT);
-		setStartRangeEnd(startRangeEndT);
-		setEndRangeBegin(endRangeBeginT);
-		setEndRangeEnd(endRangeEndT);
-		setBtnSave();
-		setNotificationPopup();
-	}
-	public void updateShiftBand() throws Exception {
-		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 7);
-		description = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 8);
-		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 10, 9);
-
-//		searchBar.sendKeys(shiftBandName);
-		setEditBtn();
-		setShiftBandName(shiftBandName);
-		setDescriptionTxt(description, timeStamp);
-		setBandCodeTxt(bandCode, timeStamp);
-		setBtnSave();
-		setNotificationPopup();
-	}
-
-	public void deactiveShiftBand() throws Exception {
-//		searchBar.sendKeys(shiftBandName);
-		deleteRowsWithEnabledCheckbox();
-		setClickYes();
-		setNotificationPopup();
-	}
-
-	public void reactivateShiftBand() throws Exception {
-//		searchBar.sendKeys(shiftBandName);
-		setEditBtn();
-		clickonIsActive();
-		setBtnSave();
-	}
-
 	public void withoutShiftBandName() throws Exception {
-		//		String shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 7);
-		description = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 8);
-		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 9);
-		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 10);
-		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 11);
-		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 14);
-		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 15);
-		endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 16);
-		endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 9, 17);
+		shiftBandName = Rc.name;
 
-		setAddBtn();
-		//		setShiftBandName(shiftBandName, timeStamp);
-		setDescriptionTxt(description, timeStamp);
-		setBandCodeTxt(bandCode, timeStamp);
-		setShiftBandTypeTxt();
-		setSearchBox();
-		setShiftTypeSearch();
-		setColorTxt(colorCode);
-		setShiftCounterTxt(shiftCounter);
-		setStartTime();
-		setSelectStartTime();
-		setEndTime();
-		setSelectEndTime();
-		setStartRangeBegin(startRangeBeginT);
-		setStartRangeEnd(startRangeEndT);
-		setEndRangeBegin(endRangeBeginT);
-		setEndRangeEnd(endRangeEndT);
-		setBtnSave();
-		// need to get the error msg for this field 
-		setErrorShiftBandTxt();
-		//		setErrorPopup();
+		addBtn.click();
 
+		//		Rc.explicitWait(shiftBandNameTxt, "visible");	
+		//		shiftBandNameTxt.clear();
+		//		shiftBandNameTxt.sendKeys(Rc.name);
+		descriptionTxt.clear();
+		descriptionTxt.sendKeys(Rc.description);
+		bandCodeTxt.clear();
+		bandCodeTxt.sendKeys(Rc.name);
+		shiftBandTypeTxt.click();
+		Rc.moveToElement(searchBox);
+		Rc.explicitWait(shiftTypeSearch, "clickable");
+		Rc.moveToElement(shiftTypeSearch);
+		shiftTypeSearch.click();
+		Rc.explicitWait(shiftCounterTxt, "visible");
+		shiftCounterTxt.clear();
+		shiftCounterTxt.sendKeys(Rc.randomInt);
+		Rc.moveToElement(startTime);
+		startTime.clear();
+		Rc.moveToElement(selectStartTime);
+		selectStartTime.click();
+		btnSaveshiftbandDtls.click();
+		Rc.explicitWait(shiftBandNameError, "visible");
+		String actualResult = shiftBandNameError.getText();
+		Assert.assertTrue(actualResult.contains("ShiftBand Name Is Required"));
+		btnCancle.click();
+		
 	}
-	public void shiftBandTypeCombinationShift() throws Exception {
-		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 7);
-		description = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 8);
-		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 9);
-		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 10);
-		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 11, 11);
+	
+	public void shiftBandTypeCombinationShift() throws Exception 
+	{
+		Rc.explicitWait(addBtn, "clickable");	
+		addBtn.click();
 
-		setAddBtn();
-		setShiftBandName(shiftBandName);
-		setDescriptionTxt(description, timeStamp);
-		setBandCodeTxt(bandCode, timeStamp);
-		setShiftBandTypeTxt();
-		//		setSearchBox(); not required 
-		setShiftTpSearchCombiShift();
-		setColorTxt(colorCode);
-		setShiftCounterTxt(shiftCounter);
+		Rc.explicitWait(shiftBandNameTxt, "visible");	
+		shiftBandNameTxt.clear();
+		shiftBandNameTxt.sendKeys(Rc.name + " Jivi");
+		descriptionTxt.clear();
+		descriptionTxt.sendKeys(Rc.description);
+		bandCodeTxt.clear();
+		bandCodeTxt.sendKeys(Rc.name);
+		shiftBandTypeTxt.click();
+		Rc.moveToElement(shiftTpSearchOvertime);
+		shiftTpSearchOvertime.click();
 		Thread.sleep(2000);
-		setAvailableSkillForSingleSkill();
-		Thread.sleep(1000);
-		setAvailableSingleSkillMoveToSelectedSkill();
-		setBtnSave();
-		Thread.sleep(1000);
-		setNotificationPopup();
+		shiftBandTypeTxt.click();
+		Thread.sleep(3000);
+		Rc.moveToElement(shiftTpSearchCombiShift);
+		shiftTpSearchCombiShift.click();
+		colorTxt.clear();
+		colorTxt.sendKeys(colorCode);
+		colorTxt.sendKeys(Keys.ENTER);
+		Rc.explicitWait(shiftCounterTxt, "visible");
+		shiftCounterTxt.clear();
+		shiftCounterTxt.sendKeys(Rc.randomInt);
+		Thread.sleep(2000);
+		Rc.moveToElement(availableSkill);
+		Rc.selectByIndex(availableSkill, 0);
+		Thread.sleep(2000);
+		Rc.moveToElement(selectMoveSingle);
+		selectMoveSingle.click();
+		Rc.explicitWait(btnSaveshiftbandDtls, "clickable");
+		btnSaveshiftbandDtls.click();
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+
 	}
-	public void shiftBandTypeOvertimeShift() throws Exception {
-		//		shiftBandName = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 7);
-		description = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 8);
-		bandCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 9);
-		colorCode = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 10);
-		shiftCounter = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 11);
-		startRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 14);
-		startRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 15);
-		//		String endRangeBeginT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 16);
-		//		String endRangeEndT = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 17);
+	public void shiftBandTypeOvertimeShift() throws Exception 
+	{
 		otStart = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 18);
 		otEnd = excelUtility.readDataFromExcelFile("EmployeeTest", 12, 19);
+		Thread.sleep(2000);
+		Rc.explicitWait(addBtn, "clickable");	
+		addBtn.click();
+		Rc.explicitWait(shiftBandNameTxt, "visible");	
+		shiftBandNameTxt.clear();
+		shiftBandNameTxt.sendKeys(Rc.firstName);
+		descriptionTxt.clear();
+		descriptionTxt.sendKeys(Rc.description);
+		bandCodeTxt.clear();
+		bandCodeTxt.sendKeys(Rc.name);
+		shiftBandTypeTxt.click();
+		Rc.moveToElement(searchBox);
+		Rc.moveToElement(shiftTpSearchOvertime);
+		shiftTpSearchOvertime.click();
+		colorTxt.clear();
+		colorTxt.sendKeys(colorCode);
+		colorTxt.sendKeys(Keys.ENTER);
+		Rc.explicitWait(shiftCounterTxt, "visible");
+		shiftCounterTxt.clear();
+		shiftCounterTxt.sendKeys(Rc.randomInt);
+		Rc.moveToElement(startTime);
+		startTime.clear();
+		Rc.moveToElement(selectStartTime);
+		selectStartTime.click();
+		Rc.moveToElement(endTime);
+		endTime.clear();
+		Rc.moveToElement(selectEndTime);
+		selectEndTime.click();
+		Rc.moveToElement(overTimeType);
+		overTimeType.click();
+		Rc.moveToElement(selectBoth);
+		selectBoth.click();
+		overTimeStartTxt.clear();
+		//		overTimeStart.click();
+		overTimeStartTxt.sendKeys(otStart);
+		overTimeStartTxt.sendKeys(Keys.ENTER);
+		overTimeEndTxt.clear();
+		//		overTimeEnd.click();
+		overTimeEndTxt.sendKeys(otEnd);
+		overTimeEndTxt.sendKeys(Keys.ENTER);
+		Rc.explicitWait(btnSaveshiftbandDtls, "clickable");
+		btnSaveshiftbandDtls.click();
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
 
-		setAddBtn();
-		setShiftBandName(shiftBandName);
-		setDescriptionTxt(description, timeStamp);
-		setBandCodeTxt(bandCode, timeStamp);
-		setShiftBandTypeTxt();
-		setSearchBox();
-		setShiftTpSearchOvertime();
-		setColorTxt(colorCode);
-		setShiftCounterTxt(shiftCounter);
-		setStartTime();
-		setSelectStartTime();
-		setEndTime();
-		setSelectEndTime();
-		setOverTimeType();
-		setSelectBoth();
-		setOverTimeStartTxt(otStart);
-		setOverTimeEndTxt(otEnd);
-
-		setBtnSave();
-		setNotificationPopup();
 	}
 }

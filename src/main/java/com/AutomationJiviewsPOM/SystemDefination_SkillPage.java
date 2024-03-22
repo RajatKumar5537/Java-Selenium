@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import com.AutomationJiviewsGeneric.ReusableComponent;
 
 
-public class SystemDefination_SkillPage  {
+public class SystemDefination_SkillPage  
+{
 	
 	WebDriver driver;
 	ReusableComponent Rc ;
@@ -66,10 +67,6 @@ public class SystemDefination_SkillPage  {
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
 	WebElement editBtn;
 
-	@FindBy(xpath = "//table[@id='skill-list']/tbody/tr")
-	List<WebElement> rows;
-	@FindBy(xpath = "//td/input[@type='checkbox']")
-	List<WebElement> checkboxes;
 	@FindBy(xpath = "//li[@id='skill-list_next']")
 	WebElement nextPage;
 
@@ -90,7 +87,8 @@ public class SystemDefination_SkillPage  {
 	WebElement btnPDF;
 	
 	//	*********** Constructor *********
-	public SystemDefination_SkillPage(WebDriver driver) {
+	public SystemDefination_SkillPage(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 		this.driver = driver; 
 		this.Rc= new ReusableComponent(driver);
@@ -100,9 +98,12 @@ public class SystemDefination_SkillPage  {
 
 	public void createNewSkill() throws Exception 
 	{
-
+		Thread.sleep(2000);
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
 		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicking");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
 		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicking");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
 		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Skills", "Skills is not clicking");
 		
 		skillCodeData= Rc.name;
@@ -148,6 +149,7 @@ public class SystemDefination_SkillPage  {
 
 	public void deleteSkill() throws Exception 
 	{
+		Thread.sleep(2000);
 		Rc.explicitWait(searchColumns, "clickable");
 		searchColumns.clear();
 		searchColumns.sendKeys(skillCodeData);
@@ -163,7 +165,7 @@ public class SystemDefination_SkillPage  {
 
 	public void reactivateSkill() throws Exception 
 	{
-
+		Thread.sleep(2000);
 		Rc.explicitWait(searchColumns, "clickable");
 		searchColumns.clear();
 		searchColumns.sendKeys(skillCodeData);
@@ -180,7 +182,7 @@ public class SystemDefination_SkillPage  {
 	}
 
 	public void searchColumns() throws Exception {
-
+		Thread.sleep(2000);
 		Rc.explicitWait(searchColumns, "clickable");
 		searchColumns.clear();
 		searchColumns.sendKeys(skillCodeData);

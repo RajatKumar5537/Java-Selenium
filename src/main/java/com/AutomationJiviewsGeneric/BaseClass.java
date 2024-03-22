@@ -14,7 +14,8 @@ import com.AutomationJiviewsPOM.LoginPage;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 
-public class BaseClass {
+public class BaseClass 
+{
 
 	private static final Logger logger = Logger.getLogger(BaseClass.class.getName());
 	public static WebDriver driver;

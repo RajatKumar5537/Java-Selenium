@@ -12,7 +12,8 @@ public class SystemDefination_SkillPageTest extends BaseClass{
 	SystemDefination_SkillPage skillPage;
 	
 	@Test(priority = 1)
-	public void System_Defination_VerifyCreateNewSkill() throws Exception {
+	public void System_Defination_VerifyCreateNewSkill() throws Exception 
+	{
 		skillPage = new SystemDefination_SkillPage(driver);
 		
 		skillPage.createNewSkill();
@@ -21,21 +22,18 @@ public class SystemDefination_SkillPageTest extends BaseClass{
 	@Test(priority = 2) 
 	public void System_Defination_VerifyUpdateSkill() throws Exception 
 	{
-
 		skillPage.editSkill();
 	}
 
 	@Test(priority = 3) 
 	public void System_Defination_VerifyDeactivateSkill() throws Exception 
 	{
-
 		skillPage.deleteSkill();
 	}
 
 	@Test(priority = 4) 
 	public void System_Defination_VerifyReactivateSkill() throws Exception 
 	{
-
 		skillPage.reactivateSkill();
 	}
 

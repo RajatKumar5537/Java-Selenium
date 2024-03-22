@@ -147,9 +147,12 @@ public class SystemDefination_RolePage {
 
 	public void createNewRole() throws Exception 
 	{
-
+		Thread.sleep(2000);
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
 		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
 		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
 		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Roles", "Roles is not clicked");
 
 		roleNameData =Rc.name;

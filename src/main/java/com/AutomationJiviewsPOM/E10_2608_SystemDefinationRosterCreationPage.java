@@ -1,406 +1,252 @@
 package com.AutomationJiviewsPOM;
 
 
-import java.time.Duration;
-import java.time.LocalDateTime;
-import java.time.format.DateTimeFormatter;
 import java.util.List;
-
-import org.openqa.selenium.By;
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
 import org.testng.Assert;
-
 import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.FakeEmployee;
-import com.AutomationJiviewsGeneric.WebUtilities;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 
 
 public class E10_2608_SystemDefinationRosterCreationPage{
 	public WebDriver driver; 
+	ReusableComponent Rc;
 
-	public String timeStamp = LocalDateTime.now().format(DateTimeFormatter.ofPattern("yyyy MM dd HH mm ss")).replace(" ", "_");
-
-	public Actions action ;
-	public Select select;
 	public ExcelUtilities excelUtility;
-	public WebUtilities webUtility;
-	public E10_2608_SystemDefinationRosterCreationPage sdrs;
 	public String tampName ;
-	public String tempDescription;
 	public String noOfDay;
-	public String noOfBlocks;
+
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement dvOrgUnitDropdown;
+
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // System Definitions
+
+	@FindBy(xpath = "(//ul[@id='ulApplicationMenu']/li)[2]")
+	WebElement ulApplicationMenu; // Roster Setup
+
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[2]/li")
+	List<WebElement> sideNavMenu; // Roster Creation
+
 
 	@FindBy(xpath = "//div[text()='Roster Setup']/..")
-	private WebElement RoasterSetup;
+	WebElement RoasterSetup;
 	@FindBy(xpath = "//div[text()='Roster Creation']/..")
-	private WebElement rosterCreation;
-	
+	WebElement rosterCreation;
+
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
-	private WebElement txtSearch;
-	
+	WebElement txtSearch;
+
 	@FindBy(xpath = "//button[@id='btnAddNewTemplateRoster']")
-	private WebElement addBtn;
+	WebElement addBtn;
 
 	@FindBy(id = "txtTemplateName")
-	private WebElement templateNameTxt;
+	WebElement templateNameTxt;
 
 	@FindBy(id = "txtTemplateDesc")
-	private WebElement tempDescriptionTxt;
+	WebElement tempDescriptionTxt;
 
 	@FindBy(id = "txtNumberOfDays")
-	private WebElement noOfDayTxt;
+	WebElement noOfDayTxt;
 
 	// Using for select Available Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
-	private WebElement availableSkill;
+	WebElement availableSkill;
 
 	// select for single Arrow -> move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
-	private WebElement selectMoveSingle; 
+	WebElement selectMoveSingle; 
 
 	//	select for move multiple skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
-	private WebElement selectMoveAll;
+	WebElement selectMoveAll;
 
 	// here it will select a skill from Seleceted Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[2]")
-	private WebElement selectedSkill;
+	WebElement selectedSkill;
 
 	//	select for move single skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn remove btn-default']")
-	private WebElement removeSelectedSkillSingle;
+	WebElement removeSelectedSkillSingle;
 
 	//	select for move multiple skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn removeall btn-default']")
-	private WebElement removeSelectedSkillAll;
+	WebElement removeSelectedSkillAll;
 
 
 	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
-	private WebElement saveBtn;
+	WebElement saveBtn;
 
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
-	private WebElement editBtn;
+	WebElement editBtn;
 
 	// Group A 
 	@FindBy(xpath = "(//div[text()='Off']/..)[1]")
-	private WebElement rosterCreation1stDay;
+	WebElement rosterCreation1stDay;
 
 	@FindBy(xpath = "//div[@class='scheduler_default_matrix']/div/div")
-	private List<WebElement> rosterCreationDays;
+	List<WebElement> rosterCreationDays;
 	@FindBy(xpath = "//div[@style='text-align:center']")
-	private List<WebElement> rosterCreationDaysFillUp;
+	List<WebElement> rosterCreationDaysFillUp;
 
 	@FindBy(xpath = "//div[@id='dpRosterPattern']/div[3]/div/div/div/div/div/div")
-	private List<WebElement> fillCells;
+	List<WebElement> fillCells;
 	@FindBy(xpath = "//div[text()='Off']/..")
-	private List<WebElement> emptyCells;
+	List<WebElement> emptyCells;
 
 	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
-	private WebElement 	bandCode;
+	WebElement 	bandCode;
 
 	// in Band code search box need the select one shift from drop down box
 	@FindBy(xpath = "(//li[contains(text(),'1st  Shift ')])[2]")
-	private WebElement selectBandCode;
+	WebElement selectBandCode;
 
 	@FindBy(xpath = "//button[@id='btnSelectShiftBand']")
-	private WebElement btnSaveSelectShiftBandBtn;
+	WebElement btnSaveSelectShiftBandBtn;
 
 	@FindBy(xpath = "//button[@id='btnAddSaveRosterPattern']/span")
-	private WebElement btnAddSaveRosterPattern;
+	WebElement btnAddSaveRosterPattern;
 
 	@FindBy(xpath = "//button[@id='btnAddEmployee']/span")
-	private WebElement btnAddEmployee;
+	WebElement btnAddEmployee;
 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
-	private WebElement availableEmpTable;
+	WebElement availableEmpTable;
 
 	@FindBy(xpath = "(//button[@class='btn move btn-default'])[1]")
-	private WebElement btnMoveFromAvailable;
+	WebElement btnMoveFromAvailable;
 
 	@FindBy(xpath = "//button[@id='btnSaveRosterTemplateEmployee']/span")
-	private WebElement btnSaveRosterTemplateEmployee;
+	WebElement btnSaveRosterTemplateEmployee;
 
 	@FindBy(xpath = "//button[@id='btnAddRosterGroups']/span")
-	private WebElement btnAddRosterGroups;
+	WebElement btnAddRosterGroups;
 
 	@FindBy(xpath = "//button[@id='btnSaveRosterTemplateRosterGroups']")
-	private WebElement btnSaveRosterTemplateRosterGroups;
-
-	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
-	private WebElement templateRosterUpdatedSuccessfullyMsg;
+	WebElement btnSaveRosterTemplateRosterGroups;
 
 	@FindBy(xpath = "//button[@id='btnPublishRosterPattern']")
-	private WebElement btnPublishRosterPattern;
+	WebElement btnPublishRosterPattern;
 
 
-
+	@FindBy(xpath = "//td/input[@type='checkbox']")
+	WebElement checkBoxPublishRoster;
 	//	@FindBy(xpath = "//input[@id='dtPublishFrom1130']")
 	@FindBy(xpath = "//input[@class='form-control form-label-sm bootstrap-datepicker roster-pattern-from']")
-	private WebElement txtPublishFrom;
+	WebElement txtPublishFrom;
+	@FindBy(xpath = "(//table[@class='table-condensed']/tbody/tr/td)[9]")
+	WebElement publishFromDate;
 
 	//	@FindBy(xpath = "//input[@id='txtNoOfBlocks1130']")
 	@FindBy(xpath = "//input[@class='form-control roster-pattern-blocks']")
-	private WebElement txtNoOfBlock;
+	WebElement txtNoOfBlock;
 
 	//	@FindBy(xpath = "(//td[@class='sorting_1']/input)[1]")
-	//	private WebElement checkBoxPublishRoster;
+	//	WebElement checkBoxPublishRoster;
 
 	@FindBy(xpath = "//table[@id='extract-shift-list']/tbody/tr")
-	private List<WebElement> rows;
+	List<WebElement> rows;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
-	private List<WebElement> checkBoxPublishRosterMulti;
-	
-	
+	List<WebElement> checkBoxPublishRosterMulti;
+
+
 	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr")
-	private List<WebElement> row;
+	List<WebElement> row;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
-	private List<WebElement> checkboxes;
+	WebElement checkBox;
+
 	@FindBy(xpath = "//li[@id='skill-list_next']")
-	private WebElement nextPage;
+	WebElement nextPage;
 
 
 	@FindBy(xpath = "(//td[@class='sorting_1']/input)[2]")
-	private WebElement checkBoxPublishRoster2;
+	WebElement checkBoxPublishRoster2;
 
 	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
-	private WebElement btnSaveTemplateRoster;
+	WebElement btnSaveTemplateRoster;
 
 	@FindBy(xpath = "//button[text()='Publish Now']")
-	private WebElement btnPublishNow;
-	@FindBy(xpath = "//div[text()='Shift extraction process completed successfully']")
-	private WebElement shiftExtractionProcessCompletedSuccessfullyMsg;
+	WebElement btnPublishNow;
+
+
 
 
 	// Select By Employee Button 
 	@FindBy(xpath = "//span[text()='By Employees']")
-	private WebElement btnByEmp;
+	WebElement btnByEmp;
 
 	//	(//td[@class=' select-checkbox']/input)[1]
 	@FindBy(xpath = "//table[@id='template-roster-list']/tbody/tr/td/input")
-	private WebElement checkBoxDeactive;
+	WebElement checkBoxDeactive;
 
 	@FindBy(xpath = "//button[@id='btnDeleteTemplateRoster']")
-	private WebElement btnDeleteTemplateRoster;
+	WebElement btnDeleteTemplateRoster;
 
 	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement btnYes;
+	WebElement btnYes;
 
 	@FindBy(xpath = "//span[text()='Is Active?']")
-	private WebElement checkBoxActive;
-
-	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
-	private WebElement rosterUpdateNotification;
+	WebElement checkBoxActive;
 
 	@FindBy(className = "toast-close-button")
-	private WebElement notificationPopup;
+	WebElement notificationPopup;
+
+	@FindBy(xpath = "//button[@id='btnCloseRosterPattern']")
+	WebElement btnCloseRosterPattern;
+
+	@FindBy(xpath = "//div[text()='Shift extraction process completed successfully']")
+	WebElement shiftExtractionProcessCompletedSuccessfullyMsg; 
+	@FindBy(xpath = "//div[text()='Template Roster updated successfully']")
+	WebElement templateRosterUpdatedSuccessfullyMsg; // Update & Reactivate 
+	@FindBy(xpath = "//div[text()='Template Roster']")
+	WebElement rosterDeleteMsg;
+
+
+
+
 
 	public E10_2608_SystemDefinationRosterCreationPage(WebDriver driver) {
 		PageFactory.initElements(driver, this);
 		this.driver = driver ;
-				this.action= new Actions(driver);
+		this.Rc= new ReusableComponent(driver);
 		this.excelUtility= new ExcelUtilities();
-		this.webUtility= new WebUtilities(driver);
 	}
 
-	public void setAddBtn() {
-//		webUtility.ElementClickable(driver, addBtn);
-//		addBtn.click();
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
-		WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.id("btnAddNewTemplateRoster")));
-		element.click();
-
-	}
-
-	public void setTemplateNameTxt(String tampName) throws InterruptedException {
-		Thread.sleep(2000);
-		templateNameTxt.clear();
-		templateNameTxt.sendKeys(tampName);
-	}
-
-	public void setTempDescriptionTxt(String tempDescription) {
-		tempDescriptionTxt.clear();
-		tempDescriptionTxt.sendKeys(tempDescription);
-	}
-	public void setNoOfDayTxt(String noOfDay) {
-		noOfDayTxt.clear();
-		noOfDayTxt.sendKeys(noOfDay);
-	}
-	// scroll down the page and select single roster group from  availble roaster group
-	public void setAvailableSkillForSingleRoster() {
-		action.scrollToElement(availableSkill).perform();
-		//		availableSkill.click();
-		select=new Select(availableSkill);
-		select.selectByIndex(0);	
-		//		select.selectByVisibleText("8689");
-	}
-	// scroll down the page and select single Employee group from  availble Emp group
-	public void setAvailableSkillForSingleEmp() {
-		action.scrollToElement(availableSkill).perform();
-		//		availableSkill.click();
-		select=new Select(availableSkill);
-		select.selectByIndex(1);	
-	}
-	//move a singel Roaster/Emp from available Roaster/Emp group to selected roaster group 
-	public void setAvailableSingleGroupMoveToSelectedGrp() {
-		action.moveToElement(selectMoveSingle).perform();
-		selectMoveSingle.click();
-	}
-	public void setSelectMoveAll() {
-		action.moveToElement(selectMoveSingle).perform();
-		selectMoveAll.click();
-	}
-	public void setSaveBtn() {
-		saveBtn.click();
-	}
-	public void setEditBtn() {
-		action.moveToElement(editBtn).perform();
-		editBtn.click();
-	}
-
-	public void setRosterCreation1stDay() {
-		action.moveToElement(rosterCreation1stDay).perform();
-		rosterCreation1stDay.click();
-	}
-
-	public void setBandCode() throws InterruptedException {
-		//		Thread.sleep(2000);
-		action.moveToElement(bandCode).perform();
-		bandCode.click();
-	}
-	public void setSelectBandCode() {
-		action.moveToElement(selectBandCode).perform();
-		selectBandCode.click();
-	}
-	public void setBtnSaveSelectShiftBandBtn() throws Exception {
-		//		webUtility.visibilityOfElement(driver, btnSaveSelectShiftBandBtn);
-		Thread.sleep(2000);
-		btnSaveSelectShiftBandBtn.click();
-	}
-	public void setBtnAddEmployee() {
-		action.moveToElement(btnAddEmployee).perform();
-		btnAddEmployee.click();
-	}
-	// Select Emp name from available roster group
-	public void setAvailableEmpTable() throws InterruptedException {
-		Thread.sleep(2000);
-		action.moveToElement(availableEmpTable).perform();
-		//		availableEmpTable.click();
-		select= new Select(availableEmpTable);
-		select.selectByIndex(0);
-	}
-
-	public void setBtnMoveFromAvailable() {
-		action.moveToElement(btnMoveFromAvailable).perform();
-		btnMoveFromAvailable.click();
-	}
-	public void setBtnSaveRosterTemplateEmployee() {
-		btnSaveRosterTemplateEmployee.click();	
-	}
-
-	public void setBtnAddRosterGroups() {
-		action.moveToElement(btnAddRosterGroups).perform();
-		btnAddRosterGroups.click();
-	}
-
-	// Select Roster Group B from available roster group
-	public void setAvailableRosterGroup() {
-		action.scrollToElement(availableSkill).perform();
-		availableSkill.click();
-		select=new Select(availableSkill);
-		select.selectByIndex(0);	
-	}
-
-	public void setBtnSaveRosterTemplateRosterGroups() {
-		btnSaveRosterTemplateRosterGroups.click();
-	}
-
-	public void getTemplateRosterUpdatedSuccessfullyMsg() {
-		String actualResult = templateRosterUpdatedSuccessfullyMsg.getText();
-		Assert.assertTrue(actualResult.contains("Template Roster updated successfully"));
-	}
-
-	public void setBtnAddSaveRosterPattern() {
-		webUtility.moveToElement(driver, btnAddSaveRosterPattern);
-		btnAddSaveRosterPattern.click();
-	}
-	public void setBtnPublishRosterPattern() throws InterruptedException {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		WebElement button = wait.until(ExpectedConditions.elementToBeClickable(btnPublishRosterPattern));
-		Actions action = new Actions(driver);
-		action.moveToElement(button).perform();
-		button.click();
-
-	}
-
-	public void setDropDownCalenderRosterUp(String PublishFrom) {
-		txtPublishFrom.clear();
-		txtPublishFrom.sendKeys(PublishFrom);
-		txtPublishFrom.sendKeys(Keys.ENTER);
-	}
-	public void setTxtNoOfBlock(String noOfBlocks) {
-		txtNoOfBlock.sendKeys(noOfBlocks);
-	}
-
-	public void setCheckBoxPublishRoster2() {
-		checkBoxPublishRoster2.click();
-	}
-	public void setBtnSaveTemplateRoster() {
-		btnSaveTemplateRoster.click();
-	}
-	public void setBtnPublishNow() {
-		btnPublishNow.click();
-	}
-
-	public void setBtnByEmp() {
-		btnByEmp.click();
-	}
-	public void setCheckBoxDeactive() {
-		checkBoxDeactive.click();
-	}
-
-	public void setBtnDeleteTemplateRoster() {
-		action.moveToElement(btnDeleteTemplateRoster).perform();
-		btnDeleteTemplateRoster.click();
-	}
-	public void setBtnYes() {
-		btnYes.click();
-	}
-	public void setCheckBoxActive() {
-		action.moveToElement(checkBoxActive).perform();
-		checkBoxActive.click();
-	}
-	public void enterEmptyCell(int daysToAdd, int totalRows, int columnsPerRow) throws Exception {
+	public void enterEmptyCell(int daysToAdd, int totalRows, int columnsPerRow) throws Exception 
+	{
 		int totalCells = emptyCells.size();
-
 		try {
 			for (int i = 0; i < totalCells; i++) {
 				WebElement emptyCell = emptyCells.get(i);
 				String off = emptyCell.getText();
-
 				// Calculate the column index based on the current iteration
 				double columnIndex = (double) i % columnsPerRow;
-
 				// Calculate the row index based on the current iteration
 				int rowIndex = i / columnsPerRow;
-
 				// Check if the current cell is within the specified days to add and within the valid rows
 				if ((int) columnIndex < daysToAdd && rowIndex < totalRows && off.equalsIgnoreCase("Off") && emptyCell.isEnabled()) {
 					// Perform actions if "Off" and the cell is enabled
 					Thread.sleep(2000);
+					Rc.explicitWait(emptyCell, "clickable");
 					emptyCell.click();
-					setBandCode();
-					setSelectBandCode();
-					setBtnSaveSelectShiftBandBtn();
+
+					Rc.moveToElement(bandCode);
+					bandCode.click();
+					Rc.moveToElement(selectBandCode);
+					selectBandCode.click();
+					Thread.sleep(2000);
+					btnSaveSelectShiftBandBtn.click();
+
 				} else {
 					// Perform actions if not "Off" or the cell is disabled
 					emptyCell.sendKeys(Keys.ENTER);
@@ -412,275 +258,228 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		}
 	}
 
-	public void performActionsOnCheckboxes(FakeEmployee fakeEmployee) {
-		// Check if the first checkbox is enabled
-		if (checkBoxPublishRosterMulti.size() > 0 && isElementEnabled(checkBoxPublishRosterMulti.get(0))) {
-			// Check the first checkbox if it's not already checked
-			if (!checkBoxPublishRosterMulti.get(0).isSelected()) {
-				checkBoxPublishRosterMulti.get(0).click();
-			}
-			// Check if setDropDownCalenderRosterUp is enabled
-			if (isElementEnabled(txtPublishFrom)) {
-				setDropDownCalenderRosterUp(fakeEmployee.getRosterPublishDate());
-			}
-			// Check if setTxtNoOfBlock is enabled
-			if (isElementEnabled(txtNoOfBlock)) {
-				setTxtNoOfBlock(noOfBlocks);
-			}
-		}
 
-		// Perform save actions after processing the first checkbox
-		setBtnSaveTemplateRoster();
-		setBtnPublishNow();
-	}
-	// Function to check if an element is enabled
-	private boolean isElementEnabled(WebElement element) {
-		try {
-			return element.isEnabled();
-		} catch (Exception e) {
-			return false;
-		}
-	}
-	public void getShiftExtractionProcessCompletedSuccessfullyMsg() { // Shift extraction process completed successfully
-		String actualResult = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
-		Assert.assertTrue(actualResult.contains("Shift extraction process completed successfully"));
+	public void setCreateRoasterwithGroup() throws Exception 
+	{
+		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
+		tampName = Rc.name;
+		Thread.sleep(2000);
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
+		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
+		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
+		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Roster Creation", "Roster Creation is not clicked");
+		Rc.explicitWait(addBtn, "clickable");
+		addBtn.click();
+		Rc.explicitWait(templateNameTxt, "visible");
+		templateNameTxt.clear();
+		templateNameTxt.sendKeys(tampName);
+		tempDescriptionTxt.clear();
+		tempDescriptionTxt.sendKeys(Rc.description);
+		noOfDayTxt.clear();
+		noOfDayTxt.sendKeys(noOfDay);
+		Rc.scrollToElement(availableSkill);
+		Rc.selectByIndex(availableSkill, 0);
+		Rc.moveToElement(selectMoveSingle);
+		selectMoveSingle.click();
+		saveBtn.click();
+		enterEmptyCell(6,2,7);
+		Rc.moveToElement(btnAddSaveRosterPattern);
+		btnAddSaveRosterPattern.click();
+		String actualResult = templateRosterUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Template Roster updated successfully"));
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
+		Thread.sleep(2000);
+		Rc.explicitWait(btnPublishRosterPattern, "clickable");
+		Rc.moveToElement(btnPublishRosterPattern);
+		btnPublishRosterPattern.click();
+		Rc.explicitWait(checkBoxPublishRoster, "clickable");
+		checkBoxPublishRoster.click();
+		Rc.explicitWait(txtPublishFrom, "clickable");
+		txtPublishFrom.click();
+		publishFromDate.click();
+		Rc.explicitWait(txtNoOfBlock, "visible");
+		txtNoOfBlock.sendKeys(Rc.randomInt);
+		btnSaveTemplateRoster.click();
+		Rc.explicitWait(btnPublishNow, "clickable");
+		btnPublishNow.click();
+
+
+		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
+		Assert.assertTrue(rosterCreateSuccessful.contains("Shift extraction process completed successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+		Rc.explicitWait(btnCloseRosterPattern, "clickable");
+		btnCloseRosterPattern.click();
 
 	}
-	public void clickNotificationPopup() throws Exception {
-		Thread.sleep(1000);
-		action.moveToElement(notificationPopup).perform();
+	public void setCreateRoasterwithEmployee() throws Exception 
+	{
+
+		tampName = Rc.firstName;
+
+		addBtn.click();
+		Rc.explicitWait(templateNameTxt, "visible");
+		templateNameTxt.clear();
+		templateNameTxt.sendKeys(tampName);
+		tempDescriptionTxt.clear();
+		tempDescriptionTxt.sendKeys(Rc.description);
+		noOfDayTxt.clear();
+		noOfDayTxt.sendKeys(noOfDay);
+		btnByEmp.click();
+		Thread.sleep(2000);
+		Rc.explicitWait(availableSkill, "visible");
+		Rc.scrollToElement(availableSkill);
+		Rc.selectByIndex(availableSkill, 1);
+		Rc.moveToElement(selectMoveSingle);
+		selectMoveSingle.click();
+		saveBtn.click();
+		enterEmptyCell(6,3,7);
+		Rc.explicitWait(btnAddSaveRosterPattern, "clickable");
+		Rc.moveToElement(btnAddSaveRosterPattern);
+		btnAddSaveRosterPattern.click();
+		String actualResult = templateRosterUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Template Roster updated successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+		Thread.sleep(2000);
+		Rc.explicitWait(btnPublishRosterPattern, "clickable");
+		btnPublishRosterPattern.click();
+		Rc.explicitWait(checkBoxPublishRoster, "clickable");
+		checkBoxPublishRoster.click();
+		Rc.explicitWait(txtPublishFrom, "clickable");
+		txtPublishFrom.click();
+		publishFromDate.click();
+		Rc.explicitWait(txtNoOfBlock, "visible");
+		txtNoOfBlock.sendKeys(Rc.randomInt);
+		btnSaveTemplateRoster.click();
+		Rc.explicitWait(btnPublishNow, "clickable");
+		btnPublishNow.click();
+		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
+		Assert.assertTrue(rosterCreateSuccessful.contains("Shift extraction process completed successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+		Rc.explicitWait(btnCloseRosterPattern, "clickable");
+		btnCloseRosterPattern.click();
+	}
+
+
+	public void setUpdateRoaster() throws Exception 
+	{
+		Rc.explicitWait(editBtn, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(tampName);
+		Rc.explicitWait(editBtn, "clickable");
+		editBtn.click();
+		Rc.explicitWait(btnPublishRosterPattern, "clickable");
+		btnPublishRosterPattern.click();
+		Rc.explicitWait(checkBoxPublishRoster, "clickable");
+		checkBoxPublishRoster.click();
+		Rc.explicitWait(txtPublishFrom, "clickable");
+		txtPublishFrom.click();
+		publishFromDate.click();
+		Rc.explicitWait(txtNoOfBlock, "visible");
+		txtNoOfBlock.sendKeys(Rc.randomInt);
+		btnSaveTemplateRoster.click();
+		Rc.explicitWait(btnPublishNow, "clickable");
+		btnPublishNow.click();
+		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
+		Assert.assertTrue(rosterCreateSuccessful.contains("Shift extraction process completed successfully"));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+		Rc.explicitWait(btnCloseRosterPattern, "clickable");
+		btnCloseRosterPattern.click();
+	}
+
+	public void setDeactiveRoster() throws Exception 
+	{
+
+		Rc.explicitWait(editBtn, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(tampName);
+		Rc.explicitWait(checkBox, "clickable");
+		checkBox.click();
+		Rc.explicitWait(btnDeleteTemplateRoster, "clickable");
+		btnDeleteTemplateRoster.click();
+		btnYes.click();
+		String actualResult = rosterDeleteMsg.getText();
+		Assert.assertTrue(actualResult.contains("Template Roster"));
+		Rc.explicitWait(notificationPopup, "clickable");
 		notificationPopup.click();
 	}
-	public void performDeleteAction() throws InterruptedException {
-		//		Thread.sleep(2000);
-		for (int i = 0; i < 3; i++) {
-			try {
-				scrollAndClick(driver, btnDeleteTemplateRoster);
-				break; 
-			} catch (ElementClickInterceptedException e) {
-			}
-		}
-	}
-	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
-		boolean checkboxFound = false;
 
-		// Iterate through rows
-		for (int i = 0; i < row.size(); i++) {
-			WebElement checkbox = checkboxes.get(i);
-			if (checkbox.isEnabled()) {
-				//				scrollAndClick(driver, checkbox);
-				checkbox.click();
-				performDeleteAction();
-				checkboxFound = true;
-				break;
-			}
-		}
-		// If no enabled checkbox found on the current page, go to the next page and try again
-		if (!checkboxFound) {
-			goToNextPageAndDelete();
-		}
-	}
-	private void goToNextPageAndDelete() throws InterruptedException {
-		try {
-			scrollAndClick(driver, nextPage);
-			scrollUp(driver);
-			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-
-		} catch (ElementClickInterceptedException e) {
-			// Handle the exception if necessary
-		}
-	}
-	// Method to perform scroll-up action
-	private void scrollUp(WebDriver driver) {
-		JavascriptExecutor js = (JavascriptExecutor) driver;
-		js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
-	}
-	public void scrollAndClick(WebDriver driver, WebElement element) {
-		WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
-		((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-		// Scroll to the top of the page
-		((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
-		element.click();
-	}
-	
-	public void clickRosterCreation() {
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
-		wait.until(ExpectedConditions.invisibilityOfElementLocated(By.cssSelector(".blockUI.blockOverlay")));
-		WebElement targetElement = wait.until(ExpectedConditions.elementToBeClickable(rosterCreation));
-		targetElement.click();
-//		rosterCreation.click();
-	}
-	public void enterNameSearch(String TempName) {
-		txtSearch.click();
-		txtSearch.sendKeys(TempName);
-	}
-	
-	String TemplateName ;
-	public void setCreateRoasterwithGroup(FakeEmployee fakeEmployee) throws Exception {
-		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
-		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
-		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
-		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-
-		RoasterSetup.click();
-		Thread.sleep(1000);
-//		rosterCreation.click();
-		clickRosterCreation();
-		
+	public void setReactiveRoster() throws InterruptedException 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(editBtn, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(tampName);
+		Rc.moveToElement(editBtn);
+		editBtn.click();
+		Rc.moveToElement(checkBoxActive);
+		checkBoxActive.click();
+		Rc.moveToElement(btnAddSaveRosterPattern);
+		btnAddSaveRosterPattern.click();
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
 		Thread.sleep(3000);
-		setAddBtn();
-		TemplateName = tampName+ " "+ System.currentTimeMillis();
-		setTemplateNameTxt(TemplateName);
-		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
-		setNoOfDayTxt(noOfDay);
-		setAvailableSkillForSingleRoster();
-		setAvailableSingleGroupMoveToSelectedGrp();
-		setSaveBtn();
-		enterEmptyCell(6,2,7);
-		Thread.sleep(2000);
-		setBtnAddSaveRosterPattern();
-		getTemplateRosterUpdatedSuccessfullyMsg();
-		clickNotificationPopup();
-		Thread.sleep(2000);
-		// Add Employee
-		//				setBtnAddEmployee();
-		//				Thread.sleep(2000);
-		//				setAvailableEmpTable();
-		//				setBtnMoveFromAvailable();
-		//				setBtnSaveRosterTemplateEmployee();
-		//
-		// Add Roster group
-		//				Thread.sleep(2000);
-		//				setBtnAddRosterGroups();
-		//				Thread.sleep(2000);
-		//				setAvailableRosterGroup();
-		//				setAvailableSingleSkillMoveToSelectedSkill();
-		//				setBtnSaveRosterTemplateRosterGroups();
-
-		setBtnPublishRosterPattern() ;
-		performActionsOnCheckboxes(fakeEmployee);
-		clickNotificationPopup();
+		Rc.explicitWait(btnCloseRosterPattern, "clickable");
+		btnCloseRosterPattern.click();
 	}
-	public void setCreateRoasterwithEmployee(FakeEmployee fakeEmployee) throws Exception {
-		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
-		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
-		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
-		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-	
-//		RoasterSetup.click();
-		Thread.sleep(1000);
-//		rosterCreation.click();
-		clickRosterCreation();
-		setAddBtn();
-		Thread.sleep(1000);
-		
-		TemplateName = tampName+ " "+ System.currentTimeMillis();
-		setTemplateNameTxt(TemplateName);
 
-		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
-		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
-		setNoOfDayTxt(noOfDay);
-		setBtnByEmp();
+	public void setCreateRoasterwithRosterAndEmp() throws Exception 
+	{
+		Rc.explicitWait(addBtn, "clickable");
+		addBtn.click();
+		Rc.explicitWait(templateNameTxt, "visible");
+		templateNameTxt.clear();
+		templateNameTxt.sendKeys(Rc.name);
+		tempDescriptionTxt.clear();
+		tempDescriptionTxt.sendKeys(Rc.description);
+		noOfDayTxt.clear();
+		noOfDayTxt.sendKeys(noOfDay);
+		Rc.scrollToElement(availableSkill);
+		Rc.selectByIndex(availableSkill, 0);
+		Rc.moveToElement(selectMoveSingle);
+		selectMoveSingle.click();
+		saveBtn.click();
+		Rc.moveToElement(btnAddEmployee);
+		btnAddEmployee.click();
 		Thread.sleep(2000);
-		setAvailableSkillForSingleEmp();
-		setAvailableSingleGroupMoveToSelectedGrp();
-		setSaveBtn();
+		Rc.moveToElement(availableEmpTable);
+		Rc.selectByIndex(availableEmpTable, 0);
+		Rc.moveToElement(btnMoveFromAvailable);
+		btnMoveFromAvailable.click();
+		Rc.explicitWait(btnSaveRosterTemplateEmployee, "clickable");
+		btnSaveRosterTemplateEmployee.click();	
 		enterEmptyCell(6,3,7);
+		Rc.moveToElement(btnAddSaveRosterPattern);
+		btnAddSaveRosterPattern.click();
+		String actualResult = templateRosterUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Template Roster updated successfully"));
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
 		Thread.sleep(2000);
-		setBtnAddSaveRosterPattern();
-		getTemplateRosterUpdatedSuccessfullyMsg();
-		clickNotificationPopup();
-		
-		setBtnPublishRosterPattern();
-		performActionsOnCheckboxes(fakeEmployee);
-		clickNotificationPopup();
+		Rc.explicitWait(btnPublishRosterPattern, "clickable");
+		btnPublishRosterPattern.click();
+		Rc.explicitWait(checkBoxPublishRoster, "clickable");
+		checkBoxPublishRoster.click();
+		Rc.explicitWait(txtPublishFrom, "clickable");
+		txtPublishFrom.click();
+		publishFromDate.click();
+		Rc.explicitWait(txtNoOfBlock, "visible");
+		txtNoOfBlock.sendKeys(Rc.randomInt);
+		btnSaveTemplateRoster.click();
+		Rc.explicitWait(btnPublishNow, "clickable");
+		btnPublishNow.click();
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+		Rc.explicitWait(btnCloseRosterPattern, "clickable");
+		btnCloseRosterPattern.click();
 
 	}
-	public void setCreateRoasterwithRosterAndEmp(FakeEmployee fakeEmployee) throws Exception {
-		tampName = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 7);
-		tempDescription = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 8);
-		noOfDay = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 9);
-		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 14, 10);
-	
-//		RoasterSetup.click();
-		Thread.sleep(5000);
-//		rosterCreation.click();
-		clickRosterCreation();
-		Thread.sleep(5000);
-		setAddBtn();
-		Thread.sleep(1000);
-		setTemplateNameTxt(tampName+ " "+ System.currentTimeMillis());
-		setTempDescriptionTxt(tempDescription+ " "+ System.currentTimeMillis());
-		setNoOfDayTxt(noOfDay);
-		setAvailableSkillForSingleRoster();
-		setAvailableSingleGroupMoveToSelectedGrp();
-		setSaveBtn();
-		//		enterEmptyCell(6,3,7);
-		//	Add Employee
-		clickNotificationPopup();
-		Thread.sleep(2000);
-		setBtnAddEmployee();
-		Thread.sleep(2000);
-		setAvailableEmpTable();
-		setBtnMoveFromAvailable();
-		setBtnSaveRosterTemplateEmployee();
-
-		enterEmptyCell(6,3,7);
-
-		setBtnAddSaveRosterPattern();
-		getTemplateRosterUpdatedSuccessfullyMsg();
-		clickNotificationPopup();
-		
-		setBtnPublishRosterPattern();
-		performActionsOnCheckboxes(fakeEmployee);
-		getShiftExtractionProcessCompletedSuccessfullyMsg();
-		clickNotificationPopup();
-	}
-
-
-
-	public void setUpdateRoaster(FakeEmployee fakeEmployee) throws Exception {
-		noOfBlocks = excelUtility.readDataFromExcelFile("EmployeeTest", 15, 10);
-		//		Thread.sleep(2000);
-//		RoasterSetup.click();
-		Thread.sleep(1000);
-//		rosterCreation.click();
-		clickRosterCreation();
-		
-//		enterNameSearch(TemplateName);
-		
-		setEditBtn();
-		setBtnPublishRosterPattern() ;
-		performActionsOnCheckboxes(fakeEmployee);
-		clickNotificationPopup();
-	}
-	public void setDeactiveRoster() throws Exception {
-//		setCheckBoxDeactive();
-//		setBtnDeleteTemplateRoster();
-		
-//		RoasterSetup.click();
-		Thread.sleep(1000);
-//		rosterCreation.click();
-		clickRosterCreation();
-		
-//		enterNameSearch(TemplateName);
-		deleteRowsWithEnabledCheckbox();
-		setBtnYes();
-		clickNotificationPopup();
-	}
-
-	public void setReactiveRoster() throws InterruptedException {
-//		RoasterSetup.click();
-		Thread.sleep(1000);
-//		rosterCreation.click();
-		clickRosterCreation();
-//		enterNameSearch(TemplateName);
-		Thread.sleep(2000);
-		setEditBtn();
-		setCheckBoxActive();
-		setBtnAddSaveRosterPattern();
-	}
-
 }
 
 

@@ -2,17 +2,11 @@ package com.AutomationJiviewsPOM;
 
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import com.AutomationJiviewsGeneric.ReusableComponent;
-import com.AutomationJiviewsGeneric.WebUtilities;
-import com.github.javafaker.Faker;
 
 public class Berth_Setup {
 	
@@ -193,6 +187,7 @@ public class Berth_Setup {
 		Thread.sleep(3000);
 		clickOnEdit.click();
 		Rc.explicitWait(search, "clickable");
+		Thread.sleep(3000);
 		isActiveCheckBox.click();
 		saveBerthDetails.click();
 	}

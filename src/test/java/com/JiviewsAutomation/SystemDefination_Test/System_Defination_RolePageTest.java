@@ -6,7 +6,8 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsPOM.SystemDefination_RolePage;
 
 
-public class System_Defination_RolePageTest extends BaseClass{
+public class System_Defination_RolePageTest extends BaseClass
+{
 
 	SystemDefination_RolePage roleSetup;
 
@@ -14,7 +15,6 @@ public class System_Defination_RolePageTest extends BaseClass{
 	public void System_Defination_VerifyCreateNewRole() throws Exception 
 	{
 		roleSetup = new SystemDefination_RolePage(driver);
-		
 		roleSetup.createNewRole();
 	}
 

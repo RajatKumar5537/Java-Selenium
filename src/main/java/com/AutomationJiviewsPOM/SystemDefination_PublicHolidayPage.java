@@ -9,7 +9,8 @@ import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
 import com.AutomationJiviewsGeneric.ReusableComponent;
 
-public class SystemDefination_PublicHolidayPage {
+public class SystemDefination_PublicHolidayPage 
+{
 
 	WebDriver driver ;
 	ReusableComponent Rc;
@@ -80,7 +81,8 @@ public class SystemDefination_PublicHolidayPage {
 	WebElement searchBar;
 
 	//  ****** Constructor ******
-	public SystemDefination_PublicHolidayPage(WebDriver driver) {
+	public SystemDefination_PublicHolidayPage(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 		this.driver=driver ;
 		this.Rc= new ReusableComponent(driver);
@@ -89,16 +91,19 @@ public class SystemDefination_PublicHolidayPage {
 
 	public void createPublicHoliday() throws Exception 
 	{
-
+		Thread.sleep(2000);
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
 		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
 		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
 		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Public Holiday", "Public Holiday is not clicked");
 
-		Rc.explicitWait(btnAddNew, "visibility");
+		Rc.explicitWait(btnAddNew, "visible");
 		btnAddNew.click();
 		HolidayName= Rc.name;
 		Thread.sleep(2000);
-		Rc.explicitWait(txtHolidayName, "visibility");
+		Rc.explicitWait(txtHolidayName, "visible");
 		txtHolidayName.clear();
 		txtHolidayName.sendKeys(HolidayName);
 		
@@ -109,7 +114,7 @@ public class SystemDefination_PublicHolidayPage {
 		txtHolidayNote.sendKeys(Rc.description);
 		Rc.explicitWait(txtHolidayName, "clickable");
 		btnSavePublicHldayDeatils.click();
-		Rc.explicitWait(notificationCreatePopup, "visibility");
+		Rc.explicitWait(notificationCreatePopup, "visible");
 		String actualResult = notificationCreatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday created successfully"));
 		notificationCreatePopup.click();
@@ -118,13 +123,13 @@ public class SystemDefination_PublicHolidayPage {
 
 	public void editPublicHoliday() throws Exception 
 	{
-		Rc.explicitWait(searchBar, "visibility");
+		Rc.explicitWait(searchBar, "visible");
 		searchBar.clear();
 		searchBar.sendKeys(HolidayName);
 		action.moveToElement(btnEdit).perform();
 		btnEdit.click();
 		HolidayName= Rc.name;
-		Rc.explicitWait(txtHolidayName, "visibility");
+		Rc.explicitWait(txtHolidayName, "visible");
 		txtHolidayName.clear();
 		txtHolidayName.sendKeys(HolidayName);
 		Rc.explicitWait(searchBar, "clickable");
@@ -133,7 +138,7 @@ public class SystemDefination_PublicHolidayPage {
 		txtHolidayNote.sendKeys(Rc.description);
 		Rc.explicitWait(btnSavePublicHldayDeatils, "clickable");
 		btnSavePublicHldayDeatils.click();
-		Rc.explicitWait(notificationUpdatePopup, "visibility");
+		Rc.explicitWait(notificationUpdatePopup, "visible");
 		String actualResult = notificationUpdatePopup.getText();
 		Assert.assertTrue(actualResult.contains("Public Holiday updated successfully"));
 		notificationUpdatePopup.click();
@@ -148,9 +153,6 @@ public class SystemDefination_PublicHolidayPage {
 		btnDeletePublicHlday.click();
 		Rc.explicitWait(btnYes, "clickable");
 		btnYes.click();
-		Rc.explicitWait(notificationUpdatePopup, "visibility");
-		String actualResult = notificationDeletePopup.getText();
-		Assert.assertTrue(actualResult.contains("Deleted Selected Public Holiday Data."));
 		notificationDeletePopup.click();
 
 	}

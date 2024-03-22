@@ -1,409 +1,211 @@
 package com.AutomationJiviewsPOM;
 
-import java.time.Duration;
-import java.time.LocalDateTime;
 import java.util.List;
-
-import org.openqa.selenium.ElementClickInterceptedException;
-import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
-import org.openqa.selenium.support.ui.WebDriverWait;
-
-import com.AutomationJiviewsGeneric.BaseClass;
+import org.testng.Assert;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
-import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsGeneric.ReusableComponent;
-import com.AutomationJiviewsGeneric.WebUtilities;
 
-public class E10_2639_SystemDefinationSCRPage {
+public class E10_2639_SystemDefinationSCRPage 
+{
 
 	WebDriver driver; 
 	ReusableComponent Rc ;
-//	public String timeStamp = LocalDateTime.now().toString();
-	public Actions action;
-	public Select select;
-	public WebUtilities webUtility;
 	public ExcelUtilities excelUtility;
-	public E10_2639_SystemDefinationSCRPage scr;
 	String ruleName;
 
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement dvOrgUnitDropdown;
+
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // System Definitions
+
+	@FindBy(xpath = "(//ul[@id='ulApplicationMenu']/li)[2]")
+	WebElement ulApplicationMenu; // Roster Setup
+
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[2]/li")
+	List<WebElement> sideNavMenu; // Schedule Creation Rules
+
 	@FindBy(xpath = "//button[@id='btnAddScheduleRule']")
-	private WebElement btnAddScheduleRule;
+	WebElement btnAddScheduleRule;
 
 	@FindBy(xpath = "//input[@id='txtScheduleRuleName']")
-	private WebElement txtScheduleRuleName;
+	WebElement txtScheduleRuleName;
 
 	@FindBy(xpath = "//input[@id='txtScheduleRuleDesc']")
-	private WebElement txtScheduleRuleDesc;
+	WebElement txtScheduleRuleDesc;
 
 	@FindBy(xpath = "//input[@id='txtValidFrom']")
-	private WebElement txtValidFrom;
+	WebElement txtValidFrom;
+	@FindBy(xpath = "(//table[@class='table-condensed']/tbody/tr/td)[10]")
+	WebElement calender;
 
 	@FindBy(xpath = "//input[@id='txtValidTo']")
-	private WebElement txtValidTo;
+	WebElement txtValidTo;
 
 	@FindBy(xpath =  "//input[@id='txtPeriodLength']")
-	private WebElement txtPeriodLength;
+	WebElement txtPeriodLength;
+
 
 	@FindBy(xpath = "//span[text()='IsActive?']")
-	private WebElement chkIsActive;
+	WebElement chkIsActive;
 
 	@FindBy(xpath = "//input[@id='txtShiftlengthMin']")
-	private WebElement txtShiftlengthMin;
+	WebElement txtShiftlengthMin;
 
 	@FindBy(xpath = "//input[@id='txtShiftlengthMax']")
-	private WebElement txtShiftlengthMax;
+	WebElement txtShiftlengthMax;
 
 	@FindBy(xpath = "//input[@id='txtContDaysScheduleOnMin']")
-	private WebElement txtContDaysScheduleOnMin;
+	WebElement txtContDaysScheduleOnMin;
 
 	@FindBy(xpath = "//input[@id='txtContDaysScheduleOnMax']")
-	private WebElement txtContDaysScheduleOnMax;
+	WebElement txtContDaysScheduleOnMax;
 
 	@FindBy(xpath = "//input[@id='txtDaysPerPeriodMin']")
-	private WebElement txtDaysPerPeriodMin;
+	WebElement txtDaysPerPeriodMin;
 
 	@FindBy(xpath = "//input[@id='txtDaysPerPeriodMax']")
-	private WebElement txtDaysPerPeriodMax;
+	WebElement txtDaysPerPeriodMax;
 
 	@FindBy(xpath = "//input[@id='txtContDaysScheduleOffMin']")
-	private WebElement txtContDaysScheduleOffMin;
+	WebElement txtContDaysScheduleOffMin;
 
 	@FindBy(xpath = "//input[@id='txtContDaysScheduleOffMax']")
-	private WebElement txtContDaysScheduleOffMax;
+	WebElement txtContDaysScheduleOffMax;
 
 	@FindBy(xpath = "//input[@id='txtTimePerPeriodMin']")
-	private WebElement txtTimePerPeriodMin;
+	WebElement txtTimePerPeriodMin;
 
 	@FindBy(xpath = "//input[@id='txtTimePerPeriodMax']")
-	private WebElement txtTimePerPeriodMax;
+	WebElement txtTimePerPeriodMax;
 
 	//Include Leave Option 
 	@FindBy(xpath = "(//label[@class='custom-control custom-checkbox m-0'])[2]")
-	private WebElement chkIsActive2;
+	WebElement chkIsActive2;
 
 	//Next button 
 	@FindBy(xpath = "//button[@id='btnAddScheduleRuleShiftBands']")
-	private WebElement btnAddScheduleRuleShiftBands;
+	WebElement btnAddScheduleRuleShiftBands;
 
 	// After New Button 
 
 	@FindBy(xpath = "//input[@id='txtContDaysOnMin']")
-	private WebElement txtContDaysOnMin;
+	WebElement txtContDaysOnMin;
 
 	@FindBy(xpath = "//input[@id='txtContDaysOnMax']")
-	private WebElement txtContDaysOnMax;
+	WebElement txtContDaysOnMax;
 
 	@FindBy(xpath = "//input[@id='txtContDaysOffMin']")
-	private WebElement txtContDaysOffMin;
+	WebElement txtContDaysOffMin;
 
 	@FindBy(xpath = "//input[@id='txtContDaysOffMax']")
-	private WebElement txtContDaysOffMax;
+	WebElement txtContDaysOffMax;
 
 	@FindBy(xpath = "//input[@id='txtShiftBandsPerPeriodMin']")
-	private WebElement txtShiftBandsPerPeriodMin;
+	WebElement txtShiftBandsPerPeriodMin;
 
 	@FindBy(xpath = "//input[@id='txtShiftBandsPerPeriodMax']")
-	private WebElement txtShiftBandsPerPeriodMax;
+	WebElement txtShiftBandsPerPeriodMax;
 
 	@FindBy(xpath = "//input[@id='txtMinHourRest']")
-	private WebElement txtMinHourRest;
+	WebElement txtMinHourRest;
 
 	// Available Shift Band table 
 	@FindBy(xpath = "(//select[@class='form-control'])[1]")
-	private WebElement availableShiftBand;
+	WebElement availableShiftBand;
 
 	// select for single Arrow -> move skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn move btn-default']")
-	private WebElement selectMoveSingle; 
+	WebElement selectMoveSingle; 
 
 	//		select for move multiple skill from available skill table to Selected skiil table 
 	@FindBy(xpath = "//button[@class='btn moveall btn-default']")
-	private WebElement selectMoveAll;
+	WebElement selectMoveAll;
 
 	// here it will select a skill from Seleceted Skill Table 
 	@FindBy(xpath = "(//select[@class='form-control'])[2]")
-	private WebElement selectedSkill;
+	WebElement selectedSkill;
 
 	//	select for move single skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn remove btn-default']")
-	private WebElement removeSelectedSkillSingle;
+	WebElement removeSelectedSkillSingle;
 
 	//	select for move multiple skill from Selected skill table to Available skiil table 
 	@FindBy(xpath = "//button[@class='btn removeall btn-default']")
-	private WebElement removeSelectedSkillAll;
+	WebElement removeSelectedSkillAll;
 
 	@FindBy(xpath = "//button[@id='btnSaveScheduleRulePeriod']")
-	private WebElement btnSaveScheduleRulePeriod;
+	WebElement btnSaveScheduleRulePeriod;
 
 	@FindBy(xpath = "//button[@id='btnSaveScheduleCreationRule']")
-	private WebElement btnSaveScheduleCreationRule;
+	WebElement btnSaveScheduleCreationRule;
 
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
 	WebElement searchBar;
 	@FindBy(xpath = "(//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1'])[1]")
-	private WebElement btnEdit;
+	WebElement btnEdit;
 
 	@FindBy(className = "toast-close-button")
-	private WebElement notificationPopup;
+	WebElement notificationPopup;
 
 	@FindBy(xpath = "//table[@id='ScheduleRule-list']/tbody/tr")
-	private List<WebElement> row;
+	List<WebElement> row;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
-	private List<WebElement> checkboxes;
+	List<WebElement> checkboxes;
 	@FindBy(xpath = "//li[@id='ScheduleRule-list_next']")
-	private WebElement nextPage;
-	
+	WebElement nextPage;
+
 	@FindBy(xpath = "(//tr[@role='row']/td/input)[1]")
-	private WebElement checkBox;
+	WebElement checkBox;
 
 	@FindBy(xpath = "//button[@id='btnDeleteScheduleRule']")
-	private WebElement btnDeletePublicHlday;
+	WebElement btnDeletePublicHlday;
 
 	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement btnYes;
+	WebElement btnYes;
 
-	public E10_2639_SystemDefinationSCRPage(WebDriver driver) {
+	@FindBy(xpath = "//div[text()='Schedule Creation Rules created successfully.']")
+	WebElement scrCreatedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='Schedule Creation Rules details updated successfully.']")
+	WebElement scrUpdatedSuccessfullyMsg;
+	@FindBy(xpath = "//div[text()='Schedule Creation Rule deleted successfully']")
+	WebElement scrDeletedSuccessfullyMsg;
+
+
+
+	public E10_2639_SystemDefinationSCRPage(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 		this.Rc= new ReusableComponent(driver);
-		this.action= new Actions(driver);
 		this.excelUtility= new ExcelUtilities();
-		this.webUtility= new WebUtilities(driver);
 	}
 
-	public void setBtnAddScheduleRule() {
-		btnAddScheduleRule.click();
-	}
 
-	public void setTxtScheduleRuleName(String ruleName) throws InterruptedException {
+	public void createSCR() throws Exception 
+	{
+		ruleName = Rc.name;
 		Thread.sleep(2000);
-		txtScheduleRuleName.clear();
-		txtScheduleRuleName.sendKeys(ruleName);
-	}
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
+		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
+		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
+		Rc.explicitWait(ulApplicationMenu, "clickable");
+		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Schedule Creation Rules", "Schedule Creation Rules is not clicked");
 
-	public void setTxtScheduleRuleDesc(String ruleDesc) {
-		txtScheduleRuleDesc.clear();
-		txtScheduleRuleDesc.sendKeys(ruleDesc);
-	}
 
-	public void setTxtValidFrom(String validFrom) {
-		txtValidFrom.clear();
-		txtValidFrom.sendKeys(validFrom);
-		txtValidFrom.sendKeys(Keys.ENTER);
-	}
-	public void setTxtValidTo(String validTo) {
-		txtValidTo.clear();
-		txtValidTo.sendKeys(validTo);
-	}
-	public void setTxtPeriodLength(String periodLength) {
-		txtPeriodLength.clear();
-		txtPeriodLength.sendKeys(periodLength);
-	}
-	public void setChkIsActive() {
-		action.scrollToElement(chkIsActive).perform();
-		chkIsActive.click();
-	}
-	public void setTxtShiftlengthMin(String lengthMin) {
-		txtShiftlengthMin.clear();
-		txtShiftlengthMin.sendKeys(lengthMin);
-		txtShiftlengthMin.sendKeys(Keys.ENTER);
-	}
-	public void setTxtShiftlengthMax(String lengthMax) {
-		txtShiftlengthMax.clear();
-		txtShiftlengthMax.sendKeys(lengthMax);
-		txtShiftlengthMax.sendKeys(Keys.ENTER);
-	}
-	public void setTxtContDaysScheduleOnMin(String workDayMin) {
-		txtContDaysScheduleOnMin.clear();
-		txtContDaysScheduleOnMin.sendKeys(workDayMin);
-	}
-	public void setTxtContDaysScheduleOnMax(String workDayMax) {
-		txtContDaysScheduleOnMax.clear();
-		txtContDaysScheduleOnMax.sendKeys(workDayMax);
-	}
-	public void setTxtDaysPerPeriodMin(String dayPeriodMin) {
-		txtDaysPerPeriodMin.clear();
-		txtDaysPerPeriodMin.sendKeys(dayPeriodMin);
-	}
-	public void setTxtDaysPerPeriodMax(String dayPeriodMax) {
-		txtDaysPerPeriodMax.clear();
-		txtDaysPerPeriodMax.sendKeys(dayPeriodMax);
-	}
-	public void setTxtContDaysScheduleOffMin(String offDayMin) {
-		txtContDaysScheduleOffMin.clear();
-		txtContDaysScheduleOffMin.sendKeys(offDayMin);
-	}
-	public void setTxtContDaysScheduleOffMax(String offDayMax) {
-		txtContDaysScheduleOffMax.clear();
-		txtContDaysScheduleOffMax.sendKeys(offDayMax);
-	}
-	public void setTxtTimePerPeriodMin(String timePeriodMin) {
-		txtTimePerPeriodMin.clear();
-		txtTimePerPeriodMin.sendKeys(timePeriodMin);
-	}
-	public void setTxtTimePerPeriodMax(String timePeriodMax) {
-		txtTimePerPeriodMax.clear();
-		txtTimePerPeriodMax.sendKeys(timePeriodMax);
-	}
-	//Include Leave Option 
-	public void setChkIsActive2() {
-		chkIsActive2.click();
-	}
-	public void setBtnAddScheduleRuleShiftBands() {
-		btnAddScheduleRuleShiftBands.click();
-	}
-	public void setTxtContDaysOnMin(String countDayMin) {
-		txtContDaysOnMin.clear();
-		txtContDaysOnMin.sendKeys(countDayMin);
-	}
-	public void setTxtContDaysOnMax(String countDayMax) {
-		txtContDaysOnMax.clear();
-		txtContDaysOnMax.sendKeys(countDayMax);
-	}
-	public void setTxtContDaysOffMin(String countOffMin) {
-		txtContDaysOffMin.clear();
-		txtContDaysOffMin.sendKeys(countOffMin);
-	}
-	public void setTxtContDaysOffMax(String countOffMax) {
-		txtContDaysOffMax.clear();
-		txtContDaysOffMax.sendKeys(countOffMax);
-	}
-	public void setTxtShiftBandsPerPeriodMin(String shiftBandMin) {
-		txtShiftBandsPerPeriodMin.clear();
-		txtShiftBandsPerPeriodMin.sendKeys(shiftBandMin);
-	}
-	public void setTxtShiftBandsPerPeriodMax(String shiftBandMax) {
-		txtShiftBandsPerPeriodMax.clear();
-		txtShiftBandsPerPeriodMax.sendKeys(shiftBandMax);
-	}
-	public void setTxtMinHourRest(String minHourRest) {
-		txtMinHourRest.clear();
-		txtMinHourRest.sendKeys(minHourRest);
-		txtMinHourRest.sendKeys(Keys.ENTER);
-	}
-	public void setAvailableShiftBand() {
-		action.scrollToElement(availableShiftBand).perform();
-		select=new Select(availableShiftBand);
-		select.selectByIndex(1);
-	}
-	public void setSelectMoveSingle() {
-		action.moveToElement(selectMoveSingle).perform();
-		selectMoveSingle.click();
-	}
-	public void setSelectMoveAll() {
-		selectMoveAll.click();
-	}
-	public void setSelectedSkill() {
-		selectedSkill.click();
-	}
-	public void setRemoveSelectedSkillSingle() {
-		removeSelectedSkillSingle.click();
-	}
-	public void setRemoveSelectedSkillAll() {
-		removeSelectedSkillAll.click();
-	}
-	public void setBtnSaveScheduleRulePeriod()  {
-		btnSaveScheduleRulePeriod.click();
-	}
 
-	public void setBtnSaveScheduleCreationRule() throws Exception {
-		webUtility.moveToElement(driver, btnSaveScheduleCreationRule);
-		btnSaveScheduleCreationRule.click();
-	}
-
-	public void setBtnEdit() {
-		webUtility.ElementClickable(driver, btnEdit);
-		btnEdit.click();
-	}
-	public void setNotificationPopup() {
-		webUtility.moveToElement(driver, notificationPopup);
-		notificationPopup.click();
-	}
-	public void setCheckbox() {
-		//		webUtility.moveToElement(driver, checkBox);
-		checkBox.click();
-	}
-	public void performDeleteAction() throws InterruptedException {
-		//		Thread.sleep(2000);
-		for (int i = 0; i < 3; i++) {
-			try {
-				scrollAndClick(driver, btnDeletePublicHlday);
-				break; 
-			} catch (ElementClickInterceptedException e) {
-			}
-		}
-	}
-	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
-		boolean checkboxFound = false;
-
-		// Iterate through rows
-		for (int i = 0; i < row.size(); i++) {
-			WebElement checkbox = checkboxes.get(i);
-			if (checkbox.isEnabled()) {
-				//				scrollAndClick(driver, checkbox);
-				checkbox.click();
-				performDeleteAction();
-				checkboxFound = true;
-				break;
-			}
-		}
-		// If no enabled checkbox found on the current page, go to the next page and try again
-		if (!checkboxFound) {
-			goToNextPageAndDelete();
-		}
-	}
-	private void goToNextPageAndDelete() throws InterruptedException {
-		try {
-			scrollAndClick(driver, nextPage);
-			scrollUp(driver);
-			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-
-		} catch (ElementClickInterceptedException e) {
-			// Handle the exception if necessary
-		}
-	}
-	// Method to perform scroll-up action
-		private void scrollUp(WebDriver driver) {
-			JavascriptExecutor js = (JavascriptExecutor) driver;
-			js.executeScript("window.scrollBy(0, -150)"); // Adjust the scroll distance as needed
-		}
-		public void scrollAndClick(WebDriver driver, WebElement element) {
-			WebElement wait = new WebDriverWait(driver, Duration.ofSeconds(10)).until(ExpectedConditions.elementToBeClickable(element));
-			((JavascriptExecutor) driver).executeScript("arguments[0].scrollIntoView(true);", element);
-			// Scroll to the top of the page
-			((JavascriptExecutor) driver).executeScript("window.scrollTo(0, 0);");
-			element.click();
-		}
-		
-		
-		
-	public void setBtnDeletePublicHlday() {
-		btnDeletePublicHlday.click();
-	}
-	public void setBtnYes() throws Exception {
-		webUtility.visibilityOfElement(driver, btnYes);
-		btnYes.click();
-	}
-	public void clickNotificationPopup() throws Exception {
-		webUtility.ElementClickable(driver, notificationPopup);
-		notificationPopup.click();
-	}
-	
-	
-	public void createSCR() throws Exception {
-
-//		String ruleName = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 7);
-//		String ruleDesc = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 8);
-		String validFrom = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 9);
-		//		String validTo = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 10);
 		String periodLength = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 11);
 		String lengthMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 12);
 		String lengthMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 13);
@@ -424,177 +226,140 @@ public class E10_2639_SystemDefinationSCRPage {
 		String shiftBandMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 27);
 		String minHourRest = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 28);
 
-		ruleName = Rc.name;
 		
+
 		btnAddScheduleRule.click();
-		
 		Thread.sleep(2000);
 		Rc.explicitWait(txtScheduleRuleName, "visibility");
 		txtScheduleRuleName.clear();
 		txtScheduleRuleName.sendKeys(ruleName);
-		
 		txtScheduleRuleDesc.clear();
 		txtScheduleRuleDesc.sendKeys(Rc.description);
-		
-		txtValidFrom.clear();
-		txtValidFrom.sendKeys(validFrom);
-		txtValidFrom.sendKeys(Keys.ENTER);
-		
+		txtValidFrom.click();
+		calender.click();
 		txtPeriodLength.clear();
 		txtPeriodLength.sendKeys(periodLength);
-		
 		txtShiftlengthMin.clear();
 		txtShiftlengthMin.sendKeys(lengthMin);
 		txtShiftlengthMin.sendKeys(Keys.ENTER);
-		
-		
 		txtShiftlengthMax.clear();
 		txtShiftlengthMax.sendKeys(lengthMax);
 		txtShiftlengthMax.sendKeys(Keys.ENTER);
-		
 		txtContDaysScheduleOnMin.clear();
 		txtContDaysScheduleOnMin.sendKeys(workDayMin);
-		
 		txtContDaysScheduleOnMax.clear();
 		txtContDaysScheduleOnMax.sendKeys(workDayMax);
-
 		txtDaysPerPeriodMin.clear();
 		txtDaysPerPeriodMin.sendKeys(dayPeriodMin);
-	
 		txtDaysPerPeriodMax.clear();
 		txtDaysPerPeriodMax.sendKeys(dayPeriodMax);
-		
 		txtContDaysScheduleOffMin.clear();
 		txtContDaysScheduleOffMin.sendKeys(offDayMin);
-		
 		txtContDaysScheduleOffMax.clear();
 		txtContDaysScheduleOffMax.sendKeys(offDayMax);
-		
 		txtTimePerPeriodMin.clear();
 		txtTimePerPeriodMin.sendKeys(timePeriodMin);
-		
 		txtTimePerPeriodMax.clear();
 		txtTimePerPeriodMax.sendKeys(timePeriodMax);
-		
 		chkIsActive2.click();
-		
 		//Next button 
 		btnAddScheduleRuleShiftBands.click();
-		
 		txtContDaysOnMin.clear();
 		txtContDaysOnMin.sendKeys(countDayMin);
-		
 		txtContDaysOnMax.clear();
 		txtContDaysOnMax.sendKeys(countDayMax);
-		
 		txtContDaysOffMin.clear();
 		txtContDaysOffMin.sendKeys(countOffMin);
-		
 		txtContDaysOffMax.clear();
 		txtContDaysOffMax.sendKeys(countOffMax);
-		
 		txtShiftBandsPerPeriodMin.clear();
 		txtShiftBandsPerPeriodMin.sendKeys(shiftBandMin);
-		
 		txtShiftBandsPerPeriodMax.clear();
 		txtShiftBandsPerPeriodMax.sendKeys(shiftBandMax);
-		
 		txtMinHourRest.clear();
 		txtMinHourRest.sendKeys(minHourRest);
 		txtMinHourRest.sendKeys(Keys.ENTER);
-		
-		action.scrollToElement(availableShiftBand).perform();
-		select=new Select(availableShiftBand);
-		select.selectByIndex(1);
-		
-		action.moveToElement(selectMoveSingle).perform();
+		Rc.scrollToElement(availableShiftBand);
+		Rc.selectByIndex(availableShiftBand, 1);
+		Rc.moveToElement(selectMoveSingle);
 		selectMoveSingle.click();
-		
 		btnSaveScheduleRulePeriod.click();
-		
-		webUtility.moveToElement(driver, btnSaveScheduleCreationRule);
-		btnSaveScheduleCreationRule.click();
-		
-		webUtility.ElementClickable(driver, notificationPopup);
-		notificationPopup.click();
-		
-		
-	/*	setBtnAddScheduleRule();
-		ruleName= fakeEmployee.getFirstName();
-		setTxtScheduleRuleName(ruleName+ " " + System.currentTimeMillis());
-		setTxtScheduleRuleDesc(fakeEmployee.getDescription()+ System.currentTimeMillis());
-		setTxtValidFrom(validFrom);
-		//		setTxtValidTo(validTo);
-		setTxtPeriodLength(periodLength);
-//		setChkIsActive();
-		setTxtShiftlengthMin(lengthMin);
-		setTxtShiftlengthMax(lengthMax);
-		setTxtContDaysScheduleOnMin(workDayMin);
-		setTxtContDaysScheduleOnMax(workDayMax);
-		setTxtDaysPerPeriodMin(dayPeriodMin);
-		setTxtDaysPerPeriodMax(dayPeriodMax);
-		setTxtContDaysScheduleOffMin(offDayMin);
-		setTxtContDaysScheduleOffMax(offDayMax);
-		setTxtTimePerPeriodMin(timePeriodMin);
-		setTxtTimePerPeriodMax(timePeriodMax);
-		//Include Leave Option 
-		setChkIsActive2();
-		//Next button 
-		setBtnAddScheduleRuleShiftBands();
-		Thread.sleep(2000);
-		setTxtContDaysOnMin(countDayMin);
-		setTxtContDaysOnMax(countDayMax);
-		setTxtContDaysOffMin(countOffMin);
-		setTxtContDaysOffMax(countOffMax);
-		setTxtShiftBandsPerPeriodMin(shiftBandMin);
-		setTxtShiftBandsPerPeriodMax(shiftBandMax);
-		setTxtMinHourRest(minHourRest);
-		Thread.sleep(2000);
-		setAvailableShiftBand();
-		setSelectMoveSingle();
-		setBtnSaveScheduleRulePeriod();
-		Thread.sleep(2000);
-		setBtnSaveScheduleCreationRule();
-		clickNotificationPopup(); */
-	}
-
-	public void setUpdateSCR(FakeEmployee fakeEmployee) throws Exception {
-
-		searchBar.sendKeys(ruleName);
-		Thread.sleep(2000);
-		setBtnEdit();
-		setTxtScheduleRuleName(fakeEmployee.getFirstName()+ " " +System.currentTimeMillis());
-		setTxtScheduleRuleDesc(fakeEmployee.getDescription()+ System.currentTimeMillis());
-		Thread.sleep(1000);
-		setBtnSaveScheduleCreationRule();
-		clickNotificationPopup();
-
-	}
-	public void setDeactivateSCR() throws Exception {
-
-//		deleteRowsWithEnabledCheckbox();
-//		setBtnYes(); 
-		searchBar.clear();
-		searchBar.sendKeys(ruleName);
-		Thread.sleep(2000);
-		setCheckbox();
-		Thread.sleep(2000);
-		setBtnDeletePublicHlday();
-		setBtnYes();
-		clickNotificationPopup();
-	}
-
-	public void setReactivateSCR() throws Exception {
 		Thread.sleep(3000);
+		//		Rc.explicitWait(btnSaveScheduleCreationRule, "clickable");
+		Rc.moveToElement(btnSaveScheduleCreationRule);
+		btnSaveScheduleCreationRule.click();
+		Rc.explicitWait(scrCreatedSuccessfullyMsg, "visible");
+		String actualResult = scrCreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Schedule Creation Rules created successfully."));
+		Rc.explicitWait(notificationPopup, "clickable");
+		notificationPopup.click();
+
+	}
+
+	public void setUpdateSCR() throws Exception 
+	{
+		ruleName = Rc.name;
+		Thread.sleep(2000);
+		Rc.explicitWait(searchBar, "visible");
 		searchBar.clear();
 		searchBar.sendKeys(ruleName);
-		
-		Thread.sleep(5000);
-		setBtnEdit();
+		Rc.explicitWait(btnEdit, "clickable");
+		btnEdit.click();
 		Thread.sleep(2000);
-		setChkIsActive();
-		Thread.sleep(1000);
-		setBtnSaveScheduleCreationRule();
-		clickNotificationPopup();
+		Rc.explicitWait(txtScheduleRuleName, "visible");
+		txtScheduleRuleName.clear();
+		txtScheduleRuleName.sendKeys(ruleName);
+		Rc.explicitWait(txtScheduleRuleDesc, "visible");
+		txtScheduleRuleDesc.clear();
+		txtScheduleRuleDesc.sendKeys(Rc.description);
+		Rc.moveToElement(btnSaveScheduleCreationRule);
+		btnSaveScheduleCreationRule.click();
+		Rc.explicitWait(scrUpdatedSuccessfullyMsg, "visible");
+		String actualResult = scrUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Schedule Creation Rules details updated successfully."));
+		Rc.explicitWait(notificationPopup, "visible");
+		notificationPopup.click();
+
+
+	}
+	public void setDeactivateSCR() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(searchBar, "visible");
+		searchBar.clear();
+		searchBar.sendKeys(ruleName);
+		Rc.explicitWait(checkBox, "clickable");
+		checkBox.click();
+		Rc.explicitWait(btnDeletePublicHlday, "clickable");
+		btnDeletePublicHlday.click();
+		Rc.explicitWait(btnYes, "clickable");
+		btnYes.click(); 
+		Rc.explicitWait(scrDeletedSuccessfullyMsg, "visible");
+		String actualResult = scrDeletedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Schedule Creation Rule deleted successfully"));
+		Rc.explicitWait(notificationPopup, "visible");
+		notificationPopup.click();
+
+	}
+
+	public void setReactivateSCR() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(searchBar, "visible");
+		searchBar.clear();
+		searchBar.sendKeys(ruleName);
+		Rc.explicitWait(btnEdit, "clickable");
+		btnEdit.click();
+		Thread.sleep(2000);
+		Rc.explicitWait(chkIsActive, "clickable");
+		chkIsActive.click();
+		Rc.explicitWait(btnSaveScheduleCreationRule, "clickable");
+		btnSaveScheduleCreationRule.click();
+		Rc.explicitWait(scrUpdatedSuccessfullyMsg, "visible");
+		String actualResult = scrUpdatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Schedule Creation Rules details updated successfully."));
+		Rc.explicitWait(notificationPopup, "visible");
+		notificationPopup.click();
+
 	}
 }

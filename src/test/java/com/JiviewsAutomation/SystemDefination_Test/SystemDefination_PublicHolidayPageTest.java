@@ -6,7 +6,8 @@ import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsPOM.SystemDefination_PublicHolidayPage;
 
 
-public class SystemDefination_PublicHolidayPageTest extends BaseClass{
+public class SystemDefination_PublicHolidayPageTest extends BaseClass
+{
 
 	SystemDefination_PublicHolidayPage publicHoliday;
 	

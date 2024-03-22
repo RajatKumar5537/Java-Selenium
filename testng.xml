@@ -1,11 +1,65 @@
 <!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
-<suite name="Suite">
+<suite name="Total Test Script">
 	<listeners>
 		<listener
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
 
+	<test
+		name="SystemDefination_RoleGroupPageTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest"
+			/>
+		</classes>
+	</test>
+ 
+	<test
+		name="SystemDefination_SkillPageTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest"
+			/>
+		</classes>
+	</test>
+
+
+	<test
+		name="System_Defination_SCRTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.System_Defination_SCRTest"
+			/>
+		</classes>
+	</test>
+
+	<test
+		name="System_Defination_ShiftBandTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.System_Defination_ShiftBandTest"
+			/>
+		</classes>
+	</test>
+
+	<test
+		name="SystemDefination_PublicHolidayPageTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest"
+			/>
+		</classes>
+	</test>
+
+	<test
+		name="SystemDefination_RosterCreationPageTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RosterCreationPageTest"
+			/>
+		</classes>
+	</test>
 	<test
 		name="Berth_Setup_Test">
 		<classes>
@@ -31,33 +85,6 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test"
 			/>
 		</classes>
-	</test>
-
-	<test
-		name="SystemDefination_RoleGroupPageTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest"
-			/>
-		</classes>
-	</test>
-
-	<test
-		name="SystemDefination_SkillPageTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest"
-			/>
-		</classes>
-	</test>
-
-	<test
-		name="SystemDefination_PublicHolidayPageTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest"
-			/>
-		</classes>
-	</test>
+	</test> 
 
 </suite>

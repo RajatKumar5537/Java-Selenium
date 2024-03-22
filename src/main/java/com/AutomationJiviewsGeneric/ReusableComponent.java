@@ -6,21 +6,11 @@ import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 
-import org.jsoup.Jsoup;
-import org.jsoup.nodes.Document;
-import org.jsoup.nodes.Element;
-import org.jsoup.select.Elements;
-import org.apache.poi.ss.usermodel.*;
-import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
-import java.io.FileInputStream;
-import java.io.IOException;
-import java.io.File;
-import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.time.Duration;
 import java.util.List;
@@ -30,7 +20,6 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.Alert;
-import org.openqa.selenium.By;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -60,6 +49,7 @@ public class ReusableComponent {
 	public String randomDate = faker.date().birthday().toString();
 	public String randomInt= ""+ faker.number().numberBetween(0, 9);
 	
+
 	//************Constructor************
 	public ReusableComponent(WebDriver driver) {
 		System.out.println(driver);
@@ -86,14 +76,14 @@ public class ReusableComponent {
 		}
 		return;
 	}
-	
+
 	//************File Upload************
 	public void selectFileToUpload(WebElement fileInputElement) {
 		File file = new File("./TestData/Jiviews Team.png");
 		String absolutePath = file.getAbsolutePath();
 		fileInputElement.sendKeys(absolutePath);
 	}
-	
+
 	//************Implicit Wait Condition************
 	public void setImplicitWait(WebDriver driver, long timeoutInSeconds) {
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
@@ -129,7 +119,7 @@ public class ReusableComponent {
 		Select select = new Select(element);
 		select.selectByIndex(index);
 	}
-	
+
 	//************Action Class Methods************
 	public void moveToElement(WebElement element) {
 		Actions actions = new Actions(driver);
@@ -149,34 +139,34 @@ public class ReusableComponent {
 		Actions actions = new Actions(driver);
 		actions.scrollToElement(element).perform();
 	}
-	
+
 	//************Alert Popup************
-    public void alertPopup(String text)
-    {
-    	Alert a;
-    	switch(text)
-    	{
-    	case "accept" :
-    	a=driver.switchTo().alert();
-    	a.accept();
-    	break;
-    	case "dismiss" :
-        a=driver.switchTo().alert();
-        a.dismiss();
-        break;
-    	}
-    }
-    
-    //************Reading & Writing Data from Excel File and Property File************
-    public String readDataFromExcelFile(String sheetName, int rowNo, int columnNo,String FILE_PATH) throws Exception {
+	public void alertPopup(String text)
+	{
+		Alert a;
+		switch(text)
+		{
+		case "accept" :
+			a=driver.switchTo().alert();
+			a.accept();
+			break;
+		case "dismiss" :
+			a=driver.switchTo().alert();
+			a.dismiss();
+			break;
+		}
+	}
+
+	//************Reading & Writing Data from Excel File and Property File************
+	public String readDataFromExcelFile(String sheetName, int rowNo, int columnNo,String FILE_PATH) throws Exception {
 
 		FileInputStream fis = new FileInputStream(FILE_PATH);
 		Workbook wb = WorkbookFactory.create(fis);
 		String data = wb.getSheet(sheetName).getRow(rowNo).getCell(columnNo).getStringCellValue();
 		return data;
 	}
-    
-    public void writeDataExcelFile(String sheetName, int rowNo, int columnNo, String writeValue,String FILE_PATH) throws Exception {
+
+	public void writeDataExcelFile(String sheetName, int rowNo, int columnNo, String writeValue,String FILE_PATH) throws Exception {
 
 		FileInputStream fis = new FileInputStream(FILE_PATH);
 		Workbook wb = WorkbookFactory.create(fis);
@@ -186,55 +176,55 @@ public class ReusableComponent {
 		wb.write(fos);
 		wb.close();
 	}
-    
-    public static String readPropertyData(String key,String FILE_PATH) throws IOException
-    {
-    	FileInputStream fis=new FileInputStream(FILE_PATH);
-    	Properties p=new Properties();
-    	p.load(fis);
-    	String data=p.getProperty(key);
-    	return data;
-    }
-    
-    //************Comparing Excel with Html Data************
-    public void compareExcelAndHtml(String url)throws IOException 
-    {
-    	
-            // Step 1: Scrape HTML Table Data
-            Document doc = Jsoup.connect(url).get();
-            Element table = doc.select("table").first();
-            Elements rows = table.select("tr");
 
-            // Step 2: Read Excel Data
-            FileInputStream excelFile = new FileInputStream(new File("./data/jivi.xlsx"));
-            Workbook workbook = new XSSFWorkbook(excelFile);
-            Sheet sheet = workbook.getSheetAt(0);
-
-            // Step 3: Compare Data
-            int rowNum = 0;
-            for (Element row : rows) {
-                Elements cells = row.select("td");
-                Row excelRow = sheet.getRow(rowNum++);
-                int cellNum = 0;
-                for (Element cell : cells) {
-                    Cell excelCell = excelRow.getCell(cellNum++);
-                    String htmlCellValue = cell.text();
-                    String excelCellValue = excelCell.getStringCellValue();
-                    if (!htmlCellValue.equals(excelCellValue)) {
-                        System.out.println("Difference found at row " + rowNum + ", column " + cellNum);
-                        System.out.println("HTML Value: " + htmlCellValue);
-                        System.out.println("Excel Value: " + excelCellValue);
-                    }
-                }
-            }
-
-            workbook.close();
-    	
-    }
-
-
-		
+	public static String readPropertyData(String key,String FILE_PATH) throws IOException
+	{
+		FileInputStream fis=new FileInputStream(FILE_PATH);
+		Properties p=new Properties();
+		p.load(fis);
+		String data=p.getProperty(key);
+		return data;
 	}
-    
+
+	//************Comparing Excel with Html Data************
+	public void compareExcelAndHtml(String url)throws IOException 
+	{
+
+		// Step 1: Scrape HTML Table Data
+		Document doc = Jsoup.connect(url).get();
+		Element table = doc.select("table").first();
+		Elements rows = table.select("tr");
+
+		// Step 2: Read Excel Data
+		FileInputStream excelFile = new FileInputStream(new File("./data/jivi.xlsx"));
+		Workbook workbook = new XSSFWorkbook(excelFile);
+		Sheet sheet = workbook.getSheetAt(0);
+
+		// Step 3: Compare Data
+		int rowNum = 0;
+		for (Element row : rows) {
+			Elements cells = row.select("td");
+			Row excelRow = sheet.getRow(rowNum++);
+			int cellNum = 0;
+			for (Element cell : cells) {
+				Cell excelCell = excelRow.getCell(cellNum++);
+				String htmlCellValue = cell.text();
+				String excelCellValue = excelCell.getStringCellValue();
+				if (!htmlCellValue.equals(excelCellValue)) {
+					System.out.println("Difference found at row " + rowNum + ", column " + cellNum);
+					System.out.println("HTML Value: " + htmlCellValue);
+					System.out.println("Excel Value: " + excelCellValue);
+				}
+			}
+		}
+
+		workbook.close();
+
+	}
+
+
+
+}
+
 
 
