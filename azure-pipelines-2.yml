@@ -22,6 +22,8 @@ stages:
 - stage: BuildAndTest
   jobs:
   - job: Build
+    timeoutInMinutes: 120 # how long to run the job before automatically cancelling
+    cancelTimeoutInMinutes: 45 # how much time to give 'run always even if cancelled tasks' before stopping them
     steps:
     - checkout: self
     - task: Maven@4
@@ -49,7 +51,7 @@ stages:
       displayName: 'Copy Screenshots to: $(build.artifactstagingdirectory)/ScreenShot'
       inputs:
         SourceFolder: '$(system.defaultworkingdirectory)/ScreenShot'
-        Contents: '**/*.png'  # Adjust the file pattern based on your screenshot naming convention
+        Contents: '**/*.png'
         TargetFolder: '$(build.artifactstagingdirectory)/ScreenShot'
       condition: succeededOrFailed()
 
