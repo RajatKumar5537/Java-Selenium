@@ -1,384 +1,269 @@
 package com.AutomationJiviewsPOM;
 
 import java.util.List;
-import org.openqa.selenium.ElementClickInterceptedException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
-import org.testng.Reporter;
-import com.AutomationJiviewsGeneric.FakeEmployee;
-import com.AutomationJiviewsGeneric.WebUtilities;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 
-public class E10_2909_EmpAdmRosterGroupAssignmentPage  {
-	
+public class E10_2909_EmpAdmRosterGroupAssignmentPage  
+{
+
 	WebDriver driver ;
-	Select select;
-	public Actions action;
-	WebUtilities webUtility ;
+	ReusableComponent Rc ;
 	String RosterGroupname;
-	
+
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement dvOrgUnitDropdown;
+
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // Employee Administration
+
+	@FindBy(xpath = "//ul[@id='ulApplicationMenu']/li/a")
+	WebElement ulApplicationMenu; // Employee
+
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[2]/li")
+	List<WebElement> sideNavMenu; // Employee Profile
+
+	@FindBy(xpath = "//div[text()='Roster Group Assignment']/..")
+	WebElement rosterGroupAssignment;
 
 	@FindBy(xpath = "//button[@id='btnAddRosterGroup']")
-	private WebElement btnAddRosterGroup;
+	WebElement btnAddRosterGroup;
 	@FindBy(xpath = "//input[@id='txtRosterGroupname']")
-	private WebElement txtRosterGroupname;
+	WebElement txtRosterGroupname;
 	@FindBy(xpath = "//input[@id='txtRosterGroupDesc']")
-	private WebElement txtRosterGroupDesc;
+	WebElement txtRosterGroupDesc;
 	@FindBy(xpath = "//input[@id='txtRemarks']")
-	private WebElement txtRemarks;
+	WebElement txtRemarks;
 
 	@FindBy(xpath = "//table[@id='availableEmpListDataTable']")
-	private WebElement availableEmpListDataTable;
+	WebElement availableEmpListDataTable;
 	@FindBy(xpath = "//td[@class='align-middle py-3']")
-	private List<WebElement> checkboxesMembers;;
+	List<WebElement> checkboxesMembers;;
 
 	@FindBy(xpath = "//table[@id='RosterGroup-list']/tbody/tr")
-	private List<WebElement> rows;
+	List<WebElement> rows;
 	@FindBy(xpath = "//td/input[@type='checkbox']")
-	private List<WebElement> checkboxesForDlt;
+	WebElement checkBox;
 	@FindBy(xpath = "//li[@id='RosterGroup-list_next']")
-	private WebElement nextPage;
+	WebElement nextPage;
 
 	@FindBy(xpath = "(//td[@class='font-weight-bold align-middle py-3'])[1]")
-	private WebElement clickonAlignMiddle;
+	WebElement clickonAlignMiddle;
 	@FindBy(xpath = "//a[@data-item='AddSelected']")
-	private WebElement addSelectedItem;
+	WebElement addSelectedItem;
 	@FindBy(xpath = "//button[@id='btnSaveRosterGroup']")
-	private WebElement btnSaveRosterGroup;
+	WebElement btnSaveRosterGroup;
 	@FindBy(xpath = "//div[text()='Roster Group Created Successfully.']")
-	private WebElement rosterGroupCreatedSuccessfullyMsg;
+	WebElement rosterGroupCreatedSuccessfullyMsg;
 	@FindBy(className = "toast-close-button")
-	private WebElement notificationPopup;
+	WebElement notificationPopup;
 
 	@FindBy(xpath = "//button[@class='btn btn-sm btn-outline-primary icon-btn mx-1']")
-	private WebElement btnEdit;
+	WebElement btnEdit;
 	@FindBy(xpath = "//div[text()='Roster Group Updated SuccessFully.']")
-	private WebElement rosterGroupUpdatedSuccessFullyMsg;
+	WebElement rosterGroupUpdatedSuccessFullyMsg;
 	@FindBy(xpath = "//div[text()='Successfully moved employee(s) to current Roster Group']")
-	private WebElement SuccessfullyMovedEmployeeToCurrentRosterGroup;
+	WebElement SuccessfullyMovedEmployeeToCurrentRosterGroup;
 
 	@FindBy(xpath = "//button[@id='btnDeleteRosterGroup']")
-	private WebElement btnDeleteRosterGroup;
+	WebElement btnDeleteRosterGroup;
 	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement btnYes;
+	WebElement btnYes;
 	@FindBy(xpath = "//div[text()='Selected RosterGroup deleted successfully.']")
-	private WebElement rosterGroupDeletedSuccessfullyMsg;
+	WebElement rosterGroupDeletedSuccessfullyMsg;
 
 	@FindBy(xpath = "//span[text()='IsActive?']")
-	private WebElement checkBoxIsActive;
+	WebElement checkBoxIsActive;
 	@FindBy(xpath = "//tbody[@id='currentRosterGroupTableBody']/tr//td[@class='align-middle py-3']")
-	private List<WebElement> checkboxNonMembers;
+	List<WebElement> checkboxNonMembers;
 	@FindBy(xpath = "(//td[@class='font-weight-bold align-middle py-3'])[2]")
-	private WebElement clickonAlignMiddleRemove;
+	WebElement clickonAlignMiddleRemove;
 
 	@FindBy(xpath = "//a[@data-item='RemoveSelected']")
-	private WebElement removeSelectedItem;
+	WebElement removeSelectedItem;
 
 	@FindBy(xpath = "//span[@id='select2-cmbRosterPattern-container']")
-	private WebElement selectRosterPattern;
+	WebElement selectRosterPattern;
 
 	@FindBy(xpath = "//li[contains(text(),'2669')]")
-	private WebElement chooseRosterPattern;
+	WebElement chooseRosterPattern;
 
 	@FindBy(xpath = "//button[@id='btnSubmitChanges']")
-	private WebElement btnSubmitChanges;
+	WebElement btnSubmitChanges;
 	@FindBy(xpath = "//button[@id='btnCloseRosterPattern']")
-	private WebElement btnCloseRosterPattern;
+	WebElement btnCloseRosterPattern;
 
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
-	private WebElement txtSearch;
+	WebElement txtSearch;
 
-	public E10_2909_EmpAdmRosterGroupAssignmentPage(WebDriver driver) {
+	public E10_2909_EmpAdmRosterGroupAssignmentPage(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 		this.driver= driver ;
-		this.action = new Actions(driver);
-		this.webUtility = new WebUtilities(driver);
+		this.Rc= new ReusableComponent(driver);
+
 	}
 
-	public void clickBtnAddRosterGroup() {
-		webUtility.ElementClickable(driver, btnAddRosterGroup);
-		btnAddRosterGroup.click();
-	}
 
-	public void enterTxtRosterGroupname(String RosterGroupname) {
-		txtRosterGroupname.clear();
-		txtRosterGroupname.sendKeys(RosterGroupname);
-		// Print the value of txtRosterGroupname
-		String RosterGroupName = txtRosterGroupname.getAttribute("value");
-		Reporter.log("Entered Roster Group Name: " + RosterGroupName, true);
-	}
-
-	public void enterTxtRosterGroupDesc(String RosterGroupDesc) {
-		txtRosterGroupDesc.clear();
-		txtRosterGroupDesc.sendKeys(RosterGroupDesc);
-	}
-
-	public void enterTxtRemarks(String Remarks) {
-		txtRemarks.clear();
-		txtRemarks.sendKeys(Remarks);
-	}
-
-	public void performAvailableEmpListDataTable() {
-		webUtility.moveToElement(driver, availableEmpListDataTable);
-	}
-
-	public void enableCheckboxesMember(int count) {
+	public void enableCheckboxesMember(int count) 
+	{
 		// The logic for selecting the required number of employees has to be move.
-		
 		for (int i = 0; i < count && i < checkboxesMembers.size(); i++) {
 			checkboxesMembers.get(i).click();
 		}
 	}
 
-	public void enableCheckboxNonMembers(int count) {
+	public void enableCheckboxNonMembers(int count) 
+	{
 		// The logic for selecting the required number of employees has to be move.
 		for (int i = 0; i < count && i < checkboxNonMembers.size(); i++) {
 			checkboxNonMembers.get(i).click();
 		}
 	}
 
-	public void clickonAlignMiddleSelect() {
-		
-		webUtility.moveToElement(driver, clickonAlignMiddle);
+	public void createRosterGroupAssignment() throws Exception 
+	{
+		RosterGroupname = Rc.name;
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
+		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
+		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "Employee Administration", "Employee Administration is not clicked");
+		Rc.explicitWait(rosterGroupAssignment, "clickable");
+		rosterGroupAssignment.click();
+		Rc.explicitWait(btnAddRosterGroup, "clickable");
+		btnAddRosterGroup.click();
+		Rc.explicitWait(txtRosterGroupname, "visible");
+		txtRosterGroupname.clear();
+		txtRosterGroupname.sendKeys(RosterGroupname);
+		txtRosterGroupDesc.clear();
+		txtRosterGroupDesc.sendKeys(Rc.description);
+		txtRemarks.clear();
+		txtRemarks.sendKeys(Rc.description);
+		Rc.scrollDown();
+		enableCheckboxesMember(2);
+		Rc.scrollUp();
+		Rc.moveToElement(clickonAlignMiddle);
 		clickonAlignMiddle.click();
-	}
-
-	public void clickonAddSelectedItem() {
 		addSelectedItem.click();
-	}
-
-	public void clickonAlignMiddleRemove() {
-		clickonAlignMiddleRemove.click();
-	}
-
-	public void clickonRemoveSelectedItem() {
-		removeSelectedItem.click();
-	}
-
-	public void clickonBtnSaveRosterGroup() {
-		webUtility.moveToElement(driver, btnSaveRosterGroup);
+		Rc.scrollDown();
+		Rc.moveToElement(btnSaveRosterGroup);
 		btnSaveRosterGroup.click();
-//		webUtility.scrollAndClick(driver, btnSaveRosterGroup);
-	}
-
-	public void clickBtnEdit() {
-		btnEdit.click();
-	}
-
-	public void performDeleteAction() throws InterruptedException {
-		for (int i = 0; i < 3; i++) {
-			try {
-				webUtility.scrollAndClick(driver, btnDeleteRosterGroup);
-				break;
-			} catch (ElementClickInterceptedException e) {
-			}
-		}
-	}
-
-	public void deleteRowsWithEnabledCheckbox() throws InterruptedException {
-		boolean checkboxFound = false;
-		for (int i = 0; i < rows.size(); i++) {
-			WebElement checkbox = checkboxesForDlt.get(i);
-			if (checkbox.isEnabled()) {
-				// scrollAndClick(driver, checkbox);
-				checkbox.click();
-				performDeleteAction();
-				checkboxFound = true;
-				break;
-			}
-		}
-		if (!checkboxFound) {
-			goToNextPageAndDelete();
-		}
-	}
-
-	private void goToNextPageAndDelete() throws InterruptedException {
-		try {
-			webUtility.scrollAndClick(driver, nextPage);
-			// scrollAndClick(driver, nextPage);
-			webUtility.scrollUp(driver);
-//			 scrollUp(driver);
-			deleteRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-
-		} catch (ElementClickInterceptedException e) {
-			// Handle the exception if necessary
-		}
-	}
-
-	public void enableCheckBoxIsActive() throws InterruptedException {
-		checkBoxIsActive.click();
-
-	}
-
-	public void reactivateRowsWithEnabledCheckbox() throws Exception {
-		boolean checkboxFound = false;
-		// Iterate through rows
-		for (int i = 0; i < rows.size(); i++) {
-			WebElement checkbox = checkboxesForDlt.get(i);
-			if (!checkbox.isEnabled()) {
-				clickBtnEdit();
-				Thread.sleep(2000);
-				enableCheckBoxIsActive();
-				clickonBtnSaveRosterGroup();
-				checkRosterGroupUpdatedSuccessFullyMsg();
-				clickNotificationPopup();
-				checkboxFound = true;
-				break;
-			}
-		}
-
-		// If no enabled checkbox found on the current page, go to the next page and try
-		// again
-		if (!checkboxFound) {
-			goToNextPageAndReactivate();
-		}
-	}
-
-	private void goToNextPageAndReactivate() throws Exception {
-		try {
-			webUtility.scrollAndClick(driver, nextPage);
-			webUtility.scrollUp(driver);
-			reactivateRowsWithEnabledCheckbox(); // Recursive call to check for checkboxes on the next page
-		} catch (ElementClickInterceptedException e) {
-			// Handle the exception if necessary
-		}
-	}
-
-	public void clickonBtnYes() {
-		btnYes.click();
-	}
-
-	public void clickonBtnCloseRosterPattern() {
-		btnCloseRosterPattern.click();
-	}
-
-	public void clickNotificationPopup() throws Exception {
-		Thread.sleep(1000);
-		action.moveToElement(notificationPopup).perform();
+		String actualResult = rosterGroupCreatedSuccessfullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Roster Group Created Successfully."));
+		Rc.moveToElement(notificationPopup);
 		notificationPopup.click();
 	}
 
-	public void enterTxtSearch() {
-		txtSearch.sendKeys("2669");
-	}
 
-	public void clickonSelectRosterPattern() {
-		// selectRosterPattern.click();
-		action.moveToElement(selectRosterPattern).perform();
-		selectRosterPattern.click();
-		// select= new Select(selectRosterPattern);
-		// select.selectByIndex(0);
-		chooseRosterPattern.click();
-	}
-
-	public void clickonBtnSubmitChanges() {
-		btnSubmitChanges.click();
-	}
-
-	public void checkRosterGroupCreatedSuccessfullyMsg() {
-		String actualResult = rosterGroupCreatedSuccessfullyMsg.getText();
-		Assert.assertTrue(actualResult.contains("Roster Group Created Successfully."));
-	}
-
-	public void checkRosterGroupUpdatedSuccessFullyMsg() {
+	public void updateRosterGroupAssignment() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(txtSearch, "visible");
+		txtSearch.clear();
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		btnEdit.click();
+		Rc.explicitWait(txtRosterGroupname, "visible");
+		txtRosterGroupname.clear();
+		txtRosterGroupname.sendKeys(RosterGroupname+ System.currentTimeMillis());
+		txtRosterGroupDesc.clear();
+		txtRosterGroupDesc.sendKeys(Rc.description);
+		txtRemarks.clear();
+		txtRemarks.sendKeys(Rc.description);
+		Rc.explicitWait(btnSaveRosterGroup, "clickable");
+		Rc.moveToElement(btnSaveRosterGroup);
+		btnSaveRosterGroup.click();
 		String actualResult = rosterGroupUpdatedSuccessFullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Roster Group Updated SuccessFully."));
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
 	}
 
-	public void checkRosterGroupDeletedSuccessfullyMsg() {
+	public void deleteRosterGroupAssignment() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(txtSearch, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		Rc.explicitWait(checkBox, "clickable");
+		checkBox.click();
+		Rc.moveToElement(btnDeleteRosterGroup);
+		btnDeleteRosterGroup.click();
+		Rc.explicitWait(btnYes, "clickable");
+		btnYes.click();
+		Rc.explicitWait(rosterGroupDeletedSuccessfullyMsg, "visible");
 		String actualResult = rosterGroupDeletedSuccessfullyMsg.getText();
 		Assert.assertTrue(actualResult.contains("Selected RosterGroup deleted successfully."));
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
 	}
 
-	public void checkSuccessfullyMovedEmployeeToCurrentRosterGroup() {
+	public void reactivateRosterGroupAssignmentx() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(txtSearch, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		Rc.explicitWait(btnEdit, "clickable");
+		btnEdit.click();
+		Thread.sleep(2000);
+		Rc.explicitWait(checkBoxIsActive, "clickable");
+		checkBoxIsActive.click();
+		Rc.moveToElement(btnSaveRosterGroup);
+		btnSaveRosterGroup.click();
+		Rc.explicitWait(rosterGroupUpdatedSuccessFullyMsg, "visible");
+		String actualResult = rosterGroupUpdatedSuccessFullyMsg.getText();
+		Assert.assertTrue(actualResult.contains("Roster Group Updated SuccessFully."));
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
+	}
+
+	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember() throws Exception 
+	{
+		Thread.sleep(2000);
+		Rc.explicitWait(txtSearch, "visible");
+		txtSearch.clear();
+		txtSearch.sendKeys(RosterGroupname);
+		btnEdit.click();
+		//		txtRosterGroupname.clear();
+		//		txtRosterGroupname.sendKeys(RosterGroupname); Not Required 
+		txtRosterGroupDesc.clear();
+		txtRosterGroupDesc.sendKeys(Rc.description);
+		txtRemarks.clear();
+		txtRemarks.sendKeys(Rc.description);
+		Rc.scrollDown();
+		enableCheckboxesMember(1);
+		Rc.scrollUp();
+		Rc.moveToElement(clickonAlignMiddle);
+		clickonAlignMiddle.click();
+		addSelectedItem.click();
+		btnYes.click();
+		enableCheckboxNonMembers(1);
+		clickonAlignMiddleRemove.click();
+		removeSelectedItem.click();
+		Rc.scrollDown();
+		Rc.moveToElement(btnSaveRosterGroup);
+		btnSaveRosterGroup.click();
+		
+		
+		Rc.moveToElement(selectRosterPattern);
+		selectRosterPattern.click();
+		//		Check it properly with Radhika ???????????
+		chooseRosterPattern.click();
+		btnSubmitChanges.click();
 		String actualResult = SuccessfullyMovedEmployeeToCurrentRosterGroup.getText();
 		Assert.assertTrue(actualResult.contains("Successfully moved employee(s) to current Roster Group"));
-	}
-
-	public void createRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
-//		Thread.sleep(2000);
-		RosterGroupname = fakeEmployee.getRosterGroupName();
-		
-		clickBtnAddRosterGroup();
-		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
-		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
-		enterTxtRemarks(fakeEmployee.getDescription());
-		
-//		Thread.sleep(3000);
-		// Scroll down to make sure the checkbox is in view
-		webUtility.scrollDown(driver);
-//		Thread.sleep(5000);
-		enableCheckboxesMember(2);
-		
-		webUtility.scrollUp(driver);
-		clickonAlignMiddleSelect();
-		
-//		Thread.sleep(3000);
-		clickonAddSelectedItem();
-		// Scroll down before clicking on Save Roster Group
-		webUtility.scrollDown(driver);
-		clickonBtnSaveRosterGroup();
-		checkRosterGroupCreatedSuccessfullyMsg();
-		clickNotificationPopup();
-	}
-
-
-	public void updateRosterGroupAssignment(FakeEmployee fakeEmployee) throws Exception {
-		txtSearch.clear();
-		txtSearch.sendKeys(RosterGroupname);
-		
-		clickBtnEdit();
-		enterTxtRosterGroupname(fakeEmployee.getRosterGroupName() + System.currentTimeMillis());
-		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
-		enterTxtRemarks(fakeEmployee.getDescription());
-		Thread.sleep(5000);
-		clickonBtnSaveRosterGroup();
-		checkRosterGroupUpdatedSuccessFullyMsg();
-		clickNotificationPopup();
-	}
-
-	public void deleteRosterGroupAssignment() throws Exception {
-		deleteRowsWithEnabledCheckbox();
-		clickonBtnYes();
-		checkRosterGroupDeletedSuccessfullyMsg();
-		clickNotificationPopup();
-	}
-
-	public void reactivateRosterGroupAssignmentx() throws Exception {
-		reactivateRowsWithEnabledCheckbox();
-		// clickonBtnSaveRosterGroup();
-	}
-
-	public void AddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember(FakeEmployee fakeEmployee) throws Exception {
-	
-		
-		txtSearch.clear();
-		txtSearch.sendKeys(RosterGroupname);
-		
-//		enterTxtSearch();
-		clickBtnEdit();
-		// enterTxtRosterGroupname(fakeEmployee.getRosterGroupName());
-		enterTxtRosterGroupDesc(fakeEmployee.getRosterGroupDescription());
-		enterTxtRemarks(fakeEmployee.getDescription());
-		webUtility.scrollDown(driver);
-		enableCheckboxesMember(1);
-		webUtility.scrollUp(driver);
-		clickonAlignMiddleSelect();
-		clickonAddSelectedItem();
-		clickonBtnYes();
-		enableCheckboxNonMembers(1);
-		clickonAlignMiddleRemove();
-		clickonRemoveSelectedItem();
-		webUtility.scrollDown(driver);
-		clickonBtnSaveRosterGroup();
-		clickonSelectRosterPattern();
-		clickonBtnSubmitChanges();
-		checkSuccessfullyMovedEmployeeToCurrentRosterGroup();
-		clickNotificationPopup();
-
+		Rc.moveToElement(notificationPopup);
+		notificationPopup.click();
 	}
 }

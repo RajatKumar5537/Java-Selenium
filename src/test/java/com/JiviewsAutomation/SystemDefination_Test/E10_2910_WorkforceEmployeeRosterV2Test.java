@@ -1,129 +1,89 @@
 package com.JiviewsAutomation.SystemDefination_Test;
 
 
-import java.io.IOException;
-import java.util.logging.Logger;
 import org.testng.annotations.Test;
 import com.AutomationJiviewsGeneric.BaseClass;
-import com.AutomationJiviewsGeneric.FakeEmployee;
 import com.AutomationJiviewsPOM.E10_2910_EmployeeRosterV2Page;
-import com.AutomationJiviewsPOM.HomePage;
-import com.AutomationJiviewsPOM.OrganizationUnitDropDown;
-import com.AutomationJiviewsPOM.WorkforceSchedulingPage;
-import com.AutomationJiviewsPOM.jiviewsMainMenuItems;
 
-// Jira Item: E10_2910 - Employee Roster V2
-public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
-	
-	private static final Logger logger = Logger.getLogger(E10_2910_WorkforceEmployeeRosterV2Test.class.getName());
-	private HomePage homePage;
-	private OrganizationUnitDropDown orgUnit;
-	private jiviewsMainMenuItems jmMenuItem;
-	private WorkforceSchedulingPage wfScheduling;
-	private E10_2910_EmployeeRosterV2Page empRosterV2;
-	FakeEmployee fakeEmployee;
-	@Test(priority = 0)
-	public void setup() throws Exception {
-//		String homeUrl = configUtility.getCongigPropertyData("homeurl");
-//		driver.navigate().to(homeUrl);
-	
-		homePage = new HomePage(driver);
-		orgUnit = new OrganizationUnitDropDown(driver);
-		jmMenuItem = new jiviewsMainMenuItems(driver);
-		wfScheduling= new WorkforceSchedulingPage(driver);
-		empRosterV2= new  E10_2910_EmployeeRosterV2Page(driver);
+public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass
+{
 
-		Thread.sleep(2000);
-		homePage.setOrgUnit();		
-		orgUnit.setAutoOu();
-//		Thread.sleep(5000);
-		jmMenuItem.setSelectWorkforceScheduling(); 
-//		Thread.sleep(2000);
-//		wfScheduling.setEmployeeRosterV2();
-	}
+	public  E10_2910_EmployeeRosterV2Page empRosterV2;
+
 	@Test(priority = 1)
-	public void E10_2938_VerifySearchEmpRosterByDate() throws Exception {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Searching Employee Roster By Date...");
-		
-
-		empRosterV2.searchEmpRosterByDate(fakeEmployee);
-		 logger.info("Search Employee Roster By Date is successful");
+	public void E10_2938_VerifySearchEmpRosterByDate() throws Exception 
+	{
+		empRosterV2= new  E10_2910_EmployeeRosterV2Page(driver);
+		empRosterV2.searchEmpRosterByDate();
 	}
 
-	@Test(priority = 2)//, dependsOnMethods = "verifySearchByFilters")
-	public void E10_2940_VerifyExpandAndCollapseRows() throws IOException, InterruptedException {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Expanding And Collapsing Rows...");
+	@Test(priority = 2)
+	public void E10_2940_VerifyExpandAndCollapseRows() throws InterruptedException 
+	{
 
-		empRosterV2.expandAndCollapseRows(fakeEmployee);
-		 logger.info("Expand And Collapse Rows is successful");
+		empRosterV2.expandAndCollapseRows();
 	}
-	
+
 	@Test(priority = 3)
-	public void E10_2941_VerifyFilterAndResetColumns() throws IOException, InterruptedException {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Filtering And Resetting Columns...");
+	public void E10_2941_VerifyFilterAndResetColumns() throws  InterruptedException 
+	{
 
-		empRosterV2.filterAndResetColumns(fakeEmployee);
-		 logger.info("Filter And Reset Columns is successful");
+		empRosterV2.filterAndResetColumns();
 	}
 
 	@Test(priority = 5)
-	public void E10_2942_VerifyPerformFullScreen() throws IOException, InterruptedException {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Performing Expand and minimize full screen...");
+	public void E10_2942_VerifyPerformFullScreen() throws  InterruptedException 
+	{
 
-		empRosterV2.performFullScreen(fakeEmployee);
-		 logger.info("Perform Expand and minimize full screen is successful");
+		empRosterV2.performFullScreen();
 	}
 
-//	@Test(priority = 6)
-//	public void E10_2943_VerifyPerformCreateShift() throws Exception {
-//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-//		 logger.info("Performing Double click on tab or right click and select create shift in an Empty Cell...");
-//
-//		empRosterV2.performClickEmptyCellCreateShift(fakeEmployee);
-//		 logger.info("Perform Double click on tab or right click and select create shift in an Empty Cell is successful");
-//	}
+	//	@Test(priority = 6)
+	//	public void E10_2943_VerifyPerformCreateShift() throws Exception {
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		 logger.info("Performing Double click on tab or right click and select create shift in an Empty Cell...");
+	//
+	//		empRosterV2.performClickEmptyCellCreateShift(fakeEmployee);
+	//		 logger.info("Perform Double click on tab or right click and select create shift in an Empty Cell is successful");
+	//	}
 
-	@Test(priority = 7)
-	public void E10_2944_verifyCopySingleCellAndPasteInNewCell() throws Exception {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Performing Double click on tab or right click and select create shift in an Empty Cell...");
+	//	@Test(priority = 7)
+	//	public void E10_2944_verifyCopySingleCellAndPasteInNewCell() throws Exception {
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		 logger.info("Performing Double click on tab or right click and select create shift in an Empty Cell...");
+	//
+	//		empRosterV2.CopySingleCellAndPasteInNewCell(fakeEmployee);
+	//		 logger.info("Perform Double click on tab or right click and select create shift in an Empty Cell is successful");	
+	//	}
+	//	@Test(priority = 8)
+	//	public void E10_2945_VerifyCopyWithOncallShift() throws Exception {
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		 logger.info("Performing Copy with Oncall Shift...");
+	//
+	//		empRosterV2.CopyWithOncallShift(fakeEmployee);
+	//		 logger.info("Copy with Oncall Shift is successful");
+	//	}
+	//	@Test(priority = 8)
+	//	public void E10_2944_VerifyCopySingleRowColumnAndPasteInNewRow() throws IOException, InterruptedException {
+	//		// Jira Item: E10-2944 - Employee Roster V2 [Copy single and multiple row/column and paste in new row]
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		// logger.info("verifyCopySingleRowColumnAndPasteInNewRow...");
+	//
+	//		empRosterV2.CopySingleRowColumnAndPasteInNewRow(fakeEmployee);
+	//		// logger.info("verifyCopySingleRowColumnAndPasteInNewRow is successful");
+	//	}
 
-		empRosterV2.CopySingleCellAndPasteInNewCell(fakeEmployee);
-		 logger.info("Perform Double click on tab or right click and select create shift in an Empty Cell is successful");	
-	}
-	@Test(priority = 8)
-	public void E10_2945_VerifyCopyWithOncallShift() throws Exception {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Performing Copy with Oncall Shift...");
+	//	@Test(priority = 9)
+	//	public void E10_2946_VerifyExportToTextAndExcel() throws Exception {
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		 logger.info("Performing Export to Text and Excel...");
+	//
+	//		empRosterV2.ExportToTextAndExcel(fakeEmployee);
+	//		 logger.info("Export to Text and Excel is successful");
+	//	}
 
-		empRosterV2.CopyWithOncallShift(fakeEmployee);
-		 logger.info("Copy with Oncall Shift is successful");
-	}
-//	@Test(priority = 8)
-//	public void E10_2944_VerifyCopySingleRowColumnAndPasteInNewRow() throws IOException, InterruptedException {
-//		// Jira Item: E10-2944 - Employee Roster V2 [Copy single and multiple row/column and paste in new row]
-//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-//		// logger.info("verifyCopySingleRowColumnAndPasteInNewRow...");
-//
-//		empRosterV2.CopySingleRowColumnAndPasteInNewRow(fakeEmployee);
-//		// logger.info("verifyCopySingleRowColumnAndPasteInNewRow is successful");
-//	}
 
-	@Test(priority = 9)
-	public void E10_2946_VerifyExportToTextAndExcel() throws Exception {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		 logger.info("Performing Export to Text and Excel...");
-
-		empRosterV2.ExportToTextAndExcel(fakeEmployee);
-		 logger.info("Export to Text and Excel is successful");
-	}
-
-	
-/*
+	/*
 	@Test(priority = 11)
 	public void E10_2948_VerifyApplyOnBehalfApplyLeave() throws Exception {
 		// Jira Item: E10-2948 - Employee Roster V2 [Right click -> Apply On Behalf Apply leave]
@@ -133,7 +93,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.applyOnBehalfApplyLeave(fakeEmployee);
 		// logger.info("Apply On Behalf Apply leave is successful");
 	}
-	
+
 	@Test(priority = 12)
 	public void E10_2949_VerifyTestCopyAndPasteToExcel() throws IOException, InterruptedException {
 		// Jira Item: E10-2949 - Employee Roster V2 [Right click on Employee and click copy and paste in Excel sheet]
@@ -143,7 +103,7 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.testCopyAndPasteToExcel(fakeEmployee);
 		// logger.info("Right click on Employee and click copy and paste in Excel sheet is successful");
 	}
-	
+
 	@Test(priority = 13)
 	public void E10_2950_VerifyOpenNewTabEmployeeProfile() throws Exception {
 		// Jira Item: E10-2950 - Employee Roster V2 [Right click -> Employee Profile]
@@ -235,23 +195,23 @@ public class E10_2910_WorkforceEmployeeRosterV2Test extends BaseClass{
 		empRosterV2.ApplyTimeOff(fakeEmployee);
 		// logger.info("Apply On Behalf Apply Time off  is successful");
 	}
-	
-	*/
-	@Test(priority = 10) //keep it in last 
-	public void E10_2947_VerifyExpandAndCollapseGroup() throws Exception {
-		// Jira Item: E10-2947 - Employee Roster V2 [Right click -> Expand and Collapse group]
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		// logger.info("Performing Expand and Collapse Group...");
 
-		empRosterV2.CollapseRowByGroup(fakeEmployee);
-		// logger.info("Expand and Collapse Group is successful");
-	}
-	@Test(priority = 21) //keep it in last 
-	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
-		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
-		// logger.info("Searching Employee Roster By Filters...");
-
-		empRosterV2.searchByFilters();
-		// logger.info("Search Employee Roster By Filters is successful");
-	}
+	 */
+	//	@Test(priority = 10) //keep it in last 
+	//	public void E10_2947_VerifyExpandAndCollapseGroup() throws Exception {
+	//		// Jira Item: E10-2947 - Employee Roster V2 [Right click -> Expand and Collapse group]
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		// logger.info("Performing Expand and Collapse Group...");
+	//
+	//		empRosterV2.CollapseRowByGroup(fakeEmployee);
+	//		// logger.info("Expand and Collapse Group is successful");
+	//	}
+	//	@Test(priority = 21) //keep it in last 
+	//	public void E10_2939_VerifySearchByFilters() throws IOException, InterruptedException {
+	//		//captureScreenshot(driver, "WorkforceEmployeeRosterV2Test");
+	//		// logger.info("Searching Employee Roster By Filters...");
+	//
+	//		empRosterV2.searchByFilters();
+	//		// logger.info("Search Employee Roster By Filters is successful");
+	//	}
 }

@@ -7,15 +7,6 @@
 
 
 	<test
-		name="SystemDefination_RoleGroupPageTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RoleGroupPageTest"
-			/>
-		</classes>
-	</test>
- 
-	<test
 		name="SystemDefination_SkillPageTest">
 		<classes>
 			<class
@@ -85,6 +76,15 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test"
 			/>
 		</classes>
-	</test> 
+	</test>
+
+	<test
+		name="E10_2695_EmpAdmEmployeeProfileTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
+			/>
+		</classes>
+	</test>
 
 </suite>

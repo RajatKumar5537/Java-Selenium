@@ -7,7 +7,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.testng.Assert;
-import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.ReusableComponent;
 
 public class E10_2639_SystemDefinationSCRPage 
@@ -15,7 +14,6 @@ public class E10_2639_SystemDefinationSCRPage
 
 	WebDriver driver; 
 	ReusableComponent Rc ;
-	public ExcelUtilities excelUtility;
 	String ruleName;
 
 	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
@@ -189,12 +187,32 @@ public class E10_2639_SystemDefinationSCRPage
 		PageFactory.initElements(driver, this);
 		this.driver = driver;
 		this.Rc= new ReusableComponent(driver);
-		this.excelUtility= new ExcelUtilities();
 	}
 
 
 	public void createSCR() throws Exception 
 	{
+		String FILE_PATH = ".\\src\\test\\resources\\TestData\\Jivi_Test_Data.xlsx";
+		String periodLength = Rc.readDataFromExcelFile("EmployeeTest", 20, 11, FILE_PATH);
+		String lengthMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 12, FILE_PATH);
+		String lengthMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 13, FILE_PATH);
+		String workDayMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 14, FILE_PATH);
+		String workDayMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 15, FILE_PATH);
+		String dayPeriodMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 16, FILE_PATH);
+		String dayPeriodMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 17, FILE_PATH);
+		String offDayMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 18, FILE_PATH);
+		String offDayMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 19, FILE_PATH);
+		String timePeriodMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 20, FILE_PATH);
+		String timePeriodMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 21, FILE_PATH);
+		// After Next button 
+		String countDayMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 22, FILE_PATH);
+		String countDayMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 23, FILE_PATH);
+		String countOffMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 24, FILE_PATH);
+		String countOffMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 25, FILE_PATH);
+		String shiftBandMin = Rc.readDataFromExcelFile("EmployeeTest", 20, 26, FILE_PATH);
+		String shiftBandMax = Rc.readDataFromExcelFile("EmployeeTest", 20, 27, FILE_PATH);
+		String minHourRest = Rc.readDataFromExcelFile("EmployeeTest", 20, 28, FILE_PATH);
+		
 		ruleName = Rc.name;
 		Thread.sleep(2000);
 		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
@@ -203,31 +221,6 @@ public class E10_2639_SystemDefinationSCRPage
 		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "System Definitions", "System Definitions is not clicked");
 		Rc.explicitWait(ulApplicationMenu, "clickable");
 		Rc.handleMultipleElements(ulApplicationMenu, sideNavMenu, "Schedule Creation Rules", "Schedule Creation Rules is not clicked");
-
-
-
-		String periodLength = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 11);
-		String lengthMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 12);
-		String lengthMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 13);
-		String workDayMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 14);
-		String workDayMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 15);
-		String dayPeriodMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 16);
-		String dayPeriodMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 17);
-		String offDayMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 18);
-		String offDayMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 19);
-		String timePeriodMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 20);
-		String timePeriodMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 21);
-		// After Next button 
-		String countDayMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 22);
-		String countDayMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 23);
-		String countOffMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 24);
-		String countOffMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 25);
-		String shiftBandMin = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 26);
-		String shiftBandMax = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 27);
-		String minHourRest = excelUtility.readDataFromExcelFile("EmployeeTest", 20, 28);
-
-		
-
 		btnAddScheduleRule.click();
 		Thread.sleep(2000);
 		Rc.explicitWait(txtScheduleRuleName, "visibility");

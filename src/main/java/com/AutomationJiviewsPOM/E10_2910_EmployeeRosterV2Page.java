@@ -35,285 +35,310 @@ import org.testng.Reporter;
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ExcelUtilities;
 import com.AutomationJiviewsGeneric.FakeEmployee;
+import com.AutomationJiviewsGeneric.ReusableComponent;
 import com.AutomationJiviewsGeneric.WebUtilities;
 import com.AutomationJiviewsGeneric.configUtility;
 
 import io.netty.handler.timeout.TimeoutException;
 
-public class E10_2910_EmployeeRosterV2Page {
+public class E10_2910_EmployeeRosterV2Page 
+{
 	WebDriver driver ;
-	
+	ReusableComponent Rc ;
 	public Actions actions;
 	WebUtilities webUtility;
 	ExcelUtilities excelUtilities ;
 
+	
+	@FindBy(xpath = "//div[@id='dvOrgUnitDropdown']/a")
+	WebElement dvOrgUnitDropdown;
+
+	@FindBy(xpath = "//div[@id='dvGlobalOrganizationUnitTreeView']/ul/li")
+	List<WebElement> OrgUnit; // AUTO OU
+
+	@FindBy(xpath = "//div[@id='dvApplicationMenuItems']")
+	WebElement dvApplicationMenuItems;
+
+	@FindBy(xpath = "//div[@id='dvJiViewsMenuItems']/a")
+	List<WebElement> MainMenu; // Workforce Scheduling
+
+	@FindBy(xpath = "(//ul[@id='ulApplicationMenu']/li)[2]")
+	WebElement ulApplicationMenu; // Roster Setup
+
+	@FindBy(xpath = "(//ul[@class='sidenav-menu'])[2]/li")
+	List<WebElement> sideNavMenu; // Schedule Creation Rules
+	
+	
+	
 	@FindBy(xpath = "//span[text()='Workforce Scheduling']/..")
-	private WebElement selectWorkforceScheduling;
+	WebElement selectWorkforceScheduling;
 	@FindBy(xpath = "//div[text()='Scheduling']/..")
-	private WebElement Scheduling;
+	WebElement Scheduling;
 	@FindBy(xpath = "//div[text()='Employee Roster V2']/..")
-	private WebElement EmployeeRosterV2;
+	WebElement EmployeeRosterV2;
 	
 	
 	
 	@FindBy(id = "dtStartAndEnd")
-	private WebElement dateStartAndEnd;
+	WebElement dateStartAndEnd;
 //	@FindBy(xpath = "//input[@class='input-mini form-control active']")
 	@FindBy(xpath = "((//table[@class='table-condensed'])[1]/tbody/tr/td)[10]")
-	private WebElement selectStartDate;
+	WebElement selectStartDate;
 //	@FindBy(xpath = "(//input[@name='daterangepicker_end'])[2]") or ((//table[@class='table-condensed'])[2]/tbody/tr/td)[29]
 	@FindBy(xpath = "((//table[@class='table-condensed'])[1]/tbody/tr/td)[17]")
-	private WebElement selectEndDate;
+	WebElement selectEndDate;
 	
 	
 	
 	@FindBy(xpath = "//span[@id='select2-cmbRosterGroupBy-container']")
-	private WebElement cmbRosterGroupBy;
+	WebElement cmbRosterGroupBy;
 	@FindBy(xpath = "//ul[@id='select2-cmbRosterGroupBy-results']/li")
-	private WebElement selectRoleGroup;
+	WebElement selectRoleGroup;
 	@FindBy(xpath = "(//button[text()='Apply'])[2]")
-	private WebElement clickApply;
+	WebElement clickApply;
 
 	@FindBy(xpath = "//button[@id='btnSearchEmployeeRoster']")
-	private WebElement btnSearchEmployeeRoster;
+	WebElement btnSearchEmployeeRoster;
 
 	@FindBy(xpath = "//li[@id='btnFilterDiv']")
-	private WebElement btnFilterDiv;
+	WebElement btnFilterDiv;
 	@FindBy(xpath = "//div[@id='filterEmployee']/div")
-	private WebElement filterEmployee;
+	WebElement filterEmployee;
 
 	@FindBy(xpath = "//div[@id='filterRosterGroup']/div")
-	private WebElement filterRosterGroup;
+	WebElement filterRosterGroup;
 	@FindBy(xpath = "//ul[@id='select2-cmbReportRosterGroup-results']/li")
-	private WebElement chooseRosterGroup;
+	WebElement chooseRosterGroup;
 
 	@FindBy(xpath = "//div[@id='filterRoleGroup']")
-	private WebElement filterRoleGroup;
+	WebElement filterRoleGroup;
 	@FindBy(xpath = "//li[contains(text(),'RTGO Operator')]")
-	private WebElement chooseRoleGroup;
+	WebElement chooseRoleGroup;
 
 	@FindBy(xpath = "//div[@id='filterShiftBand']")
-	private WebElement filterShiftBand;
+	WebElement filterShiftBand;
 	@FindBy(xpath = "(//ul[@class='select2-results__options']/li)[2]")
-	private WebElement chooseShiftBand;
+	WebElement chooseShiftBand;
 
 	@FindBy(xpath = "//ul/span[@class='select2-selection__clear']")
-	private List<WebElement> selectionClear;
+	List<WebElement> selectionClear;
 
 	@FindBy(xpath = "//button[@id='filterSeachBtn']")
-	private WebElement filterSeachBtn;
+	WebElement filterSeachBtn;
 	@FindBy(xpath = "//button[@class='btn btn-default']")
-	private WebElement btnHide;
+	WebElement btnHide;
 
 	@FindBy(xpath = "//span[@id='btnExpandText']")
-	private WebElement btnExpandDiv;
+	WebElement btnExpandDiv;
 	@FindBy(xpath = "//span[@id='btnExpandText']")
-	private WebElement btnExpandText;
+	WebElement btnExpandText;
 
 	@FindBy(xpath = "(//div[@class='card-header-elements ml-auto']/div)[2]")
-	private WebElement columns;
+	WebElement columns;
 	@FindBy(xpath = "//span[text()='EMPLOYEE']")
-	private WebElement employee;
+	WebElement employee;
 	@FindBy(xpath = "//span[text()='HOUR']")
-	private WebElement hour;
+	WebElement hour;
 	@FindBy(xpath = "//span[text()='ACT COST']")
-	private WebElement actCost;
+	WebElement actCost;
 	@FindBy(xpath = "//span[text()='SHIFT']")
-	private WebElement shift;
+	WebElement shift;
 	@FindBy(xpath = "//span[text()='Day S1']")
-	private WebElement dayS1;
+	WebElement dayS1;
 	@FindBy(xpath = "//span[text()='Night S2']")
-	private WebElement nightS2;
+	WebElement nightS2;
 	@FindBy(xpath = "//span[text()='Office O']")
-	private WebElement officeO;
+	WebElement officeO;
 	@FindBy(xpath = "//span[text()='QCDAY']")
-	private WebElement qcDay;
+	WebElement qcDay;
 
 	@FindBy(xpath = "//button[text()='Close']")
-	private WebElement btnClose;
+	WebElement btnClose;
 	@FindBy(xpath = "//button[text()='Reset']")
-	private WebElement btnReset;
+	WebElement btnReset;
 
 	@FindBy(xpath = "//span[@id='btnFullScreen']")
-	private WebElement btnFullScreen;
+	WebElement btnFullScreen;
 
 	@FindBy(xpath = "//div[text()='OFF']")
-	private WebElement emptyCell;
+	WebElement emptyCell;
 	@FindBy(xpath = "//span[text()='Create Shift']/..")
-	private WebElement CreateShift;
+	WebElement CreateShift;
 	@FindBy(xpath = "//span[@id='select2-cmbShiftBand-container']")
-	private WebElement txtShiftBand;
+	WebElement txtShiftBand;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
-	private WebElement selectResultsShiftBand;
+	WebElement selectResultsShiftBand;
 
 	@FindBy(xpath = "//span[text()=' On Call ']")
-	private WebElement onCallShift;
+	WebElement onCallShift;
 
 	@FindBy(xpath = "//span[@id='select2-cmbRoleName-container']")
-	private WebElement txtRoleName;
+	WebElement txtRoleName;
 	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
-	private WebElement selectResultsRoleName;
+	WebElement selectResultsRoleName;
 
 	@FindBy(xpath = "//textarea[@id='txtShiftNotes']")
-	private WebElement txtShiftNotes;
+	WebElement txtShiftNotes;
 	@FindBy(xpath = "//button[@id='btnSelectShiftBand']") 
-	private WebElement btnSelectShiftBand;
+	WebElement btnSelectShiftBand;
 	@FindBy(xpath = "//div[text()='Shift created successfully']")
-	private WebElement shiftCreatedSuccessfullyMsg;
+	WebElement shiftCreatedSuccessfullyMsg;
 	@FindBy(className = "toast-close-button")
-	private WebElement notificationPopup;
+	WebElement notificationPopup;
 
 	@FindBy(xpath = "//div[@class='cssShiftCard']") 
-	private WebElement cssShiftCard;
+	WebElement cssShiftCard;
 	@FindBy(xpath = "//div[text()='HE']")
-	private WebElement applyExcludeDeployment;
+	WebElement applyExcludeDeployment;
 	@FindBy(xpath = "//div[text()='TI']")
-	private WebElement applyTimeOff;
+	WebElement applyTimeOff;
 
 	@FindBy(xpath = "//span[text()='Copy']")
-	private WebElement copyOption;
+	WebElement copyOption;
 
 	@FindBy(xpath = "//span[text()='Paste']")
-	private WebElement pasteOption;
+	WebElement pasteOption;
 	@FindBy(xpath = "//button[text()='Yes']")
-	private WebElement btnYes;
+	WebElement btnYes;
 
 	@FindBy(xpath = "(//table[@class='tui-grid-table'])[5]/tbody/tr[2]")
-	private WebElement sourceRow;
+	WebElement sourceRow;
 	@FindBy(xpath = "(//table[@class='tui-grid-table'])[5]/tbody/tr[4]")
-	private WebElement destinationRow;
+	WebElement destinationRow;
 
 	@FindBy(xpath = "//div[@class='indicatorShift']")
-	private WebElement callIndicatorShift;
+	WebElement callIndicatorShift;
 	@FindBy(xpath = "//span[text()='Copy Special']/..")
-	private WebElement copySpecial;
+	WebElement copySpecial;
 	@FindBy(xpath = "//span[text()='Copy with Both']/..")
-	private WebElement copyWithOCRemarks;
+	WebElement copyWithOCRemarks;
 
 
 	@FindBy(xpath = "//span[text()='Export']/..")
-	private WebElement exportOption;
+	WebElement exportOption;
 	@FindBy(xpath = "//span[text()='Text File']/..")
-	private WebElement textFileOption;
+	WebElement textFileOption;
 	@FindBy(xpath = "//span[text()='Excel File']/..")
-	private WebElement excelFileOption;
+	WebElement excelFileOption;
 
 	@FindBy(xpath = "//div[text()='Data has been exported successfully ']")
-	private WebElement dataExportedSuccessfullyMsg; 
+	WebElement dataExportedSuccessfullyMsg; 
 	@FindBy(xpath = "//span[text()='Collapse Group']")
-	private WebElement CollapseGroupOption;
+	WebElement CollapseGroupOption;
 
 	@FindBy(xpath = "//span[text()='Apply On Behalf']/..")
-	private WebElement applyOnBehalfOption;
+	WebElement applyOnBehalfOption;
 
 	@FindBy(xpath = "//span[text()='Apply Leave']/..")
-	private WebElement applyLeaveOption;
+	WebElement applyLeaveOption;
 	@FindBy(xpath = "//span[@id='select2-cmbExceptionType-container']")
-	private WebElement leaveType;
+	WebElement leaveType;
 	@FindBy(xpath = "//li[text()='Sick Leave']")
-	private WebElement selectSickLeave;
+	WebElement selectSickLeave;
 	@FindBy(xpath = "//li[text()='Emergency Leave']")
-	private WebElement selectEmergencyLeave;
+	WebElement selectEmergencyLeave;
 
 	// Get Title:
 	@FindBy(xpath = "//td[@class='tui-grid-cell tui-grid-cell-has-input tui-grid-cell-disabled tui-grid-cell-has-tree ']")
-	private WebElement rightClickEmployee;
+	WebElement rightClickEmployee;
 	@FindBy(xpath = "//span[text()='Employee Profile']/..")
-	private WebElement employeeProfileOption;
+	WebElement employeeProfileOption;
 	@FindBy(xpath = "//span[text()='Leave Profile']/..")
-	private WebElement leaveProfileOption;
+	WebElement leaveProfileOption;
 	@FindBy (xpath = "//span[text()='Approval Route']/..")
-	private WebElement approvalRouteOption;
+	WebElement approvalRouteOption;
 
 	@FindBy(xpath = "//input[@id='dtLeaveStartDate']")
-	private WebElement dtLeaveStartDate;
+	WebElement dtLeaveStartDate;
 	@FindBy(xpath = "//input[@id='dtLeaveEndDate']")
-	private WebElement dtLeaveEndDate;
+	WebElement dtLeaveEndDate;
 	@FindBy(xpath = "//input[@id='txtLeaveReferenceNo']")
-	private WebElement txtLeaveReferenceNo;
+	WebElement txtLeaveReferenceNo;
 	@FindBy(xpath = "//textarea[@id='txtLeaveRemarks']")
-	private WebElement txtLeaveRemarks;
+	WebElement txtLeaveRemarks;
 	@FindBy(xpath = "//button[text()='Next']")
-	private WebElement btnNext;
+	WebElement btnNext;
 	@FindBy(xpath = "//button[text()='Previous']")
-	private WebElement btnPrevious;
+	WebElement btnPrevious;
 
 	@FindBy(xpath = "//a[text()='Shift Count']")
-	private WebElement tabShiftCount;
+	WebElement tabShiftCount;
 	@FindBy(xpath = "//a[text()='Leave Count']")
-	private WebElement tabLeaveCount;
+	WebElement tabLeaveCount;
 	@FindBy(xpath = "//a[text()='Required Resources']")
-	private WebElement tabRequiredResources;
+	WebElement tabRequiredResources;
 	@FindBy(xpath = "//a[text()='Shift Shortage']")
-	private WebElement tabShiftShortage;
+	WebElement tabShiftShortage;
 
 	@FindBy(xpath = "//td[@data-column-name='EmployeeSearch']")
-	private List<WebElement> columnEmployeeSearch;
+	List<WebElement> columnEmployeeSearch;
 
 	@FindBy(xpath = "//span[text()='Apply Time off']")
-	private WebElement applyTimeOffOption;
+	WebElement applyTimeOffOption;
 	@FindBy(xpath = "//input[@id='dtTimeOffDate']")
-	private WebElement dtTimeOffDate;
+	WebElement dtTimeOffDate;
 
 	@FindBy(xpath = "//span[@id='select2-cmbTimeOffPeriod-container']")
-	private WebElement txtTimeOffPeriod;
+	WebElement txtTimeOffPeriod;
 	@FindBy(xpath = "//li[@class='select2-results__option']")
-	private WebElement chooseShiftStart;
+	WebElement chooseShiftStart;
 	@FindBy(xpath = "//li[text()='Shift End']")
-	private WebElement chooseShiftEnd;
+	WebElement chooseShiftEnd;
 	@FindBy(xpath = "//textarea[@id='txtTimeOffRemarks']")
-	private WebElement txtTimeOffRemarks;
+	WebElement txtTimeOffRemarks;
 
 	//	@FindBy(xpath = "(//button[@id='btnAddAttachment'])[2]")
-	//	private WebElement btnAddAttachment; not working button 
+	//	WebElement btnAddAttachment; not working button 
 
 	@FindBy(xpath = "//button[@id='btnApplyTimeOff']")
-	private WebElement btnApplyTimeOff;
+	WebElement btnApplyTimeOff;
 
 	@FindBy(xpath = "//div[text()='Time Off Request Submitted Successfully']")
-	private WebElement timeOffRequestSubmittedSuccessfullyMsg;
+	WebElement timeOffRequestSubmittedSuccessfullyMsg;
 
 	@FindBy(xpath = "//span[text()='Apply Uncontrolled Leave']")
-	private WebElement applyUncontrolledLeaveOption;
+	WebElement applyUncontrolledLeaveOption;
 	@FindBy(xpath = "//span[@id='select2-cmbUCLExceptionType-container']")
-	private WebElement txtUCLExceptionType;
+	WebElement txtUCLExceptionType;
 	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
-	private WebElement chooseUncontrolLeave;
+	WebElement chooseUncontrolLeave;
 	@FindBy(xpath = "//input[@id='txtUCLReferenceNo']")
-	private WebElement txtUCLReferenceNo;
+	WebElement txtUCLReferenceNo;
 	@FindBy(xpath = "//textarea[@id='txtUCLRemarks']")
-	private WebElement txtUCLRemarks;
+	WebElement txtUCLRemarks;
 	@FindBy(xpath = "//button[@id='btnApplyUCL']")
-	private WebElement btnApplyUCL;
+	WebElement btnApplyUCL;
 
 
 	@FindBy(xpath = "//span[text()='Exclude Deployment']")
-	private WebElement excludeDeploymentOption;
+	WebElement excludeDeploymentOption;
 	@FindBy(xpath = "//span[@id='select2-cmbEDExceptionType-container']")
-	private WebElement cmbEDExceptionType;
+	WebElement cmbEDExceptionType;
 	@FindBy(xpath = "//li[@class='select2-results__option select2-results__option--highlighted']")
-	private WebElement chooseExcludeDeployment;
+	WebElement chooseExcludeDeployment;
 	@FindBy(xpath = "//input[@id='txtEDReferenceNo']")
-	private WebElement txtEDReferenceNo;
+	WebElement txtEDReferenceNo;
 	@FindBy(xpath = "//textarea[@id='txtEDRemarks']")
-	private WebElement txtEDRemarks;
+	WebElement txtEDRemarks;
 	@FindBy(xpath = "//button[@id='btnApplyExcludeDeployment']")
-	private WebElement btnApplyExcludeDeployment;
+	WebElement btnApplyExcludeDeployment;
 	@FindBy(xpath = "//div[text()='Exclude Deployment Exception Created Successfully']")
-	private WebElement excludeDeploymentExceptionCreatedSuccessfullyMsg;
+	WebElement excludeDeploymentExceptionCreatedSuccessfullyMsg;
 
 
 
-	public E10_2910_EmployeeRosterV2Page(WebDriver driver) {
+	public E10_2910_EmployeeRosterV2Page(WebDriver driver) 
+	{
 		PageFactory.initElements(driver, this);
 		this.driver = driver; 
+		this.Rc= new ReusableComponent(driver);
+		
 		this.webUtility= new WebUtilities(driver);
 		this.excelUtilities= new ExcelUtilities();
 		this.actions = new Actions(driver);
 	}
 	public void clickStartAndEndDate() throws InterruptedException {
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(60));
-//		wait.until(ExpectedConditions.jsReturnsValue("return document.readyState === 'complete';"));
 		Thread.sleep(2000);
 		WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='dtStartAndEnd']")));
 		Thread.sleep(5000);
@@ -547,7 +572,7 @@ public class E10_2910_EmployeeRosterV2Page {
 	}
 
 	// Method to check if an element is present
-	private boolean isElementPresent(WebElement element) {
+	boolean isElementPresent(WebElement element) {
 		try {
 			// Attempt to find the element
 			element.isDisplayed();
@@ -584,7 +609,7 @@ public class E10_2910_EmployeeRosterV2Page {
 		CollapseGroupOption.click();
 
 	}
-	private String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
+	String getTitleOfNewTab(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
 
@@ -612,7 +637,7 @@ public class E10_2910_EmployeeRosterV2Page {
 		return pageTitle;
 	}
 
-	private String getTitleOfNewTabWithAlertPopup(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
+	String getTitleOfNewTabWithAlertPopup(WebElement elementToRightClick, WebElement optionToClick) throws InterruptedException {
 		actions.contextClick(elementToRightClick).perform();
 		optionToClick.click();
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
@@ -780,104 +805,97 @@ public class E10_2910_EmployeeRosterV2Page {
 
 
 	// Jira Item: E10-2938 - Employee Roster V2 [Search by date]
-	public void searchEmpRosterByDate(FakeEmployee fakeEmployee) throws InterruptedException {
-//		clickApply();
-//		Thread.sleep(4000);
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(50));
-        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(selectWorkforceScheduling));
-        Actions actions = new Actions(driver);
-        actions.moveToElement(element).click().perform();
-        
-//		selectWorkforceScheduling.click();
+	public void searchEmpRosterByDate() throws InterruptedException 
+	{
+        Thread.sleep(2000);
+		Rc.explicitWait(dvOrgUnitDropdown, "clickable");
+		Rc.handleMultipleElements(dvOrgUnitDropdown, OrgUnit, "AUTO OU", "Auto Ou is not clicked");
+		Rc.explicitWait(dvApplicationMenuItems, "clickable");
+		Rc.handleMultipleElements(dvApplicationMenuItems, MainMenu, "Workforce Scheduling", "Workforce Scheduling is not clicked");
+		
 		Scheduling.isDisplayed();
-		Thread.sleep(2000);
 		EmployeeRosterV2.click();
 		
-		clickStartAndEndDate();
-		enterStartDate(fakeEmployee.getRosterStartDate());
-		enterEndDate(fakeEmployee.getRosterEndDate());
-		clickApply();
-		cmbRosterGroupBy();
-		clickbtnSearchEmployeeRoster();
-	}
-	// Jira Item: E10-2939 - Employee Roster V2 [Search by filters]
-	public void searchByFilters() throws InterruptedException {
-		Thread.sleep(2000);
-		clickBtnFilter();
-
-		chooseShiftBand();
-		clickFilterSeachBtn();
-	}
-	// Jira Item: E10-2940 - Employee Roster V2 [Expand and Collapse rows]
-	public void expandAndCollapseRows(FakeEmployee fakeEmployee) throws InterruptedException {
-//		
+		Rc.explicitWait(dateStartAndEnd, "visible");
+		dateStartAndEnd.clear();
+		dateStartAndEnd.click();
+		Rc.explicitWait(selectStartDate, "clickable");
+		selectStartDate.click();
+		selectEndDate.click();
+		
+		clickApply.click();
+		
+		
+		Rc.explicitWait(cmbRosterGroupBy, "clickable");
+		cmbRosterGroupBy.click();
+		selectRoleGroup.click();
+		
+		btnSearchEmployeeRoster.click();
+		
 //		clickStartAndEndDate();
 //		enterStartDate(fakeEmployee.getRosterStartDate());
 //		enterEndDate(fakeEmployee.getRosterEndDate());
 //		clickApply();
 //		cmbRosterGroupBy();
 //		clickbtnSearchEmployeeRoster();
-		clickBtnExpand();
 	}
-	// Jira Item: E10-2941 - Employee Roster V2 [Filter and reset columns]
-	public void filterAndResetColumns(FakeEmployee fakeEmployee) throws InterruptedException {
+	public void searchByFilters() throws InterruptedException 
+	{
+		Rc.explicitWait(btnFilterDiv, "clickable");
+		btnFilterDiv.click();
+		Rc.explicitWait(filterShiftBand, "clickable");
+		filterShiftBand.click();
+		chooseShiftBand.click();
+		
+		filterSeachBtn.click();
+		
 //		Thread.sleep(2000);
-//		clickStartAndEndDate();
-//		enterStartDate(fakeEmployee.getRosterStartDate());
-//		enterEndDate(fakeEmployee.getRosterEndDate());
-//		clickApply();
-//		cmbRosterGroupBy();
-//		clickbtnSearchEmployeeRoster();
+//		clickBtnFilter();
+//		chooseShiftBand();
+//		clickFilterSeachBtn();
+	}
+	public void expandAndCollapseRows() throws InterruptedException 
+	{
+		
+		btnExpandDiv.click();
+		
 //		clickBtnExpand();
+	}
+	
+	public void filterAndResetColumns() throws InterruptedException 
+	{
+		
 		columns.click();
 		actCost.click();
 		dayS1.click();
 		nightS2.click();
 		officeO.click();
-		webUtility.moveToElement(driver, qcDay);
+		Rc.moveToElement(qcDay);
 		qcDay.click();
+		
+		Rc.explicitWait(btnClose, "clickable");
+		btnClose.click();
 //		selectColumns("Disable");
-		clickBtnClose();
-	}
-	// Jira Item: E10-2942 - Employee Roster V2 [Expand and minimize full screen]
-	public void performFullScreen(FakeEmployee fakeEmployee) throws InterruptedException {
-//		Thread.sleep(2000);
-//		clickStartAndEndDate();
-//		clickApply();
-//		cmbRosterGroupBy();
-//		clickbtnSearchEmployeeRoster();
-//		clickBtnExpand();
-//		columns.click();
-//		actCost.click();
-//		dayS1.click();
-//		nightS2.click();
-//		officeO.click();
-//		webUtility.moveToElement(driver, qcDay);
-//		qcDay.click();
-////		selectColumns("Disable");
 //		clickBtnClose();
-		performBtnFullScreen();
-		Thread.sleep(1000);
-		performBtnFullScreen();
 	}
-	// Jira Item: E10-2943 - Employee Roster V2 [Double click on tab or right click and select create shift]
-	public void performClickEmptyCellCreateShift(FakeEmployee fakeEmployee) throws Exception {
-//		clickStartAndEndDate();
-//		enterStartDate(fakeEmployee.getRosterStartDate());
-//		enterEndDate(fakeEmployee.getRosterEndDate());
-//		clickApply();
-//		cmbRosterGroupBy();
-//		clickbtnSearchEmployeeRoster();
-//		clickBtnExpand();
-//		columns.click();
-//		actCost.click();
-//		dayS1.click();
-//		nightS2.click();
-//		officeO.click();
-//		webUtility.moveToElement(driver, qcDay);
-//		qcDay.click();
-////		selectColumns("Disable");
-//		clickBtnClose();
+	public void performFullScreen() throws InterruptedException 
+	{
+		Rc.moveToElement(btnFullScreen);
+		btnFullScreen.click();
+		
+		Rc.explicitWait(btnFullScreen, "clickable");
+		Rc.moveToElement(btnFullScreen);
+		btnFullScreen.click();
+		
+//		performBtnFullScreen();
+//		Thread.sleep(1000);
+//		performBtnFullScreen();
+	}
+	public void performClickEmptyCellCreateShift(FakeEmployee fakeEmployee) throws Exception 
+	{
+		emptyCell.click();
+		
+		
 		
 		doubleClickEmptyCell(emptyCell);
 		selectRoleName();
@@ -1226,7 +1244,7 @@ public class E10_2910_EmployeeRosterV2Page {
 		chooseShiftStart();
 		enterTimeOffRemarks(fakeEmployee.getRemarksLeave());
 		//	@FindBy(xpath = "(//button[@id='btnAddAttachment'])[2]")
-		//	private WebElement btnAddAttachment; ....................Not working button 
+		//	WebElement btnAddAttachment; ....................Not working button 
 		Thread.sleep(3000);
 		clickApplyTimeOff();
 		getTimeOffRequestSubmittedSuccessfullyMsg();

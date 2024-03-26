@@ -130,14 +130,15 @@ public class SystemDefination_SkillPage
 
 	public void editSkill() throws Exception 
 	{
+		
 		Rc.explicitWait(searchColumns, "clickable");
 		searchColumns.clear();
 		searchColumns.sendKeys(skillCodeData);
+		skillCodeData = Rc.firstName;
 		Rc.explicitWait(editBtn, "clickable");
 		editBtn.click();
 		Rc.explicitWait(skillCode, "clickable");
 		skillCode.clear();
-		skillCodeData = Rc.firstName;
 		skillCode.sendKeys(skillCodeData );
 		skillDescription.clear();
 		skillDescription.sendKeys(Rc.description);

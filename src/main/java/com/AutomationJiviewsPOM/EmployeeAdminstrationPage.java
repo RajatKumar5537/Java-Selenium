@@ -19,8 +19,9 @@ public class EmployeeAdminstrationPage {
 	
 	@FindBy(xpath ="//div[text()='Employee Profile']/.." )
 	private WebElement employeeProfile;
+	
 	@FindBy(xpath = "//div[text()='Roster Group Assignment']/..")
-	private WebElement rosterGroupAssignment;
+	WebElement rosterGroupAssignment;
 	
 	
 	

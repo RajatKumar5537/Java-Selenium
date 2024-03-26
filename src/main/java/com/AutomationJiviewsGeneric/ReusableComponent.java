@@ -20,6 +20,7 @@ import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
 import org.openqa.selenium.Alert;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.StaleElementReferenceException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -32,7 +33,8 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 import com.github.javafaker.Faker;
 
 
-public class ReusableComponent {
+public class ReusableComponent 
+{
 
 	public static  WebDriver driver;
 
@@ -48,17 +50,22 @@ public class ReusableComponent {
 	public String dateOfBirth = faker.date().birthday().toString();
 	public String randomDate = faker.date().birthday().toString();
 	public String randomInt= ""+ faker.number().numberBetween(0, 9);
-	
+	public String city = faker.address().city();
+	public String state = faker.address().state();
+	public String mobileNo = faker.phoneNumber().cellPhone();
+
 
 	//************Constructor************
-	public ReusableComponent(WebDriver driver) {
+	public ReusableComponent(WebDriver driver) 
+	{
 		System.out.println(driver);
 		this.driver=driver;
 		PageFactory.initElements(driver, this);
 	}
 
 	//************Handling Multiple Elements************
-	public void handleMultipleElements(WebElement locator,List<WebElement> locator1,String text,String errorMessage) throws InterruptedException{
+	public void handleMultipleElements(WebElement locator,List<WebElement> locator1,String text,String errorMessage) throws InterruptedException
+	{
 		Thread.sleep(3000);
 		locator.click();
 		Thread.sleep(3000);
@@ -78,19 +85,22 @@ public class ReusableComponent {
 	}
 
 	//************File Upload************
-	public void selectFileToUpload(WebElement fileInputElement) {
-		File file = new File("./TestData/Jiviews Team.png");
+	public void selectFileToUpload(WebElement fileInputElement) 
+	{
+		File file = new File(".\\src\\test\\resources\\TestData\\Jiviews Team.jpg"); 
 		String absolutePath = file.getAbsolutePath();
 		fileInputElement.sendKeys(absolutePath);
 	}
 
 	//************Implicit Wait Condition************
-	public void setImplicitWait(WebDriver driver, long timeoutInSeconds) {
+	public void setImplicitWait(WebDriver driver, long timeoutInSeconds) 
+	{
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
 	}
 
 	//************Explicit Wait Condition************
-	public void explicitWait( WebElement locator, String text) {
+	public void explicitWait( WebElement locator, String text) 
+	{
 		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
 
 		switch (text) {
@@ -110,32 +120,38 @@ public class ReusableComponent {
 	}
 
 	//************List Box************
-	public static void selectByValue(WebElement element, String value) {
+	public static void selectByValue(WebElement element, String value) 
+	{
 		Select select = new Select(element);
 		select.selectByValue(value);
 	}
 
-	public void selectByIndex(WebElement element, int index) {
+	public void selectByIndex(WebElement element, int index) 
+	{
 		Select select = new Select(element);
 		select.selectByIndex(index);
 	}
 
 	//************Action Class Methods************
-	public void moveToElement(WebElement element) {
+	public void moveToElement(WebElement element) 
+	{
 		Actions actions = new Actions(driver);
 		actions.moveToElement(element).perform();
 	}
 
-	public static void doubleClick(WebElement element) {
+	public static void doubleClick(WebElement element) 
+	{
 		Actions actions = new Actions(driver);
 		actions.doubleClick(element).perform();
 	}
 
-	public static void rightClick(WebElement element) {
+	public static void rightClick(WebElement element) 
+	{
 		Actions actions = new Actions(driver);
 		actions.contextClick(element).perform();
 	}
-	public void scrollToElement(WebElement element) {
+	public void scrollToElement(WebElement element) 
+	{
 		Actions actions = new Actions(driver);
 		actions.scrollToElement(element).perform();
 	}
@@ -158,16 +174,16 @@ public class ReusableComponent {
 	}
 
 	//************Reading & Writing Data from Excel File and Property File************
-	public String readDataFromExcelFile(String sheetName, int rowNo, int columnNo,String FILE_PATH) throws Exception {
-
+	public String readDataFromExcelFile(String sheetName, int rowNo, int columnNo,String FILE_PATH) throws Exception 
+	{
 		FileInputStream fis = new FileInputStream(FILE_PATH);
 		Workbook wb = WorkbookFactory.create(fis);
 		String data = wb.getSheet(sheetName).getRow(rowNo).getCell(columnNo).getStringCellValue();
 		return data;
 	}
 
-	public void writeDataExcelFile(String sheetName, int rowNo, int columnNo, String writeValue,String FILE_PATH) throws Exception {
-
+	public void writeDataExcelFile(String sheetName, int rowNo, int columnNo, String writeValue,String FILE_PATH) throws Exception 
+	{
 		FileInputStream fis = new FileInputStream(FILE_PATH);
 		Workbook wb = WorkbookFactory.create(fis);
 		Sheet sh = wb.getSheet(sheetName);
@@ -222,6 +238,15 @@ public class ReusableComponent {
 
 	}
 
+	public void scrollUp() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, -150)"); //  scroll to little  top  of the page 
+	}
+
+	public void scrollDown() {
+		JavascriptExecutor js = (JavascriptExecutor) driver;
+		js.executeScript("window.scrollBy(0, 500);"); // Adjust the scroll distance as needed
+	}
 
 
 }

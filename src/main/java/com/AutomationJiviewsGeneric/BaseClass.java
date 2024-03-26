@@ -53,9 +53,10 @@ public class BaseClass
 	@BeforeClass
 	public void beforeTestMethod() throws IOException, InterruptedException {
 		System.out.println("Login to the Application");
-		String url = configUtility.getCongigPropertyData("url");
-		String un = configUtility.getCongigPropertyData("username");
-		String pwd = configUtility.getCongigPropertyData("password");
+		String url = ReusableComponent.readPropertyData("url", "./Configure/jiviLoginCredential.properties");
+		String un  = ReusableComponent.readPropertyData("username", "./Configure/jiviLoginCredential.properties");
+		String pwd = ReusableComponent.readPropertyData("password", "./Configure/jiviLoginCredential.properties");
+		
 		driver.get(url);
 		LoginPage loginPage = new LoginPage(driver);
 		loginPage.setLogin(un, pwd);
