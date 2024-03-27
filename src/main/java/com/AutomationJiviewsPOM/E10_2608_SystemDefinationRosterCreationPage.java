@@ -175,7 +175,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 	@FindBy(xpath = "//button[@id='btnSaveTemplateRoster']")
 	WebElement btnSaveTemplateRoster;
 
-	@FindBy(xpath = "//button[text()='Publish Now']")
+	@FindBy(xpath = "//button[@class='swal2-cancel swal2-styled']")
 	WebElement btnPublishNow;
 
 
@@ -303,10 +303,9 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		Rc.explicitWait(txtNoOfBlock, "visible");
 		txtNoOfBlock.sendKeys(Rc.randomInt);
 		btnSaveTemplateRoster.click();
+		Thread.sleep(2000);
 		Rc.explicitWait(btnPublishNow, "clickable");
 		btnPublishNow.click();
-
-
 		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
 		Assert.assertTrue(rosterCreateSuccessful.contains("Shift extraction process completed successfully"));
 		Rc.explicitWait(notificationPopup, "clickable");
@@ -315,6 +314,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		btnCloseRosterPattern.click();
 
 	}
+	
 	public void setCreateRoasterwithEmployee() throws Exception 
 	{
 
@@ -355,6 +355,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		Rc.explicitWait(txtNoOfBlock, "visible");
 		txtNoOfBlock.sendKeys(Rc.randomInt);
 		btnSaveTemplateRoster.click();
+		Thread.sleep(2000);
 		Rc.explicitWait(btnPublishNow, "clickable");
 		btnPublishNow.click();
 		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
@@ -383,6 +384,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		Rc.explicitWait(txtNoOfBlock, "visible");
 		txtNoOfBlock.sendKeys(Rc.randomInt);
 		btnSaveTemplateRoster.click();
+		Thread.sleep(2000);
 		Rc.explicitWait(btnPublishNow, "clickable");
 		btnPublishNow.click();
 		String rosterCreateSuccessful = shiftExtractionProcessCompletedSuccessfullyMsg.getText();
@@ -472,6 +474,7 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 		Rc.explicitWait(txtNoOfBlock, "visible");
 		txtNoOfBlock.sendKeys(Rc.randomInt);
 		btnSaveTemplateRoster.click();
+		Thread.sleep(1000);
 		Rc.explicitWait(btnPublishNow, "clickable");
 		btnPublishNow.click();
 		Rc.explicitWait(notificationPopup, "clickable");

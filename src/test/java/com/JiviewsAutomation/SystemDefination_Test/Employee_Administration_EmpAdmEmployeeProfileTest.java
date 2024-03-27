@@ -21,13 +21,6 @@ public class Employee_Administration_EmpAdmEmployeeProfileTest extends BaseClass
 		logger.info("Test Employee_Administration_VerifyCreateEmpProfile is successful");
 	}
 
-	@Test(priority = 6)
-	public void Employee_Administration_VerifyDuplicateEmpProfile() throws Exception 
-	{
-		logger.info("Starting test: Employee_Administration_VerifyDuplicateEmpProfile");
-		empProfile.duplicateEmpProfile();
-		logger.info("Test Employee_Administration_VerifyDuplicateEmpProfile is successful");
-	}
 	
 	@Test(priority =  2)
 	public void Employee_Administration_VerifyUpdateEmpProfile() throws Exception 
@@ -62,7 +55,14 @@ public class Employee_Administration_EmpAdmEmployeeProfileTest extends BaseClass
 		logger.info("Test Employee_Administration_VerifyTerminateEmpProfile is successful");
 	}
 
-
+	@Test(priority = 6)
+	public void Employee_Administration_VerifyDuplicateEmpProfile() throws Exception 
+	{
+		logger.info("Starting test: Employee_Administration_VerifyDuplicateEmpProfile");
+		empProfile.duplicateEmpProfile();
+		logger.info("Test Employee_Administration_VerifyDuplicateEmpProfile is successful");
+	}
+	
 	@Test(priority = 7)
 	public void Employee_Administration_VerifysearchEmpStatus() throws Exception 
 	{

@@ -717,11 +717,11 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		txtLastName.clear();
 		txtLastName.sendKeys(Rc.lastName+" " );
 		txtLastName.sendKeys(Keys.TAB);
-//		Rc.explicitWait(employmentBasis, "clickable");
-//		Rc.moveToElement(employmentBasis);
-//		employmentBasis.click();
-//		Rc.moveToElement(selectEmpBasisContract);
-//		selectEmpBasisContract.click();
+		//		Rc.explicitWait(employmentBasis, "clickable");
+		//		Rc.moveToElement(employmentBasis);
+		//		employmentBasis.click();
+		//		Rc.moveToElement(selectEmpBasisContract);
+		//		selectEmpBasisContract.click();
 		Rc.moveToElement(txtGender);
 		txtGender.click();
 		Rc.moveToElement(selectMale);
@@ -921,11 +921,11 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		Rc.explicitWait(dtBirthDate, "clickable");
 		dtBirthDate.click();
 		birthDate.click();
-//		Rc.explicitWait(employmentBasis, "clickable");
-//		Rc.moveToElement(employmentBasis);
-//		employmentBasis.click();
-//		Rc.moveToElement(selectEmpBasisContract);
-//		selectEmpBasisContract.click();
+		//		Rc.explicitWait(employmentBasis, "clickable");
+		//		Rc.moveToElement(employmentBasis);
+		//		employmentBasis.click();
+		//		Rc.moveToElement(selectEmpBasisContract);
+		//		selectEmpBasisContract.click();
 		Rc.moveToElement(txtGender);
 		txtGender.click();
 		Rc.moveToElement(selectMale);
@@ -1017,7 +1017,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		txtSearchBar.sendKeys(employeeNumber);
 		btnEdit.click();
 		Thread.sleep(10000);
-//		***********Click Miscellaneous Tab ************************
+		//		***********Click Miscellaneous Tab ************************
 		Rc.explicitWait(tabMiscellaneous, "clickable");
 		Rc.moveToElement(tabMiscellaneous);
 		tabMiscellaneous.click();
@@ -1051,7 +1051,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		selectActiveEmp.click();
 		Rc.explicitWait(btnSearchEmployeeProfile, "clickable");
 		btnSearchEmployeeProfile.click();
-		Rc.explicitWait(removeName, "clickable");
+		Thread.sleep(1000);
 		Rc.explicitWait(removeName, "clickable");
 		removeName.click();
 	}
@@ -1064,6 +1064,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		selectContractEmp.click();
 		Rc.explicitWait(btnSearchEmployeeProfile, "clickable");
 		btnSearchEmployeeProfile.click();
+		Thread.sleep(1000);
 		Rc.explicitWait(removeName, "clickable");
 		removeName.click();
 	}
@@ -1076,6 +1077,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		selectDftRosterGroup.click();
 		Rc.explicitWait(btnSearchEmployeeProfile, "clickable");
 		btnSearchEmployeeProfile.click();
+		Thread.sleep(1000);
 		Rc.explicitWait(removeName, "clickable");
 		removeName.click();
 
@@ -1090,7 +1092,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		selectRoleGroup.click();
 		Rc.explicitWait(btnSearchEmployeeProfile, "clickable");
 		btnSearchEmployeeProfile.click();
-		//		Thread.sleep(1000);
+		Thread.sleep(1000);
 		Rc.explicitWait(removeName, "clickable");
 		removeName.click();
 	}
