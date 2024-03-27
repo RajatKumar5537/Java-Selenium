@@ -157,6 +157,7 @@ public class Crane_Setup {
 		selectLocation.click();
 		cancel.isDisplayed();
 		saveCraneDetails.click();
+		Thread.sleep(2000);
 		Rc.explicitWait(notificationPopup, "clickable");
 		notificationPopup.click();
 	}
