@@ -152,8 +152,9 @@ public void createLocation() throws Exception
 	locationType.click();
 	selectLocationType.click();
 	locationDescription.sendKeys("this is For Testing");
-
 	cancel.isDisplayed();
+	Thread.sleep(2000);
+	Rc.explicitWait(saveLocationDetails, "clickable");
 	saveLocationDetails.click();
 	Thread.sleep(2000);
 	Rc.explicitWait(notificationPopup, "clickable");
