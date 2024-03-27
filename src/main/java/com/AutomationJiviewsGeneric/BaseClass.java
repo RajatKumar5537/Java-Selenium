@@ -17,13 +17,12 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 public class BaseClass 
 {
 
-	private static final Logger logger = Logger.getLogger(BaseClass.class.getName());
 	public static WebDriver driver;
-
+	private static final Logger logger = Logger.getLogger(BaseClass.class.getName());
 	@BeforeTest
-	public void launchBrowser() throws InterruptedException{
+	public void launchBrowser() throws InterruptedException
+	{
 		logger.info("Open Browser");
-
 		WebDriverManager.chromedriver().setup();
 		ChromeOptions option=new ChromeOptions();
 		
@@ -37,7 +36,8 @@ public class BaseClass
 		option.addArguments("--no-sandbox"); // Bypass OS security model
 		// Check the execution environment (e.g., using an environment variable)
 		String executionEnvironment = System.getenv("EXECUTION_ENVIRONMENT");
-		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) {
+		if (executionEnvironment != null && executionEnvironment.equalsIgnoreCase("azure")) 
+		{
 			// Running in Azure, enable headless mode
 			option.addArguments("--headless");
 		}
@@ -47,12 +47,12 @@ public class BaseClass
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(30));
 		logger.info("Browser launched successfully");
-
 	}
 
 	@BeforeClass
-	public void beforeTestMethod() throws IOException, InterruptedException {
-		System.out.println("Login to the Application");
+	public void beforeTestMethod() throws IOException, InterruptedException 
+	{
+		logger.info("Login to the Application");
 		String url = ReusableComponent.readPropertyData("url", "./Configure/jiviLoginCredential.properties");
 		String un  = ReusableComponent.readPropertyData("username", "./Configure/jiviLoginCredential.properties");
 		String pwd = ReusableComponent.readPropertyData("password", "./Configure/jiviLoginCredential.properties");
@@ -62,12 +62,14 @@ public class BaseClass
 		loginPage.setLogin(un, pwd);
 	}
 	@AfterClass
-	public void afterTestMethod() {
-		System.out.println("Logout from the Application");
+	public void afterTestMethod() 
+	{
+		logger.info("Logout from the Application");
 	}
 	
 	@AfterTest
-	public void closeBrowser() throws InterruptedException {
+	public void closeBrowser() throws InterruptedException 
+	{
 		logger.info("Close Browser...");
 		driver.quit();
 	}

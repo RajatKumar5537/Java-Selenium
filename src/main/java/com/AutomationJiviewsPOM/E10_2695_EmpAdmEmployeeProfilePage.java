@@ -1018,7 +1018,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		btnEdit.click();
 		Thread.sleep(10000);
 //		***********Click Miscellaneous Tab ************************
-
+		Rc.explicitWait(tabMiscellaneous, "clickable");
 		Rc.moveToElement(tabMiscellaneous);
 		tabMiscellaneous.click();
 		//		***********Click Disciplinary Tab ************************

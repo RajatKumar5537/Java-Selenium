@@ -95,7 +95,7 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage
 	@FindBy(xpath = "//span[@id='select2-cmbRosterPattern-container']")
 	WebElement selectRosterPattern;
 
-	@FindBy(xpath = "//li[contains(text(),'2669')]")
+	@FindBy(xpath = "//ul[@class='select2-results__options']/li")
 	WebElement chooseRosterPattern;
 
 	@FindBy(xpath = "//button[@id='btnSubmitChanges']")
@@ -233,10 +233,9 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage
 		Thread.sleep(2000);
 		Rc.explicitWait(txtSearch, "visible");
 		txtSearch.clear();
-		txtSearch.sendKeys(RosterGroupname);
+		txtSearch.sendKeys("Darell Morissette");
 		btnEdit.click();
-		//		txtRosterGroupname.clear();
-		//		txtRosterGroupname.sendKeys(RosterGroupname); Not Required 
+		Rc.explicitWait(txtRosterGroupDesc, "visible");
 		txtRosterGroupDesc.clear();
 		txtRosterGroupDesc.sendKeys(Rc.description);
 		txtRemarks.clear();
@@ -254,13 +253,12 @@ public class E10_2909_EmpAdmRosterGroupAssignmentPage
 		Rc.scrollDown();
 		Rc.moveToElement(btnSaveRosterGroup);
 		btnSaveRosterGroup.click();
-		
-		
 		Rc.moveToElement(selectRosterPattern);
 		selectRosterPattern.click();
-		//		Check it properly with Radhika ???????????
 		chooseRosterPattern.click();
+		Rc.explicitWait(btnSubmitChanges, "clickable");
 		btnSubmitChanges.click();
+		Rc.explicitWait(SuccessfullyMovedEmployeeToCurrentRosterGroup, "visible");
 		String actualResult = SuccessfullyMovedEmployeeToCurrentRosterGroup.getText();
 		Assert.assertTrue(actualResult.contains("Successfully moved employee(s) to current Roster Group"));
 		Rc.moveToElement(notificationPopup);

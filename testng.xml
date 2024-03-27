@@ -15,7 +15,6 @@
 		</classes>
 	</test>
 
-
 	<test
 		name="System_Defination_SCRTest">
 		<classes>
@@ -51,6 +50,25 @@
 			/>
 		</classes>
 	</test>
+
+	<test
+		name="Employee_Administration_EmpAdmEmployeeProfileTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_EmpAdmEmployeeProfileTest"
+			/>
+		</classes>
+	</test>
+
+	<test
+		name="Employee_Administration_RosterGroupAssignmentTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_RosterGroupAssignmentTest"
+			/>
+		</classes>
+	</test>
+
 	<test
 		name="Berth_Setup_Test">
 		<classes>
@@ -78,13 +96,5 @@
 		</classes>
 	</test>
 
-	<test
-		name="E10_2695_EmpAdmEmployeeProfileTest">
-		<classes>
-			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.E10_2695_EmpAdmEmployeeProfileTest"
-			/>
-		</classes>
-	</test>
 
 </suite>

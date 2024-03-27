@@ -107,7 +107,7 @@ public class ListenerImplimentation extends BaseClass implements ITestListener
 	@Override
 	public void onStart(ITestContext context) 
 	{
-		String buildName = "Build-: V 4.24.0.163";
+		String buildName = "Build-: v 4.24.0.163";
 		String reportName = "Automation Test Report - " + buildName;
 		String timestamp = new SimpleDateFormat("ddMMyyyyHHmmss").format(new Date());
 		String reportFileName = "ExtentReport_" + timestamp + ".html";

@@ -5,17 +5,13 @@ import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
-
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
 import java.io.FileOutputStream;
 import java.time.Duration;
 import java.util.List;
 import java.util.Properties;
-
 import org.apache.poi.ss.usermodel.Sheet;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.ss.usermodel.WorkbookFactory;
@@ -29,7 +25,6 @@ import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.Select;
 import org.openqa.selenium.support.ui.WebDriverWait;
-
 import com.github.javafaker.Faker;
 
 
@@ -101,7 +96,7 @@ public class ReusableComponent
 	//************Explicit Wait Condition************
 	public void explicitWait( WebElement locator, String text) 
 	{
-		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(1000));
+		WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(120));
 
 		switch (text) {
 
@@ -238,17 +233,17 @@ public class ReusableComponent
 
 	}
 
-	public void scrollUp() {
+	public void scrollUp() 
+	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0, -150)"); //  scroll to little  top  of the page 
 	}
 
-	public void scrollDown() {
+	public void scrollDown() 
+	{
 		JavascriptExecutor js = (JavascriptExecutor) driver;
 		js.executeScript("window.scrollBy(0, 500);"); // Adjust the scroll distance as needed
 	}
-
-
 }
 
 
