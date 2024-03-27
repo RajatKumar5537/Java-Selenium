@@ -155,6 +155,7 @@ public void createLocation() throws Exception
 
 	cancel.isDisplayed();
 	saveLocationDetails.click();
+	Thread.sleep(2000);
 	Rc.explicitWait(notificationPopup, "clickable");
 	notificationPopup.click();
 	}
