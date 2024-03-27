@@ -1,17 +1,12 @@
 package com.AutomationJiviewsPOM;
 
 import java.util.List;
-
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
-import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.Select;
-
 import com.AutomationJiviewsGeneric.BaseClass;
 import com.AutomationJiviewsGeneric.ReusableComponent;
-import com.github.javafaker.Faker;
 
 public class Location_Definitions extends BaseClass{
 	
@@ -160,6 +155,7 @@ public void createLocation() throws Exception
 
 	cancel.isDisplayed();
 	saveLocationDetails.click();
+	Rc.explicitWait(notificationPopup, "clickable");
 	notificationPopup.click();
 	}
 public void editLocation() throws Exception
@@ -173,6 +169,7 @@ public void editLocation() throws Exception
     locationName=locationName+"JIVI";
     locationNames.sendKeys(locationName);
     saveLocationDetails.click();
+    Rc.explicitWait(notificationPopup, "clickable");
     notificationPopup.click();
 	}
 public void deleteLocation() throws Exception
@@ -189,6 +186,7 @@ public void deleteLocation() throws Exception
 	deleteLocationButton.click();
 	validateNoButton.isDisplayed();
 	clickOnYesButton.click();
+	Rc.explicitWait(notificationPopup, "clickable");
 	notificationPopup.click();
 	}
 public void reActivate() throws InterruptedException

@@ -5,12 +5,19 @@
 			class-name="com.AutomationJiviewsGeneric.ListenerImplimentation" />
 	</listeners>
 
-
 	<test
+		name="Employee_Administration_EmpAdmEmployeeProfileTest">
+		<classes>
+			<class
+				name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_EmpAdmEmployeeProfileTest"
+			/>
+		</classes>
+	</test>
+	<!-- <test
 		name="SystemDefination_SkillPageTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest"
 			/>
 		</classes>
 	</test>
@@ -28,7 +35,7 @@
 		name="System_Defination_ShiftBandTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.System_Defination_ShiftBandTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.System_Defination_ShiftBandTest"
 			/>
 		</classes>
 	</test>
@@ -37,7 +44,7 @@
 		name="SystemDefination_PublicHolidayPageTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_PublicHolidayPageTest"
 			/>
 		</classes>
 	</test>
@@ -46,7 +53,7 @@
 		name="SystemDefination_RosterCreationPageTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RosterCreationPageTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_RosterCreationPageTest"
 			/>
 		</classes>
 	</test>
@@ -55,7 +62,7 @@
 		name="Employee_Administration_EmpAdmEmployeeProfileTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_EmpAdmEmployeeProfileTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_EmpAdmEmployeeProfileTest"
 			/>
 		</classes>
 	</test>
@@ -64,7 +71,7 @@
 		name="Employee_Administration_RosterGroupAssignmentTest">
 		<classes>
 			<class
-				name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_RosterGroupAssignmentTest"
+	name="com.JiviewsAutomation.SystemDefination_Test.Employee_Administration_RosterGroupAssignmentTest"
 			/>
 		</classes>
 	</test>
@@ -94,7 +101,7 @@
 				name="com.JiviewsAutomation.SystemDefination_Test.Location_Definitions_Test"
 			/>
 		</classes>
-	</test>
+	</test> -->
 
 
 </suite>

@@ -174,7 +174,6 @@ public class Berth_Setup {
 		validateNoButton.isDisplayed();
 		clickOnYesButton.click();
 		Rc.explicitWait(notificationPopup, "clickable");
-		Rc.explicitWait(downloadExcel, "visible");
 		notificationPopup.click();
 	}
 	public void reActivate() throws InterruptedException

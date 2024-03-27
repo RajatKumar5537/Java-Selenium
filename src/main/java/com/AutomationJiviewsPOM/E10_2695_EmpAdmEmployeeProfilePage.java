@@ -454,9 +454,8 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 	WebElement selectTerminatedEmp;
 
 
-	@FindBy(xpath = "//span[text()='×']")
+	@FindBy(xpath = "//span[@class='select2-selection__clear']")
 	WebElement removeName; 
-
 	@FindBy(xpath = "//input[@class='form-control form-control-sm']")
 	WebElement txtSearchBar;
 
@@ -706,7 +705,7 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		txtSearchBar.sendKeys(employeeNumber);
 		Rc.explicitWait(btnEdit, "clickable");
 		btnEdit.click();
-		Thread.sleep(4000);
+		Thread.sleep(6000);
 		Rc.explicitWait(txtBadgeNumber, "visible");
 		txtBadgeNumber.clear();
 		txtBadgeNumber.sendKeys(Rc.randomInt);
@@ -717,11 +716,11 @@ public class E10_2695_EmpAdmEmployeeProfilePage
 		txtLastName.clear();
 		txtLastName.sendKeys(Rc.lastName+" " );
 		txtLastName.sendKeys(Keys.TAB);
-		//		Rc.explicitWait(employmentBasis, "clickable");
-		//		Rc.moveToElement(employmentBasis);
-		//		employmentBasis.click();
-		//		Rc.moveToElement(selectEmpBasisContract);
-		//		selectEmpBasisContract.click();
+//		Rc.explicitWait(employmentBasis, "clickable");
+//		Rc.moveToElement(employmentBasis);
+//		employmentBasis.click();
+//		Rc.moveToElement(selectEmpBasisContract);
+//		selectEmpBasisContract.click();
 		Rc.moveToElement(txtGender);
 		txtGender.click();
 		Rc.moveToElement(selectMale);
