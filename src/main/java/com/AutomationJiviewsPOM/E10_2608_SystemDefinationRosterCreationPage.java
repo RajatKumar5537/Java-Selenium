@@ -236,15 +236,12 @@ public class E10_2608_SystemDefinationRosterCreationPage{
 				// Check if the current cell is within the specified days to add and within the valid rows
 				if ((int) columnIndex < daysToAdd && rowIndex < totalRows && off.equalsIgnoreCase("Off") && emptyCell.isEnabled()) {
 					// Perform actions if "Off" and the cell is enabled
-					Thread.sleep(2000);
 					Rc.explicitWait(emptyCell, "clickable");
 					emptyCell.click();
-
 					Rc.moveToElement(bandCode);
 					bandCode.click();
 					Rc.moveToElement(selectBandCode);
 					selectBandCode.click();
-					Thread.sleep(2000);
 					btnSaveSelectShiftBandBtn.click();
 
 				} else {

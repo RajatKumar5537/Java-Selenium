@@ -1,0 +1,4404 @@
+
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<title>Automation Test Report </title>
+<link rel="apple-touch-icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link rel="shortcut icon" href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png">
+<link href="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/css/spark-style.css" rel="stylesheet" />
+<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@7cc78ce/spark/js/jsontree.js"></script>
+<style type="text/css"></style></head><body class="spa -report dark">
+  <div class="app">
+    <div class="layout">
+<div class="header navbar">
+<div class="vheader">
+<div class="nav-logo">
+<a href="#">
+<div class="logo" style="background-image: url('https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@b00a2d0486596e73dd7326beacf352c639623a0e/commons/img/logo.png')"></div>
+</a>
+</div>
+<ul class="nav-left">
+<li class="search-box">
+<a class="search-toggle" href="#">
+<i class="search-icon fa fa-search"></i>
+<i class="search-icon-close fa fa-close"></i>
+</a>
+</li>
+<li class="search-input"><input id="search-tests" class="form-control" type="text" placeholder="Search..."></li>
+</ul>
+<ul class="nav-right">
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Automation Test Report - Build-: V 4.24.0.163</span></a>
+</li>
+<li class="m-r-10">
+<a href="#"><span class="badge badge-primary">Mar 26, 2024 04:45:29 pm</span></a>
+</li>
+</ul>
+</div>
+</div><div class="side-nav">
+<div class="side-nav-inner">
+<ul class="side-nav-menu">
+<li class="nav-item dropdown" onclick="toggleView('dashboard-view')">
+<a id="nav-dashboard" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-bar-chart"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('test-view')">
+<a id="nav-test" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-list"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('category-view')">
+<a id="nav-category" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-tag"></i></span>
+</a>
+</li>
+<li class="nav-item dropdown" onclick="toggleView('author-view')">
+<a id="nav-author" class="dropdown-toggle" href="#">
+<span class="ico"><i class="fa fa-user"></i></span>
+</a>
+</li>
+</ul>
+</div>
+</div>      <div class="vcontainer">
+        <div class="main-content">
+<div class="container-fluid p-4 view dashboard-view">
+<div class="row">
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Started</p>
+<h3>Mar 26, 2024 04:45:29 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0">Ended</p>
+<h3>Mar 26, 2024 04:59:11 pm</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-pass">Tests Passed</p>
+<h3>51</h3>
+</div></div>
+</div>
+<div class="col-md-3">
+<div class="card"><div class="card-body">
+<p class="m-b-0 text-fail">Tests Failed</p>
+<h3>0</h3>
+</div></div>
+</div>
+</div>
+<div class="row">
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Tests</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='parent-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='100%'>
+<b>51</b> tests passed
+</small>
+</div>
+<div>
+<small data-tooltip='0%'><b>0</b> tests failed,
+<b>0</b> skipped, <b data-tooltip='0%'>0</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+<div class="card">
+<div class="card-header">
+<h6 class="card-title">Log events</h6>
+</div>
+<div class="card-body">
+<div class="">
+<canvas id='events-analysis' width='115' height='90'></canvas>
+</div>
+</div>
+<div class="card-footer">
+<div><small data-tooltip='50%'><b>51</b> events passed</small></div>
+<div>
+<small data-tooltip='0%'><b>0</b> events failed,
+<b data-tooltip='%'>51</b> others
+</small>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="row"><div class="col-md-12">
+<div class="card"><div class="card-header"><p>Timeline</p></div>
+<div class="card-body pt-0"><div>
+<canvas id="timeline" height="120"></canvas>
+</div></div>
+</div>
+</div></div>
+<script>
+var timeline = {
+"System_Defination_VerifyCreateNewSkill":25.594,"System_Defination_VerifyUpdateSkill":2.025,"System_Defination_VerifyDeactivateSkill":3.007,"System_Defination_VerifyReactivateSkill":5.442,"System_Defination_VerifySearchColumnsForSkill":2.205,"System_Defination_VerifyCreateSCR":34.642,"System_Defination_VerifyUpdateSCR":5.76,"System_Defination_VerifyDeactivateSCR":2.865,"System_Defination_VerifyReactivateSCR":5.306,"System_Defination_VerifyCreateShiftBand":28.831,"System_Defination_VerifyUpdateShiftBand":6.373,"System_Defination_VerifyDeactivateShiftBand":2.848,"System_Defination_VerifyReactivateShiftBand":3.99,"System_Defination_VerifyWithoutShiftBandName":1.611,"System_Defination_VerifyWithCombinationShift":11.713,"System_Defination_VerifyWithOvertimeShift":5.474,"System_Defination_VerifyCreatePublicHoliday":27.26,"System_Defination_VerifyUpdatePublicHoliday":1.939,"System_Defination_VerifyDeletePublicHoliday":1.581,"System_Defination_VerifyCreateRoasterWithGroup":62.435,"System_Defination_VerifyCreateRoasterwithEmployee":69.379,"System_Defination_VerifyUpdateRoaster":6.524,"System_Defination_VerifyDeactiveRoster":1.4,"System_Defination_verifyReactiveRoster":8.297,"Employee_Administration_VerifyCreateEmpProfile":59.361,"Employee_Administration_VerifyUpdateEmpProfile":45.885,"Employee_Administration_VerifyDeleteEmpProfile":5.054,"Employee_Administration_VerifyreactivateEmpProfile":45.183,"Employee_Administration_VerifyTerminateEmpProfile":45.045,"Employee_Administration_VerifyDuplicateEmpProfile":44.61,"Employee_Administration_VerifysearchEmpStatus":4.794,"Employee_Administration_VerifySearchEmpProfile":1.75,"Employee_Administration_VerifysearchRosterGroup":1.715,"Employee_Administration_VerifysearchRoleGroup":1.72,"Employee_Administration_VerifyCreateRosterGroupAssignment":24.036,"Employee_Administration_VerifyUpdateRosterGroupAssignment":5.625,"Employee_Administration_VerifyDeleteRosterGroupAssignment":3.078,"Employee_Administration_VerifyReactivateRosterGroupAssignment":5.389,"Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember":8.649,"System_Defination_VerifyCreateBerth":26.288,"System_Defination_VerifyEditBerth":1.899,"System_Defination_VerifyDeleteBerth":6.743,"System_Defination_VerifyReActivate":9.455,"verifyCreateLocation":29.089,"verifyEditLocation":7.622,"verifyDeleteLocation":6.742,"verifyReActivate":7.846,"verifyCreateLocation":28.498,"verifyEditLocation":7.135,"verifyDeleteLocation":6.691,"verifyReActivate":6.908
+};
+</script>
+<div class="row">
+<div class="col-lg-6 col-md-12 author-container">
+<div class="card">
+<div class="card-header"><p>Author</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>Rajath</td>
+<td>51</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 category-container">
+<div class="card">
+<div class="card-header"><p>Tags</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
+<tr>
+<td>Location_Definitions_Test</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>System_Defination_SCRTest</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Berth_Setup_Test</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>SystemDefination_SkillPageTest</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>SystemDefination_RosterCreationPageTest</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Crane_Setup_Test</td>
+<td>4</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Employee_Administration_EmpAdmEmployeeProfileTest</td>
+<td>10</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>Employee_Administration_RosterGroupAssignmentTest</td>
+<td>5</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>System_Defination_ShiftBandTest</td>
+<td>7</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>TotalTestScript</td>
+<td>51</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>SystemDefination_PublicHolidayPageTest</td>
+<td>3</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 device-container">
+<div class="card">
+<div class="card-header"><p>Device</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead>
+<tbody>
+<tr>
+<td>WebApplication</td>
+<td>51</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+<div class="col-lg-6 col-md-12 sysenv-container">
+<div class="card">
+<div class="card-header"><p>System/Environment</p></div>
+<div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
+<thead><tr class="bg-gray"><th>Name</th><th>Value</th></tr></thead>
+<tbody>
+<tr>
+<td>OS</td>
+<td>Windows 11</td>
+</tr>
+<tr>
+<td>Java Version</td>
+<td>17.0.8.1</td>
+</tr>
+<tr>
+<td>Base Url</td>
+<td>https://www.jiviews.com/DEMO</td>
+</tr>
+</tbody>
+</table></div>
+</div>
+</div>
+</div>
+</div>
+<script>
+var statusGroup = {
+parentCount: 5,
+passParent: 51,
+failParent: 0,
+warningParent: 0,
+skipParent: 0,
+childCount: 5,
+passChild: 0,
+failChild: 0,
+warningChild: 0,
+skipChild: 0,
+infoChild: 0,
+grandChildCount: 5,
+passGrandChild: 0,
+failGrandChild: 0,
+warningGrandChild: 0,
+skipGrandChild: 0,
+infoGrandChild: 0,
+eventsCount: 5,
+passEvents: 51,
+failEvents: 0,
+warningEvents: 0,
+skipEvents: 0,
+infoEvents: 51
+};
+</script><div class="test-wrapper row view test-view">
+  <div class="test-list">
+    <div class="test-list-tools">
+<ul class="tools pull-left">
+<li><a href="#"><span class="font-size-14">Tests</span></a></li>
+</ul>
+<ul class="tools text-right">
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-exclamation-circle"></i></a>
+<ul id="status-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" status="pass" href="#"><span>Pass</span><span class="status success"></span></a>
+<div class="dropdown-divider"></div>
+<a status="clear" class="dropdown-item" href="#"><span>Clear</span><span class="pull-right"><i class="fa fa-close"></i></span></a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-user"></i></a>
+<ul id="author-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Rajath</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
+<ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">Location_Definitions_Test</a><a class="dropdown-item" href="#">System_Defination_SCRTest</a><a class="dropdown-item" href="#">Berth_Setup_Test</a><a class="dropdown-item" href="#">SystemDefination_SkillPageTest</a><a class="dropdown-item" href="#">SystemDefination_RosterCreationPageTest</a><a class="dropdown-item" href="#">Crane_Setup_Test</a><a class="dropdown-item" href="#">Employee_Administration_EmpAdmEmployeeProfileTest</a><a class="dropdown-item" href="#">Employee_Administration_RosterGroupAssignmentTest</a><a class="dropdown-item" href="#">System_Defination_ShiftBandTest</a><a class="dropdown-item" href="#">TotalTestScript</a><a class="dropdown-item" href="#">SystemDefination_PublicHolidayPageTest</a>
+</ul>
+</li>
+<li class="dropdown">
+<a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tablet"></i></a>
+<ul id="device-toggle" class="dropdown-menu dropdown-md p-v-0">
+<a class="dropdown-item" href="#">WebApplication</a>
+</ul>
+</li>
+</ul>
+</div>    <div class="test-list-wrapper scrollable">
+      <ul class="test-list-item">
+        <li class="test-item"  status="pass" test-id="1"
+          author="Rajath"
+          tag="SystemDefination_SkillPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateNewSkill</p>
+            <p class="text-sm">
+              <span>4:45:35 pm</span> / <span>00:00:25:594</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateNewSkill</h5>
+<span class='badge badge-success'>03.26.2024 4:45:35 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:01 pm</span>
+<span class='badge badge-default'>00:00:25:594</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_SkillPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:45:35 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:01 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="2"
+          author="Rajath"
+          tag="SystemDefination_SkillPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyUpdateSkill</p>
+            <p class="text-sm">
+              <span>4:46:01 pm</span> / <span>00:00:02:025</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyUpdateSkill</h5>
+<span class='badge badge-success'>03.26.2024 4:46:01 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:03 pm</span>
+<span class='badge badge-default'>00:00:02:025</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=2</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_SkillPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:01 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:03 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="3"
+          author="Rajath"
+          tag="SystemDefination_SkillPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeactivateSkill</p>
+            <p class="text-sm">
+              <span>4:46:03 pm</span> / <span>00:00:03:007</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeactivateSkill</h5>
+<span class='badge badge-success'>03.26.2024 4:46:03 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:06 pm</span>
+<span class='badge badge-default'>00:00:03:007</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=3</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_SkillPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:03 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:06 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="4"
+          author="Rajath"
+          tag="SystemDefination_SkillPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyReactivateSkill</p>
+            <p class="text-sm">
+              <span>4:46:06 pm</span> / <span>00:00:05:442</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyReactivateSkill</h5>
+<span class='badge badge-success'>03.26.2024 4:46:06 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:11 pm</span>
+<span class='badge badge-default'>00:00:05:442</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=4</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_SkillPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:06 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:11 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="5"
+          author="Rajath"
+          tag="SystemDefination_SkillPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifySearchColumnsForSkill</p>
+            <p class="text-sm">
+              <span>4:46:11 pm</span> / <span>00:00:02:205</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifySearchColumnsForSkill</h5>
+<span class='badge badge-success'>03.26.2024 4:46:11 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:13 pm</span>
+<span class='badge badge-default'>00:00:02:205</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=5</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_SkillPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:11 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:13 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="6"
+          author="Rajath"
+          tag="TotalTestScript System_Defination_SCRTest"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateSCR</p>
+            <p class="text-sm">
+              <span>4:46:17 pm</span> / <span>00:00:34:642</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateSCR</h5>
+<span class='badge badge-success'>03.26.2024 4:46:17 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:52 pm</span>
+<span class='badge badge-default'>00:00:34:642</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=6</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">System_Defination_SCRTest</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:17 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:52 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="7"
+          author="Rajath"
+          tag="TotalTestScript System_Defination_SCRTest"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyUpdateSCR</p>
+            <p class="text-sm">
+              <span>4:46:52 pm</span> / <span>00:00:05:760</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyUpdateSCR</h5>
+<span class='badge badge-success'>03.26.2024 4:46:52 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:46:57 pm</span>
+<span class='badge badge-default'>00:00:05:760</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=7</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">System_Defination_SCRTest</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:52 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:46:57 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="8"
+          author="Rajath"
+          tag="TotalTestScript System_Defination_SCRTest"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeactivateSCR</p>
+            <p class="text-sm">
+              <span>4:46:57 pm</span> / <span>00:00:02:865</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeactivateSCR</h5>
+<span class='badge badge-success'>03.26.2024 4:46:57 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:00 pm</span>
+<span class='badge badge-default'>00:00:02:865</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=8</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">System_Defination_SCRTest</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:46:57 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:00 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="9"
+          author="Rajath"
+          tag="TotalTestScript System_Defination_SCRTest"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyReactivateSCR</p>
+            <p class="text-sm">
+              <span>4:47:00 pm</span> / <span>00:00:05:306</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyReactivateSCR</h5>
+<span class='badge badge-success'>03.26.2024 4:47:00 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:05 pm</span>
+<span class='badge badge-default'>00:00:05:306</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=9</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">System_Defination_SCRTest</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:00 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:05 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="10"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateShiftBand</p>
+            <p class="text-sm">
+              <span>4:47:09 pm</span> / <span>00:00:28:831</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateShiftBand</h5>
+<span class='badge badge-success'>03.26.2024 4:47:09 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:38 pm</span>
+<span class='badge badge-default'>00:00:28:831</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=10</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:09 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:38 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="11"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyUpdateShiftBand</p>
+            <p class="text-sm">
+              <span>4:47:38 pm</span> / <span>00:00:06:373</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyUpdateShiftBand</h5>
+<span class='badge badge-success'>03.26.2024 4:47:38 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:44 pm</span>
+<span class='badge badge-default'>00:00:06:373</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=11</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:38 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:44 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="12"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeactivateShiftBand</p>
+            <p class="text-sm">
+              <span>4:47:44 pm</span> / <span>00:00:02:848</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeactivateShiftBand</h5>
+<span class='badge badge-success'>03.26.2024 4:47:44 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:47 pm</span>
+<span class='badge badge-default'>00:00:02:848</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=12</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:44 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:47 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="13"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyReactivateShiftBand</p>
+            <p class="text-sm">
+              <span>4:47:47 pm</span> / <span>00:00:03:990</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyReactivateShiftBand</h5>
+<span class='badge badge-success'>03.26.2024 4:47:47 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:51 pm</span>
+<span class='badge badge-default'>00:00:03:990</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=13</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:47 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:51 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="14"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyWithoutShiftBandName</p>
+            <p class="text-sm">
+              <span>4:47:51 pm</span> / <span>00:00:01:611</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyWithoutShiftBandName</h5>
+<span class='badge badge-success'>03.26.2024 4:47:51 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:47:53 pm</span>
+<span class='badge badge-default'>00:00:01:611</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=14</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:51 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:47:53 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="15"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyWithCombinationShift</p>
+            <p class="text-sm">
+              <span>4:47:53 pm</span> / <span>00:00:11:713</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyWithCombinationShift</h5>
+<span class='badge badge-success'>03.26.2024 4:47:53 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:48:04 pm</span>
+<span class='badge badge-default'>00:00:11:713</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=15</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:47:53 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:48:04 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="16"
+          author="Rajath"
+          tag="System_Defination_ShiftBandTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyWithOvertimeShift</p>
+            <p class="text-sm">
+              <span>4:48:04 pm</span> / <span>00:00:05:474</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyWithOvertimeShift</h5>
+<span class='badge badge-success'>03.26.2024 4:48:04 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:48:10 pm</span>
+<span class='badge badge-default'>00:00:05:474</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=16</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">System_Defination_ShiftBandTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:04 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:48:10 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="17"
+          author="Rajath"
+          tag="SystemDefination_PublicHolidayPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreatePublicHoliday</p>
+            <p class="text-sm">
+              <span>4:48:25 pm</span> / <span>00:00:27:260</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreatePublicHoliday</h5>
+<span class='badge badge-success'>03.26.2024 4:48:25 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:48:52 pm</span>
+<span class='badge badge-default'>00:00:27:260</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=17</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_PublicHolidayPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:25 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:48:52 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="18"
+          author="Rajath"
+          tag="SystemDefination_PublicHolidayPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyUpdatePublicHoliday</p>
+            <p class="text-sm">
+              <span>4:48:52 pm</span> / <span>00:00:01:939</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyUpdatePublicHoliday</h5>
+<span class='badge badge-success'>03.26.2024 4:48:52 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:48:54 pm</span>
+<span class='badge badge-default'>00:00:01:939</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=18</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_PublicHolidayPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:52 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:48:54 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="19"
+          author="Rajath"
+          tag="SystemDefination_PublicHolidayPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeletePublicHoliday</p>
+            <p class="text-sm">
+              <span>4:48:54 pm</span> / <span>00:00:01:581</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeletePublicHoliday</h5>
+<span class='badge badge-success'>03.26.2024 4:48:54 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:48:55 pm</span>
+<span class='badge badge-default'>00:00:01:581</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=19</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_PublicHolidayPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:54 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:48:55 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="20"
+          author="Rajath"
+          tag="SystemDefination_RosterCreationPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateRoasterWithGroup</p>
+            <p class="text-sm">
+              <span>4:48:59 pm</span> / <span>00:01:02:435</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateRoasterWithGroup</h5>
+<span class='badge badge-success'>03.26.2024 4:48:59 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:50:01 pm</span>
+<span class='badge badge-default'>00:01:02:435</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=20</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_RosterCreationPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:48:59 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:50:01 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="21"
+          author="Rajath"
+          tag="SystemDefination_RosterCreationPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateRoasterwithEmployee</p>
+            <p class="text-sm">
+              <span>4:50:01 pm</span> / <span>00:01:09:379</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateRoasterwithEmployee</h5>
+<span class='badge badge-success'>03.26.2024 4:50:01 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:51:10 pm</span>
+<span class='badge badge-default'>00:01:09:379</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=21</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_RosterCreationPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:50:01 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:51:10 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="22"
+          author="Rajath"
+          tag="SystemDefination_RosterCreationPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyUpdateRoaster</p>
+            <p class="text-sm">
+              <span>4:51:10 pm</span> / <span>00:00:06:524</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyUpdateRoaster</h5>
+<span class='badge badge-success'>03.26.2024 4:51:10 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:51:17 pm</span>
+<span class='badge badge-default'>00:00:06:524</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=22</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_RosterCreationPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:10 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:51:17 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="23"
+          author="Rajath"
+          tag="SystemDefination_RosterCreationPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeactiveRoster</p>
+            <p class="text-sm">
+              <span>4:51:17 pm</span> / <span>00:00:01:400</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeactiveRoster</h5>
+<span class='badge badge-success'>03.26.2024 4:51:17 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:51:18 pm</span>
+<span class='badge badge-default'>00:00:01:400</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=23</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_RosterCreationPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:17 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:51:18 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="24"
+          author="Rajath"
+          tag="SystemDefination_RosterCreationPageTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_verifyReactiveRoster</p>
+            <p class="text-sm">
+              <span>4:51:18 pm</span> / <span>00:00:08:297</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_verifyReactiveRoster</h5>
+<span class='badge badge-success'>03.26.2024 4:51:18 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:51:27 pm</span>
+<span class='badge badge-default'>00:00:08:297</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=24</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">SystemDefination_RosterCreationPageTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:18 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:51:27 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="25"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyCreateEmpProfile</p>
+            <p class="text-sm">
+              <span>4:51:30 pm</span> / <span>00:00:59:361</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyCreateEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:51:30 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:52:30 pm</span>
+<span class='badge badge-default'>00:00:59:361</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=25</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:51:30 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:52:30 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="26"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyUpdateEmpProfile</p>
+            <p class="text-sm">
+              <span>4:52:30 pm</span> / <span>00:00:45:885</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyUpdateEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:52:30 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:53:15 pm</span>
+<span class='badge badge-default'>00:00:45:885</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=26</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:52:30 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:53:15 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="27"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyDeleteEmpProfile</p>
+            <p class="text-sm">
+              <span>4:53:15 pm</span> / <span>00:00:05:054</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyDeleteEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:53:15 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:53:20 pm</span>
+<span class='badge badge-default'>00:00:05:054</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=27</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:53:15 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:53:20 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="28"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyreactivateEmpProfile</p>
+            <p class="text-sm">
+              <span>4:53:20 pm</span> / <span>00:00:45:183</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyreactivateEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:53:20 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:54:06 pm</span>
+<span class='badge badge-default'>00:00:45:183</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=28</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:53:20 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:54:06 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="29"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyTerminateEmpProfile</p>
+            <p class="text-sm">
+              <span>4:54:06 pm</span> / <span>00:00:45:045</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyTerminateEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:54:06 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:54:51 pm</span>
+<span class='badge badge-default'>00:00:45:045</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=29</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:06 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:54:51 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="30"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyDuplicateEmpProfile</p>
+            <p class="text-sm">
+              <span>4:54:51 pm</span> / <span>00:00:44:610</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyDuplicateEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:54:51 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:55:35 pm</span>
+<span class='badge badge-default'>00:00:44:610</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=30</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:54:51 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:55:35 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="31"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifysearchEmpStatus</p>
+            <p class="text-sm">
+              <span>4:55:35 pm</span> / <span>00:00:04:794</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifysearchEmpStatus</h5>
+<span class='badge badge-success'>03.26.2024 4:55:35 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:55:40 pm</span>
+<span class='badge badge-default'>00:00:04:794</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=31</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:35 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:55:40 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="32"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifySearchEmpProfile</p>
+            <p class="text-sm">
+              <span>4:55:40 pm</span> / <span>00:00:01:750</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifySearchEmpProfile</h5>
+<span class='badge badge-success'>03.26.2024 4:55:40 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:55:42 pm</span>
+<span class='badge badge-default'>00:00:01:750</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=32</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:40 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:55:42 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="33"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifysearchRosterGroup</p>
+            <p class="text-sm">
+              <span>4:55:42 pm</span> / <span>00:00:01:715</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifysearchRosterGroup</h5>
+<span class='badge badge-success'>03.26.2024 4:55:42 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:55:44 pm</span>
+<span class='badge badge-default'>00:00:01:715</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=33</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:42 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:55:44 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="34"
+          author="Rajath"
+          tag="Employee_Administration_EmpAdmEmployeeProfileTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifysearchRoleGroup</p>
+            <p class="text-sm">
+              <span>4:55:44 pm</span> / <span>00:00:01:720</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifysearchRoleGroup</h5>
+<span class='badge badge-success'>03.26.2024 4:55:44 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:55:45 pm</span>
+<span class='badge badge-default'>00:00:01:720</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=34</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_EmpAdmEmployeeProfileTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:44 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:55:45 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="35"
+          author="Rajath"
+          tag="Employee_Administration_RosterGroupAssignmentTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyCreateRosterGroupAssignment</p>
+            <p class="text-sm">
+              <span>4:55:49 pm</span> / <span>00:00:24:036</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyCreateRosterGroupAssignment</h5>
+<span class='badge badge-success'>03.26.2024 4:55:49 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:56:13 pm</span>
+<span class='badge badge-default'>00:00:24:036</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=35</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_RosterGroupAssignmentTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:55:49 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:13 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="36"
+          author="Rajath"
+          tag="Employee_Administration_RosterGroupAssignmentTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyUpdateRosterGroupAssignment</p>
+            <p class="text-sm">
+              <span>4:56:13 pm</span> / <span>00:00:05:625</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyUpdateRosterGroupAssignment</h5>
+<span class='badge badge-success'>03.26.2024 4:56:13 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:56:19 pm</span>
+<span class='badge badge-default'>00:00:05:625</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=36</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_RosterGroupAssignmentTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:13 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:19 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="37"
+          author="Rajath"
+          tag="Employee_Administration_RosterGroupAssignmentTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyDeleteRosterGroupAssignment</p>
+            <p class="text-sm">
+              <span>4:56:19 pm</span> / <span>00:00:03:078</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyDeleteRosterGroupAssignment</h5>
+<span class='badge badge-success'>03.26.2024 4:56:19 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:56:22 pm</span>
+<span class='badge badge-default'>00:00:03:078</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=37</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_RosterGroupAssignmentTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:19 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:22 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="38"
+          author="Rajath"
+          tag="Employee_Administration_RosterGroupAssignmentTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyReactivateRosterGroupAssignment</p>
+            <p class="text-sm">
+              <span>4:56:22 pm</span> / <span>00:00:05:389</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyReactivateRosterGroupAssignment</h5>
+<span class='badge badge-success'>03.26.2024 4:56:22 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:56:27 pm</span>
+<span class='badge badge-default'>00:00:05:389</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=38</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_RosterGroupAssignmentTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:22 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:27 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="39"
+          author="Rajath"
+          tag="Employee_Administration_RosterGroupAssignmentTest TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember</p>
+            <p class="text-sm">
+              <span>4:56:27 pm</span> / <span>00:00:08:649</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember</h5>
+<span class='badge badge-success'>03.26.2024 4:56:27 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:56:36 pm</span>
+<span class='badge badge-default'>00:00:08:649</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=39</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Employee_Administration_RosterGroupAssignmentTest</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:27 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:56:36 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="40"
+          author="Rajath"
+          tag="Berth_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyCreateBerth</p>
+            <p class="text-sm">
+              <span>4:56:39 pm</span> / <span>00:00:26:288</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyCreateBerth</h5>
+<span class='badge badge-success'>03.26.2024 4:56:39 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:57:06 pm</span>
+<span class='badge badge-default'>00:00:26:288</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=40</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Berth_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:56:39 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:06 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="41"
+          author="Rajath"
+          tag="Berth_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyEditBerth</p>
+            <p class="text-sm">
+              <span>4:57:06 pm</span> / <span>00:00:01:899</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyEditBerth</h5>
+<span class='badge badge-success'>03.26.2024 4:57:06 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:57:08 pm</span>
+<span class='badge badge-default'>00:00:01:899</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=41</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Berth_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:06 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:08 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="42"
+          author="Rajath"
+          tag="Berth_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyDeleteBerth</p>
+            <p class="text-sm">
+              <span>4:57:08 pm</span> / <span>00:00:06:743</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyDeleteBerth</h5>
+<span class='badge badge-success'>03.26.2024 4:57:08 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:57:14 pm</span>
+<span class='badge badge-default'>00:00:06:743</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=42</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Berth_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:08 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:14 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="43"
+          author="Rajath"
+          tag="Berth_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">System_Defination_VerifyReActivate</p>
+            <p class="text-sm">
+              <span>4:57:14 pm</span> / <span>00:00:09:455</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">System_Defination_VerifyReActivate</h5>
+<span class='badge badge-success'>03.26.2024 4:57:14 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:57:24 pm</span>
+<span class='badge badge-default'>00:00:09:455</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=43</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Berth_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:14 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:24 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="44"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateLocation</p>
+            <p class="text-sm">
+              <span>4:57:27 pm</span> / <span>00:00:29:089</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreateLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:57:27 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:57:56 pm</span>
+<span class='badge badge-default'>00:00:29:089</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=44</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:27 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:57:56 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="45"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditLocation</p>
+            <p class="text-sm">
+              <span>4:57:56 pm</span> / <span>00:00:07:622</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEditLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:57:56 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:58:04 pm</span>
+<span class='badge badge-default'>00:00:07:622</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=45</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:57:56 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:04 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="46"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteLocation</p>
+            <p class="text-sm">
+              <span>4:58:04 pm</span> / <span>00:00:06:742</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeleteLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:58:04 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:58:10 pm</span>
+<span class='badge badge-default'>00:00:06:742</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=46</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:04 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:10 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="47"
+          author="Rajath"
+          tag="Crane_Setup_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>4:58:10 pm</span> / <span>00:00:07:846</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyReActivate</h5>
+<span class='badge badge-success'>03.26.2024 4:58:10 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:58:18 pm</span>
+<span class='badge badge-default'>00:00:07:846</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=47</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Crane_Setup_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:10 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:18 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="48"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyCreateLocation</p>
+            <p class="text-sm">
+              <span>4:58:22 pm</span> / <span>00:00:28:498</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyCreateLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:58:22 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:58:50 pm</span>
+<span class='badge badge-default'>00:00:28:498</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=48</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:22 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:50 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="49"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyEditLocation</p>
+            <p class="text-sm">
+              <span>4:58:50 pm</span> / <span>00:00:07:135</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyEditLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:58:50 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:58:58 pm</span>
+<span class='badge badge-default'>00:00:07:135</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=49</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:50 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:58:58 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="50"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyDeleteLocation</p>
+            <p class="text-sm">
+              <span>4:58:58 pm</span> / <span>00:00:06:691</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyDeleteLocation</h5>
+<span class='badge badge-success'>03.26.2024 4:58:58 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:59:04 pm</span>
+<span class='badge badge-default'>00:00:06:691</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=50</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:58:58 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:59:04 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+        <li class="test-item"  status="pass" test-id="51"
+          author="Rajath"
+          tag="Location_Definitions_Test TotalTestScript"
+          device="WebApplication">
+          <div class="test-detail">
+            <p class="name">verifyReActivate</p>
+            <p class="text-sm">
+              <span>4:59:04 pm</span> / <span>00:00:06:908</span>
+              <span class="badge pass-bg log float-right">Pass</span>
+            </p>
+          </div>
+          <div class="test-contents d-none">
+<div class="detail-head">
+<div class="p-v-10">
+<div class="info">
+<h5 class="test-status text-pass">verifyReActivate</h5>
+<span class='badge badge-success'>03.26.2024 4:59:04 pm</span>
+<span class='badge badge-danger'>03.26.2024 4:59:11 pm</span>
+<span class='badge badge-default'>00:00:06:908</span>
+&middot; <span class='uri-anchor badge badge-default'>#test-id=51</span>
+<span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
+<span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
+</div>
+<div class="m-t-15"><span class="badge badge-pill badge-default">Rajath</span>
+<span class="badge badge-pill badge-default">Location_Definitions_Test</span>
+<span class="badge badge-pill badge-default">TotalTestScript</span>
+<span class="badge badge-pill badge-default">WebApplication</span></div>
+</div>
+</div><div class="detail-body mt-4">
+<table class="table table-sm">
+  <thead><tr><th class="status-col">Status</th><th class="timestamp-col">Timestamp</th><th class="details-col">Details</th></tr></thead>
+  <tbody>
+      <tr class="event-row">
+        <td><span class="badge log info-bg">Info</span></td>
+        <td>4:59:04 pm</td>
+        <td>
+          Jivi Automation Test: Verifying user login functionality
+        </td>
+      </tr>
+      <tr class="event-row">
+        <td><span class="badge log pass-bg">Pass</span></td>
+        <td>4:59:11 pm</td>
+        <td>
+          Test passed
+        </td>
+      </tr>
+  </tbody>
+</table>
+</div>
+          </div>
+        </li>
+      </ul>
+    </div>
+  </div>
+<div class="test-content scrollable">
+<div class="test-content-tools">
+<ul><li><a class="back-to-test" href="#"><i class="fa fa-arrow-left"></i></a></li></ul>
+</div>
+<div class="test-content-detail"><div class="detail-body"></div></div>
+</div></div>
+<div class="test-wrapper row view category-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Category</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">11</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">Location_Definitions_Test</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Location_Definitions_Test</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='49' id='49'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:59:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">System_Defination_SCRTest</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>System_Defination_SCRTest</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>System_Defination_VerifyCreateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>System_Defination_VerifyUpdateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>System_Defination_VerifyDeactivateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>System_Defination_VerifyReactivateSCR</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">Berth_Setup_Test</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Berth_Setup_Test</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>System_Defination_VerifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='41' id='41'>System_Defination_VerifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>System_Defination_VerifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='43' id='43'>System_Defination_VerifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">SystemDefination_SkillPageTest</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>SystemDefination_SkillPageTest</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:45:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>System_Defination_VerifyCreateNewSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>System_Defination_VerifyUpdateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>System_Defination_VerifyDeactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>System_Defination_VerifyReactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>System_Defination_VerifySearchColumnsForSkill</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">SystemDefination_RosterCreationPageTest</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>SystemDefination_RosterCreationPageTest</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>System_Defination_VerifyCreateRoasterWithGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:50:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>System_Defination_VerifyCreateRoasterwithEmployee</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>System_Defination_VerifyUpdateRoaster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>System_Defination_VerifyDeactiveRoster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>System_Defination_verifyReactiveRoster</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>4</span>
+</span>
+<p class="name">Crane_Setup_Test</p>
+<p class="duration text-sm">4 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Crane_Setup_Test</h4>
+<span status="pass" class='badge log pass-bg'>4 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='45' id='45'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='47' id='47'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>10</span>
+</span>
+<p class="name">Employee_Administration_EmpAdmEmployeeProfileTest</p>
+<p class="duration text-sm">10 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Employee_Administration_EmpAdmEmployeeProfileTest</h4>
+<span status="pass" class='badge log pass-bg'>10 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>Employee_Administration_VerifyCreateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>Employee_Administration_VerifyUpdateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>Employee_Administration_VerifyDeleteEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>Employee_Administration_VerifyreactivateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>Employee_Administration_VerifyTerminateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>Employee_Administration_VerifyDuplicateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>Employee_Administration_VerifysearchEmpStatus</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>Employee_Administration_VerifySearchEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='33' id='33'>Employee_Administration_VerifysearchRosterGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>Employee_Administration_VerifysearchRoleGroup</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>5</span>
+</span>
+<p class="name">Employee_Administration_RosterGroupAssignmentTest</p>
+<p class="duration text-sm">5 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Employee_Administration_RosterGroupAssignmentTest</h4>
+<span status="pass" class='badge log pass-bg'>5 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>Employee_Administration_VerifyCreateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>Employee_Administration_VerifyUpdateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>Employee_Administration_VerifyDeleteRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>Employee_Administration_VerifyReactivateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>7</span>
+</span>
+<p class="name">System_Defination_ShiftBandTest</p>
+<p class="duration text-sm">7 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>System_Defination_ShiftBandTest</h4>
+<span status="pass" class='badge log pass-bg'>7 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>System_Defination_VerifyCreateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>System_Defination_VerifyUpdateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>System_Defination_VerifyDeactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>System_Defination_VerifyReactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>System_Defination_VerifyWithoutShiftBandName</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>System_Defination_VerifyWithCombinationShift</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>System_Defination_VerifyWithOvertimeShift</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>51</span>
+</span>
+<p class="name">TotalTestScript</p>
+<p class="duration text-sm">51 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>TotalTestScript</h4>
+<span status="pass" class='badge log pass-bg'>51 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:45:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>System_Defination_VerifyCreateNewSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>System_Defination_VerifyUpdateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>System_Defination_VerifyDeactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>System_Defination_VerifyReactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>System_Defination_VerifySearchColumnsForSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>System_Defination_VerifyCreateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>System_Defination_VerifyUpdateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>System_Defination_VerifyDeactivateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>System_Defination_VerifyReactivateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>System_Defination_VerifyCreateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>System_Defination_VerifyUpdateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>System_Defination_VerifyDeactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>System_Defination_VerifyReactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>System_Defination_VerifyWithoutShiftBandName</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>System_Defination_VerifyWithCombinationShift</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>System_Defination_VerifyWithOvertimeShift</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>System_Defination_VerifyCreatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>System_Defination_VerifyUpdatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>System_Defination_VerifyDeletePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>System_Defination_VerifyCreateRoasterWithGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:50:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>System_Defination_VerifyCreateRoasterwithEmployee</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>System_Defination_VerifyUpdateRoaster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>System_Defination_VerifyDeactiveRoster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>System_Defination_verifyReactiveRoster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>Employee_Administration_VerifyCreateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>Employee_Administration_VerifyUpdateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>Employee_Administration_VerifyDeleteEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>Employee_Administration_VerifyreactivateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>Employee_Administration_VerifyTerminateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>Employee_Administration_VerifyDuplicateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>Employee_Administration_VerifysearchEmpStatus</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>Employee_Administration_VerifySearchEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='33' id='33'>Employee_Administration_VerifysearchRosterGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>Employee_Administration_VerifysearchRoleGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>Employee_Administration_VerifyCreateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>Employee_Administration_VerifyUpdateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>Employee_Administration_VerifyDeleteRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>Employee_Administration_VerifyReactivateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>System_Defination_VerifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='41' id='41'>System_Defination_VerifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>System_Defination_VerifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='43' id='43'>System_Defination_VerifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='45' id='45'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='47' id='47'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='49' id='49'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:59:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>3</span>
+</span>
+<p class="name">SystemDefination_PublicHolidayPageTest</p>
+<p class="duration text-sm">3 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>SystemDefination_PublicHolidayPageTest</h4>
+<span status="pass" class='badge log pass-bg'>3 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>System_Defination_VerifyCreatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>System_Defination_VerifyUpdatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>System_Defination_VerifyDeletePublicHoliday</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div><div class="test-wrapper row view author-view attributes-view">
+<div class="test-list">
+<div class="test-list-tools">
+<ul class="tools pull-left"><li><a href=""><span class="font-size-14">Author</span></a></li></ul>
+<ul class="tools text-right"><li><a href="#"><span class="badge badge-primary">1</span></a></li></ul>
+</div>
+<div class="test-list-wrapper scrollable">
+<ul class="test-list-item">
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>51</span>
+</span>
+<p class="name">Rajath</p>
+<p class="duration text-sm">51 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>Rajath</h4>
+<span status="pass" class='badge log pass-bg'>51 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:45:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='1'>System_Defination_VerifyCreateNewSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='2' id='2'>System_Defination_VerifyUpdateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:03 pm</td>
+<td>
+<a href="#" class="linked" test-id='3' id='3'>System_Defination_VerifyDeactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='4' id='4'>System_Defination_VerifyReactivateSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:11 pm</td>
+<td>
+<a href="#" class="linked" test-id='5' id='5'>System_Defination_VerifySearchColumnsForSkill</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='6' id='6'>System_Defination_VerifyCreateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='7' id='7'>System_Defination_VerifyUpdateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:46:57 pm</td>
+<td>
+<a href="#" class="linked" test-id='8' id='8'>System_Defination_VerifyDeactivateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:00 pm</td>
+<td>
+<a href="#" class="linked" test-id='9' id='9'>System_Defination_VerifyReactivateSCR</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:09 pm</td>
+<td>
+<a href="#" class="linked" test-id='10' id='10'>System_Defination_VerifyCreateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:38 pm</td>
+<td>
+<a href="#" class="linked" test-id='11' id='11'>System_Defination_VerifyUpdateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='12' id='12'>System_Defination_VerifyDeactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:47 pm</td>
+<td>
+<a href="#" class="linked" test-id='13' id='13'>System_Defination_VerifyReactivateShiftBand</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='14' id='14'>System_Defination_VerifyWithoutShiftBandName</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:47:53 pm</td>
+<td>
+<a href="#" class="linked" test-id='15' id='15'>System_Defination_VerifyWithCombinationShift</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='16' id='16'>System_Defination_VerifyWithOvertimeShift</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='17' id='17'>System_Defination_VerifyCreatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:52 pm</td>
+<td>
+<a href="#" class="linked" test-id='18' id='18'>System_Defination_VerifyUpdatePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:54 pm</td>
+<td>
+<a href="#" class="linked" test-id='19' id='19'>System_Defination_VerifyDeletePublicHoliday</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:48:59 pm</td>
+<td>
+<a href="#" class="linked" test-id='20' id='20'>System_Defination_VerifyCreateRoasterWithGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:50:01 pm</td>
+<td>
+<a href="#" class="linked" test-id='21' id='21'>System_Defination_VerifyCreateRoasterwithEmployee</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='22' id='22'>System_Defination_VerifyUpdateRoaster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:17 pm</td>
+<td>
+<a href="#" class="linked" test-id='23' id='23'>System_Defination_VerifyDeactiveRoster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:18 pm</td>
+<td>
+<a href="#" class="linked" test-id='24' id='24'>System_Defination_verifyReactiveRoster</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:51:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='25' id='25'>Employee_Administration_VerifyCreateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:52:30 pm</td>
+<td>
+<a href="#" class="linked" test-id='26' id='26'>Employee_Administration_VerifyUpdateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:15 pm</td>
+<td>
+<a href="#" class="linked" test-id='27' id='27'>Employee_Administration_VerifyDeleteEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:53:20 pm</td>
+<td>
+<a href="#" class="linked" test-id='28' id='28'>Employee_Administration_VerifyreactivateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='29' id='29'>Employee_Administration_VerifyTerminateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:54:51 pm</td>
+<td>
+<a href="#" class="linked" test-id='30' id='30'>Employee_Administration_VerifyDuplicateEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:35 pm</td>
+<td>
+<a href="#" class="linked" test-id='31' id='31'>Employee_Administration_VerifysearchEmpStatus</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:40 pm</td>
+<td>
+<a href="#" class="linked" test-id='32' id='32'>Employee_Administration_VerifySearchEmpProfile</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:42 pm</td>
+<td>
+<a href="#" class="linked" test-id='33' id='33'>Employee_Administration_VerifysearchRosterGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:44 pm</td>
+<td>
+<a href="#" class="linked" test-id='34' id='34'>Employee_Administration_VerifysearchRoleGroup</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:55:49 pm</td>
+<td>
+<a href="#" class="linked" test-id='35' id='35'>Employee_Administration_VerifyCreateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:13 pm</td>
+<td>
+<a href="#" class="linked" test-id='36' id='36'>Employee_Administration_VerifyUpdateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:19 pm</td>
+<td>
+<a href="#" class="linked" test-id='37' id='37'>Employee_Administration_VerifyDeleteRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='38' id='38'>Employee_Administration_VerifyReactivateRosterGroupAssignment</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='39' id='39'>Employee_Administration_VerifyAddEmployeesNonMembersToMembersAndRemoveFromMembersToNonMember</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:56:39 pm</td>
+<td>
+<a href="#" class="linked" test-id='40' id='40'>System_Defination_VerifyCreateBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:06 pm</td>
+<td>
+<a href="#" class="linked" test-id='41' id='41'>System_Defination_VerifyEditBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:08 pm</td>
+<td>
+<a href="#" class="linked" test-id='42' id='42'>System_Defination_VerifyDeleteBerth</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:14 pm</td>
+<td>
+<a href="#" class="linked" test-id='43' id='43'>System_Defination_VerifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:27 pm</td>
+<td>
+<a href="#" class="linked" test-id='44' id='44'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:57:56 pm</td>
+<td>
+<a href="#" class="linked" test-id='45' id='45'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='46' id='46'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='47' id='47'>verifyReActivate</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:22 pm</td>
+<td>
+<a href="#" class="linked" test-id='48' id='48'>verifyCreateLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:50 pm</td>
+<td>
+<a href="#" class="linked" test-id='49' id='49'>verifyEditLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:58:58 pm</td>
+<td>
+<a href="#" class="linked" test-id='50' id='50'>verifyDeleteLocation</a>
+</td>
+</tr>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>16:59:04 pm</td>
+<td>
+<a href="#" class="linked" test-id='51' id='51'>verifyReActivate</a>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="test-content scrollable">
+<div class="test-content-detail">
+<div class="detail-body"></div>
+</div>
+</div>
+</div>        </div>
+      </div>
+    </div>
+  </div>
+<script src="https://cdn.jsdelivr.net/gh/extent-framework/extent-github-cdn@d6562a79075e061305ccfdb82f01e5e195e2d307/spark/js/spark-script.js"></script>
+<script type="text/javascript"></script></body>
+</html>

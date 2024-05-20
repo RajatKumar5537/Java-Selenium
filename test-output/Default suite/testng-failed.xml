@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [Default suite]" guice-stage="DEVELOPMENT">
+  <test thread-count="5" name="Default test(failed)">
+    <classes>
+      <class name="com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest">
+        <methods>
+          <include name="launchBrowser"/>
+          <include name="beforeTestMethod"/>
+          <include name="afterTestMethod"/>
+          <include name="closeBrowser"/>
+          <include name="System_Defination_VerifyUpdateSkill"/>
+          <include name="System_Defination_VerifyDeactivateSkill"/>
+          <include name="System_Defination_VerifySearchColumnsForSkill"/>
+          <include name="System_Defination_VerifyReactivateSkill"/>
+        </methods>
+      </class> <!-- com.JiviewsAutomation.SystemDefination_Test.SystemDefination_SkillPageTest -->
+    </classes>
+  </test> <!-- Default test(failed) -->
+</suite> <!-- Failed suite [Default suite] -->
